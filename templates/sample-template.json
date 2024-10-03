@@ -1,0 +1,64 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-YOUR-SAMPLE-NAME",
+    "source": "pnp",
+    "title": "YOUR-SAMPLE-TITLE",
+    "shortDescription": "YOUR-SHORT-DESCRIPTION",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR-SAMPLE-NAME",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR-SAMPLE-NAME",
+    "longDescription": [
+      "YOUR-SHORT-DESCRIPTION"
+    ],
+    "creationDateTime": "2024-10-03",
+    "updateDateTime": "2024-10-03",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "TypeScript"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/YOUR-SAMPLE-NAME/assets/YOUR-IMAGE-NAME-HERE",
+        "alt": "Declarative agent doing x"
+      },
+      {
+        "type": "video",
+        "order": 101,
+        "url": "https://www.youtube.com/embed/FS-_0KENJkI",
+        "alt": "Declarative agent doing x"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "YOUR-GITHUB-ACCOUNT",
+        "pictureUrl": "https://github.com/YOUR-GITHUB-ACCOUNT.png",
+        "name": "YOUR-NAME"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      }
+    ]
+  }
+]
