@@ -15,7 +15,7 @@ provision:
       # based on the definition in manifest. If you don't want to change the
       # name, make sure the name in Microsoft Entra manifest is the same with the name
       # defined here.
-      name: da-repairs-oauth-aad
+      name: Repairs-OAuth-aad
       # If the value is false, the action will not generate client secret for you
       generateClientSecret: true
       # Authenticate users with a Microsoft work or school account in your
@@ -37,7 +37,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: da-repairs-oauth${{APP_NAME_SUFFIX}}
+      name: Repairs-OAuth${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
@@ -85,7 +85,7 @@ provision:
       clientId: ${{AAD_APP_CLIENT_ID}}
       clientSecret: ${{SECRET_AAD_APP_CLIENT_SECRET}}
       # Path to OpenAPI description document
-      apiSpecPath: ./appPackage/apiSpecificationFile/repair.${{TEAMSFX_ENV}}.yml
+      apiSpecPath: ./appPackage/apiSpecificationFile/repair.yml
     writeToEnvironmentFile:
       configurationId: OAUTH2AUTHCODE_CONFIGURATION_ID
 
@@ -180,4 +180,4 @@ publish:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
-projectId: 0837938e-eb6a-4e86-8e6d-8ab549dcbffe
+projectId: 3bbfb625-ccb6-4542-9925-63b86a2e6927
