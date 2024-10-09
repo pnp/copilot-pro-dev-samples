@@ -1,175 +1,66 @@
-# Instructions for local authentication setup
+# Declarative Agent with an API plugin connected to an API secured with OAuth with validation
 
-1. Provision the application for Dev; this will cause TTK to register an Entra ID application.
+## Summary
 
-2. In **.vscode/tasks.json** comment out the tunnel URL generation so it looks like this:
+This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with Entra ID. 
 
-~~~json
-"version": "2.0.0",
-"tasks": [
-    {
-        "label": "Start Teams App Locally",
-        "dependsOn": [
-            "Validate prerequisites",
-            //"Start local tunnel",
-            "Create resources",
-            "Build project",
-            "Start application"
-        ],
-        "dependsOrder": "sequence"
-    },
-    ...
-~~~
+![picture of the app in action](./assets/screenshot.gif)
 
-3. Create a persistent tunnel and note the URL. In your **env/.env.local** file, replace the auto-generated value for OPENAPI_SERVER_URL with your persistent URL. It should look like this:
+The project contains an Azure Function, but unlike the [da-repairs-oauth sample](../da-repairs-oauth/) relies on Azure App Services authentication ("Easy Auth") for authentication, this sample validates access tokens in code. Teams Toolkit currently uses Easy Auth as shown in this sample. Here are some advantages of validating the token in your code instead:
 
-    ~~~text
-    OPENAPI_SERVER_URL=https://your-url-here-7071.use.devtunnels.ms
-    ~~~
+ - Since Easy Auth doesn't work locally, local requests are not authenticated. In addition to a small security opening, this causes the app to have 2 plugin files, including an anonymous one for local debugging. In this sample, local requests are authenticated and the packaging source files are the same for all environments.
+
+ - If the code is deployed outside of Azure app services, and if the included Bicep files aren't used, the code will appear to work but will do no token validation at all, thus wide open to anonymous requests.
+
+ - With the Easy Auth scenario, Copilot is sending the access token directly to Azure App Services authentication. If something goes wrong there is no way to inspect the access token and debugging options are limited. In this sample you can set a breakpoint to inspect the token and walk through the validation to see what went wrong.
+
+ - Easy Auth does not check the scope, or if the token is an app token
+
+ For these reasons, developers may choose to follow this approach, which is made possible by an open source library ([jwt-validate](https://www.npmjs.com/package/jwt-validate)) by [Waldek Mastykarz](https://github.com/waldekmastykarz). This library is not a Microsoft product, and is subject to an MIT license (i.e. use at your own risk). Many thanks to Waldek for creating this library since Microsoft does not currently provide a token validation library for NodeJS.
 
 
-4. In [Teams Developer Portal](https://dev.teams.microsoft.com) under "Tools" / "OAuth client registrations", find your new client registration and make a copy of it for local use. Using the copy:
+## Prerequisites
+![drop](https://img.shields.io/badge/Teams&nbsp;Toolkit&nbsp;for&nbsp;VS&nbsp;Code-5.10-green.svg)
 
-    - Replace the Base URL with your persistent tunnel URL
-    - Find the Client ID and copy it to your **env/.env.local** file
-    - Find the tenant ID (it's the GUID in the Token endpoint field) and copy it into your **env/.env.local** file
-    - Copy the OAuth client registration ID into your **env/.env.local** file
-    - Add a line to **env/.env.local** and set API_SCOPE to "repairs_read"
+ * Microsoft 365 tenant with Microsoft 365 Copilot
+ * [Visual Studio Code](https://code.visualstudio.com/) with [Teams Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) v5.10 or greater
+ * [NodeJS v18](https://nodejs.org/en/download/package-manager)
+ * [Azure Functions core tools](https://learn.microsoft.com/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools)
 
-    Your **env/.env.local** file should now contain these added lines (with your ID's in place)
+_Please list any portions of the toolchain required to build and use the sample, along with download links_
 
-    ~~~text
-    # Values used not provided by TTK
-    API_APPLICATION_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-    API_TENANT_ID=yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy
-    API_SCOPE=repairs_read
-    OAUTH2AUTHCODE_CONFIGURATION_ID=ODgzxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=
-    ~~~
+## Version history
 
-5. In your project folder run this command:
+Version|Date|Author|Comments
+-------|----|----|--------
+1.0|October 9, 2024|Bob German|Initial release
 
-    ~~~sh
-    npm i jwt-validate
-    ~~~
+## Disclaimer
 
-6. Add validation code to your Azure function (**src/functions/repairs.ts**):
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-    a. Near the top of the file, add these lines:
+---
 
-    ~~~typescript
-    import { TokenValidator, ValidateTokenOptions, getEntraJwksUri } from 'jwt-validate';
-    let validator: TokenValidator;
-    ~~~
+## Minimal Path to Awesome
+
+* Clone this repository
+* Open the cloned copy of this folder with Visual Studio Code
+* Install required npm packages
+
+```shell
+  npm install
+```
+
+* Press F5 to run the application. A browser window should open offering to add your application to Microsoft Teams.
 
 
-    b. Add the following code after the line `const assignedTo = req.query.get("assignedTo");`:
+## Features
 
-    ~~~typescript
-    // Try to validate the token and get user's basic information
-    try {
-        const { API_APPLICATION_ID, API_TENANT_ID, API_SCOPE } = process.env;
-        const token = req.headers.get("Authorization")?.split(" ")[1];
-        if (token) {
+This sample illustrates the following concepts:
 
-            if (!validator) {
-                const entraJwksUri = await getEntraJwksUri(API_TENANT_ID);
-                validator = new TokenValidator({
-                    jwksUri: entraJwksUri
-                });
-                console.log("Token validator created");
-            }
+Building a declarative agent for Microsoft 365 Copilot with an API plugin
+Connecting an API plugin to an API secured with OAuth
+Using Azure Functions to build an API secured with Azure App Service authentication and authorization (Easy Auth)
+Using dev tunnels to test the API plugin locally
 
-            const options: ValidateTokenOptions = {
-                audience: `${API_APPLICATION_ID}`,
-                issuer: `https://login.microsoftonline.com/${API_TENANT_ID}/v2.0`,
-                scp: [API_SCOPE]
-            };
-
-            const validToken = await validator.validateToken(token, options);
-
-            const userId = validToken.oid;
-            const userName = validToken.name;
-            console.log(`Token is valid for user ${userName} (${userId})`);
-        } else {
-            console.error("No token found in request");
-            throw (new Error("No token found in request"));
-        }
-    }
-    catch (ex) {
-        console.error(ex);
-        return  {
-            status: 401
-        };
-    }
-    ~~~
-
-# Overview of the declarative agent with API plugin template
-
-## Build a declarative agent with an API Plugin from a new API with Azure Functions
-
-With the declarative agent, you can build a custom version of Copilot that can be used for specific scenarios, such as for specialized knowledge, implementing specific processes, or simply to save time by reusing a set of AI prompts. For example, a grocery shopping Copilot declarative agent can be used to create a grocery list based on a meal plan that you send to Copilot.
-
-You can extend declarative agents using plugins to retrieve data and execute tasks on external systems. A declarative agent can utilize multiple plugins at the same time.
-![image](https://github.com/user-attachments/assets/9939972e-0449-410c-b237-d9d748cd6628)
-
-## Get started with the template
-
-> **Prerequisites**
->
-> To run this app template in your local dev machine, you will need:
->
-> - [Node.js](https://nodejs.org/), supported versions: 18
-> - A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts)
-> - [Teams Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Teams Toolkit CLI](https://aka.ms/teams-toolkit-cli)
-> - [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
-
-1. First, select the Teams Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. Select `Debug in Copilot (Edge)` or `Debug in Copilot (Chrome)` from the launch configuration dropdown.
-4. Select your declarative agent from the `Copilot` app.
-5. Send a message to Copilot to find a repair record.
-
-## What's included in the template
-
-| Folder       | Contents                                                                                    |
-| ------------ | ------------------------------------------------------------------------------------------- |
-| `.vscode`    | VSCode files for debugging                                                                  |
-| `appPackage` | Templates for the Teams application manifest, the plugin manifest and the API specification |
-| `env`        | Environment files                                                                           |
-| `infra`      | Templates for provisioning Azure resources                                                  |
-| `src`        | The source code for the repair API                                                          |
-
-The following files can be customized and demonstrate an example implementation to get you started.
-
-| File                                               | Contents                                                                                              |
-| -------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `src/functions/repairs.ts`                         | The main file of a function in Azure Functions.                                                       |
-| `src/repairsData.json`                             | The data source for the repair API.                                                                   |
-| `appPackage/apiSpecificationFile/repair.dev.yml`   | A file that describes the structure and behavior of the repair API.                                   |
-| `appPackage/apiSpecificationFile/repair.local.yml` | A file that describes the structure and behavior of the repair API for local execution and debugging. |
-| `appPackage/manifest.json`                         | Teams application manifest that defines metadata for your plugin inside Microsoft Teams.              |
-| `appPackage/ai-plugin.dev.json`                    | The manifest file for your API plugin that contains information for your API and used by LLM.     |
-| `appPackage/ai-plugin.local.json`                  | The manifest file for your API plugin for local execution and debugging.                          |
-| `appPackage/repairDeclarativeAgent.json` | Define the behaviour and configurations of the declarative agent. |
-
-The following are Teams Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Teams Toolkit works.
-
-| File                 | Contents                                                                                                                                                                                                                                                |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `teamsapp.yml`       | This is the main Teams Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions.                                                                                                               |
-| `teamsapp.local.yml` | This overrides `teamsapp.yml` with actions that enable local execution and debugging.                                                                                                                                                                   |
-| `aad.manifest.json`  | This file defines the configuration of Microsoft Entra app. This template will only provision [single tenant](https://learn.microsoft.com/azure/active-directory/develop/single-and-multi-tenant-apps#who-can-sign-in-to-your-app) Microsoft Entra app. |
-
-## How OAuth works in the API plugin
-
-![oauth-flow](https://github.com/OfficeDev/teams-toolkit/assets/107838226/f074abbe-d9e3-4a46-8e08-feb66b17a539)
-
-> **Note**: The OAuth flow is only functional in remote environments. It cannot be tested in a local environment due to the lack of authentication support in Azure Function core tools.
-
-## Addition information and references
-
-- [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
-- [Extend Microsoft 365 Copilot](https://aka.ms/teamsfx-copilot-plugin)
-- [Message extensions for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-message-extension-bot)
-- [Microsoft Graph Connectors for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-graph-connector)
-- [Microsoft 365 Copilot extensibility samples](https://learn.microsoft.com/microsoft-365-copilot/extensibility/samples)
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-repairs-oauth-validated" />
