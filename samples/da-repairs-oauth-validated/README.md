@@ -24,7 +24,7 @@ Key aspects of the sample:
 
  For these reasons, developers may choose to follow the approach used in this sample. 
  
- Microsoft does not currently provide a library for validating OAuth tokens in NodeJS; the [official documentation is here](https://learn.microsoft.com/entra/identity-platform/claims-validation). So this sample uses an open source library ([jwt-validate](https://www.npmjs.com/package/jwt-validate)) by [Waldek Mastykarz](https://github.com/waldekmastykarz), which aims to follow the documented practices. This library is not a Microsoft product, and is subject to an MIT license (i.e. use at your own risk). Many thanks to Waldek for creating the library since Microsoft does not currently provide a token validation library for NodeJS.
+ Microsoft does not currently provide a library for validating OAuth tokens in NodeJS; the [official documentation is here](https://learn.microsoft.com/entra/identity-platform/claims-validation). So this sample uses an open source library ([jwt-validate](https://www.npmjs.com/package/jwt-validate)) by [Waldek Mastykarz](https://github.com/waldekmastykarz), which aims to follow the documented practices. This library is not a Microsoft product, and is subject to an MIT license (i.e. use at your own risk). Many thanks to Waldek for creating the library.
 
 ## Prerequisites
 ![drop](https://img.shields.io/badge/Teams&nbsp;Toolkit&nbsp;for&nbsp;VS&nbsp;Code-5.10-green.svg)
