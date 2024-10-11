@@ -8,9 +8,9 @@ This sample demonstrates how to build a declarative agent for Microsoft 365 Copi
 
 Key aspects of the sample:
 
- - Shows how to configure Teams Toolkit make a declarative agent with an API plugin that is secured with Entra ID with just F5 to run locally. This differs from the Teams Toolkit scaffolding, which doesn't authenticate users locally but instead relies on use of [Azure App Services authentication (EasyAuth)](https://learn.microsoft.com/azure/app-service/overview-authentication-authorization) for security in Azure only.
+ - Shows how to configure Teams Toolkit make a declarative agent with an API plugin that is secured with Entra ID with just F5 to run locally.
 
- - Shows how to validate an Entra ID access token in NodeJS (JavaScript/TypeScript) rather than rely on an external service.
+ - Shows how to validate an Entra ID access token in NodeJS (JavaScript/TypeScript) rather than rely on an external service. This differs from the Teams Toolkit scaffolding, which doesn't authenticate users locally but instead relies on use of [Azure App Services authentication (EasyAuth)](https://learn.microsoft.com/azure/app-service/overview-authentication-authorization) for security in Azure only.
 
  Here are some advantages of validating the token in your code instead of using Easy Auth
 
