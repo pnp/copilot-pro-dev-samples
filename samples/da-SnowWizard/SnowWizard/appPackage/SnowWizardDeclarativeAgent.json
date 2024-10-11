@@ -1,0 +1,21 @@
+{
+    "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
+    "version": "v1.0",
+    "name": "Snow Wizard ${{APP_NAME_SUFFIX}}",
+    "description": "This M365 Copilot declarative agent interfaces with ServiceNow to enable AI-driven automation. It allows the Copilot to retrieve and process data from Service Now, providing users with intelligent, conversational interaction for executing tasks and managing workflows seamlessly through an AI-powered chatbot. This agent supports both content retrieval and action execution within Service Now, enhancing productivity and efficiency in service management operations.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "text": "List all ServiceNow incidents"
+        },
+        {
+            "text": "Create a ServiceNow incident with the 'The 3rd floor printer is not working' short description"
+        }
+    ],
+    "actions": [
+        {
+            "id": "SnowWizard",
+            "file": "SnowWizardPlugin.json"
+        }
+    ]
+}
