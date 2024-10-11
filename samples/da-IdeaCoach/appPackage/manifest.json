@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.0",
+    "id": "03386cc1-d424-4eaa-95a8-4a8ec605190e",
+    "developer": {
+        "name": "Microsoft Corporation",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://privacy.microsoft.com/PrivacyStatement",
+        "termsOfUseUrl": "https://support.microsoft.com/en-us/office/supplementary-terms-of-service-for-teams-apps-powered-by-microsoft-365-services-and-applications-bc6027fe-68c3-4758-a70d-cfe97c43b4e2"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Idea Coach",
+        "full": "Idea Coach"
+    },
+    "description": {
+        "short": "Plan and navigate the brainstorming process",
+        "full": "Meet Idea Coach, your personal brainstorming companion designed to inspire creativity. With a fun and collaborative tone, Idea Coach helps you plan and navigate the brainstorming process, making sure you stay focused and on track. Idea Coach is designed to work with Microsoft 365 Copilot."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [     
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}

@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.0",
+    "id": "78079743-a11b-45d0-99cb-a69d37717373",
+    "developer": {
+        "name": "Microsoft Corporation",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://privacy.microsoft.com/PrivacyStatement",
+        "termsOfUseUrl": "https://support.microsoft.com/en-us/office/supplementary-terms-of-service-for-teams-apps-powered-by-microsoft-365-services-and-applications-bc6027fe-68c3-4758-a70d-cfe97c43b4e2"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Learning Coach",
+        "full": "Learning Coach"
+    },
+    "description": {
+        "short": "Unlock your potential with Learning Coach",
+        "full": "Learning Coach is the supportive and knowledgeable learning assistant dedicated to helping you master complex subjects, refine your skills, and create the perfect learning plan tailored to your goals. Learning Coach is designed to work with Microsoft 365 Copilot."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [             
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}

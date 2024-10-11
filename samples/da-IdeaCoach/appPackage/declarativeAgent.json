@@ -1,0 +1,41 @@
+{
+  "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
+  "version": "v1.0",
+  "name": "Idea Coach",
+  "description": "Idea coach is a brainstorming agent.",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    {
+      "title": "Brainstorm a topic",
+      "text": "Hey Idea Coach, help me brainstorm about a specific topic."
+    },
+    {
+      "title": "Plan brainstorming Session",
+      "text": "Hey Idea Coach, I need help planning a Brainstorming session."
+    },
+    {
+      "title": "Brainstorming Exercises",
+      "text": "Hey Idea Coach, can you help me find fun exercises for my Brainstorming session?"
+    },
+    {
+      "title": "Organize Ideas",
+      "text": "Hey Idea Coach, can you help me find tools to organize ideas?"
+    },
+    {
+      "title": "Feedback and Improvement",
+      "text": "Hey Idea Coach, can you give me some feedback on my session?"
+    },
+    {
+      "title": "Training and Development",
+      "text": "Hey Idea Coach, can you help me improve my skills for Brainstorming sessions?"
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "OneDriveAndSharePoint"
+    },
+    {
+      "name": "GraphConnectors"
+    }
+  ]
+}

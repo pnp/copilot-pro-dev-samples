@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.0",
+    "id": "f72d7797-c6ee-4fd3-9454-028d0095068b",
+    "developer": {
+        "name": "Microsoft Corporation",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://privacy.microsoft.com/PrivacyStatement",
+        "termsOfUseUrl": "https://support.microsoft.com/en-us/office/supplementary-terms-of-service-for-teams-apps-powered-by-microsoft-365-services-and-applications-bc6027fe-68c3-4758-a70d-cfe97c43b4e2"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Writing Coach",
+        "full": "Writing Coach"
+    },
+    "description": {
+        "short": "Take your writing to the next level with Writing Coach",
+        "full": "Writing Coach is an expert assistant dedicated to providing detailed, constructive feedback and helping you excel in any writing task. Whether you're refining an email, crafting a story, or developing a whitepaper, Writing Coach is here to guide you every step of the way. Writing Coach is designed to work with Microsoft 365 Copilot."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [             
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}

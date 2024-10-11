@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.0",
+    "id": "61885aa9-b4b5-40b2-8371-0ab20a25fe83",
+    "developer": {
+        "name": "Microsoft Corporation",
+        "websiteUrl": "https://www.microsoft.com",
+        "privacyUrl": "https://privacy.microsoft.com/PrivacyStatement",
+        "termsOfUseUrl": "https://support.microsoft.com/en-us/office/supplementary-terms-of-service-for-teams-apps-powered-by-microsoft-365-services-and-applications-bc6027fe-68c3-4758-a70d-cfe97c43b4e2"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Prompt Coach",
+        "full": "Prompt Coach"
+    },
+    "description": {
+        "short": "Write and improve your prompts",
+        "full": "Prompt Coach is designed to assist in crafting well-structured, effective prompts. This companion excels in both generating new prompts and analyzing existing ones, ensuring they align with your goals. With a focus on guiding users through the entire process, this companion offers valuable feedback, examples, and actionable suggestions for continuous improvement. Prompt Coach is designed to work with Microsoft 365 Copilot."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [             
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}
