@@ -14,6 +14,7 @@ This sample demonstrates how to build a declarative agent for Microsoft 365 Copi
 
 Version|Date|Comments
 -------|----|--------
+1.1|October 11, 2024|Updated OAuth configuration and project setup
 1.0|October 4, 2024|Initial release
 
 ## Prerequisites
