@@ -33,6 +33,7 @@ _Please list any portions of the toolchain required to build and use the sample,
 
 Version|Date|Author|Comments
 -------|----|----|--------
+1.1|October 11, 2024|Waldek Mastykarz|Updated OAuth configuration and project setup
 1.0|October 9, 2024|Bob German|Initial release
 
 ## Disclaimer

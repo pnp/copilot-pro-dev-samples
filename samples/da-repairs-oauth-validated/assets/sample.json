@@ -10,7 +10,7 @@
       "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses an open source library to validate Entra ID tokens to secure access to APIs."
     ],
     "creationDateTime": "2024-10-09",
-    "updateDateTime": "2024-10-09",
+    "updateDateTime": "2024-10-11",
     "products": [
       "Microsoft 365 Copilot"
     ],
@@ -45,6 +45,11 @@
         "gitHubAccount": "BobGerman",
         "pictureUrl": "https://github.com/BobGerman.png",
         "name": "Bob German"
+      },
+      {
+        "gitHubAccount": "waldekmastykarz",
+        "pictureUrl": "https://github.com/waldekmastykarz.png",
+        "name": "Waldek Mastykarz"
       }
     ],
     "references": [

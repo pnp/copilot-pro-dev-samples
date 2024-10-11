@@ -4,6 +4,14 @@
 version: v1.7
 
 provision:
+  - uses: file/createOrUpdateJsonFile
+    with:
+      target: ./local.settings.json
+      content:
+        IsEncrypted: false
+        Values:
+          FUNCTIONS_WORKER_RUNTIME: 'node'
+
   # Creates a new Microsoft Entra app to authenticate users if
   # the environment variable that stores clientId is empty
   - uses: aadApp/create
@@ -60,6 +68,13 @@ provision:
       apiSpecPath: ./appPackage/apiSpecificationFile/repair.yml
     writeToEnvironmentFile:
       configurationId: OAUTH2AUTHCODE_CONFIGURATION_ID
+
+  - uses: oauth/update
+    with:
+      name: oAuth2AuthCode
+      appId: ${{TEAMS_APP_ID}}
+      apiSpecPath: ./appPackage/apiSpecificationFile/repair.yml
+      configurationId: ${{OAUTH2AUTHCODE_CONFIGURATION_ID}}
 
   # Set required variables for local launch
   - uses: script
