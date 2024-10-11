@@ -4,6 +4,7 @@
  */
 
 import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
+import { jwtDecode, JwtPayload } from "jwt-decode";
 
 import repairRecords from "../repairsData.json";
 
@@ -19,6 +20,13 @@ export async function repairs(
   context: InvocationContext
 ): Promise<HttpResponseInit> {
   context.log("HTTP trigger function processed a request.");
+
+  if (!hasRequiredScopes(req, 'repairs_read')) {
+    return {
+      status: 403,
+      body: "Insufficient permissions",
+    };
+  }
 
   // Initialize response.
   const res: HttpResponseInit = {
@@ -47,6 +55,26 @@ export async function repairs(
   // Return filtered repair records, or an empty array if no records were found.
   res.jsonBody.results = repairs ?? [];
   return res;
+}
+
+function hasRequiredScopes(req: HttpRequest, requiredScopes: string[] | string): boolean {
+  if (typeof requiredScopes === "string") {
+    requiredScopes = [requiredScopes];
+  }
+
+  const token = req.headers.get("Authorization")?.split(" ");
+  if (!token || token[0] !== "Bearer") {
+    return false;
+  }
+
+  try {
+    const decodedToken = jwtDecode<JwtPayload & { scp?: string }>(token[1]);
+    const scopes = decodedToken.scp?.split(" ") ?? [];
+    return requiredScopes.every(scope => scopes.includes(scope));
+  }
+  catch (error) {
+    return false;
+  }
 }
 
 app.http("repairs", {

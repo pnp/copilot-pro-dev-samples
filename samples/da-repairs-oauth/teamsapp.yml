@@ -75,7 +75,7 @@ provision:
       # Relative path to this file. Environment variables in manifest will
       # be replaced before apply to Microsoft Entra app
       manifestPath: ./aad.manifest.json
-      outputFilePath: ./build/aad.manifest.${{TEAMSFX_ENV}}.json
+      outputFilePath: ./build/aad.manifest.json
 
   - uses: oauth/register
     with:
@@ -84,10 +84,19 @@ provision:
       appId: ${{TEAMS_APP_ID}}
       clientId: ${{AAD_APP_CLIENT_ID}}
       clientSecret: ${{SECRET_AAD_APP_CLIENT_SECRET}}
+      isPKCEEnabled: true
       # Path to OpenAPI description document
-      apiSpecPath: ./appPackage/apiSpecificationFile/repair.${{TEAMSFX_ENV}}.yml
+      apiSpecPath: ./appPackage/apiSpecificationFile/repair.yml
     writeToEnvironmentFile:
       configurationId: OAUTH2AUTHCODE_CONFIGURATION_ID
+
+  - uses: oauth/update
+    with:
+      name: oAuth2AuthCode
+      appId: ${{TEAMS_APP_ID}}
+      apiSpecPath: ./appPackage/apiSpecificationFile/repair.yml
+      configurationId: ${{OAUTH2AUTHCODE_CONFIGURATION_ID}}
+      isPKCEEnabled: true
 
   # Build Teams app package with latest env value
   - uses: teamsApp/zipAppPackage
@@ -180,4 +189,4 @@ publish:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
-projectId: 0837938e-eb6a-4e86-8e6d-8ab549dcbffe
+

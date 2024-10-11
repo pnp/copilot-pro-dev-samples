@@ -24,7 +24,8 @@ paths:
       summary: List all repairs
       description: Returns a list of repairs with their details and images
       security:
-        - oAuth2AuthCode: []
+        - oAuth2AuthCode:
+          - api://${{AAD_APP_CLIENT_ID}}/repairs_read
       parameters:
         - name: assignedTo
           in: query

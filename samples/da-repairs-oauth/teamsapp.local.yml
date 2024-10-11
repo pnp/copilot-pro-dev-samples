@@ -64,6 +64,7 @@ provision:
       appId: ${{TEAMS_APP_ID}}
       clientId: ${{AAD_APP_CLIENT_ID}}
       clientSecret: ${{SECRET_AAD_APP_CLIENT_SECRET}}
+      isPKCEEnabled: true
       # Path to OpenAPI description document
       apiSpecPath: ./appPackage/apiSpecificationFile/repair.yml
     writeToEnvironmentFile:
@@ -75,6 +76,7 @@ provision:
       appId: ${{TEAMS_APP_ID}}
       apiSpecPath: ./appPackage/apiSpecificationFile/repair.yml
       configurationId: ${{OAUTH2AUTHCODE_CONFIGURATION_ID}}
+      isPKCEEnabled: true
 
   # Set required variables for local launch
   - uses: script
