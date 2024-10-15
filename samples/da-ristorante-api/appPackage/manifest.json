@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+  "manifestVersion": "devPreview",
+  "id": "${{TEAMS_APP_ID}}",
+  "version": "1.0.0",
+  "developer": {
+    "name": "Teams App, Inc.",
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/privacy",
+    "termsOfUseUrl": "https://www.example.com/termsofuse"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Il Ristorante",
+    "full": "See the today's menu and place orders"
+  },
+  "description": {
+    "short": "Order delicious Italian dishes and drinks right from the comfort of your desk.",
+    "full": "Order the most delicious Italian dishes and drinks from the comfort of your desk."
+  },
+  "accentColor": "#FFFFFF",
+  "copilotExtensions": { 
+    "declarativeCopilots": [            
+      {
+        "id": "declarativeAgent",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  },
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ]
+}

@@ -1,0 +1,176 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Italian Frittata",
+    "description": "A fluffy omelette filled with sautéed mushrooms, onions, and melted pecorino, served with a side of roasted cherry tomatoes.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/frittata.jpeg",
+    "price": 8.99,
+    "allergens": [
+      "eggs",
+      "dairy"
+    ],
+    "course": "breakfast",
+    "type": "dish"
+  },
+  {
+    "id": 2,
+    "name": "Prosciutto & Melon",
+    "description": "Fresh, sweet cantaloupe wrapped in thin slices of salty prosciutto, drizzled with balsamic glaze and a hint of mint.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/prosciutto_melon.jpeg",
+    "price": 7.50,
+    "allergens": [],
+    "course": "breakfast",
+    "type": "dish"
+  },
+  {
+    "id": 3,
+    "name": "Ricotta Pancakes",
+    "description": "Light and fluffy pancakes made with creamy ricotta cheese, topped with fresh berries and a dusting of powdered sugar.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/ricotta_pancakes.jpeg",
+    "price": 9.99,
+    "allergens": [
+      "gluten",
+      "dairy",
+      "eggs"
+    ],
+    "course": "breakfast",
+    "type": "dish"
+  },
+  {
+    "id": 10,
+    "name": "Cappuccino",
+    "description": "A perfect blend of espresso and steamed milk with a thick, velvety foam topping.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/cappuccino.jpeg",
+    "price": 3.99,
+    "allergens": [
+      "dairy"
+    ],
+    "course": "breakfast",
+    "type": "drink"
+  },
+  {
+    "id": 11,
+    "name": "Freshly Squeezed Orange Juice",
+    "description": "Refreshing and tangy, made from hand-picked oranges, a perfect start to your day.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/orange_juice.jpeg",
+    "price": 4.50,
+    "allergens": [],
+    "course": "breakfast",
+    "type": "drink"
+  },
+  {
+    "id": 4,
+    "name": "Caprese Salad",
+    "description": "Juicy vine-ripened tomatoes, fresh mozzarella, and fragrant basil leaves, drizzled with extra virgin olive oil and a touch of balsamic.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/caprese_salad.jpeg",
+    "price": 10.50,
+    "allergens": [
+      "dairy"
+    ],
+    "course": "lunch",
+    "type": "dish"
+  },
+  {
+    "id": 5,
+    "name": "Spaghetti Carbonara",
+    "description": "Al dente spaghetti tossed in a velvety sauce of eggs, Parmesan, and crispy pancetta, finished with cracked black pepper and a sprinkle of parsley.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/spaghetti_carbonara.jpeg",
+    "price": 14.99,
+    "allergens": [
+      "gluten",
+      "dairy",
+      "eggs"
+    ],
+    "course": "lunch",
+    "type": "dish"
+  },
+  {
+    "id": 6,
+    "name": "Grilled Chicken Panini",
+    "description": "Grilled marinated chicken breast with sun-dried tomatoes, arugula, and melted provolone, served on toasted ciabatta bread with pesto mayo.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/chicken_panini.jpeg",
+    "price": 12.50,
+    "allergens": [
+      "gluten",
+      "dairy"
+    ],
+    "course": "lunch",
+    "type": "dish"
+  },
+  {
+    "id": 12,
+    "name": "Iced Tea",
+    "description": "A cool and refreshing brewed tea with a hint of lemon and mint.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/iced_tea.jpeg",
+    "price": 2.99,
+    "allergens": [],
+    "course": "lunch",
+    "type": "drink"
+  },
+  {
+    "id": 13,
+    "name": "San Pellegrino Sparkling Water",
+    "description": "Crisp, bubbly sparkling water from the Italian Alps, a refreshing palate cleanser.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/sparkling_water.jpeg",
+    "price": 3.50,
+    "allergens": [],
+    "course": "lunch",
+    "type": "drink"
+  },
+  {
+    "id": 7,
+    "name": "Veal Osso Buco",
+    "description": "Tender veal shanks braised in a rich tomato and white wine sauce, served with a creamy saffron risotto and gremolata.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/veal_osso_buco.jpeg",
+    "price": 23.99,
+    "allergens": [],
+    "course": "dinner",
+    "type": "dish"
+  },
+  {
+    "id": 8,
+    "name": "Seafood Linguine",
+    "description": "Fresh linguine pasta tossed with mussels, clams, shrimp, and calamari in a delicate white wine and garlic sauce, with a hint of red pepper flakes.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/seafood_linguine.jpeg",
+    "price": 19.99,
+    "allergens": [
+      "gluten",
+      "shellfish"
+    ],
+    "course": "dinner",
+    "type": "dish"
+  },
+  {
+    "id": 9,
+    "name": "Tiramisu",
+    "description": "A luscious, creamy blend of espresso-soaked ladyfingers, mascarpone, and cocoa, this dessert is a classic Italian indulgence.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/tiramisu.jpeg",
+    "price": 7.50,
+    "allergens": [
+      "dairy",
+      "eggs"
+    ],
+    "course": "dinner",
+    "type": "dish"
+  },
+  {
+    "id": 14,
+    "name": "Chianti Classico",
+    "description": "A robust and velvety red wine with notes of cherries, violet, and subtle spice, perfect for pairing with hearty Italian dishes.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/chianti_classico.jpeg",
+    "price": 9.99,
+    "allergens": [],
+    "course": "dinner",
+    "type": "drink"
+  },
+  {
+    "id": 15,
+    "name": "Espresso",
+    "description": "A bold and intense shot of rich espresso, with deep crema, the perfect end to a delightful meal.",
+    "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/espresso.jpeg",
+    "price": 2.99,
+    "allergens": [],
+    "course": "dinner",
+    "type": "drink"
+  }
+]

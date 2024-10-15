@@ -1,0 +1,140 @@
+{
+  "$schema": "https://aka.ms/json-schemas/copilot/plugin/v2.1/schema.json",
+  "schema_version": "v2.1",
+  "namespace": "ilristorante",
+  "name_for_human": "Il Ristorante",
+  "description_for_human": "See the today's menu and place orders",
+  "description_for_model": "Plugin for getting the today's menu, optionally filtered by course and allergens, and placing orders",
+  "functions": [
+    {
+      "name": "getDishes",
+      "description": "Returns information about the dishes on the menu. Can filter by course (breakfast, lunch or dinner), name, allergens, or type (dish, drink).",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.dishes",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.description"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "Image",
+                    "url": "${image_url}",
+                    "size": "large"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "${name}",
+                    "weight": "Bolder"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "${description}",
+                    "wrap": true
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "Allergens: ${if(count(allergens) > 0, join(allergens, ', '), 'none')}",
+                    "weight": "Lighter"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "**Price:** €${formatNumber(price, 2)}",
+                    "weight": "Lighter",
+                    "spacing": "None"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      } 
+    },
+    {
+      "name": "placeOrder",
+      "description": "Places an order and returns the order details",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.order_id",
+            "subtitle": "$.total_price"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "Order Confirmation 🤌",
+                "size": "Large",
+                "weight": "Bolder",
+                "horizontalAlignment": "Center"
+              },
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "Your order has been successfully placed!",
+                    "weight": "Bolder",
+                    "spacing": "Small"
+                  },
+                  {
+                    "type": "FactSet",
+                    "facts": [
+                      {
+                        "title": "Order ID:",
+                        "value": "${order_id} "
+                      },
+                      {
+                        "title": "Status:",
+                        "value": "${status}"
+                      },
+                      {
+                        "title": "Total Price:",
+                        "value": "€${formatNumber(total_price, 2)}"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }          
+        }
+      } 
+    }    
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "None"
+      },
+      "spec": {
+        "url": "apiSpecificationFile/ristorante.yml",
+        "progress_style": "ShowUsageWithInputAndOutput"
+      },
+      "run_for_functions": ["getDishes", "placeOrder"]
+    }
+  ],
+  "capabilities": {
+    "localization": {},
+    "conversation_starters": [
+      {
+        "text": "What's for lunch today?"
+      },
+      {
+        "text": "What can I order for dinner that is gluten-free?"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+### Get all dishes
+GET http://localhost:7071/api/dishes
+
+### Get dishes for lunch
+GET http://localhost:7071/api/dishes?course=lunch
+
+### Get drinks for lunch
+GET http://localhost:7071/api/dishes?course=lunch&type=drink
+
+### Place an order
+POST http://localhost:7071/api/orders
+Content-Type: application/json
+
+{
+  "dishes": [
+    {
+      "name": "frittata",
+      "quantity": 2
+    },
+    {
+      "name": "cappuccino",
+      "quantity": 1
+    }
+  ]
+}
