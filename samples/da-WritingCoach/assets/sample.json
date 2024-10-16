@@ -1,0 +1,68 @@
+[
+    {
+      "name": "da-WritingCoach",
+      "source": "pnp",
+      "title": "Writing Coach Declarative Agent for Microsoft 365 Copilot Sample",
+      "shortDescription": "First Party Declarative Agent Writing Coach shared as a sample",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-WritingCoach",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-WritingCoach",
+      "longDescription": [
+        "The \"Writing Coach\" is an open-source declarative Agent designed to assist users in various aspects of writing. It provides detailed and constructive feedback on pieces of writing, helps change the tone of emails or messages, translates text into different languages, and guides users in writing clear and effective instructions for complex processes. Additionally, the agent supports users in crafting professional blog posts and writing comprehensive whitepapers. Leveraging the capabilities of OneDrive, SharePoint, and Graph Connectors, the "Writing Coach" aims to streamline the writing process, enhance writing skills, and ensure high-quality written content."    
+    ],
+      "creationDateTime": "2024-10-04",
+      "updateDateTime": "2024-10-04",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Node.js"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "TypeScript"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "No"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/493864eea3d79bbb9a6e59ed7e063c4dad2a98b1/samples/da-WritingCoach/assets/WritingCoach1.png",
+          "alt": "Writing Coach Declarative Agent for Microsoft 365 Copilot Sample"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "phnguy",
+          "pictureUrl": "https://github.com/phnguy.png",
+          "name": "Phi-Lay NGUYEN"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Declarative agents for Microsoft 365 Copilot overview",
+          "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+        },
+        {
+          "name": "Build a declarative agent for Microsoft 365 Copilot",
+          "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
+        }
+      ]
+    }
+  ]

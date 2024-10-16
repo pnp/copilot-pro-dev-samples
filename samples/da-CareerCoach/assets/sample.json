@@ -1,11 +1,11 @@
 [
     {
-      "name": "pnp-copilot-pro-dev-CareerCoach",
+      "name": "da-CareerCoach",
       "source": "pnp",
       "title": "Career Coach Declarative Agent for Microsoft 365 Copilot Sample",
       "shortDescription": "First Party Declarative Agent Career Coach shared as a sample",
-      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth",
-      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CareerCoach",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CareerCoach",
       "longDescription": [
         "The \"Career Coach\" Declarative Agent is an open-source AI-driven tool designed to assist professionals in their career development. This agent provides personalized suggestions and actionable plans to help users learn and grow in their careers. By leveraging data such as the user's current role, skills, and career aspirations, the Career Coach offers tailored advice on skill development, learning opportunities, and career transitions. It maintains a professional and supportive tone, ensuring that interactions are contextual and relevant. The agent integrates with OneDrive, SharePoint, and Graph Connectors to enhance its capabilities. Key features include creating detailed career development plans, performing skill gap analyses, recommending learning resources, and offering networking strategies. This open-source project aims to empower individuals to achieve their career goals through structured guidance and support. With the declarative agent, you can build a custom version of Copilot that can be used for specific scenarios, such as for specialized knowledge, implementing specific processes, or simply to save time by reusing a set of AI prompts. For example, a grocery shopping Copilot declarative agent can be used to create a grocery list based on a meal plan that you send to Copilot. To run this app template in your local dev machine, you will need Node.js (supported versions: 16, 18), a Microsoft 365 account for development, Teams Toolkit Visual Studio Code Extension version 5.0.0 and higher or Teams Toolkit CLI, and a Microsoft 365 Copilot license. First, select the Teams Toolkit icon on the left in the VS Code toolbar. In the Account section, sign in with your Microsoft 365 account if you haven't already. Create Teams app by clicking `Provision` in \"Lifecycle\" section. Select `Preview in Copilot (Edge)` or `Preview"    
     ],
@@ -25,7 +25,7 @@
         },
         {
           "key": "API-PLUGIN",
-          "value": "Yes"
+          "value": "No"
         },
         {
           "key": "GRAPH-CONNECTOR",
@@ -36,15 +36,15 @@
         {
           "type": "image",
           "order": 100,
-          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-repairs-oauth/assets/screenshot.png",
-          "alt": "Declarative agent answering questions about repairs using the information from an API secured with OAuth"
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/43afe103f9489aeb297b4811ee1dca54639f13d5/samples/da-CareerCoach/assets/CareerCoach1.png",
+          "alt": "Career Coach Declarative Agent for Microsoft 365 Copilot Sample"
         }
       ],
       "authors": [
         {
-          "gitHubAccount": "waldekmastykarz",
-          "pictureUrl": "https://github.com/waldekmastykarz.png",
-          "name": "Waldek Mastykarz"
+          "gitHubAccount": "MarcusCastroMS",
+          "pictureUrl": "https://github.com/MarcusCastroMS.png",
+          "name": "Marcus Castro"
         }
       ],
       "references": [
