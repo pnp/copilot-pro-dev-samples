@@ -7,7 +7,7 @@
       "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-WritingCoach",
       "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-WritingCoach",
       "longDescription": [
-        "The \"Writing Coach\" is an open-source declarative Agent designed to assist users in various aspects of writing. It provides detailed and constructive feedback on pieces of writing, helps change the tone of emails or messages, translates text into different languages, and guides users in writing clear and effective instructions for complex processes. Additionally, the agent supports users in crafting professional blog posts and writing comprehensive whitepapers. Leveraging the capabilities of OneDrive, SharePoint, and Graph Connectors, the "Writing Coach" aims to streamline the writing process, enhance writing skills, and ensure high-quality written content."    
+        "The \"Writing Coach\" is an open-source declarative Agent designed to assist users in various aspects of writing. It provides detailed and constructive feedback on pieces of writing, helps change the tone of emails or messages, translates text into different languages, and guides users in writing clear and effective instructions for complex processes. Additionally, the agent supports users in crafting professional blog posts and writing comprehensive whitepapers. Leveraging the capabilities of OneDrive, SharePoint, and Graph Connectors, the \"Writing Coach\" aims to streamline the writing process, enhance writing skills, and ensure high-quality written content."    
     ],
       "creationDateTime": "2024-10-04",
       "updateDateTime": "2024-10-04",
