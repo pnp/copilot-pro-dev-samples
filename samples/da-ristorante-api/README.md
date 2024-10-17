@@ -7,6 +7,14 @@ This sample demonstrates how to build a declarative agent for Microsoft 365 Copi
 ![Declarative agent showing what's on the menu for lunch](./assets/screenshot-menu.png)
 ![Declarative agent ordering lunch](./assets/screenshot-order.png)
 
+## Features
+
+This sample illustrates the following concepts:
+
+* Building a declarative agent for Microsoft 365 Copilot with an API plugin
+* Connecting an API plugin to an anonymous API
+* Using [dev tunnels](https://learn.microsoft.com/azure/developer/dev-tunnels/overview) to test the API plugin locally
+
 ## Contributors
 
 * [Waldek Mastykarz](https://github.com/waldekmastykarz)
@@ -29,14 +37,6 @@ Version|Date|Comments
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api) then unzip it)
 * Open the Teams Toolkit extension and sign in to your Microsoft 365 tenant with Microsoft 365 Copilot
 * Select **Debug in Copilot (Edge)** from the launch configuration dropdown
-
-## Features
-
-This sample illustrates the following concepts:
-
-* Building a declarative agent for Microsoft 365 Copilot with an API plugin
-* Connecting an API plugin to an anonymous API
-* Using [dev tunnels](https://learn.microsoft.com/azure/developer/dev-tunnels/overview) to test the API plugin locally
 
 ## Help
 
