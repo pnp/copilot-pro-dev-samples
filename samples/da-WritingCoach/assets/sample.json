@@ -1,6 +1,6 @@
 [
     {
-      "name": "da-WritingCoach",
+      "name": "pnp-copilot-pro-dev-WritingCoach",
       "source": "pnp",
       "title": "Writing Coach Declarative Agent for Microsoft 365 Copilot Sample",
       "shortDescription": "First Party Declarative Agent Writing Coach shared as a sample",
