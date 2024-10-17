@@ -20,7 +20,7 @@ If you want to provide links to your social media, blog, and employer name, make
 -->
 
 * [Cristiano Goncalves](https://github.com/cristianoag)
-* [Luis Demetrio](https://github.com/luisdemetrio)
+* [Luis Demetrio](https://github.com/luishdemetrio)
 
 ## Version history
 
