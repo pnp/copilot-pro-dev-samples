@@ -1,0 +1,68 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-PromptCoach",
+      "source": "pnp",
+      "title": "Prompt Coach Declarative Agent for Microsoft 365 Copilot Sample",
+      "shortDescription": "First Party Declarative Agent Prompt Coach shared as a sample",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PromptCoach",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PromptCoach",
+      "longDescription": [
+        "The \"Prompt Coach\" is an open-source declarative Agent designed to assist new Copilot users in creating effective and well-structured prompts. It provides a variety of conversation starters to help users generate prompts, analyze and improve existing prompts, ensure compliance with responsible AI guidelines, and learn the principles of prompt engineering. The agent also offers examples of good prompts and troubleshooting advice for prompts that do not yield the expected output. Leveraging the capabilities of OneDrive, SharePoint, and Graph Connectors, \"Prompt Coach\" aims to streamline the prompt creation process and enhance user proficiency in prompt engineering."    
+    ],
+      "creationDateTime": "2024-10-04",
+      "updateDateTime": "2024-10-04",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Node.js"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "TypeScript"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "No"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/493864eea3d79bbb9a6e59ed7e063c4dad2a98b1/samples/da-PromptCoach/assets/PromptCoach1.png",
+          "alt": "Prompt Coach Declarative Agent for Microsoft 365 Copilot Sample"
+        }
+      ],
+      "authors": [
+        {
+            "gitHubAccount": "MarcusCastroMS",
+            "pictureUrl": "https://github.com/MarcusCastroMS.png",
+            "name": "Marcus Castro"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Declarative agents for Microsoft 365 Copilot overview",
+          "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+        },
+        {
+          "name": "Build a declarative agent for Microsoft 365 Copilot",
+          "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
+        }
+      ]
+    }
+  ]
