@@ -2,7 +2,7 @@
   "id": 4,
   "name": "Caprese Salad",
   "description": "Juicy vine-ripened tomatoes, fresh mozzarella, and fragrant basil leaves, drizzled with extra virgin olive oil and a touch of balsamic.",
-  "image_url": "https://dq8hgz36.euw.devtunnels.ms:8080/caprese_salad.jpeg",
+  "image_url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/da-ristorante-api/assets/caprese_salad.jpeg",
   "price": 10.5,
   "allergens": [
     "dairy"

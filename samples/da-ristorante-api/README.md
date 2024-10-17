@@ -23,6 +23,7 @@ This sample illustrates the following concepts:
 
 Version|Date|Comments
 -------|----|--------
+1.1|October 17, 2024|Fixed image URL in card data file
 1.0|October 15, 2024|Initial release
 
 ## Prerequisites
