@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 # TeamsFx files
 env/.env.*.user
-env/.env.local
+# env/.env.local
 .DS_Store
 build
 appPackage/build
@@ -24,7 +24,7 @@ out
 bin
 obj
 appsettings.json
-local.settings.json
+# local.settings.json
 
 # Local data
 .localConfigs

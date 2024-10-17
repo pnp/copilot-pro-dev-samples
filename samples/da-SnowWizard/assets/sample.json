@@ -1,0 +1,70 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-snow-wizard",
+      "source": "pnp",
+      "title": "Copilot Snow Wizard",
+      "shortDescription": "M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard",
+      "longDescription": [
+        "This project demonstrates a sample implementation of an M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents."
+      ],
+      "creationDateTime": "2024-10-11",
+      "updateDateTime": "2024-10-11",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Node.js"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "TypeScript"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "Yes"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SnowWizard/assets/2024-10-11_16-39.png",
+          "alt": "Declarative agent doing x"
+        },
+        {
+            "type": "image",
+            "order": 100,
+            "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SnowWizard/assets/2024-10-11_16-40.png",
+            "alt": "Declarative agent doing x"
+          },
+        
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "cristianoag",
+          "pictureUrl": "https://github.com/cristianoag.png",
+          "name": "Cristiano Goncalves"
+        },
+        {
+            "gitHubAccount": "luisdemetrio",
+            "pictureUrl": "https://github.com/luisdemetrio.png",
+            "name": "Luis Demetrio"
+          }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        }
+      ]
+    }
+  ]
