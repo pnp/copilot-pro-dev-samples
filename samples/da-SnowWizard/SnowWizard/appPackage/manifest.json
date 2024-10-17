@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+  "manifestVersion": "devPreview",
+  "id": "${{TEAMS_APP_ID}}",
+  "version": "1.0.0",
+  "developer": {
+    "name": "Teams App, Inc.",
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/privacy",
+    "termsOfUseUrl": "https://www.example.com/termsofuse"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Snow Wizard ${{APP_NAME_SUFFIX}}",
+    "full": "Empower Service Now with M365 Copilot: Smarter Actions, Seamless Workflows..."
+  },
+  "description": {
+    "short": "Seamless Service Now automation powered by M365 Copilot AI.",
+    "full": "Transform your Service Now experience with M365 Copilot. Leverage AI-powered automation to access, manage, and execute tasks effortlessly through an intelligent chatbot, boosting productivity and streamlining workflows across your organization."
+  },
+  "accentColor": "#FFFFFF",
+  "copilotExtensions": { 
+    "declarativeCopilots": [            
+      {
+        "id": "SnowWizardDeclarativeAgent",
+        "file": "SnowWizardDeclarativeAgent.json"
+      }
+    ]
+  },
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ]
+}
