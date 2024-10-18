@@ -62,3 +62,4 @@ The following are Teams Toolkit specific project files. You can [visit a complet
 ## Addition information and references
 
 - [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-PromptCoach)
