@@ -36,7 +36,7 @@
         {
           "type": "image",
           "order": 100,
-          "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/493864eea3d79bbb9a6e59ed7e063c4dad2a98b1/samples/da-IdeaCoach/assets/IdeaCoach1.png",
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-IdeaCoach/assets/IdeaCoach1.png",
           "alt": "Idea Coach Declarative Agent for Microsoft 365 Copilot Sample"
         }
       ],
