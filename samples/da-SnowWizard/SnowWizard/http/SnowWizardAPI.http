@@ -1,0 +1,29 @@
+@base_url = http://localhost:7071/api
+
+### Get all incidents
+{{base_url}}/incidents
+
+### Get a specific incident
+{{base_url}}/incidents/INC0000060
+
+### Create an incident
+POST {{base_url}}/incidents
+Content-Type: application/json
+
+{
+    "short_description":"This is a test incident short description",
+    "description":"This is a test incident long description"
+}
+
+
+### Get all my incidents
+{{base_url}}/incidents/me
+
+### Get an user profile
+{{base_url}}/profiles/beth.anglin@example.com
+
+### Get another user profile
+{{base_url}}/profiles/fred.luddy@example.com
+
+### Get my profile
+{{base_url}}/me
