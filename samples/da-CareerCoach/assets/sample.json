@@ -36,7 +36,7 @@
         {
           "type": "image",
           "order": 100,
-          "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/43afe103f9489aeb297b4811ee1dca54639f13d5/samples/da-CareerCoach/assets/CareerCoach1.png",
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-CareerCoach/assets/CareerCoach1.png",
           "alt": "Career Coach Declarative Agent for Microsoft 365 Copilot Sample"
         }
       ],
