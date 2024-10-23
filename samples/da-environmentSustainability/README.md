@@ -43,7 +43,10 @@ Version|Date|Comments
 * Open the Teams Toolkit extension and sign in to your Microsoft 365 tenant with Microsoft 365 Copilot
 * Copy the doc file `SustainabilityReports.docx` in **docs** folder and upload into a SharePoint site in the same Microsoft 365 tenant which you used to sign to Teams Toolkit
 * Update the environment variable `SP_SITE_URL` in the **.env.dev** file with value of the SharePoint site where the doc was uploaded
-* Select **Debug in Copilot (Edge)** from the launch configuration dropdown
+* Under the Teams Toolkit tab in Visual Studio Code, click "Provision" to install the application
+
+![Click provision](./assets/provision-app.png)
+
 * Go to Copilot app and on the agent panel choose **da-environmentSustainability**
 * Use the conversation starters to see the magic!
 
