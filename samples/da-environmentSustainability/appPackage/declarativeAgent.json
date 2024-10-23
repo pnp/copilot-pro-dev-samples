@@ -1,0 +1,33 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.0/schema.json",
+    "version": "v1.0",
+    "name": "da-environmentSustainability",
+    "description": "Declarative agent created with Teams Toolkit",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        { 
+            "title": "Analyze energy consumption",
+            "text":"Can you analyze our energy consumption for the past three months and suggest specific areas where we can reduce our energy usage, especially in our manufacturing division?"          
+
+         },
+        {
+            "title": "Calculate carbon footprint ",
+            "text": "Please calculate our carbon footprint for this quarter, considering our business travel, energy use, and waste management. Provide suggestions on how we can offset the emissions."
+        },
+        { 
+            "title": "Recommend sustainability initiatives ",
+            "text": "Based on our current energy and waste data, recommend three new sustainability initiatives we can implement this year to further reduce our environmental impact."
+        }
+    ],
+    "capabilities": [
+        {
+
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [
+            {
+                "url": "${{SP_SITE_URL}}"
+            }
+        ]
+        }
+    ]
+}
