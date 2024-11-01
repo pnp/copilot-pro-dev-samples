@@ -25,6 +25,57 @@ export async function repairs(
 ): Promise<HttpResponseInit> {
   context.log("HTTP trigger function processed a request.");
 
+
+  const isLocal = !process.env.WEBSITE_INSTANCE_ID;
+
+  if (isLocal) {
+    context.log("Running locally");
+      // Only validate the token if the function is running locally, otherwise the token will be validated by Easy Auth in Azure
+      // ADDED FOR TOKEN VALIDATION
+      // Try to validate the token and get user's basic information
+      try {
+        const { AAD_APP_CLIENT_ID, AAD_APP_TENANT_ID, AAD_APP_OAUTH_AUTHORITY } = process.env;
+        const token = req.headers.get("Authorization")?.split(" ")[1];
+        if (token) {
+
+          if (!validator) {
+            const entraJwksUri = await getEntraJwksUri(AAD_APP_TENANT_ID);
+            validator = new TokenValidator({
+              jwksUri: entraJwksUri
+            });
+            console.log("Token validator created");
+          }
+
+          const options: ValidateTokenOptions = {
+            audience: `${AAD_APP_CLIENT_ID}`,
+            // NOTE: Issuer will be different for non-public clouds
+            issuer: `${AAD_APP_OAUTH_AUTHORITY}/v2.0`,
+            scp: ["repairs_read"]
+          };
+
+          const validToken = await validator.validateToken(token, options);
+
+          const userId = validToken.oid;
+          const userName = validToken.name;
+          console.log(`Token is valid for user ${userName} (${userId})`);
+        } else {
+          console.error("No token found in request");
+          throw (new Error("No token found in request"));
+        }
+      }
+      catch (ex) {
+        // Token is missing or invalid - return a 401 error
+        console.error(ex);
+        return  {
+          status: 401
+        };
+      }
+      // END ADDED FOR TOKEN VALIDATION
+  } else {
+    context.log("Running in Azure");
+    // No need to validate token in Azure, as the function is secured by Easy Auth
+  }
+
   // Initialize response.
   const res: HttpResponseInit = {
     status: 200,
@@ -36,46 +87,7 @@ export async function repairs(
   // Get the assignedTo query parameter.
   const assignedTo = req.query.get("assignedTo");
 
-  // ADDED FOR TOKEN VALIDATION
-  // Try to validate the token and get user's basic information
-  try {
-    const { AAD_APP_CLIENT_ID, AAD_APP_TENANT_ID, AAD_APP_OAUTH_AUTHORITY } = process.env;
-    const token = req.headers.get("Authorization")?.split(" ")[1];
-    if (token) {
 
-      if (!validator) {
-        const entraJwksUri = await getEntraJwksUri(AAD_APP_TENANT_ID);
-        validator = new TokenValidator({
-          jwksUri: entraJwksUri
-        });
-        console.log("Token validator created");
-      }
-
-      const options: ValidateTokenOptions = {
-        audience: `${AAD_APP_CLIENT_ID}`,
-        // NOTE: Issuer will be different for non-public clouds
-        issuer: `${AAD_APP_OAUTH_AUTHORITY}/v2.0`,
-        scp: ["repairs_read"]
-      };
-
-      const validToken = await validator.validateToken(token, options);
-
-      const userId = validToken.oid;
-      const userName = validToken.name;
-      console.log(`Token is valid for user ${userName} (${userId})`);
-    } else {
-      console.error("No token found in request");
-      throw (new Error("No token found in request"));
-    }
-  }
-  catch (ex) {
-    // Token is missing or invalid - return a 401 error
-    console.error(ex);
-    return  {
-      status: 401
-    };
-  }
-  // END ADDED FOR TOKEN VALIDATION
 
   // If the assignedTo query parameter is not provided, return the response.
   if (!assignedTo) {
