@@ -1,0 +1,13 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.0/schema.json",
+    "version": "v1.0",
+    "name": "Agent PostPilot",
+    "description": "Declarative agent created to generate LinkedIn post to announce prompt of the week",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Generate post",
+            "text": "Generate post for the prompt: "
+        }
+    ]
+}
