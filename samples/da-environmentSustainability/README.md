@@ -41,8 +41,8 @@ Version|Date|Comments
 * Clone this repository and in your Visual Studio Code, open folder  **samples/da-environmentSustainability**
 * Alternatively you can also  [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-environmentSustainability) then unzip it and go to **samples/da-environmentSustainability** folder from your Visual Studio Code window
 * Open the Teams Toolkit extension and sign in to your Microsoft 365 tenant with Microsoft 365 Copilot
-* Copy the doc file `SustainabilityReports.docx` in **docs** folder and upload into a SharePoint site in the same Microsoft 365 tenant which you used to sign to Teams Toolkit
-* Update the environment variable `SP_SITE_URL` in the **.env.dev** file with value of the SharePoint site where the doc was uploaded
+* Copy the files like `Microsoft 2024 Environmental Sustainability Report`and other PDF files in **docs** folder and upload into a SharePoint site in the same Microsoft 365 tenant which you used to sign to Teams Toolkit
+* Update the environment variable `SP_SITE_URL` in the **.env.dev** file with value of the SharePoint site where the docs were uploaded
 * Under the Teams Toolkit tab in Visual Studio Code, click "Provision" to install the application
 
 ![Click provision](./assets/provision-app.png)

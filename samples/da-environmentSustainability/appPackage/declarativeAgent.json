@@ -6,17 +6,17 @@
     "instructions": "$[file('instruction.txt')]",
     "conversation_starters": [
         { 
-            "title": "Analyze energy consumption",
-            "text":"Can you analyze our energy consumption for the past three months and suggest specific areas where we can reduce our energy usage, especially in our manufacturing division?"          
+            "title": "Water positivity",
+            "text":"What are the water positivity goals of Amazon and how are they planning to achieve them?"          
 
          },
         {
-            "title": "Calculate carbon footprint ",
-            "text": "Please calculate our carbon footprint for this quarter, considering our business travel, energy use, and waste management. Provide suggestions on how we can offset the emissions."
+            "title": "Carbon footprint ",
+            "text": "What are some practical first steps my small business can take to reduce its carbon footprint?"
         },
         { 
-            "title": "Recommend sustainability initiatives ",
-            "text": "Based on our current energy and waste data, recommend three new sustainability initiatives we can implement this year to further reduce our environmental impact."
+            "title": "Scope 3 emissions",
+            "text": "What are effective strategies for tracking and reducing Scope 3 emissions across a complex supply chain?"
         }
     ],
     "capabilities": [
