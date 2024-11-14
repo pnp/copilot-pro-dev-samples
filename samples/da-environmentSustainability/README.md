@@ -29,6 +29,7 @@ This sample illustrates the following concepts:
 Version|Date|Comments
 -------|----|----
 1.0|October 22, 2025|Initial release
+1.1|Nov 14, 2025|Added real reports and updated conversation starters
 
 ## Disclaimer
 
@@ -55,4 +56,4 @@ Version|Date|Comments
 
 - Declarative agent with SharePoint capability
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-environmentSustainability)
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-environmentSustainability" />
