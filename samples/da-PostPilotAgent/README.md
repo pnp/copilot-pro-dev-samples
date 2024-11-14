@@ -48,3 +48,5 @@ The following are Teams Toolkit specific project files. You can [visit a complet
 ## Addition information and references
 
 - [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-PostPilotAgent" />
