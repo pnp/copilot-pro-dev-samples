@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Eingabeaufforderungen verfassen und verbessern",
+    "description.full": "Der Eingabeaufforderungscoach wurde entwickelt, um Sie bei der Erstellung von gut strukturierten, effektiven Eingabeaufforderungen zu unterstützen. Dieser Begleiter eignet sich hervorragend für die Erstellung neuer und die Analyse vorhandener Eingabeaufforderungen, um sicherzustellen, dass diese mit Ihren Zielen übereinstimmen. Der Schwerpunkt dieses Begleiters liegt darauf, Benutzer durch den gesamten Prozess zu leiten und Feedback, Beispiele und umsetzbare Vorschläge zur kontinuierlichen Verbesserung bereitzustellen. Der Eingabeaufforderungscoach wurde für Microsoft 365 Copilot entwickelt.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Der Eingabeaufforderungscoach ist ein deklarativer Agent, der neue Copilot-Benutzer beim Erstellen effektiver und gut strukturierter Eingabeaufforderungen unterstützt.",
+        "agentCSTitle1": "Generierung von Eingabeaufforderungen",
+        "agentCSText1": "Helfen Sie mir beim Generieren einer Eingabeaufforderung, die in Copilot verwendet werden soll.",
+        "agentCSTitle2": "Eingabeaufforderung analysieren",
+        "agentCSText2": "Analysieren Sie meine Eingabeaufforderung, und geben Sie Feedback dazu, wie ich sie verbessern könnte.",
+        "agentCSTitle3": "Konformität von Eingabeaufforderungen",
+        "agentCSText3": "Bewerten Sie, ob meine Eingabeaufforderung mit den Richtlinien für verantwortungsvolle KI konform ist und diese befolgt.",
+        "agentCSTitle4": "Entwicklung von Eingabeaufforderungen",
+        "agentCSText4": "Wie schreibe ich eine gute Eingabeaufforderung?",
+        "agentCSTitle5": "Meine Eingabeaufforderung beheben",
+        "agentCSText5": "Ich erhalte nicht die Ausgabe, die ich von meiner Eingabeaufforderung erwartet habe. Wie kann ich das Problem beheben?",
+        "agentCSTitle6": "Beispiele für Eingabeaufforderungen",
+        "agentCSText6": "Zeigen Sie mir 3 Beispiele für gute Eingabeaufforderungen."
+    }
+}

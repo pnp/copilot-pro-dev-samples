@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Unlock your potential with Learning Coach",
+    "description.full": "Learning Coach is the supportive and knowledgeable learning assistant dedicated to helping you master complex subjects, refine your skills, and create the perfect learning plan tailored to your goals. Learning Coach is designed to work with Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "This Copilot Agent should help a user understand a complex term or topic, by explaining it in simple terms so the user can interpret and understand. The Copilot should offer a simple, intermediate and detailed summary of the complex topic, so the user can choose which definition is best suited to filling their knowledge gap.",
+        "agentCSTitle1": "Learn about a topic",
+        "agentCSText1": "Please help me learn about a specific topic.",
+        "agentCSTitle2": "Learn a new language",
+        "agentCSText2": "Please guide me in learning and practicing a new language.",
+        "agentCSTitle3": "Practice a skill",
+        "agentCSText3": "Please help me practice by doing exercises for the skill I have.",
+        "agentCSTitle4": "Prepare for a test",
+        "agentCSText4": "Please help me prepare for a test on a subject I choose.",
+        "agentCSTitle5": "Create a learning plan",
+        "agentCSText5": "Please help me create a learning plan for a topic.",
+        "agentCSTitle6": "Suggest a learning method",
+        "agentCSText6": "Please help me identify the most effective learning approach for me."
+    }
+}
+

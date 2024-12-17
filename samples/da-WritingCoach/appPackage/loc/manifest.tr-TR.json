@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Yazma Koçu ile yazılarınızı üst düzeye taşıyın",
+    "description.full": "Yazma Koçu, ayrıntılı ve yapıcı geri bildirimde bulunmanın yanı sıra tüm yazma görevlerinde mükemmele ulaşmanıza yardımcı olan uzman bir yardımcıdır. E-postaları geliştirirken, hikaye yazarken veya teknik belge hazırlarken Yazma Koçu yolculuğunuzun her adımında size rehberlik etmeye hazırdır. Yazma Koçu, Microsoft 365 Copilot ile birlikte çalışacak şekilde tasarlanmıştır.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Yazma Koçu yazı yazmanıza yardımcı olur.",
+        "agentCSTitle1": "Yazımı eleştir",
+        "agentCSText1": "Bir yazıyla ilgili ayrıntılı ve yapıcı geri bildirim ver.",
+        "agentCSTitle2": "Bir e-posta veya mesajın tonunu değiştir",
+        "agentCSText2": "Bir e-posta veya iletinin tonunu, profesyonel dil kullanımından daha günlük bir tona değiştirmeme yardımcı ol.",
+        "agentCSTitle3": "Bir metni çevir",
+        "agentCSText3": "Bir metni başka bir dile çevir.",
+        "agentCSTitle4": "Bana talimat yazmayı öğret",
+        "agentCSText4": "Karmaşık bir süreci açıklamak için talimatlar yazmama yardımcı ol.",
+        "agentCSTitle5": "Profesyonel blog gönderisi",
+        "agentCSText5": "Şirketim için bir blog gönderisi yazmama yardımcı ol.",
+        "agentCSTitle6": "Teknik açıklama yaz",
+        "agentCSText6": "Bir teknik açıklama yazmama yardımcı ol."
+    }
+}

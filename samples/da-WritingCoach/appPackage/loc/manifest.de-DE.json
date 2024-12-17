@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Setzen Sie mit dem Schreibcoach neue Maßstäbe beim Verfassen von Texten",
+    "description.full": "Der Schreibcoach ist ein kompetenter Assistent, der Ihnen detailliertes, konstruktives Feedback gibt und Sie dabei unterstützt, jede Art von Text optimal zu verfassen. Ganz gleich, ob Sie eine E-Mail verfeinern, eine Geschichte verfassen oder ein Whitepaper entwickeln, Schreibcoach unterstützt Sie bei jedem Schritt. Der Schreibcoach wurde für Microsoft 365 Copilot entwickelt.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Der Schreibcoach, der Ihnen beim Verfassen von Texten hilft.",
+        "agentCSTitle1": "Meinen Text kritisieren",
+        "agentCSText1": "Geben Sie detailliertes und konstruktives Feedback zu einem Text.",
+        "agentCSTitle2": "Den Tonfall einer E-Mail oder Nachricht ändern",
+        "agentCSText2": "Helfen Sie dabei, den Tonfall einer E-Mail oder Nachricht von einer professionellen Sprache in einen legeren Tonfall zu ändern.",
+        "agentCSTitle3": "Einen Text übersetzen",
+        "agentCSText3": "Übersetzen Sie einen Text in eine andere Sprache.",
+        "agentCSTitle4": "Anleitung zum Verfassen von Anweisungen",
+        "agentCSText4": "Unterstützen Sie mich beim Verfassen von Anweisungen zur Erläuterung eines komplexen Prozesses.",
+        "agentCSTitle5": "Professioneller Blogbeitrag",
+        "agentCSText5": "Unterstützen Sie mich beim Verfassen eines Blogbeitrags für mein Unternehmen.",
+        "agentCSTitle6": "Ein Whitepaper verfassen",
+        "agentCSText6": "Unterstützen Sie mich beim Verfassen eines Whitepapers."
+    }
+}

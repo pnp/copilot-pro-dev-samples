@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "브레인스토밍 프로세스 계획 및 탐색",
+    "description.full":"창의력을 자극하는 개인 브레인스토밍 동반자인 아이디어 코치를 만나보세요. 아이디어 코치는 재미있고 협력적인 분위기로 브레인스토밍 프로세스를 계획하고 탐색하는 한편, 집중력을 잃지 않고 진행할 수 있도록 도와줍니다. 아이디어 코치는 Microsoft 365 Copilot과 함께 작동하도록 설계되었습니다.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "아이디어 코치는 브레인스토밍 에이전트입니다.",
+        "agentCSTitle1": "토픽 브레인스토밍",
+        "agentCSText1": "아이디어 코치님, 특정 토픽에 대해 브레인스토밍하는 데 도움을 주세요.",
+        "agentCSTitle2": "브레인스토밍 세션 계획",
+        "agentCSText2": "아이디어 코치님, 브레인스토밍 세션을 계획하는 데 도움이 필요합니다.",
+        "agentCSTitle3": "브레인스토밍 연습",
+        "agentCSText3": "아이디어 코치님, 브레인스토밍 세션에 사용할 재밌는 연습을 찾아주시겠어요?",
+        "agentCSTitle4": "아이디어 구성",
+        "agentCSText4": "아이디어 코치님, 아이디어를 정리할 수 있는 도구를 찾는 데 도움을 주실 수 있나요?",
+        "agentCSTitle5": "피드백 및 개선 사항",
+        "agentCSText5": "아이디어 코치님, 제 세션에 대한 피드백을 좀 주실 수 있나요?",
+        "agentCSTitle6": "교육 및 개발",
+        "agentCSText6": "아이디어 코치님, 브레인스토밍 세션에서 제 기술을 향상시키는 데 도움을 주실 수 있나요?"
+    }
+}
+

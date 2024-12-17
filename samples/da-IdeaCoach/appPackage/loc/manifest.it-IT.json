@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Pianifica e esegui il processo di brainstorming",
+    "description.full":"Scopri il coach per le idee, il tuo personale strumento di brainstorming progettato per ispirare creatività. Con un tono divertente e collaborativo, il coach per le idee ti aiuta a pianificare e a eseguire il processo di brainstorming, in modo da rimanere concentrato e assicurandosi che tu rimanga concentrato e in linea. Il coach per le idee è progettato per l'utilizzo con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Il coach per le idee è un agente per il brainstorming.",
+        "agentCSTitle1": "Brainstorming su un argomento",
+        "agentCSText1": "Ehi, coach per le idee, aiutami con il brainstorming su un argomento specifico.",
+        "agentCSTitle2": "Pianifica sessione di brainstorming",
+        "agentCSText2": "Ehi, coach per le idee, ho bisogno di aiuto per pianificare una sessione di brainstorming.",
+        "agentCSTitle3": "Esercizi di brainstorming",
+        "agentCSText3": "Ehi coach per le idee, puoi aiutami a trovare degli esercizi divertenti per la mia sessione di brainstorming?",
+        "agentCSTitle4": "Organizza le idee",
+        "agentCSText4": "Ehi, coach per le idee, puoi aiutami a trovare strumenti per organizzare le idee?",
+        "agentCSTitle5": "Feedback e miglioramento",
+        "agentCSText5": "Ehi coach per le idee, puoi darmi un feedback sulla mia sessione?",
+        "agentCSTitle6": "Formazione e sviluppo",
+        "agentCSText6": "Ehi coach per le idee, puoi aiutami a migliorare le mie capacità per le sessioni di brainstorming?"
+    }
+}
+

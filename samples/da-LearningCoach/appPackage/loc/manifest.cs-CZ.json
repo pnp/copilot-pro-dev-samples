@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Využijte svůj potenciál s poradcem s učením",
+    "description.full": "Vzdělávací průvodce je podpůrný a informovaný vzdělávací asistent, který vám pomůže zvládnout složitou problematiku, zdokonalit vaše dovednosti a vytvořit dokonalý vzdělávací plán přizpůsobený vašim cílům. Vzdělávací průvodce je navržen pro použití s nástrojem Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Tento agent Copilotu by měl uživateli pomoci porozumět složité problematice nebo tématu tím, že je vysvětlí za použití jednoduchých pojmů, aby je uživatel mohl interpretovat a pochopit. Kopilot by měl nabízet jednoduché, středně pokročilé a podrobné shrnutí složitého tématu, aby si uživatel mohl vybrat, která definice se nejlépe hodí k doplnění jeho znalostí.",
+        "agentCSTitle1": "Studium tématu",
+        "agentCSText1": "Pomoz mi získat informace o konkrétním tématu.",
+        "agentCSTitle2": "Učení nového jazyka",
+        "agentCSText2": "Pomoz mi při učení a procvičování nového jazyka.",
+        "agentCSTitle3": "Procvičování dovednosti",
+        "agentCSText3": "Pomoz mi s procvičováním pomocí cvičení pro moje dovednosti.",
+        "agentCSTitle4": "Příprava na test",
+        "agentCSText4": "Pomoz mi připravit se na test z vybraného předmětu.",
+        "agentCSTitle5": "Vytvoření studijního plánu",
+        "agentCSText5": "Pomoz mi vytvořit učební plán pro konkrétní téma.",
+        "agentCSTitle6": "Navržení způsobu učení",
+        "agentCSText6": "Pomoz mi určit pro mě nejúčinnější přístup k učení."
+    }
+}
+

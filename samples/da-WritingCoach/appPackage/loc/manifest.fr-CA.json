@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Atteindre un niveau supérieur d’écriture avec le coach d’écriture",
+    "description.full": "Le coach d’écriture est un assistant spécialisé conçu pour fournir des commentaires détaillés et constructifs, et vous aider à exceller dans toute tâche d’écriture. Que vous peaufiniez un courriel, créiez une histoire ou développiez un livre blanc, le coach d’écriture est là pour vous guider à chaque étape. Le coach d’écriture est conçu pour être compatible avec Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Le coach d’écriture pour vous aider dans votre rédaction.",
+        "agentCSTitle1": "Critiquer ma rédaction",
+        "agentCSText1": "Fournissez des commentaires détaillés et constructifs sur un texte.",
+        "agentCSTitle2": "Modifier le style d’un courriel ou d’un message",
+        "agentCSText2": "Aidez à modifier le style d’un courriel ou d’un message d’un style professionnel à un style plus informel.",
+        "agentCSTitle3": "Traduire un texte",
+        "agentCSText3": "Traduisez un texte dans une autre langue.",
+        "agentCSTitle4": "M’apprendre à écrire des instructions",
+        "agentCSText4": "Aidez-moi à rédiger des instructions pour expliquer un processus complexe.",
+        "agentCSTitle5": "Billet de blog professionnel",
+        "agentCSText5": "Aidez-moi à écrire un billet de blog pour ma société.",
+        "agentCSTitle6": "Écrire un livre blanc",
+        "agentCSText6": "Aidez-moi à rédiger un livre blanc."
+    }
+}

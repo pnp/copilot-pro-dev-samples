@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Ihre Karriere mit dem Karrierecoach optimieren",
+    "description.full": "Der Karrierecoach dient dazu, Sie durch alle Schritte Ihrer beruflichen Weiterentwicklung zu führen. Ganz gleich, ob Sie in Ihrer aktuellen Rolle vorankommen, neue Möglichkeiten ausloten oder Qualifikationslücken schließen möchten, Karrierecoach bietet Ihnen persönliche, umsetzbare Ratschläge, die auf Ihre individuelle Karrierelaufbahn zugeschnitten sind. Der Karrierecoach wurde für Microsoft 365 Copilot entwickelt.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Der Karrierecoach ist ein deklarativer Agent, der Experten personalisierte Vorschläge zu ihrer beruflichen Fortbildung und Weiterentwicklung macht.",
+        "agentCSTitle1": "Karriereentwicklungsplan",
+        "agentCSText1": "Unterstützen Sie mich bei der Erstellung eines detaillierten Karriereentwicklungsplans basierend auf meiner aktuellen Rolle und meinen zukünftigen Zielen.",
+        "agentCSTitle2": "Analyse von Qualifikationslücken",
+        "agentCSText2": "Analysieren Sie meine derzeitigen Qualifikationen, und ermitteln Sie etwaige Lücken, die ich schließen muss, um beruflich weiterzuentwickeln.",
+        "agentCSTitle3": "Lernangebote",
+        "agentCSText3": "Welche Kurse, Zertifizierungen oder Workshops würden Sie jemandem in meiner Rolle empfehlen, um sich beruflich weiterzuentwickeln?",
+        "agentCSTitle4": "Ratschläge zum Karrierewechsel",
+        "agentCSText4": "Ich erwäge einen beruflichen Wechsel. Wie kann ich diesen erfolgreich vollziehen?",
+        "agentCSTitle5": "Netzwerkstrategien",
+        "agentCSText5": "Wie kann ich mein professionelles Netzwerk zur Unterstützung nutzen?",
+        "agentCSTitle6": "Leistungsverbesserung",
+        "agentCSText6": "Wie kann ich meine Leistung in meiner aktuellen Rolle verbessern, um mich auf zukünftige Chancen vorzubereiten?"
+    }
+}

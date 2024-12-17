@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "透過職業生涯教練提升您的職業生涯",
+    "description.full": "職業生涯教練旨在指導您完成職業旅程的每一步。無論您是想在目前的職位上取得進步、探索新的機會還是彌補技能差距，職業生涯教練都會根據您獨特的職業道路提供個人化、可行的建議。職業生涯教練旨在搭配 Microsoft 365 Copilot 使用。",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "職業生涯教練是一個宣告式代理程式，可為專業人士提供個人化建議，協助他們在職業生涯中持續學習和成長。",
+        "agentCSTitle1": "職業生涯發展計劃",
+        "agentCSText1": "協助我根據目前的角色和未來的目標制定詳細的職業生涯發展計劃。",
+        "agentCSTitle2": "技能落差分析",
+        "agentCSText2": "分析我目前的技能並找出需要填補的不足之處，以在我的職業生涯中取得進步。",
+        "agentCSTitle3": "學習機會",
+        "agentCSText3": "您會為我的角色推薦哪些課程、認證或工作坊來促進專業成長?",
+        "agentCSTitle4": "職業轉換建議",
+        "agentCSText4": "我正在考慮職業轉換。如何才能成功進行轉換?",
+        "agentCSTitle5": "人脈經營策略",
+        "agentCSText5": "如何利用我的專業人脈來提供協助?",
+        "agentCSTitle6": "績效改善",
+        "agentCSText6": "我如何提升目前職位的績效，為未來的機會做好準備?"
+    }
+}

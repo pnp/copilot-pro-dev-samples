@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Eleve sua escrita a outro patamar com o Writing Coach",
+    "description.full": "O Writing Coach é um assistente especializado dedicado a fornecer comentários detalhados e construtivos e ajudar você a se destacar em qualquer tarefa de escrita. Quer esteja a refinar um email, a criar uma história ou a desenvolver um whitepaper, o Writing Coach está aqui para orientar você em cada etapa do caminho. O Writing Coach foi concebido para trabalhar com o Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Writing Coach para ajudar você em sua escrita.",
+        "agentCSTitle1": "Criticar a minha escrita",
+        "agentCSText1": "Forneça comentários detalhados e construtivos sobre um texto.",
+        "agentCSTitle2": "Alterar o tom de um email ou de uma mensagem",
+        "agentCSText2": "Ajude a alterar o tom de um email ou de uma mensagem de uma linguagem profissional para um tom mais casual.",
+        "agentCSTitle3": "Traduzir um texto",
+        "agentCSText3": "Traduza um texto em outro idioma.",
+        "agentCSTitle4": "Ensinar-me a escrever instruções",
+        "agentCSText4": "Ajude-me a escrever instruções para explicar um processo complexo.",
+        "agentCSTitle5": "Postagem no blog profissional",
+        "agentCSText5": "Ajude-me a escrever uma postagem no blog para minha empresa.",
+        "agentCSTitle6": "Escrever um whitepaper",
+        "agentCSText6": "Ajude-me a escrever um whitepaper."
+    }
+}

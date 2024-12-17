@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Løft din karriere med Karrierecoach",
+    "description.full": "Karrierecoach er designet til at lede dig igennem alle trin i din professionelle udvikling. Uanset om du ønsker at bygge videre på din nuværende rolle, udforske nye muligheder eller bygge bro over færdighedskløfter, så giver Karrierecoach dig tilpasset og handlingsrettet vejledning, der er skræddersyet til dit særlige karriereforløb. Karrierecoach er designet til at arbejde sammen med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Karrierecoach er en deklarativ agent, der forsyner medarbejdere med tilpassede forslag til, hvordan de kan forsætte med at lære nye ting og vokse i deres karrierer.",
+        "agentCSTitle1": "Karriereudviklingsplan",
+        "agentCSText1": "Hjælp mig med at oprette en detaljeret karriereudviklingsplan baseret på min nuværende rolle og mine fremtidige mål.",
+        "agentCSTitle2": "Analyse af kompetencekløft",
+        "agentCSText2": "Analyser mine nuværende færdigheder, og identificer eventuelle huller, som jeg skal udfylde for at komme videre i min karriere.",
+        "agentCSTitle3": "Læringsmuligheder",
+        "agentCSText3": "Hvilke kurser, certificeringer eller workshops vil du anbefale til nogen i min rolle, så de kan vokse professionelt?",
+        "agentCSTitle4": "Råd om stillingsskift",
+        "agentCSText4": "Jeg overvejer et karriereskift. Hvordan kan jeg få succes med denne ændring?",
+        "agentCSTitle5": "Netværksstrategier",
+        "agentCSText5": "Hvordan kan jeg udnytte mit professionelle netværk som en hjælp?",
+        "agentCSTitle6": "Præstationsforbedring",
+        "agentCSText6": "Hvordan kan jeg forbedre min præstation i min nuværende rolle, så jeg er forberedt på fremtidige muligheder?"
+    }
+}

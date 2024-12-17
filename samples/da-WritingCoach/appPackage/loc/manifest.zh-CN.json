@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "在写作教练的帮助下将写作能力提升到更高的水平",
+    "description.full": "写作教练是专家助手，致力于提供建设性的详细反馈，并帮助您在任何写作任务中表现出色。无论您是要完善电子邮件、撰写故事还是编写白皮书，写作教练都可随时指导您完成每一步。写作教练旨在与智能 Microsoft 365 Copilot 副驾驶® 配合使用。",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "帮助您写作的写作教练。",
+        "agentCSTitle1": "评论我的文章",
+        "agentCSText1": "就一篇文章提供详细的建设性反馈。",
+        "agentCSTitle2": "变更电子邮件或消息的语气",
+        "agentCSText2": "帮助将电子邮件或消息从专业用语变更为更随意的语气。",
+        "agentCSTitle3": "翻译一段文本",
+        "agentCSText3": "将一段文本翻译为其他语言。",
+        "agentCSTitle4": "教我如何撰写说明",
+        "agentCSText4": "帮我撰写说明，解释一个复杂的流程。",
+        "agentCSTitle5": "专业博客文章",
+        "agentCSText5": "帮我为公司撰写一篇博客文章。",
+        "agentCSTitle6": "撰写白皮书",
+        "agentCSText6": "帮我撰写白皮书。"
+    }
+}

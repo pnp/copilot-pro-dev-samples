@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Edistä uraasi uravalmentajan avulla",
+    "description.full": "Uravalmentaja on suunniteltu auttamaan ammatillisen matkasi jokaisessa vaiheessa. Olipa kyse sitten etenemisestä nykyisessä roolissasi, uusiin mahdollisuuksiin tutustumisesta tai puuttuvien taitojen täydentämisestä, uravalmentaja antaa mukautettua, toimintaa ohjaavaa ja oman urapolkusi mukaan räätälöityä neuvontaa. Uravalmentaja on suunniteltu Microsoft 365 Copilotin kanssa käytettäväksi.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Uravalmentaja on deklaratiivinen agentti, joka antaa ammattilaisille mukautettuja ehdotuksia tavoista, joilla he voivat jatkaa oppimista ja kehittymistä omalla urallaan.",
+        "agentCSTitle1": "Urakehityssuunnitelma",
+        "agentCSText1": "Auta minua luomaan yksityiskohtainen urakehityssuunnitelma nykyisen roolin ja tulevien tavoitteiden perusteella.",
+        "agentCSTitle2": "Taitojen aukkoanalyysi",
+        "agentCSText2": "Analysoi nykyiset taitoni ja tunnista mahdolliset puutteet, jotka on korjattava, jotta uralla eteneminen olisi mahdollista.",
+        "agentCSTitle3": "Oppimismahdollisuuksia",
+        "agentCSText3": "Mitkä kurssit, sertifioinnit tai työpajat ovat suositeltavia roolissani olevan henkilön ammatillisen kehittymisen kannalta?",
+        "agentCSTitle4": "Uramuutosneuvonta",
+        "agentCSText4": "Harkitsen uramuutosta. Miten onnistun tässä muutoksessa?",
+        "agentCSTitle5": "Verkostoitumisstrategiat",
+        "agentCSText5": "Miten voin hyödyntää ammatillista verkostoani?",
+        "agentCSTitle6": "Suoriutumisen parantaminen",
+        "agentCSText6": "Miten voi parantaa suoriutumistani nykyisessä roolissani siten, että se on valmistautumista tuleviin mahdollisuuksiin?"
+    }
+}

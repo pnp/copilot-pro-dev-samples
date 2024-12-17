@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Naplánujte a projděte procesem brainstormingu",
+    "description.full":"Poznejte poradce s nápady, osobního asistenta pro brainstorming navrženého tak, aby povzbuzoval kreativitu. Poradce s nápady vám zábavným a podporujícím tónem pomáhá plánovat a procházet procesem brainstormingu, abyste měli jistotu, že zůstanete soustředění a na správné cestě. Poradce s nápady je navržen pro použití s nástrojem Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Poradce s nápady je agent pro brainstorming.",
+        "agentCSTitle1": "Brainstorming nad tématem",
+        "agentCSText1": "Zdravím, poradce s nápady, pomoz mi s brainstormingem na konkrétní téma.",
+        "agentCSTitle2": "Naplánování brainstormingu",
+        "agentCSText2": "Zdravím, poradce s nápady, potřebuji pomoc s plánováním brainstormingu.",
+        "agentCSTitle3": "Cvičení pro brainstorming",
+        "agentCSText3": "Zdravím, poradce s nápady, pomůžeš mi najít zábavná cvičení pro brainstorming?",
+        "agentCSTitle4": "Uspořádání nápadů",
+        "agentCSText4": "Zdravím, poradce s nápady, pomůžeš mi najít nástroje pro organizaci nápadů?",
+        "agentCSTitle5": "Zpětná vazba a zlepšení",
+        "agentCSText5": "Zdravím, poradce s nápady, můžeš mi dát nějakou zpětnou vazbu k mému brainstormingu?",
+        "agentCSTitle6": "Školení a rozvoj",
+        "agentCSText6": "Zdravím, poradce s nápady, pomůžeš zlepšit mé dovednosti pro brainstorming?"
+    }
+}
+

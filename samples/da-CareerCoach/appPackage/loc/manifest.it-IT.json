@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Migliora la tua carriera con il coach professionale",
+    "description.full": "Il coach professionale è progettato per guidarti attraverso ogni passaggio del tuo percorso professionale. Sia che tu stia cercando di avanzare nel tuo ruolo corrente, esplorare nuove opportunità o colmare le lacune nelle tue competenze, il coach professionale offre una consulenza personalizzata e utile su misura del tuo percorso professionale unico. Il coach professionale è progettato per l'utilizzo con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Il coach professionale è un agente dichiarativo che offre ai professionisti suggerimenti personalizzati su come continuare a imparare e a crescere nelle loro carriere.",
+        "agentCSTitle1": "Piano di sviluppo professionale",
+        "agentCSText1": "Aiutami a creare un piano di sviluppo professionale dettagliato in base al mio ruolo attuale e ai miei obiettivi futuri.",
+        "agentCSTitle2": "Analisi lacuna competenze",
+        "agentCSText2": "Analizza le mie competenze attuali e identifica tutte le lacune che devo colmare per avanzare nella mia carriera.",
+        "agentCSTitle3": "Opportunità di apprendimento",
+        "agentCSText3": "Quali corsi, certificazioni o seminari consiglieresti per consentire a una persona con il mio ruolo di crescere professionalmente?",
+        "agentCSTitle4": "Consigli sulla transizione professionale",
+        "agentCSText4": "Sto prendendo in considerazione una transizione professionale. Come posso effettuare questo cambiamento con successo?",
+        "agentCSTitle5": "Strategie di rete",
+        "agentCSText5": "Come posso sfruttare la mia rete professionale per ottenere aiuto?",
+        "agentCSTitle6": "Miglioramento delle prestazioni",
+        "agentCSText6": "Come posso migliorare le mie prestazioni nel mio ruolo attuale per prepararmi per opportunità future?"
+    }
+}

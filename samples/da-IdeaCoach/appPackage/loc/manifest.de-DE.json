@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Den Brainstorming-Prozess planen und darin navigieren",
+    "description.full":"Lernen Sie den Ideencoach, Ihren persönlichen Brainstorming-Begleiter, kennen, der Ihre Kreativität fördern soll. Mit einem unterhaltsamen und kollaborativen Tonfall hilft der Ideencoach Ihnen, den Brainstorming-Prozess zu planen und darin zu navigieren, und trägt dazu bei, dass Sie fokussiert bleiben und den Überblick behalten. Der Ideencoach wurde für Microsoft 365 Copilot entwickelt.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Der Ideencoach ist ein Brainstorming-Agent.",
+        "agentCSTitle1": "Brainstorming zu einem Thema",
+        "agentCSText1": "Hallo Ideencoach, helfen Sie mir beim Brainstorming zu einem bestimmten Thema.",
+        "agentCSTitle2": "Brainstorming-Sitzung planen",
+        "agentCSText2": "Hallo Ideencoach, ich benötige Hilfe bei der Planung einer Brainstorming-Sitzung.",
+        "agentCSTitle3": "Brainstorming-Übungen",
+        "agentCSText3": "Hallo Ideencoach, können Sie mir bei der Suche nach Übungen für meine Brainstormingsitzung helfen?",
+        "agentCSTitle4": "Ideen organisieren",
+        "agentCSText4": "Hallo Ideencoach, können Sie mir bei der Suche nach Tools zum Organisieren von Ideen helfen?",
+        "agentCSTitle5": "Feedback und Verbesserung",
+        "agentCSText5": "Hallo Ideencoach, können Sie mir Feedback zu meiner Sitzung geben?",
+        "agentCSTitle6": "Training und Entwicklung",
+        "agentCSText6": "Hallo Ideencoach, können Sie mir bei der Verbesserung meiner Qualifikationen für Brainstorming-Sitzungen helfen?"
+    }
+}
+

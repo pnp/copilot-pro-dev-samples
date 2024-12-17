@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Kariyer Koçu ile kariyerinizi geliştirin",
+    "description.full": "Kariyer Koçu, profesyonel yolculuğunuzun her adımında size rehberlik etmek için tasarlanmıştır. İster mevcut rolünüzde ilerlemek, ister yeni fırsatlar keşfetmek veya beceri boşluklarını kapatmak istiyor olun, Kariyer Koçu benzersiz kariyer yolunuza göre uyarlanmış, kişiselleştirilmiş, eyleme geçirilebilir öneriler sunar. Kariyer Koçu, Microsoft 365 Copilot ile birlikte çalışacak şekilde tasarlanmıştır.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Kariyer Koçu, profesyonellere öğrenmeye ve kariyerlerinde ilerlemeye nasıl devam edebilecekleri konusunda kişiselleştirilmiş öneriler sunan, bildirim temelli bir aracıdır.",
+        "agentCSTitle1": "Kariyer gelişim planı",
+        "agentCSText1": "Mevcut rolüm ve gelecekteki hedeflerime göre ayrıntılı bir kariyer gelişim planı oluşturmama yardımcı ol.",
+        "agentCSTitle2": "Yetenek eksikliği analizi",
+        "agentCSText2": "Mevcut becerilerimi analiz et ve kariyerimde ilerlemek için gidermemin gerektiği eksiklikleri belirle.",
+        "agentCSTitle3": "Öğrenim fırsatları",
+        "agentCSText3": "Benim rolümdeki birinin profesyonel olarak gelişebilmesi için hangi kursları, sertifikaları veya atölyeleri önerirsin?",
+        "agentCSTitle4": "Kariyer değiştirme tavsiyesi",
+        "agentCSText4": "Kariyerimi değiştirmeyi düşünüyorum. Bu değişimi nasıl başarılı bir şekilde yapabilirim?",
+        "agentCSTitle5": "Sosyal ilişkiler kurma stratejileri",
+        "agentCSText5": "Profesyonel ağımdan nasıl bir şekilde yararlanabilirim?",
+        "agentCSTitle6": "Performansı iyileştirme",
+        "agentCSText6": "Gelecekteki fırsatlara hazırlanabilmek için mevcut rolümdeki performansımı nasıl iyileştirebilirim?"
+    }
+}

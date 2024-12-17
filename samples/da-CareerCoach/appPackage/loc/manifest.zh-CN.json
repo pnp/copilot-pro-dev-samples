@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "在职业发展教练的帮助下让事业更上一层楼",
+    "description.full": "职业发展教练旨在指导您完成职业旅程的每一步。无论您是希望在当前职位上取得进步、探索新机会还是弥补技能差距，职业发展教练都会根据您的独特职业道路提供可行的个性化建议。职业发展教练旨在与智能 Microsoft 365 Copilot 副驾驶® 配合使用。",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "职业发展教练是一个声明性代理，可为专业人员提供有关如何在职业生涯中继续学习和成长的个性化建议。",
+        "agentCSTitle1": "职业发展计划",
+        "agentCSText1": "根据我目前的角色和未来的目标，帮我制定详细的职业发展计划。",
+        "agentCSTitle2": "技能差距分析",
+        "agentCSText2": "分析我目前的技能并确定需要弥合的差距，帮我在职业生涯中取得进步。",
+        "agentCSTitle3": "学习机会",
+        "agentCSText3": "您会推荐哪些课程、认证或研讨会来帮助我这个职位上的人实现职业发展?",
+        "agentCSTitle4": "职业转型建议",
+        "agentCSText4": "我正在考虑职业转型。如何才能成功完成这一转变?",
+        "agentCSTitle5": "网络策略",
+        "agentCSText5": "我可以如何利用自己的专业网络?",
+        "agentCSTitle6": "绩效改善",
+        "agentCSText6": "我该如何提升自己在目前职位上的表现，为未来的发展机会做好准备?"
+    }
+}

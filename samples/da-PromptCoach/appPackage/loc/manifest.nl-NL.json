@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Uw prompts schrijven en verbeteren",
+    "description.full": "Promptcoach Is ontwerpen voor het schrijven van goed gestructureerde en effectieve prompts. Deze assistent kan uitstekend nieuwe prompts genereren en bestaande prompts analyseren, zodat deze passen bij uw doelen. De focus ligt op het ondersteunen van gebruikers bij het hele proces, met waardevolle feedback, voorbeelden en bruikbare suggesties voor voortdurende verbetering. Promptcoach Is ontworpen voor Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Promptcoach is een declaratieve agent die is ontworpen om nieuwe Copilot-gebruikers te helpen bij het maken van effectieve en goed gestructureerde prompts.",
+        "agentCSTitle1": "Genereren van prompt",
+        "agentCSText1": "Help me een prompt te genereren voor gebruik in Copilot.",
+        "agentCSTitle2": "Prompt analyseren",
+        "agentCSText2": "Analyseer mijn prompt en geef aan hoe ik deze zou kunnen verbeteren.",
+        "agentCSTitle3": "Conformiteit van prompt",
+        "agentCSText3": "Evalueer of mijn prompt voldoet aan de richtlijnen voor verantwoorde AI.",
+        "agentCSTitle4": "Promptontwerpen",
+        "agentCSText4": "Hoe schrijf ik een goede prompt?",
+        "agentCSTitle5": "Mijn prompt herstellen",
+        "agentCSText5": "Ik krijg niet de uitvoer die ik van mijn prompt verwacht. Hoe kan ik dit probleem oplossen?",
+        "agentCSTitle6": "Promptvoorbeelden",
+        "agentCSText6": "Laat me drie voorbeelden van goede prompts zien."
+    }
+}

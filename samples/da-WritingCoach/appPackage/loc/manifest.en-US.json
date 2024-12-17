@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Take your writing to the next level with Writing Coach",
+    "description.full": "Writing Coach is an expert assistant dedicated to providing detailed, constructive feedback and helping you excel in any writing task. Whether you're refining an email, crafting a story, or developing a whitepaper, Writing Coach is here to guide you every step of the way. Writing Coach is designed to work with Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Writing Coach to help you in your writing.",
+        "agentCSTitle1": "Critique my writing",
+        "agentCSText1": "Provide detailed and constructive feedback on a piece of writing.",
+        "agentCSTitle2": "Change the tone of an email or message",
+        "agentCSText2": "Help change the tone of an email or message from professional language to a more casual tone.",
+        "agentCSTitle3": "Translate a piece of text",
+        "agentCSText3": "Translate a piece of text into another language.",
+        "agentCSTitle4": "Teach me how to write instructions",
+        "agentCSText4": "Help me write instructions to explain a complex process.",
+        "agentCSTitle5": "Professional blog post",
+        "agentCSText5": "Help me write a blog post for my company.",
+        "agentCSTitle6": "Write a whitepaper",
+        "agentCSText6": "Help me write a whitepaper."
+    }
+}

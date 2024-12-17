@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "與寫作教練一起將您的寫作提升到全新層次",
+    "description.full": "寫作教練是一位專家助理，致力於提供詳細、有建設性的意見反應並協助您在任何寫作任務中表現出色。無論您是在修改電子郵件、製作故事還是撰寫技術白皮書，寫作教練都會在這裡指導您完成每一步。寫作教練旨在搭配 Microsoft 365 Copilot 使用。",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "寫作教練可以協助您進行寫作。",
+        "agentCSTitle1": "批評我的寫作",
+        "agentCSText1": "對一篇文章提供詳細且有建設性的意見反應。",
+        "agentCSTitle2": "變更電子郵件或訊息的語氣",
+        "agentCSText2": "協助將電子郵件或訊息的語氣從專業語言變更為更隨意的語氣。",
+        "agentCSTitle3": "翻譯一段文字",
+        "agentCSText3": "將一段文字翻譯成其他語言。",
+        "agentCSTitle4": "教我如何撰寫說明",
+        "agentCSText4": "協助我撰寫說明以解釋複雜的程序。",
+        "agentCSTitle5": "專業部落格文章",
+        "agentCSText5": "協助我為公司撰寫部落格文章。",
+        "agentCSTitle6": "撰寫技術白皮書",
+        "agentCSText6": "協助我撰寫技術白皮書。"
+    }
+}

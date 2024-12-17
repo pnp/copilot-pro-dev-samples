@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Hyödynnä potentiaalisi oppimisvalmentajan avulla",
+    "description.full": "Oppimisvalmentaja on tukea antava ja asiantunteva oppimisavustaja, joka on suunniteltu auttamaan monimutkaisen aiheiden hallinnassa, taitojen kehittämisessä ja tavoitteita varten räätälöidyn täydellisen oppimissuunnitelman luonnissa. Oppimisvalmentaja on suunniteltu Microsoft 365 Copilotin kanssa käytettäväksi.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Tämä Copilot-agentti auttaa käyttäjää ymmärtämään, mitä monimutkainen termi tai aihe tarkoittaa, selittämällä sen yksinkertaisten termien avulla siten, että käyttäjä voi tulkita ja ymmärtää tarkoituksen. Avustajan on tarjottava heti yksinkertainen ja yksityiskohtainen monimutkaisen aiheen yhteenveto. Tällä tavoin käyttäjä voi valita, mikä määritelmä soveltuu parhaiten tietoaukon täyttämiseen.",
+        "agentCSTitle1": "Tietoja aiheesta",
+        "agentCSText1": "Auta minua tutustumaan tiettyyn aiheeseen.",
+        "agentCSTitle2": "Opettele uusi kieli",
+        "agentCSText2": "Opasta minua uuden kielen oppimisessa ja sen käyttämisessä.",
+        "agentCSTitle3": "Harjoittele taitoa",
+        "agentCSText3": "Auta minua harjoittelemaan tekemällä minulla jo olevaa taitoa koskevia harjoituksia.",
+        "agentCSTitle4": "Valmistaudu tenttiin",
+        "agentCSText4": "Auta minua valmistautumaan valitsemaani aihetta koskevaan tenttiin.",
+        "agentCSTitle5": "Luo oppimissuunnitelma",
+        "agentCSText5": "Auta minua luomaan aihetta koskeva oppimispolku.",
+        "agentCSTitle6": "Ehdota oppimismenetelmää",
+        "agentCSText6": "Auta minua tunnistamaan minulle parhaiten sopiva oppimistapa."
+    }
+}
+

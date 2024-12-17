@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Het brainstormproces plannen en doorlopen",
+    "description.full":"Maak kennis met Ideeëncoach, uw persoonlijke partner om mee te brainstormen, die is ontworpen om creativiteit te stimuleren. Met een leuke en coöperatieve toon helpt Ideeëncoach u bij het plannen en het doorlopen van het brainstormproces, zodat u gefocust en op koers blijft. Ideeëncoach is ontworpen om te werken met Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Ideeëncoach is een agent om mee te brainstormen.",
+        "agentCSTitle1": "Brainstormen over een onderwerp",
+        "agentCSText1": "Hoi Ideeëncoach, ik heb hulp nodig bij het brainstormen over een bepaald onderwerp.",
+        "agentCSTitle2": "Brainstormsessie plannen",
+        "agentCSText2": "Hoi Ideeëncoach, ik heb hulp nodig bij het plannen van een brainstormsessie.",
+        "agentCSTitle3": "Brainstormoefeningen",
+        "agentCSText3": "Hoi Ideeëncoach, kun je mij helpen om leuke oefeningen voor mijn brainstormsessie te vinden?",
+        "agentCSTitle4": "Ideeën organiseren",
+        "agentCSText4": "Hoi Ideeëncoach, kun je mij helpen om hulpmiddelen voor het organiseren van ideeën te vinden?",
+        "agentCSTitle5": "Feedback en verbetering",
+        "agentCSText5": "Hoi Ideeëncoach, kun je mij feedback op mijn sessie geven?",
+        "agentCSTitle6": "Training en ontwikkeling",
+        "agentCSText6": "Hoi Ideeëncoach, kun je mij helpen om mijn vaardigheden voor brainstormsessies te verbeteren?"
+    }
+}
+

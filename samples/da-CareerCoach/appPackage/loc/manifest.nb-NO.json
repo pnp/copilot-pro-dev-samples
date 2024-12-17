@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Løft karrieren med karriereveilederen",
+    "description.full": "Karriereveilederen er utformet for å veilede deg gjennom hvert trinn på den profesjonelle reisen. Enten du ønsker å avansere i den nåværende rollen, utforske nye muligheter eller fylle ferdighetsmangler, gir karriereveilederen deg personlige, praktiske råd tilpasset din unike karrierevei. Karriereveilederen er utformet for å fungere med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Karriereveilederen er en deklarativ agent som gir fagfolk tilpassede forslag til hvordan de kan fortsette å lære og vokse i karrierene sine.",
+        "agentCSTitle1": "Karriereutviklingsplan",
+        "agentCSText1": "Hjelp meg med å lage en detaljert karriereutviklingsplan basert på nåværende rolle og fremtidige mål.",
+        "agentCSTitle2": "Analyse av kompetansemangler",
+        "agentCSText2": "Analyser nåværende ferdigheter og identifiser eventuelle mangler jeg må fylle for å komme videre i karrieren min.",
+        "agentCSTitle3": "Læringsmuligheter",
+        "agentCSText3": "Hvilke kurs, sertifiseringer eller seminarer vil du anbefale for noen i min rolle for å vokse profesjonelt?",
+        "agentCSTitle4": "Råd om å skifte karriere",
+        "agentCSText4": "Jeg vurderer å skifte karriere. Hvordan kan jeg gjøre denne endringen?",
+        "agentCSTitle5": "Nettverksstrategier",
+        "agentCSText5": "Hvordan kan jeg bruke det profesjonelle nettverket mitt til å hjelpe meg?",
+        "agentCSTitle6": "Ytelsesforbedring",
+        "agentCSText6": "Hvordan kan jeg forbedre prestasjonene mine i den nåværende rollen for å forberede meg på fremtidige muligheter?"
+    }
+}

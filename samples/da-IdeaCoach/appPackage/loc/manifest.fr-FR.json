@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Planifier et naviguer dans le processus de brainstorming",
+    "description.full":"Voici le coach d’idées, votre compagnon personnel de brainstorming conçu pour inspirer la créativité. Avec un ton agréable et collaboratif, le coach d’idées vous aide à planifier et à naviguer dans le processus de brainstorming, en s’assurant que vous restez concentré et sur la bonne voie. Le coach d’idée est conçu pour fonctionner avec Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Le coach d’idée est un assistant de brainstorming.",
+        "agentCSTitle1": "Réfléchir à un sujet",
+        "agentCSText1": "Salut coach d’idée, aide-moi à réfléchir à un sujet spécifique.",
+        "agentCSTitle2": "Planifier une session brainstorming",
+        "agentCSText2": "Salut coach d’idée, j’ai besoin d’aide pour planifier une session de brainstorming.",
+        "agentCSTitle3": "Exercices de brainstorming",
+        "agentCSText3": "Salut coach d’idée, peux-tu m’aider à trouver des exercices amusants pour ma séance de brainstorming ?",
+        "agentCSTitle4": "Organiser des idées",
+        "agentCSText4": "Salut coach d’idée, peux-tu m’aider à trouver des outils pour organiser des idées ?",
+        "agentCSTitle5": "Commentaires et amélioration",
+        "agentCSText5": "Salut coach d’idée, peu-tu me faire part de tes commentaires sur ma session ?",
+        "agentCSTitle6": "Formation et développement",
+        "agentCSText6": "Salut coach d’idée, peux-tu m’aider à améliorer mes compétences pour des sessions de brainstorming ?"
+    }
+}
+

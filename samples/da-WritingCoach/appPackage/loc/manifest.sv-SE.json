@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Ta din text till nästa nivå med Skrivcoachen",
+    "description.full": "Skrivcoachen är en expertassistent dedikerad för att ge detaljerad, konstruktiv feedback och hjälpa dig lyckas med alla texter du skriver. Skrivcoachen hjälper dig från början till slut, oavsett om du förfinar ett e-postmeddelande, skriver en berättelse eller tar fram ett whitepaper. Skrivcoachen är utformad för att användas med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Skrivcoachen som hjälper dig skriva.",
+        "agentCSTitle1": "Ge kritik på min text",
+        "agentCSText1": "Ge detaljerad och konstruktiv feedback på en text.",
+        "agentCSTitle2": "Ändra tonen i ett e-postmeddelande eller meddelande",
+        "agentCSText2": "Hjälp till att ändra tonen i ett e-postmeddelande eller meddelande från professionellt språk till en mer ledig ton.",
+        "agentCSTitle3": "Översätta en text",
+        "agentCSText3": "Översätt en text till ett annat språk.",
+        "agentCSTitle4": "Lär mig skriva instruktioner",
+        "agentCSText4": "Hjälp mig skriva instruktioner för att förklara en komplex process.",
+        "agentCSTitle5": "Professionellt blogginlägg",
+        "agentCSText5": "Hjälp mig skriva ett blogginlägg för mitt företag.",
+        "agentCSTitle6": "Skriva ett whitepaper",
+        "agentCSText6": "Hjälp mig skriva ett whitepaper."
+    }
+}

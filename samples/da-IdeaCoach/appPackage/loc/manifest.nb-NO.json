@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Planlegg og naviger i idemyldringsprosessen",
+    "description.full":"Møt forslagsveilederen, din personlige idemyldringspartner utviklet for å inspirere til kreativitet. Med en morsom og samarbeidende tone hjelper forslagsveilederen deg med å planlegge og navigere i idemyldringsprosessen, slik at du holder fokus og er på riktig spor. Forslagsveilederen er utformet for å fungere med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Forslagsveilederen er en idemyldringsagent.",
+        "agentCSTitle1": "Idemyldre om et emne",
+        "agentCSText1": "Hei forslagsveileder, hjelp meg med å idemyldre om et bestemt emne.",
+        "agentCSTitle2": "Planlegg idemyldringsøkt",
+        "agentCSText2": "Hei forslagsveileder, jeg trenger hjelp til å planlegge en idemyldringsøkt.",
+        "agentCSTitle3": "Idemyldringsøvelser",
+        "agentCSText3": "Hei forslagsveileder, kan du hjelpe meg med å finne morsomme øvelser til idemyldringsøkten?",
+        "agentCSTitle4": "Organiser forslag",
+        "agentCSText4": "Hei forslagsveileder, kan du hjelpe meg med å finne verktøy for å organisere forslag?",
+        "agentCSTitle5": "Tilbakemelding og forbedring",
+        "agentCSText5": "Hei forslagsveileder, kan du gi meg tilbakemelding på økten min?",
+        "agentCSTitle6": "Opplæring og utvikling",
+        "agentCSText6": "Hei forslagsveileder, kan du hjelpe meg med å forbedre ferdighetene mine for idemyldringsøkter?"
+    }
+}
+

@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Tingkatkan kemampuan menulis Anda dengan Pelatih Menulis",
+    "description.full": "Pelatih Menulis adalah asisten ahli yang khusus ditugaskan untuk memberikan tanggapan yang terperinci dan membangun serta membantu Anda menjadi unggul dalam tugas menulis apa pun. Baik Anda sedang mengedit email, membuat cerita, atau mengembangkan whitepaper, Pelatih Menulis hadir untuk membimbing Anda di setiap langkah. Pelatih Menulis dirancang untuk bekerja dengan Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Pelatih Menulis untuk membantu Anda menulis.",
+        "agentCSTitle1": "Nilai tulisan saya",
+        "agentCSText1": "Berikan tanggapan yang terperinci dan konstruktif secara tertulis.",
+        "agentCSTitle2": "Ubah gaya email atau pesan",
+        "agentCSText2": "Bantu ubah gaya email atau pesan dari bahasa profesional ke gaya yang lebih santai.",
+        "agentCSTitle3": "Terjemahkan teks",
+        "agentCSText3": "Terjemahkan teks ke dalam bahasa lain.",
+        "agentCSTitle4": "Ajari saya cara menulis instruksi",
+        "agentCSText4": "Bantu saya menulis petunjuk untuk menjelaskan proses kompleks.",
+        "agentCSTitle5": "Posting blog profesional",
+        "agentCSText5": "Bantu saya menulis posting blog untuk perusahaan saya.",
+        "agentCSTitle6": "Tulis whitepaper",
+        "agentCSText6": "Bantu saya menulis whitepaper."
+    }
+}

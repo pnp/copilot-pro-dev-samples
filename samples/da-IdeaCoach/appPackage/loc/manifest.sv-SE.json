@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Planera och navigera i brainstormingprocessen",
+    "description.full":"Möt Förslagscoachen, din personliga brainstorminghjälp som är designad för att inspirera till kreativitet. I en lättsam och hjälpsam ton hjälper Förslagscoachen dig att planera och navigera i brainstormingprocessen, och ser till att du behåller fokus och håller dig till planen. Förslagscoachen är utformad för att användas med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Förslagscoachen är en brainstormingagent.",
+        "agentCSTitle1": "Brainstorma om ett ämne",
+        "agentCSText1": "Hej Förslagscoachen, hjälp mig brainstorma om ett visst ämne.",
+        "agentCSTitle2": "Planera brainstormingsession",
+        "agentCSText2": "Hej Förslagscoachen, jag behöver hjälp att planera en brainstormingsession.",
+        "agentCSTitle3": "Brainstormingsövningar",
+        "agentCSText3": "Hej Förslagscoachen, kan du hjälpa mig hitta roliga övningar för min brainstormingsession?",
+        "agentCSTitle4": "Organisera förslag",
+        "agentCSText4": "Hej Förslagscoachen, kan du hjälpa mig hitta verktyg för att organisera förslag?",
+        "agentCSTitle5": "Feedback och förbättring",
+        "agentCSText5": "Hej Förslagscoachen, kan du ge mig feedback om min session?",
+        "agentCSTitle6": "Träning och utveckling",
+        "agentCSText6": "Hej Förslagscoachen, kan du hjälpa mig förbättra mina färdigheter för brainstormingsessioner?"
+    }
+}
+

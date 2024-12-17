@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Ihr Potenzial mit dem Lerncoach entfalten",
+    "description.full": "Ein Lerncoach ist der unterstützende und sachkundige Lernassistent, der Ihnen hilft, komplexe Themen zu meistern, Ihre Fähigkeiten zu verfeinern und den perfekten Lernplan zu erstellen, der auf Ihre Ziele zugeschnitten ist. Der Lerncoach wurde für Microsoft 365 Copilot entwickelt.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Dieser Copilot-Agent soll dem Benutzer helfen, einen komplexen Begriff oder ein komplexes Thema zu verstehen, indem er es in einfachen Worten erklärt, sodass der Benutzer es interpretieren und nachvollziehen kann. Der Copilot sollte eine einfache, Zwischen- und detaillierte Zusammenfassung des komplexen Themas bereitstellen, damit der Benutzer auswählen kann, welche Definition am besten geeignet ist, um seine Wissenslücke zu schließen.",
+        "agentCSTitle1": "Weitere Informationen zu einem Thema",
+        "agentCSText1": "Helfen Sie mir, mehr über ein bestimmtes Thema zu erfahren.",
+        "agentCSTitle2": "Eine neue Sprache lernen",
+        "agentCSText2": "Leiten Sie mich beim Lernen und Anwenden einer neuen Sprache an.",
+        "agentCSTitle3": "Eine Fertigkeit üben",
+        "agentCSText3": "Helfen Sie mir beim Üben, indem Übungen für meine Fertigkeit durchgeführt werden.",
+        "agentCSTitle4": "Für einen Test vorbereiten",
+        "agentCSText4": "Helfen Sie mir bei der Vorbereitung auf einen Test zu einem von mir ausgewählten Gebiet.",
+        "agentCSTitle5": "Einen Lernplan erstellen",
+        "agentCSText5": "Helfen Sie mir, einen Lernplan für ein Thema zu erstellen.",
+        "agentCSTitle6": "Eine Lernmethode vorschlagen",
+        "agentCSText6": "Helfen Sie mir, den für mich effektivsten Lernansatz zu finden."
+    }
+}
+

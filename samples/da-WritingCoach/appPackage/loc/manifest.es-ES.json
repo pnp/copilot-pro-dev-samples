@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Lleva tu escritura al siguiente nivel con el asistente de escritura",
+    "description.full": "El asistente de escritura es un asistente experto dedicado a proporcionar comentarios detallados y constructivos y a ayudarte a sobresalir en cualquier tarea de escritura. Tanto si estás puliendo un correo electrónico como creando una historia o desarrollando un documento técnico, el asistente de escritura está aquí para guiarte en cada paso. El asistente de escritura está diseñado para funcionar con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Asistente de escritura para ayudarte a escribir.",
+        "agentCSTitle1": "Critica mi escritura",
+        "agentCSText1": "Proporciona comentarios detallados y constructivos sobre un escrito.",
+        "agentCSTitle2": "Cambia el tono de un correo electrónico o mensaje",
+        "agentCSText2": "Ayuda a cambiar el tono de un correo electrónico o mensaje de un lenguaje profesional a un tono más informal.",
+        "agentCSTitle3": "Traduce un fragmento de texto",
+        "agentCSText3": "Traduce un fragmento de texto a otro idioma.",
+        "agentCSTitle4": "Enséñame a escribir instrucciones",
+        "agentCSText4": "Ayúdame a escribir instrucciones para explicar un proceso complejo.",
+        "agentCSTitle5": "Entrada de blog profesional",
+        "agentCSText5": "Ayúdame a escribir una entrada de blog para mi empresa.",
+        "agentCSTitle6": "Escribe un documento técnico",
+        "agentCSText6": "Ayúdame a escribir un documento técnico."
+    }
+}

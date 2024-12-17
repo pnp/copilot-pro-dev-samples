@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Beyin fırtınası sürecini planlama ve yönetme",
+    "description.full":"Yaratıcılık konusunda ilham vermek için tasarlanmış kişisel beyin fırtınası yardımcınız Fikir Koçu ile tanışın. Eğlenceli ve iş birliğine dayalı bir tona sahip olan Fikir Koçu, beyin fırtınası sürecini planlamanıza ve yönetmenize yardımcı olarak odaklanmanızı ve amacınıza uygun ilerlemenizi sağlar. Fikir Koçu, Microsoft 365 Copilot ile birlikte çalışacak şekilde tasarlanmıştır.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Fikir Koçu, bir beyin fırtınası aracısıdır.",
+        "agentCSTitle1": "Bir konu hakkında beyin fırtınası yapma",
+        "agentCSText1": "Merhaba Fikir Koçu, bana belirli bir konuda beyin fırtınası yapma konusunda yardım etmeni istiyorum.",
+        "agentCSTitle2": "Beyin fırtınası oturumu planlama",
+        "agentCSText2": "Merhaba Fikir Koçu, bir beyin fırtınası oturumu planlama konusunda yardımına ihtiyacım var.",
+        "agentCSTitle3": "Beyin fırtınası egzersizleri",
+        "agentCSText3": "Merhaba Fikir Koçu, beyin fırtınası oturumum için eğlenceli egzersizler bulmama yardımcı olabilir misin?",
+        "agentCSTitle4": "Fikirleri organize etme",
+        "agentCSText4": "Merhaba Fikir Koçu, fikirlerimi organize etmem için araçlar bulmama yardımcı olabilir misin?",
+        "agentCSTitle5": "Geri bildirim ve iyileştirme",
+        "agentCSText5": "Merhaba Fikir Koçu, bana oturumumla ilgili geri bildirim verebilir misin?",
+        "agentCSTitle6": "Eğitim ve gelişim",
+        "agentCSText6": "Merhaba Fikir Koçu, beyin fırtınası oturumu becerilerimi iyileştirmeme yardımcı olabilir misin?"
+    }
+}
+

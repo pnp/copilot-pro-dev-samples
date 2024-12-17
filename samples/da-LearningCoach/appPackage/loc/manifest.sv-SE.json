@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Upptäck din potential med Utbildningscoachen",
+    "description.full": "Utbildningscoachen är en stöttande och kunnig utbildningsassistent som hjälper dig att bemästra komplexa ämnen, utveckla dina färdigheter och skapa en perfekt utbildningsplan anpassad efter dina mål. Utbildningscoachen är utformad för att fungera med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Den här Copilot-agenten ska hjälpa en användare förstå en komplex term eller ett komplext ämne genom att förklara det med enkla ord så att användaren kan tolka och förstå. Copiloten ska erbjuda en enkel, en mellanliggande och en detaljerad sammanfattning av det komplexa ämnet så att användaren kan välja vilken definition som lämpar sig bäst för att fylla användarens kunskapslucka.",
+        "agentCSTitle1": "Lär dig mer om ett ämne",
+        "agentCSText1": "Hjälp mig lära mig mer om ett visst ämne.",
+        "agentCSTitle2": "Lär dig ett nytt språk",
+        "agentCSText2": "Guida mig till att lära mig och öva på ett nytt språk.",
+        "agentCSTitle3": "Öva på en färdighet",
+        "agentCSText3": "Hjälp mig öva genom att göra övningar för den färdighet jag har.",
+        "agentCSTitle4": "Förbered inför ett prov",
+        "agentCSText4": "Hjälp mig förbereda mig för ett test på ett ämne som jag väljer.",
+        "agentCSTitle5": "Skapa en utbildningsplan",
+        "agentCSText5": "Hjälp mig skapa en inlärningsplan för ett ämne.",
+        "agentCSTitle6": "Föreslå en utbildningsmetod",
+        "agentCSText6": "Hjälp mig identifiera den mest effektiva inlärningsmetoden för mig."
+    }
+}
+

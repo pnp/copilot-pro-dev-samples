@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "规划并引导集体讨论流程",
+    "description.full":"了解一下想法教练，它是您的个人集体讨论伙伴，旨在激发创造力。想法教练以有趣和协作的语气帮助您规划和引导集体讨论流程，确保您保持专注并按计划进行。想法教练旨在与智能 Microsoft 365 Copilot 副驾驶® 配合使用。",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "想法教练是集体讨论代理。",
+        "agentCSTitle1": "集体讨论一个主题",
+        "agentCSText1": "嘿，想法教练，请帮我组织一次有关特定主题的集体讨论。",
+        "agentCSTitle2": "策划集体讨论会议",
+        "agentCSText2": "嘿，想法教练，我想策划一次集体讨论会议，需要帮助。",
+        "agentCSTitle3": "集体讨论练习",
+        "agentCSText3": "嘿，想法教练，能帮我为集体讨论会议找到有趣的练习吗?",
+        "agentCSTitle4": "整理想法",
+        "agentCSText4": "嘿，想法教练，能帮我找到整理想法的工具吗?",
+        "agentCSTitle5": "反馈与改进",
+        "agentCSText5": "嘿，想法教练，能给我的会议一些反馈吗?",
+        "agentCSTitle6": "培训与发展",
+        "agentCSText6": "嘿，想法教练，能帮我提高集体讨论会议策划技能吗?"
+    }
+}
+

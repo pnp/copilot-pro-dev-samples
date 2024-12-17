@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Siirry kirjoittamisessa uudelle tasolle kirjoitusvalmentajan avulla",
+    "description.full": "Kirjoitusvalmentaja on asiantunteva avustaja, joka on erikoistanut antamaan yksityiskohtaista ja rakentavaa palautetta sekä auttamaan suoriutumaan eriomaisesti kirjoitustehtävistä. Olipa kyse sähköpostin viimeistelystä, tarinan laatimisesta tai raportin kehittämisestä, kirjoitusvalmentaja opastaa prosessin jokaisessa vaiheessa. Kirjoitusvalmentaja on suunniteltu Microsoft 365 Copilotin kanssa käytettäväksi.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Kirjoitusvalmentaja auttaa kirjoittamaan.",
+        "agentCSTitle1": "Arvostele kirjoitukseni",
+        "agentCSText1": "Anna kirjoitusta koskevaa yksityiskohtaista ja rakentavaa palautetta.",
+        "agentCSTitle2": "Muuta sähköpostin tai viestin sävyä",
+        "agentCSText2": "Auta muuttamaan sähköpostin tai viestin sävy ammatillisesta epämuodolliseksi.",
+        "agentCSTitle3": "Käännä teksti",
+        "agentCSText3": "Käännä teksti toiselle kielelle.",
+        "agentCSTitle4": "Opeta kirjoittamaan ohjeita",
+        "agentCSText4": "Auta kirjoittamaan monimutkaisen prosessin selittävät ohjeet.",
+        "agentCSTitle5": "Ammattilaisten blogikirjoitus",
+        "agentCSText5": "Auta kirjoittamaan yritykseni blogikirjoitus.",
+        "agentCSTitle6": "Kirjoita raportti",
+        "agentCSText6": "Auta kirjoittamaan raportti."
+    }
+}

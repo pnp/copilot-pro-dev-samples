@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Odblokuj swój potencjał dzięki Mentorowi ds. nauki",
+    "description.full": "Mentor ds. nauki to pomocny i wykształcony asystent naukowy, który pomoże Ci w poznawaniu złożonych tematów, doskonaleniu umiejętności i tworzeniu perfekcyjnego planu nauki dostosowanego do Twoich celów. Mentor ds. nauki został zaprojektowany do działania z funkcją Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Ten agent funkcji Copilot ma pomagać użytkownikowi w rozumieniu złożonego terminu lub tematu, wyjaśniając go w prostych słowach, co umożliwi użytkownikowi zinterpretowanie i zrozumienie go. Pomocnik powinien oferować proste, pośrednie i szczegółowe podsumowania złożonego tematu, co umożliwi użytkownikowi wybranie definicji, dzięki której najlepiej wypełni luki w swojej wiedzy.",
+        "agentCSTitle1": "Zdobywanie wiedzy na określony temat",
+        "agentCSText1": "Pomóż mi zdobyć wiedzę na określony temat.",
+        "agentCSTitle2": "Nauka nowego języka",
+        "agentCSText2": "Przeprowadź mnie przez naukę i praktykę używania nowego języka.",
+        "agentCSTitle3": "Ćwiczenie umiejętności",
+        "agentCSText3": "Pomóż mi rozwijać posiadaną umiejętność przez wykonywanie ćwiczeń.",
+        "agentCSTitle4": "Przygotowanie do testu",
+        "agentCSText4": "Pomóż mi przygotować się do testu na wybrany przeze mnie temat.",
+        "agentCSTitle5": "Tworzenie planu nauki",
+        "agentCSText5": "Pomóż mi utworzyć plan nauki danego tematu.",
+        "agentCSTitle6": "Sugerowanie metody nauki",
+        "agentCSText6": "Pomóż mi zidentyfikować najskuteczniejsze dla mnie podejście do nauki."
+    }
+}
+

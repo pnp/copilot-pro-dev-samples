@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Sblocca il tuo potenziale con il coach per l'apprendimento",
+    "description.full": "Il coach per l'apprendimento è l'assistente all'apprendimento di supporto e competente, dedicato ad aiutarti a padroneggiare argomenti complessi, affinare le tue competenze e creare il piano di apprendimento perfetto su misura per i tuoi obiettivi. Il coach per l'apprendimento è progettato per funzionare con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Questo agente Copilot dovrebbe aiutare un utente a comprendere un termine o un argomento complesso, descrivendolo in parole semplici in modo che l'utente possa interpretarlo e comprenderlo. Il copilota dovrebbe offrire un riepilogo semplice, completo e dettagliato dell'argomento complesso, in modo che l'utente possa scegliere quale definizione è più adatta a colmare la sua lacuna nella conoscenza.",
+        "agentCSTitle1": "Apprendi un argomento",
+        "agentCSText1": "Aiutami a ottenere informazioni su un argomento specifico.",
+        "agentCSTitle2": "Apprendi una nuova lingua",
+        "agentCSText2": "Guidami nell'apprendimento e nella pratica di una nuova lingua.",
+        "agentCSTitle3": "Fai pratica su una competenza",
+        "agentCSText3": "Aiutami a fare pratica con esercizi per le mie competenze.",
+        "agentCSTitle4": "Preparati per un test",
+        "agentCSText4": "Aiutami a prepararmi per un test su un argomento di mia scelta.",
+        "agentCSTitle5": "Crea un piano di apprendimento",
+        "agentCSText5": "Aiutami a creare un piano di apprendimento per un argomento.",
+        "agentCSTitle6": "Suggerisci un metodo di apprendimento",
+        "agentCSText6": "Aiutami a identificare l'approccio di apprendimento più efficace per me."
+    }
+}
+

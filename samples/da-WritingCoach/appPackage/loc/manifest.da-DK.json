@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Tag din skrivning til det næste niveau med Skrivecoach",
+    "description.full": "Skrivecoach er en ekspertassistent, der er dedikeret til at give detaljeret og konstruktiv feedback og hjælpe dig med at blive en mester til alle skriveopgaver. Uanset om du forfiner en mail, udarbejder en historie eller udvikler et whitepaper, så er Skrivecoach klar at vejlede dig i alle trin på vejen. Skrivecoach er designet til at arbejde sammen med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Skrivecoach til at hjælpe dig med din skrivning.",
+        "agentCSTitle1": "Kritik af mit skriftlige arbejde",
+        "agentCSText1": "Giv detaljeret og konstruktiv feedback på et skriftligt arbejde.",
+        "agentCSTitle2": "Ændre tonen i en mail eller meddelelse",
+        "agentCSText2": "Hjælp med at ændre tonen i en mail eller meddelelse fra professionelt sprog til en mere afslappet tone.",
+        "agentCSTitle3": "Oversæt et stykke tekst",
+        "agentCSText3": "Oversæt et stykke tekst til et andet sprog.",
+        "agentCSTitle4": "Lær mig at skrive instruktioner",
+        "agentCSText4": "Hjælp mig med at skrive instruktioner for at forklare en kompleks proces.",
+        "agentCSTitle5": "Professionelt blogindlæg",
+        "agentCSText5": "Hjælp mig med at skrive et blogindlæg for min virksomhed.",
+        "agentCSTitle6": "Skriv et whitepaper",
+        "agentCSText6": "Hjælp mig med at skrive et whitepaper."
+    }
+}

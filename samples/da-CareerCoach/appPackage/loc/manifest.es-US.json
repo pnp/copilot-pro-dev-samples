@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Mejore su carrera con el Asesor de carrera",
+    "description.full": "El Asesor de carrera está diseñado para guiarle paso a paso por su trayectoria profesional. No importa si quiere avanzar en su puesto actual, explorar nuevas oportunidades o mejorar sus aptitudes: el Asesor de carrera le ofrece asesoramiento personalizado y práctico adaptado a su trayectoria profesional única. Además, el Asesor de carrera está diseñado para funcionar con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "El Asesor de carrera es un agente declarativo que ofrece a los profesionales sugerencias personalizadas sobre cómo pueden continuar aprendiendo y mejorando en sus carreras.",
+        "agentCSTitle1": "Plan de desarrollo profesional",
+        "agentCSText1": "Ayúdame a crear un plan detallado de desarrollo profesional basado en mi puesto actual y mis objetivos futuros.",
+        "agentCSTitle2": "Análisis de carencias en las aptitudes",
+        "agentCSText2": "Analiza mis aptitudes actuales e identifica las carencias que necesito completar para progresar en mi carrera.",
+        "agentCSTitle3": "Oportunidades de aprendizaje",
+        "agentCSText3": "¿Qué cursos, certificaciones o talleres recomendarías para que alguien en mi puesto crezca profesionalmente?",
+        "agentCSTitle4": "Orientación sobre una transición profesional",
+        "agentCSText4": "Estoy pensando en una transición profesional. ¿Cómo puedo realizar este cambio con éxito?",
+        "agentCSTitle5": "Estrategias para hacer contactos",
+        "agentCSText5": "¿Cómo puedo aprovechar mi red profesional?",
+        "agentCSTitle6": "Mejora del rendimiento",
+        "agentCSText6": "¿Cómo puedo mejorar el rendimiento en mi puesto actual para prepararme de cara a futuras oportunidades?"
+    }
+}

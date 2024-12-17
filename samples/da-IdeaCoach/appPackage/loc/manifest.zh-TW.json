@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "規劃和瀏覽腦力激盪程序",
+    "description.full":"見過構想教練，這是能夠激發創造力的個人腦力激盪夥伴。創意教練以有趣和合作的語氣協助您規劃和引導腦力激盪程序，確保您保持專注並步入正軌。創意教練旨在搭配 Microsoft 365 Copilot 使用。",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "構想教練是一個腦力激盪代理程式。",
+        "agentCSTitle1": "對主題進行腦力激盪",
+        "agentCSText1": "嘿，構想教練，幫我就特定主題進行腦力激盪。",
+        "agentCSTitle2": "規劃腦力激盪會議",
+        "agentCSText2": "嘿，構想教練，我需要協助規劃腦力激盪會議。",
+        "agentCSTitle3": "腦力激盪活動",
+        "agentCSText3": "嘿，構想教練，您能幫我找到適合在腦力激盪會議中進行的有趣活動嗎?",
+        "agentCSTitle4": "組織構想",
+        "agentCSText4": "嘿，構想教練，您能幫我找到組織構想的工具嗎?",
+        "agentCSTitle5": "意見反應和改進",
+        "agentCSText5": "嘿，構想教練，您能針對我的會議提供一些意見反應嗎?",
+        "agentCSTitle6": "訓練和發展",
+        "agentCSText6": "嘿，構想教練，您能幫我提升腦力激盪會議的技能嗎?"
+    }
+}
+

@@ -22,6 +22,108 @@
         "full": "Career Coach is designed to guide you through every step of your professional journey. Whether you're looking to advance in your current role, explore new opportunities, or bridge skill gaps, Career Coach provides personalized, actionable advice tailored to your unique career path. Career Coach is designed to work with Microsoft 365 Copilot."
     },
     "accentColor": "#FFFFFF",
+    "localizationInfo": {
+        "defaultLanguageTag": "en-US",
+        "defaultLanguageFile": "loc/manifest.en-US.json",
+        "additionalLanguages": [
+            {
+                "languageTag": "cs-CZ",
+                "file": "loc/manifest.cs-CZ.json"
+            },
+            {
+                "languageTag": "da-DK",
+                "file": "loc/manifest.da-DK.json"
+            },
+            {
+                "languageTag": "de-DE",
+                "file": "loc/manifest.de-DE.json"
+            },
+            {
+                "languageTag": "el-GR",
+                "file": "loc/manifest.el-GR.json"
+            },
+            {
+                "languageTag": "es-ES",
+                "file": "loc/manifest.es-ES.json"
+            },
+            {
+                "languageTag": "es-US",
+                "file": "loc/manifest.es-US.json"
+            },
+            {
+                "languageTag": "fi-FI",
+                "file": "loc/manifest.fi-FI.json"
+            },
+            {
+                "languageTag": "fr-CA",
+                "file": "loc/manifest.fr-CA.json"
+            },
+            {
+                "languageTag": "fr-FR",
+                "file": "loc/manifest.fr-FR.json"
+            },
+            {
+                "languageTag": "hi-IN",
+                "file": "loc/manifest.hi-IN.json"
+            },
+            {
+                "languageTag": "id-ID",
+                "file": "loc/manifest.id-ID.json"
+            },
+            {
+                "languageTag": "it-IT",
+                "file": "loc/manifest.it-IT.json"
+            },
+            {
+                "languageTag": "ja-JP",
+                "file": "loc/manifest.ja-JP.json"
+            },
+            {
+                "languageTag": "ko-KR",
+                "file": "loc/manifest.ko-KR.json"
+            },
+            {
+                "languageTag": "nb-NO",
+                "file": "loc/manifest.nb-NO.json"
+            },
+            {
+                "languageTag": "nl-NL",
+                "file": "loc/manifest.nl-NL.json"
+            },
+            {
+                "languageTag": "pl-PL",
+                "file": "loc/manifest.pl-PL.json"
+            },
+            {
+                "languageTag": "pt-BR",
+                "file": "loc/manifest.pt-BR.json"
+            },
+            {
+                "languageTag": "ru-RU",
+                "file": "loc/manifest.ru-RU.json"
+            },
+            {
+                "languageTag": "sv-SE",
+                "file": "loc/manifest.sv-SE.json"
+            },
+            {
+                "languageTag": "th-TH",
+                "file": "loc/manifest.th-TH.json"
+            },
+            {
+                "languageTag": "tr-TR",
+                "file": "loc/manifest.tr-TR.json"
+            },
+            {
+                "languageTag": "zh-CN",
+                "file": "loc/manifest.zh-CN.json"
+            },
+            {
+                "languageTag": "zh-TW",
+                "file": "loc/manifest.zh-TW.json"
+            }
+        ]
+    },
     "composeExtensions": [],
     "permissions": [
         "identity",

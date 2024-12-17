@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Öğrenme Koçu ile potansiyelinizi ortaya çıkarın",
+    "description.full": "Öğrenme Koçu, karmaşık konularda uzmanlaşmanıza, becerilerinizi geliştirmenize ve hedeflerinize göre uyarlanmış mükemmel öğrenme planını hazırlamanıza yardımcı olmak üzere tasarlanmış, destekleyici ve bilgi yüklü bir öğrenme yardımcısıdır. Öğrenme Koçu, Microsoft 365 Copilot ile birlikte çalışacak şekilde tasarlanmıştır.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Bu Copilot aracısı, kullanıcının yorumlayıp anlayabilmesi için karmaşık bir terimi veya konuyu basit terimlerle açıklayarak kullanıcının anlamasına yardımcı olur. Yardımcı pilot, karmaşık konunun basit, orta ve ayrıntılı bir özetini sunarak kullanıcının, bilgi boşluğunu doldurmak için en uygun terimin hangisi olduğunu seçebilmesini sağlar.",
+        "agentCSTitle1": "Bir konu hakkında bilgi edinme",
+        "agentCSText1": "Lütfen belirli bir konu hakkında bilgi edinmeme yardımcı ol.",
+        "agentCSTitle2": "Yeni bir dil öğrenme",
+        "agentCSText2": "Lütfen bana yeni bir dil öğrenme ve bu dilin pratiğini yapma konusunda yön göster.",
+        "agentCSTitle3": "Bir becerinin pratiğini yapma",
+        "agentCSText3": "Lütfen sahip olduğum beceriyle ilgili egzersiz yaparak pratik yapmama yardımcı ol.",
+        "agentCSTitle4": "Bir teste hazırlanma",
+        "agentCSText4": "Lütfen seçtiğim konuyla ilgili bir test hazırlamama yardımcı ol.",
+        "agentCSTitle5": "Bir öğrenim planı oluşturma",
+        "agentCSText5": "Lütfen bir konuyla ilgili bir öğrenim planı oluşturmama yardımcı ol.",
+        "agentCSTitle6": "Bir öğrenim yöntemi önerme",
+        "agentCSText6": "Lütfen bana uygun etkili bir öğrenim yaklaşımı belirlememe yardımcı ol."
+    }
+}
+
