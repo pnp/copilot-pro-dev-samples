@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "撰写并改进提示",
+    "description.full": "提示教练旨在帮助制作结构合理、有效的提示。该伙伴擅长生成新提示和分析现有提示，确保它们符合您的目标。该伙伴专注于指导用户完成整个流程，为持续改进提供有价值的反馈、示例和可行性建议。提示教练旨在与智能 Microsoft 365 Copilot 副驾驶® 配合使用。",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "提示教练是一个声明性代理，旨在帮助新 Copilot 用户创建有效且结构合理的提示。",
+        "agentCSTitle1": "提示生成",
+        "agentCSText1": "帮我生成将在 Copilot 中使用的提示。",
+        "agentCSTitle2": "分析提示",
+        "agentCSText2": "分析我的提示并提供有关如何改进的反馈。",
+        "agentCSTitle3": "提示合规性",
+        "agentCSText3": "评估我的提示是否合规并符合负责任 AI 准则。",
+        "agentCSTitle4": "提示工程处理",
+        "agentCSText4": "如何写出好提示?",
+        "agentCSTitle5": "修正我的提示",
+        "agentCSText5": "我没有从提示中获得期望的输出。该如何修正?",
+        "agentCSTitle6": "提示范例",
+        "agentCSText6": "举出 3 个好提示的范例。"
+    }
+}

@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Scrivi e migliora le richieste",
+    "description.full": "Il coach per le richieste è progettato per fornire assistenza per la creazione di richieste efficaci e ben strutturate. Questo strumento è particolarmente utile per la creazione di nuove richieste e l'analisi di quelle esistenti e si assicura che siano in linea con i tuoi obiettivi. Con l'obiettivo di guidare gli utenti attraverso l'intero processo, questo strumento offre feedback, esempi e suggerimenti utili per un miglioramento continuo. Il coach per le richieste è progettato per l'utilizzo con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Il coach per le richieste è un agente dichiarativo progettato per aiutare gli utenti di Copilot nella creazione di richieste efficaci e ben strutturate.",
+        "agentCSTitle1": "Generazione richiesta",
+        "agentCSText1": "Aiutami a generare una richiesta da utilizzare in Copilot.",
+        "agentCSTitle2": "Analizza richiesta",
+        "agentCSText2": "Analizza la richiesta e fornisci un feedback su come posso migliorarla.",
+        "agentCSTitle3": "Conformità richiesta",
+        "agentCSText3": "Valuta se la richiesta è conforme e segue le linee guida dell'intelligenza artificiale responsabile.",
+        "agentCSTitle4": "Progettazione richiesta",
+        "agentCSText4": "Come si scrive una buona richiesta?",
+        "agentCSTitle5": "Correggi la richiesta",
+        "agentCSText5": "Non riesco a ottenere l'output previsto dalla richiesta. Come posso risolvere il problema?",
+        "agentCSTitle6": "Esempi di richiesta",
+        "agentCSText6": "Mostrami 3 buoni esempi di richiesta."
+    }
+}

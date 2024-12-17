@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Pište a vylepšujte své výzvy",
+    "description.full": "Poradce s výzvami je navržen tak, aby pomáhal vytvářet správně strukturované a efektivní výzvy. Tento asistent vyniká jak v generování nových výzev, tak v analýze stávajících, přičemž zajišťuje, že budou v souladu s vašimi cíli. Se zaměřením na to, aby uživatele provedl celým procesem, nabízí tento asistent cennou zpětnou vazbu, příklady a užitečné návrhy pro neustálé zlepšování. Poradce s výzvami je navržen pro použití s nástrojem Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Poradce s výzvami je deklarativní agent navržený tak, aby pomáhal novým uživatelům Copilota vytvářet efektivní a správně strukturované výzvy.",
+        "agentCSTitle1": "Generování výzvy",
+        "agentCSText1": "Pomoz mi vygenerovat výzvu pro použití v Copilotu.",
+        "agentCSTitle2": "Analýza výzvy",
+        "agentCSText2": "Zanalyzuj moji výzvu a poskytni zpětnou vazbu, jak bych ji mohl(a) zlepšit.",
+        "agentCSTitle3": "Soulad výzvy",
+        "agentCSText3": "Vyhodnoť, zda moje výzva vyhovuje a zda se řídí pravidly odpovědné AI.",
+        "agentCSTitle4": "Sestavování výzev",
+        "agentCSText4": "Jak napsat dobrou výzvu?",
+        "agentCSTitle5": "Oprava mé výzvy",
+        "agentCSText5": "Nedostávám výstup, který od své výzvy očekávám. Jak to mohu opravit?",
+        "agentCSTitle6": "Příklady výzvy",
+        "agentCSText6": "Ukaž mi tři dobré příklady výzvy."
+    }
+}

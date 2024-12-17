@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Impulsa tu carrera con el asistente profesional",
+    "description.full": "El asistente profesional está diseñado para guiarte en cada paso de tu trayectoria profesional. Tanto si estás buscando progresar en tu puesto actual como explorar nuevas oportunidades o reducir lagunas de aptitudes, el asistente profesional ofrece asesoramiento personalizado y práctico adaptado a tu trayectoria profesional única. El asistente profesional está diseñado para funcionar con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "El asistente profesional es un agente declarativo que ofrece a los profesionales sugerencias personalizadas sobre cómo pueden seguir aprendiendo y progresando en sus carreras.",
+        "agentCSTitle1": "Plan de desarrollo profesional",
+        "agentCSText1": "Ayúdame a crear un plan detallado de desarrollo profesional de acuerdo con mi puesto actual y mis objetivos futuros.",
+        "agentCSTitle2": "Análisis de lagunas de aptitudes",
+        "agentCSText2": "Analiza mis aptitudes actuales e identifica las lagunas que necesito rellenar para progresar en mi carrera.",
+        "agentCSTitle3": "Oportunidades de aprendizaje",
+        "agentCSText3": "¿Qué cursos, certificaciones o talleres recomendarías para que alguien en mi puesto crezca profesionalmente?",
+        "agentCSTitle4": "Orientación sobre una transición profesional",
+        "agentCSText4": "Estoy pensando en una transición profesional. ¿Cómo puedo realizar este cambio con éxito?",
+        "agentCSTitle5": "Estrategias para hacer contactos",
+        "agentCSText5": "¿Cómo puedo aprovechar mi red profesional?",
+        "agentCSTitle6": "Mejora del rendimiento",
+        "agentCSText6": "¿Cómo puedo mejorar el rendimiento en mi puesto actual para prepararme de cara a futuras oportunidades?"
+    }
+}

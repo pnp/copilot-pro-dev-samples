@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "학습 코치와 함께 잠재력 발휘",
+    "description.full": "학습 코치는 복잡한 과목을 마스터하고, 기술을 다듬고, 목표에 맞는 완벽한 학습 계획을 세울 수 있도록 도와주는 지식이 풍부한 학습 지원 도우미입니다. 학습 코치는 Microsoft 365 Copilot과 함께 작동하도록 설계되었습니다.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Copilot 에이전트는 복잡한 용어나 주제를 사용자가 해석하고 이해할 수 있도록 간단한 용어로 설명하여 사용자의 이해를 도와야 합니다. Copilot은 복잡한 토픽에 대한 간단한 중간 요약과 상세한 요약을 제공해야 하므로 사용자가 자신의 지식 격차를 메우는 데 가장 적합한 정의를 선택할 수 있습니다.",
+        "agentCSTitle1": "토픽에 대해 알아보기",
+        "agentCSText1": "특정 토픽에 대해 알아볼 수 있도록 도움을 주세요.",
+        "agentCSTitle2": "새로운 언어 배우기",
+        "agentCSText2": "새로운 언어를 배우고 연습할 수 있도록 도움을 주세요.",
+        "agentCSTitle3": "기술 연습",
+        "agentCSText3": "제가 가진 기술을 연습하면서 실습할 수 있도록 도움을 주세요.",
+        "agentCSTitle4": "시험 준비",
+        "agentCSText4": "제가 선택한 과목의 시험을 준비할 수 있도록 도움을 주세요.",
+        "agentCSTitle5": "학습 계획 만들기",
+        "agentCSText5": "토픽에 대한 학습 계획을 만들 수 있도록 도움을 주세요.",
+        "agentCSTitle6": "학습 방법 제안",
+        "agentCSText6": "저에게 가장 효과적인 학습 방법을 찾는 데 도움을 주세요."
+    }
+}
+

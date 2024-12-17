@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Rencanakan dan arahkan proses curah pendapat",
+    "description.full":"Perkenalkan Pelatih Ide, rekan curah pendapat pribadi Anda yang dirancang untuk mendorong kreativitas. Dengan suasana yang menyenangkan dan kolaboratif, Pelatih Ide membantu Anda merencanakan dan mengarahkan proses curah pendapat, memastikan Anda tetap fokus dan berada di jalur yang benar. Pelatih Ide dirancang untuk bekerja dengan Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Pelatih ide adalah agen curah pendapat.",
+        "agentCSTitle1": "Lakukan curah pendapat untuk topik",
+        "agentCSText1": "Hai Pelatih Ide, bantu saya melakukan curah pendapat tentang topik tertentu.",
+        "agentCSTitle2": "Rencanakan Sesi Curah Pendapat",
+        "agentCSText2": "Hai Pelatih Ide, saya perlu bantuan untuk merencanakan sesi Curah Pendapat.",
+        "agentCSTitle3": "Latihan untuk Curah Pendapat",
+        "agentCSText3": "Hai Pelatih Ide, apakah Anda dapat membantu saya menemukan latihan yang menyenangkan untuk sesi Curah Pendapat?",
+        "agentCSTitle4": "Kelola Ide",
+        "agentCSText4": "Hai Pelatih Ide, apakah Anda dapat membantu saya menemukan alat untuk mengelola ide?",
+        "agentCSTitle5": "Tanggapan dan Peningkatan",
+        "agentCSText5": "Hai Pelatih Ide, apakah Anda dapat memberikan tanggapan tentang sesi saya?",
+        "agentCSTitle6": "Pelatihan dan Pengembangan",
+        "agentCSText6": "Hai Pelatih Ide, apakah Anda dapat membantu saya meningkatkan keterampilan untuk sesi Curah Pendapat?"
+    }
+}
+

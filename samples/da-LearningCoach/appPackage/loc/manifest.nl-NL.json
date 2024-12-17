@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Ontgrendel uw potentieel met Leercoach",
+    "description.full": "Leercoach is een behulpzame en deskundige leerassistent die u helpt om complexe onderwerpen onder de knie te krijgen, uw vaardigheden te verfijnen en een perfect leerplan op te stellen dat is afgestemd op uw doelen. Leercoach is ontworpen voor Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Deze Copilot-agent kan helpen bij het in eenvoudige bewoordingen uitleggen van een complexe term of een ingewikkeld onderwerp, zodat gebruikers dit kunnen interpreteren en begrijpen. De copilot moet een eenvoudige en gedetailleerde samenvatting van het complexe onderwerp aanbieden, zodat gebruikers kunnen kiezen welke definitie het meest geschikt is om hun kenniskloof te dichten.",
+        "agentCSTitle1": "Meer informatie over een onderwerp",
+        "agentCSText1": "Help me meer te weten te komen over een bepaald onderwerp.",
+        "agentCSTitle2": "Een nieuwe taal leren",
+        "agentCSText2": "Begeleid me bij het leren en oefenen van een nieuwe taal.",
+        "agentCSTitle3": "Een vaardigheid oefenen",
+        "agentCSText3": "Help me met oefeningen voor de vaardigheid die ik heb.",
+        "agentCSTitle4": "Voorbereiden voor een toets",
+        "agentCSText4": "Help me om me voor te bereiden op een toets over een onderwerp dat ik kies.",
+        "agentCSTitle5": "Een leerplan maken",
+        "agentCSText5": "Help me een leerplan voor een onderwerp te maken.",
+        "agentCSTitle6": "Een leermethode voorstellen",
+        "agentCSText6": "Help me om te bepalen wat voor mij de meest effectieve leeraanpak is."
+    }
+}
+

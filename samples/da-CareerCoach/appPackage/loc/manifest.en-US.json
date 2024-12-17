@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Elevate your career with Career Coach",
+    "description.full": "Career Coach is designed to guide you through every step of your professional journey. Whether you're looking to advance in your current role, explore new opportunities, or bridge skill gaps, Career Coach provides personalized, actionable advice tailored to your unique career path. Career Coach is designed to work with Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Career Coach is a declarative Agent that provides professionals with personalized suggestions on how they can continue to learn and grow in their careers.",
+        "agentCSTitle1": "Career development plan",
+        "agentCSText1": "Help me create a detailed career development plan based on my current role and future goals.",
+        "agentCSTitle2": "Skill gap analysis",
+        "agentCSText2": "Analyze my current skills and identify any gaps that I need to fill to advance in my career.",
+        "agentCSTitle3": "Learning opportunities",
+        "agentCSText3": "What courses, certifications, or workshops would you recommend for someone in my role to grow professionally?",
+        "agentCSTitle4": "Career transition advice",
+        "agentCSText4": "I am considering a career transition. How can I make this change successfully?",
+        "agentCSTitle5": "Networking strategies",
+        "agentCSText5": "How can I leverage my professional network to help?",
+        "agentCSTitle6": "Performance improvement",
+        "agentCSText6": "How can I improve my performance in my current role to prepare for future opportunities?"
+    }
+}

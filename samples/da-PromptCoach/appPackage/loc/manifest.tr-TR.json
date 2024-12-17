@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "İstem yazın ve istemlerinizi iyileştirin",
+    "description.full": "İstem Koçu, iyi yapılandırılmış, etkili istemlerin hazırlanmasına yardımcı olmak için tasarlanmıştır. Bu yardımcı, hem yeni istemler oluşturma hem de mevcut istemleri analiz ederek hedeflerinizle uyumlu olmalarını sağlama konusunda idealdir. Kullanıcılara tüm süreç boyunca rehberlik etmeye odaklanan bu yardımcı, sürekli iyileştirme için değerli geri bildirimler, örnekler ve eyleme geçirilebilir öneriler sunar. İstem Koçu, Microsoft 365 Copilot ile birlikte çalışacak şekilde tasarlanmıştır.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "İstem Koçu, yeni Copilot kullanıcılarına etkili ve iyi yapılandırılmış istemler oluşturma konusunda yardımcı olmak için tasarlanmış, bildirim temelli bir aracıdır.",
+        "agentCSTitle1": "İstem Oluşturma",
+        "agentCSText1": "Copilot'ta kullanmak üzere bir istem oluşturmama yardımcı ol.",
+        "agentCSTitle2": "İstem Analizi",
+        "agentCSText2": "İstemimi analiz et ve nasıl iyileştirebileceğime dair geri bildirim ver.",
+        "agentCSTitle3": "İstem Uyumluluğu",
+        "agentCSText3": "İstemimin, sorumlu AI yönergeleri ile uyumlu olup olmadığını değerlendir.",
+        "agentCSTitle4": "İstem Mühendisliği",
+        "agentCSText4": "Nasıl iyi bir istem yazabilirim?",
+        "agentCSTitle5": "İstemimi düzelt",
+        "agentCSText5": "İstemimden istediğim sonucu alamıyorum. İstemimi nasıl düzeltebilirim?",
+        "agentCSTitle6": "İstem Örnekleri",
+        "agentCSText6": "Bana 3 tane iyi istem örneği göster."
+    }
+}

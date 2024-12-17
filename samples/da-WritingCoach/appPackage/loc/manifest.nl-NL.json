@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Til uw schrijfvaardigheden naar een hoger niveau met Schrijfcoach",
+    "description.full": "Schrijfcoach is een deskundige assistent die u gedetailleerde, constructieve feedback geeft en laat uitblinken in elke schrijftaak. Of u nu een e-mail aan het bijschaven bent, een verhaal schrijft of een technisch document aan het ontwikkelen bent, Schrijfcoach is er om u bij elke stap te begeleiden. Schrijfcoach is ontworpen om te werken met Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Schrijfcoach om u te helpen bij het schrijven.",
+        "agentCSTitle1": "Mijn schrijven beoordelen",
+        "agentCSText1": "Geef gedetailleerde en constructieve feedback over een geschreven werk.",
+        "agentCSTitle2": "De toon van een e-mail of bericht wijzigen",
+        "agentCSText2": "Help de toon van een e-mail of bericht te wijzigen, van een professionele naar een meer informele toon.",
+        "agentCSTitle3": "Een stuk tekst vertalen",
+        "agentCSText3": "Vertaal een stuk tekst in een andere taal.",
+        "agentCSTitle4": "Mij leren om instructies te schrijven",
+        "agentCSText4": "Help me instructies te schrijven om een complex proces uit te leggen.",
+        "agentCSTitle5": "Professionele blogpost",
+        "agentCSText5": "Help me een blogpost te schrijven voor mijn bedrijf.",
+        "agentCSTitle6": "Een technisch document schrijven",
+        "agentCSText6": "Help me een technisch document te schrijven."
+    }
+}

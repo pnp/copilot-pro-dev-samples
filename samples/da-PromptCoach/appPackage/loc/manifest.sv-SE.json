@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Skriva och förbättra dina prompter",
+    "description.full": "Promptcoachen hjälper dig att skapa välstrukturerade och effektiva prompter. Den här coachen kan hjälpa dig med att både generera nya prompter och analysera befintliga, vilket säkerställer att de överensstämmer med dina mål. Fokus ligger på att göra användarna nöjda under hela processen, så du får stöd genom värdefull feedback, exempel och användbara förslag för löpande förbättring. Promptcoachen är utformad för att fungera med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Promptcoachen är en deklarativ agent avsedd att hjälpa nya Copilot-användare skapa effektiva och välstrukturerade prompter.",
+        "agentCSTitle1": "Promptgenerering",
+        "agentCSText1": "Hjälp mig skapa en prompt som ska användas i Copilot.",
+        "agentCSTitle2": "Analysera prompt",
+        "agentCSText2": "Analysera min prompt och ge feedback på hur jag kan förbättra den.",
+        "agentCSTitle3": "Promptefterlevnad",
+        "agentCSText3": "Utvärdera om min prompt följer standard och riktlinjerna för ansvarsfull AI.",
+        "agentCSTitle4": "Promptkonstruktion",
+        "agentCSText4": "Hur skriver jag en bra prompt?",
+        "agentCSTitle5": "Fixa min prompt",
+        "agentCSText5": "Jag får inte de utdata jag förväntar mig från prompten. Hur kan jag fixa det?",
+        "agentCSTitle6": "Promptexempel",
+        "agentCSText6": "Visa exempel på tre bra prompter."
+    }
+}

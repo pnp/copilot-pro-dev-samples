@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Pisz i ulepszaj swoje monity",
+    "description.full": "Mentor ds. monitów został zaprojektowany, aby pomagać w tworzeniu efektywnych monitów o odpowiedniej strukturze. Ten pomocnik specjalizuje się w generowaniu nowych monitów oraz analizowaniu istniejących w celu zagwarantowania, że będą one dopasowane do Twoich celów. Dzięki koncentracji na prowadzeniu użytkowników przez cały proces ten pomocnik oferuje wartościowe opinie, przykłady i sugestie dotyczące akcji do wykonania, co umożliwia ciągłe doskonalenie efektów swojej pracy. Mentor ds. monitów jest przeznaczony do działania z funkcją Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Mentor ds. monitów to deklaratywny agent przeznaczony do pomagania nowym użytkownikom funkcji Copilot w tworzeniu efektywnych monitów o odpowiedniej strukturze.",
+        "agentCSTitle1": "Generowanie monitu",
+        "agentCSText1": "Pomóż mi wygenerować monit, który będzie używany w funkcji Copilot.",
+        "agentCSTitle2": "Analizowanie monitu",
+        "agentCSText2": "Przeanalizuj mój monit i przekaż opinię z informacjami, jak mogę go ulepszyć.",
+        "agentCSTitle3": "Zgodność monitu",
+        "agentCSText3": "Oceń, czy mój monit jest zgodny z przepisami oraz wytycznymi dotyczącymi odpowiedzialnej sztucznej inteligencji.",
+        "agentCSTitle4": "Inżynieria tworzenia monitów",
+        "agentCSText4": "Jak napisać dobry monit?",
+        "agentCSTitle5": "Poprawianie monitu",
+        "agentCSText5": "Użycie mojego monitu nie przynosi oczekiwanych wyników. Jak mogę go poprawić?",
+        "agentCSTitle6": "Przykłady monitów",
+        "agentCSText6": "Pokaż mi 3 przykłady dobrych monitów."
+    }
+}

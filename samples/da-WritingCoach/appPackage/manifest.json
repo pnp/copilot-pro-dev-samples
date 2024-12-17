@@ -2,12 +2,12 @@
     "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
     "manifestVersion": "1.19",
     "version": "1.0.0",
-    "id": "f72d7797-c6ee-4fd3-9454-028d0095068b",
+    "id": "${{TEAMS_APP_ID}}",
     "developer": {
-        "name": "Microsoft Corporation",
-        "websiteUrl": "https://www.microsoft.com",
-        "privacyUrl": "https://privacy.microsoft.com/PrivacyStatement",
-        "termsOfUseUrl": "https://support.microsoft.com/en-us/office/supplementary-terms-of-service-for-teams-apps-powered-by-microsoft-365-services-and-applications-bc6027fe-68c3-4758-a70d-cfe97c43b4e2"
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
     },
     "icons": {
         "color": "color.png",
@@ -22,6 +22,108 @@
         "full": "Writing Coach is an expert assistant dedicated to providing detailed, constructive feedback and helping you excel in any writing task. Whether you're refining an email, crafting a story, or developing a whitepaper, Writing Coach is here to guide you every step of the way. Writing Coach is designed to work with Microsoft 365 Copilot."
     },
     "accentColor": "#FFFFFF",
+    "localizationInfo": {
+        "defaultLanguageTag": "en-US",
+        "defaultLanguageFile": "loc/manifest.en-US.json",
+        "additionalLanguages": [
+            {
+                "languageTag": "cs-CZ",
+                "file": "loc/manifest.cs-CZ.json"
+            },
+            {
+                "languageTag": "da-DK",
+                "file": "loc/manifest.da-DK.json"
+            },
+            {
+                "languageTag": "de-DE",
+                "file": "loc/manifest.de-DE.json"
+            },
+            {
+                "languageTag": "el-GR",
+                "file": "loc/manifest.el-GR.json"
+            },
+            {
+                "languageTag": "es-ES",
+                "file": "loc/manifest.es-ES.json"
+            },
+            {
+                "languageTag": "es-US",
+                "file": "loc/manifest.es-US.json"
+            },
+            {
+                "languageTag": "fi-FI",
+                "file": "loc/manifest.fi-FI.json"
+            },
+            {
+                "languageTag": "fr-CA",
+                "file": "loc/manifest.fr-CA.json"
+            },
+            {
+                "languageTag": "fr-FR",
+                "file": "loc/manifest.fr-FR.json"
+            },
+            {
+                "languageTag": "hi-IN",
+                "file": "loc/manifest.hi-IN.json"
+            },
+            {
+                "languageTag": "id-ID",
+                "file": "loc/manifest.id-ID.json"
+            },
+            {
+                "languageTag": "it-IT",
+                "file": "loc/manifest.it-IT.json"
+            },
+            {
+                "languageTag": "ja-JP",
+                "file": "loc/manifest.ja-JP.json"
+            },
+            {
+                "languageTag": "ko-KR",
+                "file": "loc/manifest.ko-KR.json"
+            },
+            {
+                "languageTag": "nb-NO",
+                "file": "loc/manifest.nb-NO.json"
+            },
+            {
+                "languageTag": "nl-NL",
+                "file": "loc/manifest.nl-NL.json"
+            },
+            {
+                "languageTag": "pl-PL",
+                "file": "loc/manifest.pl-PL.json"
+            },
+            {
+                "languageTag": "pt-BR",
+                "file": "loc/manifest.pt-BR.json"
+            },
+            {
+                "languageTag": "ru-RU",
+                "file": "loc/manifest.ru-RU.json"
+            },
+            {
+                "languageTag": "sv-SE",
+                "file": "loc/manifest.sv-SE.json"
+            },
+            {
+                "languageTag": "th-TH",
+                "file": "loc/manifest.th-TH.json"
+            },
+            {
+                "languageTag": "tr-TR",
+                "file": "loc/manifest.tr-TR.json"
+            },
+            {
+                "languageTag": "zh-CN",
+                "file": "loc/manifest.zh-CN.json"
+            },
+            {
+                "languageTag": "zh-TW",
+                "file": "loc/manifest.zh-TW.json"
+            }
+        ]
+    },
     "composeExtensions": [],
     "permissions": [
         "identity",

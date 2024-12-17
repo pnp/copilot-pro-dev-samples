@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Planowanie procesu tworzenia burzy mózgów i poruszanie się po nim",
+    "description.full":"Poznaj Mentora ds. pomysłów, czyli Twojego osobistego pomocnika w zakresie prowadzenia burz mózgów, którego celem jest inspirowanie Twojej kreatywności. Dzięki wesołemu, zachęcającemu do współpracy tonowi Mentor ds. pomysłów pomoże Ci zaplanować proces tworzenia burzy mózgów i poruszać się po nim, dzięki czemu zachowasz koncentrację i niczego nie pominiesz. Mentor ds. pomysłów został zaprojektowany do działania z funkcją Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Mentor ds. pomysłów to agent zajmujący się burzami mózgów.",
+        "agentCSTitle1": "Burza mózgów na wybrany temat",
+        "agentCSText1": "Witaj Mentorze ds. pomysłów, pomóż mi przeprowadzić burzę mózgów na określony temat.",
+        "agentCSTitle2": "Planowanie sesji burzy mózgów",
+        "agentCSText2": "Witaj Mentorze ds. pomysłów, potrzebuję pomocy w zaplanowaniu sesji burzy mózgów.",
+        "agentCSTitle3": "Ćwiczenia na burzę mózgów",
+        "agentCSText3": "Witaj Mentorze ds. pomysłów, możesz mi pomóc znaleźć ćwiczenia na sesję burzy mózgów?",
+        "agentCSTitle4": "Organizowanie pomysłów",
+        "agentCSText4": "Witaj Mentorze ds. pomysłów, możesz mi pomóc znaleźć narzędzia do organizowania pomysłów?",
+        "agentCSTitle5": "Opinia i ulepszanie",
+        "agentCSText5": "Witaj Mentorze ds. pomysłów, możesz przekazać mi opinię na temat mojej sesji?",
+        "agentCSTitle6": "Szkolenie i rozwój",
+        "agentCSText6": "Witaj Mentorze ds. pomysłów, możesz mi pomóc poprawić moje umiejętności dotyczące sesji burzy mózgów?"
+    }
+}
+

@@ -1,33 +1,33 @@
 {
   "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
   "version": "v1.0",
-  "name": "Idea Coach",
-  "description": "Idea coach is a brainstorming agent.",
+  "name": "[[agentName]]",
+  "description": "[[agentDescription]]",
   "instructions": "$[file('instruction.txt')]",
   "conversation_starters": [
     {
-      "title": "Brainstorm a topic",
-      "text": "Hey Idea Coach, help me brainstorm about a specific topic."
+      "title": "[[agentCSTitle1]]",
+      "text": "[[agentCSText1]]"
     },
     {
-      "title": "Plan brainstorming Session",
-      "text": "Hey Idea Coach, I need help planning a Brainstorming session."
+      "title": "[[agentCSTitle2]]",
+      "text": "[[agentCSText2]]"
     },
     {
-      "title": "Brainstorming Exercises",
-      "text": "Hey Idea Coach, can you help me find fun exercises for my Brainstorming session?"
+      "title": "[[agentCSTitle3]]",
+      "text": "[[agentCSText3]]"
     },
     {
-      "title": "Organize Ideas",
-      "text": "Hey Idea Coach, can you help me find tools to organize ideas?"
+      "title": "[[agentCSTitle4]]",
+      "text": "[[agentCSText4]]"
     },
     {
-      "title": "Feedback and Improvement",
-      "text": "Hey Idea Coach, can you give me some feedback on my session?"
+      "title": "[[agentCSTitle5]]",
+      "text": "[[agentCSText5]]"
     },
     {
-      "title": "Training and Development",
-      "text": "Hey Idea Coach, can you help me improve my skills for Brainstorming sessions?"
+      "title": "[[agentCSTitle6]]",
+      "text": "[[agentCSText6]]"
     }
   ],
   "capabilities": [

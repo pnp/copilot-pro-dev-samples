@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Ta skrivingen til neste nivå med skriveveilederen",
+    "description.full": "Skriveveilederen er en ekspertassistent dedikert til å gi detaljert, konstruktiv tilbakemelding og hjelpe deg med å utmerke deg i enhver skriveoppgave. Enten du endrer en e-post, lager en historie eller utvikler et teknisk dokument, er skriveveilederen her for å veilede deg hele veien. Skriveveilederen er utformet for å fungere med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Skriveveileder for å hjelpe deg med skrivingen.",
+        "agentCSTitle1": "Vurder skrivingen min",
+        "agentCSText1": "Gi detaljert og konstruktiv tilbakemelding på en tekst.",
+        "agentCSTitle2": "Endre tonen i en e-post eller melding",
+        "agentCSText2": "Hjelp meg med å endre tonen i en e-post eller melding fra profesjonelt språk til en mer avslappet tone.",
+        "agentCSTitle3": "Oversett en tekst",
+        "agentCSText3": "Oversett en tekst til et annet språk.",
+        "agentCSTitle4": "Lær meg å skrive instruksjoner",
+        "agentCSText4": "Hjelp meg med å skrive instruksjoner for å forklare en kompleks prosess.",
+        "agentCSTitle5": "Profesjonelt blogginnlegg",
+        "agentCSText5": "Hjelp meg med å skrive et blogginnlegg for firmaet mitt.",
+        "agentCSTitle6": "Skriv et teknisk dokument",
+        "agentCSText6": "Hjelp meg med å skrive et teknisk dokument."
+    }
+}

@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Avancer dans votre carrière avec le coach de carrière",
+    "description.full": "Le coach de carrière est conçu pour vous guider à chaque étape de votre parcours professionnel. Que vous cherchiez à progresser dans votre rôle actuel, à découvrir de nouvelles opportunités ou à combler les écarts de compétences, le coach de carrière fournit des conseils personnalisés et exploitables pour votre parcours de carrière unique. Le coach de carrière est conçu pour être compatible avec Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Le coach de carrière est un assistant déclaratif qui fournit aux professionnels des suggestions personnalisées sur la façon dont ils peuvent continuer à apprendre et à développer leur carrière.",
+        "agentCSTitle1": "Plan de développement de carrière",
+        "agentCSText1": "Aidez-moi à créer un plan de développement de carrière détaillé basé sur mon rôle actuel et mes futurs objectifs.",
+        "agentCSTitle2": "Analyse des écarts de compétence",
+        "agentCSText2": "Analysez mes compétences actuelles et identifiez les écarts que je dois combler pour faire avancer ma carrière.",
+        "agentCSTitle3": "Opportunités d’apprentissage",
+        "agentCSText3": "Quelles formations, quels certifications ou ateliers recommanderiez-vous à une personne dans mon rôle pour se développer professionnellement?",
+        "agentCSTitle4": "Conseil en matière de transition professionnelle",
+        "agentCSText4": "J’envisage une transition de carrière. Comment bien réussir ce changement?",
+        "agentCSTitle5": "Stratégies de réseautage",
+        "agentCSText5": "Comment puis-je tirer parti de mon réseau professionnel pour aider?",
+        "agentCSTitle6": "Amélioration des performances",
+        "agentCSText6": "Comment puis-je améliorer mes performances dans mon rôle actuel pour me préparer aux futures opportunités?"
+    }
+}

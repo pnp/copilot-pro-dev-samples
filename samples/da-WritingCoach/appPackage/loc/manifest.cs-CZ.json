@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Posuňte své psaní na další úroveň pomocí poradce se psaním",
+    "description.full": "Poradce se psaním je odborný asistent, který se věnuje poskytování podrobné, konstruktivní zpětné vazby a pomáhá vám vyniknout při psaní. Ať už upravujete e-mail, nebo vytváříte příběh či dokument whitepaper, poradce se psaním je tu, aby vás provedl každým krokem. Poradce se psaním je navržen pro použití s nástrojem Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Poradce se psaním, který vám pomůže při psaní.",
+        "agentCSTitle1": "Ohodnoť mé psaní",
+        "agentCSText1": "Poskytni podrobnou a konstruktivní zpětnou vazbu k textu.",
+        "agentCSTitle2": "Změnit tón e-mailu nebo zprávy",
+        "agentCSText2": "Pomoz změnit tón e-mailu nebo zprávy z profesionálního jazyka na neformálnější tón.",
+        "agentCSTitle3": "Přelož kus textu",
+        "agentCSText3": "Přelož text do jiného jazyka.",
+        "agentCSTitle4": "Nauč mě, jak psát pokyny",
+        "agentCSText4": "Pomoz mi napsat pokyny k vysvětlení složitého procesu.",
+        "agentCSTitle5": "Profesionální příspěvek blogu",
+        "agentCSText5": "Pomoz mi napsat příspěvek na blog pro moji společnost.",
+        "agentCSTitle6": "Napiš dokument whitepaper",
+        "agentCSText6": "Pomoz mi napsat dokument whitepaper."
+    }
+}

@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Geef uw carrière een boost met Carrièrecoach",
+    "description.full": "Carrièrecoach is ontworpen om u bij elke stap van uw loopbaantraject te begeleiden. Of u nu verder wilt komen in uw huidige functie, nieuwe mogelijkheden wilt verkennen of hiaten in uw vaardigheden wilt opvullen, Carrièrecoach biedt persoonlijk en bruikbaar advies op maat voor uw unieke carrièrepad. Carrièrecoach is ontworpen om te werken met Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Carrièrecoach is een declaratieve agent die professionals persoonlijke suggesties biedt over manieren waarop ze kunnen blijven leren en groeien in hun carrière.",
+        "agentCSTitle1": "Loopbaanontwikkelingsplan",
+        "agentCSText1": "Help me een gedetailleerd loopbaanontwikkelingsplan te maken op basis van mijn huidige rol en toekomstige doelstellingen.",
+        "agentCSTitle2": "Vaardigheidshiaatanalyse",
+        "agentCSText2": "Analyseer mijn huidige vaardigheden en identificeer eventuele zwakke punten waaraan ik moet werken om verder te komen in mijn carrière.",
+        "agentCSTitle3": "Leermogelijkheden",
+        "agentCSText3": "Welke cursussen, certificeringen of workshops zou u iemand in mijn rol aanraden om zich professioneel te ontwikkelen?",
+        "agentCSTitle4": "Advies over loopbaantransitie",
+        "agentCSText4": "Ik overweeg een carrièreswitch. Hoe zorg ik ervoor dat deze loopbaantransitie een succes wordt?",
+        "agentCSTitle5": "Netwerkstrategieën",
+        "agentCSText5": "Hoe kan ik mijn professionele netwerk gebruiken om te helpen?",
+        "agentCSTitle6": "Prestatieverbetering",
+        "agentCSText6": "Hoe kan ik mijn prestaties in mijn huidige rol verbeteren om me voor te bereiden op toekomstige mogelijkheden?"
+    }
+}

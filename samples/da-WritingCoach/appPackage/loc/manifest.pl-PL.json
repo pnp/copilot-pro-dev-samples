@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Przenieś swoje teksty na wyższy poziom dzięki Mentorowi ds. pisania",
+    "description.full": "Mentor ds. pisania to asystent eksperta, który dostarcza szczegółowe, konstruktywne opinie i pomaga doskonalić się w realizacji zadań związanych z pisaniem tekstów. Nieważne, czy udoskonalasz wiadomość e-mail, tworzysz artykuł, czy opracowujesz oficjalny dokument — Mentor ds. pisania jest tutaj, aby pomóc Ci na każdym etapie pracy. Mentor ds. pisania został zaprojektowany do działania z funkcją Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Mentor ds. pisania pomaga w pisaniu.",
+        "agentCSTitle1": "Krytykowanie tekstu",
+        "agentCSText1": "Przedstaw szczegółową, konstruktywną opinię na temat fragmentu tekstu.",
+        "agentCSTitle2": "Zmiana tonu wiadomości e-mail lub innej wiadomości",
+        "agentCSText2": "Pomóż zmienić ton wiadomości e-mail lub innej wiadomości z profesjonalnego na bardziej codzienny.",
+        "agentCSTitle3": "Tłumaczenie fragmentu tekstu",
+        "agentCSText3": "Przetłumacz fragment tekstu na inny język.",
+        "agentCSTitle4": "Nauka pisania instrukcji",
+        "agentCSText4": "Pomóż mi napisać instrukcje wyjaśniające złożony proces.",
+        "agentCSTitle5": "Wpis w profesjonalnym blogu",
+        "agentCSText5": "Pomóż mi napisać wpis w blogu mojej firmy.",
+        "agentCSTitle6": "Pisanie oficjalnego dokumentu",
+        "agentCSText6": "Pomóż mi napisać oficjalny dokument."
+    }
+}

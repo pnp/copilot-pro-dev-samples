@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Tingkatkan karier Anda dengan Pelatih Karier",
+    "description.full": "Pelatih Karier dirancang untuk membimbing Anda dalam setiap langkah perjalanan profesional Anda. Baik Anda ingin berkembang dalam peran Anda saat ini, menjajaki peluang baru, atau mengatasi kesenjangan keterampilan, Pelatih Karier memberikan saran yang dipersonalisasi dan dapat ditindaklanjuti yang disesuaikan dengan setiap jalur karier Anda. Pelatih Karier dirancang untuk bekerja dengan Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Pelatih Karier adalah Agen deklaratif yang memberikan saran personal kepada para profesional tentang bagaimana mereka dapat terus belajar dan mengembangkan karier.",
+        "agentCSTitle1": "Rencana pengembangan karier",
+        "agentCSText1": "Bantu saya membuat rencana pengembangan karier secara mendetail berdasarkan peran saya saat ini dan tujuan di masa mendatang.",
+        "agentCSTitle2": "Analisis kesenjangan keterampilan",
+        "agentCSText2": "Analisis keterampilan saya saat ini dan identifikasi kesenjangan yang perlu saya perbaiki untuk mengembangkan karier saya.",
+        "agentCSTitle3": "Peluang pembelajaran",
+        "agentCSText3": "Apa saja kursus, sertifikasi, atau lokakarya yang Anda rekomendasikan agar karier seseorang dalam peran saya dapat berkembang?",
+        "agentCSTitle4": "Saran perubahan karier",
+        "agentCSText4": "Saya berencana berganti karier. Bagaimana agar saya dapat berhasil dalam pergantian ini?",
+        "agentCSTitle5": "Strategi jaringan",
+        "agentCSText5": "Bagaimana saya dapat memanfaatkan jaringan profesional saya untuk membantu?",
+        "agentCSTitle6": "Peningkatan kinerja",
+        "agentCSText6": "Bagaimana saya dapat meningkatkan kinerja saya dalam peran saya saat ini untuk mempersiapkan diri menghadapi peluang di masa depan?"
+    }
+}

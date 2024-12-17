@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Skriv og forbedre spørringene",
+    "description.full": "Spørringsveilederen er utformet for å hjelpe deg med å lage godt strukturerte og effektive spørringer. Denne følgesvennen utmerker seg i både å generere nye spørringer og analysere eksisterende, slik at de samsvarer med målene dine. Med fokus på å veilede brukere gjennom hele prosessen tilbyr denne følgesvennen verdifulle tilbakemeldinger, eksempler og praktiske forslag til kontinuerlig forbedring. Spørringsveilederen er utformet for å fungere med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Spørringsveilederen er en deklarativ agent utformet for å hjelpe nye Copilot-brukere med å lage effektive og godt strukturerte spørringer.",
+        "agentCSTitle1": "Spørringsgenerering",
+        "agentCSText1": "Hjelp meg med å generere en spørring som skal brukes i Copilot.",
+        "agentCSTitle2": "Analyser spørring",
+        "agentCSText2": "Analyser spørringen min, og gi tilbakemelding om hvordan jeg kan forbedre den.",
+        "agentCSTitle3": "Spørringssamsvar",
+        "agentCSText3": "Evaluer om spørringen min er i samsvar med og følger retningslinjene for ansvarlig kunstig intelligens.",
+        "agentCSTitle4": "Spørringsteknikk",
+        "agentCSText4": "Hvordan skriver jeg en god spørring?",
+        "agentCSTitle5": "Rett spørringen min",
+        "agentCSText5": "Jeg får ikke utdataene jeg forventer fra spørringen. Hvordan kan jeg rette den?",
+        "agentCSTitle6": "Spørringseksempler",
+        "agentCSText6": "Vis meg tre gode eksempler på spørringer."
+    }
+}

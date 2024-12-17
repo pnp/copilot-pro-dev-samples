@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "경력 코치와 함께 경력 향상",
+    "description.full": "경력 코치는 경력 여정의 모든 단계를 안내하도록 설계되었습니다. 현재 직무를 발전시키거나 새로운 기회를 모색하거나 기술 격차를 해소하려는 경우, 경력 코치는 각자의 경력 경로에 맞는 맞춤화된 실행 가능한 조언을 제공합니다. 경력 코치는 Microsoft 365 Copilot과 함께 작동하도록 설계되었습니다.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "경력 코치는 전문가가 경력에서 지속적으로 학습하고 성장할 수 있는 방법에 대한 맞춤형 제안을 제공하는 선언적 에이전트입니다.",
+        "agentCSTitle1": "경력 개발 계획",
+        "agentCSText1": "현재 역할과 향후 목표에 따라 구체적인 경력 개발 계획을 세울 수 있도록 도움을 주세요.",
+        "agentCSTitle2": "기술 갭 분석",
+        "agentCSText2": "현재 실력을 분석하고 경력을 발전시키기 위해 채워야 할 부족한 부분을 파악하세요.",
+        "agentCSTitle3": "학습 기회",
+        "agentCSText3": "제 역할에 종사하는 사람이 전문적으로 성장하기 위해 어떤 과정, 자격증 또는 워크샵을 추천하나요?",
+        "agentCSTitle4": "이직에 대한 조언",
+        "agentCSText4": "이직을 고려하고 있습니다. 이 성공적인 이직을 하려면 어떻게 해야 하나요?",
+        "agentCSTitle5": "네트워킹 전략",
+        "agentCSText5": "전문가 네트워크를 활용하여 도움을 받으려면 어떻게 해야 하나요?",
+        "agentCSTitle6": "성능 향상",
+        "agentCSText6": "미래의 기회를 준비하기 위해 현재 역할에서 성과를 개선하려면 어떻게 해야 하나요?"
+    }
+}

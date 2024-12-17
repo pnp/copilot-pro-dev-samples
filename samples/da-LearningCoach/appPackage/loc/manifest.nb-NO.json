@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Frigjør potensialet ditt med læringsveileder",
+    "description.full": "Læringsveilederen er den støttende og kunnskapsrike læringsassistenten dedikert til å hjelpe deg med å mestre komplekse emner, finpusse ferdighetene dine og lage den perfekte læringsplanen tilpasset målene dine. Læringsveilederen er utformet for å fungere med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Denne Copilot-agenten skal hjelpe en bruker med å forstå et komplekst begrep eller emne ved å forklare det på en enkel måte slik at brukeren kan tolke og forstå. Kopiloten skal tilby en enkel, middels og detaljert oppsummering av det komplekse emnet, slik at brukeren kan velge hvilken definisjon som er best egnet til å fylle ut kunnskapen som mangler.",
+        "agentCSTitle1": "Finn ut mer om et emne",
+        "agentCSText1": "Hjelp meg med å lære om et bestemt emne.",
+        "agentCSTitle2": "Lær et nytt språk",
+        "agentCSText2": "Veiled meg i å lære og praktisere et nytt språk.",
+        "agentCSTitle3": "Øv på en ferdighet",
+        "agentCSText3": "Hjelp meg å øve ved å gjøre øvelser for ferdigheten jeg har.",
+        "agentCSTitle4": "Forberedelse til en prøve",
+        "agentCSText4": "Hjelp meg med å forberede meg til en prøve i et emne jeg velger.",
+        "agentCSTitle5": "Lag en læringsplan",
+        "agentCSText5": "Hjelp meg med å lage en læringsplan for et emne.",
+        "agentCSTitle6": "Foreslå en læringsmetode",
+        "agentCSText6": "Hjelp meg med å identifisere den mest effektive læringsmetoden for meg."
+    }
+}
+

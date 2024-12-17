@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "프롬프트 작성 및 개선",
+    "description.full": "프롬프트 코치는 체계적이고 효과적인 프롬프트를 작성할 때 도움을 주도록 설계되었습니다. 이 도구는 새로운 프롬프트를 생성하고 기존 프롬프트를 분석하여 목표에 부합하는지 확인하는 데 탁월한 능력을 발휘합니다. 전체 프로세스를 통해 사용자를 안내하는 데 중점을 둔 이 동반자는 지속적인 개선을 위한 귀중한 피드백, 예시 및 실행 가능한 제안을 제공합니다. 프롬프트 코치는 Microsoft 365 Copilot과 함께 작동하도록 설계되었습니다.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "프롬프트 코치는 신규 Copilot 사용자가 효과적이고 체계적인 프롬프트를 작성하는 데 도움을 주기 위해 마련된 선언적 에이전트입니다.",
+        "agentCSTitle1": "프롬프트 생성",
+        "agentCSText1": "Copilot에서 사용할 프롬프트를 생성할 수 있도록 도움을 주세요.",
+        "agentCSTitle2": "프롬프트 분석",
+        "agentCSText2": "내 프롬프트를 분석하고 개선할 수 있는 방법에 대한 피드백을 제공해주세요.",
+        "agentCSTitle3": "프롬프트 규정 준수",
+        "agentCSText3": "내 프롬프트가 책임 있는 AI 지침을 준수하고 있는지 평가합니다.",
+        "agentCSTitle4": "프롬프트 엔지니어링",
+        "agentCSText4": "효과적인 프롬프트는 어떻게 작성하나요?",
+        "agentCSTitle5": "내 프롬프트 수정",
+        "agentCSText5": "프롬프트에서 원하는 결과를 얻지 못했어요. 이 문제를 해결하려면 어떻게 해야 하나요?",
+        "agentCSTitle6": "프롬프트 예시",
+        "agentCSText6": "효과적인 프롬프트 예시 3개를 보여주세요."
+    }
+}

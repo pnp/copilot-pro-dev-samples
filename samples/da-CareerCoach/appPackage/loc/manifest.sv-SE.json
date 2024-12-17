@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Förbättra karriären med Karriärcoachen",
+    "description.full": "Karriärcoachen är utformad för att guida dig genom varje steg i din professionella utveckling. Oavsett om du vill komma vidare i din nuvarande roll, utforska nya möjligheter eller fylla i färdighetsluckor ger Karriärcoachen personanpassade, användbara råd skräddarsydda för din unika karriärväg. Karriärcoachen är utformad för att användas med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Karriärcoachen är en deklarativ agent som ger personanpassade förslag på hur yrkespersoner kan fortsätta att lära sig och utvecklas inom sina karriärer.",
+        "agentCSTitle1": "Karriärutvecklingsplan",
+        "agentCSText1": "Hjälp mig skapa en detaljerad plan för karriärutveckling utifrån min aktuella roll och mina framtida mål.",
+        "agentCSTitle2": "Analys av färdighetslucka",
+        "agentCSText2": "Analysera mina aktuella färdigheter och identifiera luckor som jag behöver fylla för att komma vidare i min karriär.",
+        "agentCSTitle3": "Utbildningsmöjligheter",
+        "agentCSText3": "Vilka kurser, certifieringar och workshops skulle du rekommendera för någon med min roll för att utvecklas professionellt?",
+        "agentCSTitle4": "Råd om karriärövergång",
+        "agentCSText4": "Jag överväger en karriärövergång. Hur gör jag för att lyckas med det?",
+        "agentCSTitle5": "Nätverksstrategier",
+        "agentCSText5": "Hur använder jag mitt professionella nätverk för att få hjälp?",
+        "agentCSTitle6": "Prestationsförbättring",
+        "agentCSText6": "Hur förbättrar jag min prestation i min nuvarande roll för att förbereda mig för framtida möjligheter?"
+    }
+}

@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "Innalza il livello della tua scrittura con il coach per la scrittura",
+    "description.full": "Il coach per la scrittura è un assistente esperto dedicato che offre un feedback dettagliato e costruttivo e ti assiste con qualsiasi attività di scrittura. Sia per la definizione di un messaggio e-mail, la creazione di una storia o l'elaborazione di un white paper, il coach per la scrittura guida l'utente in ogni fase della procedura. Il coach per la scrittura è progettato per l'utilizzo con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "Coach per la scrittura per aiutarti a scrivere.",
+        "agentCSTitle1": "Critica la mia scrittura",
+        "agentCSText1": "Fornisci un feedback dettagliato e costruttivo sulla scrittura.",
+        "agentCSTitle2": "Modifica il tono di un messaggio e-mail o di altro tipo",
+        "agentCSText2": "Aiuta a cambiare il tono di un messaggio e-mail o di altro tipo dal linguaggio professionale a un tono più informale.",
+        "agentCSTitle3": "Traduci un testo",
+        "agentCSText3": "Traduci un testo in un'altra lingua.",
+        "agentCSTitle4": "Insegnami a scrivere istruzioni",
+        "agentCSText4": "Aiutami a scrivere le istruzioni per spiegare un processo complesso.",
+        "agentCSTitle5": "Post di blog professionale",
+        "agentCSText5": "Aiutami a scrivere un post di blog per la mia società.",
+        "agentCSTitle6": "Scrivi un white paper",
+        "agentCSText6": "Aiutami a scrivere un white paper."
+    }
+}

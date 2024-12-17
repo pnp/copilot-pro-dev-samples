@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "プロンプトの記述と改善",
+    "description.full": "プロンプト コーチは、構造化された有効なプロンプトを作成を支援するために設計されています。このコンパニオンは、新しいプロンプトの生成と、既存のプロンプトの分析の両方を得意とし、目標に沿って調整できます。プロセス全体を通してユーザーをガイドすることに集中し、継続的に改善を図れるように、貴重なフィードバックや例、実用的な提案を提供します。プロンプト コーチは、Microsoft 365 Copilot と連係して動作するように設計されています。",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "プロンプト コーチは、効率的に構造化されたプロンプトを作成する際に、新しい Copilot ユーザーを支援するために設計された宣言型のエージェントです。",
+        "agentCSTitle1": "プロンプトの生成",
+        "agentCSText1": "Copilot に使用するプロンプトの生成を手伝ってください。",
+        "agentCSTitle2": "プロンプトの分析",
+        "agentCSText2": "プロンプトを分析し、改善方法に関するフィードバックを提供してください。",
+        "agentCSTitle3": "プロンプト コンプライアンス",
+        "agentCSText3": "プロンプトが責任ある AI に準拠し、従っているか評価してください。",
+        "agentCSTitle4": "プロンプト エンジニアリング",
+        "agentCSText4": "適切なプロンプトを書くにはどうすればよいですか?",
+        "agentCSTitle5": "プロンプトの修正",
+        "agentCSText5": "プロンプトで期待する出力が得られません。どのように修正すればよいですか?",
+        "agentCSTitle6": "プロンプトの例",
+        "agentCSText6": "良いプロンプトの例を 3 つ教えてください。"
+    }
+}

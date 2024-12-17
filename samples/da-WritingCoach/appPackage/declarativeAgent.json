@@ -1,34 +1,34 @@
 {
     "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
     "version": "v1.0",
-    "name": "Writing Coach",
-    "description": "Writing Coach to help you in your writing.",
+    "name": "[[agentName]]",
+    "description": "[[agentDescription]]",
     "instructions": "$[file('instruction.txt')]",
     "conversation_starters": [
-        {
-          "title": "Critique my writing",
-          "text": "Provide detailed and constructive feedback on a piece of writing."
-        },
-        {
-          "title": "Change the tone of an email or message",
-          "text": "Help change the tone of an email or message from professional language to a more casual tone."
-        },
-        {
-          "title": "Translate a piece of text",
-          "text": "Translate a piece of text into another language."
-        },
-        {
-          "title": "Teach me how to write instructions",
-          "text": "Help me write instructions to explain a complex process."
-        },
-        {
-          "title": "Professional blog post",
-          "text": "Help me write a blog post for my company."
-        },
-        {
-          "title": "Write a whitepaper",
-          "text": "Help me write a whitepaper."
-        }
+      {
+        "title": "[[agentCSTitle1]]",
+        "text": "[[agentCSText1]]"
+      },
+      {
+        "title": "[[agentCSTitle2]]",
+        "text": "[[agentCSText2]]"
+      },
+      {
+        "title": "[[agentCSTitle3]]",
+        "text": "[[agentCSText3]]"
+      },
+      {
+        "title": "[[agentCSTitle4]]",
+        "text": "[[agentCSText4]]"
+      },
+      {
+        "title": "[[agentCSTitle5]]",
+        "text": "[[agentCSText5]]"
+      },
+      {
+        "title": "[[agentCSTitle6]]",
+        "text": "[[agentCSText6]]"
+      }
       ],
       "capabilities": [
           {

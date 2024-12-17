@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Kirjoita ja paranna kehotteita",
+    "description.full": "Kehotevalmentaja on suunniteltu avustamaan hyvin muotoiltujen ja tehokkaiden kehotteiden laatimisessa. Tämä kumppani on erinomainen sekä uusien kehotteiden luonnissa että aiemmin luotujen kehotteiden analysoinnissa varmistaen näin, että ne ovat tavoitteiden mukaisia. Koska keskeistä on käyttäjien opastaminen koko prosessin läpi, tämä kumppani antaa arvokasta palautetta, esimerkkejä ja toimintaa ohjaavia ehdotuksia jatkuvia parannuksia varten. Kehotevalmentaja on suunniteltu Microsoft 365 Copilotin kanssa käytettäväksi.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Kehotevalmentaja on deklaratiivinen agentti, joka on suunniteltu auttamaan Copilotin uusia käyttäjiä luomaan tehokkaita ja hyvin muodostettuja kehotteita.",
+        "agentCSTitle1": "Kehotteen luonti",
+        "agentCSText1": "Auta minua luomaan Copilotissa käytettävä kehote.",
+        "agentCSTitle2": "Analysoi kehote",
+        "agentCSText2": "Analysoi kehote ja anna palautetta siitä, miten voin parantaa sitä.",
+        "agentCSTitle3": "Kehotteen vaatimustenmukaisuus",
+        "agentCSText3": "Arvioi, vastaako kehote vaatimuksia ja onko se vastuullisen tekoälyn ohjeistuksen mukainen.",
+        "agentCSTitle4": "Kehotteen suunnitteleminen",
+        "agentCSText4": "Miten kirjoitan hyvän kehotteen?",
+        "agentCSTitle5": "Korjaa kehote",
+        "agentCSText5": "Kehotteen tulos ei vastaa odotuksia. Miten voin korjata kehotteen?",
+        "agentCSTitle6": "Kehote-esimerkkejä",
+        "agentCSText6": "Näytä 3 hyvää kehote-esimerkkiä."
+    }
+}

@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Escreva e melhore as suas solicitações",
+    "description.full": "O Prompt Coach foi projetado para ajudar na criação de prompts bem estruturados e eficazes. Esse companheiro é excelente tanto na geração de novos prompts como na análise dos existentes, garantindo que estejam alinhados às suas metas. Com foco em orientar os usuários durante todo o processo, ele oferece comentários valiosos, exemplos e sugestões acionáveis para melhoria contínua. O Prompt Coach foi concebido para trabalhar com o Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "O Prompt Coach é um Agente declarativo projetado para ajudar novos usuários do Copilot a criar prompts eficazes e bem estruturados.",
+        "agentCSTitle1": "Geração de Solicitação",
+        "agentCSText1": "Ajude-me a gerar um prompt a ser usado no Copilot.",
+        "agentCSTitle2": "Analisar Solicitação",
+        "agentCSText2": "Analise a minha solicitação e forneça comentários sobre como poderia melhorá-la.",
+        "agentCSTitle3": "Conformidade da Solicitação",
+        "agentCSText3": "Avalie se a minha solicitação está em conformidade e a seguir as diretrizes da IA responsável.",
+        "agentCSTitle4": "Engenharia de Solicitação",
+        "agentCSText4": "Como faço para escrever uma boa solicitação?",
+        "agentCSTitle5": "Corrija a minha solicitação",
+        "agentCSText5": "Não estou obtendo a saída esperada da minha solicitação. Como posso corrigir isso?",
+        "agentCSTitle6": "Exemplos de Solicitação",
+        "agentCSText6": "Mostre-me 3 bons exemplos de solicitação."
+    }
+}

@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Planifica y navega por el proceso de lluvia de ideas",
+    "description.full":"Conoce al asistente de ideas, tu compañero personal de lluvia de ideas diseñado para inspirar la creatividad. Con un tono divertido y colaborativo, el asistente de ideas te ayuda a planificar y navegar por el proceso de lluvia de ideas, asegurándose de que te mantengas centrado y según lo previsto. El asistente de ideas está diseñado para funcionar con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "El asistente de ideas es un agente de lluvia de ideas.",
+        "agentCSTitle1": "Haz una lluvia de ideas sobre un tema",
+        "agentCSText1": "Hola, asistente de ideas, ayúdame a hacer una lluvia de ideas sobre un tema específico.",
+        "agentCSTitle2": "Planifica una sesión de lluvia de ideas",
+        "agentCSText2": "Hola, asistente de ideas, necesito ayuda para planificar una sesión de lluvia de ideas.",
+        "agentCSTitle3": "Ejercicios de lluvia de ideas",
+        "agentCSText3": "Hola, asistente de ideas, ¿puedes ayudarme a encontrar ejercicios divertidos para mi sesión de lluvia de ideas?",
+        "agentCSTitle4": "Organiza las ideas",
+        "agentCSText4": "Hola, asistente de ideas, ¿puedes ayudarme a encontrar herramientas para organizar las ideas?",
+        "agentCSTitle5": "Comentarios y mejora",
+        "agentCSText5": "Hola, asistente de ideas, ¿puedes darme algunos comentarios sobre mi sesión?",
+        "agentCSTitle6": "Aprendizaje y desarrollo",
+        "agentCSText6": "Hola, asistente de ideas, ¿puedes ayudarme a mejorar mis aptitudes para las sesiones de lluvia de ideas?"
+    }
+}
+

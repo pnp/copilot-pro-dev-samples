@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Write and improve your prompts",
+    "description.full": "Prompt Coach is designed to assist in crafting well-structured, effective prompts. This companion excels in both generating new prompts and analyzing existing ones, ensuring they align with your goals. With a focus on guiding users through the entire process, this companion offers valuable feedback, examples, and actionable suggestions for continuous improvement. Prompt Coach is designed to work with Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Prompt Coach is a declarative Agent designed to assist new Copilot users in creating effective and well-structured prompts.",
+        "agentCSTitle1": "Prompt Generation",
+        "agentCSText1": "Help me generate a prompt to be used in Copilot.",
+        "agentCSTitle2": "Analyze Prompt",
+        "agentCSText2": "Analyze my prompt and provide feedback on how I could improve it.",
+        "agentCSTitle3": "Prompt Compliance",
+        "agentCSText3": "Evaluate if my prompt is compliant and following the responsible AI guidelines.",
+        "agentCSTitle4": "Prompt Engineering",
+        "agentCSText4": "How do I write a good prompt?",
+        "agentCSTitle5": "Fix my prompt",
+        "agentCSText5": "I am not getting the output I expect from my prompt. How can I fix it?",
+        "agentCSTitle6": "Prompt Examples",
+        "agentCSText6": "Show me 3 good prompt examples."
+    }
+}

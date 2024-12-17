@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Posuňte svou kariéru s kariérním poradcem",
+    "description.full": "Kariérní poradce je navržen tak, aby vás provedl každým krokem vaší profesní cesty. Ať už se chcete posunout ve své současné roli, prozkoumat nové příležitosti, nebo odstranit nedostatky v dovednostech, kariérní poradce poskytuje personalizované a použitelné rady na míru vaší jedinečné kariérní cestě. Kariérní poradce je určen k použití s nástrojem Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Kariérní poradce je deklarativní agent, který poskytuje profesionálům personalizované návrhy, jak se mohou dále vzdělávat a kariérně růst.",
+        "agentCSTitle1": "Plán kariérního rozvoje",
+        "agentCSText1": "Pomoz mi vytvořit podrobný plán kariérního rozvoje na základě mé současné role a budoucích cílů.",
+        "agentCSTitle2": "Analýza nedostatků v dovednostech",
+        "agentCSText2": "Analyzuj mé současné dovednosti a identifikuj všechny nedostatky, které musím pro postup v kariéře odstranit.",
+        "agentCSTitle3": "Vzdělávací příležitosti",
+        "agentCSText3": "Jaké kurzy, certifikace nebo workshopy bys doporučil někomu na mé pozici pro profesní růst?",
+        "agentCSTitle4": "Poradenství při změně kariéry",
+        "agentCSText4": "Uvažuji o změně kariéry. Jak tuto změnu úspěšně provést?",
+        "agentCSTitle5": "Strategie navazování kontaktů",
+        "agentCSText5": "Jak mohu využít svou profesní síť?",
+        "agentCSTitle6": "Vylepšení výsledků",
+        "agentCSText6": "Jak mohu zlepšit své výsledky na současné pozici, abych se připravil na budoucí příležitosti?"
+    }
+}

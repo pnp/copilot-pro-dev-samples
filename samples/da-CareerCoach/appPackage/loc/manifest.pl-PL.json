@@ -1,0 +1,22 @@
+{  
+    "name.short": "Career Coach",
+    "name.full": "Career Coach",
+    "description.short": "Rozwiń karierę dzięki Mentorowi ds. kariery",
+    "description.full": "Mentor ds. kariery został zaprojektowany, aby przeprowadzić Cię przez poszczególne etapy kariery zawodowej. Jeśli chcesz zmienić swoją bieżącą rolę, poznać nowe możliwości lub wypełnić luki w umiejętnościach, Mentor ds. kariery dostarczy Ci spersonalizowane, ułatwiające wykonywanie odpowiednich akcji porady, które będą dostosowane do Twojej unikatowej ścieżki kariery. Mentor ds. kariery jest przeznaczony do działania z funkcją Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Career Coach",
+        "agentDescription": "Mentor ds. kariery to deklaratywny agent, który dostarcza specjalistom spersonalizowane sugestie dotyczące sposobu kontynuowania nauki i rozwijania kariery.",
+        "agentCSTitle1": "Plan rozwoju kariery",
+        "agentCSText1": "Pomóż mi utworzyć szczegółowy plan rozwoju kariery na podstawie mojej bieżącej roli i przyszłych celów.",
+        "agentCSTitle2": "Analiza luk w umiejętnościach",
+        "agentCSText2": "Przeanalizuj moje bieżące umiejętności i zidentyfikuj wszystkie luki, które muszę wypełnić, aby rozwijać karierę.",
+        "agentCSTitle3": "Możliwości nauki",
+        "agentCSText3": "Jakie kursy, certyfikacje lub warsztaty możesz polecić komuś, kto pełni taką samą rolę jak ja, w celu rozwoju zawodowego?",
+        "agentCSTitle4": "Porada dotycząca zmiany ścieżki kariery",
+        "agentCSText4": "Rozważam zmianę ścieżki kariery. W jaki sposób pomyślnie wprowadzić tę zmianę?",
+        "agentCSTitle5": "Strategie korzystania z sieci",
+        "agentCSText5": "Jak mogę wykorzystać swoją sieć zawodową, aby uzyskać pomoc?",
+        "agentCSTitle6": "Poprawa wyników",
+        "agentCSText6": "Jak mogę poprawić swoje wyniki w bieżącej roli, aby przygotować się na przyszłe możliwości?"
+    }
+}

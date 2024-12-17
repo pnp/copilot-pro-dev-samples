@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Planlæg og naviger i brainstorming-processen",
+    "description.full":"Mød Idécoach, din personlige brainstormingfølgesvend, der er designet til at inspirere til kreativitet. Med en sjov og samarbejdsvillig tone hjælper Idécoach dig med at planlægge og navigere i brainstormingprocessen, så du holder fokus og er på sporet. Idécoach er designet til at arbejde sammen med Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Idécoach er en brainstorming-agent.",
+        "agentCSTitle1": "Brainstorm om et emne",
+        "agentCSText1": "Hej Idécoach, hjælp mig med at brainstorme om et bestemt emne.",
+        "agentCSTitle2": "Planlæg brainstorming-session",
+        "agentCSText2": "Hej Idécoach, jeg har brug for hjælp til at planlægge en brainstorming-session.",
+        "agentCSTitle3": "Brainstorming-øvelser",
+        "agentCSText3": "Hej Idécoach, kan du hjælpe mig med at finde morsomme øvelser til min brainstormingsession.",
+        "agentCSTitle4": "Organiser idéer",
+        "agentCSText4": "Hej Idécoach, kan du hjælpe mig med at finde værktøjer til at organisere idéer?",
+        "agentCSTitle5": "Feedback og forbedring",
+        "agentCSText5": "Hej Idécoach, kan du give mig noget feedback om min session?",
+        "agentCSTitle6": "Træning og udvikling",
+        "agentCSText6": "Hej Idécoach, kan du hjælpe mig med at forbedre mine færdigheder til at afholde brainstorming-sessioner?"
+    }
+}
+

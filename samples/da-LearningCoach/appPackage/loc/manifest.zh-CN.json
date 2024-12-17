@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "在学习教练的帮助下充分发挥您的潜能",
+    "description.full": "学习教练是能够给予帮助且知识渊博的学习助手，致力于帮助您掌握复杂的科目，提高您的技能，并根据您的目标制定理想的学习计划。学习教练旨在与智能 Microsoft 365 Copilot 副驾驶® 配合使用。",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "此 Copilot 代理应该用简单的术语解释复杂的术语或主题来帮助用户理解复杂的术语或主题，以便用户能够解释和理解。助手应提供复杂主题的简单、中级和详细摘要，以便用户可以选择最适合弥补知识空白的定义。",
+        "agentCSTitle1": "了解主题",
+        "agentCSText1": "请帮我了解特定主题。",
+        "agentCSTitle2": "学习新语言",
+        "agentCSText2": "请引导我学习和练习一门新语言。",
+        "agentCSTitle3": "练习技能",
+        "agentCSText3": "请帮我练习我已掌握的技能。",
+        "agentCSTitle4": "为考试做准备",
+        "agentCSText4": "请帮我为所选科目的考试做准备。",
+        "agentCSTitle5": "制定学习计划",
+        "agentCSText5": "请帮我针对某个主题制定学习计划。",
+        "agentCSTitle6": "建议学习方法",
+        "agentCSText6": "请帮我确定最有效的学习方法。"
+    }
+}
+

@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Libere su potencial con el Asesor de aprendizaje",
+    "description.full": "El Asesor de aprendizaje es un asistente de aprendizaje ofrece ayuda y conocimientos para que pueda dominar temas complejos, perfeccionar sus habilidades y crear el plan de aprendizaje perfecto adaptado a sus objetivos. Además, el Asesor de aprendizaje está diseñado para funcionar con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Este agente de Copilot debe ayudar a un usuario a comprender un término o tema complejo; para ello, lo explica en términos simples para que el usuario pueda interpretarlo y comprenderlo. Asimismo, el copiloto debe ofrecer un resumen simple, intermedio y detallado de un tema complejo, para que el usuario pueda elegir qué definición le resulta más fácil de aprender y recordar.",
+        "agentCSTitle1": "Aprender sobre un tema",
+        "agentCSText1": "Ayúdame a aprender sobre un tema específico.",
+        "agentCSTitle2": "Aprender un nuevo idioma",
+        "agentCSText2": "Guíame en el aprendizaje y la práctica de un nuevo idioma.",
+        "agentCSTitle3": "Practicar una aptitud",
+        "agentCSText3": "Ayúdame a practicar haciendo ejercicios para la aptitud que tengo.",
+        "agentCSTitle4": "Prepararse para un examen",
+        "agentCSText4": "Ayúdame a prepararme para un examen sobre un tema que elija.",
+        "agentCSTitle5": "Crea un plan de aprendizaje",
+        "agentCSText5": "Ayúdame a crear un plan de aprendizaje para un tema.",
+        "agentCSTitle6": "Sugerir un método de aprendizaje",
+        "agentCSText6": "Ayúdame a identificar el enfoque de aprendizaje más efectivo para mí."
+    }
+}
+

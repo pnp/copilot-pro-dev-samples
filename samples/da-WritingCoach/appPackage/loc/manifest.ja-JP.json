@@ -1,0 +1,22 @@
+{  
+    "name.short": "Writing Coach",
+    "name.full": "Writing Coach",
+    "description.short": "ライティング コーチを活用して文章を次のレベルに引き上げます",
+    "description.full": "ライティング コーチは、詳細で建設的なフィードバックを提供し、ライティング タスクが得意になるように支援するエキスパート アシスタントです。メールのブラッシュアップ、メッセージの作成、ホワイトペーパーの作成のいずれにおいても、ライティング コーチがその方法のすべてのステップをガイドします。ライティング コーチは、Microsoft 365 Copilot と連係して動作するように設計されています。",
+    "localizationKeys": {
+        "agentName": "Writing Coach",
+        "agentDescription": "ライティングを支援するライティング コーチ。",
+        "agentCSTitle1": "文章の評価",
+        "agentCSText1": "文章について詳細で建設的なフィードバックを提供してください。",
+        "agentCSTitle2": "メールやメッセージのトーンの変更",
+        "agentCSText2": "プロフェッショナルな言語からよりカジュアルなトーンへの、メールやメッセージのトーンの変更を手伝ってください。",
+        "agentCSTitle3": "テキストの翻訳",
+        "agentCSText3": "テキストを翻訳してください。",
+        "agentCSTitle4": "説明書の書き方を指導する",
+        "agentCSText4": "複雑なプロセスについて説明する説明書を書くのを手伝ってください。",
+        "agentCSTitle5": "プロフェッショナルなブログ記事",
+        "agentCSText5": "会社のブログ記事を書くのを手伝ってください。",
+        "agentCSTitle6": "ホワイトペーパーを書く",
+        "agentCSText6": "ホワイトペーパーを書くのを手伝ってください。"
+    }
+}

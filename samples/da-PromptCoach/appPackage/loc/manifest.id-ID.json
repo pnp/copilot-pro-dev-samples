@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Tulis dan sempurnakan perintah Anda",
+    "description.full": "Pelatih Perintah dirancang untuk membantu penyusunan perintah yang efektif dan terstruktur dengan baik. Alat ini mampu menghasilkan perintah baru dan menganalisis perintah yang sudah ada, memastikan perintah tersebut selaras dengan tujuan Anda. Berfokus membimbing pengguna melewati seluruh proses, alat bantu ini menawarkan tanggapan yang berharga, contoh, dan saran yang dapat ditindaklanjuti untuk peningkatan yang berkelanjutan. Pelatih Perintah dirancang untuk bekerja dengan Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Pelatih Perintah adalah Agen deklaratif yang dirancang untuk membantu pengguna Copilot baru dalam membuat perintah yang efektif dan terstruktur dengan baik.",
+        "agentCSTitle1": "Pembuatan Perintah",
+        "agentCSText1": "Bantu saya membuat perintah untuk digunakan di Copilot.",
+        "agentCSTitle2": "Analisis Perintah",
+        "agentCSText2": "Analisis perintah saya dan berikan tanggapan untuk menyempurnakannya.",
+        "agentCSTitle3": "Kepatuhan Perintah",
+        "agentCSText3": "Evaluasi apakah perintah saya sudah sesuai dan mengikuti panduan AI yang bertanggung jawab.",
+        "agentCSTitle4": "Rekayasa Perintah",
+        "agentCSText4": "Bagaimana cara menulis perintah yang baik?",
+        "agentCSTitle5": "Perbaiki perintah saya",
+        "agentCSText5": "Hasil perintah yang saya dapatkan tidak sesuai dengan harapan. Bagaimana cara memperbaikinya?",
+        "agentCSTitle6": "Contoh Perintah",
+        "agentCSText6": "Berikan 3 contoh perintah yang baik."
+    }
+}

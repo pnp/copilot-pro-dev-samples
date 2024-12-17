@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Planejar e navegar no processo de debate",
+    "description.full":"Conheça o Idea Coach, o seu companheiro de debate pessoal concebido para inspirar a criatividade. Com um tom divertido e colaborativo, o Idea Coach ajuda você a planejar e navegar no processo de debate, certificando-se de que você se mantenha focado(a) e no caminho certo. O Idea Coach foi concebido para trabalhar com o Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "O Idea coach é um agente de debate.",
+        "agentCSTitle1": "Debater um tópico",
+        "agentCSText1": "Ei, Idea Coach, ajude-me a fazer um brainstorming sobre um tópico específico.",
+        "agentCSTitle2": "Planejar sessão de Debate",
+        "agentCSText2": "Ei, Idea Coach, preciso de ajuda para planejar uma sessão de Debate.",
+        "agentCSTitle3": "Exercícios de Debate",
+        "agentCSText3": "Ei, Idea Coach, você pode me ajudar a encontrar exercícios divertidos para a minha sessão de debate?",
+        "agentCSTitle4": "Organizar Ideias",
+        "agentCSText4": "Ei, Idea Coach, você pode me ajudar a encontrar ferramentas para organizar ideias?",
+        "agentCSTitle5": "Comentários e Aprimoramento",
+        "agentCSText5": "Ei, Idea Coach, você pode fazer alguns comentários sobre a minha sessão?",
+        "agentCSTitle6": "Treinamento e Desenvolvimento",
+        "agentCSText6": "Ei, Idea Coach, você pode me ajudar a aprimorar minhas habilidades para sessões de Debate?"
+    }
+}
+

@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Plan and navigate the brainstorming process",
+    "description.full":"Meet Idea Coach, your personal brainstorming companion designed to inspire creativity. With a fun and collaborative tone, Idea Coach helps you plan and navigate the brainstorming process, making sure you stay focused and on track. Idea Coach is designed to work with Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Idea coach is a brainstorming agent.",
+        "agentCSTitle1": "Brainstorm a topic",
+        "agentCSText1": "Hey Idea Coach, help me brainstorm about a specific topic.",
+        "agentCSTitle2": "Plan brainstorming Session",
+        "agentCSText2": "Hey Idea Coach, I need help planning a Brainstorming session.",
+        "agentCSTitle3": "Brainstorming Exercises",
+        "agentCSText3": "Hey Idea Coach, can you help me find fun exercises for my Brainstorming session?",
+        "agentCSTitle4": "Organize Ideas",
+        "agentCSText4": "Hey Idea Coach, can you help me find tools to organize ideas?",
+        "agentCSTitle5": "Feedback and Improvement",
+        "agentCSText5": "Hey Idea Coach, can you give me some feedback on my session?",
+        "agentCSTitle6": "Training and Development",
+        "agentCSText6": "Hey Idea Coach, can you help me improve my skills for Brainstorming sessions?"
+    }
+}
+

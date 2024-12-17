@@ -1,34 +1,34 @@
 {
     "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
     "version": "v1.0",
-    "name": "Prompt Coach",
-    "description": "Prompt Coach is a declarative Agent designed to assist new Copilot users in creating effective and well-structured prompts.",
+    "name": "[[agentName]]",
+    "description": "[[agentDescription]]",
     "instructions": "$[file('instruction.txt')]",
     "conversation_starters": [
-        {
-          "title": "Prompt Generation",
-          "text": "Help me generate a prompt to be used in Copilot."
-        },
-        {
-          "title": "Analyze Prompt",
-          "text": "Analyze my prompt and provide feedback on how I could improve it."
-        },
-        {
-          "title": "Prompt Compliance",
-          "text": "Evaluate if my prompt is compliant and following the responsible AI guidelines."
-        },
-        {
-          "title": "Prompt Engineering",
-          "text": "How do I write a good prompt?"
-        },
-        {
-          "title": "Fix my prompt",
-          "text": "I am not getting the output I expect from my prompt. How can I fix it?"
-        },
-        {
-          "title": "Prompt Examples",
-          "text": "Show me 3 good prompt examples."
-        }
+      {
+        "title": "[[agentCSTitle1]]",
+        "text": "[[agentCSText1]]"
+      },
+      {
+        "title": "[[agentCSTitle2]]",
+        "text": "[[agentCSText2]]"
+      },
+      {
+        "title": "[[agentCSTitle3]]",
+        "text": "[[agentCSText3]]"
+      },
+      {
+        "title": "[[agentCSTitle4]]",
+        "text": "[[agentCSText4]]"
+      },
+      {
+        "title": "[[agentCSTitle5]]",
+        "text": "[[agentCSText5]]"
+      },
+      {
+        "title": "[[agentCSTitle6]]",
+        "text": "[[agentCSText6]]"
+      }
       ],
       "capabilities": [
           {

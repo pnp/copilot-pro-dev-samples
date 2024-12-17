@@ -1,34 +1,34 @@
 {
     "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
     "version": "v1.0",
-    "name": "Learning Coach",
-    "description": "This Copilot Agent should help a user understand a complex term or topic, by explaining it in simple terms so the user can interpret and understand. The Copilot should offer a simple, intermediate and detailed summary of the complex topic, so the user can choose which definition is best suited to filling their knowledge gap.",
+    "name": "[[agentName]]",
+    "description": "[[agentDescription]]",
     "instructions": "$[file('instruction.txt')]",
     "conversation_starters": [
-        {
-          "title": "Learn about a topic",
-          "text": "Please help me learn about a specific topic."
-        },
-        {
-         "title": "Learn a new language",
-         "text": "Please guide me in learning and practicing a new language."
-       },
-        {
-          "title": "Practice a skill",
-          "text": "Please help me practice by doing exercises for the skill I have."
-        },
-        {
-         "title": "Prepare for a test",
-         "text": "Please help me prepare for a test on a subject I choose."
-       },
-        {
-          "title": "Create a learning plan",
-          "text": "Please help me create a learning plan for a topic."
-        },
-        {
-          "title": "Suggest a learning method",
-          "text": "Please help me identify the most effective learning approach for me."
-        }
+      {
+        "title": "[[agentCSTitle1]]",
+        "text": "[[agentCSText1]]"
+      },
+      {
+        "title": "[[agentCSTitle2]]",
+        "text": "[[agentCSText2]]"
+      },
+      {
+        "title": "[[agentCSTitle3]]",
+        "text": "[[agentCSText3]]"
+      },
+      {
+        "title": "[[agentCSTitle4]]",
+        "text": "[[agentCSText4]]"
+      },
+      {
+        "title": "[[agentCSTitle5]]",
+        "text": "[[agentCSText5]]"
+      },
+      {
+        "title": "[[agentCSTitle6]]",
+        "text": "[[agentCSText6]]"
+      }
        ],
        "capabilities": [
            {

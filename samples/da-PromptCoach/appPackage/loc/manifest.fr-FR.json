@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Rédiger et améliorer vos invites",
+    "description.full": "Le coach d’invite est conçu pour vous aider à créer des invites bien structurées et efficaces. Ce compagnon excelle à la fois dans la création de nouvelles invites et dans l’analyse des invites existantes, en veillant à ce qu’elles soient conformes à vos objectifs. En mettant l’accent sur l’accompagnement des utilisateurs tout au long du processus, ce compagnon offre des commentaires, des exemples et des suggestions utiles pour une amélioration continue. Le coach d’invite est conçu pour fonctionner avec Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "Le coach d’invite est un assistant déclaratif conçu pour aider les nouveaux utilisateurs de Copilot à créer des invites efficaces et bien structurées.",
+        "agentCSTitle1": "Génération d’invite",
+        "agentCSText1": "M’aider à générer une invite à utiliser dans Copilot.",
+        "agentCSTitle2": "Analyser l’invite",
+        "agentCSText2": "Analyser mon invite et fournir des commentaires sur la manière dont je pourrais l’améliorer.",
+        "agentCSTitle3": "Conformité de l’invite",
+        "agentCSText3": "Évaluer si mon invite est conforme et suivre les recommandations d’IA responsable.",
+        "agentCSTitle4": "Ingénierie d’invite",
+        "agentCSText4": "Comment rédiger une bonne invite ?",
+        "agentCSTitle5": "Corriger mon invite",
+        "agentCSText5": "Je n’obtiens pas le résultat attendu de mon invite. Comment la corriger ?",
+        "agentCSTitle6": "Exemples d’invite",
+        "agentCSText6": "Me montrer 3 bons exemples d’invite."
+    }
+}

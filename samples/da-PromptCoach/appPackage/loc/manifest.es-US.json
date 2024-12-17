@@ -1,0 +1,22 @@
+{  
+    "name.short": "Prompt Coach",
+    "name.full": "Prompt Coach",
+    "description.short": "Escriba y mejore sus indicaciones",
+    "description.full": "El Asesor de indicaciones está diseñado para permitirle crear indicaciones bien estructuradas y eficaces. Este compañero es un experto a la hora de crear nuevas indicaciones o analizar las existentes, asegurándose de que se alinean con sus objetivos. Con el objetivo de guiar a los usuarios a lo largo de todo el proceso, este compañero ofrece comentarios valiosos, ejemplos y sugerencias prácticas para la mejora continua. Además, el Asesor de indicaciones está diseñado para funcionar con Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Prompt Coach",
+        "agentDescription": "El Asesor de indicaciones es un agente declarativo que se ha diseñado para ayudar a los nuevos usuarios de Copilot a crear indicaciones efectivas y bien estructuradas.",
+        "agentCSTitle1": "Generación de indicaciones",
+        "agentCSText1": "Ayúdame a generar una indicación para usarla en Copilot.",
+        "agentCSTitle2": "Analizar la indicación",
+        "agentCSText2": "Analiza mi indicación y proporciona comentarios sobre cómo podría mejorarla.",
+        "agentCSTitle3": "Cumplimiento de la indicación",
+        "agentCSText3": "Evalúa si mi indicación cumple con los requisitos y sigue las directrices de IA responsable.",
+        "agentCSTitle4": "Ingeniería de indicaciones",
+        "agentCSText4": "¿Cómo escribo una buena indicación?",
+        "agentCSTitle5": "Solucionar mi indicación",
+        "agentCSText5": "No obtengo el resultado que espero de mi indicación. ¿Cómo puedo solucionarlo?",
+        "agentCSTitle6": "Ejemplos de indicaciones",
+        "agentCSText6": "Muéstrame 3 buenos ejemplos de indicaciones."
+    }
+}

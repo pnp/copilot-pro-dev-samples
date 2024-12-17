@@ -1,0 +1,23 @@
+{  
+    "name.short": "Learning Coach",
+    "name.full": "Learning Coach",
+    "description.short": "Temukan potensi Anda dengan Pelatih Pembelajaran",
+    "description.full": "Pelatih Pembelajaran adalah asisten pembelajaran yang suportif dan berpengetahuan luas yang khusus ditugaskan untuk membantu Anda menguasai mata pelajaran yang kompleks, mengasah keterampilan Anda, dan membuat rencana pembelajaran yang sempurna yang disesuaikan dengan tujuan Anda. Pelatih Pembelajaran dirancang untuk bekerja dengan Microsoft 365 Copilot.",
+    "localizationKeys": {
+        "agentName": "Learning Coach",
+        "agentDescription": "Agen Copilot ini dapat membantu pengguna memahami istilah atau topik yang rumit, dengan menjelaskannya secara sederhana sehingga mudah dimengerti dan dipahami oleh pengguna. Kopilot perlu memberikan ringkasan yang sederhana, menengah, dan terperinci tentang topik yang kompleks, sehingga pengguna dapat memilih definisi yang paling sesuai untuk menutup kesenjangan pengetahuan mereka.",
+        "agentCSTitle1": "Belajar tentang sebuah topik",
+        "agentCSText1": "Bantu saya mempelajari topik tertentu.",
+        "agentCSTitle2": "Belajar bahasa baru",
+        "agentCSText2": "Bimbing saya dalam mempelajari dan mempraktikkan bahasa baru.",
+        "agentCSTitle3": "Melatih keterampilan",
+        "agentCSText3": "Tolong bantu saya melatih keterampilan yang saya miliki.",
+        "agentCSTitle4": "Mempersiapkan diri untuk ujian",
+        "agentCSText4": "Bantu saya bersiap menghadapi ujian mata pelajaran yang saya pilih.",
+        "agentCSTitle5": "Membuat rencana pembelajaran",
+        "agentCSText5": "Bantu saya membuat rencana pembelajaran untuk topik.",
+        "agentCSTitle6": "Menyarankan metode pembelajaran",
+        "agentCSText6": "Bantu saya mengidentifikasi pendekatan pembelajaran paling efektif untuk saya."
+    }
+}
+

@@ -1,0 +1,23 @@
+{  
+    "name.short": "Idea Coach",
+    "name.full": "Idea Coach",
+    "description.short": "Suunnittele ideointiprosessi ja siinä siirtyminen",
+    "description.full":"Tutustu ideavalmentajaan, joka on henkilökohtainen ideointikumppani ja joka on suunniteltu edistämään luovuutta. Innostavan ja yhteistyötä edistävän sävyn ansiosta ideavalmentaja auttaa suunnittelemaan ideointiprosessin ja siirtymään siinä, mikä varmistaa keskittymisen ja pysymisen aiheessa. Ideavalmentaja on suunniteltu Microsoft 365 Copilotin kanssa käytettäväksi.",
+    "localizationKeys": {
+        "agentName": "Idea Coach",
+        "agentDescription": "Ideavalmentaja on ideointiagentti.",
+        "agentCSTitle1": "Aihetta koskeva ideointi",
+        "agentCSText1": "Hei ideavalmentaja! Auta minua tietyn aiheen ideoinnissa.",
+        "agentCSTitle2": "Suunnittele ideointi-istunto",
+        "agentCSText2": "Hei ideavalmentaja! Tarvitsen apua ideointi-istunnon suunnitteluun.",
+        "agentCSTitle3": "Ideointiharjoituksia",
+        "agentCSText3": "Hei ideavalmentaja! Voitko auttaa minua löytämään hauskoja harjoituksia ideointi-istuntoon?",
+        "agentCSTitle4": "Järjestä ideoita",
+        "agentCSText4": "Hei ideavalmentaja! Voitko auttaa minua löytämään työkaluja ideoiden järjestämistä varten?",
+        "agentCSTitle5": "Palaute ja parannukset",
+        "agentCSText5": "Hei ideavalmentaja! Voitko antaa istuntoa koskevaa palautetta?",
+        "agentCSTitle6": "Koulutus ja kehitys",
+        "agentCSText6": "Hei ideavalmentaja! Voitko auttaa minua parantaa ideointi-istuntoa koskevia taitojani?"
+    }
+}
+
