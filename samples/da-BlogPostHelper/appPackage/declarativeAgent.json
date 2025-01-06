@@ -1,0 +1,37 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "Blog helper agent",
+    "description": "Declarative agent that supports the authoring, reviews and creation of blog posts.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "WebSearch",
+            "sites": [
+                {
+                    "url": "https://pkbullock.com"
+                }
+            ]
+        },
+        {
+            "name": "GraphicArt"
+        },
+        {
+            "name": "CodeInterpreter"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Example of blog post summary",
+            "text": "Summerise the blog post called `Understanding the user experience of using an agent in SharePoint in Teams chat`"
+        },
+        {
+            "title": "Create an image header for a blog post",
+            "text": "Generate an image based on the concepts from the blog post `Understanding the user experience of using an agent in SharePoint in Teams chat`"
+        },
+        {
+            "title": "Show a code sample",
+            "text": "In the blog post titled `The many ways to set UK Locale in SharePoint.`, is there a code sample?"
+        }
+    ]
+}
