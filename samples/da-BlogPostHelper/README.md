@@ -30,11 +30,11 @@ _Include consise instructions to set up and run the sample. These are just an ex
 
 * Clone this repository
 * Open the cloned copy of this folder with Visual Studio Code
-* Ensure that the Teams Toolkit extension is installed
-* Use Teams Tookkit Provision feature to deploy
+* Ensure that the Teams Toolkit extension is installed and connected to a Microsoft 365 account that has a Microsoft 365 Copilot license and permission to install Microsoft 365 applications
+* Open the Teams Toolkit extension and, under "Lifecycle" clik "Provision" to deploy the agent to Microsoft 365
 * Use the conversation starters to see the results of agent working on the content.
 
-Note: currently targets authors website: https://pkbullock.com
+Note: currently targets authors website: https://pkbullock.com; you can change this by editing the **appPackage/declarativeAgent.json** file.
 
 -----------------------------------------------------------
 
