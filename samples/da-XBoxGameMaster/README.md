@@ -33,8 +33,8 @@ Version|Date|Author|Comments
 
 ## Minimal Path to Awesome
 
-* Clone or download this repository
-* Navigate to this sample's **appPackage** folder on your computer
+* Clone or download this repository, or just download [this sample](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-XBoxGameMaster)
+* Navigate to the sample's **appPackage** folder on your computer
 * (Optional: View or modify the files in the **appPackage** folder)
 * Create a Zip file containing the contents of the **appPackage** folder at the root
 * In Microsoft Teams click "Apps" 1️⃣ , "Manage yor apps"2️⃣ , "Upload an app" 3️⃣ , and then Upload a custom app 4️⃣ . Upload the zip file and follow the prompts to use your new agent in Copilot.
