@@ -1,0 +1,68 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-xboxgamemaster",
+    "source": "pnp",
+    "title": "Declarative Agent with an API plugin that secured by Entra ID that validates its own tokens",
+    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that validates tokens using an open source library.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-xboxgamemaster",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-XBoxGameMaster",
+    "longDescription": [
+      "This sample demonstrates how to build a declarative agent with no tools except what's built into Windows, MacOS, or Linux"
+    ],
+    "creationDateTime": "2024-10-09",
+    "updateDateTime": "2024-10-11",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "None"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JSON"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/notools/samples/da-XBoxGameMaster/assets/XBOX%20Game%20Master%201.png",
+        "alt": "Copilot agent generating a simulated image from an XBOX game"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "BobGerman",
+        "pictureUrl": "https://github.com/BobGerman.png",
+        "name": "Bob German"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Declarative agents for Microsoft 365 Copilot overview",
+        "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+      },
+      {
+        "name": "Build a declarative agent for Microsoft 365 Copilot",
+        "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
+      }
+    ]
+  }
+]
