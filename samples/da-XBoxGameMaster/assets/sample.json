@@ -5,7 +5,7 @@
     "title": "Declarative Agent with an API plugin that secured by Entra ID that validates its own tokens",
     "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that validates tokens using an open source library.",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-xboxgamemaster",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-xboxgamemaster",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-XBoxGameMaster",
     "longDescription": [
       "This sample demonstrates how to build a declarative agent with no tools except what's built into Windows, MacOS, or Linux"
     ],
@@ -17,15 +17,15 @@
     "metadata": [
       {
         "key": "PLATFORM",
-        "value": "Node.js"
+        "value": "None"
       },
       {
         "key": "LANGUAGE",
-        "value": "TypeScript"
+        "value": "JSON"
       },
       {
         "key": "API-PLUGIN",
-        "value": "Yes"
+        "value": "No"
       },
       {
         "key": "GRAPH-CONNECTOR",
@@ -36,8 +36,8 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/main/samples/da-repairs-oauth-validated/assets/screenshot.gif?raw=true",
-        "alt": "Declarative agent answering questions about repairs using the information from an API secured with Entra ID"
+        "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/notools/samples/da-XBoxGameMaster/assets/XBOX%20Game%20Master%201.png",
+        "alt": "Copilot agent generating a simulated image from an XBOX game"
       }
     ],
     "authors": [
@@ -45,11 +45,6 @@
         "gitHubAccount": "BobGerman",
         "pictureUrl": "https://github.com/BobGerman.png",
         "name": "Bob German"
-      },
-      {
-        "gitHubAccount": "waldekmastykarz",
-        "pictureUrl": "https://github.com/waldekmastykarz.png",
-        "name": "Waldek Mastykarz"
       }
     ],
     "references": [
