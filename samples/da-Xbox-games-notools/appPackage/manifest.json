@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.0",
+    "id": "53434cc0-6a90-4c50-9014-242ea676e615",
+    "developer": {
+        "name": "Bob German",
+        "websiteUrl": "https://www.xbox.com",
+        "privacyUrl": "https://support.xbox.com/help/family-online-safety/online-safety/manage-online-safety-and-privacy-settings-xbox-one",
+        "termsOfUseUrl": "https://www.xbox.com/legal/community-standards"
+    },
+    "icons": {
+        "color": "xbox192x192.png",
+        "outline": "xbox32x32.png"
+    },
+    "name": {
+        "short": "XBOX Game Master",
+        "full": "XBOX Game Master"
+    },
+    "description": {
+        "short": "Copilot agent to recommend games for XBOX",
+        "full": "Copilot agent to recommend games for XBOX based on the latest listings in xbox.com"
+    },
+    "accentColor": "#007D00",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}
