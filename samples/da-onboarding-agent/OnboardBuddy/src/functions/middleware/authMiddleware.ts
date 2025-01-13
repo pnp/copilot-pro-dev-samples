@@ -1,5 +1,5 @@
 import { HttpRequest } from "@azure/functions";
-import { TokenValidator } from "./tokenValidator";
+import { EntraJwtPayload, TokenValidator } from "./tokenValidator";
 import config from "./config";
 import { getEntraJwksUri, CloudType } from "./utils";
 
@@ -9,7 +9,7 @@ import { getEntraJwksUri, CloudType } from "./utils";
  * @param {HttpRequest} req - The HTTP request.
  * @returns {Promise<boolean>} - A promise that resolves to a boolean value.
  */
-export async function authMiddleware(req?: HttpRequest): Promise<boolean> {
+export async function authMiddleware(req?: HttpRequest): Promise<EntraJwtPayload | false> {
   // Get the token from the request headers
   const token = req.headers.get("authorization")?.split(" ")[1];
   if (!token) {
@@ -32,9 +32,10 @@ export async function authMiddleware(req?: HttpRequest): Promise<boolean> {
       scp: ["repairs_read"],
     };
     // Validate the token
-    await validator.validateToken(token, options);
+    let validatedToken = await validator.validateToken(token, options);
 
-    return true;
+    return validatedToken;
+
   } catch (err) {
     // Handle JWT verification errors
     console.error("Token is invalid:", err);

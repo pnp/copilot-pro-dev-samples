@@ -17,7 +17,9 @@ import { authMiddleware } from "./middleware/authMiddleware";
  */
 export async function repairs(
   req: HttpRequest,
-  context: InvocationContext
+  context: InvocationContext,
+  userId: string,
+  userName: string
 ): Promise<HttpResponseInit> {
   context.log("HTTP trigger function processed a request.");
 
@@ -55,14 +57,16 @@ app.http("repairs", {
   authLevel: "anonymous",
   handler: async (req: HttpRequest, context: InvocationContext) => {
     // Check if the request is authenticated
-    const isAuthenticated = await authMiddleware(req);
-    if (!isAuthenticated) {
+    const validatedClaims = await authMiddleware(req);
+    if (!validatedClaims || !validatedClaims.name || !validatedClaims.oid) {
       return {
         status: 401,
         body: "Unauthorized",
       };
     }
+    console.log (`Validated token for ${validatedClaims.name} (${validatedClaims.oid})`);
+    
     // Call the actual handler function
-    return repairs(req, context);
+    return repairs(req, context, validatedClaims.oid, validatedClaims.name);
   },
 });
