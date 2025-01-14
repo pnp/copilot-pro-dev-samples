@@ -1,0 +1,13 @@
+@base_url = http://localhost:7071/api
+
+### Get next step for this user
+{{base_url}}/steps/nextStep
+
+### Mark step as completed
+POST {{base_url}}/steps/complete
+Content-Type: application/json
+
+{
+    
+}
+
