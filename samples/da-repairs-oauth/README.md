@@ -31,6 +31,8 @@ Version|Date|Comments
 
 Here's how to create the Repairs agent without using a sample.
 
+![Teams toolkit](./assets/TTK-create-da-oauth.png)
+
 * Open Teams Toolkit 1️⃣ and select "Create a New App" 2️⃣. Then choose "Declarative Agent" 3️⃣.
 * In the prompts that follow, select "Add plugin", then "Start with a new API", then "OAuth".
 * Then select your language (JavaScript or TypeScript) and choose a folder and application name
