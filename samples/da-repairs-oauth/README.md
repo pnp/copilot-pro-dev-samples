@@ -2,7 +2,9 @@
 
 ## Summary
 
-This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses the built-in Azure App Service authentication and authorization capabilities (also referred to as Easy Auth) to secure access to APIs.
+This sample has been removed because you can get the same results by just creating a new project with Teams Toolkit. 
+
+At the time of this sample, Teams Toolkit generated different plugin files for local vs. dev environments, and did not protect the local tunnel at all. This was fixed in Teams Toolkit v5.12.0, rendering this sample unnecessary.
 
 ![Declarative agent answering questions about repairs using the information from an API secured with OAuth](./assets/screenshot.png)
 
@@ -14,6 +16,7 @@ This sample demonstrates how to build a declarative agent for Microsoft 365 Copi
 
 Version|Date|Comments
 -------|----|--------
+1.2|January 16, 2025|Removed sample code as the same can be achieved with Teams Toolkit out of the box
 1.1|October 11, 2024|Updated OAuth configuration and project setup
 1.0|October 4, 2024|Initial release
 
@@ -26,13 +29,16 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth) then unzip it)
-* Open the Teams Toolkit extension and sign in to your Microsoft 365 tenant with Microsoft 365 Copilot
-* Select **Debug in Copilot (Edge)** from the launch configuration dropdown
+Here's how to create the Repairs agent without using a sample.
+
+* Open Teams Toolkit 1️⃣ and select "Create a New App" 2️⃣. Then choose "Declarative Agent" 3️⃣.
+* In the prompts that follow, select "Add plugin", then "Start with a new API", then "OAuth".
+* Then select your language (JavaScript or TypeScript) and choose a folder and application name
+* Press F5 to provision the Entra ID app registration, and build, deploy, and run the agent
 
 ## Features
 
-This sample illustrates the following concepts:
+This application illustrates the following concepts:
 
 * Building a declarative agent for Microsoft 365 Copilot with an API plugin
 * Connecting an API plugin to an API secured with OAuth
