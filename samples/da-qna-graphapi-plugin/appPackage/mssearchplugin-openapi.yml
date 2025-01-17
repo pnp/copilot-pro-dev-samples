@@ -548,8 +548,8 @@ components:
       type: oauth2
       flows:
         authorizationCode:
-          authorizationUrl: https://login.microsoftonline.com/d7e957c6-c0d2-4ee3-88d5-bf5c0a56268b/oauth2/v2.0/authorize
-          tokenUrl: https://login.microsoftonline.com/d7e957c6-c0d2-4ee3-88d5-bf5c0a56268b/oauth2/v2.0/token
+          authorizationUrl: https://login.microsoftonline.com/tenantid/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/tenantid/oauth2/v2.0/token
           scopes: 
             QnA.Read.All: Read QnAs from Microsoft Search
 
