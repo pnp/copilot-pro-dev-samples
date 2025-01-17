@@ -1,0 +1,120 @@
+Question,Url,Keywords,State,Answer Description,Reserved Keywords,Start Date,End Date,Country/Region,Groups,Device & OS,Targeted Variations,Last Modified,Last Modified By,Id
+Is Microsoft Search in Bing secure?,,Secure; Privacy; Protection; Safety,published,"Microsoft Search in Bing uses several methods to secure your content and information:
+
+* Your results come directly from the same Trusted Cloud used by Office 365. Bing does not store any work content or information in the public web index.
+
+* You can only see work results when you're signed in with your work or school account.
+
+* You'll only see information you have permissions to. You may have permission because you created the files or information, they've been shared with you or with a larger group that includes you, or they're stored in folders or locations you have permission to access.
+
+* Your work searches aren't used to improve public web results or to improve Bing.
+
+* Advertisers can't target you or anyone within your organization.",,,,,,,,,,
+How do I sign out of Microsoft Search in Bing?,,Signout; Logout; Exit; Signoff,published,"In the upper-right corner of any Bing page, click your name, then, on the account menu, next to **Work or school account**, click **Sign out**.
+
+Bing saves your account status, either signed in or signed out, in a browser cookie. If you sign out and clear your cookies, the next time you go to Bing you may be automatically signed in, or you may be prompted to sign in again. Your IT department configures this for your organization.
+",,,,,,,,,,
+How do I set Bing as my default homepage?,,Homepage; Default; Set; Bing,published,"Your IT department may not allow you to change your homepage. If you can, go to [Make Bing my homepage](http://www.bing.com/set/homepage) to set it.
+",,,,,,,,,,
+Can I find files in Microsoft Search in Bing?,,Files; Search; Find; Locate,published,"Search for your own files or look for content created by co-workers that you have access to. Results include the file name and location. You may also see a brief snippet of the content, who modified it last, and when. You can find SharePoint and OneDrive for Business files, including:
+
+* ![](https://www.bing.com/th?id=OSC.TOOLF833B453B10B98425DD5ABEA6D6B1C1D41787FD13E52DBD3889144E96687373E) Word documents
+*  ![](https://www.bing.com/th?id=OSC.TOOL4CC10E50035869B5283A4D8A09FAB12697847BE18B1836B6521262CB4E427F0F) Excel spreadsheets
+*  ![](https://www.bing.com/th?id=OSC.TOOLD3A2B48770FC2B36C1A354FDE622140CB63F54F23C59BDD369AE7FA8E5CEA6AF) PowerPoint presentations
+*  ![](https://www.bing.com/th?id=OSC.TOOLF53635AB6773D323398ED935C1ACFC25B98CB75DBAD867B84B3E6FC870733B26) OneNote notebooks
+*  ![](https://www.bing.com/th?id=OSC.TOOL044E9BB2484736EDAE14A5D421B4B1E1942224BB24C8DD34234227DE5302E648) PDFs
+
+### To find files
+1. Sign in to your work or school account on Bing.
+2. Search for 'my documents,' 'my presentations,' or include a topic or someone's name. For example, 'docs about tax codes' or 'files by John.'
+3. File results appears at the top of the results page.
+
+<br>Other web results appear under these files. They aren't specific to your organization.",,,,,,,,,,
+What kind of things can I search for in Microsoft Search in Bing?,,Capabilities; Features; Options; Functions,published,"Microsoft Search in Bing effortlessly brings work and web searches together in one experience.  
+
+|  | What you'll find| 
+| -------- | -------- | 
+| People     | Find people and understand their role within the company, what they're working on, and ways to contact them.| 
+| Org charts     | Understand a person’s place within the company and easily browse their peers, management, and direct reports.  | 
+| Files     | Find contextual and relevant files saved on SharePoint and OneDrive for Business.   | 
+| Office 365 groups     | Find a group by its name or members, explore groups a person belongs to, and browse shared content.   | 
+| Resources and tools     | Get links to internal and external resources, tools, and more to easily find the information you need.   | 
+| SharePoint sites     | Search for a site by name or see results for a person or group.   | 
+| Conversations     | Find contextual and relevant results from public and group conversations in Teams and Yammer.   | ",,,,,,,,,,
+Does Microsoft Search in Bing respect existing file permissions?,,Permissions; Access; Privacy; Security,published,"You can only see the information you have permissions to. You may have permissions because you created the files or information, they've been shared with you or with a larger group that includes you, or they're stored in folders or locations you have permission to access.",,,,,,,,,,
+Can I find SharePoint sites using Microsoft Search in Bing?,,SharePoint; Sites; Search; Locate,published,"You can search for your SharePoint sites or look for other SharePoint sites created by groups or co-workers that you have permission to view. 
+
+Currently, only site results appear on Bing, not individual pages within a site. SharePoint site results include the site name and location, and may also include the site logo.
+
+### To find sites
+Go to Bing and sign in to your work or school account, if needed.
+
+In the search box, enter a site name or a topic.
+
+Site results appear at the top of the results page or, for just site results, click the **Sites** tab.
+Other web results appear under it. These public results aren't specific to your organization.
+",,,,,,,,,,
+Why do I sometimes not see work results?,,Missing; Results; Issues; Troubleshoot,published,"You have to be signed in to a work or school acount to see work results on Bing. If you sign out or switch to a Microsoft account, you'll only see web results when you search.
+",,,,,,,,,,
+How do I set Microsoft Search in Bing as my default search engine?,,Default; Search; Engine; Set,published,"Your IT department may not allow you to change your default search engine. 
+
+If you can, go to [Make Bing my search engine ](https://www.bing.com/set/search)to set it.
+",,,,,,,,,,
+Is there a browser extension for Microsoft Search in Bing?,,Extension; Add-on; Plugin; Browser,published,"The Microsoft Search in Bing browser extension may already be available in Chrome or Edge because your IT team remotely installed it for you. 
+
+If you see the icon  ![](https://www.bing.com/th?id=OSC.TOOLD927DC9EBB7218E2F9FFAD9BF489E319C66A0F04C0594067CE420C3D992E67B8)
+in your brower extension list, you already have it installed. 
+
+If you don't see it go to the [Chrome web store](https://chrome.google.com/webstore/detail/microsoft-search-in-bing/obdappnhkfoejojnmcohppfnoeagadna) or [Microsoft Edge store](https://www.microsoft.com/en-us/p/microsoft-search-in-bing/9pnj62m1p46v#activetab=pivot:overviewtab) to install. 
+",,,,,,,,,,
+Why am signed into Microsoft Search in Bing automatically?,,Auto; Sign-in; Login; Settings,published,"Bing saves your account status, either signed in or signed out, in a browser cookie. If you sign out and clear your cookies, the next time you go to Bing you may be automatically signed in, or you may be prompted to sign in again. Your IT department configures this for your organization.
+",,,,,,,,,,
+Can I search for people in Microsoft Search in Bing?,,People; Search; Contacts; Locate,published,"""It’s easy to find information about your co-workers using Microsoft Search in Bing. Just search for their name or alias to find contact info, upcoming meetings you have together, org chart details, group memberships, and files they've shared with you.
+
+#### Find people
+1. Sign in to your work or school account on Bing.
+2. Search for 'me,' your name or work alias, or a co-worker's name or alias.
+3. Including both a first and last name will return the best result, but if you only know part of their name, Microsoft Search in Bing will show you the result that best matches your search and, if possible, offer to show more results.
+4. A people card appears at the top of the results page or at the top of the right column.
+5. Check out the details and actions on the card and click through for even more information.
+
+<br>Web results appear under your work results. These results aren't specific to your organization. In some cases, for example, when a name is a very common web search, the people card may not automatically appear. To see your work results you may need to click the Show results from link, next to your organization's logo.
+
+#### Find groups
+Just like you search for yourself or a co-worker, enter the name of a group or group alias to see contact details, group owners, members, files they've shared with you, and conversations.""",,,,,,,,,,
+How do I find conversations in Microsoft Search in Bing?,,Conversations; Discussions; Chat; Locate,published,"Search for your own private Microsoft Teams or Microsoft Yammer conversations or conversations between co-workers that you have access to.
+
+*You won't see conversation results if your organization doesn't use Teams or Yammer or your IT department doesn't turn on these results.*
+
+### Conversation results include:
+
+* The name of person who sent it
+* If it's a Teams or Yammer conversation
+* A snippet of the message
+* The conversation date
+* Attachments that you have access to
+
+<br>The top 30 conversation results appear in work results. For more information or results, just click the message. In work results, Yammer conversations are sorted by date, but in the Yammer client, they're sort by relevancy.
+ 
+
+
+### To find a conversation
+1. Sign in to your work or school account on  Bing
+2. Search for a topic or a person's name and click the Conversations tab. For example, 'send me the deck' or 'Amy Turner.'
+3. Conversations appear at the top of the results page
+
+<br>Other web results appear under it. They aren't specific to your organization.
+",,,,,,,,,,
+Can other people see my files in Microsoft Search in Bing?,,Visibility; Privacy; Access; Sharing,published,"Only people that you've given permissions to can see your files.  
+
+They may have permissions because you've shared it with them or with a larger group that includes them, or you've stored the file in folders or locations that they have permission to access.
+",,,,,,,,,,
+Can I suggest results for Microsoft Search in Bing?,,Suggest; Results; Feedback; Improve,published,"When Microsoft Search can't find results, you'll see an option to suggest a bookmark. Use the link to send a suggestion to your IT team.
+
+If you see results, but you'd like to suggest a different bookmark, click on **All Results** in the header and use the link to send a suggestion.
+",,,,,,,,,,
+What is Microsoft Search in Bing?,,Overview; Business; Features; Introduction,published,"Microsoft Search in Bing effortlessly brings searching work and the web together in one experience. Use Microsoft Search in Bing for a simple, fast, powerful, and safe way to get the right information at the right time in any browser and on any device.
+
+Whether you’re searching for people, internal sites and resources, or answers to common questions, you can use Microsoft Search in Bing throughout your work day to get answers faster, be more productive, and work smarter.
+
+Check out the [getting started video](https://support.office.com/en-us/article/using-microsoft-search-in-bing-3328c0b1-4d55-4f26-bfa9-5d0f6cf59dfe?ui=en-US&rs=en-US&ad=US) for more information.",,,,,,,,,,
