@@ -1,0 +1,78 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [{
+            "type": "TextBlock",
+            "text": "Support Ticket #${ticketId}",
+            "weight": "Bolder",
+            "size": "Large",
+            "color": "Accent",
+            "spacing": "Medium"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Customer: ${customerName}",
+            "weight": "Bolder",
+            "color": "Good",
+            "spacing": "Small"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Product: ${productName}",
+            "weight": "Bolder",
+            "color": "Attention",
+            "spacing": "Small"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [{
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "Ticket Type",
+                            "weight": "Bolder",
+                            "spacing": "Medium"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${ticketType}",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [{
+                            "type": "TextBlock",
+                            "text": "Priority",
+                            "weight": "Bolder",
+                            "spacing": "Medium"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${ticketPriority}",
+                            "color": "Warning",
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "Channel: ${ticketChannel}",
+            "weight": "Bolder",
+            "spacing": "Medium"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Customer Satisfaction Rating: ${customerSatisfactionRating}",
+            "weight": "Bolder",
+            "color": "Good",
+            "spacing": "Medium"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "partitionKey": "SupportTicket",
+  "rowKey": "c9c5f302-ceb8-4a87-b727-c9435301fdb0",
+  "timestamp": "2024-10-25T22:25:09.454234+00:00",
+  "ticketId": "7403",
+  "customerName": "Laura Neal",
+  "customerEmail": "collinsdavid@example.com",
+  "customerAge": 41,
+  "customerGender": "Female",
+  "productPurchased": "Amazon Echo",
+  "dateOfPurchase": "2020-06-29T00:00:00+00:00",
+  "ticketType": "Technical issue",
+  "ticketSubject": "Data loss",
+  "ticketDescription": "I'm having an issue with the Amazon Echo. Please assist. 1.3.0 Hi! This update fixes a major bug in 1.3 that causes the game to crash. Please fix it. Otherwise I've tried clearing the cache and data for the Amazon Echo app, but the issue persists.",
+  "ticketStatus": "Closed",
+  "resolution": "Word point property idea.",
+  "ticketPriority": "Critical",
+  "ticketChannel": "Email",
+  "firstResponseTime": "2023-06-01T14:41:00+00:00",
+  "timeToResolution": "2023-06-01T06:11:00+00:00",
+  "customerSatisfactionRating": 4,
+  "eTag": "W/\"datetime'2024-10-25T22%3A25%3A09.454234Z'\""
+}
