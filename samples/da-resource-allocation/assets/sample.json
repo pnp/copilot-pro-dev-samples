@@ -36,7 +36,7 @@
         {
           "type": "image",
           "order": 100,
-            "url": "assets/ResourceAssistant.png",
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/main/samples/da-resource-allocation/assets/ResourceAssistant.png?raw=true",
           "alt": "Resource Allocation Assistant"
         }
       ],
