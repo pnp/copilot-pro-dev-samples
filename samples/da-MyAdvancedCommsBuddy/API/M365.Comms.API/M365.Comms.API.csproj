@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId></UserSecretsId>
+    <ApplicationInsightsResourceId></ApplicationInsightsResourceId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Archive\**" />
+    <Compile Remove="StorageService\**" />
+    <Content Remove="Archive\**" />
+    <Content Remove="StorageService\**" />
+    <EmbeddedResource Remove="Archive\**" />
+    <EmbeddedResource Remove="StorageService\**" />
+    <None Remove="Archive\**" />
+    <None Remove="StorageService\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.13.2" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.23.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.2" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="3.7.1" />
+    <PackageReference Include="Microsoft.Identity.Web.DownstreamApi" Version="3.7.1" />
+    <PackageReference Include="Microsoft.Identity.Web.MicrosoftGraph" Version="3.7.1" />
+    <PackageReference Include="Microsoft.Identity.Web.UI" Version="3.7.1" />
+    <PackageReference Include="PnP.Core" Version="1.14.0" />
+    <PackageReference Include="PnP.Core.Auth" Version="1.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\ServiceDependencies\" />
+  </ItemGroup>
+
+</Project>

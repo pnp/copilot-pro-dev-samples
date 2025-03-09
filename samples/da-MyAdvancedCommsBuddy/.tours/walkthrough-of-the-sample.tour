@@ -1,0 +1,61 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Walkthrough of the sample",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "This sample uses a Teams Toolkit Declarative Agent with an API Plugin"
+    },
+    {
+      "file": "appPackage/manifest.json",
+      "description": "Standard setup of the application, ensure that names, descriptions are populated.",
+      "line": 16
+    },
+    {
+      "file": "appPackage/declarativeAgent.json",
+      "description": "Renamed to MD, makes rendering and readbility for the author easier. Really important to create rish instructions to ensure the agent performs as expected.",
+      "line": 6
+    },
+    {
+      "file": "appPackage/declarativeAgent.json",
+      "description": "Starting point as reference to the ai-plugin.json file, to register the action.",
+      "line": 7
+    },
+    {
+      "file": "appPackage/declarativeAgent.json",
+      "description": "Enables Designer like generation of images within the agent. Powerful way to include graphics as part of your features to bring to the user.",
+      "line": 13
+    },
+    {
+      "file": "appPackage/declarativeAgent.json",
+      "description": "Conversation starters give the support to the user to help understand the application, I have included some additional help within the instructions if the user asks.",
+      "line": 18
+    },
+    {
+      "file": "appPackage/ai-plugin.json",
+      "description": "Good naming and descriptions so the action can be found and determined to provide action against the users intent.",
+      "line": 4
+    },
+    {
+      "file": "appPackage/ai-plugin.json",
+      "description": "This is generated for you, list of functions, but you will need to expand the definition to include user experience enhancements such as Adaptive Cards, confirmation dialogs.",
+      "line": 8
+    },
+    {
+      "file": "appPackage/ai-plugin.json",
+      "description": "The auth settings link in with the setup in Teams developer portal for Microsoft Entra SSO client ID registration, typically this gets added in the env files for the specific key.",
+      "line": 51
+    },
+    {
+      "file": "appPackage/apiSpecificationFile/openapi.json",
+      "description": "Update the server to align with your API endpoint",
+      "line": 7
+    },
+    {
+      "file": "appPackage/apiSpecificationFile/openapi.json",
+      "description": "Configuration block to your endpoint authentication, ensure the scopes are setup as per the Entra ID application used for the web api.",
+      "line": 404
+    }
+  ],
+  "ref": "main"
+}

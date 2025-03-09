@@ -1,0 +1,45 @@
+### GET request to fetch all messages
+GET {{M365.Comms.API_HostAddress}}/api/message
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### GET request to fetch all messages
+GET {{M365.Comms.API_HostAddress}}/api/message/1
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### POST request to create a new message
+POST {{M365.Comms.API_HostAddress}}/api/message
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "markdownContent": "DEBUG TEST: This is a new message",
+  "isApproved": false,
+  "sendToSharePoint": false,
+  "sendToTeams": false,
+  "sendToOutlook": true
+}
+
+### PATCH request to update an existing message
+PATCH {{M365.Comms.API_HostAddress}}/api/message
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id" : 4,
+  "markdownContent": "DEBUG TEST: This is an updated message",
+  "sendToSharePoint": false,
+  "sendToTeams": false,
+  "sendToOutlook": true
+}
+
+### PATCH request to cancel a message sending.
+PATCH {{M365.Comms.API_HostAddress}}/api/message/18/cancel
+content-Type: application/json
+Authorization: Bearer {{token}}
+
+### PATCH request to submit a message sending.
+PATCH {{M365.Comms.API_HostAddress}}/api/message/18/submit
+content-Type: application/json
+Authorization: Bearer {{token}}
