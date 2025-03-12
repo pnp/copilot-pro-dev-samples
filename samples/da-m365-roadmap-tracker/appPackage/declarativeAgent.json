@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+  "version": "v1.2",
+  "name": "M365 Roadmap Features Tracker",
+  "description": "Declarative agent created with Teams Toolkit",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    {
+      "title": "Discover What's New",
+      "text": "Curious about the latest Microsoft 365 updates? I can summarize the newest features from the M365 Roadmap for you!"
+    },
+    {
+      "title": "Track Feature Rollouts",
+      "text": "Want to know which upcoming M365 features will impact your workflow? Let me check the roadmap and highlight key updates!"
+    },
+    {
+      "title": "Plan for Upcoming Changes",
+      "text": "I can help you prepare for upcoming Microsoft 365 changes by summarizing features that will roll out soon. Want a quick overview?"
+    },
+    {
+      "title": "Stay Ahead with M365 Updates",
+      "text": "Need to keep your team informed? I can provide a summary of the most important feature updates for Microsoft 365."
+    },
+    {
+      "title": "Feature Deep Dive",
+      "text": "Interested in a specific M365 feature? Let me find the latest details from the roadmap and explain how it might affect you."
+    },
+    {
+      "title": "Your Personalized Update Report",
+      "text": "Tell me which Microsoft 365 apps you use the most, and I’ll filter out the most relevant roadmap updates for you!"
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "GraphConnectors",
+      "connections": [
+        {
+          "connection_id": "<replace_with_connection_id>"
+        }
+      ]
+    }
+  ]
+}
