@@ -1,0 +1,41 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "Resource Allocation Assistant",
+    "description": "Resource Allocation Assistant is a declarative AI Agent that helps managers optimize team workloads and balance resource allocation effectively.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+    {
+      "name": "OneDriveAndSharePoint"
+    },
+    {
+      "name": "GraphConnectors"
+    }
+  ],
+    "conversation_starters": [
+        {
+            "title": "Assess Team Workload",
+            "text": "How many tasks is my team handling? Who is overloaded?"
+        },
+        {
+            "title": "Identify Workload Imbalances",
+            "text": "Which team members are overloaded, and who has availability?"
+        },
+        {
+            "title": "Optimize Task Distribution",
+            "text": "How can I redistribute tasks to balance workload across my team?"
+        },
+        {
+            "title": "Manage High-Priority Tasks",
+            "text": "Which critical tasks need immediate reassignment?"
+        },
+        {
+            "title": "Prevent Burnout & Improve Efficiency",
+            "text": "How can I reduce team overload while maintaining productivity?"
+        },
+        {
+            "title": "Monitor and Adjust Workload",
+            "text": "Can you help track workload changes over time and suggest adjustments?"
+        }
+  ]
+}
