@@ -1,0 +1,132 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Support Ticket #${ticketId}",
+            "weight": "Bolder",
+            "size": "Large",
+            "spacing": "Medium"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Status: ${ticketStatus}",
+            "weight": "Bolder",
+            "color": "Good",
+            "spacing": "None"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Customer Details",
+                            "weight": "Bolder",
+                            "spacing": "Medium"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Name: ${customerName}",
+                            "spacing": "None"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Email: ${customerEmail}",
+                            "spacing": "None"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Age: ${customerAge}",
+                            "spacing": "None"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Gender: ${customerGender}",
+                            "spacing": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Ticket Details",
+                            "weight": "Bolder",
+                            "spacing": "Medium"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Type: ${ticketType}",
+                            "spacing": "None"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Subject: ${ticketSubject}",
+                            "spacing": "None"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Priority: ${ticketPriority}",
+                            "color": "Attention",
+                            "spacing": "None"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Channel: ${ticketChannel}",
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "Product Purchased: ${productPurchased}",
+            "weight": "Bolder",
+            "spacing": "Medium"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Date of Purchase: ${dateOfPurchase}",
+            "spacing": "None"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Ticket Description",
+            "weight": "Bolder",
+            "spacing": "Medium"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${ticketDescription}",
+            "wrap": true,
+            "spacing": "None"
+          },
+        {
+            "type": "TextBlock",
+            "text": "Resolution",
+            "weight": "Bolder",
+            "spacing": "Medium"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${resolution}",
+            "wrap": true,
+            "spacing": "None"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Customer Satisfaction Rating: ${customerSatisfactionRating}",
+            "weight": "Bolder",
+            "spacing": "Medium"
+        }
+    ]
+}

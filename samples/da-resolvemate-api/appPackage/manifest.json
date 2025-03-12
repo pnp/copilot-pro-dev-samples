@@ -1,0 +1,37 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+    "manifestVersion": "devPreview",
+    "version": "1.1.10",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "O365C - Resolve Mate",
+        "full": "O365C Resolve Mate - Customer Support Assistant"
+    },
+    "description": {
+        "short": "Streamline customer support with Resolve Mate",
+        "full": "Resolve Mate is a powerful assistant designed to streamline customer support tasks and provide valuable insights into customer interactions. It allows you to quickly access and analyze customer support tickets based on various criteria, including ticket ID, status, type, priority, customer email, and more. Additionally, Resolve Mate can perform advanced analysis, such as gauging customer satisfaction levels, tracking response times, and identifying common issues. This tool is essential for improving customer service efficiency and effectiveness."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [{
+            "id": "resolvemate",
+            "file": "resolvemate-declarative-copilot.json"
+        }]
+    },
+    "validDomains": []
+}

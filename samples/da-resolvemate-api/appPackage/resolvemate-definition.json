@@ -1,0 +1,470 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Resolve Mate API",
+        "description": "Resolve Mate helps streamline customer support by analyzing and retrieving support tickets based on various criteria.",
+        "version": "1.0.0"
+    },
+    "servers": [{
+        "url": "${{OPENAPI_SERVER_URL}}/api/",
+        "description": "Development server"
+    }],
+    "paths": {
+        "/Ticket/{ticketId}": {
+            "get": {
+                "operationId": "getTicketById",
+                "summary": "Retrieve a specific support ticket by its unique identifier",
+                "description": "This endpoint allows you to retrieve information about a specific support ticket using its unique identifier. The response includes various details about the ticket such as customer information, product details, ticket status, and resolution information. For example, you can find a ticket with ID 7402.",
+                "tags": [
+                    "Ticket"
+                ],
+                "parameters": [{
+                    "name": "ticketId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Ticket found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "customerID": {
+                                            "type": "integer"
+                                        },
+                                        "customerName": {
+                                            "type": "string"
+                                        },
+                                        "customerEmail": {
+                                            "type": "string"
+                                        },
+                                        "ticketID": {
+                                            "type": "string"
+                                        },
+                                        "ticketType": {
+                                            "type": "string"
+                                        },
+                                        "ticketSubject": {
+                                            "type": "string"
+                                        },
+                                        "ticketDescription": {
+                                            "type": "string"
+                                        },
+                                        "ticketStatus": {
+                                            "type": "string"
+                                        },
+                                        "ticketPriority": {
+                                            "type": "string"
+                                        },
+                                        "ticketChannel": {
+                                            "type": "string"
+                                        },
+                                        "firstResponseTime": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "timeToResolution": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "customerSatisfactionRating": {
+                                            "type": "integer"
+                                        },
+                                        "ProductID": {
+                                            "type": "integer"
+                                        },
+                                        "ProductCategory": {
+                                            "type": "string"
+                                        },
+                                        "purchasedDate": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "resolution": {
+                                            "type": "string"
+                                        },
+                                        "resolutionDate": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Ticket not found"
+                    }
+                }
+            }
+        },
+        "/Ticket/statusandpriority": {
+            "get": {
+                "operationId": "getTicketsByStatusAndPriority",
+                "summary": "Retrieve support tickets based on status and priority",
+                "description": "This endpoint allows you to retrieve support tickets based on their status and priority. You can filter tickets by specifying the desired status and priority levels. For example, you can find all tickets with status 'Open' and priority 'High'.",
+                "tags": [
+                    "Ticket"
+                ],
+                "parameters": [{
+                        "name": "ticketStatus",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "ticketPriority",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Tickets found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "customerID": {
+                                                "type": "integer"
+                                            },
+                                            "customerName": {
+                                                "type": "string"
+                                            },
+                                            "customerEmail": {
+                                                "type": "string"
+                                            },
+                                            "ticketID": {
+                                                "type": "string"
+                                            },
+                                            "ticketType": {
+                                                "type": "string"
+                                            },
+                                            "ticketSubject": {
+                                                "type": "string"
+                                            },
+                                            "ticketDescription": {
+                                                "type": "string"
+                                            },
+                                            "ticketStatus": {
+                                                "type": "string"
+                                            },
+                                            "ticketPriority": {
+                                                "type": "string"
+                                            },
+                                            "ticketChannel": {
+                                                "type": "string"
+                                            },
+                                            "firstResponseTime": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "timeToResolution": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "customerSatisfactionRating": {
+                                                "type": "integer"
+                                            },
+                                            "ProductID": {
+                                                "type": "integer"
+                                            },
+                                            "ProductCategory": {
+                                                "type": "string"
+                                            },
+                                            "purchasedDate": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "resolution": {
+                                                "type": "string"
+                                            },
+                                            "resolutionDate": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No tickets found"
+                    }
+                }
+            }
+        },
+        "/Ticket/search/{searchTerm}": {
+            "get": {
+                "operationId": "searchTickets",
+                "summary": "Search support tickets by subject or description",
+                "description": "This endpoint allows you to search for support tickets based on specific keywords in the ticket subject or description. You can retrieve tickets that contain the specified keywords in either the subject or description fields. For example, you can search for tickets that mention 'product setup' in the subject or description.",
+                "tags": [
+                    "Ticket"
+                ],
+                "parameters": [{
+                    "name": "searchTerm",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Tickets found",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "customerID": {
+                                                "type": "integer"
+                                            },
+                                            "customerName": {
+                                                "type": "string"
+                                            },
+                                            "customerEmail": {
+                                                "type": "string"
+                                            },
+                                            "ticketID": {
+                                                "type": "string"
+                                            },
+                                            "ticketType": {
+                                                "type": "string"
+                                            },
+                                            "ticketSubject": {
+                                                "type": "string"
+                                            },
+                                            "ticketDescription": {
+                                                "type": "string"
+                                            },
+                                            "ticketStatus": {
+                                                "type": "string"
+                                            },
+                                            "ticketPriority": {
+                                                "type": "string"
+                                            },
+                                            "ticketChannel": {
+                                                "type": "string"
+                                            },
+                                            "firstResponseTime": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "timeToResolution": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "customerSatisfactionRating": {
+                                                "type": "integer"
+                                            },
+                                            "ProductID": {
+                                                "type": "integer"
+                                            },
+                                            "ProductCategory": {
+                                                "type": "string"
+                                            },
+                                            "purchasedDate": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            },
+                                            "resolution": {
+                                                "type": "string"
+                                            },
+                                            "resolutionDate": {
+                                                "type": "string",
+                                                "format": "date-time"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No tickets found"
+                    }
+                }
+            }
+        },
+        "/Ticket/update": {
+            "put": {
+                "operationId": "updateTicket",
+                "summary": "Update a support ticket",
+                "description": "This endpoint allows you to update the details of a support ticket. You can modify the status, priority, or other attributes of a ticket based on specific criteria. For example, you can update the status of a ticket with ID 7402 to 'In Progress'.",
+                "tags": [
+                    "Ticket"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "ticketID": {
+                                        "type": "string"
+                                    },
+                                    "ticketStatus": {
+                                        "type": "string"
+                                    },
+                                    "ticketPriority": {
+                                        "type": "string"
+                                    },
+                                    "customerRating": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ticket updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "customerID": {
+                                            "type": "integer"
+                                        },
+                                        "customerName": {
+                                            "type": "string"
+                                        },
+                                        "customerEmail": {
+                                            "type": "string"
+                                        },
+                                        "ticketID": {
+                                            "type": "string"
+                                        },
+                                        "ticketType": {
+                                            "type": "string"
+                                        },
+                                        "ticketSubject": {
+                                            "type": "string"
+                                        },
+                                        "ticketDescription": {
+                                            "type": "string"
+                                        },
+                                        "ticketStatus": {
+                                            "type": "string"
+                                        },
+                                        "ticketPriority": {
+                                            "type": "string"
+                                        },
+                                        "ticketChannel": {
+                                            "type": "string"
+                                        },
+                                        "firstResponseTime": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "timeToResolution": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "customerSatisfactionRating": {
+                                            "type": "integer"
+                                        },
+                                        "ProductID": {
+                                            "type": "integer"
+                                        },
+                                        "productName": {
+                                            "type": "string"
+                                        },
+                                        "ProductCategory": {
+                                            "type": "string"
+                                        },
+                                        "purchasedDate": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        },
+                                        "resolution": {
+                                            "type": "string"
+                                        },
+                                        "resolutionDate": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Ticket not found"
+                    }
+                }
+            }
+        },
+        "/Ticket/resolvedTicketsWithSatisfaction": {
+            "get": {
+                "operationId": "getResolvedTicketsWithSatisfaction",
+                "summary": "Retrieve resolved tickets with customer satisfaction ratings",
+                "description": "This endpoint allows you to retrieve a list of resolved support tickets along with their customer satisfaction ratings. You can use this information to analyze customer satisfaction levels and identify areas for improvement. For example, you can get a list of resolved tickets with customer satisfaction ratings.",
+                "tags": [
+                    "Ticket"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieve resolved tickets with customer satisfaction ratings",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "customerId": {
+                                            "type": "integer"
+                                        },
+                                        "customerName": {
+                                            "type": "string"
+                                        },
+                                        "productName": {
+                                            "type": "string"
+                                        },
+                                        "ticketId": {
+                                            "type": "string"
+                                        },
+                                        "ticketType": {
+                                            "type": "string"
+                                        },
+                                        "ticketPriority": {
+                                            "type": "string"
+                                        },
+                                        "ticketChannel": {
+                                            "type": "string"
+                                        },
+                                        "customerSatisfactionRating": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Ticket not found"
+                    }
+                }
+            }
+        }
+    }
+}
