@@ -91,3 +91,4 @@ Version|Date|Comments
 
 - [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
 
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-m365-roadmap-tracker)
