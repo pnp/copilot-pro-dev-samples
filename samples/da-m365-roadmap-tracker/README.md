@@ -85,6 +85,7 @@ The following are Teams Toolkit specific project files. You can [visit a complet
 Version|Date|Comments
 -------|----|--------
 1.0|March 10, 2025|Initial solution
+1.0|April 06, 2025|Enhanced the agent instructions
 
 
 ## Addition information and references
