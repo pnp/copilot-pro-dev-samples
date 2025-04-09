@@ -86,6 +86,7 @@ Version|Date|Comments
 -------|----|--------
 1.0|March 10, 2025|Initial solution
 1.0|April 06, 2025|Enhanced the agent instructions
+1.1|April 09, 2025|Enhance agent conversation starters
 
 
 ## Addition information and references
