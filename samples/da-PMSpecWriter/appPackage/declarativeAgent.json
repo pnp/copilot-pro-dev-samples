@@ -1,0 +1,27 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "PM Spec Writer",
+    "description": "A declarative agent that creates PM specs from docs, decks, meetings.",
+    "instructions": "$[file('instruction_spec.txt')]",
+    "conversation_starters": [
+        {
+            "text": "Create a spec from this "
+        },
+        {
+            "text": "Who is the paid customer based on this "
+        },
+        {
+            "text": "What is the hero scenario covered in this "
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "GraphicArt"
+        },
+        {
+            "name": "CodeInterpreter"
+        }
+    ]
+  }
+  

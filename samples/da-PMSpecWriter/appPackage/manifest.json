@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.1.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "PM Spec Writer ${{APP_NAME_SUFFIX}}",
+        "full": "PM Spec Writer"
+    },
+    "description": {
+        "short": "An agent that creates clear PM specs.",
+        "full": "PM Spec Writer improves the productivity of PMs, drives clarity into feature specs, and coaches PMs in the essential skills of brevity, specificity, clarity. It does this by creating and refining PM spec drafts from a variety of unstructured input sources. Give it a deck, doc, meeting with details and it will help you create a short, clear spec that you can iterate on."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}
