@@ -1,0 +1,33 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
+    "schema_version": "v2.1",
+    "name_for_human": "TODOAgent",
+    "description_for_human": "This agent will list and create tasks in your TODO list.",
+    "description_for_model": "This agent will list and create tasks in your TODO list.",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "mstodoplugin",
+    "capabilities": {
+        "conversation_starters": []
+    },
+    "functions": [
+        {
+            "name": "me_todo_ListTasks",
+            "description": "List tasks from the todo list."
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "MzlmMGUxNDktNmNlMC00ODNlLThhY2YtYjZmYWEyMjlhMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx="
+            },
+            "spec": {
+                "url": "todoaction-openapi.yml"
+            },
+            "run_for_functions": [
+                "me_todo_ListTasks"
+            ]
+        }
+    ]
+}
