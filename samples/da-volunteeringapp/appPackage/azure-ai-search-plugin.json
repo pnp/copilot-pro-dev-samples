@@ -1,0 +1,29 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "VolunteeringApp",
+    "description_for_human": "An API for searching volunteer opportunities using vector queries.",
+    "namespace": "azureaisearch",
+    "functions": [
+        {
+            "name": "searchVolunteerOpportunities",
+            "description": "Retrieves volunteer opportunities using vector-based queries.",
+            "capabilities": {}
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "ApiKeyPluginVault",
+                "reference_id": "${{APIKEYAUTH_REGISTRATION_ID_FOR_AISEARCH}}"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/azure-ai-search.yaml"
+            },
+            "run_for_functions": [
+                "searchVolunteerOpportunities"
+            ]
+        }
+    ]
+}
