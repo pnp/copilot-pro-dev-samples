@@ -113,6 +113,10 @@ The following sample demonstrates the following concepts:
 * Query Azure AI Search to get the list of volunteer opportunities
 * Register the user to the selected opportunity
 
+## Demo 
+
+[![Demo Video](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=h8wPL_ZUmC0 "Declarative agent for volunteering app")
+
 <!--
 RESERVED FOR REPO MAINTAINERS
 
