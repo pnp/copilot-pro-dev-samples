@@ -24,7 +24,7 @@ Version|Date|Comments
 > * A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts).
 > * [Teams Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Teams Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
 > * [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
-> * [Azure AI Search](https://learn.microsoft.com/azure/search/search-what-is-azure-search) service with indexed data
+> * [Azure AI Search](https://learn.microsoft.com/azure/search/search-what-is-azure-search) service with indexed data from the assets folder.
 > * A SharePoint site with a list using the **Issue Tracker** template
 
 ## Minimal path to awesome
