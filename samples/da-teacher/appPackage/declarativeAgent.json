@@ -14,10 +14,10 @@
     "conversation_starters": [
         {
             "title": "Blckchain Basics",
-            "text": "teach me about  blockchain?"
+            "text": "teach me about blockchain?"
         },
         {
-            "title": "WebAPI C#  OpenAPI",
+            "title": "WebAPI C# OpenAPI",
             "text": "How to create a WebAPI in C# using OpenAPI specifications. This includes setting up the project, defining endpoints, and generating documentation."
         },
         {

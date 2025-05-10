@@ -43,5 +43,5 @@ The declarative agent "The Simple Teacher" acts as a friendly, patient, and humo
 ![Copilot agent blockchain question](./assets/da-teacher-blockchain.gif)
 *Copilot agent blockchain question*
 
-![Copilot agent .net SSE question](./assets/da-teacher-sse.gif)
+![Copilot agent .net SSE question](./assets/da-teacher-sse-net10.gif)
 *Copilot agent .net SSE question*

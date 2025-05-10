@@ -60,7 +60,7 @@
         {
           "type": "image",
           "order": 500,
-          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-teacher/assets/da-teacher-sse.gif",
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-teacher/assets/da-teacher-sse-net10.gif",
           "alt": "Copilot agent .net SSE question"
         }
       ],
