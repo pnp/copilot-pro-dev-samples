@@ -14,12 +14,12 @@
         "outline": "outline.png"
     },
     "name": {
-        "short": "VolunteeringApp${{APP_NAME_SUFFIX}}",
-        "full": "Full name for VolunteeringApp"
+        "short": "da-volunteeringapp${{APP_NAME_SUFFIX}}",
+        "full": "Full name for da-volunteeringapp"
     },
     "description": {
-        "short": "Short description for VolunteeringApp",
-        "full": "Full description for VolunteeringApp"
+        "short": "Short description for da-volunteeringapp",
+        "full": "Full description for da-volunteeringapp"
     },
     "accentColor": "#FFFFFF",
     "composeExtensions": [],
@@ -30,7 +30,7 @@
     "copilotAgents": {
         "declarativeAgents": [
             {
-                "id": "dcVolunteeringApp",
+                "id": "dcda-volunteeringapp",
                 "file": "declarativeAgent.json"
             }
         ]

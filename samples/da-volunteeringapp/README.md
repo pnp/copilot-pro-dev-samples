@@ -29,7 +29,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-1. Clone this repository (or [download this solution as a .ZIP file](https://github.com/reshmee011/declarativeagent/archive/refs/heads/main.zip) then unzip it)
+1. Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-da-volunteeringapp) then unzip it)
 
 2. Register an EntraID application in Azure:
 
