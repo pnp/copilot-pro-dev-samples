@@ -178,5 +178,6 @@ namespace RepairsAgent {
     }
   }
 
+  @authReferenceId("\${{REPAIRSHUBAPIKEYAUTH_REFERENCE_ID}}")
   model RepairsHubApiKeyAuth is ApiKeyAuth<ApiKeyLocation.query, "code">;
 }
