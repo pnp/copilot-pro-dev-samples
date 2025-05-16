@@ -1,0 +1,29 @@
+{
+    "id": "${{AAD_APP_OBJECT_ID}}",
+    "appId": "${{AAD_APP_CLIENT_ID}}",
+    "displayName": "da-typespec-todo-aad",
+    "signInAudience": "AzureADMyOrg",
+    "api": {
+        "requestedAccessTokenVersion": 2
+    },
+    "info": {},
+    "publicClient": {},
+    "requiredResourceAccess": [
+		{
+            "resourceAppId": "Microsoft Graph",
+            "resourceAccess": [
+                {
+					"id": "2219042f-cab5-40cc-b0d2-16b1540b4c5f",
+                    "type": "Scope"
+                }
+            ]
+        }
+    ],
+    "web": {
+        "redirectUris": [
+            "https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect"
+        ],
+        "implicitGrantSettings": {}
+    },
+    "spa": {}
+}
