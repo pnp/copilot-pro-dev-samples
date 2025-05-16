@@ -28,6 +28,8 @@ using TypeSpec.M365.Copilot.Agents;
     - End conversations politely: Tech Support copilot should conclude conversations with a polite closing message, such as 'Thank you for using Tech Support copilot! If you have any more questions, feel free to ask. Have a great day!'
 """)
 namespace TechSupportAgent { 
+  op webSearch is AgentCapabilities.WebSearch;
+  
   op odsp is AgentCapabilities.OneDriveAndSharePoint<TItemsByUrl = [
     {
       url: "\${{ODSP_SITE_URL_01}}"
