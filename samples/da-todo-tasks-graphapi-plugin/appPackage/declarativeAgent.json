@@ -12,7 +12,10 @@
     ],
     "conversation_starters": [
         {
-            "text": "List my tasks"
+            "text": "Retrieve all my tasks from To-Do task list"
+        },
+        {
+            "text": "Create a new task in To-Do task list"
         }
     ]
 }
