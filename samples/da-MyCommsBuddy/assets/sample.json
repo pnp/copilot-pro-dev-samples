@@ -4,8 +4,8 @@
       "source": "pnp",
       "title": "My Communication Buddy",
       "shortDescription": "Declarative Agent designed to assist user in creating corporate communications",
-      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-MyAdvancedCommsBuddy",
-      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-MyAdvancedCommsBuddy",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-MyCommsBuddy",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-MyCommsBuddy",
       "longDescription": [
         "The \"My Communication Buddy agent\" Declarative Agent is an open-source AI-driven tool designed to assist people in the creation of communications - contains instructions for guiding the user on corporate style, inclusive communications."    
     ],
