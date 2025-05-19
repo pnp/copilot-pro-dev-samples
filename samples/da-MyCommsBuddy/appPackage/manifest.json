@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.5",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "PKB App, Inc.",
+        "websiteUrl": "https://pkbullock.com",
+        "privacyUrl": "https://pkbulock.com",
+        "termsOfUseUrl": "https://pkbullock.com"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "My Communications Buddy ${{APP_NAME_SUFFIX}}",
+        "full": "My Communications Buddy - Simple Version for Microsoft 365 Copilot agent"
+    },
+    "description": {
+        "short": "My Communications Buddy that helps you write content for you and your team",
+        "full": "My Communications Buddy that helps you write content for you and your team the provides support for writing inclusive communications"
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}
