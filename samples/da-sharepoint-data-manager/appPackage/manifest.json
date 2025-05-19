@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "DataManager${{APP_NAME_SUFFIX}}",
+        "full": "Microsoft 365 Data Management Agent"
+    },
+    "description": {
+        "short": "A data management agent for Microsoft 365, and pharmaceutical compliance",
+        "full": "This agent helps users manage, organize, and extract insights from their SharePoint sites and Microsoft 365 content. It provides search capabilities, organization suggestions, permission management, and analytics reporting. It also specializes in pharmaceutical data management and regulatory compliance, offering guidance on FDA, EMA, ICH, and other regulatory requirements."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}

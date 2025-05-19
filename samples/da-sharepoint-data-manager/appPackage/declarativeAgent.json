@@ -1,0 +1,35 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+    "version": "v1.3",
+    "name": "DataManager",
+    "description": "Declarative agent created with Teams Toolkit",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "text": "Help me organize my files in SharePoint"
+        },
+        {
+            "text": "Create a report on my SharePoint site usage"
+        },
+        {
+            "text": "Help me manage permissions for my SharePoint documents"
+        },
+        {
+            "text": "Show me insights about my content in Microsoft 365"
+        },
+        {
+            "text": "Explain FDA regulatory requirements for clinical trials"
+        },
+        {
+            "text": "Help me organize pharmaceutical documentation for regulatory compliance"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint"
+        },
+        {
+            "name": "WebSearch"
+        }
+    ]
+}
