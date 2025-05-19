@@ -3,22 +3,28 @@
 ## Summary
 
 This sample demonstrates how to use the Microsoft Graph API as a Copilot plugin in a declarative agent with some variation from the blog post
- [https://blog.franckcornu.com/post/copilot-graph-api-qna-plugin/](https://blog.franckcornu.com/post/copilot-graph-api-qna-plugin) focusing this time how to list my ToDo tasks since the QnA feature has retired since March 2025.
+ [https://blog.franckcornu.com/post/copilot-graph-api-qna-plugin/](https://blog.franckcornu.com/post/copilot-graph-api-qna-plugin) focusing this time how to list and create my To-Do tasks since the QnA feature has retired since March 2025.
 
-The following blog post describes the complete solution setup:[Building a Copilot Agent with Teams Toolkit and Microsoft Graph Plugin to list my ToDo Tasks](https://reshmeeauckloo.com/posts/copilot-agent-teamstoolkit-m365graph-plugin/)
+The following blog post describes the complete solution setup:[Building a Copilot Agent with Teams Toolkit and Microsoft Graph Plugin to list my ToDo Tasks](https://reshmeeauckloo.com/posts/copilot-agent-teamstoolkit-m365Graph-plugin-ToDo/)
 
-!["Graph API ToDo List Tasks "](./assets/action_listtasks.gif)
+### List/Retrieve my To-Do Tasks
 
+!["Graph API To-Do List Tasks "](./assets/action_listtasks.gif)
+
+### Create my To-Do Tasks
+
+!["Graph API To-Do Create Tasks "](./assets/action_createToDoTask.gif)
 
 ## Contributors
 
-* [Reshmee Auckloo](https://github.com/reshmee011)- M365 Development MVP
+* [Reshmee Auckloo](https://github.com/reshmee011) - M365 Development MVP
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
 1.0|April 18, 2025|Initial solution
+2.0|May 18, 2025|Added action to create my To-Do task
 
 ## Get started with the template
 
@@ -33,23 +39,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-todo-listtasks-graphapi-plugin) then unzip it)
-
-* Open the **todoaction-openapi.yml** file, look for the `securitySchemes` property and replace `tenantid` by your own ID:
-
-    ```yaml
-      securitySchemes:
-    azureaadv2:
-      type: oauth2
-      flows:
-        authorizationCode:
-          authorizationUrl: https://login.microsoftonline.com/39f0e149-6ce0-483e-8acf-b6faa229a203/oauth2/v2.0/authorize
-          tokenUrl: https://login.microsoftonline.com/39f0e149-6ce0-483e-8acf-b6faa229a203/oauth2/v2.0/token
-          scopes:
-            User.Read: 'Read user profile'
-            Directory.Read.All: 'Read directory data'
-            Tasks.ReadWrite: 'Read and write all tasks'
-    ```
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-todo-tasks-graphapi-plugin) then unzip it)
 
 * Register an Entra ID application in Azure and add the API permissions `Tasks.ReadWrite,User.Read,Directory.Read.All` (delegated). Add the `https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect` as a redirect URL for web platform in the **Authentication** settings.
 
@@ -74,15 +64,16 @@ Version|Date|Comments
 
 3. Open the **ai-plugin.json** file and replace the auth property by the following, using the key from the previous step. You can also use the `${{OAUTH2_REGISTRATIONKEY}}` token defined the `.env.dev` file: 
 
-    ```json
-    "auth": {
-        "type": "OAuthPluginVault",
-        "reference_id": "ZTRhNDM5YjQtM2..."
-    },
-    ```
+  ```json
+  "auth": {
+      "type": "OAuthPluginVault",
+      "reference_id": "ZTRhNDM5YjQtM2..."
+  },
+  ```
+
 4. From Teams Toolkit, sign-in to your Microsoft 365 account.
 5. From Teams Toolkit, provision the solution to create the Teams app.
-5. Go to [https://www.office.com/chat?auth=2](https://www.office.com/chat?auth=2) URL and enable the developer mode by using the `-developer on` prompt.
+6. Go to [https://www.office.com/chat?auth=2](https://www.office.com/chat?auth=2) URL and enable the developer mode by using the `-developer on` prompt.
 7. Ask a question like _"List My Tasks"_. You should see the plugin triggered.
 
 ## Features
@@ -115,4 +106,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-qna-graphapi-plugin)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-todo-tasks-graphapi-plugin)
