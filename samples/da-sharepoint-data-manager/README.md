@@ -1,6 +1,6 @@
 # Overview of the Data Manager Agent
 
-With the Data Manager agent, you can build a custom version of Copilot that helps users manage, organize, and extract insights from their SharePoint sites and Microsoft 365 content. This agent provides powerful capabilities for data management, organization, and analytics, making it easier to handle large amounts of content across your Microsoft 365 environment. It also specializes in pharmaceutical data management and regulatory compliance.
+With the Data Manager agent, you can build a custom version of Copilot that helps users manage and organize their SharePoint sites and Microsoft 365 content. This agent leverages OneDrive and SharePoint access along with web search capabilities to provide guidance and information based on your content.
 
 ## Get started with the Data Manager
 
@@ -8,36 +8,29 @@ With the Data Manager agent, you can build a custom version of Copilot that help
 
 ### Document Search
 - Search across SharePoint sites and libraries
-- Filter by content, metadata, or permissions
-- Advanced search capabilities
+- Filter by content and metadata
+- Discover relevant documents 
 
 ### File Organization
 - Smart folder structure suggestions
-- Metadata tagging and classification
-- Content type management
+- Metadata tagging and classification advice
+- Content type recommendations
 
-### Permission Management
-- Permission analysis
-- Sharing recommendations
-- Access control management
+### Document Management Guidance
+- Best practices for document organization
+- SharePoint organization strategies
+- Content classification recommendations
 
-### Analytics and Reporting
-- Site usage reports
-- Document activity tracking
-- Content analytics
-- Trend analysis
+### Web Search Integration
+- Access to relevant documentation and guidelines
+- Search for information from trusted sources
+- Up-to-date guidance from official documentation
 
-### Data Governance
-- Retention policy management
-- Records management
-- Compliance assistance
-
-### Pharmaceutical Regulatory Compliance
+### Pharmaceutical Manufacturing Intelligence
 - Guidance on FDA, EMA, WHO, and ICH regulatory requirements
 - Pharmaceutical documentation management according to industry standards
-- Support for organizing clinical trial data and regulatory submissions
 - GxP data integrity, traceability, and audit readiness recommendations
-- Access to up-to-date regulatory information from official sources
+- Access to regulatory information from official sources
 
 > **Note**: All required environment variables (TEAMS_APP_ID, TEAMS_APP_TENANT_ID, etc.) are automatically generated during the provisioning step. You don't need to set up any environment files manually.
 
@@ -57,7 +50,7 @@ With the Data Manager agent, you can build a custom version of Copilot that help
 3. Create Teams app by clicking `Provision` in "Lifecycle" section.
 4. Select `Preview in Copilot (Edge)` or `Preview in Copilot (Chrome)` from the launch configuration dropdown.
 5. Once the Copilot app is loaded in the browser, click on the "…" menu and select "Copilot chats". You will see your Data Manager agent on the right rail. Clicking on it will change the experience to showcase the logo and name of your data management agent.
-6. Ask questions about your SharePoint content, and the agent will help you manage, organize, and analyze your data.
+6. Ask questions about your SharePoint content, and the agent will help you manage and organize your data.
 
 
 ## Version history
@@ -68,7 +61,7 @@ Version|Date|Comments
 
 ## Contributors
 
-* [Kateryna Turuntseva](https://github.com/KatT-AI)
+* [Kateryna Turuntseva](https://github.com/KatyaT27)
 
 ## Help
 
