@@ -9,19 +9,19 @@
             "text": "Help me organize my files in SharePoint"
         },
         {
-            "text": "Create a report on my SharePoint site usage"
+            "text": "Suggest a folder structure for my documents"
         },
         {
-            "text": "Help me manage permissions for my SharePoint documents"
+            "text": "What are best practices for document naming in SharePoint?"
         },
         {
-            "text": "Show me insights about my content in Microsoft 365"
+            "text": "Show me how to use metadata in SharePoint"
         },
         {
-            "text": "Explain FDA regulatory requirements for clinical trials"
+            "text": "What are document organization best practices?"
         },
         {
-            "text": "Help me organize pharmaceutical documentation for regulatory compliance"
+            "text": "How can I improve searchability of my SharePoint documents?"
         }
     ],
     "capabilities": [
