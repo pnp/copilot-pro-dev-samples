@@ -18,8 +18,8 @@
         "full": "Microsoft 365 Data Management Agent"
     },
     "description": {
-        "short": "A data management agent for Microsoft 365, and pharmaceutical compliance",
-        "full": "This agent helps users manage, organize, and extract insights from their SharePoint sites and Microsoft 365 content. It provides search capabilities, organization suggestions, permission management, and analytics reporting. It also specializes in pharmaceutical data management and regulatory compliance, offering guidance on FDA, EMA, ICH, and other regulatory requirements."
+        "short": "A content organization assistant for Microsoft 365",
+        "full": "This agent helps users organize and find documents in their SharePoint sites and Microsoft 365 content. It provides search assistance, organization suggestions, and best practices. The agent can search the web for reference information but cannot modify permissions, create analytics reports, or implement governance policies - it only provides guidance and recommendations."
     },
     "accentColor": "#FFFFFF",
     "composeExtensions": [],
