@@ -1,0 +1,29 @@
+{
+    "id": "ad8bfee4-ad32-4465-a5ca-95ae148200c3",
+    "appId": "879c78fc-a756-43ca-af9e-5598fe8ef51b",
+    "displayName": "da-typespec-todo-aad",
+    "signInAudience": "AzureADMyOrg",
+    "api": {
+        "requestedAccessTokenVersion": 2
+    },
+    "info": {},
+    "publicClient": {},
+    "requiredResourceAccess": [
+        {
+            "resourceAppId": "00000003-0000-0000-c000-000000000000",
+            "resourceAccess": [
+                {
+                    "id": "2219042f-cab5-40cc-b0d2-16b1540b4c5f",
+                    "type": "Scope"
+                }
+            ]
+        }
+    ],
+    "web": {
+        "redirectUris": [
+            "https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect"
+        ],
+        "implicitGrantSettings": {}
+    },
+    "spa": {}
+}
