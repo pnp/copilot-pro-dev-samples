@@ -1,0 +1,190 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "Salesforce",
+    "description_for_human": "API for querying Salesforce data",
+    "namespace": "salesforce",
+    "functions": [
+        {
+            "name": "createCallTask",
+            "description": "Creates a new Task record in Salesforce that logs a call",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.id",
+                        "url": "{{ENDPOINT_URL}}/$.id"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "size": "Large",
+                                "weight": "Bolder",
+                                "text": "Task Created",
+                                "wrap": true,
+                                "fontType": "Default",
+                                "style": "heading"
+                            },
+                            {
+                                "type": "ActionSet",
+                                "actions": [
+                                    {
+                                        "type": "Action.OpenUrl",
+                                        "title": "View Details",
+                                        "url": "{{ENDPOINT_URL}}/${id}"
+                                    }
+                                ],
+                                "spacing": "Large",
+                                "id": "7888"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "getSalesData",
+            "description": "Execute a SOQL query to retrieve sales data (Leads, Accounts, Opportunities, Contacts, Tasks, Cases and more) from Salesforce. The query is provided via the `soql` query parameter.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$.records",
+                    "properties": {
+                        "title": "$.Name",
+                        "subtitle": "$.attributes.type",
+                        "url": "{{ENDPOINT_URL}}/$.Id"
+                    },
+                    "static_template": {
+                        "type": "AdaptiveCard",
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "version": "1.6",
+                        "body": [
+                            {
+                                "type": "TextBlock",
+                                "size": "Large",
+                                "weight": "Bolder",
+                                "text": "${attributes.type}",
+                                "wrap": true,
+                                "fontType": "Default",
+                                "style": "heading"
+                            },
+                            {
+                                "type": "ColumnSet",
+                                "columns": [
+                                    {
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${if(Name, concat('Name: ', Name), if(Subject, concat('Subject: ', Subject), 'Subject: Not provided'))}",
+                                                "wrap": true,
+                                                "weight": "Bolder",
+                                                "fontType": "Default",
+                                                "size": "Small"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${if(Description, concat('Description: ', Description), '')}",
+                                                "wrap": true,
+                                                "isVisible": "${Description != null}",
+                                                "weight": "Bolder",
+                                                "fontType": "Default",
+                                                "size": "Small"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${if(Priority, concat('Priority: ', Priority), '')}",
+                                                "wrap": true,
+                                                "isVisible": "${Priority != null}",
+                                                "weight": "Bolder",
+                                                "fontType": "Default",
+                                                "size": "Small"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${if(Status, concat('Status: ', Status), '')}",
+                                                "isVisible": "${Status != null}",
+                                                "wrap": true,
+                                                "weight": "Bolder",
+                                                "fontType": "Default",
+                                                "size": "Small"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${if(Amount, concat('Amount: $', Amount), '')}",
+                                                "wrap": true,
+                                                "isVisible": "${Amount != null}",
+                                                "weight": "Bolder",
+                                                "fontType": "Default",
+                                                "size": "Small"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${if(AnnualRevenue, concat('Annual Revenue: $', AnnualRevenue), '')}",
+                                                "wrap": true,
+                                                "isVisible": "${AnnualRevenue != null}",
+                                                "weight": "Bolder",
+                                                "fontType": "Default",
+                                                "size": "Small"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${if(ExpectedRevenue, concat('Expected Revenue: $', ExpectedRevenue), '')}",
+                                                "wrap": true,
+                                                "isVisible": "${ExpectedRevenue != null}",
+                                                "weight": "Bolder",
+                                                "fontType": "Default",
+                                                "size": "Small"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${if(Reason, concat('Reason: ', Reason), '')}",
+                                                "wrap": true,
+                                                "isVisible": "${Reason != null}",
+                                                "weight": "Bolder",
+                                                "fontType": "Default",
+                                                "size": "Small"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "ActionSet",
+                                "actions": [
+                                    {
+                                        "type": "Action.OpenUrl",
+                                        "title": "View Details",
+                                        "url": "{{ENDPOINT_URL}}/${Id}"
+                                    }
+                                ],
+                                "spacing": "Large",
+                                "id": "7888"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{OAUTH2_REGISTRATION_ID}}"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "getSalesData",
+                "createCallTask"
+            ]
+        }
+    ]
+}
