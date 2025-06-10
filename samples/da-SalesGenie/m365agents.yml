@@ -19,7 +19,7 @@ provision:
   # Register the configuration in Developer Portal
   - uses: oauth/register
     with:
-      name: OAuth2
+      name: OAuth2AuthCode
       flow: authorizationCode
       # app ID
       appId: ${{TEAMS_APP_ID}}
@@ -30,8 +30,7 @@ provision:
       # Uncomment below property to use proof key for code exchange (PKCE)
       # isPKCEEnabled: true
     writeToEnvironmentFile:
-      configurationId: OAUTH2_REGISTRATION_ID
-
+      configurationId: OAUTH2AUTHCODE_CONFIGURATION_ID
   # Build app package with latest env value
   - uses: teamsApp/zipAppPackage
     with:

@@ -4,9 +4,9 @@ info:
   description: API for querying Salesforce data
   version: 1.0.0
 servers:
-  - url: {{ENDPOINT_URL}}
+  - url: ${{ENDPOINT_URL}}
 security:
-  - OAuth2: []
+  - OAuth2AuthCode: []
 paths:
   /services/data/v62.0/query:
     get:
@@ -127,7 +127,7 @@ paths:
           description: Internal Server Error - An unexpected error occurred.
 components:
   securitySchemes:
-    OAuth2:
+    OAuth2AuthCode:
       type: oauth2
       flows:
         authorizationCode:

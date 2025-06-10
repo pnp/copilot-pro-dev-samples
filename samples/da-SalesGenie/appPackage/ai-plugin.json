@@ -13,7 +13,7 @@
                     "data_path": "$",
                     "properties": {
                         "title": "$.id",
-                        "url": "{{ENDPOINT_URL}}/$.id"
+                        "url": "${{ENDPOINT_URL}}/$.id"
                     },
                     "static_template": {
                         "type": "AdaptiveCard",
@@ -55,7 +55,7 @@
                     "properties": {
                         "title": "$.Name",
                         "subtitle": "$.attributes.type",
-                        "url": "{{ENDPOINT_URL}}/$.Id"
+                        "url": "${{ENDPOINT_URL}}/$.Id"
                     },
                     "static_template": {
                         "type": "AdaptiveCard",
@@ -159,7 +159,7 @@
                                     {
                                         "type": "Action.OpenUrl",
                                         "title": "View Details",
-                                        "url": "{{ENDPOINT_URL}}/${Id}"
+                                        "url": "${{ENDPOINT_URL}}/${Id}"
                                     }
                                 ],
                                 "spacing": "Large",
@@ -176,7 +176,7 @@
             "type": "OpenApi",
             "auth": {
                 "type": "OAuthPluginVault",
-                "reference_id": "${{OAUTH2_REGISTRATION_ID}}"
+                "reference_id": "${{OAUTH2AUTHCODE_CONFIGURATION_ID}}"
             },
             "spec": {
                 "url": "apiSpecificationFile/openapi.yaml"

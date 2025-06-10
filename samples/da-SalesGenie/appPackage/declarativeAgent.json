@@ -18,8 +18,7 @@
             "name": "Email"
         },
         {
-            "name": "TeamsMessages",
-            "urls": [] 
+            "name": "TeamsMessages"
         }
     ],
     "actions": [
