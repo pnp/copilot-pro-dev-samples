@@ -1,0 +1,159 @@
+openapi: 3.0.0
+info:
+  title: Microsoft Graph To-Do API
+  version: 1.0.0
+servers:
+  - url: https://graph.microsoft.com/v1.0
+paths:
+  /me/todo/lists/tasks/tasks:
+    get:
+      summary: Retrieve all tasks from a specified To-Do task list
+      operationId: getTasksFromList
+      responses:
+        '200':
+          description: A list of tasks
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/todoTaskListResponse'
+        '400':
+          description: Bad request due to invalid parameters
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+      x-ms-pageable:
+        nextLinkName: '@odata.nextLink'
+        operationName: listMore
+        itemName: value
+    post:
+      summary: Create a new task in a specified To-Do task list
+      operationId: createTaskInList
+      requestBody:
+        description: Task to create
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/todoTask'
+      responses:
+        '201':
+          description: Task created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/todoTask'
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+security:
+  - azureaadv2: []
+components:
+  schemas:
+    todoTaskListResponse:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/todoTask'
+        '@odata.nextLink':
+          type: string
+          description: >-
+            URL to retrieve the next page of results. If no more pages
+            are available, this property is null. 
+        '@odata.count':
+          type: integer
+          description: >-
+            The total number of items in the collection, regardless of
+            pagination. This property is only returned if the request
+            includes the $count query parameter.
+        '@odata.context':
+          type: string
+          description: >-
+            A URL that identifies the context of the response. This
+            property is only returned if the request includes the
+            $count query parameter.
+    todoTask:
+      properties:
+        importance:
+          nullable: true
+          type: string
+          example: "low"
+        isReminderOn:
+          nullable: true
+          type: boolean
+          example: false
+        status:
+          title: taskStatus
+          nullable: true
+          enum:
+            - notStarted
+            - inProgress
+            - completed
+            - waitingOnOthers
+            - deferred
+          type: string
+        title:
+          type: string
+          example: "Shop for dinner"
+        createdDateTime:
+          type: string
+          format: date-time
+          example: "2020-07-22T10:39:03.7937971Z"
+        lastModifiedDateTime:
+          type: string
+          format: date-time
+          example: "2020-07-22T12:02:10.8835421Z"
+        categories:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+          nullable: true
+          example: "721a35e2-35e2-721a-e235-1a72e2351a72"
+        body:
+          type: object
+          nullable: true
+          properties:
+            content:
+              type: string
+              example: ""
+            contentType:
+              type: string
+              example: "text"
+        dueDateTime:
+          type: object
+          nullable: true
+          description: >-
+              The due date and time for the task. The time is in the user's time zone. 
+              If the user has not set a time zone, the default is UTC. 
+              **Do not include this property in the request body if it is empty.**
+          x-omit-if-empty: true
+          properties:
+            dateTime:
+              type: string
+              format: date-time
+              example: "2021-07-11T09:00:00.0000000"
+            timeZone:
+              type: string
+              default: "Europe/London"
+              example: "Australia/Sydney"
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: >-
+            https://login.microsoftonline.com/${{TEAMS_APP_TENANT_ID}}/oauth2/v2.0/authorize
+          tokenUrl: >-
+            https://login.microsoftonline.com/${{TEAMS_APP_TENANT_ID}}/oauth2/v2.0/token
+          scopes:
+            User.Read: Read user profile
+            Directory.Read.All: Read directory data
+            Tasks.ReadWrite: Read and write all tasks
+            Mail.Send: Send mail as a user

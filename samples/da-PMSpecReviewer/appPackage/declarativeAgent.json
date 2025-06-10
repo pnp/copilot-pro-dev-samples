@@ -1,0 +1,30 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "PM Spec Reviewer",
+    "description": "An agent that reviews PM specs and nudges users towards simplicity, clarity, brevity.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "text": "Review this spec - "
+        },
+        {
+            "text": "Who can help me write this spec?"
+        },
+        {
+            "text": "Is the customer and their unmet need clear from this spec?"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "GraphicArt"
+        },
+        {
+            "name": "CodeInterpreter"
+        },
+        {
+            "name": "OneDriveAndSharePoint"
+        }
+    ]
+  }
+  
