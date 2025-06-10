@@ -1,0 +1,17 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
+    "name": "Geo Locator Game",
+    "description": "This a Geo Locator Game declarative agent",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Getting Started",
+            "text": "Let us play"
+        },
+        {
+            "title": "Getting Help",
+            "text": "I am ready"
+        }
+    ]
+}

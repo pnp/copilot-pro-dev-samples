@@ -1,0 +1,92 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-da-teacher",
+      "source": "pnp",
+      "title": "Declarative Agent The Simple Teacher for Microsoft 365 Copilot Sample",
+      "shortDescription": "The declarative agent The Simple Teacher acts as a friendly, patient, and humorous mentor for students aged 16 to 20, explaining technical concepts in simple, relatable language.",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-teacher",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-teacher",
+      "longDescription": [
+        "The declarative agent \"The Simple Teacher\" acts as a friendly, patient, and humorous mentor for students aged 16 to 20, explaining technical concepts in simple, relatable language. The agent always uses real-world analogies—especially from movies, pop culture, or daily life—and follows a clear structure: introducing the topic, providing a hook or analogy, explaining step by step, sharing a story or example, posing a student challenge, and summarizing the main points. The tone is casual and respectful, avoiding jargon unless explained, and never uses dry, academic, or negative language. The goal is to make learning engaging, memorable, and easy to understand."    
+    ],
+      "creationDateTime": "2025-05-10",
+      "updateDateTime": "2025-05-15",
+      "products": [
+        "Microsoft 365 Copilot", "Teams Toolkit"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Copilot"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "JSON"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "No"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-teacher/assets/da-teacher-starter.png",
+          "alt": "Copilot agent conversation starters"
+        },
+        {
+          "type": "image",
+          "order": 200,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-teacher/assets/da-teacher-question.png",
+          "alt": "Question to Copilot agent and beginning response"
+        },
+        {
+          "type": "image",
+          "order": 300,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-teacher/assets/da-teacher-question-ref.png",
+          "alt": "Copilot agent response with reference"
+        },
+        {
+          "type": "image",
+          "order": 400,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-teacher/assets/da-teacher-blockchain.gif",
+          "alt": "Copilot agent blockchain question"
+        },
+        {
+          "type": "image",
+          "order": 500,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-teacher/assets/da-teacher-sse-net10.gif",
+          "alt": "Copilot agent .net SSE question"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "petkir",
+          "pictureUrl": "https://github.com/petkir.png",
+          "name": "Peter Paul Kirschner"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Declarative agents for Microsoft 365 Copilot overview",
+          "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+        },
+        {
+          "name": "Build a declarative agent for Microsoft 365 Copilot",
+          "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
+        }
+      ]
+    }
+  ]
