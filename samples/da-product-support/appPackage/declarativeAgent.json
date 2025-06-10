@@ -1,0 +1,35 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
+    "name": "Product support",
+    "description": "Product support agent that can help answer customer queries about Contoso Electronics products",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [
+                {
+                    "url": "${{DOCUMENTS_URL}}"
+                }
+            ]
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Agent features",
+            "text": "What can you do?"
+        },
+        {
+            "title": "Get product info",
+            "text": "Tell me about Eagle Air?"
+        },
+        {
+            "title": "Recommend products",
+            "text": "Recommend a product for a farmer."
+        },
+        {
+            "title": "Compare products",
+            "text": "What is the difference between Eagle Air and Contoso Quad? Show your answer in a table."
+        }
+    ]
+}
