@@ -26,14 +26,19 @@ This is a Geo Locator Game copilot that plays a game with users by asking a loca
 
 ## Minimal path to awesome
 
-1. Open **Visual Studio Code**.
-2. On the primary sidebar, select the **Microsoft 365 Agents Toolkit icon**
-3. In the LIFECYCLE section, select **Provision**
-4. If prompted, **sign in** with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts)
-5. Press **F5** to launch a browser that navigates to the Microsoft 365 Copilot app.
-6. On the sidebar, locate **Geo Locater Game** under in the Agents menu and select it.
-7. In the Geo Locator Game agent, select the **Getting started** conversation starter.
-8. **Send the message** and wait for the agent to respond.
+### 1. Provision agent
+
+1. Open the project in Visual Studio Code
+1. On the primary sidebar, select the **Microsoft 365 Agents Toolkit icon**
+1. In the LIFECYCLE section, select **Provision**
+1. If prompted, **sign in** with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts)
+1. Wait for the provisioning to complete
+
+### 2. Test the agent
+
+1. Press **F5** to launch a browser that navigates that opens the declarative agent in Microsoft 365 Copilot. If prompted, sign in with your Microsoft 365 account.
+1. Select the **Getting started** conversation starter.
+1. **Send the message** and wait for the agent to respond.
 
 ## Troubleshooting and feature requests
 
