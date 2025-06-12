@@ -1,0 +1,130 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "Canvas Student",
+    "description_for_human": "API for interacting with Canvas LMS, including courses, modules, module items, and search functionalities.",
+    "namespace": "canvasstudent",
+    "functions": [
+        {
+            "name": "listYourCourses",
+            "description": "Retrieves a paginated list of active courses for the current user.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.name",
+                        "subtitle": "$.course_code"
+                    }
+                }
+            }
+        },
+        {
+            "name": "listModules",
+            "description": "Retrieves the list of modules for a given course in Canvas.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.name"
+                    }
+                }
+            }
+        },
+        {
+            "name": "listModuleItems",
+            "description": "Retrieves the list of items within a specific module in a Canvas course.",
+            "states": {
+                "responding": {
+                   "instructions": [
+                       "Include all items.",
+                       "Only provide the item name and do not render the html_url if there is an external url."
+                   ]
+                }
+            },
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.title"
+                    }
+                }
+            }
+        },
+        {
+            "name": "smartSearchCourse",
+            "description": "Perform a smart search in a course using AI-powered content search.",
+            "states": {
+                "reasoning": {
+                    "instructions": ["Do not use a filter for unless looking for pages, assignments, announcements, or discussion topics."]
+                },
+                "responding": {
+                   "instructions": ["Always ask the user to verify the course name or course id if the API response contains \"403\", \"unauthorized\", \"forbidden\", or \"user not authorized to perform that action\"."]
+                }
+            },
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$.results",
+                    "properties": {
+                        "title": "$.title",
+                        "url": "$.html_url"
+                    }
+                }
+            }
+        },
+        {
+            "name": "getUser",
+            "description": "Get user details.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.name",
+                        "subtitle": "$.id",
+                        "url": "$.avatar_url"
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{OAUTH2_CONFIGURATION_ID}}"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "listYourCourses",
+                "listModules",
+                "listModuleItems",
+                "smartSearchCourse",
+                "getUser"
+            ]
+        }
+    ],
+    "capabilities": {
+        "conversation_starters": [
+            {
+                "text": "Search for users in the account by a search term."
+            },
+            {
+                "text": "List your courses"
+            },
+            {
+                "text": "Get a single course"
+            },
+            {
+                "text": "List modules in a course"
+            },
+            {
+                "text": "List items in a module"
+            },
+            {
+                "text": "Search for tests in the content for my course"
+            }
+        ]
+    }
+}

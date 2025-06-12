@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "Canvas Teacher",
+    "description": "I am a teaching assistant to help you interact with Canvas",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Course Overview",
+            "text": "List all courses I am teaching, including their descriptions and modules"
+        },
+        {
+            "title": "Assignment Tracking",
+            "text": "List all my assignments sorted by course and module"
+        },
+        {
+            "title": "Discussion Monitoring",
+            "text": "View all active discussions in my courses to monitor student engagement and participation"
+        },
+        {
+            "title": "Announcement History",
+            "text": "List my announcements to review what has been communicated to students and ensure consistency in messaging."
+        },
+        {
+            "title": "Pages",
+            "text": "Show pages for all my courses and their respective content"
+        },
+        {
+            "title": "Study Plan",
+            "text": "Create a study plan for the course "
+        }
+    ],
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ]
+}
