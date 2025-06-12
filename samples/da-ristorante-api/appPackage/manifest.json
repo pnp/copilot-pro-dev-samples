@@ -22,8 +22,8 @@
     "full": "Order the most delicious Italian dishes and drinks from the comfort of your desk."
   },
   "accentColor": "#FFFFFF",
-  "copilotExtensions": { 
-    "declarativeCopilots": [            
+  "copilotAgents": { 
+    "declarativeAgents": [            
       {
         "id": "declarativeAgent",
         "file": "declarativeAgent.json"
