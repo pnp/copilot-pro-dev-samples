@@ -1,0 +1,85 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-canvas-teacher",
+    "source": "pnp",
+    "title": "Canvas Teacher",
+    "shortDescription": "Canvas Teacher is a teaching assistant to help you interact with your Canvas LMS. This agent sample enables educators to interact with their courses using Microsoft 365 Copilot or Copilot Chat. Canvas Teacher empowers educators to plan their courses more effectively, giving them access to information in their courses, modules, assignments, pages, discussions, and announcements.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CanvasTeacher",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CanvasTeacher",
+    "longDescription": [
+      "This agent sample enables educators to interact with their Canvas LMS courses using Microsoft 365 Copilot or Copilot Chat. Canvas Teacher empowers educators to plan their courses more effectively, giving them access to information in their courses, modules, assignments, pages, discussions, and announcements."
+    ],
+    "creationDateTime": "2025-06-12",
+    "updateDateTime": "2025-06-12",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "TypeScript"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-CanvasTeacher/assets/CanvasTeacher1.png",
+        "alt": "Canvas Teacher in BizChat and Copilot Chat"
+      },
+            {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-CanvasTeacher/assets/CanvasTeacher2.png",
+        "alt": "Example of Canvas Teacher in Word, creating a lesson plan based on discussion from Canvas"
+      },
+            {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-CanvasTeacher/assets/CanvasTeacher3.png",
+        "alt": "Example of Canvas Teacher in PowerPoint, creating slides based on an assignment from Canvas"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "jmenegazzo",
+        "pictureUrl": "https://github.com/jmenegazzo.png",
+        "name": "Juliano Menegazzo"
+      }
+    ],
+    "references": [
+      {
+        "name": "Samples for Moodle agents",
+        "description": "If you use the Moodle LMS, check out our other agent samples here.",
+        "url": "https://aka.ms/MoodleAgents"
+      },
+            {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Declarative agents for Microsoft 365 Copilot overview",
+        "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+      },
+      {
+        "name": "Build a declarative agent for Microsoft 365 Copilot",
+        "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
+      }
+    ]
+  }
+]
