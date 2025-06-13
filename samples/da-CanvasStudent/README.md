@@ -37,9 +37,9 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
 - API Developer Key in Canvas
 - Microsoft 365 A1, A3, or A5 license
 - Microsoft 365 Copilot license or Copilot Chat consumption plan
-- Teams Toolkit extension for Visual Studio Code
+- Microsoft 365 Agents Toolkit extension for Visual Studio Code
   - A [Microsoft 365 account for development](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#create-a-free-microsoft-365-developer-account)
-  - [Teams Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Teams Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
+  - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/microsoft-365-agents-toolkit-cli)
   - [Node.js](https://nodejs.org/), supported versions: 18, 20 (optional for running in local dev machine)
 - Admin permissions in the Microsoft 365 Admin Center or Teams Admin Center
 
@@ -80,7 +80,7 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
   - Microsoft Graph connectors
   - SharePoint and OneDrive as knowledge
   - Web and scoped web search
-- Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarative agent manifest
+- Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarativeAgent.json file
 - Check the [capabilities and knowledge sources](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/add-agent-capabilities) for the latest capabilities
 
 ### 5. Provision and Test the agent in your M365 environment
@@ -89,21 +89,21 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
 - In VS Code
   - Select the Explorer icon, appPackage, and `instructions.txt` if you'd like to customize instructions (optional)
   - Select the Explorer icon, appPackage, and `declarativeAgent.json` if you'd like to customize conversation starters (optional)
-  - Select the Teams Toolkit icon on the left toolbar
+  - Select the Microsoft 365 Agents Toolkit icon on the left toolbar
     - In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
     - In the Lifecycle section, create a Teams app by clicking `Provision`
   - Enter the `id` generated in Step 1 for the `OAuth Client ID`
     - This is securely stored in the [Teams Developer Portal](https://dev.teams.microsoft.com/home) and used by Teams client to access your API in runtime
-    - Teams Toolkit will not store your Client ID
+    - Microsoft 365 Agents Toolkit will not store your Client ID
   - Enter the `key` generated in Step 1 for the `OAuth Client Secret`
     - This is securely stored in the [Teams Developer Portal](https://dev.teams.microsoft.com/home) and used by Teams client to access your API in runtime
-    - Teams Toolkit will not store your Client Secret
+    - Microsoft 365 Agents Toolkit will not store your Client Secret
 - Test the agent in BizChat, Word, PowerPoint, and any other M365 app that supports agents
 - This step only installs the agent for you, move to the next step to distribute it across your institution
 
 ### 6. Distribute the agent in your M365 environment
 
-- Select the Teams Toolkit icon on the left in the VS Code toolbar
+- Select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar
   
 - In the Utility section, click `Zip Teams App Package` to download the apppackage.zip file
   
@@ -121,8 +121,8 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
   
 - Limited to M365 apps that support declarative agents
 - Limited to English (EN-US)
-- Limited to only retrieve information from Canvas in this first version (read-only)
-- Limited to return only 10 items from endpoint, plans to add pagination in the future
+- Limited to only retrieve information from Canvas (read-only)
+- Limited to return only 10 items from each endpoint
 - Limited to return only info about the authenticated user, not bringing anything from any other user
 - No capabilities or knowledge sources have been enabled in this sample
 - OpenAPI limitations for API plugins [listed here](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/known-issues#some-openapi-features-arent-supported)
@@ -150,11 +150,11 @@ The following files can be customized and demonstrate an example implementation 
 
 <br>
 
-The following are Teams Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Teams Toolkit works.
+The following are Microsoft 365 Agents Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Microsoft 365 Agents Toolkit works.
 
 > | File | Contents |
 > | --- | --- |
-> | `teamsapp.yml` | This is the main Teams Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
+> | `teamsapp.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
 
 ## Data access
 
@@ -167,7 +167,6 @@ The following are Teams Toolkit specific project files. You can [visit a complet
   - Pages
 - This agent requires user authentication and respects user permissions in Canvas
 - This agent currently can only retrieve (GET) data from Canvas, not update any data in Canvas
-- Future versions will be able to update data in Canvas (POST)
 - The agent uses Canvas information as an input to Copilot across M365 apps, for example:
   - Show me the most engaged discussion in Canvas; based on that discussion create a lesson plan in Word
   - Show me the announcement with most questions in Canvas, generate slides in PowerPoint to help address those questions in class
