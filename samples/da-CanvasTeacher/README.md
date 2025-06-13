@@ -123,7 +123,7 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
 - Limited to English (EN-US)
 - Limited to only retrieve information from Canvas (read-only)
 - Limited to return only 10 items from each endpoint
-- Limited to return only info about the authenticated user, not bringing anything from any other user. For example, this first version won’t give teachers visibility on student information
+- Limited to return only info about the authenticated user, not bringing anything from any other user. For example, it won’t give teachers visibility on student information
 - No capabilities or knowledge sources have been enabled in this sample
 - OpenAPI limitations for API plugins [listed here](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/known-issues#some-openapi-features-arent-supported)
   
