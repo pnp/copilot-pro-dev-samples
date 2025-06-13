@@ -37,7 +37,7 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
 - API Developer Key in Canvas
 - Microsoft 365 A1, A3, or A5 license
 - Microsoft 365 Copilot license or Copilot Chat consumption plan
-- Teams Toolkit extension for Visual Studio Code
+- Microsoft 365 Agents Toolkit extension for Visual Studio Code
   - A [Microsoft 365 account for development](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#create-a-free-microsoft-365-developer-account)
   - [Teams Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Teams Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
   - [Node.js](https://nodejs.org/), supported versions: 18, 20 (optional for running in local dev machine)
@@ -80,7 +80,7 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
   - Microsoft Graph connectors
   - SharePoint and OneDrive as knowledge
   - Web and scoped web search
-- Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarative agent manifest
+- Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarativeAgent.json file
 - Check the [capabilities and knowledge sources](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/add-agent-capabilities) for the latest capabilities
 
 ### 5. Provision and Test the agent in your M365 environment
@@ -121,8 +121,8 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
   
 - Limited to M365 apps that support declarative agents
 - Limited to English (EN-US)
-- Limited to only retrieve information from Canvas in this first version (read-only)
-- Limited to return only 10 items from endpoint, plans to add pagination in the future
+- Limited to only retrieve information from Canvas (read-only)
+- Limited to return only 10 items from each endpoint
 - Limited to return only info about the authenticated user, not bringing anything from any other user. For example, this first version won’t give teachers visibility on student information
 - No capabilities or knowledge sources have been enabled in this sample
 - OpenAPI limitations for API plugins [listed here](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/known-issues#some-openapi-features-arent-supported)
@@ -167,7 +167,6 @@ The following are Teams Toolkit specific project files. You can [visit a complet
   - Pages
 - This agent requires user authentication and respects user permissions in Canvas
 - This agent currently can only retrieve (GET) data from Canvas, not update any data in Canvas
-- Future versions will be able to update data in Canvas (POST)
 - The agent uses Canvas information as an input to Copilot across M365 apps, for example:
   - Show me the most engaged discussion in Canvas; based on that discussion create a lesson plan in Word
   - Show me the announcement with most questions in Canvas, generate slides in PowerPoint to help address those questions in class
