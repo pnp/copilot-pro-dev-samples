@@ -1,0 +1,180 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.5",
+    "body": [
+        {
+            "type": "Container",
+            "$data": "${$root}",
+            "items": [
+                {
+                    "type": "ColumnSet",
+                    "columns": [
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${name}",
+                                    "weight": "bolder",
+                                    "size": "extraLarge",
+                                    "spacing": "none",
+                                    "wrap": true,
+                                    "style": "heading"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${description}",
+                                    "wrap": true,
+                                    "spacing": "none"
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${location.city}, ${location.country}",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${clientName}",
+                                    "weight": "Bolder",
+                                    "size": "Large",
+                                    "spacing": "Medium",
+                                    "wrap": true,
+                                    "maxLines": 3
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${clientContact}",
+                                    "size": "small",
+                                    "wrap": true
+                                },
+                                {
+                                    "type": "TextBlock",
+                                    "text": "${clientEmail}",
+                                    "size": "small",
+                                    "wrap": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Column",
+                            "items": [
+                                {
+                                    "type": "Image",
+                                    "url": "${mapUrl}",
+                                    "altText": "${location.street}"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "TextBlock",
+            "text": "Project Metrics",
+            "weight": "Bolder",
+            "size": "Large",
+            "spacing": "Medium",
+            "horizontalAlignment": "Center",
+            "separator": true
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Forecast This Month",
+                            "weight": "Bolder",
+                            "spacing": "Small",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${forecastThisMonth} ",
+                            "size": "ExtraLarge",
+                            "weight": "Bolder",
+                            "horizontalAlignment": "Center"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Forecast Next Month",
+                            "weight": "Bolder",
+                            "spacing": "Small",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${forecastNextMonth} ",
+                            "size": "ExtraLarge",
+                            "weight": "Bolder",
+                            "horizontalAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Delivered Last Month",
+                            "weight": "Bolder",
+                            "spacing": "Small",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${deliveredLastMonth} ",
+                            "size": "ExtraLarge",
+                            "weight": "Bolder",
+                            "horizontalAlignment": "Center"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Delivered This Month",
+                            "weight": "Bolder",
+                            "spacing": "Small",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "${deliveredThisMonth} ",
+                            "size": "ExtraLarge",
+                            "weight": "Bolder",
+                            "horizontalAlignment": "Center"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.OpenUrl",
+            "title": "View map",
+            "url": "${mapUrl}"
+        }
+    ]
+}

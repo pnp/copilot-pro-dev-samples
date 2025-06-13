@@ -1,0 +1,157 @@
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: Trey Research API
+  description: API to streamline consultant assignment and project management.
+servers:
+  - url: ${{OPENAPI_SERVER_URL}}/api/
+    description: Production server
+paths:
+  /consultants/:
+    get:
+      operationId: getConsultants
+      summary: Get consultants working at Trey Research based on consultant name, project name, certifications, skills, roles and hours available
+      description: Returns detailed information about consultants identified from filters like name of the consultant, name of project, certifications, skills, roles and hours available. Multiple filters can be used in combination to refine the list of consultants returned
+      parameters:
+        - name: consultantName
+          in: query
+          description: Name of the consultant to retrieve
+          required: false
+          schema:
+            type: string
+        - name: projectName
+          in: query
+          description: The name of the project
+          required: false
+          schema:
+            type: string
+        - name: skill
+          in: query
+          description: Skills for a consultant. Retrieve consultants with this skill
+          required: false
+          schema:
+            type: string
+        - name: certification
+          in: query
+          description: Certification for a consultant. Retrieve consultants with this certification
+          required: false
+          schema:
+            type: string
+        - name: role
+          in: query
+          description: Role of a consultant. Retrieve consultants with this role
+          required: false
+          schema:
+            type: string
+        - name: hoursAvailable
+          in: query
+          description: Hours a consultant is available for new work over this and next month. Please provide an integer value; for example 0 if no hours are available, 1 if any hours are available, or 20 if 20 or more hours are available.
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Consultant not found
+  /me:
+    get:
+      operationId: getUserInformation
+      summary: Get consultant profile of the logged in user.
+      description: Retrieve the consultant profile for the logged-in user including skills, roles, certifications, location, availability, and project assignments.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+  /projects/:
+    get:
+      operationId: getProjects
+      summary: Get projects matching a specified project name and/or consultant name
+      description: Returns detailed information about projects matching the specified project name and/or consultant name
+      parameters:
+        - name: consultantName
+          in: query
+          description: The name of the consultant assigned to the project
+          required: false
+          schema:
+            type: string
+        - name: projectName
+          in: query
+          description: The name of the project or name of the client
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+        '404':
+          description: Project not found
+  /me/chargeTime:
+    post:
+      operationId: postBillhours
+      summary: Charge time to a project on behalf of the logged in user.
+      description: Charge time to a specific project on behalf of the logged in user, and return the number of hours remaining in their forecast.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                projectName:
+                  type: string
+                hours:
+                  type: integer
+              required:
+                - projectName
+                - hours
+      responses:
+        '200':
+          description: Successful charge
+          content:
+            application/json:
+              schema:
+                type: string
+  /projects/assignConsultant:
+    post:
+      operationId: postAssignConsultant
+      summary: Assign consultant to a project when name, role and project name is specified.
+      description: Assign (add) consultant to a project when name, role and project name is specified.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                projectName:
+                  type: string
+                consultantName:
+                  type: string
+                role:
+                  type: string
+                forecast:
+                  type: integer
+              required:
+                - projectName
+                - consultantName
+                - role
+                - forecast
+      responses:
+        '200':
+          description: Successful assignment
+          content:
+            application/json:
+              schema:
+                type: string

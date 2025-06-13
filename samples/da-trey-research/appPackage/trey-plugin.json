@@ -1,0 +1,119 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+  "schema_version": "v2.2",
+  "namespace": "treyresearch",
+  "name_for_human": "Trey Research Plugin",
+  "description_for_human": "API to streamline consultant assignment and project management.",
+  "description_for_model": "This plugin provides access to consultant information, including skills, certifications, and project history. It can also be used to assign consultants to projects and update billing hours for ongoing work.",
+  "functions": [
+    {
+      "name": "getConsultants",
+      "description": "Returns information about consultants, including their skills, certifications, and project history.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.results",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.email"
+          },
+          "static_template": {
+            "file": "adaptiveCards/consultant.json"
+          }
+        }
+      }
+    },
+    {
+      "name": "getUserInformation",
+      "description": "Retrieve the consultant profile for the logged-in user including skills, roles, certifications, location, availability, and project assignments.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.results",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.id"
+          },
+          "static_template": {
+            "file": "adaptiveCards/consultant.json"
+          }
+        }
+      }
+    },
+    {
+      "name": "getProjects",
+      "description": "Returns detailed information about projects matching the specified project name and/or consultant name",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.results",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.description"
+          },
+          "static_template": {
+            "file": "adaptiveCards/project.json"
+          }
+        }
+      }
+    },
+    {
+      "name": "postBillhours",
+      "description": "Charge time to a specific project on behalf of the logged in user, and return the number of hours remaining in their forecast.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.results",
+          "properties": {
+            "title": "$.clientName",
+            "subtitle": "$.status"
+          },
+          "static_template": {
+            "file": "adaptiveCards/project-status.json"
+          }
+        },
+        "confirmation": {
+          "type": "AdaptiveCard",
+          "title": "Charge time to a project on behalf of the logged in user.",
+          "body": "* **ProjectName**: {{function.parameters.projectName}}\n* **Hours**: {{function.parameters.hours}}"
+        }
+      }
+    },
+    {
+      "name": "postAssignConsultant",
+      "description": "Assign (add) consultant to a project when name, role and project name is specified.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.results",
+          "properties": {
+            "title": "$.clientName",
+            "subtitle": "$.status"
+          },
+          "static_template": {
+            "file": "adaptiveCards/project-status.json"
+          }
+        },
+        "confirmation": {
+          "type": "AdaptiveCard",
+          "title": "Assign consultant to a project when name, role and project name is specified.",
+          "body": "* **ProjectName**: {{function.parameters.projectName}}\n* **ConsultantName**: {{function.parameters.consultantName}}\n* **Role**: {{function.parameters.role}}\n* **Forecast**: {{function.parameters.forecast}}"
+        }
+      }
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "None"
+      },
+      "spec": {
+        "url": "apiSpecificationFile/trey-definition.yml",
+        "progress_style": "ShowUsageWithInputAndOutput"
+      },
+      "run_for_functions": [
+        "getConsultants",
+        "getUserInformation",
+        "getProjects",
+        "postBillhours",
+        "postAssignConsultant"
+      ]
+    }
+  ]
+}
