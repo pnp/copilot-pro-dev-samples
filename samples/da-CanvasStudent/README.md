@@ -93,7 +93,6 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
   - Enter the `key` generated in Step 1 for the `OAuth Client Secret`
     - This is securely stored in the [Teams Developer Portal](https://dev.teams.microsoft.com/home) and used by Teams client to access your API in runtime
     - Microsoft 365 Agents Toolkit will not store your Client Secret
-- Test the agent in BizChat, Word, PowerPoint, and any other M365 app that supports agents
 - This step only installs the agent for you, move to the next step to distribute it across your institution
 
 ### 6. Distribute the agent in your M365 environment
