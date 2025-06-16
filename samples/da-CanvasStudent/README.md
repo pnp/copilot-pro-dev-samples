@@ -7,13 +7,13 @@ This repository contains agent samples for Education to be used with [Microsoft 
 
 The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Copilot or Copilot Chat and the Canvas Learning Management System (LMS). It enables learners to combine information in Canvas with unique M365 apps capabilities. Learners can retrieve courses, modules, assignments, pages, announcements, and discussions from Canvas, and leverage features in M365 apps like BizChat, Word, and PowerPoint. Learners can search through course content, generate ideas for learning, and improve the overall learning experience.
 
-## Version history
+### Version history
 
 | Version | Date | Comments |
 | --- | --- | --- |
 | 1.0 | May 31st, 2025 | Initial release |
 
-## Features
+### Features
 
 - List enrolled courses
 - View course content and structure, including modules and assignments
@@ -29,7 +29,6 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
 ## Prerequisites
 
 The agent requires a working Canvas environment and access to M365 Copilot license or Copilot Chat.
-
 - API Developer Key in Canvas
 - Microsoft 365 A1, A3, or A5 license
 - Microsoft 365 Copilot license or Copilot Chat consumption plan
