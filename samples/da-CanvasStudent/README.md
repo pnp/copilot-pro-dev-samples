@@ -36,7 +36,7 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
   - A [Microsoft 365 account for development](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#create-a-free-microsoft-365-developer-account)
   - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/microsoft-365-agents-toolkit-cli)
   - [Node.js](https://nodejs.org/), supported versions: 18, 20 (optional for running in local dev machine)
-- Admin permissions in the Microsoft 365 Admin Center or Teams Admin Center
+- Admin permissions in the Microsoft 365 Admin Center or Teams Admin Center, in order to distribute the agents to other users
 
 ## Configuration
 
