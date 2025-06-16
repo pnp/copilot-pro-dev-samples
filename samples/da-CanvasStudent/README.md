@@ -1,11 +1,7 @@
 # Canvas Student declarative agent with API Plugin
 
 ## Agent samples for Education
-This repository contains agent samples for Education to be used with [Microsoft 365 Copilot](https://www.microsoft.com/en-us/microsoft-365/copilot) and Microsoft 365 [Copilot Chat](https://www.microsoft.com/en-us/microsoft-365/copilot/try-copilot-chat). These agents are provided as [M365 Copilot extensibility](https://aka.ms/extend-copilot) and therefore should be used with its existing customer-facing documentation.
-
-The samples demonstrate how customers can create or customize their own declarative agents for M365 Copilot that connect to their Learning Management Systems (LMS) or other education technology.
-
-Creation, customization, deployment, administration, support, and maintenance of any declarative agent for M365 Copilot based on these samples is at the discretion of the customer, and the responsibility of the customer.
+This repository contains agent samples for Education to be used with [Microsoft 365 Copilot](https://www.microsoft.com/en-us/microsoft-365/copilot) and Microsoft 365 [Copilot Chat](https://www.microsoft.com/en-us/microsoft-365/copilot/try-copilot-chat). These samples demonstrate how customers can create or customize their own declarative agents for M365 Copilot that connect to their Learning Management Systems (LMS) or other education technology.
 
 ## Summary
 
