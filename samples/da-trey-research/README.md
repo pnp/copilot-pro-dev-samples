@@ -8,7 +8,7 @@ The solution consists of an API plugin that calls a set of Azure functions, whic
 
 A declarative agent is provided to converse with users and to call the API plugin, as well as to reference the correct SharePoint document library.
 
-![Trey Research](./assets/preview.png)
+![Trey Research](./assets/preview.gif)
 
 ## Features
 

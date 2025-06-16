@@ -2,7 +2,7 @@
     {
         "name": "pnp-copilot-pro-dev-da-trey-research",
         "source": "officedev",
-        "title": "Trey Research TS",
+        "title": "Trey Research TypeScript",
         "shortDescription": "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects.",
         "url": "https://github.com/pnp/pnp-copilot-pro-dev-samples/tree/main/samples/da-trey-research",
         "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/pnp-copilot-pro-dev-samples/tree/main/samples/da-trey-research",
@@ -10,7 +10,7 @@
             "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects. The agent can answer questions about consultants and their projects"
         ],
         "creationDateTime": "2025-04-16",
-        "updateDateTime": "2025-06-11",
+        "updateDateTime": "2025-06-16",
         "products": [
             "Microsoft 365 Copilot"
         ],
@@ -36,8 +36,8 @@
             {
                 "type": "image",
                 "order": 50,
-                "url": "https://github.com/pnp/pnp-copilot-pro-dev-samples/raw/main/samples/da-trey-research/assets/preview.png",
-                "alt": "Screenshot of the Trey Research sample"
+                "url": "https://github.com/pnp/pnp-copilot-pro-dev-samples/raw/main/samples/da-trey-research/assets/preview.gif",
+                "alt": "Demonstration of Trey Research sample"
             }
         ],
         "authors": [
