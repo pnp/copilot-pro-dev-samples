@@ -111,7 +111,7 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
   - Go to `Teams apps`, select `Manage apps`, and `Upload A custom app`
   - Learn more at [Manage custom apps in Microsoft Teams admin center](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
   
-  ## Known limitations
+## Known limitations
   
 - Limited to M365 apps that support declarative agents
 - Limited to English (EN-US)
