@@ -84,7 +84,12 @@
         "name": "Build a declarative agent for Microsoft 365 Copilot",
         "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
         "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
-      }
+      },
+      {
+        "name": "API plugins in agents",
+        "description": "Configure authentication for API plugins in agents.",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api-plugin-authentication"
+      }      
     ]
   }
 ]
