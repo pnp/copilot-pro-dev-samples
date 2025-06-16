@@ -10,6 +10,14 @@ environmentFolderPath: ./env
 
 provision:
 
+  # Set required variables for local launch
+  - uses: script
+    with:
+      run:
+        echo "::set-teamsfx-env FUNC_NAME=treyresearch";
+        echo "::set-teamsfx-env FUNC_ENDPOINT=http://localhost:7071";
+        echo "::set-teamsfx-env SECRET_STORAGE_ACCOUNT_CONNECTION_STRING=UseDevelopmentStorage=true";
+
   # Increment manifest version
   - uses: script
     name: Increment manifest version
