@@ -1,87 +1,85 @@
-[
-    {
-        "id": "1",
-        "name": "Avery Howard",
-        "email": "avery@treyresearch.com",
-        "phone": "1-555-456-7890",
-        "consultantPhotoUrl": "https://bobgerman.github.io/fictitiousAiGenerated/Avery.jpg",
-        "location": {
-            "street": "5 Wayside Rd.",
-            "city": "Burlington",
-            "state": "MA",
-            "country": "USA",
-            "postalCode": "01803",
-            "latitude": 42.5048,
-            "longitude": -71.1956
-        },
-        "skills": [
-            "C#",
-            "JavaScript",
-            "TypeScript",
-            "React",
-            "Node.js"
-        ],
-        "certifications": [
-            "MCSADA",
-            "Azure Developer Associate",
-            "MCAAF",
-            "Azure AI Fundamentals"
-        ],
-        "roles": [
-            "Project lead",
-            "Developer",
-            "Architect",
-            "DevOps"
-        ],
-        "projects": [
-            {
-                "projectName": "Financial data plugin for Microsoft Copilot",
-                "projectDescription": "Extend Woodgrove's financial analytics platform to integrate with Microsoft Copilot",
-                "projectLocation": {
-                    "street": "1 Microsoft Way",
-                    "city": "Redmond",
-                    "state": "WA",
-                    "country": "USA",
-                    "postalCode": "98052",
-                    "latitude": 47.6396,
-                    "longitude": -122.1295
-                },
-                "mapUrl": "https://microsoft.github.io/copilot-camp/demo-assets/images/maps/woodgrove-bank.jpg",
-                "clientName": "Woodgrove Bank",
-                "clientContact": "Bi Gao",
-                "clientEmail": "bigao@woodgrovebank.com",
-                "role": "Architect",
-                "forecastThisMonth": -34,
-                "forecastNextMonth": 0,
-                "deliveredLastMonth": 0,
-                "deliveredThisMonth": 34
+{
+    "id": "1",
+    "name": "Avery Howard",
+    "email": "avery@treyresearch.com",
+    "phone": "1-555-456-7890",
+    "consultantPhotoUrl": "https://bobgerman.github.io/fictitiousAiGenerated/Avery.jpg",
+    "location": {
+        "street": "5 Wayside Rd.",
+        "city": "Burlington",
+        "state": "MA",
+        "country": "USA",
+        "postalCode": "01803",
+        "latitude": 42.5048,
+        "longitude": -71.1956
+    },
+    "skills": [
+        "C#",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js"
+    ],
+    "certifications": [
+        "MCSADA",
+        "Azure Developer Associate",
+        "MCAAF",
+        "Azure AI Fundamentals"
+    ],
+    "roles": [
+        "Project lead",
+        "Developer",
+        "Architect",
+        "DevOps"
+    ],
+    "projects": [
+        {
+            "projectName": "Financial data plugin for Microsoft Copilot",
+            "projectDescription": "Extend Woodgrove's financial analytics platform to integrate with Microsoft Copilot",
+            "projectLocation": {
+                "street": "1 Microsoft Way",
+                "city": "Redmond",
+                "state": "WA",
+                "country": "USA",
+                "postalCode": "98052",
+                "latitude": 47.6396,
+                "longitude": -122.1295
             },
-            {
-                "projectName": "Copilot Development and Training",
-                "projectDescription": "Extend LOB applications to integrate with Microsoft Copilot and train key personnel on its use",
-                "projectLocation": {
-                    "street": "Regeringsgatan 25",
-                    "city": "Stockholm",
-                    "state": "Södermanland",
-                    "country": "SWE",
-                    "postalCode": "111 53 Stockholm",
-                    "latitude": 59.3293,
-                    "longitude": 18.0686
-                },
-                "mapUrl": "https://microsoft.github.io/copilot-camp/demo-assets/images/maps/consolidated-messenger.jpg",
-                "clientName": "Consolidated Messenger",
-                "clientContact": "Camelia Banica",
-                "clientEmail": "cambanica@consolidatedmessenger.com",
-                "role": "Developer",
-                "forecastThisMonth": 0,
-                "forecastNextMonth": 0,
-                "deliveredLastMonth": 0,
-                "deliveredThisMonth": 0
-            }
-        ],
-        "forecastThisMonth": -34,
-        "forecastNextMonth": 0,
-        "deliveredLastMonth": 0,
-        "deliveredThisMonth": 34
-    }
-]
+            "mapUrl": "https://microsoft.github.io/copilot-camp/demo-assets/images/maps/woodgrove-bank.jpg",
+            "clientName": "Woodgrove Bank",
+            "clientContact": "Bi Gao",
+            "clientEmail": "bigao@woodgrovebank.com",
+            "role": "Architect",
+            "forecastThisMonth": -34,
+            "forecastNextMonth": 0,
+            "deliveredLastMonth": 0,
+            "deliveredThisMonth": 34
+        },
+        {
+            "projectName": "Copilot Development and Training",
+            "projectDescription": "Extend LOB applications to integrate with Microsoft Copilot and train key personnel on its use",
+            "projectLocation": {
+                "street": "Regeringsgatan 25",
+                "city": "Stockholm",
+                "state": "Södermanland",
+                "country": "SWE",
+                "postalCode": "111 53 Stockholm",
+                "latitude": 59.3293,
+                "longitude": 18.0686
+            },
+            "mapUrl": "https://microsoft.github.io/copilot-camp/demo-assets/images/maps/consolidated-messenger.jpg",
+            "clientName": "Consolidated Messenger",
+            "clientContact": "Camelia Banica",
+            "clientEmail": "cambanica@consolidatedmessenger.com",
+            "role": "Developer",
+            "forecastThisMonth": 0,
+            "forecastNextMonth": 0,
+            "deliveredLastMonth": 0,
+            "deliveredThisMonth": 0
+        }
+    ],
+    "forecastThisMonth": -34,
+    "forecastNextMonth": 0,
+    "deliveredLastMonth": 0,
+    "deliveredThisMonth": 34
+}
