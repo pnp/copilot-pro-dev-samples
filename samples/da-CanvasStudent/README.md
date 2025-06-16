@@ -121,7 +121,6 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
 - No capabilities or knowledge sources have been enabled in this sample
 - OpenAPI limitations for API plugins [listed here](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/known-issues#some-openapi-features-arent-supported)
   
-
 ## Resources and customization
 
 The following folders are provided for this agent.
