@@ -25,6 +25,26 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
 
 ![image](./assets/CanvasStudent1.png)
 
+### Data access
+
+- This agent can access and retrieve Canvas data about
+  - Courses
+  - Modules
+  - Assignments
+  - Announcements
+  - Discussions
+  - Pages
+- This agent requires user authentication and respects user permissions in Canvas
+- This agent currently can only retrieve (GET) data from Canvas, not update any data in Canvas
+- The agent uses Canvas information as an input to Copilot across M365 apps, for example:
+  - Show me the most engaged discussion in Canvas; based on that discussion create a lesson plan in Word
+  - Show me the announcement with most questions in Canvas, generate slides in PowerPoint to help address those questions in class
+
+### Evaluation
+
+- All response generation features of this agent were tested, measured, and validated internally
+- [How declarative agents are evaluated?](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/transparency-faq-declarative-agent#how-were-declarative-agents-evaluated-what-metrics-are-used-to-measure-performance)
+- It's important to keep in mind that the output this agent provides can be inaccurate, incorrect, or out of date
 
 ## Prerequisites
 
@@ -144,27 +164,6 @@ The following are Microsoft 365 Agents Toolkit specific project files. You can [
 | File | Contents |
 | --- | --- |
 | `teamsapp.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
-
-## Data access
-
-- This agent can access and retrieve Canvas data about
-  - Courses
-  - Modules
-  - Assignments
-  - Announcements
-  - Discussions
-  - Pages
-- This agent requires user authentication and respects user permissions in Canvas
-- This agent currently can only retrieve (GET) data from Canvas, not update any data in Canvas
-- The agent uses Canvas information as an input to Copilot across M365 apps, for example:
-  - Show me the most engaged discussion in Canvas; based on that discussion create a lesson plan in Word
-  - Show me the announcement with most questions in Canvas, generate slides in PowerPoint to help address those questions in class
-
-## Evaluation
-
-- All response generation features of this agent were tested, measured, and validated internally
-- [How declarative agents are evaluated?](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/transparency-faq-declarative-agent#how-were-declarative-agents-evaluated-what-metrics-are-used-to-measure-performance)
-- It's important to keep in mind that the output this agent provides can be inaccurate, incorrect, or out of date
 
 ## Additional references
 
