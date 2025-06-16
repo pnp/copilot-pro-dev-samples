@@ -165,13 +165,6 @@ The following are Microsoft 365 Agents Toolkit specific project files. You can [
 | --- | --- |
 | `teamsapp.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
 
-## Additional references
-
-- [Microsoft 365 extensibility overview](https://aka.ms/extend-copilot)
-- [Declarative agents for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk)
-- [Microsoft 365 Copilot extensibility samples](https://learn.microsoft.com/microsoft-365-copilot/extensibility/samples)
-- [Configure authentication for API plugins in agents](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api-plugin-authentication)
-
 ## Help
 <!--
 
