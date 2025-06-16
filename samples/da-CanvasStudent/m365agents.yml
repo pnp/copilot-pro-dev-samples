@@ -3,6 +3,9 @@
 # Visit https://aka.ms/teamsfx-actions for details on actions
 version: v1.7
 
+additionalMetadata:
+  sampleTag: pnp-copilot-pro-dev:da-CanvasStudent
+
 environmentFolderPath: ./env
 
 # Triggered when 'teamsapp provision' is executed
