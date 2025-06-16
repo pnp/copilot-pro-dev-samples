@@ -125,29 +125,29 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
 
 The following folders are provided for this agent.
 
-> | Folder | Contents |
-> | --- | --- |
-> | `.vscode` | VSCode files for debugging |
-> | `appPackage` | Templates for the Teams application manifest, the plugin manifest and the API specification |
-> | `env` | Environment files |
+| Folder | Contents |
+| --- | --- |
+| `.vscode` | VSCode files for debugging |
+| `appPackage` | Templates for the Teams application manifest, the plugin manifest and the API specification |
+| `env` | Environment files |
 
 <br>
 The following files can be customized and demonstrate an example implementation to get you started.
 <br><br>
 
-> | File | Contents |
-> | --- | --- |
-> | `appPackage/declarativeCopilot.json` | Define the configuration, instructions, and conversation starters of the declarative agent |
-> | `appPackage/ai-plugin.json` | Define the configuration and capabilities of the AI plugin |
-> | `appPackage/manifest.json` | Teams application manifest that defines metadata for your declarative agent |
+| File | Contents |
+| --- | --- |
+| `appPackage/declarativeCopilot.json` | Define the configuration, instructions, and conversation starters of the declarative agent |
+| `appPackage/ai-plugin.json` | Define the configuration and capabilities of the AI plugin |
+| `appPackage/manifest.json` | Teams application manifest that defines metadata for your declarative agent |
 
 <br>
 
 The following are Microsoft 365 Agents Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Microsoft 365 Agents Toolkit works.
 
-> | File | Contents |
-> | --- | --- |
-> | `teamsapp.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
+| File | Contents |
+| --- | --- |
+| `teamsapp.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
 
 ## Data access
 
