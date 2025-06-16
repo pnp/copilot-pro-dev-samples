@@ -50,7 +50,7 @@ The agent requires a working Canvas environment and access to M365 Copilot licen
   - url:GET|/api/v1/courses/:course_id/modules/:module_id/items
   - url:GET|/api/v1/courses/:course_id/smartsearch
   - url:GET|/api/v1/users/:id
-- Add the following Teams url in the **Redirect URIs** field. https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect
+- Add the following Teams url in the **Redirect URIs** field. `https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect`
 - Saving will generate the `id` and `key` values that will be used for the Teams oauth registration in Step 5 in the directions
 
 ### 2. Setup Microsoft SSO in Canvas (optional)
