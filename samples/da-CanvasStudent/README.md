@@ -100,12 +100,14 @@ The agent requires a working Canvas environment and access to Copilot Chat
 
 ### 5. Provision and Test the agent in your M365 environment
 
-- In the Teams Admin Center, enable [custom app upload](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#enable-custom-app-upload-using-admin-center) if you haven't already
+- In the Teams Admin Center
+  - Enable [custom app upload](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#enable-custom-app-upload-using-admin-center) if you haven't already
+  - This setting can take 24h to be fully enabled and you can check progress in the M365 Agents Toolkit in VS Code (Accounts section)
 - In VS Code
   - Select the Explorer icon, appPackage, and `instructions.txt` if you'd like to customize instructions (optional)
   - Select the Explorer icon, appPackage, and `declarativeAgent.json` if you'd like to customize conversation starters (optional)
   - Select the Microsoft 365 Agents Toolkit icon on the left toolbar
-    - In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
+    - In the Accounts section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
     - In the Lifecycle section, create a Teams app by clicking `Provision`
   - Enter the `id` generated in Step 1 for the `OAuth Client ID`
     - This is securely stored in the [Teams Developer Portal](https://dev.teams.microsoft.com/home) and used by Teams client to access your API in runtime
@@ -155,6 +157,7 @@ The following files can be customized and demonstrate an example implementation 
 
 | File | Contents |
 | --- | --- |
+| `instruction.txt` | Define instructions that will be added to `declarativeCopilot.json` during agent provision
 | `appPackage/declarativeCopilot.json` | Define the configuration, instructions, and conversation starters of the declarative agent |
 | `appPackage/ai-plugin.json` | Define the configuration and capabilities of the AI plugin |
 | `appPackage/manifest.json` | Teams application manifest that defines metadata for your declarative agent |
