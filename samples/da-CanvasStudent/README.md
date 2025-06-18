@@ -48,10 +48,10 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
 
 ## Prerequisites
 
-The agent requires a working Canvas environment and access to M365 Copilot license or Copilot Chat.
+The agent requires a working Canvas environment and access to Copilot Chat
 - API Developer Key in Canvas
 - Microsoft 365 A1, A3, or A5 license
-- Microsoft 365 Copilot license or Copilot Chat consumption plan
+- Agents work in Copilot Chat (both metered/no metered usage) and M365 Copilot, [learn more](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/prerequisites#agent-capabilities-for-microsoft-365-users)
 - Microsoft 365 Agents Toolkit extension for Visual Studio Code
   - A [Microsoft 365 account for development](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#create-a-free-microsoft-365-developer-account)
   - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/microsoft-365-agents-toolkit-cli)
