@@ -101,7 +101,7 @@ The agent requires a working Canvas environment and access to Copilot Chat
 - Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarativeAgent.json file
 - Check the [capabilities and knowledge sources](https://learn.microsoft.com/microsoft-365-copilot/extensibility/add-agent-capabilities) for the latest capabilities
 
-### 5. Provision and Test the agent in your M365 environment
+### 5. Provision and Test the agent in Microsoft 365 Copilot
 
 - In the Teams Admin Center
   - Enable [custom app upload](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#enable-custom-app-upload-using-admin-center) if you haven't already
@@ -120,21 +120,13 @@ The agent requires a working Canvas environment and access to Copilot Chat
     - Microsoft 365 Agents Toolkit will not store your Client Secret
 - This step only installs the agent for you, move to the next step to distribute it across your institution
 
-### 6. Distribute the agent in your M365 environment
+### 6. Deploy the agent to your organization
 
-- Select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar
-  
-- In the Utility section, click `Zip Teams App Package` to download the apppackage.zip file
-  
-- From the M365 Admin Center
-  
-  - Go to `Settings` , select `Integrate apps`, and select `Upload custom apps`
-  - Define which users or groups will have access to the agent, accept permissions and deploy
-  - Learn more at [Manage Office Add-ins through Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
-- From the Teams Admin Center
-  
-  - Go to `Teams apps`, select `Manage apps`, and `Upload A custom app`
-  - Learn more at [Manage custom apps in Microsoft Teams admin center](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings)
+1.  Select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar
+2.  In the Utility section, click `Zip Teams App Package` to download the apppackage.zip file
+3.  From the M365 Admin Center, go to `Settings` , select `Integrate apps`, and select `Upload custom apps`
+4.  Define which users or groups will have access to the agent, accept permissions and deploy
+5.  Learn more at [Manage Office Add-ins through Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
   
 ## Known limitations
   
