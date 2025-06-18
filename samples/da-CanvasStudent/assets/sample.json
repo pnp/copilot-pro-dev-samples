@@ -41,7 +41,7 @@
       },
             {
         "type": "image",
-        "order": 100,
+        "order": 200,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-CanvasStudent/assets/CanvasStudent2.png",
         "alt": "Example of Canvas Student in Word, creating a quiz based on assignment from Canvas"
       },
