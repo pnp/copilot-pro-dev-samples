@@ -58,37 +58,60 @@ The agent requires a working Canvas environment and access to Copilot Chat
   - [Node.js](https://nodejs.org/), supported versions: 18, 20 (optional for running in local dev machine)
 - Admin permissions in the Microsoft 365 Admin Center or Teams Admin Center, in order to distribute the agents to other users
 
-## Configuration
+## Minimal path to awesome
 
 ### 1. Create API Developer Key in Canvas
 
-- [Canvas Developer Key Directions](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-add-a-developer-API-key-for-an-account/ta-p/259)
+1. [Canvas Developer Key Directions](https://community.canvaslms.com/t5/Admin-Guide/How-do-I-add-a-developer-API-key-for-an-account/ta-p/259)
   (Note: The key name will show on the user sign in window.)
-- Enable the **Enforce Scopes** toggle and select the following scopes for the agent to have GET access:
-  - url:GET|/api/v1/courses
-  - url:GET|/api/v1/courses/:course_id/modules
-  - url:GET|/api/v1/courses/:course_id/modules/:module_id/items
-  - url:GET|/api/v1/courses/:course_id/smartsearch
-  - url:GET|/api/v1/users/:id
-- Add the following Teams url in the **Redirect URIs** field. `https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect`
-- Saving will generate the `id` and `key` values that will be used for the Teams oauth registration in Step 5 in the directions
+2. Enable the **Enforce Scopes** toggle and select the following scopes for the agent to have GET access:
+    - url:GET|/api/v1/courses
+    - url:GET|/api/v1/courses/:course_id/modules
+    - url:GET|/api/v1/courses/:course_id/modules/:module_id/items
+    - url:GET|/api/v1/courses/:course_id/smartsearch
+    - url:GET|/api/v1/users/:id
+3. Add the following Teams url in the **Redirect URIs** field. `https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect`
+4. Saving will generate the `id` and `key` values that will be used for the Teams oauth registration in Step 5 in the directions
 
-### 2. Setup Microsoft SSO in Canvas (optional)
+### 2. Open sample in VS Code
 
-- This step is only needed if you want to enable your users to be automatically signed-in to Canvas with their Microsoft Entra accounts
-- An authentication provider can be added in Canvas through Admin > Authentication
-- [Configuring Microsoft OAuth for Canvas Authentication](https://community.canvaslms.com/t5/Canvas-Integration-Documents/Configuring-Microsoft-OAuth-for-Canvas-Authentication/ta-p/606219)
-- Once a provider has been saved in Canvas, the provider’s authentication login credentials must be added to each Canvas user’s account via either two options:
-  - [SIS CSV](https://canvas.instructure.com/doc/api/file.sis_csv.html)
-  - [Logins API](https://canvas.instructure.com/doc/api/logins.html)
+1. Download or clone this repository
+2. Open sample folder in VS Code
 
-### 3. Connect the agent to your Canvas environment
+### 3. Add Canvas environment to agent
 
-- Clone this repository (or download this solution as a .ZIP file then unzip it)
-- Open the Canvas Student declarative agent folder in VS Code
-- Add the url for your Canvas instance for CANVAS_BASE_URL in /env/env.dev
+1. Clone this repository (or download this solution as a .ZIP file then unzip it)
+2. Open the Canvas Student declarative agent folder in VS Code
+3. Add the url for your Canvas instance for CANVAS_BASE_URL in /env/env.dev
 
-### 4. Add capabilities and knowledge sources (optional)
+### 4. Provision and test the agent
+
+1. In the Teams Admin Center
+    - Enable [custom app upload](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#enable-custom-app-upload-using-admin-center) if you haven't already
+    - This setting can take 24h to be fully enabled and you can check progress in the M365 Agents Toolkit in VS Code (Accounts section)
+2. In VS Code
+    - Select the Explorer icon, appPackage, and `instructions.txt` if you'd like to customize instructions (optional)
+    - Select the Explorer icon, appPackage, and `declarativeAgent.json` if you'd like to customize conversation starters (optional)
+    - Select the Microsoft 365 Agents Toolkit icon on the left toolbar
+      - In the Accounts section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
+      - In the Lifecycle section, create a Teams app by clicking `Provision`
+    - Enter the `id` generated in Step 1 for the `OAuth Client ID`
+      - This is securely stored in the [Teams Developer Portal](https://dev.teams.microsoft.com/home) and used by Teams client to access your API in runtime
+      - Microsoft 365 Agents Toolkit will not store your Client ID
+    - Enter the `key` generated in Step 1 for the `OAuth Client Secret`
+      - This is securely stored in the [Teams Developer Portal](https://dev.teams.microsoft.com/home) and used by Teams client to access your API in runtime
+      - Microsoft 365 Agents Toolkit will not store your Client Secret
+3. This step only installs the agent for you, move to the next step to distribute it across your institution
+
+### 5. Deploy the agent to your organization
+
+1.  Select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar
+2.  In the Utility section, click `Zip Teams App Package` to download the apppackage.zip file
+3.  From the M365 Admin Center, go to `Settings` , select `Integrate apps`, and select `Upload custom apps`
+4.  Define which users or groups will have access to the agent, accept permissions and deploy
+5.  Learn more at [Manage Office Add-ins through Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+
+### 6. Add capabilities and knowledge sources (optional)
 
 - This step is only needed if you want to add other capabilities and knowledge sources to your agent
 - Customize the agent with capabilities and knowledge sources to address your needs, including:
@@ -101,33 +124,15 @@ The agent requires a working Canvas environment and access to Copilot Chat
 - Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarativeAgent.json file
 - Check the [capabilities and knowledge sources](https://learn.microsoft.com/microsoft-365-copilot/extensibility/add-agent-capabilities) for the latest capabilities
 
-### 5. Provision and Test the agent in Microsoft 365 Copilot
+### 7. Setup Microsoft SSO in Canvas (optional)
 
-- In the Teams Admin Center
-  - Enable [custom app upload](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#enable-custom-app-upload-using-admin-center) if you haven't already
-  - This setting can take 24h to be fully enabled and you can check progress in the M365 Agents Toolkit in VS Code (Accounts section)
-- In VS Code
-  - Select the Explorer icon, appPackage, and `instructions.txt` if you'd like to customize instructions (optional)
-  - Select the Explorer icon, appPackage, and `declarativeAgent.json` if you'd like to customize conversation starters (optional)
-  - Select the Microsoft 365 Agents Toolkit icon on the left toolbar
-    - In the Accounts section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
-    - In the Lifecycle section, create a Teams app by clicking `Provision`
-  - Enter the `id` generated in Step 1 for the `OAuth Client ID`
-    - This is securely stored in the [Teams Developer Portal](https://dev.teams.microsoft.com/home) and used by Teams client to access your API in runtime
-    - Microsoft 365 Agents Toolkit will not store your Client ID
-  - Enter the `key` generated in Step 1 for the `OAuth Client Secret`
-    - This is securely stored in the [Teams Developer Portal](https://dev.teams.microsoft.com/home) and used by Teams client to access your API in runtime
-    - Microsoft 365 Agents Toolkit will not store your Client Secret
-- This step only installs the agent for you, move to the next step to distribute it across your institution
+- This step is only needed if you want to enable your users to be automatically signed-in to Canvas with their Microsoft Entra accounts
+- An authentication provider can be added in Canvas through Admin > Authentication
+- [Configuring Microsoft OAuth for Canvas Authentication](https://community.canvaslms.com/t5/Canvas-Integration-Documents/Configuring-Microsoft-OAuth-for-Canvas-Authentication/ta-p/606219)
+- Once a provider has been saved in Canvas, the provider’s authentication login credentials must be added to each Canvas user’s account via either two options:
+  - [SIS CSV](https://canvas.instructure.com/doc/api/file.sis_csv.html)
+  - [Logins API](https://canvas.instructure.com/doc/api/logins.html)
 
-### 6. Deploy the agent to your organization
-
-1.  Select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar
-2.  In the Utility section, click `Zip Teams App Package` to download the apppackage.zip file
-3.  From the M365 Admin Center, go to `Settings` , select `Integrate apps`, and select `Upload custom apps`
-4.  Define which users or groups will have access to the agent, accept permissions and deploy
-5.  Learn more at [Manage Office Add-ins through Integrated Apps](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
-  
 ## Known limitations
   
 - Limited to M365 apps that support declarative agents
