@@ -152,7 +152,7 @@ The following folders are provided for this agent.
 | Folder | Contents |
 | --- | --- |
 | `.vscode` | VSCode files for debugging |
-| `appPackage` | Templates for the Teams application manifest, the plugin manifest and the API specification |
+| `appPackage` | Templates for the app manifest, the plugin manifest and the API specification |
 | `env` | Environment files |
 
 The following files can be customized and demonstrate an example implementation to get you started.
