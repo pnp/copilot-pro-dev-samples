@@ -1,0 +1,27 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
+    "name": "Trey Research",
+    "description": "You are a handy assistant for consultants at Trey Research, a boutique consultancy specializing in software development and clinical trials. ",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Find consultants",
+            "text": "Do we have any consultants with Azure certifications?"
+        },
+        {
+            "title": "Assign resources",
+            "text": "Add Sanjay to the Woodgrove bank project"
+        },
+        {
+            "title": "Statement of works",
+            "text": "Write a summary of each project based on the statement of work"
+        }
+    ],
+    "actions": [
+        {
+            "id": "treyResearchPlugin",
+            "file": "trey-plugin.json"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "${{ENTRA_APP_OBJECT_ID}}",
+  "appId": "${{ENTRA_APP_CLIENT_ID}}",
+  "displayName": "trey-research-auth",
+  "identifierUris": [
+    "api://${{ENTRA_APP_CLIENT_ID}}"
+  ],
+  "signInAudience": "AzureADMyOrg",
+  "api": {
+    "requestedAccessTokenVersion": 2,
+    "oauth2PermissionScopes": [
+      {
+        "adminConsentDescription": "Allows Copilot to access the Trey Research API on the user's behalf.",
+        "adminConsentDisplayName": "Access Trey Research API",
+        "id": "${{AAD_APP_ACCESS_AS_USER_PERMISSION_ID}}",
+        "isEnabled": true,
+        "type": "User",
+        "userConsentDescription": "Allows Copilot to access the Trey Research API on your behalf.",
+        "userConsentDisplayName": "Access Trey Research API",
+        "value": "access_as_user"
+      }
+    ]
+  },
+  "info": {},
+  "optionalClaims": {
+    "idToken": [],
+    "accessToken": [
+      {
+        "name": "idtyp",
+        "source": null,
+        "essential": false,
+        "additionalProperties": []
+      }
+    ],
+    "saml2Token": []
+  },
+  "publicClient": {
+    "redirectUris": []
+  },
+  "web": {
+    "redirectUris": [
+      "https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect"
+    ],
+    "implicitGrantSettings": {}
+  },
+  "spa": {
+    "redirectUris": []
+  }
+}
