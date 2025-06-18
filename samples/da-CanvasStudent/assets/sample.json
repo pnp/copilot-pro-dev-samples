@@ -47,7 +47,7 @@
       },
             {
         "type": "image",
-        "order": 100,
+        "order": 300,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-CanvasStudent/assets/CanvasStudent3.png",
         "alt": "Example of Canvas Student in PowerPoint, creating slides based on assignment from Canvas"
       }
