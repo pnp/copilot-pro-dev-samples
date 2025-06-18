@@ -94,11 +94,12 @@ The agent requires a working Canvas environment and access to Copilot Chat
 - Customize the agent with capabilities and knowledge sources to address your needs, including:
   - Code interpreter
   - Image generator
-  - Microsoft Graph connectors
-  - SharePoint and OneDrive as knowledge
-  - Web and scoped web search
-- Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarativeAgent.json file
-- Check the [capabilities and knowledge sources](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/add-agent-capabilities) for the latest capabilities
+  - Web search
+  - Scoped web search (requires M365 Copilot license)
+  - Copilot connectors (requires M365 Copilot license)
+  - SharePoint and OneDrive as knowledge (requires M365 Copilot license)
+- Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarativeAgent.json file
+- Check the [capabilities and knowledge sources](https://learn.microsoft.com/microsoft-365-copilot/extensibility/add-agent-capabilities) for the latest capabilities
 
 ### 5. Provision and Test the agent in your M365 environment
 
