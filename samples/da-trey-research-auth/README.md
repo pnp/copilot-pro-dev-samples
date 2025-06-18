@@ -1,4 +1,4 @@
-# Trey Research Copilot Declarative Agent (authentication version)
+# Trey Research Copilot Declarative Agent (OAuth 2.0)
 
 ## Summary
 
@@ -21,6 +21,7 @@ The sample showcases the following features:
 5. Multi-parameter queries to filter results
 6. Show a confirmation card before POSTing data; capture missing parameters
 7. Display rich adaptive cards
+8. Authenticate the user using Entra ID and OAuth 2.0
 
 ## Contributors
 
