@@ -75,6 +75,7 @@ The agent requires a working Canvas environment and access to Copilot Chat
 
 ### 2. Setup Microsoft SSO in Canvas (optional)
 
+- This step is only needed if you want to enable your users to be automatically signed-in to Canvas with their Microsoft Entra accounts
 - An authentication provider can be added in Canvas through Admin > Authentication
 - [Configuring Microsoft OAuth for Canvas Authentication](https://community.canvaslms.com/t5/Canvas-Integration-Documents/Configuring-Microsoft-OAuth-for-Canvas-Authentication/ta-p/606219)
 - Once a provider has been saved in Canvas, the provider’s authentication login credentials must be added to each Canvas user’s account via either two options:
@@ -89,6 +90,7 @@ The agent requires a working Canvas environment and access to Copilot Chat
 
 ### 4. Add capabilities and knowledge sources (optional)
 
+- This step is only needed if you want to add other capabilities and knowledge sources to your agent
 - Customize the agent with capabilities and knowledge sources to address your needs, including:
   - Code interpreter
   - Image generator
