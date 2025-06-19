@@ -72,12 +72,12 @@ The agent requires a working Canvas environment and access to Copilot Chat
     - url:GET|/api/v1/courses/:course_id/smartsearch
     - url:GET|/api/v1/users/:id
 3. Add the following Teams url in the **Redirect URIs** field. `https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect`
-4. Saving will generate the `id` and `key` values that will be used for the Teams oauth registration in Step 5 in the directions
+4. Saving will generate the `id` and `key` values that will be used for the Teams oauth registration in Step 3 in the directions
 
 ### 2. Add Canvas environment to agent
 
 1. Clone this repository (or download this solution as a .ZIP file then unzip it)
-2. Open the Canvas Student agent sample folder in VS Code
+2. Open the Canvas Teacher agent sample folder in VS Code
 3. Add the url for your Canvas instance for CANVAS_BASE_URL in /env/env.dev
 
 ### 3. Provision and test the agent
