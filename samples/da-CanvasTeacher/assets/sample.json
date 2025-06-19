@@ -41,13 +41,13 @@
       },
             {
         "type": "image",
-        "order": 100,
+        "order": 200,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-CanvasTeacher/assets/CanvasTeacher2.png",
         "alt": "Example of Canvas Teacher in Word, creating a lesson plan based on discussion from Canvas"
       },
             {
         "type": "image",
-        "order": 100,
+        "order": 300,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-CanvasTeacher/assets/CanvasTeacher3.png",
         "alt": "Example of Canvas Teacher in PowerPoint, creating slides based on an assignment from Canvas"
       }
@@ -84,7 +84,12 @@
         "name": "Build a declarative agent for Microsoft 365 Copilot",
         "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
         "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
-      }
+      },
+      {
+        "name": "API plugins in agents",
+        "description": "Configure authentication for API plugins in agents.",
+        "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api-plugin-authentication"
+      }      
     ]
   }
 ]
