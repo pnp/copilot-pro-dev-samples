@@ -88,27 +88,5 @@
                 "getUser"
             ]
         }
-    ],
-    "capabilities": {
-        "conversation_starters": [
-            {
-                "text": "Search for users in the account by a search term."
-            },
-            {
-                "text": "List your courses"
-            },
-            {
-                "text": "Get a single course"
-            },
-            {
-                "text": "List modules in a course"
-            },
-            {
-                "text": "List items in a module"
-            },
-            {
-                "text": "Search for tests in the content for my course"
-            }
-        ]
-    }
+    ]
 }
