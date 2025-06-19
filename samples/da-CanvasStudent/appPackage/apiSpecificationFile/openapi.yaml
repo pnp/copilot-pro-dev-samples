@@ -1,0 +1,392 @@
+openapi: 3.0.3
+info:
+  title: Canvas API
+  description: >-
+    API for interacting with Canvas LMS, including courses, modules, module
+    items, assignments, and search functionalities.
+  version: 1.0.1
+servers:
+  - url: ${{CANVAS_BASE_URL}}/api/v1
+    description: Canvas LMS API server
+security:
+  - OAuth2: []
+paths:
+  /courses:
+    get:
+      operationId: listYourCourses
+      summary: List your courses
+      description: Retrieves a paginated list of active courses for the current user.
+      security:
+        - OAuth2:
+            - url:GET|/api/v1/courses
+      parameters:
+        - name: enrollment_type
+          in: query
+          description: Filter by enrollment type (e.g., "teacher", "student").
+          schema:
+            type: string
+        - name: enrollment_role
+          in: query
+          description: Filter by role type. Requires admin permissions.
+          schema:
+            type: string
+        - name: enrollment_state
+          in: query
+          description: Filter by enrollment state (e.g., "active", "invited").
+          schema:
+            type: string
+        - name: exclude_blueprint_courses
+          in: query
+          description: Exclude Blueprint courses if true.
+          schema:
+            type: boolean
+        - name: include
+          in: query
+          description: >-
+            Array of additional information to include (e.g., "term",
+            "teachers").
+          schema:
+            type: array
+            items:
+              type: string
+        - name: per_page
+          in: query
+          description: The number of results to return per page.
+          schema:
+            type: integer
+          example: 10
+        - name: page
+          in: query
+          description: The page number to return.
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: A list of courses.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The ID of the course.
+                    name:
+                      type: string
+                      description: The name of the course.
+                    account_id:
+                      type: integer
+                      description: The ID of the account associated with the course.
+                    enrollment_term_id:
+                      type: integer
+                      description: The ID of the term associated with the course.
+                    start_at:
+                      type: string
+                      format: date-time
+                      description: The start date of the course.
+                    end_at:
+                      type: string
+                      format: date-time
+                      description: The end date of the course.
+                    course_code:
+                      type: string
+                      description: The course code.
+                    state:
+                      type: string
+                      description: >-
+                        The current state of the course (e.g., "unpublished",
+                        "available").
+        '400':
+          description: Bad request, possibly due to invalid query parameters.
+        '401':
+          description: Unauthorized, likely due to invalid authentication credentials.
+  /courses/{course_id}/modules:
+    get:
+      operationId: listModules
+      summary: List modules in a course
+      description: Retrieves the list of modules for a given course in Canvas.
+      security:
+        - OAuth2:
+            - url:GET|/api/v1/courses/:course_id/modules
+      parameters:
+        - name: course_id
+          in: path
+          required: true
+          description: The ID of the course.
+          schema:
+            type: integer
+        - name: include
+          in: query
+          description: Include additional information such as items in the response.
+          schema:
+            type: array
+            items:
+              type: string
+            example:
+              - items
+        - name: search_term
+          in: query
+          description: The partial title of the module to match and return.
+          schema:
+            type: string
+        - name: student_id
+          in: query
+          description: Return module completion information for the student with this ID.
+          schema:
+            type: integer
+        - name: per_page
+          in: query
+          description: The number of results to return per page.
+          schema:
+            type: integer
+          example: 10
+        - name: page
+          in: query
+          description: The page number to return.
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: A list of modules in the course.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The ID of the module.
+                    name:
+                      type: string
+                      description: The name of the module.
+                    items_count:
+                      type: integer
+                      description: The number of items in the module.
+                    state:
+                      type: string
+                      description: The state of the module (e.g., "active", "locked").
+        '400':
+          description: >-
+            Bad request, possibly due to an invalid course ID or query
+            parameters.
+        '401':
+          description: Unauthorized, likely due to invalid authentication credentials.
+        '404':
+          description: Course not found, possibly due to an invalid course ID.
+  /courses/{course_id}/modules/{module_id}/items:
+    get:
+      operationId: listModuleItems
+      summary: List items in a module
+      description: Retrieves the list of items within a specific module in a Canvas course.
+      security:
+        - OAuth2:
+            - url:GET|/api/v1/courses/:course_id/modules/:module_id/items
+      parameters:
+        - name: course_id
+          in: path
+          required: true
+          description: The ID of the course.
+          schema:
+            type: integer
+        - name: module_id
+          in: path
+          required: true
+          description: The ID of the module.
+          schema:
+            type: integer
+        - name: include
+          in: query
+          description: >-
+            Include additional information in the response, such as content
+            details.
+          schema:
+            type: array
+            items:
+              type: string
+            example:
+              - content_details
+        - name: student_id
+          in: query
+          description: Return completion information for the student with this ID.
+          schema:
+            type: integer
+        - name: per_page
+          in: query
+          description: The number of results to return per page.
+          schema:
+            type: integer
+          example: 10
+        - name: page
+          in: query
+          description: The page number to return.
+          schema:
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: A list of items in the module.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: The ID of the module item.
+                    title:
+                      type: string
+                      description: The title of the module item.
+                    type:
+                      type: string
+                      description: >-
+                        The type of the module item.  Supported types are +File+, +Page+, +Discussion+
+                        +Assignment+, +Quiz+, +SubHeader+, +ExternalUrl+, and +ExternalTool+.
+                    position:
+                      type: integer
+                      description: The position of the item within the module.
+                    indent:
+                      type: integer
+                      description: The level of indentation of the item in the module.
+                    completion_requirement:
+                      type: object
+                      description: The completion requirement for the item.
+                      properties:
+                        type:
+                          type: string
+                        min_score:
+                          type: integer
+                    content_id:
+                      type: integer
+                      description: >-
+                        The ID of the associated content item (e.g., assignment,
+                        file).
+                    state:
+                      type: string
+                      description: The state of the item (e.g., "active", "locked").
+        '400':
+          description: >-
+            Bad request, possibly due to an invalid module ID or query
+            parameters.
+        '401':
+          description: Unauthorized, likely due to invalid authentication credentials.
+        '404':
+          description: >-
+            Module or course not found, possibly due to an invalid module or
+            course ID.
+  /courses/{course_id}/smartsearch:
+    get:
+      operationId: smartSearchCourse
+      summary: Perform a smart search in a course using AI-powered content search.
+      security:
+        - OAuth2:
+            - url:GET|/api/v1/courses/:course_id/smartsearch
+      parameters:
+        - name: course_id
+          in: path
+          required: true
+          description: ID of the course to perform the search in.
+          schema:
+            type: integer
+        - name: q
+          in: query
+          required: true
+          description: >-
+            The search query.  If all or no value is specified by the user and
+            the filter parameter is used, then the value is *.  Do not use pages, 
+            assignments, announcements, or discussion topics in the query parameter 
+            for smart search when a filter is used unless requested.
+          schema:
+            type: string
+        - name: filter
+          in: query
+          required: false
+          description: >-
+            Types of objects to search. By default, all supported types are
+            searched. Supported types include +pages+, +assignments+,
+            +announcements+, and +discussion_topics+.
+          schema:
+            type: string
+            enum:
+              - pages
+              - assignments
+              - announcements
+              - discussion_topics
+      responses:
+        '200':
+          description: Search results matching the query.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    content_id:
+                      type: integer
+                    content_type:
+                      type: string
+                    title:
+                      type: string
+                    body:
+                      type: string
+                    html_url:
+                      type: string
+      tags:
+        - Courses
+  /users/{user_id}:
+    get:
+      operationId: getUser
+      summary: Get user details.
+      security:
+        - OAuth2:
+            - url:GET|/api/v1/users/:id
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: ID of the user to retrieve.  Use "self" to retrieve the current user.  Otherwise the value should always be an integer.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User details.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  email:
+                    type: string
+                  locale:
+                    type: string
+                  avatar_url:
+                    type: string
+      tags:
+        - Users
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: ${{CANVAS_BASE_URL}}/login/oauth2/auth
+          tokenUrl: ${{CANVAS_BASE_URL}}/login/oauth2/token
+          refreshUrl: ${{CANVAS_BASE_URL}}/login/oauth2/token
+          scopes:
+            url:GET|/api/v1/courses: Access to manage and view courses
+            url:GET|/api/v1/courses/:course_id/modules: Access to manage and view modules
+            url:GET|/api/v1/courses/:course_id/modules/:module_id/items: Access to manage and view module items
+            url:GET|/api/v1/users/:id: Access to manage and view a user
+            url:GET|/api/v1/courses/:course_id/smartsearch: Access to semantic search in a courses

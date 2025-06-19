@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "Canvas Student",
+    "description": "I am a learning assistant to help you interact with Canvas",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Show my courses",
+            "text": "List all my courses, including their descriptions and modules"
+        },
+        {
+            "title": "Show my assignments",
+            "text": "Show my assignments in a table and include the title"
+        },
+        {
+            "title": "Help me learn",
+            "text": "Help me with this assignment by breaking it down and suggesting resources for further reading"
+        },
+        {
+            "title": "Guide my learning path",
+            "text": "Recommend learning techniques and resources based on Canvas assignments, discussions, or pages"
+        },
+        {
+            "title": "Create a quiz",
+            "text": "Give me 10 practice problems for "
+        },
+        {
+            "title": "Create a study plan",
+            "text": "Create a study plan for "
+        }
+    ],
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ]
+}
