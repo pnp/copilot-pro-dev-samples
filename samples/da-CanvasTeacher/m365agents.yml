@@ -1,7 +1,10 @@
-# yaml-language-server: $schema=https://aka.ms/teams-toolkit/v1.7/yaml.schema.json
+# yaml-language-server: $schema=https://aka.ms/teams-toolkit/v1.8/yaml.schema.json
 # Visit https://aka.ms/teamsfx-v5.0-guide for details on this file
 # Visit https://aka.ms/teamsfx-actions for details on actions
-version: v1.7
+version: v1.8
+
+additionalMetadata:
+  sampleTag: pnp-copilot-pro-dev:da-CanvasTeacher
 
 environmentFolderPath: ./env
 
@@ -11,7 +14,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: CanvasEducator${{APP_NAME_SUFFIX}}
+      name: CanvasTeacher${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
