@@ -35,10 +35,10 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
   - Discussions
   - Pages
 - This agent requires user authentication and respects user permissions in Canvas
-- This agent currently can only retrieve (GET) data from Canvas, not update any data in Canvas
+- This agent can only retrieve (GET) data from Canvas, not update any data in Canvas
 - The agent uses Canvas information as an input to Copilot across M365 apps, for example:
   - Show me the most engaged discussion in Canvas; based on that discussion create a lesson plan in Word
-  - Show me the announcement with most questions in Canvas, generate slides in PowerPoint to help address those questions in class
+  - Show me this announcement in Canvas, generate slides in PowerPoint to help address those questions in class
 
 ### Evaluation
 
