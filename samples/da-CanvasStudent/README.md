@@ -51,10 +51,10 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
 The agent requires a working Canvas environment and access to Copilot Chat
 - API Developer Key in Canvas
 - Microsoft 365 A1, A3, or A5 license
-- Agents work in Copilot Chat (both metered/no metered usage) and M365 Copilot, [learn more](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/prerequisites#agent-capabilities-for-microsoft-365-users)
+- Agents work in Copilot Chat (both metered/no metered usage) and M365 Copilot, [learn more](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#agent-capabilities-for-microsoft-365-users)
 - Microsoft 365 Agents Toolkit extension for Visual Studio Code
-  - A [Microsoft 365 account for development](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#create-a-free-microsoft-365-developer-account)
-  - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/microsoft-365-agents-toolkit-cli)
+  - A [Microsoft 365 account for development](https://learn.microsoft.com/microsoftteams/platform/toolkit/tools-prerequisites#create-a-free-microsoft-365-developer-account)
+  - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://learn.microsoft.com/microsoftteams/platform/toolkit/microsoft-365-agents-toolkit-cli)
   - [Node.js](https://nodejs.org/), supported versions: 18, 20 (optional for running in local dev machine)
 - Admin permissions in the Microsoft 365 Admin Center or Teams Admin Center, in order to distribute the agents to other users
 
@@ -82,7 +82,7 @@ The agent requires a working Canvas environment and access to Copilot Chat
 ### 3. Provision and test the agent
 
 1. In the Teams Admin Center
-    - Enable [custom app upload](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/tools-prerequisites#enable-custom-app-upload-using-admin-center) if you haven't already
+    - Enable [custom app upload](https://learn.microsoft.com/microsoftteams/platform/toolkit/tools-prerequisites#enable-custom-app-upload-using-admin-center) if you haven't already
     - This setting can take 24h to be fully enabled and you can check progress in the M365 Agents Toolkit in VS Code (Accounts section)
 2. In VS Code
     - Select the Explorer icon, appPackage, and `instructions.txt` if you'd like to customize instructions (optional)
@@ -140,7 +140,7 @@ This step is only needed if you want to enable your users to be automatically si
 - Limited to return only 10 items from each endpoint
 - Limited to return only info about the authenticated user, not bringing anything from any other user
 - No capabilities or knowledge sources have been enabled in this sample
-- OpenAPI limitations for API plugins [listed here](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/known-issues#some-openapi-features-arent-supported)
+- OpenAPI limitations for API plugins [listed here](https://learn.microsoft.com/microsoft-365-copilot/extensibility/known-issues#some-openapi-features-arent-supported)
   
 ## Resources and customization
 
@@ -168,15 +168,6 @@ The following are Microsoft 365 Agents Toolkit specific project files. You can [
 | `m365agents.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
 
 ## Help
-<!--
-
-Search for:
-da-CanvasStudent
-
-Search for:
-@jmenegazzo
-
--->
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
@@ -190,4 +181,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/YOUR-SOLUTION-NAME)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-CanvasStudent)
