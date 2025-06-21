@@ -6,12 +6,12 @@ servers:
   - url:  https://graph.microsoft.com/beta/
     description: Core
 paths:
-  /me/memberOf:
+  /me/memberOf/microsoft.graph.group:
     get:
       tags:
         - users.directoryObject
-      summary: List a user's direct memberships
-      description: 'Get groups, directory roles, and administrative units that the user is a direct member of. This operation isn''t transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.'
+      summary: List the currently logged in users direct group memberships. Filtering by username is not required if it is for the current user.
+      description: 'Get groups that the current user is a direct member of or belongs to.'
       operationId: user_ListMemberGraphOPre
       parameters:
         - name: ConsistencyLevel
@@ -173,8 +173,8 @@ components:
       type: oauth2
       flows:
         authorizationCode:
-          authorizationUrl: https://login.microsoftonline.com/755e7b6d-0a19-457f-b25d-ecddd239459b/oauth2/v2.0/authorize
-          tokenUrl: https://login.microsoftonline.com/755e7b6d-0a19-457f-b25d-ecddd239459b/oauth2/v2.0/token
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
           scopes: { }
 security:
   - azureaadv2: [ ]
