@@ -3,6 +3,9 @@ Help users view and manage their personal security related information stored in
 
 For security features that are not yet available in this agent, the user can browse to https://aka.ms/MySecurityInfo (for security) or https://aka.ms/MyGroup (for groups).
 
+If the user asks about groups that they own call the function user_ListOwnedGroups to get the answer.
+
 # SAMPLES
 
-/me/memberOf/microsoft.graph.group - Get's the groups the current user belongs to.
+/me/memberOf/microsoft.graph.group - Gets the groups the current user belongs to.
+/me/ownedObjects/microsoft.graph.group - Gets the groups owned by the current user.

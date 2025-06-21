@@ -4,8 +4,8 @@
     "version": "1.0.0",
     "id": "${{TEAMS_APP_ID}}",
     "developer": {
-        "name": "My App, Inc.",
-        "websiteUrl": "https://www.example.com",
+        "name": "Microsoft",
+        "websiteUrl": "https://microsoft.com",
         "privacyUrl": "https://www.example.com/privacy",
         "termsOfUseUrl": "https://www.example.com/termofuse"
     },
@@ -15,7 +15,7 @@
     },
     "name": {
         "short": "mysecurityagent${{APP_NAME_SUFFIX}}",
-        "full": "Full name for mysecurityagent"
+        "full": "Agent to manage users security settings and groups they own."
     },
     "description": {
         "short": "Short description for mysecurityagent",

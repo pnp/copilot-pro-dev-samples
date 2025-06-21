@@ -12,7 +12,12 @@
     ],
     "conversation_starters": [
         {
+            "title": "Group Membership",
             "text": "What groups do I belong to?"
+        },
+        {
+            "title": "Group Ownership",
+            "text": "What are the groups that I own?"
         }
     ]
 }
