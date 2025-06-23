@@ -28,7 +28,7 @@
             "type": "OpenApi",
             "auth": {
                 "type": "OAuthPluginVault",
-                "reference_id": "${{OAUTH_REFERENCE_ID}}"
+                "reference_id": "${{OAUTH2AUTHCODE_CONFIGURATION_ID}}"
             },
             "spec": {
                 "url": "myagentall-openapi.yml"
