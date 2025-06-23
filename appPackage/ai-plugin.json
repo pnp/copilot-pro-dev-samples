@@ -2,8 +2,8 @@
     "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
     "schema_version": "v2.1",
     "name_for_human": "My Security Agent",
-    "description_for_human": "Description for Users - Subset",
-    "description_for_model": "Description for Users - Subset",
+    "description_for_human": "Agent to manage users security settings and groups they own.",
+    "description_for_model": "This agent allows users to manage their security settings and groups they own in Microsoft Entra ID. It can list the groups a user belongs to and the groups they own.",
     "contact_email": "publisher-email@example.com",
     "namespace": "myagentall",
     "capabilities": {
@@ -18,10 +18,10 @@
             "name": "user_ListMemberGroups",
             "description": "List the groups that the current user belongs to."
         },
-                {
+        {
             "name": "user_ListOwnedGroups",
             "description": "List the groups that the current user owns."
-        }   
+        }
     ],
     "runtimes": [
         {
