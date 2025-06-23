@@ -34,7 +34,8 @@
                 "url": "myagentall-openapi.yml"
             },
             "run_for_functions": [
-                "user_ListMemberGraphOPre"
+                "user_ListOwnedGroups",
+                "user_ListMemberGroups"
             ]
         }
     ]
