@@ -1,0 +1,38 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.22/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.22",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Teams App, Inc.",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Canvas Teacher${{APP_NAME_SUFFIX}}",
+        "full": "Canvas agent for teachers"
+    },
+    "description": {
+        "short": "Canvas Teacher is a teaching assistant to help you interact with Canvas",
+        "full": "Enables educators to interact with their Canvas courses using Microsoft 365 Copilot and Copilot Chat. This agent empowers educators to plan their courses more effectively, giving them access to information in their courses, modules, assignments, pages, discussions, and announcements."
+    },
+    "accentColor": "#FFFFFF",
+    "copilotAgents": {
+        "declarativeAgents": [
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}
