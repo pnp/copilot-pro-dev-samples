@@ -50,7 +50,31 @@ provision:
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
-      teamsAppId: TEAMS_APP_ID
+
+  # Register OAuth client configuration in Teams Developer Portal
+  - uses: oauth/register
+    with:
+      name: azureaadv2
+      flow: authorizationCode
+      scope: User.Read
+      targetAudience: HomeTenant
+      applicableToApps: AnyApp
+      appId: ${{APP_ID}}
+      clientId: ${{ENTRA_APP_CLIENT_ID}}
+      clientSecret: ${{SECRET_ENTRA_APP_CLIENT_SECRET}}
+      # Path to OpenAPI description document
+      apiSpecPath: ./appPackage/myagentall-openapi.yml
+    writeToEnvironmentFile:
+      configurationId: OAUTH2AUTHCODE_CONFIGURATION_ID
+
+  - uses: oauth/update
+    with:
+      name: azureaadv2
+      appId: ${{APP_ID}}
+      clientId: ${{ENTRA_APP_CLIENT_ID}}
+      # Path to OpenAPI description document
+      apiSpecPath: ./appPackage/myagentall-openapi.yml
+      configurationId: ${{OAUTH2AUTHCODE_CONFIGURATION_ID}}
 
   # Build app package with latest env value
   - uses: teamsApp/zipAppPackage
