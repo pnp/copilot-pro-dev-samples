@@ -15,12 +15,12 @@
     },
     "functions": [
         {
-            "name": "user_ListMemberGraphOPre",
-            "description": "Get groups that the current user is a direct member of."
+            "name": "user_ListMemberGroups",
+            "description": "List the groups that the current user belongs to."
         },
                 {
             "name": "user_ListOwnedGroups",
-            "description": "Get groups where the current user is the owner."
+            "description": "List the groups that the current user owns."
         }   
     ],
     "runtimes": [
