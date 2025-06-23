@@ -1,5 +1,7 @@
 # Canvas Student declarative agent with API Plugin
 
+This sample demonstrates how to create or customize their own declarative agents for Microsoft 365 Copilot that connect to their Learning Management Systems (LMS) or other education technology.
+
 ## Summary
 
 The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Copilot or Copilot Chat and the Canvas Learning Management System (LMS). It enables learners to combine information in Canvas with unique M365 apps capabilities. Learners can retrieve courses, modules, assignments, pages, announcements, and discussions from Canvas, and leverage features in M365 apps like BizChat, Word, and PowerPoint. Learners can search through course content, generate ideas for learning, and improve the overall learning experience.
