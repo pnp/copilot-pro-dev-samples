@@ -1,19 +1,18 @@
 # Canvas Student declarative agent with API Plugin
 
-## Agent samples for Education
-This repository contains agent samples for Education to be used with [Microsoft 365 Copilot](https://www.microsoft.com/microsoft-365/copilot) and Microsoft 365 [Copilot Chat](https://www.microsoft.com/microsoft-365/copilot/try-copilot-chat). These samples demonstrate how customers can create or customize their own declarative agents for M365 Copilot that connect to their Learning Management Systems (LMS) or other education technology.
-
 ## Summary
 
 The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Copilot or Copilot Chat and the Canvas Learning Management System (LMS). It enables learners to combine information in Canvas with unique M365 apps capabilities. Learners can retrieve courses, modules, assignments, pages, announcements, and discussions from Canvas, and leverage features in M365 apps like BizChat, Word, and PowerPoint. Learners can search through course content, generate ideas for learning, and improve the overall learning experience.
+
+![Canvas LM Student](./assets/CanvasStudent1.png)
 
 ### Version history
 
 | Version | Date | Comments |
 | --- | --- | --- |
-| 1.0 | May 31st, 2025 | Initial release |
+| 1.0 | June 23, 2025 | Initial release |
 
-### Features
+## Features
 
 - List enrolled courses
 - View course content and structure, including modules and assignments
@@ -22,8 +21,6 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
 - Interact with Canvas content in all M365 apps that support agents, including BizChat, Word, and PowerPoint
 - Search Course Content, empowering learners to plan their study more effectively, giving them access to information in Canvas
 - Content Creation, helping in creating course content, including study plans, quizzes, and other resources
-
-![image](./assets/CanvasStudent1.png)
 
 ### Data access
 
@@ -35,6 +32,7 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
   - Discussions
   - Pages
 - This agent requires user authentication and respects user permissions in Canvas
+
 - This agent can only retrieve (GET) data from Canvas, not update any data in Canvas
 - The agent uses Canvas information as an input to Copilot across M365 apps, for example:
   - Show me the most engaged discussion in Canvas; based on that discussion create a lesson plan in Word
@@ -43,7 +41,7 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
 ### Evaluation
 
 - All response generation features of this agent were tested, measured, and validated internally
-- [How declarative agents are evaluated?](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/transparency-faq-declarative-agent#how-were-declarative-agents-evaluated-what-metrics-are-used-to-measure-performance)
+- [How declarative agents are evaluated?](https://learn.microsoft.com/microsoft-365-copilot/extensibility/transparency-faq-declarative-agent#how-were-declarative-agents-evaluated-what-metrics-are-used-to-measure-performance)
 - It's important to keep in mind that the output this agent provides can be inaccurate, incorrect, or out of date
 
 ## Prerequisites
@@ -51,6 +49,7 @@ The Canvas Student agent is an AI-powered assistant integrating Microsoft 365 Co
 The agent requires a working Canvas environment and access to Copilot Chat
 - API Developer Key in Canvas
 - Microsoft 365 A1, A3, or A5 license
+- Microsoft 365 Copilot license
 - Agents work in Copilot Chat (both metered/no metered usage) and M365 Copilot, [learn more](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#agent-capabilities-for-microsoft-365-users)
 - Microsoft 365 Agents Toolkit extension for Visual Studio Code
   - A [Microsoft 365 account for development](https://learn.microsoft.com/microsoftteams/platform/toolkit/tools-prerequisites#create-a-free-microsoft-365-developer-account)
@@ -70,14 +69,14 @@ The agent requires a working Canvas environment and access to Copilot Chat
     - url:GET|/api/v1/courses/:course_id/modules/:module_id/items
     - url:GET|/api/v1/courses/:course_id/smartsearch
     - url:GET|/api/v1/users/:id
-3. Add the following Teams url in the **Redirect URIs** field. `https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect`
-4. Saving will generate the `id` and `key` values that will be used for the Teams oauth registration in Step 5 in the directions
+3. Add the following Teams URL in the **Redirect URIs** field. `https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect`
+4. Saving will generate the `id` and `key` values that will be used for the Teams oauth registration in Step 5 in the directions.
 
 ### 2. Add Canvas environment to agent
 
 1. Clone this repository (or download this solution as a .ZIP file then unzip it)
-2. Open the Canvas Student agent sample folder in VS Code
-3. Add the url for your Canvas instance for CANVAS_BASE_URL in /env/env.dev
+2. Open the **da-CanvasStudent** folder in VS Code
+3. Add the url for your Canvas instance for `CANVAS_BASE_URL` in `env/env.dev`
 
 ### 3. Provision and test the agent
 
@@ -105,23 +104,26 @@ The agent requires a working Canvas environment and access to Copilot Chat
 ## Optional configuration
 
 ### 1. Deploy the agent to your organization
+
 This step is only needed if you want to distribute the agent across your institution.
+
 1.  Select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar
 2.  In the Utility section, click `Zip Teams App Package` to download the apppackage.zip file
 3.  From the M365 Admin Center, go to `Settings` , select `Integrate apps`, and select `Upload custom apps`
 4.  Define which users or groups will have access to the agent, accept permissions and deploy
-5.  Learn more at [Manage Office Add-ins through Integrated Apps](https://learn.microsoft.com/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+5.  Learn more at [Manage agents for Microsoft 365 Copilot in the Microsoft 365 admin center](https://learn.microsoft.com/microsoft-365/admin/manage/manage-copilot-agents-integrated-apps?view=o365-worldwide)
 
 ### 2. Add capabilities and knowledge sources
+
 This step is only needed if you want to add other capabilities and knowledge sources to your agent.
 - Customize the agent with capabilities and knowledge sources to address your needs, including:
   - Code interpreter
   - Image generator
   - Web search
-  - Scoped web search (requires M365 Copilot license)
-  - Copilot connectors (requires M365 Copilot license)
-  - SharePoint and OneDrive as knowledge (requires M365 Copilot license)
-- Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the declarativeAgent.json file
+  - Scoped web search
+  - Copilot connectors
+  - SharePoint and OneDrive as knowledge
+- Add your capabilities and knowledge sources to the [Capabilities object](https://learn.microsoft.com/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3#capabilities-object) in the `declarativeAgent.json` file
 - Check the [capabilities and knowledge sources](https://learn.microsoft.com/microsoft-365-copilot/extensibility/add-agent-capabilities) for the latest capabilities
 
 ### 3. Setup Microsoft SSO in Canvas
@@ -156,7 +158,7 @@ The following files can be customized and demonstrate an example implementation 
 
 | File | Contents |
 | --- | --- |
-| `instruction.txt` | Define instructions that will be added to `declarativeCopilot.json` during agent provision
+| `appPackage/instruction.txt` | Define instructions that will be added to `declarativeCopilot.json` during agent provision
 | `appPackage/declarativeCopilot.json` | Define the configuration, instructions, and conversation starters of the declarative agent |
 | `appPackage/ai-plugin.json` | Define the configuration and capabilities of the AI plugin |
 | `appPackage/manifest.json` | Teams application manifest that defines metadata for your declarative agent |
@@ -165,7 +167,7 @@ The following are Microsoft 365 Agents Toolkit specific project files. You can [
 
 | File | Contents |
 | --- | --- |
-| `m365agents.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
+| `m365agents.yml` | This is the main Microsoft 365 Agents Toolkit project file. It contains tasks which automate the creation of the app package, OAuth registratoin and upload of the app package to Microsoft 365. |
 
 ## Help
 

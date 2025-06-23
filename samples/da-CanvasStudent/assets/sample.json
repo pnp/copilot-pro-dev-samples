@@ -9,8 +9,8 @@
     "longDescription": [
       "Canvas Student is a learning assistant to help you interact with your Canvas LMS. This agent sample enables learners to interact with their courses using Microsoft 365 Copilot or Copilot Chat. Canvas Student empowers students to search through course content, generate ideas for learning, and improve the overall learning experience."
     ],
-    "creationDateTime": "2025-06-12",
-    "updateDateTime": "2025-06-12",
+    "creationDateTime": "2025-06-23",
+    "updateDateTime": "2025-06-23",
     "products": [
       "Microsoft 365 Copilot"
     ],
