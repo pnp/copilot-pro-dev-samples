@@ -50,6 +50,7 @@ provision:
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
+      teamsAppId: APP_ID
 
   # Register OAuth client configuration in Teams Developer Portal
   - uses: oauth/register
@@ -136,5 +137,5 @@ publish:
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
-      publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
+      publishedAppId: APP_PUBLISHED_APP_ID
 projectId: 4d1dcab9-58d0-4c41-b983-24cbefc748f5
