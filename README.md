@@ -1,4 +1,14 @@
-# Overview of the Declarative Agent template
+# MY SECURITY AGENT
+
+## PROJECT-SPECIFIC LINKS
+> Project Scope: https://microsoft-my.sharepoint.com/:w:/p/t-paagarwal/EeXo1f8kUAhLqa8C6RAPcV0BdWNWvr3AC4cCN3FOjQrqug?e=lvoSrL
+> Using Graph API as a Copilot Plugin for Graph API (https://blog.franckcornu.com/post/copilot-graph-api-qna-plugin/)
+> Writing effective instructions for the declarative agent (https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/instructions-api-plugins)
+> Graph API Endpoint reference (https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0&viewFallbackFrom=graph-rest-1.0%2F%3Fwt.mc_id%3Dmsgraph_inproduct_graphexhelp)
+
+## ARCHIVE 
+
+## Overview of the Declarative Agent template
 
 With the declarative agent, you can build a custom version of Copilot that can be used for specific scenarios, such as for specialized knowledge, implementing specific processes, or simply to save time by reusing a set of AI prompts. For example, a grocery shopping Copilot declarative agent can be used to create a grocery list based on a meal plan that you send to Copilot.
 
