@@ -2,11 +2,8 @@
 
 ## PROJECT-SPECIFIC LINKS
 > Project Scope: https://microsoft-my.sharepoint.com/:w:/p/t-paagarwal/EeXo1f8kUAhLqa8C6RAPcV0BdWNWvr3AC4cCN3FOjQrqug?e=lvoSrL
-> 
 > Using Graph API as a Copilot Plugin for Graph API (https://blog.franckcornu.com/post/copilot-graph-api-qna-plugin/)
-> 
 > Writing effective instructions for the declarative agent (https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/instructions-api-plugins)
-> 
 > Graph API Endpoint reference (https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0&viewFallbackFrom=graph-rest-1.0%2F%3Fwt.mc_id%3Dmsgraph_inproduct_graphexhelp)
 
 ## ARCHIVE 
