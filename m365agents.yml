@@ -7,41 +7,6 @@ environmentFolderPath: ./env
 
 # Triggered when 'teamsapp provision' is executed
 provision:
-  # Creates a new Microsoft Entra app to authenticate users if
-  # the environment variable that stores clientId is empty
-  - uses: aadApp/create
-    with:
-      # Note: when you run aadApp/update, the Microsoft Entra app name will be updated
-      # based on the definition in manifest. If you don't want to change the
-      # name, make sure the name in Microsoft Entra manifest is the same with the name
-      # defined here.
-      name: mysecurityagent
-      # If the value is false, the action will not generate client secret for you
-      generateClientSecret: true
-      # Authenticate users with a Microsoft work or school account in your
-      # organization's Microsoft Entra tenant (for example, single tenant).
-      signInAudience: AzureADMultipleOrgs
-    # Write the information of created resources into environment file for the
-    # specified environment variable(s).
-    writeToEnvironmentFile:
-      clientId: ENTRA_APP_CLIENT_ID
-      # Environment variable that starts with `SECRET_` will be stored to the
-      # .env.{envName}.user environment file
-      clientSecret: SECRET_ENTRA_APP_CLIENT_SECRET
-      objectId: ENTRA_APP_OBJECT_ID
-      tenantId: ENTRA_APP_TENANT_ID
-      authority: ENTRA_APP_OAUTH_AUTHORITY
-      authorityHost: ENTRA_APP_OAUTH_AUTHORITY_HOST
-
-  # Apply the Microsoft Entra manifest to an existing Microsoft Entra app. Will use the object id in
-  # manifest file to determine which Microsoft Entra app to update.
-  - uses: aadApp/update
-    with:
-      # Relative path to this file. Environment variables in manifest will
-      # be replaced before apply to Microsoft Entra app
-      manifestPath: ./entra.manifest.json
-      outputFilePath: ./build/entra.manifest.${{TEAMSFX_ENV}}.json
-
   # Creates an app
   - uses: teamsApp/create
     with:
@@ -50,33 +15,7 @@ provision:
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
-      teamsAppId: APP_ID
-
-  # Register OAuth client configuration in Teams Developer Portal
-  - uses: oauth/register
-    with:
-      name: azureaadv2
-      flow: authorizationCode
-      scope: ${{ENTRA_APP_SCOPE}}
-      targetAudience: HomeTenant
-      applicableToApps: AnyApp
-      appId: ${{APP_ID}}
-      clientId: ${{ENTRA_APP_CLIENT_ID}}
-      clientSecret: ${{SECRET_ENTRA_APP_CLIENT_SECRET}}
-      # Path to OpenAPI description document
-      apiSpecPath: ./appPackage/myagentall-openapi.yml
-    writeToEnvironmentFile:
-      configurationId: OAUTH2AUTHCODE_CONFIGURATION_ID
-
-  - uses: oauth/update
-    with:
-      name: azureaadv2
-      appId: ${{APP_ID}}
-      clientId: ${{ENTRA_APP_CLIENT_ID}}
-      scope: ${{ENTRA_APP_SCOPE}}
-      # Path to OpenAPI description document
-      apiSpecPath: ./appPackage/myagentall-openapi.yml
-      configurationId: ${{OAUTH2AUTHCODE_CONFIGURATION_ID}}
+      teamsAppId: TEAMS_APP_ID
 
   # Build app package with latest env value
   - uses: teamsApp/zipAppPackage
@@ -138,5 +77,5 @@ publish:
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
-      publishedAppId: APP_PUBLISHED_APP_ID
+      publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
 projectId: 4d1dcab9-58d0-4c41-b983-24cbefc748f5

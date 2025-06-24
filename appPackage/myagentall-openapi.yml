@@ -10,8 +10,8 @@ paths:
     get:
       tags:
         - users.directoryObject
-      summary: List the currently logged in users direct group memberships.
-      description: 'Get groups that the current user is a direct member of or belongs to.'
+      summary: List a user's direct memberships
+      description: 'Get groups, directory roles, and administrative units that the user is a direct member of. This operation isn''t transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.'
       operationId: user_ListMemberGraphOPre
       responses:
         2XX:
@@ -98,7 +98,7 @@ paths:
       tags:
         - users.directoryObject
       summary: List the groups where the current user is the owner.
-      description: Get groups that the current user is the owner and has the ability to manage the group.
+      description: 'Get groups that the current user is the owner and has the ability to manage the group.'
       operationId: user_ListOwnedGroups
       responses:
         2XX:
@@ -188,7 +188,6 @@ components:
         authorizationCode:
           authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
           tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
-          scopes:
-            User.Read: Read user profile
+          scopes: { }
 security:
-  - azureaadv2: [ "User.Read" ]
+  - azureaadv2: [ ]
