@@ -8,8 +8,6 @@
 > Writing effective instructions for the declarative agent (https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/instructions-api-plugins)
 > 
 > Graph API Endpoint reference (https://learn.microsoft.com/en-us/graph/api/overview?view=graph-rest-1.0&viewFallbackFrom=graph-rest-1.0%2F%3Fwt.mc_id%3Dmsgraph_inproduct_graphexhelp)
->
-> Adaptive Cards for Declarative Agents (https://learn.microsoft.com/en-us/training/modules/copilot-declarative-agent-action-api-plugin-adaptive-cards-vsc/)
 
 ## ARCHIVE 
 
