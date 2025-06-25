@@ -180,6 +180,59 @@ paths:
                       type: object
                 additionalProperties:
                   type: object
+  /me/authentication/methods:
+    get:
+      tags:
+        - me.authentication
+      summary: List methods
+      description: 'Retrieve a list of authentication methods registered to a user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-beta
+      operationId: me_authentication_ListMethods
+      parameters:
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+
 components:
   securitySchemes:
     azureaadv2:

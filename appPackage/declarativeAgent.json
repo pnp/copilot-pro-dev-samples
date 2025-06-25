@@ -18,6 +18,10 @@
         {
             "title": "Group Ownership",
             "text": "What are the groups that I own?"
+        },
+        {
+            "title": "Authentication",
+            "text": "What authentication methods have I registered?"
         }
     ]
 }

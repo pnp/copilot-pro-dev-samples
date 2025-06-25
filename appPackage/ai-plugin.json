@@ -21,6 +21,10 @@
         {
             "name": "user_ListOwnedGroups",
             "description": "List the groups that the current user owns."
+        },
+        {
+            "name": "me_authentication_ListMethods",
+            "description": "List the authentication methods registered by the user."
         }
     ],
     "runtimes": [
@@ -35,7 +39,8 @@
             },
             "run_for_functions": [
                 "user_ListOwnedGroups",
-                "user_ListMemberGroups"
+                "user_ListMemberGroups",
+                "me_authentication_ListMethods"
             ]
         }
     ]

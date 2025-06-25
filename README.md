@@ -58,12 +58,12 @@ The following are Microsoft 365 Agents Toolkit specific project files. You can [
 ## Creating OpenAPI yml
 
 - [Use the Microsoft Graph API as a Copilot plugin for a declarative agent](https://blog.franckcornu.com/post/copilot-graph-api-qna-plugin/) - This blog post provides a detailed guide on how to create OpenAPI yml files for Microsoft Graph APIs, which can be used in declarative agents.
-- [Microsoft Graph Open API - yml](https://github.com/microsoftgraph/msgraph-sdk-powershell/tree/dev/openApiDocs/beta) - This repository contains OpenAPI yml files for Microsoft Graph APIs
+- [Microsoft Graph Open API - yml](https://github.com/microsoftgraph/msgraph-metadata/blob/master/openapi/beta/openapi.yaml) - The OpenAPI yml for Microsoft Graph API.
 
 ### Example command to create OpenAPI yml for Microsoft Graph Users API
 
 ```shell
-hidi transform -d /Users/merill/Downloads/groupsagent/apis/Users.yml -f json -o /Users/merill/Downloads/groupsagent/apis/graph_users.yml -v OpenApi3_0 --op user_ListMemberGraphOPre --co
+hidi transform -d openapi.yaml -f json -o auth.yml -v OpenApi3_0 --op me.authentication.ListMethods --co
 ```
 
 ### Install hidi
