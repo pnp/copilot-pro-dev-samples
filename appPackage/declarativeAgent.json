@@ -18,6 +18,22 @@
         {
             "title": "Group Ownership",
             "text": "What are the groups that I own?"
+                },
+        {
+            "title": "Join Group",
+            "text": "Can I join the Product group?"
+        },
+        {
+            "title": "Groups with Guests",
+            "text": "Which groups have external (guest) users?"
+        },
+        {
+            "title": "Add to Group",
+            "text": "Add me to the Marketing group."
+        },
+        {
+            "title": "Remove from Group",
+            "text": "Remove me from the Retail group."
         }
     ]
 }
