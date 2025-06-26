@@ -8,9 +8,21 @@
     "namespace": "myagentall",
     "capabilities": {
         "conversation_starters": [
-            {
-                "text": "List a user's direct memberships"
-            }
+            { "text": "What groups do I belong to?" },
+            { "text": "Who are the owners of the 'Marketing Leads' group?" },
+            { "text": "Can I join the Sales group?" },
+            { "text": "How do I request access to a private group?" },
+            { "text": "Which groups have external (guest) users?" },
+            { "text": "Who was added or removed from my groups recently?" },
+            { "text": "What devices are registered to my account?" },
+            { "text": "When was each of my devices last used?" },
+            { "text": "What organizations am I a part of?" },
+            { "text": "Which org is my default?" },
+            { "text": "How do I switch between my organizations?" },
+            { "text": "When was my last successful sign-in?" },
+            { "text": "Were there any unsuccessful sign-in attempts recently?" },
+            { "text": "From which locations have I signed in recently?" },
+            { "text": "What devices have I signed in from?" }
         ]
     },
     "functions": [
@@ -25,6 +37,10 @@
         {
             "name": "me_authentication_ListMethods",
             "description": "List the authentication methods registered by the user."
+        },
+        {
+            "name": "me_ListOwnedDevices",
+            "description": "List the devices owned by the user."
         }
     ],
     "runtimes": [
@@ -40,7 +56,8 @@
             "run_for_functions": [
                 "user_ListOwnedGroups",
                 "user_ListMemberGroups",
-                "me_authentication_ListMethods"
+                "me_authentication_ListMethods",
+                "me_ListOwnedDevices"
             ]
         }
     ]

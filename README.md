@@ -63,7 +63,7 @@ The following are Microsoft 365 Agents Toolkit specific project files. You can [
 ### Example command to create OpenAPI yml for Microsoft Graph Users API
 
 ```shell
-hidi transform -d openapi.yaml -f json -o auth.yml -v OpenApi3_0 --op me.authentication.ListMethods --co
+hidi transform -d openapi.yaml -f yaml -o ownedDevices.yml -v 3.0 --op me.ListOwnedDevices --co
 ```
 
 ### Install hidi

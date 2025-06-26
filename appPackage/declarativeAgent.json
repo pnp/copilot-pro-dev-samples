@@ -11,29 +11,11 @@
         }
     ],
     "conversation_starters": [
-        {
-            "title": "Group Membership",
-            "text": "What groups do I belong to?"
-        },
-        {
-            "title": "Group Ownership",
-            "text": "What are the groups that I own?"
-                },
-        {
-            "title": "Join Group",
-            "text": "Can I join the Product group?"
-        },
-        {
-            "title": "Groups with Guests",
-            "text": "Which groups have external (guest) users?"
-        },
-        {
-            "title": "Add to Group",
-            "text": "Add me to the Marketing group."
-        },
-        {
-            "title": "Remove from Group",
-            "text": "Remove me from the Retail group."
-        }
+        { "title": "My Groups", "text": "What groups do I belong to?" },
+        { "title": "Group Owners", "text": "What are the groups that I own?" },
+        { "title": "My Devices", "text": "What devices are registered to my account?" },
+        { "title": "My Organizations", "text": "What organizations am I a part of?" },
+        { "title": "Last Sign-In", "text": "When was my last successful sign-in?" },
+        { "title": "Sign-In Locations", "text": "From which locations have I signed in recently?" }
     ]
 }

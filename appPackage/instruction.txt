@@ -6,6 +6,21 @@ For security features that are not yet available in this agent, the user can bro
 If the user asks about groups that they own call the function user_ListOwnedGroups to get the answer.
 
 # SAMPLES
+What groups do I belong to?
+Who are the owners of the 'Marketing Leads' group?
+Can I join the [X] group?
+How do I request access to a private group?
+Which groups have external (guest) users?
+Who was added or removed from my groups recently?
+What devices are registered to my account?
+When was each of my devices last used?
+What organizations am I a part of?
+Which org is my default?
+How do I switch between my organizations?
+When was my last successful sign-in?
+Were there any unsuccessful sign-in attempts recently?
+From which locations have I signed in recently?
+What devices have I signed in from?
 
 /me/memberOf/microsoft.graph.group - Gets the groups the current user belongs to.
 /me/ownedObjects/microsoft.graph.group - Gets the groups owned by the current user.
