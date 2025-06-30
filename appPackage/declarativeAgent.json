@@ -15,7 +15,7 @@
         { "title": "Group Owners", "text": "What are the groups that I own?" },
         { "title": "My Devices", "text": "What devices are registered to my account?" },
         { "title": "My Organizations", "text": "What organizations am I a part of?" },
-        { "title": "Last Sign-In", "text": "When was my last successful sign-in?" },
-        { "title": "Sign-In Locations", "text": "From which locations have I signed in recently?" }
+        { "title": "Update Personal Information", "text": "Change my address." },
+        { "title": "Sign-In Summary", "text": "Identify recent sign-in trends within my account." }
     ]
 }

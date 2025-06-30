@@ -321,6 +321,277 @@ paths:
           $ref: '#/components/responses/error'
         5XX:
           $ref: '#/components/responses/error'
+  /me:
+    patch:
+      tags:
+        - users
+      summary: Update current user's profile
+      description: Allows the signed-in user to update their profile properties, such as name and job title.
+      operationId: updateCurrentUser
+      requestBody:
+        description: Profile fields to update
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                givenName:
+                  type: string
+                  description: The user's given name (first name).
+                surname:
+                  type: string
+                  description: The user's surname (last name).
+                displayName:
+                  type: string
+                  description: The name displayed in the address book for the user.
+                jobTitle:
+                  type: string
+                  description: The user's job title.
+              additionalProperties: false
+      responses:
+        204:
+          description: No content. The update was successful.
+          x-ms-response:
+            static_template:
+              $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
+              type: "AdaptiveCard"
+              version: "1.5"
+              body:
+                - type: "TextBlock"
+                  text: "Profile Updated"
+                  weight: "Bolder"
+                  size: "Medium"
+                - type: "FactSet"
+                  facts:
+                    - title: "Display Name"
+                      value: "${displayName}"
+                    - title: "First Name"
+                      value: "${givenName}"
+                    - title: "Last Name"
+                      value: "${surname}"
+                    - title: "Job Title"
+                      value: "${jobTitle}"
+              actions:
+                - type: "Action.OpenUrl"
+                  title: "View Profile"
+                  url: "https://myaccount.microsoft.com"
+  /auditLogs/signIns:
+
+    get:
+      tags:
+        - auditLogs
+      summary: List recent sign-ins for a user
+      description: Retrieves sign-in records. Admin permission required (e.g., AuditLog.Read.All).
+      operationId: listSignIns
+      parameters:
+        - name: $filter
+          in: query
+          required: false
+          description: Filter by userId or date range (e.g., userId eq '...')
+          schema:
+            type: string
+        - name: $orderby
+          in: query
+          required: false
+          schema:
+            type: string
+            example: createdDateTime desc
+        - name: $top
+          in: query
+          required: false
+          schema:
+            type: integer
+            example: 5
+      responses:
+        2XX:
+          description: Collection of sign-in records
+          content:
+            application/json:
+              schema:
+                title: Collection of signIn
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: signIn
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        userDisplayName:
+                          type: string
+                        userPrincipalName:
+                          type: string
+                        userId:
+                          type: string
+                        appDisplayName:
+                          type: string
+                        createdDateTime:
+                          type: string
+                          format: date-time
+                        ipAddress:
+                          type: string
+                        status:
+                          type: object
+                          properties:
+                            errorCode:
+                              type: integer
+                            failureReason:
+                              type: string
+                        location:
+                          type: object
+                          properties:
+                            city:
+                              type: string
+                            state:
+                              type: string
+                            countryOrRegion:
+                              type: string
+                        deviceDetail:
+                          type: object
+                          properties:
+                            operatingSystem:
+                              type: string
+                            browser:
+                              type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+              x-ms-response:
+                static_template:
+                  $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
+                  type: "AdaptiveCard"
+                  version: "1.5"
+                  body:
+                    - type: "TextBlock"
+                      text: "Recent Sign-ins"
+                      weight: "Bolder"
+                      size: "Medium"
+                    - type: "Container"
+                      items:
+                        - type: "FactSet"
+                          facts:
+                            - title: "App"
+                              value: "${value[0].appDisplayName}"
+                            - title: "Time"
+                              value: "${value[0].createdDateTime}"
+                            - title: "IP"
+                              value: "${value[0].ipAddress}"
+                            - title: "City"
+                              value: "${value[0].location.city}"
+                            - title: "Status"
+                              value: "${value[0].status.failureReason}"
+    patch:
+      tags:
+        - users
+      summary: Update current user's profile
+      description: Allows the signed-in user to update their profile properties, such as name and job title.
+      operationId: me_updateCurrentUser
+      requestBody:
+        description: Profile fields to update
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                givenName:
+                  type: string
+                  description: The user's given name (first name).
+                surname:
+                  type: string
+                  description: The user's surname (last name).
+                displayName:
+                  type: string
+                  description: The name displayed in the address book for the user.
+                jobTitle:
+                  type: string
+                  description: The user's job title.
+              additionalProperties: false
+      responses:
+        204:
+          description: No content. The update was successful.
+          x-ms-response:
+            static_template:
+              $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
+              type: "AdaptiveCard"
+              version: "1.5"
+              body:
+                - type: "TextBlock"
+                  text: "Profile Updated"
+                  weight: "Bolder"
+                  size: "Medium"
+                - type: "FactSet"
+                  facts:
+                    - title: "Display Name"
+                      value: "${displayName}"
+                    - title: "First Name"
+                      value: "${givenName}"
+                    - title: "Last Name"
+                      value: "${surname}"
+                    - title: "Job Title"
+                      value: "${jobTitle}"
+              actions:
+                - type: "Action.OpenUrl"
+                  title: "View Profile"
+                  url: "https://myaccount.microsoft.com"
+  /me/transitiveMemberOf:
+    get:
+      tags:
+        - users.directoryObject
+      summary: List directory memberships for the signed-in user
+      description: Get all groups, directory roles, or administrative units that the user is a member of, either directly or through nested memberships.
+      operationId: getTransitiveMemberships
+      responses:
+        2XX:
+          description: Collection of directoryObject
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: directoryObject
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        displayName:
+                          type: string
+                        description:
+                          type: string
+                        objectType:
+                          type: string
+                          enum: [group, directoryRole, administrativeUnit]
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+              x-ms-response:
+                static_template:
+                  $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
+                  type: "AdaptiveCard"
+                  version: "1.5"
+                  body:
+                    - type: "TextBlock"
+                      text: "You're Part of These Organizations"
+                      weight: "Bolder"
+                      size: "Medium"
+                    - type: "Container"
+                      items:
+                        - type: "FactSet"
+                          facts:
+                            - title: "Group"
+                              value: "${value[0].displayName}"
+                            - title: "Type"
+                              value: "${value[0].objectType}"
+                            - title: "Description"
+                              value: "${value[0].description}"
+
 
 components:
   securitySchemes:
@@ -332,6 +603,7 @@ components:
           tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
           scopes:
             User.Read: Read user profile
+            User.ReadWrite: Read and write user profile 
   schemas:
     microsoft.graph.directoryObjectCollectionResponse:
       title: Collection of directoryObject
@@ -495,4 +767,4 @@ components:
       schema:
         type: boolean
 security:
-  - azureaadv2: [ "User.Read" ]
+  - azureaadv2: [ "User.Read", "User.ReadWrite" ]

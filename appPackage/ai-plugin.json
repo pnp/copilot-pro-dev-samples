@@ -41,6 +41,14 @@
         {
             "name": "me_ListOwnedDevices",
             "description": "List the devices owned by the user."
+        },
+        {
+            "name": "me_updateCurrentUser",
+            "description": "Get or update the user's profile."
+        },
+        {
+            "name": "listSignIns",
+            "description": "Summarize the sign-in records for the user."
         }
     ],
     "runtimes": [
@@ -57,7 +65,9 @@
                 "user_ListOwnedGroups",
                 "user_ListMemberGroups",
                 "me_authentication_ListMethods",
-                "me_ListOwnedDevices"
+                "me_ListOwnedDevices",
+                "me_updateCurrentUser",
+                "listSignIns"
             ]
         }
     ]
