@@ -1,0 +1,38 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
+    "schema_version": "v2.1",
+    "name_for_human": "Search - Subset - Subset",
+    "description_for_human": "Description for Search - Subset - Subset",
+    "description_for_model": "Description for Search - Subset - Subset",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "daspagentsfinder",
+    "capabilities": {
+        "conversation_starters": [
+            {
+                "text": "Invoke action query"
+            }
+        ]
+    },
+    "functions": [
+        {
+            "name": "search_query",
+            "description": "Runs the query specified in the request body. Search results are provided in the response.",
+            "capabilities": {}
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{AZUREAADV2_REGISTRATION_ID}}"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "search_query"
+            ]
+        }
+    ]
+}

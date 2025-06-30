@@ -1,0 +1,75 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-da-sp-agents-finder",
+      "source": "pnp",
+      "title": "SharePoint Agents Finder declarative agent",
+      "shortDescription": "SharePoint Agents Finder uses the Microsoft Graph API as a Copilot plugin in a declarative agent, leveraging the Microsoft Graph Search API /search/query endpoint to retrieve information about SharePoint Agents and event any file in Microsoft 365.",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sp-agents-finder",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sp-agents-finder",
+      "longDescription": [
+        "SharePoint Agents Finder uses the Microsoft Graph API as a Copilot plugin in a declarative agent, leveraging the Microsoft Graph Search API /search/query endpoint to retrieve information about SharePoint Agents and event any file in Microsoft 365. It helps end users or IT Admins get info about SharePoint Agents in SharePoint or find files in Microsoft 365 using Graph API Search! "
+    ],
+      "creationDateTime": "2025-06-30",
+      "updateDateTime": "2025-06-30",
+      "products": [
+        "Microsoft 365 Copilot", "Teams Toolkit"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Copilot"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "English"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "Yes"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-sp-agents-finder/assets/SharePoint-Agents-Finder-demo.png",
+          "alt": "SharePoint Agents Finder declarative agent"
+        },
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-sp-agents-finder/SharePoint-Agents-Finder-demo01.png",
+          "alt": "SharePoint Agents Finder declarative agent"
+        }
+      ],
+      
+      "authors": [
+        {
+          "gitHubAccount": "mohammadamer",
+          "pictureUrl": "https://github.com/mohammadamer.png",
+          "name": "Mohammad Amer"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Declarative agents for Microsoft 365 Copilot overview",
+          "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+        },
+        {
+          "name": "Build a declarative agent for Microsoft 365 Copilot",
+          "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
+        }
+      ]
+    }
+  ]
