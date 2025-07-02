@@ -50,7 +50,6 @@ The agent requires a working Canvas environment and access to Copilot Chat:
 - API Developer Key in Canvas
 - Microsoft 365 tenant with [custom app upload enabled](https://learn.microsoft.com/microsoftteams/platform/concepts/build-and-test/prepare-your-o365-tenant#enable-custom-teams-apps-and-turn-on-custom-app-uploading)
 - Microsoft 365 A1, A3, or A5 license
-- Microsoft 365 Copilot license
 - Agents work in Copilot Chat (both metered/no metered usage) and M365 Copilot, [learn more](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#agent-capabilities-for-microsoft-365-users)
 - Microsoft 365 Agents Toolkit extension for Visual Studio Code
   - A [Microsoft 365 account for development](https://learn.microsoft.com/microsoftteams/platform/toolkit/tools-prerequisites#create-a-free-microsoft-365-developer-account)
