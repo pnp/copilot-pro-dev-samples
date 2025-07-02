@@ -22,7 +22,8 @@
             { "text": "When was my last successful sign-in?" },
             { "text": "Were there any unsuccessful sign-in attempts recently?" },
             { "text": "From which locations have I signed in recently?" },
-            { "text": "What devices have I signed in from?" }
+            { "text": "What devices have I signed in from?" },
+            { "text": "Who are the members of the [X] group?" }
         ]
     },
     "functions": [
@@ -43,12 +44,32 @@
             "description": "List the devices owned by the user."
         },
         {
-            "name": "me_updateCurrentUser",
-            "description": "Get or update the user's profile."
-        },
-        {
             "name": "listSignIns",
             "description": "Summarize the sign-in records for the user."
+        },
+        {
+            "name": "updateGroup",
+            "description": "Update the display name or description of a group."
+        },
+        {
+            "name": "addGroupMember",
+            "description": "Add a user to a group's members."
+        },
+        {
+            "name": "removeGroupMember",
+            "description": "Remove a user from a group's members."
+        },
+        {
+            "name": "getTransitiveMemberships",
+            "description": "List all groups, directory roles, or administrative units that the user is a member of, either directly or through nested memberships."
+        },
+        {
+            "name": "listGroups",
+            "description": "List groups in the organization, optionally filtered by display name."
+        },
+        {
+            "name": "listGroupMembers",
+            "description": "List the members of a specific group by group ID."
         }
     ],
     "runtimes": [
@@ -66,8 +87,13 @@
                 "user_ListMemberGroups",
                 "me_authentication_ListMethods",
                 "me_ListOwnedDevices",
-                "me_updateCurrentUser",
-                "listSignIns"
+                "listSignIns",
+                "updateGroup",
+                "addGroupMember",
+                "removeGroupMember",
+                "getTransitiveMemberships",
+                "listGroups",
+                "listGroupMembers"
             ]
         }
     ]

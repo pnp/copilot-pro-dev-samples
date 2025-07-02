@@ -54,6 +54,7 @@ The following are Microsoft 365 Agents Toolkit specific project files. You can [
 ## Addition information and references
 
 - [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
+- Enable developer mode in the Teams test tenant to debug better using the command "-developer on"
 
 ## Creating OpenAPI yml
 

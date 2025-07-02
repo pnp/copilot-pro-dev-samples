@@ -377,7 +377,6 @@ paths:
                   title: "View Profile"
                   url: "https://myaccount.microsoft.com"
   /auditLogs/signIns:
-
     get:
       tags:
         - auditLogs
@@ -483,60 +482,109 @@ paths:
                               value: "${value[0].location.city}"
                             - title: "Status"
                               value: "${value[0].status.failureReason}"
+  /groups/{group-id}:
     patch:
       tags:
-        - users
-      summary: Update current user's profile
-      description: Allows the signed-in user to update their profile properties, such as name and job title.
-      operationId: me_updateCurrentUser
+        - groups
+      summary: Update group properties
+      description: |
+        Update the display name, description, or other properties of a group.
+        **To use this endpoint by group name, first resolve the group ID using `/groups?$filter=displayName eq '{name}'`.**
+      operationId: updateGroup
+      parameters:
+        - name: group-id
+          in: path
+          required: true
+          description: The unique identifier of the group.
+          schema:
+            type: string
       requestBody:
-        description: Profile fields to update
+        description: Group properties to update
         required: true
         content:
           application/json:
             schema:
               type: object
               properties:
-                givenName:
-                  type: string
-                  description: The user's given name (first name).
-                surname:
-                  type: string
-                  description: The user's surname (last name).
                 displayName:
                   type: string
-                  description: The name displayed in the address book for the user.
-                jobTitle:
+                  description: The name of the group.
+                description:
                   type: string
-                  description: The user's job title.
+                  description: The description of the group.
               additionalProperties: false
       responses:
-        204:
+        200:
           description: No content. The update was successful.
-          x-ms-response:
-            static_template:
-              $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
-              type: "AdaptiveCard"
-              version: "1.5"
-              body:
-                - type: "TextBlock"
-                  text: "Profile Updated"
-                  weight: "Bolder"
-                  size: "Medium"
-                - type: "FactSet"
-                  facts:
-                    - title: "Display Name"
-                      value: "${displayName}"
-                    - title: "First Name"
-                      value: "${givenName}"
-                    - title: "Last Name"
-                      value: "${surname}"
-                    - title: "Job Title"
-                      value: "${jobTitle}"
-              actions:
-                - type: "Action.OpenUrl"
-                  title: "View Profile"
-                  url: "https://myaccount.microsoft.com"
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /groups/{group-id}/members/$ref:
+    post:
+      tags:
+        - groups
+      summary: Add member to group
+      description: |
+        Add a user to the group's members.
+        **To use this endpoint by group name, first resolve the group ID using `/groups?$filter=displayName eq '{name}'`.**
+      operationId: addGroupMember
+      parameters:
+        - name: group-id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '@odata.id':
+                  type: string
+                  description: The URI of the user to add (e.g., https://graph.microsoft.com/v1.0/users/{user-id})
+      responses:
+        200:
+          description: Member added successfully.
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /groups/{group-id}/members/{member-id}/$ref:
+    delete:
+      tags:
+        - groups
+      summary: Remove member from group
+      description: |
+        Remove a user from the group's members.
+        **To use this endpoint by group name, first resolve the group ID using `/groups?$filter=displayName eq '{name}'`.**
+      operationId: removeGroupMember
+      parameters:
+        - name: group-id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: member-id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Member removed successfully.
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   /me/transitiveMemberOf:
     get:
       tags:
@@ -591,6 +639,153 @@ paths:
                               value: "${value[0].objectType}"
                             - title: "Description"
                               value: "${value[0].description}"
+  /groups:
+    get:
+      tags:
+        - groups
+      summary: List groups
+      description: Get a list of groups in the organization.
+      operationId: listGroups
+      parameters:
+        - name: $filter
+          in: query
+          description: Filter groups by display name
+          schema:
+            type: string
+            example: "displayName eq 'Retail'"
+        - name: $select
+          in: query
+          description: Select specific properties
+          schema:
+            type: string
+            example: "id,displayName,description"
+        - name: $top
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            example: 10
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of group
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: group
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The unique identifier for the group.
+                        displayName:
+                          type: string
+                          description: The display name of the group.
+                        description:
+                          type: string
+                          description: The description of the group.
+                        mail:
+                          type: string
+                          description: The email address of the group.
+                        groupTypes:
+                          type: array
+                          items:
+                            type: string
+                          description: The group types.
+                        mailEnabled:
+                          type: boolean
+                          description: Whether the group is mail enabled.
+                        securityEnabled:
+                          type: boolean
+                          description: Whether the group is security enabled.
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+              x-ms-response:
+                static_template:
+                  $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
+                  type: "AdaptiveCard"
+                  version: "1.5"
+                  body:
+                    - type: "TextBlock"
+                      text: "Groups Found"
+                      weight: "Bolder"
+                      size: "Medium"
+                    - type: "Container"
+                      items:
+                        - type: "FactSet"
+                          facts:
+                            - title: "Group Name"
+                              value: "${value[0].displayName}"
+                            - title: "Group ID"
+                              value: "${value[0].id}"
+                            - title: "Description"
+                              value: "${value[0].description}"
+                            - title: "Email"
+                              value: "${value[0].mail}"
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /groups/{group-id}/members:
+    get:
+      tags:
+        - groups
+      summary: List group members
+      description: |
+        Get a list of members in a specific group.
+        **To use this endpoint by group name, first resolve the group ID using `/groups?$filter=displayName eq '{name}'`.**
+      operationId: listGroupMembers
+      parameters:
+        - name: group-id
+          in: path
+          required: true
+          description: The unique identifier of the group.
+          schema:
+            type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          schema:
+            type: string
+            example: "id,displayName,mail"
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of user
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: user
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        displayName:
+                          type: string
+                        mail:
+                          type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
 
 
 components:
