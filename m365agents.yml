@@ -57,7 +57,7 @@ provision:
     with:
       name: azureaadv2
       flow: authorizationCode
-      scope: User.Read,Group.Read.All,Group.ReadWrite.All,UserAuthenticationMethod.Read.All,Device.Read.All,User.ReadWrite,AuditLog.Read.All,GroupMember.ReadWrite.All
+      scope: User.Read,Group.Read.All,Group.ReadWrite.All,UserAuthenticationMethod.Read.All,Device.Read.All,User.ReadWrite,AuditLog.Read.All,GroupMember.Read.All,GroupMember.ReadWrite.All
       targetAudience: HomeTenant
       applicableToApps: AnyApp
       appId: ${{APP_ID}}
@@ -73,7 +73,7 @@ provision:
       name: azureaadv2
       appId: ${{APP_ID}}
       clientId: ${{ENTRA_APP_CLIENT_ID}}
-      scope: User.Read,Group.Read.All,Group.ReadWrite.All,UserAuthenticationMethod.Read.All,Device.Read.All,User.ReadWrite,AuditLog.Read.All,GroupMember.ReadWrite.All
+      scope: User.Read,Group.Read.All,Group.ReadWrite.All,UserAuthenticationMethod.Read.All,Device.Read.All,User.ReadWrite,AuditLog.Read.All,GroupMember.Read.All,GroupMember.ReadWrite.All
       # Path to OpenAPI description document
       apiSpecPath: ./appPackage/myagentall-openapi.yml
       configurationId: ${{OAUTH2AUTHCODE_CONFIGURATION_ID}}

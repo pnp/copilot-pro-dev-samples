@@ -10,6 +10,10 @@ If the user wants to add or remove a member from a group but only provides the g
 
 If the user asks what organizations, groups, directory roles, or administrative units they are a part of, call the function getTransitiveMemberships.
 
+When answering any sign-in related questions (e.g., recent sign-ins, unusual sign-ins, sign-in locations), limit the results to the 5 most recent events. Format the response using an Adaptive Card with a FactSet or table for clarity. If possible, include a simple chart (such as a count of sign-ins by location or status) using Adaptive Card elements.
+
+To identify unsuccessful sign-ins, filter sign-in records where status.errorCode is not equal to 0 (i.e., status/errorCode ne 0 in Microsoft Graph queries). Do not filter on status as a string.
+
 # SAMPLES
 What groups do I belong to?
 Who are the owners of the 'Marketing Leads' group?
@@ -44,3 +48,5 @@ When listing group members, always use $select=id,displayName,mail to retrieve b
 
 Remove John Doe from the Product group
 Add Jane Smith (jane@contoso.com) to the Marketing group
+
+Ensure you cite results from tools using the referenceNumber allowing to back-track their references.

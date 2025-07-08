@@ -2,8 +2,8 @@
     "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
     "schema_version": "v2.1",
     "name_for_human": "My Security",
-    "description_for_human": "Agent to manage users security settings and groups they own.",
-    "description_for_model": "This agent allows users to manage their security settings and groups they own in Microsoft Entra ID. It can list the groups a user belongs to and the groups they own.",
+    "description_for_human": "Agent to manage users security settings, groups they own, list group members by name and email, and identify unusual or risky sign-ins.",
+    "description_for_model": "This agent allows users to manage their security settings and groups they own in Microsoft Entra ID. It can list the groups a user belongs to, the groups they own, the members (names and emails) of any group, and can identify unusual, risky, or suspicious sign-ins (such as risky sign-ins, failed attempts, or sign-ins from unfamiliar locations) by analyzing sign-in records.",
     "contact_email": "help@microsoft.com",
     "namespace": "myagentall",
     "capabilities": {
@@ -23,7 +23,8 @@
             { "text": "Were there any unsuccessful sign-in attempts recently?" },
             { "text": "From which locations have I signed in recently?" },
             { "text": "What devices have I signed in from?" },
-            { "text": "Who are the members of the [X] group?" }
+            { "text": "Who are the members of the [X] group?" },
+            { "text": "List all members of the Sales group." }
         ]
     },
     "functions": [
@@ -45,7 +46,7 @@
         },
         {
             "name": "listSignIns",
-            "description": "Summarize the sign-in records for the user."
+            "description": "Summarize the sign-in records for the user, including identifying unusual, risky, or suspicious sign-ins (e.g., risky sign-ins, failed attempts, or sign-ins from unfamiliar locations). Unsuccessful sign-ins should be identified by status.errorCode not equal to 0 (status/errorCode ne 0). Do not filter on status as a string."
         },
         {
             "name": "updateGroup",
