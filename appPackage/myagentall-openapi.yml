@@ -515,7 +515,7 @@ paths:
               additionalProperties: false
       responses:
         200:
-          description: No content. The update was successful.
+          description: The update was successful.
         default:
           description: error
           content:
