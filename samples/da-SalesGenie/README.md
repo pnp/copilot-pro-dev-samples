@@ -4,7 +4,7 @@
 
 Sales Genie is a Declarative Agent designed to help sales executives get instant, actionable insights from their Salesforce CRM, Microsoft 365, and the web — all via natural language. Whether you're preparing for an upcoming customer meeting, reviewing your opportunity pipeline, or logging call notes into Salesforce, Sales Genie acts as a smart assistant that streamlines your daily sales activities. It showcases complex workflows directly using instructions.
 
-![Sales Genie Video](./assets/sales-genie-video.mp4)
+![Sales Genie Video](./assets/sales-genie-video.gif)
 
 ## Features
 

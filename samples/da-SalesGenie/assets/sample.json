@@ -32,6 +32,12 @@
       {
         "type": "image",
         "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SalesGenie/assets/sales-genie-video.gif",
+        "alt": "Sales Genie"
+      },
+      {
+        "type": "image",
+        "order": 100,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SalesGenie/assets/prompt-meeting.png",
         "alt": "Help me prepare for customer meeting"
       },
