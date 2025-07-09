@@ -514,8 +514,12 @@ paths:
                   description: The description of the group.
               additionalProperties: false
       responses:
-        200:
-          description: The update was successful.
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
         default:
           description: error
           content:
