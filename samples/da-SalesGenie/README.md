@@ -2,7 +2,7 @@
 
 ## Summary
 
-Sales Genie is a Declarative Agent designed to help sales executives get instant, actionable insights from their Salesforce CRM, Microsoft 365, and the web — all via natural language. Whether you're preparing for an upcoming customer meeting, reviewing your opportunity pipeline, or logging call notes into Salesforce, Sales Genie acts as a smart assistant that streamlines your daily sales activities.
+Sales Genie is a Declarative Agent designed to help sales executives get instant, actionable insights from their Salesforce CRM, Microsoft 365, and the web — all via natural language. Whether you're preparing for an upcoming customer meeting, reviewing your opportunity pipeline, or logging call notes into Salesforce, Sales Genie acts as a smart assistant that streamlines your daily sales activities. It showcases complex workflows directly using instructions.
 
 ![Sales Genie Video](./assets/sales-genie-video.mp4)
 
@@ -54,7 +54,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-github) then unzip it)
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SalesGenie) then unzip it)
 * Open the Agents Toolkit extension and sign in to your Microsoft 365 tenant with Microsoft 365 Copilot
 * 
 * Select **Preview in Copilot (Edge)** from the launch configuration dropdown
@@ -113,7 +113,7 @@ In your OpenAPI spec [`appPackage/apiSpecificationFile/openapi.yaml`](appPackage
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-typespec-github%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-SalesGenie%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
@@ -123,4 +123,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-typespec-github)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-SalesGenie)
