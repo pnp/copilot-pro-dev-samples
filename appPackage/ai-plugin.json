@@ -1,7 +1,7 @@
 {
     "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
     "schema_version": "v2.1",
-    "name_for_human": "My Security",
+    "name_for_human": "My Security (1.0.2)",
     "description_for_human": "Agent to manage users security settings, groups they own, list group members by name and email, and identify unusual or risky sign-ins.",
     "description_for_model": "This agent allows users to manage their security settings and groups they own in Microsoft Entra ID. It can list the groups a user belongs to, the groups they own, the members (names and emails) of any group, and can identify unusual, risky, or suspicious sign-ins (such as risky sign-ins, failed attempts, or sign-ins from unfamiliar locations) by analyzing sign-in records.",
     "contact_email": "help@microsoft.com",
@@ -24,7 +24,9 @@
             { "text": "From which locations have I signed in recently?" },
             { "text": "What devices have I signed in from?" },
             { "text": "Who are the members of the [X] group?" },
-            { "text": "List all members of the Sales group." }
+            { "text": "List all members of the Sales group." },
+            { "text": "Create a new group for my team." },
+            { "text": "Add John Doe to the Marketing group." }
         ]
     },
     "functions": [
@@ -71,6 +73,18 @@
         {
             "name": "listGroupMembers",
             "description": "List the members of a specific group by group ID."
+        },
+        {
+            "name": "listUsers",
+            "description": "List users in the organization, optionally filtered by display name or email. Use this to resolve user names or emails to user IDs."
+        },
+        {
+            "name": "createGroup",
+            "description": "Create a new Microsoft 365 group with display name, description, policy, sensitivity, mailEnabled, securityEnabled, and groupTypes. Presents an Adaptive Card for group creation."
+        },
+        {
+            "name": "getBitlockerRecoveryKey",
+            "description": "Retrieve the properties and (optionally) the actual key of a BitLocker recovery key by its ID. To get the key value, use the $select=key query parameter."
         }
     ],
     "runtimes": [
@@ -94,7 +108,10 @@
                 "removeGroupMember",
                 "getTransitiveMemberships",
                 "listGroups",
-                "listGroupMembers"
+                "listGroupMembers",
+                "listUsers",
+                "createGroup",
+                "getBitlockerRecoveryKey"
             ]
         }
     ]

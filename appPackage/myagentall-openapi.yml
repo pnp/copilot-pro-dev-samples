@@ -44,85 +44,6 @@ paths:
                     nullable: true
                 additionalProperties:
                   type: object
-              x-ms-response:
-                static_template:
-                  $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
-                  type: "AdaptiveCard"
-                  version: "1.5"
-                  body:
-                    - type: "TextBlock"
-                      text: "Your Groups"
-                      weight: "Bolder"
-                      size: "Medium"
-                    - type: "Container"
-                      items:
-                        - type: "FactSet"
-                          facts:
-                            - title: "Group Name"
-                              value: "${value[0].displayName}"
-                            - title: "Description"
-                              value: "${value[0].description}"
-                            - title: "Owner"
-                              value: "${value[0].owner.displayName}"
-                            - title: "Members"
-                              value: "${value[0].memberCount}"
-                            - title: "Access Type"
-                              value: "${value[0].accessType}"
-                            - title: "Last Updated"
-                              value: "${value[0].lastUpdated}"
-                  actions:
-                    - type: "Action.OpenUrl"
-                      title: "View in Portal"
-                      url: "https://aka.ms/MyGroup"
-        default:
-          description: error
-          content:
-            application/json:
-              schema:
-                required:
-                  - error
-                type: object
-                properties:
-                  error:
-                    required:
-                      - code
-                      - message
-                    type: object
-                    properties:
-                      code:
-                        type: string
-                      message:
-                        type: string
-                        x-ms-primary-error-message: true
-                      target:
-                        type: string
-                        nullable: true
-                      details:
-                        type: array
-                        items:
-                          required:
-                            - code
-                            - message
-                          type: object
-                          properties:
-                            code:
-                              type: string
-                            message:
-                              type: string
-                            target:
-                              type: string
-                              nullable: true
-                          additionalProperties:
-                            type: object
-                      innerError:
-                        type: object
-                        additionalProperties:
-                          type: object
-                        description: The structure of this object is service-specific
-                    additionalProperties:
-                      type: object
-                additionalProperties:
-                  type: object
   /me/ownedObjects/microsoft.graph.group:
     get:
       tags:
@@ -262,6 +183,48 @@ paths:
                 properties:
                   value:
                     type: array
+    post:
+      tags:
+        - me.authentication
+      summary: Add an authentication method
+      description: Add a new authentication method for the signed-in user. The request body must specify the type and value (e.g., phone, email, etc.).
+      operationId: me_authentication_AddMethod
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: The type of authentication method (e.g., phone, email, fido2, etc.).
+                value:
+                  type: string
+                  description: The value for the method (e.g., phone number, email address, etc.).
+              required:
+                - type
+                - value
+      responses:
+        '201':
+          description: Authentication method added successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  type:
+                    type: string
+                  value:
+                    type: string
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   /me/ownedDevices:
     get:
       tags:
@@ -352,30 +315,6 @@ paths:
       responses:
         204:
           description: No content. The update was successful.
-          x-ms-response:
-            static_template:
-              $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
-              type: "AdaptiveCard"
-              version: "1.5"
-              body:
-                - type: "TextBlock"
-                  text: "Profile Updated"
-                  weight: "Bolder"
-                  size: "Medium"
-                - type: "FactSet"
-                  facts:
-                    - title: "Display Name"
-                      value: "${displayName}"
-                    - title: "First Name"
-                      value: "${givenName}"
-                    - title: "Last Name"
-                      value: "${surname}"
-                    - title: "Job Title"
-                      value: "${jobTitle}"
-              actions:
-                - type: "Action.OpenUrl"
-                  title: "View Profile"
-                  url: "https://myaccount.microsoft.com"
   /auditLogs/signIns:
     get:
       tags:
@@ -458,30 +397,6 @@ paths:
                   '@odata.nextLink':
                     type: string
                     nullable: true
-              x-ms-response:
-                static_template:
-                  $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
-                  type: "AdaptiveCard"
-                  version: "1.5"
-                  body:
-                    - type: "TextBlock"
-                      text: "Recent Sign-ins"
-                      weight: "Bolder"
-                      size: "Medium"
-                    - type: "Container"
-                      items:
-                        - type: "FactSet"
-                          facts:
-                            - title: "App"
-                              value: "${value[0].appDisplayName}"
-                            - title: "Time"
-                              value: "${value[0].createdDateTime}"
-                            - title: "IP"
-                              value: "${value[0].ipAddress}"
-                            - title: "City"
-                              value: "${value[0].location.city}"
-                            - title: "Status"
-                              value: "${value[0].status.failureReason}"
   /groups/{group-id}:
     patch:
       tags:
@@ -514,18 +429,18 @@ paths:
                   description: The description of the group.
               additionalProperties: false
       responses:
-        '200':
+         204:
           description: Successful response
           content:
             application/json:
               schema:
                 type: string
-        default:
-          description: error
+         200:
+          description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+                type: string
   /groups/{group-id}/members/$ref:
     post:
       tags:
@@ -582,7 +497,12 @@ paths:
             type: string
       responses:
         200:
-          description: Member removed successfully.
+          description: Updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Empty response on success.
         default:
           description: error
           content:
@@ -623,26 +543,6 @@ paths:
                   '@odata.nextLink':
                     type: string
                     nullable: true
-              x-ms-response:
-                static_template:
-                  $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
-                  type: "AdaptiveCard"
-                  version: "1.5"
-                  body:
-                    - type: "TextBlock"
-                      text: "You're Part of These Organizations"
-                      weight: "Bolder"
-                      size: "Medium"
-                    - type: "Container"
-                      items:
-                        - type: "FactSet"
-                          facts:
-                            - title: "Group"
-                              value: "${value[0].displayName}"
-                            - title: "Type"
-                              value: "${value[0].objectType}"
-                            - title: "Description"
-                              value: "${value[0].description}"
   /groups:
     get:
       tags:
@@ -738,6 +638,78 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    post:
+      tags:
+        - groups
+      summary: Create a new group
+      description: Create a new Microsoft 365 group with display name, description, policy, sensitivity, mailEnabled, securityEnabled, and groupTypes.
+      operationId: createGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  description: The name of the group.
+                description:
+                  type: string
+                  description: The description of the group.
+                policy:
+                  type: string
+                  description: The group join policy.
+                  enum:
+                    - This group is open to join for all users
+                    - This group requires owner approval
+                    - Only the owner of this group and admins can add members
+                sensitivity:
+                  type: string
+                  description: The sensitivity of the group.
+                  enum:
+                    - Public
+                mailEnabled:
+                  type: boolean
+                  description: Whether the group is mail enabled. Required for Microsoft 365 groups.
+                securityEnabled:
+                  type: boolean
+                  description: Whether the group is security enabled. Required for Microsoft 365 groups.
+                groupTypes:
+                  type: array
+                  items:
+                    type: string
+                  description: The group types. For Microsoft 365 groups, use ["Unified"].
+              required:
+                - displayName
+                - policy
+                - sensitivity
+                - mailEnabled
+                - securityEnabled
+      responses:
+        201:
+          description: Group created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  displayName:
+                    type: string
+                  description:
+                    type: string
+                  policy:
+                    type: string
+                  sensitivity:
+                    type: string
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
   /groups/{group-id}/members:
     get:
       tags:
@@ -790,6 +762,111 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /users:
+    get:
+      tags:
+        - users
+      summary: List users
+      description: Get a list of users in the organization, optionally filtered by display name or email.
+      operationId: listUsers
+      parameters:
+        - name: $filter
+          in: query
+          description: Filter users by display name or email
+          schema:
+            type: string
+            example: "displayName eq 'John Doe' or mail eq 'john@contoso.com'"
+        - name: $select
+          in: query
+          description: Select specific properties
+          schema:
+            type: string
+            example: "id,displayName,mail"
+        - name: $top
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            example: 10
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of user
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: user
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The unique identifier for the user.
+                        displayName:
+                          type: string
+                          description: The display name of the user.
+                        mail:
+                          type: string
+                          description: The email address of the user.
+                        userPrincipalName:
+                          type: string
+                          description: The user principal name of the user.
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+
+  /informationProtection/bitlocker/recoveryKeys/{bitlockerRecoveryKeyId}:
+    get:
+      tags:
+        - bitlocker
+      summary: Get BitLocker recovery key
+      description: Retrieve the properties and relationships of a BitLocker recovery key object. To include the actual recovery key value, use the $select=key query parameter. See https://learn.microsoft.com/en-us/graph/api/bitlockerrecoverykey-get?view=graph-rest-1.0&tabs=http
+      operationId: getBitlockerRecoveryKey
+      parameters:
+        - name: bitlockerRecoveryKeyId
+          in: path
+          required: true
+          description: The unique identifier of the BitLocker recovery key.
+          schema:
+            type: string
+        - name: $select
+          in: query
+          required: false
+          description: Use $select=key to include the actual recovery key value in the response.
+          schema:
+            type: string
+            example: key
+      responses:
+        200:
+          description: BitLocker recovery key object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  createdDateTime:
+                    type: string
+                  volumeType:
+                    type: string
+                  deviceId:
+                    type: string
+                  key:
+                    type: string
+                    description: The actual BitLocker recovery key (only returned if $select=key is used)
+      security:
+        - azureaadv2: ["BitlockerKey.ReadBasic.All", "BitlockerKey.Read.All"]
 
 
 components:
