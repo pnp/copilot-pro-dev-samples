@@ -1,5 +1,3 @@
-<img width="444" height="464" alt="image" src="https://github.com/user-attachments/assets/c723ea4e-e715-40dc-adfd-8dd3e8fa5323" /># Sales Genie Declarative Agent
-
 ## Summary
 
 IT Helpdesk Agent is a Declarative Agent designed to assist employees with IT issues through (a) guided, conversational troubleshooting, (b) outage detection, and ticket creation for escalation – powered through ServiceNow offerings (Knowledge, Catalogue and Tickets). 
