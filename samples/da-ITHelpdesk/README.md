@@ -6,9 +6,6 @@ Goals: IT helpdesk Agent has been created with two key objectives,
 1.	Reduce overall number of tickets raised by **offering easy-to-follow, self-serve troubleshooting guidance** to employees
 2.	Improve SLA to ticket resolution by **capturing first-level debug information** up front, reducing back and forth
 
-
-![Sales Genie Video](./assets/sales-genie-video.gif)
-
 ## Features
 
 This sample illustrates the following concepts:
