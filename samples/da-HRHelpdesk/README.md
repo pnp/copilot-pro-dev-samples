@@ -1,59 +1,110 @@
-# Overview of the basic declarative agent with API plugin template
+## Summary
 
-## Build a basic declarative agent with API plugin
+HR Helpdesk is a template Declarative Agent designed to help employees troubleshoot their issues using insights from ServiceNow KB, and if not successful create a case in the right Centre of Excellence/table without much burden on the end user.
+  Goals:
+1.	Help employees resolve their HR issues via self serve
+2.	If necessary, help them create a ServiceNow case with minimal effort.
 
-With the declarative agent, you can build a custom version of Copilot that can be used for specific scenarios, such as for specialized knowledge, implementing specific processes, or simply to save time by reusing a set of AI prompts. For example, a grocery shopping Copilot declarative agent can be used to create a grocery list based on a meal plan that you send to Copilot.
+## Features
 
-You can extend declarative agents using plugins to retrieve data and execute tasks on external systems. A declarative agent can utilize multiple plugins at the same time.
+This sample illustrates the following concepts:
 
-![image](https://github.com/user-attachments/assets/9939972e-0449-410c-b237-d9d748cd6628)
-
-
-## Get started with the template
-
-> **Prerequisites**
->
-> To run this app template in your local dev machine, you will need:
->
-> - [Node.js](https://nodejs.org/), supported versions: 18, 20, 22
-> - A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts).
-> - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
-> - [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
-
-1. First, select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. Create app by clicking `Provision` in "Lifecycle" section.
-4. Select `Preview in Copilot (Edge)` or `Preview in Copilot (Chrome)` from the launch configuration dropdown.
-5. Select your declarative agent from the `Copilot` app.
-6. Send a prompt.
+- 🧭 Guide employees through common HR issues with conversational, easy-to-follow resolutions that reduce downtime
+- 💡 Help users self-resolve problems in Accounts, Payroll, Benefits, Tax, Leave, Onboarding, or any other general HR support needed
+- 📝 Create service /incident tickets in the correct Centre of Excellence or ServiceNow table (auto classification) with a clear summary of the issue, and relevant first-level debug information — reducing back-and-forth and enabling faster, more accurate resolution by Support teams.
 
 
+## Contributors
 
-## What's included in the template
+* [Sébastien Levert](https://github.com/sebastienlevert)
+* [Akhil Sai Valluri](https://github.com/akhilsaivalluri)
+* [Suryamanohar Mallela](https://github.com/SuryaMSFT)
 
-| Folder       | Contents                                     |
-| ------------ | -------------------------------------------- |
-| `.vscode`    | VSCode files for debugging                   |
-| `appPackage` | Templates for the application manifest, the plugin manifest and the API specification |
-| `env`        | Environment files                            |
+## Version history
 
-The following files can be customized and demonstrate an example implementation to get you started.
+Version|Date|Comments
+-------|----|--------
+1.0|July 25, 2025|Initial release
 
-| File                                 | Contents                                                                       |
-| ------------------------------------ | ------------------------------------------------------------------------------ |
-| `appPackage/declarativeCopilot.json` | Define the behaviour and configurations of the declarative agent.            |
-| `appPackage/manifest.json`           | application manifest that defines metadata for your declarative agent. |
+## Prerequisites
 
-The following are Microsoft 365 Agents Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Microsoft 365 Agents Toolkit works.
+* Microsoft 365 tenant with Microsoft 365 Copilot
+* [Visual Studio Code](https://code.visualstudio.com/) with the [Microsoft 365 Agents Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) extension
+* [Node.js v20](https://nodejs.org/en/download/package-manager)
+* A Salesforce account with API access
 
-| File                 | Contents                                                                                                                                  |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `m365agents.yml`       | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
+## Example Prompts
 
-## Addition information and references
+1. I didn’t get my salary credit for last month
+   <img width="841" height="599" alt="image" src="https://github.com/user-attachments/assets/fcf90391-8728-4331-8ff8-633fa844135b" />
+   <img width="840" height="536" alt="image" src="https://github.com/user-attachments/assets/27a4be9b-5756-43fd-9902-bf15187f30d1" />
+   <img width="841" height="419" alt="image" src="https://github.com/user-attachments/assets/3ef28fb8-42e3-4f86-afa7-d6a59818be97" />
 
-- [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
-- [Extend Microsoft 365 Copilot](https://aka.ms/teamsfx-copilot-plugin)
-- [Message extensions for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-message-extension-bot)
-- [Microsoft Copilot connectors for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-graph-connector)
-- [Microsoft 365 Copilot extensibility samples](https://learn.microsoft.com/microsoft-365-copilot/extensibility/samples)
+2. I’m travelling for work. However, the manager information in the Business Travel letter tool is incorrect.
+   <img width="948" height="581" alt="image" src="https://github.com/user-attachments/assets/9cbd513e-7b26-4568-8ecf-6d0faf847928" />
+   <img width="849" height="580" alt="image" src="https://github.com/user-attachments/assets/d7f8a19f-5c2c-4723-8398-cdc4b17fceee" />
+   <img width="867" height="451" alt="image" src="https://github.com/user-attachments/assets/9e0c1930-0a67-47bd-a102-081c68ee922f" />
+   <img width="851" height="468" alt="image" src="https://github.com/user-attachments/assets/d8525ca9-c21c-45cc-8788-49a320d9ef69" />
+
+## Minimal path to awesome
+
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ITHelpdesk) then unzip it)
+* Open the Agents Toolkit extension and sign in to your Microsoft 365 tenant with Microsoft 365 Copilot
+* Select **Preview in Copilot (Edge)** from the launch configuration dropdown
+
+## Configuration
+
+### ServiceNow Plugin Configuration 
+
+In your OpenAPI spec [`appPackage/apiSpecificationFile/openapi.yaml`](appPackage/apiSpecificationFile/openapi.yaml):
+
+* Update the server URL to point to your ServiceNow instance
+<img width="738" height="175" alt="image" src="https://github.com/user-attachments/assets/f41af683-6257-41e5-af83-d5170f3ba749" />
+
+* Point authorization, token and refresh urls to your ServiceNow instance
+<img width="1034" height="272" alt="image" src="https://github.com/user-attachments/assets/77f37046-aff4-47f2-be6d-1995bec79c11" />
+
+* In your [`ai-plugin.json`](ai-plugin.json) (plugin manifest), go to the `response_semantics` section for each function. You can customize the layout and data bindings to create richer, domain-specific views. Ensure all links point to your ServiceNow instance.
+<img width="619" height="370" alt="image" src="https://github.com/user-attachments/assets/4b2751f9-b2ef-4322-ab10-6f310e254cd9" />
+
+
+### ServiceNow Authentication Setup
+
+1. Log into your ServiceNow account and go to Application Registry under System OAuth 
+   <img width="842" height="432" alt="image" src="https://github.com/user-attachments/assets/e0da4532-556e-4099-994e-0b253d2e72cb" />
+   <img width="904" height="288" alt="image" src="https://github.com/user-attachments/assets/54fa6f97-435c-4c6b-9998-491cfa11a5e4" />
+
+2. Create a new registry. Select option “Create an OAuth API endpoint for external clients”
+   <img width="1034" height="305" alt="image" src="https://github.com/user-attachments/assets/c258023e-d98b-45d8-9df0-e34027ecad43" />
+   
+3. Add callback URL as https://teams.microsoft.com/api/platform/v1.0/oAuthRedirect. You can leave other settings as defaults or customize it as per your needs. Hit Submit.
+   <img width="1034" height="513" alt="image" src="https://github.com/user-attachments/assets/3820b77a-f35d-4752-95a9-8ee2c46b1ec0" />
+
+4. After Submit, your app will show in the list. Click on it to get access to Client secret
+   <img width="1034" height="119" alt="image" src="https://github.com/user-attachments/assets/5f939dc7-7ce0-4064-8865-ae3f588ed8b8" />
+
+5. Copy Client ID and Client Secret. You will require it in step 6.
+   <img width="710" height="307" alt="image" src="https://github.com/user-attachments/assets/d33733f3-797b-4692-9952-48cab9067e81" />
+
+6. Setup Microsoft Graph Connector to add ServiceNow knowledge – This will allow agent to provide troubleshooting guidance based on your ServiceNow KB articles. Follow the steps in https://learn.microsoft.com/en-us/microsoftsearch/servicenow-knowledge-connector . After you setup Microsoft Graph Connector to add ServiceNow knowledge, add the connection IDs in the Agent file.
+   <img width="719" height="295" alt="image" src="https://github.com/user-attachments/assets/dae6d7ed-0b4d-44bc-9385-7de198f44c5f" />
+   
+7. Provision Key & Secret in Copilot: When provisioning the Declarative Agent via the Teams Toolkit, you’ll be prompted to enter the Client ID (Key) and Client Secret. Use the values from the Salesforce OAuth app you created.
+   <img width="940" height="627" alt="image" src="https://github.com/user-attachments/assets/41160786-6c83-4950-8452-029ca559d5df" />
+
+
+## Help
+
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-SalesGenie%22) to see if anybody else is having the same issues.
+
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-SalesGenie)
