@@ -13,11 +13,11 @@ Goals: IT helpdesk Agent has been created with two key objectives,
 
 This sample illustrates the following concepts:
 
-•	🧭 Guide employees through common IT issues with conversational, easy-to-follow resolutions that reduce downtime 
-•	⚠️ Proactively inform users about service outages, minimizing repeated tickets and unnecessary troubleshooting
-•	💡 Help users self-resolve problems like VPN errors, login failures, password resets, and software installation using relevant resolutions from Service Now 
-•	📝 Create service /incident tickets with the correct category and subcategory (auto-classification), a clear summary of the issue, and relevant first-level debug information — reducing back-and-forth and enabling faster, more accurate resolution by IT teams.
-•	🎫 Help users track the status of their support tickets, view recent updates, and stay informed — improving transparency and reducing the need to follow up manually 
+- 🧭 Guide employees through common IT issues with conversational, easy-to-follow resolutions that reduce downtime
+- ⚠️ Proactively inform users about service outages, minimizing repeated tickets and unnecessary troubleshooting
+- 💡 Help users self-resolve problems like VPN errors, login failures, password resets, and software installation using relevant resolutions from Service Now
+- 📝 Create service /incident tickets with the correct category and subcategory (auto-classification), a clear summary of the issue, and relevant first-level debug information — reducing back-and-forth and enabling faster, more accurate resolution by IT teams.
+- 🎫 Help users track the status of their support tickets, view recent updates, and stay informed — improving transparency and reducing the need to follow up manually 
 
 ## Contributors
 
