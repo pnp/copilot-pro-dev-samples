@@ -1,0 +1,76 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
+    "schema_version": "v2.1",
+    "name_for_human": "Table API - Subset",
+    "description_for_human": "Allows you to perform create, read, update and delete (CRUD) operations on existing tables",
+    "description_for_model": "Allows you to perform create, read, update and delete (CRUD) operations on existing tables",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "hrhelpdeskdatemplate",
+    "capabilities": {
+        "conversation_starters": [
+            {
+                "text": "Retrieve centres of excellence and HR Service deta"
+            },
+            {
+                "text": "Create a record in the appropriate table. Get the "
+            },
+            {
+                "text": "Retrieve a record"
+            },
+            {
+                "text": "Modify a record"
+            },
+            {
+                "text": "Delete a record"
+            },
+            {
+                "text": "Update a record"
+            }
+        ]
+    },
+    "functions": [
+        {
+            "name": "api_now_table_item_get",
+            "description": "Retrieve centres of excellence and HR Service details for identifying the right path/table to create a new case"
+        },
+        {
+            "name": "api_now_table_item_item_delete",
+            "description": "Delete a record"
+        },
+        {
+            "name": "api_now_table_item_item_get",
+            "description": "Retrieve a record"
+        },
+        {
+            "name": "api_now_table_item_item_patch",
+            "description": "Update a record"
+        },
+        {
+            "name": "api_now_table_item_item_put",
+            "description": "Modify a record"
+        },
+        {
+            "name": "api_now_table_item_post",
+            "description": "Create a record in the appropriate table. Get the tableName where new record is created from service_table field of api_now_table_item_get operation"
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "api_now_table_item_get",
+                "api_now_table_item_post",
+                "api_now_table_item_item_get",
+                "api_now_table_item_item_put",
+                "api_now_table_item_item_delete",
+                "api_now_table_item_item_patch"
+            ]
+        }
+    ]
+}
