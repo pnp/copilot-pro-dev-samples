@@ -1,0 +1,58 @@
+[
+  {
+    "name": "da-PnPPowerShell-assistant",
+    "source": "pnp",
+    "title": "PnP PowerShell Assistant Agent",
+    "shortDescription": "This declarative agent, named PnP PowerShell Assistant helps users creating PnP PowerShell cmdlets",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PnPPowerShell-assistant",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PnPPowerShell-assistant",
+    "longDescription": [
+      "This declarative agent, named PnP PowerShell Assistant helps users creating PnP PowerShell cmdlets to perform specific actions. The agent is design to provide a PowerShell cmdlet that you can easily copy and paste to your PowerShell console."
+    ],
+    "creationDateTime": "2025-05-30",
+    "updateDateTime": "2025-05-30",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "Json"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-PnPPowerShell-assistant/assets/PnPPowerShellAssistant.png",
+        "alt": "Declarative agent for PnP PowerShell Assistant"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "a1mery",
+        "pictureUrl": "https://github.com/a1mery.png",
+        "name": "Aimery Thomas"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      }
+    ]
+  }
+]
