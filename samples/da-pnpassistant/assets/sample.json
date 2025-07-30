@@ -1,0 +1,58 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-pnpassistant",
+    "source": "pnp",
+    "title": "Declarative Agent - PnP Controls Assistant",
+    "shortDescription": "This declarative agent is designed to assist users in finding more information about the PnP reusable React controls.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-pnpassistant",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-pnpassistant",
+    "longDescription": [
+      "This declarative agent is designed to assist users in finding more information about the PnP reusable React controls. It provides a user-friendly interface for users to ask questions and receive relevant answers based on the information available in the PnP documentation."
+    ],
+    "creationDateTime": "2025-05-18",
+    "updateDateTime": "2025-05-18",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "Json"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "no"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-pnpassistant/assets/PnP%20Assistant%20-%20suggest%20control.gif",
+        "alt": "Declarative agent for PnP Controls Assistant"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "GuidoZam",
+        "pictureUrl": "https://github.com/GuidoZam.png",
+        "name": "Guido Zambarda"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      }
+    ]
+  }
+]
