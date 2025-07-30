@@ -10,6 +10,16 @@ A Microsoft Teams app that helps Product Managers write and manage product speci
 - Collaborative editing capabilities
 - Version control for specifications
 
+## Contributors
+
+* [Sid Mathur](https://github.com/mathursrus)
+
+## Version history
+
+Version|Date|Comments
+-------|----|--------
+1.0 | April 22, 2025 | Initial release
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (version 16 or higher)
@@ -17,7 +27,7 @@ A Microsoft Teams app that helps Product Managers write and manage product speci
 - [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software)
 - [Visual Studio Code](https://code.visualstudio.com/) (recommended)
 
-## Getting Started
+## Minimal path to awesome
 
 1. Clone the repository
 2. Navigate to the `da-PMSpecWriter` directory
@@ -55,3 +65,9 @@ Please read [CONTRIBUTING.md](../../CONTRIBUTING.md) for details on our code of 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](../../LICENSE) file for details. 
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+![](https://m365-visitor-stats.azurewebsites.net//copilot-pro-dev-samples/samples/da-PMSpecWriter)
