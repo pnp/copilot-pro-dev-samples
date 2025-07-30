@@ -2,7 +2,7 @@
   {
     "name": "pnp-copilot-pro-dev-da-PMSpecReviewer",
     "source": "pnp",
-    "title": "PM Spec Writer",
+    "title": "PM Spec Reviewer",
     "shortDescription": "A Microsoft Teams app that helps Product Managers review product specifications using AI assistance.",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PMSpecReviewer",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PMSpecReviewer",
