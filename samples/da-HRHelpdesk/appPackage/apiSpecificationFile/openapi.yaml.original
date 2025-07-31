@@ -1,0 +1,339 @@
+openapi: 3.0.4
+info:
+  title: Table API - Subset
+  description: 'Allows you to perform create, read, update and delete (CRUD) operations on existing tables'
+  version: latest
+servers:
+  - url: https://dev187160.service-now.com/
+paths:
+  '/api/now/table/{tableName}':
+    get:
+      description: Retrieve centres of excellence and HR Service details for identifying the right path/table to create a new case
+      operationId: api_now_table_item_get
+      parameters:
+        - name: tableName
+          in: path
+          description: 'Table name from which we retrieve data on centres of excellence and HR service IDs. (default: sn_hr_core_service)'
+          required: true
+          schema: { }
+        - name: sysparm_query
+          in: query
+          description: An encoded query string used to filter the results
+          explode: false
+          schema: { }
+        - name: sysparm_display_value
+          in: query
+          description: 'Return field display values (true), actual values (false), or both (all) (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_exclude_reference_link
+          in: query
+          description: 'True to exclude Table API links for reference fields (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_suppress_pagination_header
+          in: query
+          description: 'True to supress pagination header (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_fields
+          in: query
+          description: 'A comma-separated list of fields to return in the response (default: sys_id,service_table,name,active,sys_name)'
+          required: true
+          explode: false
+          schema: { }
+        - name: sysparm_limit
+          in: query
+          description: 'The maximum number of results returned per page (default: 10,000)'
+          explode: false
+          schema: { }
+        - name: sysparm_view
+          in: query
+          description: Render the response according to the specified UI view (overridden by sysparm_fields)
+          explode: false
+          schema: { }
+        - name: sysparm_query_category
+          in: query
+          description: Name of the query category (read replica category) to use for queries
+          explode: false
+          schema: { }
+        - name: sysparm_query_no_domain
+          in: query
+          description: 'True to access data across domains if authorized (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_no_count
+          in: query
+          description: 'Do not execute a select count(*) on table (default: false)'
+          explode: false
+          schema: { }
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json: { }
+            application/xml: { }
+            text/xml: { }
+    post:
+      description: Create a record in the appropriate table. Get the tableName where new record is created from service_table field of api_now_table_item_get operation 
+      operationId: api_now_table_item_post
+      parameters:
+        - name: tableName
+          in: path
+          required: true
+          schema: { }
+          description: Use the service_table of the appropriate from api_now_table_item_get based on the name the user selects. For example tableName- sn_hr_core_case_total_rewards for Vision Benefits Enrollment/Modification, and similarly tableName- sn_hr_core_case_payroll for Request Corporate Credit Card  
+        - name: sysparm_display_value
+          in: query
+          description: 'Return field display values (true), actual values (false), or both (all) (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_exclude_reference_link
+          in: query
+          description: 'True to exclude Table API links for reference fields (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_fields
+          in: query
+          description: A comma-separated list of fields to return in the response
+          explode: false
+          schema: { }
+        - name: sysparm_input_display_value
+          in: query
+          description: 'Set field values using their display value (true) or actual value (false) (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_suppress_auto_sys_field
+          in: query
+          description: 'True to suppress auto generation of system fields (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_view
+          in: query
+          description: Render the response according to the specified UI view (overridden by sysparm_fields)
+          explode: false
+          schema: { }
+      requestBody:
+        required: true
+        content:
+          application/json: 
+            schema:
+              $ref: '#/components/schemas/CreateCase'
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json: { }
+            application/xml: { }
+            text/xml: { }
+  '/api/now/table/{tableName}/{sys_id}':
+    get:
+      description: Retrieve a record
+      operationId: api_now_table_item_item_get
+      parameters:
+        - name: tableName
+          in: path
+          required: true
+          schema: { }
+        - name: sys_id
+          in: path
+          required: true
+          schema: { }
+        - name: sysparm_display_value
+          in: query
+          description: 'Return field display values (true), actual values (false), or both (all) (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_exclude_reference_link
+          in: query
+          description: 'True to exclude Table API links for reference fields (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_fields
+          in: query
+          description: A comma-separated list of fields to return in the response
+          explode: false
+          schema: { }
+        - name: sysparm_view
+          in: query
+          description: Render the response according to the specified UI view (overridden by sysparm_fields)
+          explode: false
+          schema: { }
+        - name: sysparm_query_no_domain
+          in: query
+          description: 'True to access data across domains if authorized (default: false) '
+          explode: false
+          schema: { }
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json: { }
+            application/xml: { }
+            text/xml: { }
+    put:
+      description: Modify a record
+      operationId: api_now_table_item_item_put
+      parameters:
+        - name: tableName
+          in: path
+          required: true
+          schema: { }
+        - name: sys_id
+          in: path
+          required: true
+          schema: { }
+        - name: sysparm_display_value
+          in: query
+          description: 'Return field display values (true), actual values (false), or both (all) (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_exclude_reference_link
+          in: query
+          description: 'True to exclude Table API links for reference fields (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_fields
+          in: query
+          description: A comma-separated list of fields to return in the response
+          explode: false
+          schema: { }
+        - name: sysparm_input_display_value
+          in: query
+          description: 'Set field values using their display value (true) or actual value (false) (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_suppress_auto_sys_field
+          in: query
+          description: 'True to suppress auto generation of system fields (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_view
+          in: query
+          description: Render the response according to the specified UI view (overridden by sysparm_fields)
+          explode: false
+          schema: { }
+        - name: sysparm_query_no_domain
+          in: query
+          description: 'True to access data across domains if authorized (default: false)'
+          explode: false
+          schema: { }
+      requestBody:
+        content:
+          application/json: { }
+          application/xml: { }
+          text/xml: { }
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json: { }
+            application/xml: { }
+            text/xml: { }
+    delete:
+      description: Delete a record
+      operationId: api_now_table_item_item_delete
+      parameters:
+        - name: tableName
+          in: path
+          required: true
+          schema: { }
+        - name: sys_id
+          in: path
+          required: true
+          schema: { }
+        - name: sysparm_query_no_domain
+          in: query
+          description: 'True to access data across domains if authorized (default: false)'
+          explode: false
+          schema: { }
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json: { }
+            application/xml: { }
+            text/xml: { }
+    patch:
+      description: Update a record
+      operationId: api_now_table_item_item_patch
+      parameters:
+        - name: tableName
+          in: path
+          required: true
+          schema: { }
+        - name: sys_id
+          in: path
+          required: true
+          schema: { }
+        - name: sysparm_display_value
+          in: query
+          description: 'Return field display values (true), actual values (false), or both (all) (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_exclude_reference_link
+          in: query
+          description: 'True to exclude Table API links for reference fields (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_fields
+          in: query
+          description: A comma-separated list of fields to return in the response
+          explode: false
+          schema: { }
+        - name: sysparm_input_display_value
+          in: query
+          description: 'Set field values using their display value (true) or actual value (false) (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_suppress_auto_sys_field
+          in: query
+          description: 'True to suppress auto generation of system fields (default: false)'
+          explode: false
+          schema: { }
+        - name: sysparm_view
+          in: query
+          description: Render the response according to the specified UI view (overridden by sysparm_fields)
+          explode: false
+          schema: { }
+        - name: sysparm_query_no_domain
+          in: query
+          description: 'True to access data across domains if authorized (default: false)'
+          explode: false
+          schema: { }
+      requestBody:
+        content:
+          application/json: { }
+          application/xml: { }
+          text/xml: { }
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json: { }
+            application/xml: { }
+            text/xml: { }
+
+components:
+  securitySchemes:
+    oAuth2AuthCode:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://dev187160.service-now.com/oauth_auth.do
+          tokenUrl: https://dev187160.service-now.com/oauth_token.do
+          refreshUrl: https://dev187160.service-now.com/oauth_token.do
+          scopes: {}
+  schemas:
+    CreateCase:
+      type: object
+      properties:
+        hr_service:
+          type: string
+          description: <sys_id> corresponding to the <name> which the user provides. It is a guid. Look up in the response of api_now_table_item_get operation
+        opened_for:
+          type: string
+          description: email address of the person creating the case
+        work_notes:
+          type: string
+          description: Description of case shared by user
