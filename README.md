@@ -13,35 +13,51 @@ With the declarative agent, you can build a custom version of Copilot that can b
 > - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
 > - [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
 
+> **Important Note**
+>
+> By design, the manifest file references the required resources but does not create or deploy them. To test the sample, you should download the source code and provision the DA using Agents Toolkit in VS Code (F5), which will automatically create the app registration and authentication configuration in Teams Developer Portal.
+
 ![image](https://github.com/user-attachments/assets/51a221bb-a2c6-4dbf-8009-d2aa20a1638f)
 
 1. First, select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar.
 2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. Create app by clicking `Provision` in "Lifecycle" section.
-4. Select `Preview in Copilot (Edge)` or `Preview in Copilot (Chrome)` from the launch configuration dropdown.
+3. Create app by clicking Provision in "Lifecycle" section.
+4. Select Preview in Copilot (Edge) or Preview in Copilot (Chrome) from the launch configuration dropdown.
 5. Once the Copilot agent is loaded in the browser, click on the "…" menu and select "Copilot chats". You will see your declarative agent on the right rail. Clicking on it will change the experience to showcase the logo and name of your declarative agent.
 6. Ask a question to your declarative agent and it should respond based on the instructions provided.
+
+### Distributing to other users
+
+To distribute this agent to other users in your organization, you have two options:
+
+**Option 1: Using the generated app package (Recommended)**
+- Upload the generated app package to the organisation store via the Integrated Apps section (https://admin.microsoft.com/#/Settings/IntegratedApps) in Microsoft 365 Admin Centre
+- This will make the agent available in the marketplace and will reuse the app registration created when provisioning the agent from VS Code
+
+**Option 2: Manual configuration**
+- If you don't want to use the automation in Toolkit, you will need to manually create the app registration and auth configuration in Teams Developer Portal
+- This will require you to generate an app package with the correct references
 
 ## What's included in the template
 
 | Folder       | Contents                                                                                 |
 | ------------ | ---------------------------------------------------------------------------------------- |
-| `.vscode`    | VSCode files for debugging                                                               |
-| `appPackage` | Templates for the application manifest, the GPT manifest and the API specification |
-| `env`        | Environment files                                                                        |
+| .vscode    | VSCode files for debugging                                                               |
+| appPackage | Templates for the application manifest, the GPT manifest and the API specification |
+| env        | Environment files                                                                        |
 
 The following files can be customized and demonstrate an example implementation to get you started.
 
 | File                               | Contents                                                                     |
 | ---------------------------------- | ---------------------------------------------------------------------------- |
-| `appPackage/declarativeAgent.json` | Define the behaviour and configurations of the declarative agent.            |
-| `appPackage/manifest.json`         | application manifest that defines metadata for your declarative agent. |
+| appPackage/declarativeAgent.json | Define the behaviour and configurations of the declarative agent.            |
+| appPackage/manifest.json         | application manifest that defines metadata for your declarative agent. |
 
 The following are Microsoft 365 Agents Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Microsoft 365 Agents Toolkit works.
 
 | File           | Contents                                                                                                                                  |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `m365agents.yml` | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
+| m365agents.yml | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
 
 ## Extend the template
 
@@ -69,7 +85,7 @@ hidi transform -d openapi.yaml -f yaml -o ownedDevices.yml -v 3.0 --op me.ListOw
 
 ### Install hidi
 
-To create OpenAPI yml files, you can use the `hidi` tool. Install it globally using the following command:
+To create OpenAPI yml files, you can use the hidi tool. Install it globally using the following command:
 
 ```shell
 dotnet tool install --global Microsoft.OpenApi.Hidi
