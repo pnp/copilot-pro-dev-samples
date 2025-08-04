@@ -19,6 +19,10 @@ permissions            actions                         response semantics
 - **Microsoft 365 Copilot license**
 - **Enterprise Admin permissions** for deployment
 
+> **Important Note**
+>
+> By design, the manifest file references the required resources but does not create or deploy them. To test the sample, you should download the source code and provision the DA using Agents Toolkit in VS Code (F5), which will automatically create the app registration and authentication configuration in Teams Developer Portal.
+
 ## Getting Started
 
 ### Development Setup
@@ -40,7 +44,7 @@ npm install
 
 2. **Provision the App**
    - Click `Provision` in the "Lifecycle" section
-   - This creates the necessary env registrations and configurations
+   - This automatically creates the app registration and authentication configuration in Teams Developer Portal
 
 3. **Preview & Test**
    - Open Copilot interface of choice (Teams is ideal).
@@ -48,6 +52,18 @@ npm install
    - Find your declarative agent in the right rail
    - Test with sample queries like "What groups do I belong to?" or additional capabilities added by you
 
+### Distributing to Other Users
+
+To distribute this agent to other users in your organization, you have two options:
+
+#### Option 1: Using the generated app package (Recommended)
+- Use the generated `appPackage.dev.zip` from the build folder (created during provisioning)
+- Upload the generated app package to the organisation store via the Integrated Apps section (https://admin.microsoft.com/#/Settings/IntegratedApps) in Microsoft 365 Admin Centre
+- This will make the agent available in the marketplace and will reuse the app registration created when provisioning the agent from VS Code
+
+#### Option 2: Manual configuration
+- If you don't want to use the automation in Toolkit, you will need to manually create the app registration and auth configuration in Teams Developer Portal
+- This will require you to generate an app package with the correct references
 
 ### Teams Admin Center Deployment
 
@@ -100,7 +116,6 @@ hidi transform -d openapi.yaml -f yaml -o custom-endpoints.yml -v 3.0 --op me.Li
 hidi transform -d msgraph-openapi.yaml -f yaml -o user-profile.yml -v 3.0 --op me.GetProfile --co
 ```
 
-
 ### Useful Resources
 
 - [Microsoft 365 Agents Toolkit Guide](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview)
@@ -121,10 +136,10 @@ hidi transform -d msgraph-openapi.yaml -f yaml -o user-profile.yml -v 3.0 --op m
 3. **API Plugin Extensions**
    - [Add custom REST APIs](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=7)
 
-
 ## Support & Contributing
 
 For support or feedback:
 
 - **Email**: [t-paagarwal@microsoft.com](mailto:t-paagarwal@microsoft.com), [Merill.F@microsoft.com](mailto:Merill.F@microsoft.com), [jasuri@microsoft.com](mailto:jasuri@microsoft.com)
+
 ---
