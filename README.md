@@ -1,92 +1,130 @@
-# Overview of the Declarative Agent template
+# My Security Agent
 
-With the declarative agent, you can build a custom version of Copilot that can be used for specific scenarios, such as for specialized knowledge, implementing specific processes, or simply to save time by reusing a set of AI prompts. For example, a grocery shopping Copilot declarative agent can be used to create a grocery list based on a meal plan that you send to Copilot.
+A Microsoft 365 Copilot declarative agent that empowers end users to efficiently manage identity-related tasks through natural language interactions. Available in Microsoft 365 Interfaces including but not limited to Copilot, Teams, and Outlook.
 
-## Get started with the template
+### Architecture Flow
 
-> **Prerequisites**
->
-> To run this app template in your local dev machine, you will need:
->
-> - [Node.js](https://nodejs.org/), supported versions: 18, 20, 22
-> - A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts).
-> - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Microsoft 365 Agents Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
-> - [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
-
-> **Important Note**
->
-> By design, the manifest file references the required resources but does not create or deploy them. To test the sample, you should download the source code and provision the DA using Agents Toolkit in VS Code (F5), which will automatically create the app registration and authentication configuration in Teams Developer Portal.
-
-![image](https://github.com/user-attachments/assets/51a221bb-a2c6-4dbf-8009-d2aa20a1638f)
-
-1. First, select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. Create app by clicking Provision in "Lifecycle" section.
-4. Select Preview in Copilot (Edge) or Preview in Copilot (Chrome) from the launch configuration dropdown.
-5. Once the Copilot agent is loaded in the browser, click on the "…" menu and select "Copilot chats". You will see your declarative agent on the right rail. Clicking on it will change the experience to showcase the logo and name of your declarative agent.
-6. Ask a question to your declarative agent and it should respond based on the instructions provided.
-
-### Distributing to other users
-
-To distribute this agent to other users in your organization, you have two options:
-
-**Option 1: Using the generated app package (Recommended)**
-- Upload the generated app package to the organisation store via the Integrated Apps section (https://admin.microsoft.com/#/Settings/IntegratedApps) in Microsoft 365 Admin Centre
-- This will make the agent available in the marketplace and will reuse the app registration created when provisioning the agent from VS Code
-
-**Option 2: Manual configuration**
-- If you don't want to use the automation in Toolkit, you will need to manually create the app registration and auth configuration in Teams Developer Portal
-- This will require you to generate an app package with the correct references
-
-## What's included in the template
-
-| Folder       | Contents                                                                                 |
-| ------------ | ---------------------------------------------------------------------------------------- |
-| .vscode    | VSCode files for debugging                                                               |
-| appPackage | Templates for the application manifest, the GPT manifest and the API specification |
-| env        | Environment files                                                                        |
-
-The following files can be customized and demonstrate an example implementation to get you started.
-
-| File                               | Contents                                                                     |
-| ---------------------------------- | ---------------------------------------------------------------------------- |
-| appPackage/declarativeAgent.json | Define the behaviour and configurations of the declarative agent.            |
-| appPackage/manifest.json         | application manifest that defines metadata for your declarative agent. |
-
-The following are Microsoft 365 Agents Toolkit specific project files. You can [visit a complete guide on Github](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview) to understand how Microsoft 365 Agents Toolkit works.
-
-| File           | Contents                                                                                                                                  |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| m365agents.yml | This is the main Microsoft 365 Agents Toolkit project file. The project file defines two primary things: Properties and configuration Stage definitions. |
-
-## Extend the template
-
-- [Add conversation starters](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=3): Conversation starters are hints that are displayed to the user to demonstrate how they can get started using the declarative agent.
-- [Add web content](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=4) for the ability to search web information.
-- [Add OneDrive and SharePoint content](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=5) as grounding knowledge for the agent.
-- [Add Microsoft Copilot connectors content](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=6) to ground agent with enterprise knowledge.
-- [Add API plugins](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=7) for agent to interact with REST APIs.
-
-## Addition information and references
-
-- [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
-- Enable developer mode in the Teams test tenant to debug better using the command "-developer on"
-
-## Creating OpenAPI yml
-
-- [Use the Microsoft Graph API as a Copilot plugin for a declarative agent](https://blog.franckcornu.com/post/copilot-graph-api-qna-plugin/) - This blog post provides a detailed guide on how to create OpenAPI yml files for Microsoft Graph APIs, which can be used in declarative agents.
-- [Microsoft Graph Open API - yml](https://github.com/microsoftgraph/msgraph-metadata/blob/master/openapi/beta/openapi.yaml) - The OpenAPI yml for Microsoft Graph API.
-
-### Example command to create OpenAPI yml for Microsoft Graph Users API
-
-```shell
-hidi transform -d openapi.yaml -f yaml -o ownedDevices.yml -v 3.0 --op me.ListOwnedDevices --co
+```
+manifest.json          declarativeAgent.json          ai-plugin.json              myagentall-openapi.yml
+description      ──────> instructions            ──────> functions           ──────> Microsoft Graph API
+app icons               capabilities                    authentication              identity operations
+permissions            actions                         response semantics
 ```
 
-### Install hidi
+## Prerequisites
 
-To create OpenAPI yml files, you can use the hidi tool. Install it globally using the following command:
+- **Node.js** (versions 18, 20, or 22)
+- **Microsoft 365 dev tenant account** for development
+- **Microsoft 365 Agents Toolkit** (VS Code Extension v5.0.0+ or CLI)
+- **Microsoft 365 Copilot license**
+- **Enterprise Admin permissions** for deployment
 
-```shell
+## Getting Started
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd MYSECURITYAGENT
+
+# Install dependencies (if any)
+npm install
+```
+
+### Local Development & Testing
+
+1. **Open in VS Code**
+   - Select the Microsoft 365 Agents Toolkit icon in the left toolbar
+   - Sign in with your Microsoft 365 development account
+
+2. **Provision the App**
+   - Click `Provision` in the "Lifecycle" section
+   - This creates the necessary env registrations and configurations
+
+3. **Preview & Test**
+   - Open Copilot interface of choice (Teams is ideal).
+   - Once loaded, select "Copilot" tab
+   - Find your declarative agent in the right rail
+   - Test with sample queries like "What groups do I belong to?" or additional capabilities added by you
+
+
+### Teams Admin Center Deployment
+
+1. **Prepare App Package**
+   - Use the generated `appPackage.dev.zip` from the build folder
+   - Ensure all permissions align with your security policies
+
+2. **Upload to Admin Center**
+   ```bash
+   # Navigate to Teams Admin Center
+   # Teams apps → Manage apps → Upload
+   # Select the .zip file from appPackage/build/
+   ```
+
+3. **Configure Permissions**
+   - **Allow custom apps** under Teams apps → Permission policies
+   - **Explicitly approve** "My Security Agent" if needed
+
+4. **Setup Policies**
+   - Navigate to Teams apps → Setup policies
+   - Add "My Security Agent" under Installed apps
+   - Create or edit policies for target user groups
+
+5. **User Assignment**
+   - Apply setup policy to target users or groups
+   - Use bulk assignment for large deployments
+   - **Note**: Policy propagation can take up to 24 hours
+
+6. **Validation & Testing**
+   - Test with pilot users to confirm functionality
+   - Verify the agent appears in Teams and Copilot interfaces
+   - Use **developer mode** for enhanced debugging: `-developer on`
+
+## Configuration
+
+The agent will extend as far as the delegated permissions that you allow (defined in `m365agents.yml`):
+
+### Creating Custom OpenAPI Specifications
+
+Use Microsoft's `hidi` tool to generate API specifications, or LLM of choice:
+
+```bash
+# Install hidi globally
 dotnet tool install --global Microsoft.OpenApi.Hidi
+
+# Generate specific endpoints from Microsoft Graph
+hidi transform -d openapi.yaml -f yaml -o custom-endpoints.yml -v 3.0 --op me.ListOwnedDevices --co
+
+# Example: Extract user profile operations
+hidi transform -d msgraph-openapi.yaml -f yaml -o user-profile.yml -v 3.0 --op me.GetProfile --co
 ```
+
+
+### Useful Resources
+
+- [Microsoft 365 Agents Toolkit Guide](https://github.com/OfficeDev/TeamsFx/wiki/Teams-Toolkit-Visual-Studio-Code-v5-Guide#overview)
+- [Declarative Agents Documentation](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents)
+- [Microsoft Graph OpenAPI](https://github.com/microsoftgraph/msgraph-metadata/blob/master/openapi/beta/openapi.yaml)
+
+## Extending the Agent
+
+### Add New Capabilities
+
+1. **Web Content Integration**
+   - [Add web search capabilities](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=4)
+
+2. **Knowledge Base Integration**
+   - [OneDrive and SharePoint content](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=5)
+   - [Microsoft Copilot connectors](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=6)
+
+3. **API Plugin Extensions**
+   - [Add custom REST APIs](https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents?tabs=ttk&tutorial-step=7)
+
+
+## Support & Contributing
+
+For support or feedback:
+
+- **Email**: [t-paagarwal@microsoft.com](mailto:t-paagarwal@microsoft.com), [Merill.F@microsoft.com](mailto:Merill.F@microsoft.com), [jasuri@microsoft.com](mailto:jasuri@microsoft.com)
+---
