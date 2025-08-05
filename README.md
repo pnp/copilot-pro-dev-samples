@@ -1,5 +1,7 @@
 # My Security Agent
 
+<img width="761" height="466" alt="image" src="https://github.com/user-attachments/assets/3e55b8a6-5447-4f43-b26d-4d263ad6bc06" />
+
 ## Summary
 
 A Microsoft 365 Copilot declarative agent that empowers end users to efficiently manage identity-related tasks through natural language interactions. Available in Microsoft 365 Interfaces including but not limited to Copilot, Teams, and Outlook. This agent enables users to query and manage their security-related information using conversational AI, making complex identity operations accessible through simple natural language commands.
