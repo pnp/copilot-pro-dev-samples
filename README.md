@@ -7,14 +7,15 @@ A Microsoft 365 Copilot declarative agent that empowers end users to efficiently
 ## Contributors
 
 * t-paagarwal@microsoft.com
-* Merill.F@microsoft.com  
+* Merill.F@microsoft.com
+* tarekd@microsoft.com
 * jasuri@microsoft.com
 
 ## Version history
 
 | Version | Date | Comments |
 |---------|------|----------|
-| 1.0 | TBD | Initial release |
+| 1.0.2 | August 2025 | Initial release |
 
 ## Prerequisites
 
