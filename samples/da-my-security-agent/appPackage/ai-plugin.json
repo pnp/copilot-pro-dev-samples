@@ -1,0 +1,118 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
+    "schema_version": "v2.1",
+    "name_for_human": "My Security (1.0.2)",
+    "description_for_human": "Agent to manage users security settings, groups they own, list group members by name and email, and identify unusual or risky sign-ins.",
+    "description_for_model": "This agent allows users to manage their security settings and groups they own in Microsoft Entra ID. It can list the groups a user belongs to, the groups they own, the members (names and emails) of any group, and can identify unusual, risky, or suspicious sign-ins (such as risky sign-ins, failed attempts, or sign-ins from unfamiliar locations) by analyzing sign-in records.",
+    "contact_email": "help@microsoft.com",
+    "namespace": "myagentall",
+    "capabilities": {
+        "conversation_starters": [
+            { "text": "What groups do I belong to?" },
+            { "text": "Who are the owners of the 'Marketing Leads' group?" },
+            { "text": "Can I join the Sales group?" },
+            { "text": "How do I request access to a private group?" },
+            { "text": "Which groups have external (guest) users?" },
+            { "text": "Who was added or removed from my groups recently?" },
+            { "text": "What devices are registered to my account?" },
+            { "text": "When was each of my devices last used?" },
+            { "text": "What organizations am I a part of?" },
+            { "text": "Which org is my default?" },
+            { "text": "How do I switch between my organizations?" },
+            { "text": "When was my last successful sign-in?" },
+            { "text": "Were there any unsuccessful sign-in attempts recently?" },
+            { "text": "From which locations have I signed in recently?" },
+            { "text": "What devices have I signed in from?" },
+            { "text": "Who are the members of the [X] group?" },
+            { "text": "List all members of the Sales group." },
+            { "text": "Create a new group for my team." },
+            { "text": "Add John Doe to the Marketing group." }
+        ]
+    },
+    "functions": [
+        {
+            "name": "user_ListMemberGroups",
+            "description": "List the groups that the current user belongs to."
+        },
+        {
+            "name": "user_ListOwnedGroups",
+            "description": "List the groups that the current user owns."
+        },
+        {
+            "name": "me_authentication_ListMethods",
+            "description": "List the authentication methods registered by the user."
+        },
+        {
+            "name": "me_ListOwnedDevices",
+            "description": "List the devices owned by the user."
+        },
+        {
+            "name": "listSignIns",
+            "description": "Summarize the sign-in records for the user, including identifying unusual, risky, or suspicious sign-ins (e.g., risky sign-ins, failed attempts, or sign-ins from unfamiliar locations). Unsuccessful sign-ins should be identified by status.errorCode not equal to 0 (status/errorCode ne 0). Do not filter on status as a string."
+        },
+        {
+            "name": "updateGroup",
+            "description": "Update the display name or description of a group."
+        },
+        {
+            "name": "addGroupMember",
+            "description": "Add a user to a group's members."
+        },
+        {
+            "name": "removeGroupMember",
+            "description": "Remove a user from a group's members."
+        },
+        {
+            "name": "getTransitiveMemberships",
+            "description": "List all groups, directory roles, or administrative units that the user is a member of, either directly or through nested memberships."
+        },
+        {
+            "name": "listGroups",
+            "description": "List groups in the organization, optionally filtered by display name."
+        },
+        {
+            "name": "listGroupMembers",
+            "description": "List the members of a specific group by group ID."
+        },
+        {
+            "name": "listUsers",
+            "description": "List users in the organization, optionally filtered by display name or email. Use this to resolve user names or emails to user IDs."
+        },
+        {
+            "name": "createGroup",
+            "description": "Create a new Microsoft 365 group with display name, description, policy, sensitivity, mailEnabled, securityEnabled, and groupTypes. Presents an Adaptive Card for group creation."
+        },
+        {
+            "name": "getBitlockerRecoveryKey",
+            "description": "Retrieve the properties and (optionally) the actual key of a BitLocker recovery key by its ID. To get the key value, use the $select=key query parameter."
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{OAUTH2AUTHCODE_CONFIGURATION_ID}}"
+            },
+            "spec": {
+                "url": "myagentall-openapi.yml"
+            },
+            "run_for_functions": [
+                "user_ListOwnedGroups",
+                "user_ListMemberGroups",
+                "me_authentication_ListMethods",
+                "me_ListOwnedDevices",
+                "listSignIns",
+                "updateGroup",
+                "addGroupMember",
+                "removeGroupMember",
+                "getTransitiveMemberships",
+                "listGroups",
+                "listGroupMembers",
+                "listUsers",
+                "createGroup",
+                "getBitlockerRecoveryKey"
+            ]
+        }
+    ]
+}

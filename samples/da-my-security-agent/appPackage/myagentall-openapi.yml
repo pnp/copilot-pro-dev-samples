@@ -1,0 +1,1046 @@
+openapi: 3.0.4
+info:
+  title: Microsoft Graph
+  version: v1.0
+servers:
+  - url:  https://graph.microsoft.com/beta/
+    description: Core
+paths:
+  /me/memberOf/microsoft.graph.group:
+    get:
+      tags:
+        - users.directoryObject
+      summary: List the currently logged in users direct group memberships.
+      description: Get groups that the current user is a direct member of or belongs to
+      operationId: user_ListMemberGroups
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: directoryObject
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The unique identifier for an entity. Read-only.
+                        deletedDateTime:
+                          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                          type: string
+                          description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+                          format: date-time
+                          nullable: true
+                      additionalProperties:
+                        type: object
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+  /me/ownedObjects/microsoft.graph.group:
+    get:
+      tags:
+        - users.directoryObject
+      summary: List the groups where the current user is the owner.
+      description: Get groups that the current user is the owner and has the ability to manage the group.
+      operationId: user_ListOwnedGroups
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: directoryObject
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The unique identifier for an entity. Read-only.
+                        deletedDateTime:
+                          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+                          type: string
+                          description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+                          format: date-time
+                          nullable: true
+                      additionalProperties:
+                        type: object
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+                additionalProperties:
+                  type: object
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                required:
+                  - error
+                type: object
+                properties:
+                  error:
+                    required:
+                      - code
+                      - message
+                    type: object
+                    properties:
+                      code:
+                        type: string
+                      message:
+                        type: string
+                        x-ms-primary-error-message: true
+                      target:
+                        type: string
+                        nullable: true
+                      details:
+                        type: array
+                        items:
+                          required:
+                            - code
+                            - message
+                          type: object
+                          properties:
+                            code:
+                              type: string
+                            message:
+                              type: string
+                            target:
+                              type: string
+                              nullable: true
+                          additionalProperties:
+                            type: object
+                      innerError:
+                        type: object
+                        additionalProperties:
+                          type: object
+                        description: The structure of this object is service-specific
+                    additionalProperties:
+                      type: object
+                additionalProperties:
+                  type: object
+  /me/authentication/methods:
+    get:
+      tags:
+        - me.authentication
+      summary: List methods
+      description: 'Retrieve a list of authentication methods registered to a user.'
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-beta
+      operationId: me_authentication_ListMethods
+      parameters:
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          style: form
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+    post:
+      tags:
+        - me.authentication
+      summary: Add an authentication method
+      description: Add a new authentication method for the signed-in user. The request body must specify the type and value (e.g., phone, email, etc.).
+      operationId: me_authentication_AddMethod
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: string
+                  description: The type of authentication method (e.g., phone, email, fido2, etc.).
+                value:
+                  type: string
+                  description: The value for the method (e.g., phone number, email address, etc.).
+              required:
+                - type
+                - value
+      responses:
+        '201':
+          description: Authentication method added successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  type:
+                    type: string
+                  value:
+                    type: string
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /me/ownedDevices:
+    get:
+      tags:
+        - me.directoryObject
+      summary: List ownedDevices
+      description: Get the list of devices that are owned by the user.
+      externalDocs:
+        description: Find more info here
+        url: https://learn.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-beta
+      operationId: me_ListOwnedDevices
+      parameters:
+        - name: ConsistencyLevel
+          in: header
+          description: 'Indicates the requested consistency level. Documentation URL: https://docs.microsoft.com/graph/aad-advanced-queries'
+          schema:
+            type: string
+          examples:
+            example-1:
+              description: $search and $count queries require the client to set the ConsistencyLevel HTTP header to 'eventual'.
+              value: eventual
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+        - $ref: '#/components/parameters/search'
+        - $ref: '#/components/parameters/filter'
+        - $ref: '#/components/parameters/count'
+        - name: $orderby
+          in: query
+          description: Order items by property values
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+        - name: $expand
+          in: query
+          description: Expand related entities
+          explode: false
+          schema:
+            uniqueItems: true
+            type: array
+            items:
+              type: string
+      responses:
+        2XX:
+          $ref: '#/components/responses/microsoft.graph.directoryObjectCollectionResponse'
+        4XX:
+          $ref: '#/components/responses/error'
+        5XX:
+          $ref: '#/components/responses/error'
+  /me:
+    patch:
+      tags:
+        - users
+      summary: Update current user's profile
+      description: Allows the signed-in user to update their profile properties, such as name and job title.
+      operationId: updateCurrentUser
+      requestBody:
+        description: Profile fields to update
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                givenName:
+                  type: string
+                  description: The user's given name (first name).
+                surname:
+                  type: string
+                  description: The user's surname (last name).
+                displayName:
+                  type: string
+                  description: The name displayed in the address book for the user.
+                jobTitle:
+                  type: string
+                  description: The user's job title.
+              additionalProperties: false
+      responses:
+        204:
+          description: No content. The update was successful.
+  /auditLogs/signIns:
+    get:
+      tags:
+        - auditLogs
+      summary: List recent sign-ins for a user
+      description: Retrieves sign-in records. Admin permission required (e.g., AuditLog.Read.All).
+      operationId: listSignIns
+      parameters:
+        - name: $filter
+          in: query
+          required: false
+          description: Filter by userId or date range (e.g., userId eq '...')
+          schema:
+            type: string
+        - name: $orderby
+          in: query
+          required: false
+          schema:
+            type: string
+            example: createdDateTime desc
+        - name: $top
+          in: query
+          required: false
+          schema:
+            type: integer
+            example: 5
+      responses:
+        2XX:
+          description: Collection of sign-in records
+          content:
+            application/json:
+              schema:
+                title: Collection of signIn
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: signIn
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        userDisplayName:
+                          type: string
+                        userPrincipalName:
+                          type: string
+                        userId:
+                          type: string
+                        appDisplayName:
+                          type: string
+                        createdDateTime:
+                          type: string
+                          format: date-time
+                        ipAddress:
+                          type: string
+                        status:
+                          type: object
+                          properties:
+                            errorCode:
+                              type: integer
+                            failureReason:
+                              type: string
+                        location:
+                          type: object
+                          properties:
+                            city:
+                              type: string
+                            state:
+                              type: string
+                            countryOrRegion:
+                              type: string
+                        deviceDetail:
+                          type: object
+                          properties:
+                            operatingSystem:
+                              type: string
+                            browser:
+                              type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+  /groups/{group-id}:
+    patch:
+      tags:
+        - groups
+      summary: Update group properties
+      description: |
+        Update the display name, description, or other properties of a group.
+        **To use this endpoint by group name, first resolve the group ID using `/groups?$filter=displayName eq '{name}'`.**
+      operationId: updateGroup
+      parameters:
+        - name: group-id
+          in: path
+          required: true
+          description: The unique identifier of the group.
+          schema:
+            type: string
+      requestBody:
+        description: Group properties to update
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  description: The name of the group.
+                description:
+                  type: string
+                  description: The description of the group.
+              additionalProperties: false
+      responses:
+         204:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+         200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: string
+  /groups/{group-id}/members/$ref:
+    post:
+      tags:
+        - groups
+      summary: Add member to group
+      description: |
+        Add a user to the group's members.
+        **To use this endpoint by group name, first resolve the group ID using `/groups?$filter=displayName eq '{name}'`.**
+      operationId: addGroupMember
+      parameters:
+        - name: group-id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '@odata.id':
+                  type: string
+                  description: The URI of the user to add (e.g., https://graph.microsoft.com/v1.0/users/{user-id})
+      responses:
+        200:
+          description: Member added successfully.
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /groups/{group-id}/members/{member-id}/$ref:
+    delete:
+      tags:
+        - groups
+      summary: Remove member from group
+      description: |
+        Remove a user from the group's members.
+        **To use this endpoint by group name, first resolve the group ID using `/groups?$filter=displayName eq '{name}'`.**
+      operationId: removeGroupMember
+      parameters:
+        - name: group-id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: member-id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Empty response on success.
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /me/transitiveMemberOf:
+    get:
+      tags:
+        - users.directoryObject
+      summary: List directory memberships for the signed-in user
+      description: Get all groups, directory roles, or administrative units that the user is a member of, either directly or through nested memberships.
+      operationId: getTransitiveMemberships
+      responses:
+        2XX:
+          description: Collection of directoryObject
+          content:
+            application/json:
+              schema:
+                title: Collection of directoryObject
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: directoryObject
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        displayName:
+                          type: string
+                        description:
+                          type: string
+                        objectType:
+                          type: string
+                          enum: [group, directoryRole, administrativeUnit]
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+  /groups:
+    get:
+      tags:
+        - groups
+      summary: List groups
+      description: Get a list of groups in the organization.
+      operationId: listGroups
+      parameters:
+        - name: $filter
+          in: query
+          description: Filter groups by display name
+          schema:
+            type: string
+            example: "displayName eq 'Retail'"
+        - name: $select
+          in: query
+          description: Select specific properties
+          schema:
+            type: string
+            example: "id,displayName,description"
+        - name: $top
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            example: 10
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of group
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: group
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The unique identifier for the group.
+                        displayName:
+                          type: string
+                          description: The display name of the group.
+                        description:
+                          type: string
+                          description: The description of the group.
+                        mail:
+                          type: string
+                          description: The email address of the group.
+                        groupTypes:
+                          type: array
+                          items:
+                            type: string
+                          description: The group types.
+                        mailEnabled:
+                          type: boolean
+                          description: Whether the group is mail enabled.
+                        securityEnabled:
+                          type: boolean
+                          description: Whether the group is security enabled.
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+              x-ms-response:
+                static_template:
+                  $schema: "http://adaptivecards.io/schemas/adaptive-card.json"
+                  type: "AdaptiveCard"
+                  version: "1.5"
+                  body:
+                    - type: "TextBlock"
+                      text: "Groups Found"
+                      weight: "Bolder"
+                      size: "Medium"
+                    - type: "Container"
+                      items:
+                        - type: "FactSet"
+                          facts:
+                            - title: "Group Name"
+                              value: "${value[0].displayName}"
+                            - title: "Group ID"
+                              value: "${value[0].id}"
+                            - title: "Description"
+                              value: "${value[0].description}"
+                            - title: "Email"
+                              value: "${value[0].mail}"
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+    post:
+      tags:
+        - groups
+      summary: Create a new group
+      description: Create a new Microsoft 365 group with display name, description, policy, sensitivity, mailEnabled, securityEnabled, and groupTypes.
+      operationId: createGroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                displayName:
+                  type: string
+                  description: The name of the group.
+                description:
+                  type: string
+                  description: The description of the group.
+                policy:
+                  type: string
+                  description: The group join policy.
+                  enum:
+                    - This group is open to join for all users
+                    - This group requires owner approval
+                    - Only the owner of this group and admins can add members
+                sensitivity:
+                  type: string
+                  description: The sensitivity of the group.
+                  enum:
+                    - Public
+                mailEnabled:
+                  type: boolean
+                  description: Whether the group is mail enabled. Required for Microsoft 365 groups.
+                securityEnabled:
+                  type: boolean
+                  description: Whether the group is security enabled. Required for Microsoft 365 groups.
+                groupTypes:
+                  type: array
+                  items:
+                    type: string
+                  description: The group types. For Microsoft 365 groups, use ["Unified"].
+              required:
+                - displayName
+                - policy
+                - sensitivity
+                - mailEnabled
+                - securityEnabled
+      responses:
+        201:
+          description: Group created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  displayName:
+                    type: string
+                  description:
+                    type: string
+                  policy:
+                    type: string
+                  sensitivity:
+                    type: string
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /groups/{group-id}/members:
+    get:
+      tags:
+        - groups
+      summary: List group members
+      description: |
+        Get a list of members in a specific group.
+        **To use this endpoint by group name, first resolve the group ID using `/groups?$filter=displayName eq '{name}'`.**
+      operationId: listGroupMembers
+      parameters:
+        - name: group-id
+          in: path
+          required: true
+          description: The unique identifier of the group.
+          schema:
+            type: string
+        - name: $select
+          in: query
+          description: Select properties to be returned
+          schema:
+            type: string
+            example: "id,displayName,mail"
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of user
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: user
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        displayName:
+                          type: string
+                        mail:
+                          type: string
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  /users:
+    get:
+      tags:
+        - users
+      summary: List users
+      description: Get a list of users in the organization, optionally filtered by display name or email.
+      operationId: listUsers
+      parameters:
+        - name: $filter
+          in: query
+          description: Filter users by display name or email
+          schema:
+            type: string
+            example: "displayName eq 'John Doe' or mail eq 'john@contoso.com'"
+        - name: $select
+          in: query
+          description: Select specific properties
+          schema:
+            type: string
+            example: "id,displayName,mail"
+        - name: $top
+          in: query
+          description: Number of items to return
+          schema:
+            type: integer
+            example: 10
+      responses:
+        2XX:
+          description: Retrieved collection
+          content:
+            application/json:
+              schema:
+                title: Collection of user
+                type: object
+                properties:
+                  value:
+                    type: array
+                    items:
+                      title: user
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The unique identifier for the user.
+                        displayName:
+                          type: string
+                          description: The display name of the user.
+                        mail:
+                          type: string
+                          description: The email address of the user.
+                        userPrincipalName:
+                          type: string
+                          description: The user principal name of the user.
+                  '@odata.nextLink':
+                    type: string
+                    nullable: true
+        default:
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+
+  /informationProtection/bitlocker/recoveryKeys/{bitlockerRecoveryKeyId}:
+    get:
+      tags:
+        - bitlocker
+      summary: Get BitLocker recovery key
+      description: Retrieve the properties and relationships of a BitLocker recovery key object. To include the actual recovery key value, use the $select=key query parameter. See https://learn.microsoft.com/en-us/graph/api/bitlockerrecoverykey-get?view=graph-rest-1.0&tabs=http
+      operationId: getBitlockerRecoveryKey
+      parameters:
+        - name: bitlockerRecoveryKeyId
+          in: path
+          required: true
+          description: The unique identifier of the BitLocker recovery key.
+          schema:
+            type: string
+        - name: $select
+          in: query
+          required: false
+          description: Use $select=key to include the actual recovery key value in the response.
+          schema:
+            type: string
+            example: key
+      responses:
+        200:
+          description: BitLocker recovery key object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  createdDateTime:
+                    type: string
+                  volumeType:
+                    type: string
+                  deviceId:
+                    type: string
+                  key:
+                    type: string
+                    description: The actual BitLocker recovery key (only returned if $select=key is used)
+      security:
+        - azureaadv2: ["BitlockerKey.ReadBasic.All", "BitlockerKey.Read.All"]
+
+
+components:
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/common/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/common/oauth2/v2.0/token
+          scopes:
+            User.Read: Read user profile
+            User.ReadWrite: Read and write user profile 
+  schemas:
+    microsoft.graph.directoryObjectCollectionResponse:
+      title: Collection of directoryObject
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseCollectionPaginationCountResponse'
+        - type: object
+          properties:
+            value:
+              type: array
+              items:
+                $ref: '#/components/schemas/microsoft.graph.directoryObject'
+    microsoft.graph.ODataErrors.ODataError:
+      required:
+        - error
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.MainError'
+    BaseCollectionPaginationCountResponse:
+      title: Base collection pagination and count responses
+      type: object
+      properties:
+        '@odata.count':
+          type: integer
+          nullable: true
+          format: int64
+        '@odata.nextLink':
+          type: string
+          nullable: true
+    microsoft.graph.directoryObject:
+      allOf:
+        - $ref: '#/components/schemas/microsoft.graph.entity'
+        - title: directoryObject
+          required:
+            - '@odata.type'
+          type: object
+          properties:
+            deletedDateTime:
+              pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+              type: string
+              nullable: true
+              description: Date and time when this object was deleted. Always null when the object hasn't been deleted.
+              format: date-time
+            '@odata.type':
+              type: string
+    microsoft.graph.ODataErrors.MainError:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+          x-ms-primary-error-message: true
+        target:
+          type: string
+          nullable: true
+        details:
+          type: array
+          items:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ErrorDetails'
+        innerError:
+          $ref: '#/components/schemas/microsoft.graph.ODataErrors.InnerError'
+    microsoft.graph.entity:
+      title: entity
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        id:
+          type: string
+          description: The unique identifier for an entity. Read-only.
+    microsoft.graph.ODataErrors.ErrorDetails:
+      required:
+        - code
+        - message
+      type: object
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        target:
+          type: string
+          nullable: true
+    microsoft.graph.ODataErrors.InnerError:
+      title: InnerError
+      required:
+        - '@odata.type'
+      type: object
+      properties:
+        request-id:
+          type: string
+          nullable: true
+          description: Request Id as tracked internally by the service
+        client-request-id:
+          type: string
+          nullable: true
+          description: Client request Id as sent by the client application.
+        date:
+          pattern: '^[0-9]{4,}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]([.][0-9]{1,12})?(Z|[+-][0-9][0-9]:[0-9][0-9])$'
+          type: string
+          nullable: true
+          description: Date when the error occured.
+          format: date-time
+        '@odata.type':
+          type: string
+  responses:
+    microsoft.graph.directoryObjectCollectionResponse:
+      description: Retrieved collection
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.directoryObjectCollectionResponse'
+    error:
+      description: error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/microsoft.graph.ODataErrors.ODataError'
+  parameters:
+    top:
+      name: $top
+      in: query
+      description: Show only the first n items
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+      example: 50
+    skip:
+      name: $skip
+      in: query
+      description: Skip the first n items
+      explode: false
+      schema:
+        minimum: 0
+        type: integer
+    search:
+      name: $search
+      in: query
+      description: Search items by search phrases
+      explode: false
+      schema:
+        type: string
+    filter:
+      name: $filter
+      in: query
+      description: Filter items by property values
+      explode: false
+      schema:
+        type: string
+    count:
+      name: $count
+      in: query
+      description: Include count of items
+      explode: false
+      schema:
+        type: boolean
+security:
+  - azureaadv2: [ "User.Read", "User.ReadWrite" ]

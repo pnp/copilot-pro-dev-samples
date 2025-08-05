@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.21/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.21",
+    "version": "1.0.2",
+    "id": "${{APP_ID}}",
+    "developer": {
+        "name": "Microsoft",
+        "websiteUrl": "https://microsoft.com",
+        "privacyUrl": "https://www.microsoft.com/privacy",
+        "termsOfUseUrl": "https://www.microsoft.com/legal/terms-of-use"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "mysecurityagent${{APP_NAME_SUFFIX}}",
+        "full": "My Security"
+    },
+    "description": {
+        "short": "Manage security settings and groups.",
+        "full": "This agent allows users to manage their security settings and groups they own in Microsoft Entra ID. It can list the groups a user belongs to and the groups they own."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}

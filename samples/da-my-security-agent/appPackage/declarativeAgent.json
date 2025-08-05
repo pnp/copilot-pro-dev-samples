@@ -1,0 +1,21 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
+    "name": "My Security (1.0.2)",
+    "description": "This agent helps you manage your security related tasks in Microsoft 365.",
+    "instructions": "$[file('instruction.txt')]",
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ],
+    "conversation_starters": [
+        { "title": "Group Owners", "text": "What are the groups that I own?" },
+        { "title": "Authentication", "text": "What authentication methods have I registered?" },
+        { "title": "My Devices", "text": "What devices are registered to my account?" },
+        { "title": "My Organizations", "text": "What organizations am I a part of?" },
+        { "title": "Update Group Information", "text": "Change this group's name and description." },
+        { "title": "Sign-In Summary", "text": "Identify recent sign-in trends within my account." }
+    ]
+}
