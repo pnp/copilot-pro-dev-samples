@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "id": "${{TEAMS_APP_ID}}",
     "developer": {
-        "name": "My App, Inc.",
+        "name": "Teams App, Inc.",
         "websiteUrl": "https://www.example.com",
         "privacyUrl": "https://www.example.com/privacy",
         "termsOfUseUrl": "https://www.example.com/termofuse"
@@ -15,11 +15,11 @@
     },
     "name": {
         "short": "da-CLIForM365-helper${{APP_NAME_SUFFIX}}",
-        "full": "Full name for da-CLIForM365-helper"
+        "full": "CLI For M365 Helper"
     },
     "description": {
-        "short": "Short description for da-CLIForM365-helper",
-        "full": "Full description for da-CLIForM365-helper"
+        "short": "Search CLI for Microsoft 365 commands",
+        "full": "The CLI for M365 Helper helps users discover relevant CLI for Microsoft 365 commands from the official documentation."
     },
     "accentColor": "#FFFFFF",
     "composeExtensions": [],
