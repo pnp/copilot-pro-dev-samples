@@ -1,0 +1,78 @@
+{
+            "type": "AdaptiveCard",
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "Bill hours summary",
+                "weight": "Bolder",
+                "size": "Large",
+                "separator": true
+              },              
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "Client Name",
+                    "weight": "Bolder",
+                    "spacing": "Small"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "${if(results.clientName, results.clientName, 'N/A')}",
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "Project Name",
+                    "weight": "Bolder",
+                    "spacing": "Small"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "${if(results.projectName, results.projectName, 'N/A')}",
+                    "wrap": true
+                  }
+                ]
+              },  
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "Remaining Forecast",
+                    "weight": "Bolder",
+                    "spacing": "Small"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "${if(results.remainingForecast, results.remainingForecast, 'N/A')}",
+                    "wrap": true
+                  }
+                ]
+              },           
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "Message",
+                    "weight": "Bolder",
+                    "spacing": "Small"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "${if(results.message, results.message, 'N/A')}",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
