@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.21/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.21",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "PnP Script Samples",
+        "websiteUrl": "https://pnp.github.io/script-samples/",
+        "privacyUrl": "https://github.com/pnp/script-samples",
+        "termsOfUseUrl": "https://github.com/pnp/script-samples?tab=MIT-1-ov-file#readme"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "PnP Script Samples Agent${{APP_NAME_SUFFIX}}",
+        "full": "Full name for PnP Script Samples Agent"
+    },
+    "description": {
+        "short": "Agent for help to write and find PnP Script Samples",
+        "full": "Agent for Copilot for Microsoft 365, is designed to assist users with PowerShell scripts related to PnP Script Samples. This agent reviews existing scripts, analyzes them for potential improvements, and helps build supporting documentation. By leveraging the capabilities of Microsoft 365 Copilot, the agent provides insightful suggestions and streamlines the development process, ensuring scripts are optimized and well-documented."
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}
