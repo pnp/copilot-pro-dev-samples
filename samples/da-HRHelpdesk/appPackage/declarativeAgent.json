@@ -1,0 +1,33 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
+    "name": "HRHelpdeskDATemplate",
+    "description": "Declarative agent created with Microsoft 365 Agents Toolkit can assist user in calling APIs and retrieving responses",
+    "instructions": "$[file('instruction.txt')]",
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "text": "Retrieve centres of excellence and HR Service deta"
+        },
+        {
+            "text": "Create a record in the appropriate table. Get the "
+        },
+        {
+            "text": "Retrieve a record"
+        },
+        {
+            "text": "Modify a record"
+        },
+        {
+            "text": "Delete a record"
+        },
+        {
+            "text": "Update a record"
+        }
+    ]
+}
