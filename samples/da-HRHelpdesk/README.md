@@ -31,7 +31,7 @@ Version|Date|Comments
 * Microsoft 365 tenant with Microsoft 365 Copilot
 * [Visual Studio Code](https://code.visualstudio.com/) with the [Microsoft 365 Agents Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) extension
 * [Node.js v20](https://nodejs.org/en/download/package-manager)
-* A Salesforce account with API access
+* A ServiceNow account with API access
 
 ## Example Prompts
 
@@ -89,7 +89,7 @@ In your OpenAPI spec [`appPackage/apiSpecificationFile/openapi.yaml`](appPackage
 6. Setup Microsoft Graph Connector to add ServiceNow knowledge – This will allow agent to provide troubleshooting guidance based on your ServiceNow KB articles. Follow the steps in https://learn.microsoft.com/en-us/microsoftsearch/servicenow-knowledge-connector . After you setup Microsoft Graph Connector to add ServiceNow knowledge, add the connection IDs in the Agent file.
    <img width="719" height="295" alt="image" src="https://github.com/user-attachments/assets/dae6d7ed-0b4d-44bc-9385-7de198f44c5f" />
    
-7. Provision Key & Secret in Copilot: When provisioning the Declarative Agent via the Teams Toolkit, you’ll be prompted to enter the Client ID (Key) and Client Secret. Use the values from the Salesforce OAuth app you created.
+7. Provision Key & Secret in Copilot: When provisioning the Declarative Agent via the Teams Toolkit, you’ll be prompted to enter the Client ID (Key) and Client Secret. Use the values from the ServiceNow OAuth app you created.
    <img width="940" height="627" alt="image" src="https://github.com/user-attachments/assets/41160786-6c83-4950-8452-029ca559d5df" />
 
 
@@ -97,7 +97,7 @@ In your OpenAPI spec [`appPackage/apiSpecificationFile/openapi.yaml`](appPackage
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-SalesGenie%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-HRHelpdesk%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
@@ -107,4 +107,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-SalesGenie)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-HRHelpdesk)

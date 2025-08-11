@@ -2,7 +2,8 @@
 # Visit https://aka.ms/teamsfx-v5.0-guide for details on this file
 # Visit https://aka.ms/teamsfx-actions for details on actions
 version: v1.8
-
+additionalMetadata:
+  sampleTag: pnp-copilot-pro-dev:da-ITHelpdesk
 environmentFolderPath: ./env
 
 # Triggered when 'teamsapp provision' is executed
@@ -93,4 +94,4 @@ publish:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
-projectId: 90ef9709-3783-480a-994f-5a2e4d2f2226
+
