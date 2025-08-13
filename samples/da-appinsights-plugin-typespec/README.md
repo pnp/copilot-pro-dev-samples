@@ -4,7 +4,7 @@
 
 This sample demonstrates how to integrate Azure Application Insights into existing Copilot "pro-code" declarative agents using TypeSpec and API plugins. This generic approach, combined with strategic prompting techniques, enables us to capture meaningful metrics for declarative agents.
 
-The following blog post describes the complete solution setup: [https://blog.franckcornu.com/post/add-app-insights-procode-copilot-da](https://blog.franckcornu.com/post/add-app-insights-procode-copilot-da)
+The following blog post describes the complete solution setup: [https://blog.franckcornu.com/post/add-app-insights-procode-copilot-da/](https://blog.franckcornu.com/post/add-app-insights-procode-copilot-da/)
 
 !["Architecture"](./assets/copilot_analytics_architecture.png)
 
