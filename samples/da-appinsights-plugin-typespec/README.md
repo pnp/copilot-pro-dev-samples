@@ -37,7 +37,7 @@ Version|Date|Comments
 !["Logic App"](./assets/workflow_url.png)
 
 ```text
-LOGIC_APP_SERVER_URL= #Example: https://prod-27.<region>.logic.azure.com:443
+LOGIC_APP_SERVER_URL=https://prod-27.<region>.logic.azure.com:443
 LOGIC_APP_INVOKE_PATH=/workflows/<GUID>/triggers/<trigger_name>/paths/invoke
 LOGIC_APP_TRIGGER_PATH=/triggers/<trigger_name>/run
 ```
