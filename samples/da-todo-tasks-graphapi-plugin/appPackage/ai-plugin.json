@@ -1,0 +1,43 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "ToDo Tasks Agent",
+    "description_for_human": "This agent will list and create tasks in your TODO list.",
+    "description_for_model": "This agent will list and create tasks in your TODO list.",
+    "namespace": "datestmanagetodo",
+    "functions": [
+        {
+            "name": "getTasksFromList",
+            "description": "Retrieve all tasks from a specified To-Do task list"
+        },
+        {
+            "name": "createTaskInList",
+            "description": "Create a new task in a specified To-Do task list",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.title",
+                        "subtitle": "$.description"
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{AZUREAADV2_REGISTRATION_ID}}"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "getTasksFromList",
+                "createTaskInList"
+            ]
+        }
+    ]
+}

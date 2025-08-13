@@ -1,0 +1,58 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-PMSpecReviewer",
+    "source": "pnp",
+    "title": "PM Spec Reviewer",
+    "shortDescription": "A Microsoft Teams app that helps Product Managers review product specifications using AI assistance.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PMSpecReviewer",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PMSpecReviewer",
+    "longDescription": [
+      "An agent that reviews PM specs and nudges users towards simplicity, clarity, brevity. Give it a spec as input and it will review it and provide feedback."
+    ],
+    "creationDateTime": "2025-04-22",
+    "updateDateTime": "2025-04-22",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "Json"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "NO"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/templates/pending-image.png",
+        "alt": "Declarative agent is pending an image, this is a placeholder"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "mathursrus",
+        "pictureUrl": "https://github.com/mathursrus.png",
+        "name": "Sid Mathur"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      }
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-positivityagent",
+      "source": "pnp",
+      "title": "Positivity Agent",
+      "shortDescription": "An agent designed to premote positivity, motivation, and confidence-building support to users.",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PositivityAgent",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PositivityAgent",
+      "longDescription": [
+        "An agent designed to provide positivity, motivation, and confidence-building support to users. It offers encouraging and uplifting responses to help users maintain a positive mindset and build their self-esteem."    
+    ],
+      "creationDateTime": "2025-05-20",
+      "updateDateTime": "2025-05-20",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "API-PLUGIN",
+          "value": "No"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-PositivityAgent/assets/screenshot.png",
+          "alt": "My Communication Buddy"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "pkbullock",
+          "pictureUrl": "https://github.com/pkbullock.png",
+          "name": "Paul Bullock"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Declarative agents for Microsoft 365 Copilot overview",
+          "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+        },
+        {
+          "name": "Build a declarative agent for Microsoft 365 Copilot",
+          "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
+        }
+      ]
+    }
+  ]

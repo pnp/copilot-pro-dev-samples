@@ -1,0 +1,34 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+    "version": "v1.3",
+    "name": "PnP Assistant",
+    "description": "This is a PnP Assistant that helps you with the PnP reusable React controls documentation.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Help with control",
+            "text": "I need help with a PnP React control, can you help me?"
+        },
+        {
+            "title": "Help with control properties",
+            "text": "Hey! I need help with the properties of a PnP React control."
+        },
+        {
+            "title": "Suggest me a control",
+            "text": "I need a control for my project but I don't know which one to use. Can you suggest me a PnP React control to..."
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "WebSearch",
+            "sites": [
+                {
+                    "url": "https://pnp.github.io/sp-dev-fx-controls-react"
+                },
+                {
+                    "url": "https://pnp.github.io/sp-dev-fx-property-controls"
+                }
+            ]
+        }
+    ]
+}

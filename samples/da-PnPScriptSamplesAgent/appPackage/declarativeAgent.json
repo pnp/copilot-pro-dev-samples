@@ -1,0 +1,45 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
+    "version": "v1.5",
+    "name": "PnP Script Samples Agent",
+    "description": "Agent for Copilot for Microsoft 365, is designed to assist users with PowerShell scripts related to PnP Script Samples. This agent reviews existing scripts, analyzes them for potential improvements, and helps build supporting documentation. By leveraging the capabilities of Microsoft 365 Copilot, the agent provides insightful suggestions and streamlines the development process, ensuring scripts are optimized and well-documented.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "WebSearch",
+            "sites": [
+                {
+                    "url": "https://github.com/pnp/script-samples"
+                }
+            ]
+        },
+        {
+            "name": "GraphicArt"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Find a script",
+            "text": "Please find a sample script on PnP Script Samples for"
+        },
+        {
+            "title": "Suggest a code sample",
+            "text": "Write a code sample for the following purpose: Find an item in SharePoint"
+        },
+        {
+            "title": "Contribution to PnP Script Samples",
+            "text": "How can I contribute to PnP Script Samples?"
+        }
+    ],
+    "disclaimer": {
+        "text": "This declarative agent and its samples are provided as is without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement."
+    },
+    "behavior_overrides": {
+        "suggestions": {
+            "disabled": true
+        },
+        "special_instructions": {
+            "discourage_model_knowledge": true
+        }
+    }
+}

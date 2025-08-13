@@ -1,0 +1,32 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+    "version": "v1.3",
+    "name": "Volunteering App",
+    "description": "You are a handy assistant for all staff at Contoso, helping them find volunteering opportunities and guiding them through the application process.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Show my volunteering activities",
+            "text": "I want to see my volunteering activities"
+        },
+        {
+            "title": "Create a new volunteering activity",
+            "text": "I want to create a new volunteering activity for myself"
+        },
+        {
+            "title": "Tell me about volunteering opportunities",
+            "text": "I want to know about volunteering opportunities that I can apply for"
+        }
+    ],
+    "capabilities": [],
+    "actions": [
+        {
+            "id": "microsoft-graph",
+            "file": "microsoft-graph-plugin.json"
+        },
+        {
+            "id": "azure-ai-search",
+            "file": "azure-ai-search-plugin.json"
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "da-CLIForM365-helper",
+    "source": "pnp",
+    "title": "CLI for M365 Helper",
+    "shortDescription": "This declarative helper helps users discover relevant CLI for Microsoft 365 commands from official documentation",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CLIForM365-helper",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CLIForM365-helper",
+    "longDescription": [
+      "The CLI for M365 Helper helps users discover relevant CLI for Microsoft 365 commands from the official documentation."
+    ],
+    "creationDateTime": "2025-08-06",
+    "updateDateTime": "2025-08-06",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "Json"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-CLIForM365-helper/assets/CLIForM365Helper.png",
+        "alt": "CLI for M365 Helper"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "saurabh7019",
+        "pictureUrl": "https://github.com/saurabh7019.png",
+        "name": "Saurabh Tripathi"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      }
+    ]
+  }
+]

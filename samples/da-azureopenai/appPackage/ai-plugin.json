@@ -1,0 +1,28 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "daOpenAPI",
+    "description_for_human": "OpenAPI specification for Azure OpenAI services.",
+    "namespace": "daopenapi",
+    "functions": [
+        {
+            "name": "getVolunteeringOpportunities",
+            "description": "This endpoint generates a response based on the conversation history provided in the request body."
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "ApiKeyPluginVault",
+                "reference_id": "${{APIKEYAUTH_REGISTRATION_ID}}"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "getVolunteeringOpportunities"
+            ]
+        }
+    ]
+}

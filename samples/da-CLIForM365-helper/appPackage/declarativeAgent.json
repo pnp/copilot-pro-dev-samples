@@ -1,0 +1,31 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
+    "name": "CLI for M365 Helper",
+    "description": "Helps users search and discover CLI for Microsoft 365 commands from official documentation.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "WebSearch",
+            "sites": [
+                {
+                    "url": "https://pnp.github.io/cli-microsoft365"
+                }
+            ]
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Getting Started",
+            "text": "Can you help me understand what CLI for Microsoft 365 is and how to install it?"
+        },
+        {
+            "title": "Command Groups",
+            "text": "Could you show me all available spo commands?"
+        },
+        {
+            "title": "Specific Command Help",
+            "text": "Can you help me with a specific CLI for Microsoft 365 command?"
+        }
+    ]
+}

@@ -1,0 +1,322 @@
+openapi: 3.0.0
+info:
+  title: Microsoft Graph API
+  description: API to interact with SharePoint lists via Microsoft Graph
+  version: 1.0.0
+servers:
+- url: https://graph.microsoft.com/v1.0
+paths:
+  /sites/{siteid}/lists/{listid}/items?$filter=fields/AssignedTo0LookupId eq {userID}&$expand=fields:
+    get:
+      summary: Retrieve volunteer tracker items associated with the user
+      operationId: getListItems
+      tags:
+      - SharePoint
+      parameters:
+      - name: filter
+        in: query
+        description: Filter items by assigned user lookup ID
+        required: true
+        schema:
+          type: string
+          example: "fields/AssignedTo0LookupId eq {userId}"
+          default: "fields/AssignedTo0LookupId eq {userId}"
+      - name: expand
+        in: query
+        description: Expand fields in response
+        required: false
+        schema:
+          type: string
+          example: fields
+          default: fields
+      - name: siteid
+        in: path
+        description: The ID of the SharePoint site
+        required: true
+        schema:
+          type: string
+          default: "${{SITE_ID}}"
+      - name: listid
+        in: path
+        description: The ID of the SharePoint list
+        required: true
+        schema:
+          type: string
+          default: "${{LIST_ID}}"
+      responses:
+        '200':
+          description: Successful retrieval of list items
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '@odata.context':
+                    type: string
+                    description: Metadata context URL
+                  value:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: Item ID
+                        createdDateTime:
+                          type: string
+                          format: date-time
+                          description: Creation timestamp
+                        lastModifiedDateTime:
+                          type: string
+                          format: date-time
+                          description: Last modification timestamp
+                        webUrl:
+                          type: string
+                          format: uri
+                          description: Web URL of the item
+                        createdBy:
+                          type: object
+                          properties:
+                            user:
+                              type: object
+                              properties:
+                                email:
+                                  type: string
+                                  description: Creator email
+                                id:
+                                  type: string
+                                  description: Creator ID
+                                displayName:
+                                  type: string
+                                  description: Creator name
+                        lastModifiedBy:
+                          type: object
+                          properties:
+                            user:
+                              type: object
+                              properties:
+                                email:
+                                  type: string
+                                  description: Modifier email
+                                id:
+                                  type: string
+                                  description: Modifier ID
+                                displayName:
+                                  type: string
+                                  description: Modifier name
+                        fields:
+                          type: object
+                          properties:
+                            Title:
+                              type: string
+                              description: Title of the item
+                            Description:
+                              type: string
+                              description: Description of the item
+                            Progress:
+                              type: string
+                              description: Progress status
+                            Priority:
+                              type: string
+                              description: Priority level
+                            StartDate:
+                              type: string
+                              format: date-time
+                              description: Start date
+                            DueDate:
+                              type: string
+                              format: date-time
+                              description: Due date
+                            AssignedTo0LookupId:
+                              type: string
+                              description: Assigned user lookup ID
+                            Created:
+                              type: string
+                              format: date-time
+                              description: Creation timestamp
+                            Modified:
+                              type: string
+                              format: date-time
+                              description: Modification timestamp
+                            AuthorLookupId:
+                              type: string
+                              description: Author lookup ID
+                            EditorLookupId:
+                              type: string
+                              description: Editor lookup ID
+                            Attachments:
+                              type: boolean
+                              description: Whether attachments exist
+    post:
+      summary: Create a new volunteer tracker item in SharePoint list
+      operationId: createListItem
+      tags:
+      - SharePoint
+      parameters:
+      - name: siteid
+        in: path
+        description: The ID of the SharePoint site
+        required: true
+        schema:
+          type: string
+          default: "${{SITE_ID}}"
+      - name: listid
+        in: path
+        description: The ID of the SharePoint list
+        required: true
+        schema:
+          type: string
+          default: "${{LIST_ID}}"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fields:
+                  type: object
+                  properties:
+                    Title:
+                      type: string
+                      example: Widget
+                    Description:
+                      type: string
+                      example: Work to be done
+                    Progress:
+                      type: string
+                      example: In Progress
+                    Priority:
+                      type: string
+                      example: Low
+                    StartDate:
+                      type: string
+                      format: date
+                      example: '2025-04-15'
+                    DueDate:
+                      type: string
+                      format: date
+                      example: '2025-04-15'
+                    AssignedTo0LookupId:
+                      type: string
+                      example: i:0#.f|membership|user@tenant.onmicrosoft.com
+                    Notes:
+                      type: string
+                      example: The benefits are tremendous
+      responses:
+        '201':
+          description: Item created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    description: Unique identifier for the created item
+                  fields:
+                    type: object
+                    description: Fields of the created item
+  /sites/{siteid}/lists/User Information List/items:
+    get:
+      summary: Retrieve list items with selected fields
+      operationId: getUserInformation
+      tags:
+      - SharePoint
+      parameters:
+      - name: Prefer
+        in: header
+        description: Allows non-indexed queries to proceed with a warning
+        required: false
+        schema:
+          type: string
+          default: "HonorNonIndexedQueriesWarningMayFailRandomly"
+      - name: expand
+        in: query
+        description: Expand fields in response
+        required: false
+        schema:
+          type: string
+          example: fields
+          default: fields
+      - name: siteid
+        in: path
+        description: The ID of the SharePoint site
+        required: true
+        schema:
+          type: string
+          default: "${{SITE_ID}}"
+      responses:
+        "200":
+          description: Successful retrieval of list items
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  "@odata.context":
+                    type: string
+                    description: Metadata context URL
+                  value:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: Item ID
+                        createdDateTime:
+                          type: string
+                          format: date-time
+                          description: Creation timestamp
+                        lastModifiedDateTime:
+                          type: string
+                          format: date-time
+                          description: Last modification timestamp
+                        webUrl:
+                          type: string
+                          format: uri
+                          description: Web URL of the item
+                        createdBy:
+                          type: object
+                          properties:
+                            user:
+                              type: object
+                              properties:
+                                displayName:
+                                  type: string
+                                  description: Creator name
+                        lastModifiedBy:
+                          type: object
+                          properties:
+                            user:
+                              type: object
+                              properties:
+                                displayName:
+                                  type: string
+                                  description: Modifier name
+                        fields:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: List item ID
+                            EMail:
+                              type: string
+                              description: Email associated with the item
+security:
+- azureaadv2: []
+components:
+  securitySchemes:
+    azureaadv2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: >-
+            https://login.microsoftonline.com/${{TEAMS_APP_TENANT_ID}}/oauth2/v2.0/authorize
+          tokenUrl: >-
+            https://login.microsoftonline.com/${{TEAMS_APP_TENANT_ID}}/oauth2/v2.0/token
+          scopes:
+            User.Read: Read user profile
+            Directory.Read.All: Read directory data
+            SharePoint.ReadWrite.All: Read and write items in all site collections

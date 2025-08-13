@@ -1,0 +1,130 @@
+openapi: 3.0.4
+info:
+  title: Azure OpenAI API
+  description: OpenAPI specification for Azure OpenAI services.
+  version: 1.0.0
+servers:
+  - url: https://rescontentsafe1749361086.openai.azure.com
+    description: Azure OpenAI service endpoint
+paths:
+  /openai/deployments/{model}/chat/completions:
+    post:
+      summary: Retrieve volunteering opportunities based on user input
+      operationId: getVolunteeringOpportunities
+      tags:
+        - OpenAI
+      description: >-
+        This endpoint generates a response based on the conversation history
+        provided in the request body.
+      parameters:
+        - name: api-version
+          in: query
+          required: true
+          schema:
+            type: string
+            description: API version (e.g., "2025-01-01-preview").
+            default: "${{API_VERSION}}"
+        - name: model
+          in: path
+          required: true
+          schema:
+            type: string
+            description: model deployed.
+            default: "${{MODEL}}"    
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                messages:
+                  type: array
+                  description: Conversation history with system and user messages.
+                  items:
+                    type: object
+                    properties:
+                      role:
+                        type: string
+                        enum: [system, user, assistant]
+                      content:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              enum: [text]
+                            text:
+                              type: string
+                temperature:
+                  type: number
+                  description: Sampling temperature between 0 and 2.
+                  default: ${{TEMPERATURE}}
+                top_p:
+                  type: number
+                  description: Nucleus sampling probability.
+                  default: ${{TOP_P}}
+                max_tokens:
+                  type: integer
+                  description: Maximum number of tokens to generate.
+                  default: ${{MAX_TOKENS}}
+                n:
+                  type: integer
+                  description: Number of completions to generate.
+                  default: 1
+                stop:
+                  type: array
+                  items:
+                    type: string
+                  description: Sequences where the API will stop generating further tokens.
+                presence_penalty:
+                  type: number
+                  description: Penalizes new tokens based on their presence in the text.
+                  default: ${{PRESENCE_PENALTY}}
+                frequency_penalty:
+                  type: number
+                  description: Penalizes new tokens based on their frequency in the text.
+                  default: ${{FREQUENCY_PENALTY}}
+      responses:
+        '200':
+          description: AI-generated completion response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  choices:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        text:
+                          type: string
+                        finish_reason:
+                          type: string
+                  usage:
+                    type: object
+                    properties:
+                      prompt_tokens:
+                        type: integer
+                      completion_tokens:
+                        type: integer
+                      total_tokens:
+                        type: integer
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+security:
+  - apikey: []
+components:
+  securitySchemes:
+    apikey:
+      type: apiKey
+      in: header
+      name: api-key

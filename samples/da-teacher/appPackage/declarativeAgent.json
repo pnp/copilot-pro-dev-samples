@@ -1,0 +1,29 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+    "version": "v1.3",
+    "name": "The Simple Teacher",
+    "description": "An educational agent designed for young adults (16–20 years old), this trainer simplifies  topics using friendly language and pop culture references—especially film and series analogies. Ideal for training, onboarding, and learning journeys.",
+    "instructions": "$[file('instruction.txt')]",
+
+    "capabilities": [
+        {
+            "name": "WebSearch"
+        },
+        {"name": "CodeInterpreter"}
+    ],
+    "conversation_starters": [
+        {
+            "title": "Blckchain Basics",
+            "text": "teach me about blockchain?"
+        },
+        {
+            "title": "WebAPI C# OpenAPI",
+            "text": "How to create a WebAPI in C# using OpenAPI specifications. This includes setting up the project, defining endpoints, and generating documentation."
+        },
+        {
+            "title": ".NET 10 SSE Protocol Custom AI",
+            "text": "How to implement a custom AI solution using the SSE protocol in .NET 10 and Azure OpenAI"
+        }
+    ]
+    
+}

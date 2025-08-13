@@ -1,0 +1,420 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "M365.Comms.API | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://<your-web-api>.azurewebsites.net"
+    }
+  ],
+  "paths": {
+    "/api/Message": {
+      "get": {
+        "tags": [
+          "Message"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Id": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "MarkdownContent": {
+                      "type": "string"
+                    },
+                    "Approval": {
+                      "enum": [
+                        "Pending",
+                        "Approved",
+                        "Rejected",
+                        "Cancelled",
+                        "Submitted"
+                      ],
+                      "type": "string"
+                    },
+                    "SendToSharePoint": {
+                      "type": "boolean"
+                    },
+                    "SendToTeams": {
+                      "type": "boolean"
+                    },
+                    "SendToOutlook": {
+                      "type": "boolean"
+                    },
+                    "ReviewItemUrl": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "getAllMessages"
+      },
+      "patch": {
+        "tags": [
+          "Message"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Id": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "MarkdownContent": {
+                      "type": "string"
+                    }
+                  }
+                }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "Successful Update"
+          }
+        },
+        "operationId": "updateMessage"
+      },
+      "post": {
+        "tags": [
+          "Message"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Id": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "MarkdownContent": {
+                      "type": "string"
+                    },
+                    "Approval": {
+                      "enum": [
+                        "Pending",
+                        "Approved",
+                        "Rejected",
+                        "Cancelled",
+                        "Submitted"
+                      ],
+                      "type": "string"
+                    },
+                    "SendToSharePoint": {
+                      "type": "boolean"
+                    },
+                    "SendToTeams": {
+                      "type": "boolean"
+                    },
+                    "SendToOutlook": {
+                      "type": "boolean"
+                    }                    
+                  }
+                }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Id": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "MarkdownContent": {
+                      "type": "string"
+                    },
+                    "Approval": {
+                      "enum": [
+                        "Pending",
+                        "Approved",
+                        "Rejected",
+                        "Cancelled",
+                        "Submitted"
+                      ],
+                      "type": "string"
+                    },
+                    "SendToSharePoint": {
+                      "type": "boolean"
+                    },
+                    "SendToTeams": {
+                      "type": "boolean"
+                    },
+                    "SendToOutlook": {
+                      "type": "boolean"
+                    },
+                    "ReviewItemUrl": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Message not found"
+          }
+        },
+        "operationId": "createMessage"
+      }
+    },
+    "/api/Message/{id}": {
+      "get": {
+        "tags": [
+          "Message"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the message to get",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Id": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "MarkdownContent": {
+                      "type": "string"
+                    },
+                    "Approval": {
+                      "enum": [
+                        "Pending",
+                        "Approved",
+                        "Rejected",
+                        "Cancelled",
+                        "Submitted"
+                      ],
+                      "type": "string"
+                    },
+                    "SendToSharePoint": {
+                      "type": "boolean"
+                    },
+                    "SendToTeams": {
+                      "type": "boolean"
+                    },
+                    "SendToOutlook": {
+                      "type": "boolean"
+                    },
+                    "ReviewItemUrl": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Message not found"
+          }
+        },
+        "operationId": "getMessagesById"
+      }
+    },
+    "/api/Message/{id}/cancel": {
+      "patch": {
+        "tags": [
+          "Message"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the message to cancel approval",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Id": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "MarkdownContent": {
+                      "type": "string"
+                    },
+                    "Approval": {
+                      "enum": [
+                        "Pending",
+                        "Approved",
+                        "Rejected",
+                        "Cancelled",
+                        "Submitted"
+                      ],
+                      "type": "string"
+                    },
+                    "SendToSharePoint": {
+                      "type": "boolean"
+                    },
+                    "SendToTeams": {
+                      "type": "boolean"
+                    },
+                    "SendToOutlook": {
+                      "type": "boolean"
+                    },
+                    "ReviewItemUrl": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Successful Update"
+          },
+          "404": {
+            "description": "Message not found"
+          }
+        },
+        "operationId": "cancelMessageApproval"
+      }
+    },
+    "/api/Message/{id}/submit": {
+      "patch": {
+        "tags": [
+          "Message"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "description": "ID of the message to submit for approval",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Id": {
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "MarkdownContent": {
+                      "type": "string"
+                    },
+                    "Approval": {
+                      "enum": [
+                        "Pending",
+                        "Approved",
+                        "Rejected",
+                        "Cancelled",
+                        "Submitted"
+                      ],
+                      "type": "string"
+                    },
+                    "SendToSharePoint": {
+                      "type": "boolean"
+                    },
+                    "SendToTeams": {
+                      "type": "boolean"
+                    },
+                    "SendToOutlook": {
+                      "type": "boolean"
+                    },
+                    "ReviewItemUrl": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "Successful Update"
+          },
+          "404": {
+            "description": "Message not found"
+          }
+        },
+        "operationId": "submitMessageApproval"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth2": [
+        "api://<your-client-id>/.default"
+      ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Message"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "OAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/authorize",
+            "tokenUrl": "https://login.microsoftonline.com/<your-tenant-id>/oauth2/v2.0/token",
+            "refreshUrl": "https://login.microsoftonline.com/c<your-tenant-id>/oauth2/v2.0/token",
+            "scopes": {
+              "api://<your-client-id>/.default": "Access the API on your behalf"
+            }
+          }
+        }
+      }
+    }
+  }
+}

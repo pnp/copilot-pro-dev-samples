@@ -1,0 +1,40 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "My Communication Buddy",
+    "description": "Simple lightweight declarative agent created to assist user in creating Microsoft 365 Corporate communications",
+    "instructions": "$[file('instruction.md')]",
+    "capabilities":[
+        {
+            "name": "GraphicArt"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Create a image",
+            "text": "Generate an image for a new Garden Rebot product the GDN800 series in abstract art style."
+        },
+        {
+            "title": "Generate Communications Plan",
+            "text": "Create a communications plan for a new service launch for advanced analytics service."
+        },
+        {
+            "title": "Introducing a new product",
+            "text": "Create an product launch notification for a new Garden Robot product the GDN800 series. The announcement should follow our corporate style guide and suggest a social media posts. "
+        },
+        {
+            "title": "New employee announcement",
+            "text": "Create a employee announcement for Wonderful Gardens Ltd. including a welcome message, suggested social media posts and a welcome email."
+        },
+        {
+            "title": "Yearly celebration event",
+            "text": "Create our annual celebration event for Wonderful Gardens Ltd called 'Blooming Marvelous'. including a communications plan, suggested social media posts and a event poster."
+        },
+        {
+            "title": "Check my message",
+            "text": "Validate the following message to meet our corporate style and inclusion guides for this [text]"
+        }        
+    ]
+}
+
+

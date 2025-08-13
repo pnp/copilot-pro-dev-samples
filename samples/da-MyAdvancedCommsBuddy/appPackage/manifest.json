@@ -1,0 +1,38 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.19/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.19",
+    "version": "1.0.20",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "PKB App, Inc.",
+        "websiteUrl": "https://pkbullock.com",
+        "privacyUrl": "https://pkbulock.com",
+        "termsOfUseUrl": "https://pkbullock.com"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "My Smart Communications Buddy ${{APP_NAME_SUFFIX}}",
+        "full": "My Smart Communications Buddy - Advanced Version for Microsoft 365 Copilot agent"
+    },
+    "description": {
+        "short": "My Smart Communications Buddy that helps you write content for you and your team",
+        "full": "My Smart Communications Buddy that helps you write content for you and your team the provides support for writing inclusive communications"
+    },
+    "accentColor": "#FFFFFF",
+    "copilotAgents": {
+        "declarativeAgents": [
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}

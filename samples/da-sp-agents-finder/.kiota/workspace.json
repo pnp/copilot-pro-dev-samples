@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "clients": {},
+  "plugins": {
+    "graphsearch": {
+      "types": [
+        "APIPlugin"
+      ],
+      "authType": null,
+      "authReferenceId": null,
+      "descriptionLocation": "./apis/graph_search.yaml",
+      "includePatterns": [
+        "/search/microsoft.graph.query#POST"
+      ],
+      "excludePatterns": [],
+      "outputPath": "./plugins"
+    }
+  }
+}
