@@ -1,0 +1,19 @@
+{
+  "applicationName": "application",
+  "apiDependencies": {
+    "graphsearch": {
+      "apiDescriptionUrl": "./apis/graph_search.yaml",
+      "apiDeploymentBaseUrl": "https://graph.microsoft.com/v1.0/",
+      "requests": [
+        {
+          "method": "POST",
+          "uriTemplate": "search/microsoft.graph.query"
+        }
+      ],
+      "extensions": {
+        "x-ms-kiota-hash": "E8B19F9E53DEE43E9C8EF22D676337ED4F3C472C22784CB1500E03CF42F8C1AF",
+        "x-ms-kiota-version": "1.27.0"
+      }
+    }
+  }
+}

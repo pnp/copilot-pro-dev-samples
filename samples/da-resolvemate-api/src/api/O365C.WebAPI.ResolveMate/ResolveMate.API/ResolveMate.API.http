@@ -1,0 +1,6 @@
+@ResolveMate.API_HostAddress =  https://localhost:7001
+
+GET {{ResolveMate.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

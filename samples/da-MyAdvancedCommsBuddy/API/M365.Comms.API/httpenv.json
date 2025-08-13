@@ -1,0 +1,10 @@
+{
+  "local-https": {
+    "M365.Comms.API_HostAddress": "https://localhost:7200",
+    "token": ""
+  },
+  "remote-https": {
+    "M365.Comms.API_HostAddress": "https://<your-deployed-site>.azurewebsites.net",
+    "token": ""
+  }
+}

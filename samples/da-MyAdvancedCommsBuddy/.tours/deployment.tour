@@ -1,0 +1,32 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Deployment of the sample",
+  "steps": [
+    {
+      "file": "env/.env.dev",
+      "description": "When creating the Teams Developer Portal, paste here the Microsoft Entra SSO registration ID into the OAUTH2_REGISTRATION_ID variable.",
+      "line": 17
+    },
+    {
+      "file": "appPackage/apiSpecificationFile/openapi.json",
+      "description": "Ensure your server url matches the newly deployed Azure App - Web API Url",
+      "line": 9
+    },
+    {
+      "file": "appPackage/apiSpecificationFile/openapi.json",
+      "description": "Update to match the Entra ID app, created for the Web API under Expose a URL, identifier URI, or found in the manifest file if this is showing the auth version in the UI.\r\nFormat e.g. api://<client-id>/.default",
+      "line": 394
+    },
+    {
+      "file": "appPackage/apiSpecificationFile/openapi.json",
+      "description": "Update the next three lines to match your tenant ID. \r\nYou can find these either in Entra ID, under App Registrations > EndPoints in the top navigation bar.",
+      "line": 409
+    },
+    {
+      "file": "appPackage/apiSpecificationFile/openapi.json",
+      "description": "Update to match your Entra Id App created for the web api with the format: \"api://<client-id>/.default\"",
+      "line": 413
+    }
+  ],
+  "ref": "main"
+}

@@ -1,0 +1,69 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "My Communication Buddy - Communication Queue",
+    "description_for_human": "Writes a message to the M365 Communication Queue service",
+    "namespace": "m365communicationassistant",
+    "legal_info_url": "https://pkbullock.com/blog/2025/building-a-blog-post-helper-agent-for-microsoft-365-copilot",
+    "functions": [
+        {
+            "name": "getAllMessages",
+            "description": "Gets all messages saved in the M365 Communication Queue service"
+        },
+        {
+            "name": "getMessagesById",
+            "description": "Gets a message by ID from the M365 Communication Queue service"
+        },
+        {
+            "name": "updateMessage",
+            "description": "Updates a message in the M365 Communication Queue service"
+        },
+        {
+            "name": "createMessage",
+            "description": "Create or save a new message in the M365 Communication Queue service"
+        },
+        {
+            "name": "cancelMessageApproval",
+            "description": "Cancels the approval of a message in the M365 Communication Queue service",
+            "capabilities": {
+                "confirmation": {
+                    "type": "AdaptiveCard",
+                    "title": "Cancel Approval Process",
+                    "body": "Do you want to cancel the approval process for this message?"
+                }
+            }
+        },
+        {
+            "name": "submitMessageApproval",
+            "description": "Submits the approval of a message in the M365 Communication Queue service",
+            "capabilities": {
+                "confirmation": {
+                    "type": "AdaptiveCard",
+                    "title": "Submit for Approval Process",
+                    "body": "Do you want to submit this message for approval?"
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{OAUTH2_REGISTRATION_ID}}"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.json",
+                "progress_style": "ShowUsageWithInputAndOutput"
+            },
+            "run_for_functions": [
+                "getAllMessages",
+                "getMessagesById",
+                "updateMessage",
+                "createMessage",
+                "cancelMessageApproval",
+                "submitMessageApproval"
+            ]
+        }
+    ]
+}

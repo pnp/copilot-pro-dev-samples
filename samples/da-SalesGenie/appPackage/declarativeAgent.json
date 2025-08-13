@@ -1,0 +1,52 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
+    "name": "Sales Genie",
+    "description": "Helps sales executive team to get a quick overview of accounts, leads, opportunities, tasks and more. Agent can help prepare for upcoming customer meetings by providing actionable takeaways from CRM data, pitch decks, past meetings, emails, and web. Agent can also help log customer calls into Salesforce.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "WebSearch"
+        },
+        {
+            "name": "CodeInterpreter"
+        },
+        {
+            "name": "OneDriveAndSharePoint"
+        },
+        {
+            "name": "Email"
+        },
+        {
+            "name": "TeamsMessages"
+        }
+    ],
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Customer Details",
+            "text": "Get all details for an account including account summary, opportunities, cases, tasks and assets"
+        },
+        {
+            "title": "Catchup",
+            "text": "Show opportunity pipeline for this month"
+        },
+        {
+            "title": "Catchup",
+            "text": "Show key deals anticipated to close within the current week and month"
+        },
+        {
+            "title": "Log call",
+            "text": "Log call of a customer meeting in Salesforce"
+        },
+        {
+            "title": "Prepare",
+            "text": "Help me prepare for a customer meeting"
+        }
+    ]
+}

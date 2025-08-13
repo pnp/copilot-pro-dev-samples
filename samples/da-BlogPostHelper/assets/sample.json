@@ -3,7 +3,7 @@
       "name": "pnp-copilot-pro-dev-BlogPostHelper",
       "source": "pnp",
       "title": "Blog Post Helper Declarative Agent for Microsoft 365 Copilot Sample",
-      "shortDescription": "First Party Declarative Agent Career Coach shared as a sample",
+      "shortDescription": "Blog post helper declarative agent to help in the creation process.",
       "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-BlogPostHelper",
       "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-BlogPostHelper",
       "longDescription": [

@@ -46,9 +46,8 @@ When you submit a new sample, please follow these guidelines:
 * You will need to have a `README.md` file for your contribution, which is based on [the provided template](templates/README-template.md) under the `samples` folder. Please copy this template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 * You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). The preview image must be located in the `assets` folder in the root of your sample folder.
   * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
-* The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-copilot-pro-dev-your-sample`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
-* Update the image `src` attribute according with the repository name and folder information. For example, if your sample is named `my-agent` in the `samples` folder, you should update the `src` attribute to `https://m365-visitor-stats.azurewebsites.net/SamplesGallery/pnp-copilot-pro-dev-my-agent`
-  * Update the image `src` attribute according with the repository name and folder information.
+* The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
+* Update the image `src` attribute according with the folder information replacing ```<your-sample-folder>``` placeholder. For example, if your sample is named `da-my-agent` in the `samples` folder, you should update the `src` attribute to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-my-agent` as an example.
 * If you find an existing sample which is similar to yours, please extend the existing one rather than submitting a new similar sample
   * When you update existing samples, please update also `README.md` file accordingly with information on provided changes and with your author details
 * Make sure to document each function in the `README.md`
@@ -165,10 +164,12 @@ Your sample should include a clearly marked folder containing a Teams/M365 `mani
 
 ### 7. Telemetry
 
-Each `README` template contains a specific tracking image at the bottom of the file with an `img` tag, where the `src` attribute points to `https://m365-visitor-stats.azurewebsites.net/teams-dev-samples/samples/xxx`. This is a transparent image which is used to track viewership of individual samples in GitHub. We only count the number of times each page is accessed, and capture no personal information or correlation with other pages.
+The README template contains a specific tracking image at the end of the file with an `img` tag, where the `src` attribute points to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
 
-Please update the image `src` attribute according with the repository name and folder information. For example, if your sample is named `bot-todo` in the `samples` folder, you should update the `src` attribute to `https://m365-visitor-stats.azurewebsites.net/sp-dev-fx-webparts/samples/bot-todo`.
+Update the image `src` attribute according with the folder information. For example, if your sample is named `my-agent` in the `samples` folder, you should update the `src` attribute to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/my-agent` as an example, 
 
+We recommend to add the prefix ```da-``` refers to declarative agent as a short code, to the URL and the folder name if possible please.
+`https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-my-agent` as the URL, in a folder also named ```da-my-agent```.
 
 ## Submitting Pull Requests
 

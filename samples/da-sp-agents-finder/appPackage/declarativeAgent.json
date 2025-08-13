@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+  "version": "v1.4",
+  "name": "SharePoint Agents Finder",
+  "description": "Declarative agent created with Microsoft 365 Agents Toolkit",
+  "instructions": "$[file('instruction.txt')]",
+  "actions": [
+    {
+      "id": "action_1",
+      "file": "ai-plugin.json"
+    }
+  ],
+  "conversation_starters": [
+    {
+      "title": "Find SharePoint agents in SharePoint Sites by providing the agent's name",
+      "text": "Type your Agent Name"
+    }
+  ]
+}

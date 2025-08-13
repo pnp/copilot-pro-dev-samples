@@ -1,0 +1,73 @@
+[
+    {
+        "name": "pnp-copilot-pro-dev-da-trey-research",
+        "source": "pnp",
+        "title": "Trey Research TypeScript",
+        "shortDescription": "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects.",
+        "url": "https://github.com/pnp/pnp-copilot-pro-dev-samples/tree/main/samples/da-trey-research",
+        "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/pnp-copilot-pro-dev-samples/tree/main/samples/da-trey-research",
+        "longDescription": [
+            "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects. The agent can answer questions about consultants and their projects"
+        ],
+        "creationDateTime": "2025-04-16",
+        "updateDateTime": "2025-06-16",
+        "products": [
+            "Microsoft 365 Copilot"
+        ],
+        "metadata": [
+            {
+                "key": "PLATFORM",
+                "value": "Node.js"
+            },
+            {
+                "key": "LANGUAGE",
+                "value": "TypeScript"
+            },
+            {
+                "key": "API-PLUGIN",
+                "value": "Yes"
+            },
+            {
+                "key": "GRAPH-CONNECTOR",
+                "value": "No"
+            }
+        ],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 50,
+                "url": "https://github.com/pnp/pnp-copilot-pro-dev-samples/raw/main/samples/da-trey-research/assets/preview.gif",
+                "alt": "Demonstration of Trey Research sample"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "bobgerman",
+                "pictureUrl": "https://github.com/bobgerman.png",
+                "name": "Bob German"
+            },
+            {
+                "gitHubAccount": "garrytrinder",
+                "pictureUrl": "https://github.com/garrytrinder.png",
+                "name": "Garry Trinder"
+            }
+        ],
+        "references": [
+            {
+                "name": "Microsoft 365 Copilot extensibility",
+                "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+                "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+            },
+            {
+                "name": "Declarative agents for Microsoft 365 Copilot overview",
+                "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+                "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+            },
+            {
+                "name": "Build a declarative agent for Microsoft 365 Copilot",
+                "description": "Learn how to build a declarative agent for Microsoft 365 Copilot.",
+                "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
+            }
+        ]
+    }
+]

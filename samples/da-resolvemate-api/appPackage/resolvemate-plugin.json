@@ -1,0 +1,638 @@
+{
+    "schema_version": "v2.1",
+    "name_for_human": "Resolve Mate",
+    "description_for_human": "Streamline support by analyzing and retrieving tickets based on various criteria.",
+    "namespace": "resolvemate",
+    "functions": [{
+            "name": "getTicketById",
+            "description": "Find a ticket by its ID. This feature allows you to retrieve a specific customer support ticket using its unique identifier. for example, you can find a ticket with ID 5.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.ticketId",
+                        "subtitle": "$.ticketSubject"
+                    },
+                    "static_template": {
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "type": "AdaptiveCard",
+                        "version": "1.5",
+                        "body": [{
+                                "type": "TextBlock",
+                                "text": "Support Ticket #${ticketId}",
+                                "weight": "Bolder",
+                                "size": "Large",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Status: ${ticketStatus}",
+                                "weight": "Bolder",
+                                "color": "Good",
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "ColumnSet",
+                                "columns": [{
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Customer Details",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Name: ${customerName}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Email: ${customerEmail}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Ticket Details",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Type: ${ticketType}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Subject: ${ticketSubject}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Priority: ${ticketPriority}",
+                                                "color": "Attention",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Channel: ${ticketChannel}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Product Name: ${productName}",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Date of Purchase: ${purchasedDate}",
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Ticket Description",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${ticketDescription}",
+                                "wrap": true,
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Resolution",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${resolution}",
+                                "wrap": true,
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Customer Satisfaction Rating: ${customerSatisfactionRating}",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "getTicketsByStatusAndPriority",
+            "description": "Find tickets by status and priority. This feature allows you to retrieve customer support tickets based on their status and priority. For example, you can find all tickets with status 'Open' and priority 'High'.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.ticketId",
+                        "subtitle": "$.ticketSubject"
+                    },
+                    "static_template": {
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "type": "AdaptiveCard",
+                        "version": "1.5",
+                        "body": [{
+                                "type": "TextBlock",
+                                "text": "Support Tickets",
+                                "weight": "Bolder",
+                                "size": "Large",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Status: ${ticketStatus}",
+                                "weight": "Bolder",
+                                "color": "Good",
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "ColumnSet",
+                                "columns": [{
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Customer Details",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Name: ${customerName}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Email: ${customerEmail}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Ticket Details",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Type: ${ticketType}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Subject: ${ticketSubject}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Priority: ${ticketPriority}",
+                                                "color": "Attention",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Channel: ${ticketChannel}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Product Name: ${productName}",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Date of Purchase: ${purchasedDate}",
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Ticket Description",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${ticketDescription}",
+                                "wrap": true,
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Resolution",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${resolution}",
+                                "wrap": true,
+                                "spacing": "None"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "searchTickets",
+            "description": "Search for tickets by subject or description. This feature allows you to search for customer support tickets based on specific keywords in the ticket subject or description. For example, you can find all tickets that mention 'product setup' in the subject or description.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.ticketId",
+                        "subtitle": "$.ticketSubject"
+                    },
+                    "static_template": {
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "type": "AdaptiveCard",
+                        "version": "1.5",
+                        "body": [{
+                                "type": "TextBlock",
+                                "text": "Support Ticket #${ticketId}",
+                                "weight": "Bolder",
+                                "size": "Large",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Status: ${ticketStatus}",
+                                "weight": "Bolder",
+                                "color": "Good",
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "ColumnSet",
+                                "columns": [{
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Customer Details",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Name: ${customerName}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Email: ${customerEmail}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Ticket Details",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Type: ${ticketType}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Subject: ${ticketSubject}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Priority: ${ticketPriority}",
+                                                "color": "Attention",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Channel: ${ticketChannel}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Product Name: ${productName}",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Date of Purchase: ${purchasedDate}",
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Ticket Description",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${ticketDescription}",
+                                "wrap": true,
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Resolution",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${resolution}",
+                                "wrap": true,
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Customer Satisfaction Rating: ${customerSatisfactionRating}",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "updateTicket",
+            "description": "Update ticket details. This feature allows you to update the details of a customer support ticket. For example, you can update the status, priority, or resolution of a ticket.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.ticketId",
+                        "subtitle": "$.ticketSubject"
+                    },
+                    "static_template": {
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "type": "AdaptiveCard",
+                        "version": "1.5",
+                        "body": [{
+                                "type": "TextBlock",
+                                "text": "Updated Support Ticket #${ticketId}",
+                                "weight": "Bolder",
+                                "size": "Large",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Status: ${ticketStatus}",
+                                "weight": "Bolder",
+                                "color": "Good",
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "ColumnSet",
+                                "columns": [{
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Customer Details",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Name: ${customerName}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Email: ${customerEmail}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Ticket Details",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Type: ${ticketType}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Subject: ${ticketSubject}",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Priority: ${ticketPriority}",
+                                                "color": "Attention",
+                                                "spacing": "None"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "Channel: ${ticketChannel}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Product Name: ${productName}",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Date of Purchase: ${purchasedDate}",
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Ticket Description",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${ticketDescription}",
+                                "wrap": true,
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Resolution",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "${resolution}",
+                                "wrap": true,
+                                "spacing": "None"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Customer Satisfaction Rating: ${customerSatisfactionRating}",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "getResolvedTicketsWithSatisfaction",
+            "description": "Find resolved tickets with satisfaction rating. This feature allows you to retrieve customer support tickets that have been resolved along with the customer satisfaction rating. For example, you can find all resolved tickets with a satisfaction rating of '5'.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.ticketId",
+                        "subtitle": "$.ticketType"
+                    },
+                    "static_template": {
+                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                        "type": "AdaptiveCard",
+                        "version": "1.5",
+                        "body": [{
+                                "type": "TextBlock",
+                                "text": "Support Ticket #${ticketId}",
+                                "weight": "Bolder",
+                                "size": "Large",
+                                "color": "Accent",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Customer: ${customerName}",
+                                "weight": "Bolder",
+                                "color": "Good",
+                                "spacing": "Small"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Product: ${productName}",
+                                "weight": "Bolder",
+                                "color": "Attention",
+                                "spacing": "Small"
+                            },
+                            {
+                                "type": "ColumnSet",
+                                "columns": [{
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Ticket Type",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${ticketType}",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Column",
+                                        "width": "stretch",
+                                        "items": [{
+                                                "type": "TextBlock",
+                                                "text": "Priority",
+                                                "weight": "Bolder",
+                                                "spacing": "Medium"
+                                            },
+                                            {
+                                                "type": "TextBlock",
+                                                "text": "${ticketPriority}",
+                                                "color": "Warning",
+                                                "spacing": "None"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Channel: ${ticketChannel}",
+                                "weight": "Bolder",
+                                "spacing": "Medium"
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "Customer Satisfaction Rating: ${customerSatisfactionRating}",
+                                "weight": "Bolder",
+                                "color": "Good",
+                                "spacing": "Medium"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [{
+        "type": "OpenApi",
+        "auth": {
+            "type": "None"
+        },
+        "spec": {
+            "url": "resolvemate-definition.json"
+        },
+        "run_for_functions": [
+            "getTicketById",
+            "getTicketsByStatusAndPriority",
+            "searchTickets",
+            "updateTicket",
+            "getResolvedTicketsWithSatisfaction"
+        ]
+    }],
+    "capabilities": {
+        "localization": {},
+        "conversation_starters": [{
+            "text": "Find ticket with ID 7402"
+        }]
+    }
+}

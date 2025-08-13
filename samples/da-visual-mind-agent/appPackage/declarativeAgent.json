@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+  "version": "v1.3",
+  "name": "Visual Mind",
+  "description": "Declarative agent created with Teams Toolkit",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    {
+      "title": "Flowchart",
+      "text": "Create a flowchart to illustrate a simple problem-solving process or a math problem-solving sequence."
+    },
+    {
+      "title": "Sequence Diagram",
+      "text": "Design a sequence diagram to map out a business process step-by-step."
+    },
+    {
+      "title": "Gantt Chart",
+      "text": "Generate a Gantt Chart to plan and schedule sessions for an event or conference."
+    },
+    {
+      "title": "Sessions Diagram",
+      "text": "Develop a sessions diagram to organize and visualize the schedule for a conference or event."
+    },
+    {
+      "title": "Entity Relationship Diagram",
+      "text": "Produce an Entity Relationship Diagram to represent the schema of a database."
+    },
+    {
+      "title": "User Journey Diagram",
+      "text": "Outline a user journey diagram to map the experience of users on a website or app."
+    }
+  ]
+}

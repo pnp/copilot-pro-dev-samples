@@ -1,0 +1,10 @@
+{
+    "ticketId": 20,
+    "customerId": 20,
+    "customerName": "Jeffrey Robertson",
+    "productName": "Canon EOS",
+    "ticketType": "Refund request",
+    "ticketPriority": "Low",
+    "ticketChannel": "Chat",
+    "customerSatisfactionRating": 5
+}

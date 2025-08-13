@@ -1,0 +1,34 @@
+1. You can call the `getVolunteeringOpportunities` API to get a list of available volunteering opportunities. 
+Ensure you provide the necessary authentication token and any required query parameters as specified in the API documentation
+
+**Example API Request**
+
+Here’s an example of the JSON payload sent to Azure OpenAI replacing <Prompt> with user prompt:
+
+```json
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": [
+        {
+          "type": "text",
+          "text": "You are an helpful assistant helping to gather volunteering opportunities"
+        }
+      ]
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "<Prompt>"
+        }
+      ]
+    }
+  ],
+  "temperature": 0.7,
+  "top_p": 0.95,
+  "max_tokens": 800
+}
+```

@@ -1,0 +1,45 @@
+{
+    "$schema": "https://aka.ms/json-schemas/copilot-extensions/vNext/declarative-copilot.schema.json",
+    "version": "v1.0",
+    "name": "O365C - Resolve Mate",
+    "description": "The Resolve Mate is a helpful assistant designed to streamline customer support tasks and provide valuable insights into customer interactions. It can quickly access and analyze customer support tickets based on various criteria, including ticket ID, status, type, priority, customer email, and more. It can also perform advanced analysis, such as gauging customer satisfaction levels.",
+    "instructions": "Use the Resolve Mate to quickly retrieve and analyze customer support tickets. You can search for tickets by various criteria, including ticket ID, status, priority, and search terms. You can also retrieve tickets by customer ID and update ticket details. Additionally, the Resolve Mate can provide resolution metrics and insights into customer satisfaction levels. If you need to perform more complex analysis or have specific requirements, please contact your support team lead.",
+    "conversation_starters": [{
+            "title": "Find ticket by ID",
+            "text": "Find ticket with ID 5"
+        },
+        {
+            "title": "Tickets by status and priority",
+            "text": "Show me tickets with status 'open' and priority 'high'"
+        },
+        {
+            "title": "Search by Subject/Description",
+            "text": "Show me tickets that mention 'product setup' in the subject or description"
+        },
+        {
+            "title": "Update ticket",
+            "text": "Update the ticket where ticket ID is 5 and ticketStatus is 'open' and ticketPriority is 'critical'"
+        },
+        {
+            "title": "Customer satisfaction analysis",
+            "text": "Analyze customer satisfaction levels for resolved tickets"
+        }
+    ],
+    "capabilities": [{
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [{
+                "url": "${{SHAREPOINT_DOCS_URL}}"
+            }]
+        },
+        {
+            "name": "GraphConnectors",
+            "connections": [{
+                "connection_id": "MsLearnConnector"
+            }]
+        }
+    ],
+    "actions": [{
+        "id": "resolveMate",
+        "file": "resolvemate-plugin.json"
+    }]
+}
