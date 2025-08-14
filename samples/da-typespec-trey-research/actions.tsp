@@ -31,7 +31,7 @@ namespace TreyAPI{
  */
   @route("/me")
   @card( #{ dataPath: "$.results",  title: "$.name", url:"$.consultantPhotoUrl", file: "cards/getUserInformation.json"}) 
-  @get  op getUserInformation(): Consultant;
+  @get op getUserInformation(): Consultant;
  /**
  * Charge time to a specific project on behalf of the logged in user, and return the number of hours remaining in their forecast.
  */
