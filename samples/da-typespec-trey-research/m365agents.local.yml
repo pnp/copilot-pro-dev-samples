@@ -74,11 +74,7 @@ provision:
     writeToEnvironmentFile:
       titleId: M365_TITLE_ID
       appId: M365_APP_ID
-  - uses: script
-    name: Ensure database
-    with:
-      run: node db-setup.js
-      workingDirectory: scripts
+  
 deploy:
   # Install development tool(s)
   - uses: devTool/install
@@ -102,6 +98,11 @@ deploy:
     name: install dependencies
     with:
       args: install --no-audit
+  - uses: script
+    name: Ensure database
+    with:
+      run: node db-setup.js
+      workingDirectory: scripts
 
 # Triggered when 'teamsapp publish' is executed
 publish:
