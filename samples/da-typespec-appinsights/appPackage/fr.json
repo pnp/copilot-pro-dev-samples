@@ -1,0 +1,13 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.22/MicrosoftTeams.Localization.schema.json",
+    "name.short": "Copilot Télémétrie Démo ${{APP_NAME_SUFFIX}}",
+    "name.full": "Copilot Télémétrie Démo",
+    "description.short": "Aide les utilisateurs à répondre aux questions courantes",
+    "description.full": "Aide les utilisateurs à répondre aux questions courantes",
+    "localizationKeys": {
+        "DA_Name": "Copilot Télémétrie Démo ${{APP_NAME_SUFFIX}}",
+        "DA_Description": "Aide les utilisateurs à répondre aux questions courantes",
+        "STARTER1_Title": "Poser une question de base",
+        "STARTER1_Text": "Quels sont les derniers documents sur lesquels j'ai travaillé"
+    }      
+}

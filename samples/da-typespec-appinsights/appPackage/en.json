@@ -1,0 +1,14 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.22/MicrosoftTeams.Localization.schema.json",
+    "name.short": "Copilot Analytics Demo ${{APP_NAME_SUFFIX}}",
+    "name.full": "Copilot Analytics Demo",
+    "description.short": "Assists employees by answering common questions",
+    "description.full": "Assists employees by answering common questions",
+    "localizationKeys": {
+        "DA_Name": "Copilot Analytics Demo ${{APP_NAME_SUFFIX}}",
+        "DA_Description": "Assists employees by answering common questions",
+        "STARTER1_Title": "Ask a basic question",
+        "STARTER1_Text": "What are the latest documents I worked on?"
+
+    }      
+}
