@@ -1,0 +1,120 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.1/schema.json",
+    "schema_version": "v2.1",
+    "name_for_human": "ServiceNow Knowledge Management REST API",
+    "description_for_human": "API for searching, retrieving, creation, updating and deletion of ticket incidents from ServiceNow.",
+    "description_for_model": "API for searching, retrieving, creation, updating and deletion of ticket incidents from ServiceNow.",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "ithelpdesk",
+    "capabilities": {
+        "conversation_starters": [
+            {
+                "text": "Retrieve user details from ServiceNow sys_user tab"
+            },
+            {
+                "text": "Retrieve a list of incidents"
+            },
+            {
+                "text": "Create a new incident"
+            },
+            {
+                "text": "Update an existing incident"
+            },
+            {
+                "text": "Delete an existing incident"
+            },
+            {
+                "text": "Get ongoing outages"
+            }
+        ]
+    },
+    "functions": [
+        {
+            "name": "createIncident",
+            "description": "Create a new incident record in the ServiceNow instance."
+        },
+        {
+            "name": "deleteIncident",
+            "description": "Delete an incident record from the ServiceNow instance."
+        },
+        {
+            "name": "getOngoingOutages",
+            "description": "Get ongoing outages",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "static_template": {
+                        "file": "./adaptiveCards/getOngoingOutages.json"
+                    }
+                }
+            }
+        },
+        {
+            "name": "getUserDetails",
+            "description": "Retrieve user details from ServiceNow sys_user table",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "static_template": {
+                        "file": "./adaptiveCards/getUserDetails.json"
+                    }
+                }
+            }
+        },
+        {
+            "name": "listIncidents",
+            "description": "Retrieve a list of incidents with optional filtering and pagination.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "static_template": {
+                        "file": "./adaptiveCards/listIncidents.json"
+                    }
+                }
+            }
+        },
+        {
+            "name": "updateIncident",
+            "description": "Update fields of an existing incident record.",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "static_template": {
+                        "file": "./adaptiveCards/updateIncident.json"
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "getOngoingOutages"
+            ]
+        },
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{OAUTH2AUTHCODE_REGISTRATION_ID}}"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.yaml"
+            },
+            "run_for_functions": [
+                "getUserDetails",
+                "listIncidents",
+                "createIncident",
+                "updateIncident",
+                "deleteIncident"
+            ]
+        }
+    ]
+}
