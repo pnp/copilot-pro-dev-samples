@@ -1,6 +1,7 @@
 # Azure Open API Agent using TypeSpec for Microsoft 365 Copilot
 
 ## Summary
+
 The sample is designed to demonstrate how to integrate Azure OpenAI services using TypeSpec. It provides a template for building conversational agents or plugins that leverage Azure OpenAI's capabilities, such as natural language processing and generative AI, within Microsoft Teams or other environments. 
 
 ## Get started with the template
@@ -56,7 +57,7 @@ Replace {keyAPIRegistration} with the key copied in previous step
     APIKEYAUTH_REGISTRATION_ID={keyAPIRegistration}
     ```
 5. Update the instructions and agent details within the `main.tsp` as appropriate for your use case.
-6. Update SERVER_URL and other hard coded parameters in `actions.tsp`
+6. Update SERVER_URL, MODEL and other hard coded parameters in `actions.tsp`
 
 
 7. From Teams Toolkit, sign-in to your Microsoft 365 account.
@@ -110,12 +111,12 @@ If you encounter any issues using this sample, [create a new issue](https://gith
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
+## Addition information and references
+
+- [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
+
 ## Disclaimer
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-typespec-azureopenai)
-
-## Addition information and references
-
-- [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
