@@ -1,0 +1,35 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+    "version": "v1.3",
+    "name": "DataManager",
+    "description": "Declarative agent created with Teams Toolkit",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "text": "Help me organize my files in SharePoint"
+        },
+        {
+            "text": "Suggest a folder structure for my documents"
+        },
+        {
+            "text": "What are best practices for document naming in SharePoint?"
+        },
+        {
+            "text": "Show me how to use metadata in SharePoint"
+        },
+        {
+            "text": "What are document organization best practices?"
+        },
+        {
+            "text": "How can I improve searchability of my SharePoint documents?"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint"
+        },
+        {
+            "name": "WebSearch"
+        }
+    ]
+}
