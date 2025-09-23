@@ -1,0 +1,29 @@
+{
+  "$schema": "https://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Volunteering Opportunities",
+      "weight": "Bolder",
+      "size": "Medium"
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${title}",
+          "wrap": true,
+          "weight": "Bolder"
+        },
+        {
+          "type": "TextBlock",
+          "text": "${chunk}",
+          "wrap": true
+        }
+      ]
+    }
+  ]
+}
