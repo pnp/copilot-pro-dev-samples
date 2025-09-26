@@ -1,13 +1,13 @@
-# # TeamsFx files
-# env/.env.*.user
-# env/.env.local
-# .localConfigs
-# appPackage/build
+# TeamsFx files
+env/.env.*.user
+env/.env.local
+.localConfigs
+appPackage/build
 
-# # dependencies
+# dependencies
 node_modules/
 
-# # misc
-# .env
-# .deployment
-# .DS_Store
+# misc
+.env
+.deployment
+.DS_Store
