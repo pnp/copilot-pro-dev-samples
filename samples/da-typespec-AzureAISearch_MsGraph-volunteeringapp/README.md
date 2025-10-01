@@ -19,7 +19,7 @@ View these two blogs for more info how to set up Azure AI Search API plugin and 
 
 Version|Date|Comments
 -------|----|--------
-1.0 | October 29, 2025 | Initial solution
+1.0 | October 01, 2025 | Initial solution
 
 > **Prerequisites**
 >
@@ -117,14 +117,14 @@ Version|Date|Comments
 7. Update those within file [`msGraphactions.tsp`](./msGraphactions.tsp) 
 
 ```
-  const SITE_ID = "reshmee.sharepoint.com,541d6ad1-322f-419d-8575-5309a29c3cf8,6b96c932-79a5-4f2a-91dc-41689290ebe7";
-  const LIST_ID = "cb530b8f-5af3-44ad-8270-ec89d0357ae5";
+  const SITE_ID = "%REPLACE_ME%";
+  const LIST_ID = "%REPLACE_ME%";
 ```
 
 8. Update the server_URL [`aiSearchactions.tsp`](./msGraphactions.tsp)
 
 ```dotnetcli
-   const SERVER_URL = "https://aivolunteering.search.windows.net";
+   const SERVER_URL = "https://<AI_SEARCH_ENDPOINT>.windows.net";
 ```
 9. From Teams Toolkit, sign-in to your Microsoft 365 account.
 10. From Teams Toolkit, provision the solution to create the Teams app.

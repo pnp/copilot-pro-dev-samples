@@ -18,8 +18,8 @@ namespace MsGraphAPI {
    * The base URL for the Microsoft Graph API.
    */
   const SERVER_URL = "https://graph.microsoft.com/v1.0";  
-  const SITE_ID = "reshmee.sharepoint.com,541d6ad1-322f-419d-8575-5309a29c3cf8,6b96c932-79a5-4f2a-91dc-41689290ebe7";
-  const LIST_ID = "cb530b8f-5af3-44ad-8270-ec89d0357ae5";
+  const SITE_ID = "%REPLACE_ME%";
+  const LIST_ID = "%REPLACE_ME%";
 
   /**
    * Get all tasks in a list

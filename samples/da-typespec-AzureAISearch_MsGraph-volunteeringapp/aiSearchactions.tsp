@@ -11,12 +11,11 @@ namespace AISearchAPI {
   const ACTIONS_METADATA = #{
     nameForHuman: "Volunteering Agent",
     descriptionForHuman: "Helps users find info about volunteering opportunities using Azure AI Search.",
-    descriptionForModel: "Helps users find info about volunteering opportunities using Azure AI Search.",
-    legalInfoUrl: "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+    descriptionForModel: "Helps users find info about volunteering opportunities using Azure AI Search."
     privacyPolicyUrl: "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
   };
 
-  const SERVER_URL = "https://aivolunteering.search.windows.net";
+  const SERVER_URL = "https://<AI_SEARCH_ENDPOINT>.search.windows.net";
   
   @doc("Searches for volunteering opportunities using Azure AI Search.")
   @post
