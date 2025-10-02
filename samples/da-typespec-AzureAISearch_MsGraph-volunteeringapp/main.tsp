@@ -19,20 +19,7 @@ using TypeSpec.M365.Copilot.Actions;
 
 If "Search" or "Tell me about" (or similar) is used in the terms, then call function `searchVolunteerOpportunities` to search for volunteering opportunities
  Pass the request body in the json format , replacing SearchText with the user's search terms.
-
-```json
-{
-  "count" = true
-  "vectorQueries" = [
-    {
-      "kind"= "text"
-      "text"= "SearchText"
-      "fields"= "contentVector"
-    }
-   ]
-}
-```
-
+ 
 ## Listing Assigned Volunteering Tasks
 - When a user requests to see assigned volunteering tasks, first call the function `getUserInformation` with parameter `expand=fields` to retrieve the user id of the logged-in user using the user name.
 - Then assign it to `{userId}` replacing the  filter parameter with fields/AssignedTo0LookupId eq {userId} and call the function `getListItems` with parameter `expand=fields` to get the list of tasks assigned to the user

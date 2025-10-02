@@ -117,18 +117,24 @@ Version|Date|Comments
 7. Update those within file [`msGraphactions.tsp`](./msGraphactions.tsp) 
 
 ```
-  const SITE_ID = "%REPLACE_ME%";
-  const LIST_ID = "%REPLACE_ME%";
+  const SITE_ID = "contoso.sharepoint.com,000d0ad0-000f-000d-0000-0000a000c0cf0,0b00c000-000a-0f0a-00dc-00000000ebe0
+";
+  const LIST_ID = "cb000b0f-0af0-00ad-ec00d0ae0";
 ```
+
 
 8. Update the server_URL [`aiSearchactions.tsp`](./msGraphactions.tsp)
 
 ```dotnetcli
    const SERVER_URL = "https://<AI_SEARCH_ENDPOINT>.windows.net";
 ```
+
 9. From Teams Toolkit, sign-in to your Microsoft 365 account.
+
 10. From Teams Toolkit, provision the solution to create the Teams app.
+
 11. Go to [https://www.office.com/chat?auth=2](https://www.office.com/chat?auth=2) URL and enable the developer mode by using the `-developer on` prompt.
+
 12. Use one of the conversation starters to start the agent.
 
 ## Features

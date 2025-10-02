@@ -12,7 +12,6 @@ namespace AISearchAPI {
     nameForHuman: "Volunteering Agent",
     descriptionForHuman: "Helps users find info about volunteering opportunities using Azure AI Search.",
     descriptionForModel: "Helps users find info about volunteering opportunities using Azure AI Search."
-    privacyPolicyUrl: "https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
   };
 
   const SERVER_URL = "https://<AI_SEARCH_ENDPOINT>.search.windows.net";
@@ -21,7 +20,7 @@ namespace AISearchAPI {
   @post
   @useAuth(ApiKeyAuth<ApiKeyLocation.header, "api-key">)
   @route("/indexes/vol/docs/search")
-  @card(#{ dataPath: "$.value", title: "$.title", url: "$.chunk", file: "adaptiveCards/searchResults.json" })
+  
   op searchVolunteerOpportunities(
     @body post: DataRequest,
     @query("api-version") apiVersion: string = "2025-05-01-preview",
