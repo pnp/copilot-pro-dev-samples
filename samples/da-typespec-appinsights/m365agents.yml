@@ -16,13 +16,6 @@ provision:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       teamsAppId: TEAMS_APP_ID
-  - uses: apiKey/register
-    with:
-      name: ApiKeyAuth
-      appId: ${{TEAMS_APP_ID}}
-      apiSpecPath: ./appPackage/.generated/analyticsaction-openapi.yml
-    writeToEnvironmentFile:
-      registrationId: APIKEYAUTH_REGISTRATION_ID
 
   - uses: cli/runNpmCommand
     name: install dependencies
@@ -49,6 +42,14 @@ provision:
       manifestPath: ./appPackage/manifest.json
       outputDir: ./appPackage/.generated
       typeSpecConfigPath: ./tspconfig.yaml
+  
+  - uses: apiKey/register
+    with:
+      name: ApiKeyAuth
+      appId: ${{TEAMS_APP_ID}}
+      apiSpecPath: ./appPackage/.generated/analyticsaction-openapi.yml
+    writeToEnvironmentFile:
+      registrationId: APIKEYAUTH_REGISTRATION_ID
 
   # Build app package with latest env value
   - uses: teamsApp/zipAppPackage

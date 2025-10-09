@@ -16,14 +16,6 @@ provision:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       teamsAppId: TEAMS_APP_ID
-  - uses: oauth/register
-    with:
-      name: RepairsHubAuth
-      appId: ${{TEAMS_APP_ID}}
-      apiSpecPath: ./appPackage/.generated/repairshub-openapi.yml
-      flow: authorizationCode
-    writeToEnvironmentFile:
-      configurationId: REPAIRSHUBAUTH_REGISTRATION_ID
 
   - uses: cli/runNpmCommand
     name: install dependencies
@@ -41,6 +33,15 @@ provision:
       manifestPath: ./appPackage/manifest.json
       outputDir: ./appPackage/.generated
       typeSpecConfigPath: ./tspconfig.yaml
+      
+  - uses: oauth/register
+    with:
+      name: RepairsHubAuth
+      appId: ${{TEAMS_APP_ID}}
+      apiSpecPath: ./appPackage/.generated/repairshub-openapi.yml
+      flow: authorizationCode
+    writeToEnvironmentFile:
+      configurationId: REPAIRSHUBAUTH_REGISTRATION_ID
 
   # Build app package with latest env value
   - uses: teamsApp/zipAppPackage
