@@ -3,7 +3,7 @@
     "name": "pnp-copilot-pro-dev-da-volunteeringapp",
     "source": "pnp",
     "title": "Finding and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search - No code!",
-    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to find and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search integration and authentication.",
+    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec that allows you to find and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search integration and authentication.",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-volunteeringapp",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-volunteeringapp",
     "longDescription": [
