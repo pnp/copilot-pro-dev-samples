@@ -311,8 +311,8 @@
   },
   {
     "name": "pnp-copilot-pro-dev-da-docfinder",
-    "title": "Career Coach Declarative Agent for Microsoft 365 Copilot Sample",
-    "shortDescription": "First Party Declarative Agent Career Coach shared as a sample",
+    "title": "Document Finder Declarative Agent for Microsoft 365 Copilot Sample",
+    "shortDescription": "First Party Declarative Agent Document Finder shared as a sample",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-DocFinder",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-docfinder",
     "creationDateTime": "2024-10-04",
@@ -1833,7 +1833,7 @@
   {
     "name": "pnp-copilot-pro-dev-da-volunteeringapp",
     "title": "Finding and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search - No code!",
-    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to find and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search integration and authentication.",
+    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec that allows you to find and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search integration and authentication.",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-volunteeringapp",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-volunteeringapp",
     "creationDateTime": "2025-05-02",
