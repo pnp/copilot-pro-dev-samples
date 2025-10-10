@@ -4,6 +4,16 @@ This repository contains [Microsoft 365 Copilot](https://learn.microsoft.com/mic
 
 > We welcome community contributions to the `samples` folder in this repository for demonstrating different use cases with Microsoft 365 Copilot. If you've built an agent that demonstrates specific scenario, please share your work and help others!
 
+<details>
+<summary>List of all the samples</summary></br>
+
+<!-- begin_sample_list -->
+| Title | Description | Author |
+|-------|-------------|--------|
+<!-- end_sample_list -->
+</details>
+
+
 ## Have issues or questions?
 
 If you've got questions or experience an issue with any of the samples in this repo, please [create an issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
