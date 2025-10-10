@@ -127,18 +127,36 @@ process {
 
         $sampleJsonObj = GetJsonFromSampleJson -SamplePath $_.Directory -DefaultReturn $_.Directory.Name
     
-        # Remove LongDescription and Description from the sampleJsonObj
-        $sampleJsonObj.PSObject.Properties.Remove("LongDescription")
-        $sampleJsonObj.PSObject.Properties.Remove("References")
-        $sampleJsonObj.PSObject.Properties.Remove("Source")
+        # Ensure we have an object and attach Folder property so we can link to it later
+        if ($sampleJsonObj -is [string]) {
+            $entry = [PSCustomObject]@{
+                Title = $sampleJsonObj
+                ShortDescription = ''
+                Authors = @()
+                Folder = $_.Directory.Name
+            }
+        }
+        else {
+            # Attach Folder property (force in case it already exists)
+            $sampleJsonObj | Add-Member -NotePropertyName Folder -NotePropertyValue $_.Directory.Name -Force
+            $entry = $sampleJsonObj
+        }
 
-        $consolidatedSamplesFile += $sampleJsonObj
+        # Remove LongDescription and Description from the sampleJsonObj
+        if ($entry.PSObject.Properties.Match("LongDescription")) { $entry.PSObject.Properties.Remove("LongDescription") }
+        if ($entry.PSObject.Properties.Match("References"))      { $entry.PSObject.Properties.Remove("References") }
+        if ($entry.PSObject.Properties.Match("Source"))          { $entry.PSObject.Properties.Remove("Source") }
+
+        $consolidatedSamplesFile += $entry
     }
 
     # Output Report
     $consolidatedSamplesFile | ConvertTo-Json -Depth 10 | Out-File $OutputSamplesFile -Force
     
     Write-Host "Output written to $OutputSamplesFile" -ForegroundColor Green
+
+    # Sort consolidated samples alphabetically by Title
+    $consolidatedSamplesFile = $consolidatedSamplesFile | Sort-Object -Property @{Expression = { $_.Title -as [string] }} 
 
 
     # ------------------------------------------------------------------------------
@@ -154,8 +172,20 @@ process {
 
     $reportContents = @()
 
+    $reportContents = @()
+
     $consolidatedSamplesFile | ForEach-Object{
-        $reportContents += "| $($_.Title) | $($_.ShortDescription) | $($_.Authors.Name -join ',') |" 
+        # Build authors string safely
+        $authors = ''
+        if ($_.Authors -ne $null) {
+            try { $authors = ($_.Authors.Name -join ', ') } catch { $authors = $_.Authors.ToString() }
+        }
+
+        # Title becomes a markdown link to the sample folder
+        $folder = $_.Folder -replace '\\','/'   # normalize slashes
+        $link = if ($folder) { "[](./samples/$folder)" } else { "[]()" }
+        # Build row: [Title](./samples/<folder>) | ShortDescription | Authors
+        $reportContents += "| [$($_.Title)](./samples/$folder) | $($_.ShortDescription) | $authors |" 
     }
 
 
@@ -183,9 +213,11 @@ process {
 
     # Temp write output file called "Readme-Test.md"
     # Copy the Readme.md to Readme-Test.md
-    Copy-Item -Path "$(Get-Location)\..\README.md" -Destination "$(Get-Location)\..\README-Test.md"
-    $tempOutputFile = "$(Get-Location)\..\README-Test.md"
-    Set-Content -Path $tempOutputFile -Value $content
+    #Copy-Item -Path "$(Get-Location)\..\README.md" -Destination "$(Get-Location)\..\README-Test.md"
+    #$tempOutputFile = "$(Get-Location)\..\README-Test.md"
+    #Set-Content -Path $tempOutputFile -Value $content
+
+    Set-Content -Path $sourceFile -Value $content
 
 }
 end {

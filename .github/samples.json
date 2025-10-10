@@ -42,7 +42,8 @@
         "pictureUrl": "https://github.com/reshmee011.png",
         "name": "Reshmee Auckloo"
       }
-    ]
+    ],
+    "Folder": "da-azureopenai"
   },
   {
     "name": "pnp-copilot-pro-dev-BlogPostHelper",
@@ -87,7 +88,8 @@
         "pictureUrl": "https://github.com/pkbullock.png",
         "name": "Paul Bullock"
       }
-    ]
+    ],
+    "Folder": "da-BlogPostHelper"
   },
   {
     "name": "pnp-copilot-pro-dev-canvas-student",
@@ -149,7 +151,8 @@
         "pictureUrl": "https://github.com/ayronjohnson.png",
         "name": "Ayron Johnson"
       }
-    ]
+    ],
+    "Folder": "da-CanvasStudent"
   },
   {
     "name": "pnp-copilot-pro-dev-canvas-teacher",
@@ -211,7 +214,8 @@
         "pictureUrl": "https://github.com/ayronjohnson.png",
         "name": "Ayron Johnson"
       }
-    ]
+    ],
+    "Folder": "da-CanvasTeacher"
   },
   {
     "name": "pnp-copilot-pro-dev-CareerCoach",
@@ -256,7 +260,8 @@
         "pictureUrl": "https://github.com/MarcusCastroMS.png",
         "name": "Marcus Castro"
       }
-    ]
+    ],
+    "Folder": "da-CareerCoach"
   },
   {
     "name": "da-CLIForM365-helper",
@@ -301,7 +306,8 @@
         "pictureUrl": "https://github.com/saurabh7019.png",
         "name": "Saurabh Tripathi"
       }
-    ]
+    ],
+    "Folder": "da-CLIForM365-helper"
   },
   {
     "name": "pnp-copilot-pro-dev-da-docfinder",
@@ -347,7 +353,8 @@
         "pictureUrl": "https://github.com/jthake.png",
         "name": "Jeremy Thake"
       }
-    ]
+    ],
+    "Folder": "da-DocFinder"
   },
   {
     "name": "pnp-copilot-pro-dev-da-environmentSustainability",
@@ -396,7 +403,8 @@
         "pictureUrl": "https://avatars.githubusercontent.com/u/20379311?v=4",
         "name": "Rabia Williams"
       }
-    ]
+    ],
+    "Folder": "da-environmentSustainability"
   },
   {
     "name": "pnp-copilot-pro-dev-da-geolocator-game",
@@ -446,7 +454,8 @@
         "pictureUrl": "https://github.com/garrytrinder",
         "name": "Garry Trinder"
       }
-    ]
+    ],
+    "Folder": "da-geolocator-game"
   },
   {
     "name": "pnp-copilot-pro-dev-IdeaCoach",
@@ -491,7 +500,8 @@
         "pictureUrl": "https://github.com/ericsche.png",
         "name": "Eric Scherlinger"
       }
-    ]
+    ],
+    "Folder": "da-IdeaCoach"
   },
   {
     "name": "pnp-copilot-pro-dev-LearningCoach",
@@ -536,7 +546,8 @@
         "pictureUrl": "https://github.com/youlkax.png",
         "name": "Julie Chudakova"
       }
-    ]
+    ],
+    "Folder": "da-LearningCoach"
   },
   {
     "name": "pnp-copilot-pro-dev-da-m365-roadmap-tracker",
@@ -588,7 +599,8 @@
         "pictureUrl": "https://github.com/mohammadamer.png",
         "name": "Mohammad Amer"
       }
-    ]
+    ],
+    "Folder": "da-m365-roadmap-tracker"
   },
   {
     "name": "pnp-copilot-pro-dev-myadvancedcommsbuddy",
@@ -633,7 +645,8 @@
         "pictureUrl": "https://github.com/pkbullock.png",
         "name": "Paul Bullock"
       }
-    ]
+    ],
+    "Folder": "da-MyAdvancedCommsBuddy"
   },
   {
     "name": "pnp-copilot-pro-dev-mycommsbuddy",
@@ -670,7 +683,8 @@
         "pictureUrl": "https://github.com/pkbullock.png",
         "name": "Paul Bullock"
       }
-    ]
+    ],
+    "Folder": "da-MyCommsBuddy"
   },
   {
     "name": "pnp-copilot-pro-dev-da-PMSpecReviewer",
@@ -715,7 +729,8 @@
         "pictureUrl": "https://github.com/mathursrus.png",
         "name": "Sid Mathur"
       }
-    ]
+    ],
+    "Folder": "da-PMSpecReviewer"
   },
   {
     "name": "pnp-copilot-pro-dev-da-PMSpecWriter",
@@ -760,7 +775,8 @@
         "pictureUrl": "https://github.com/mathursrus.png",
         "name": "Sid Mathur"
       }
-    ]
+    ],
+    "Folder": "da-PMSpecWriter"
   },
   {
     "name": "pnp-copilot-pro-dev-da-pnpassistant",
@@ -805,7 +821,8 @@
         "pictureUrl": "https://github.com/GuidoZam.png",
         "name": "Guido Zambarda"
       }
-    ]
+    ],
+    "Folder": "da-pnpassistant"
   },
   {
     "name": "da-PnPPowerShell-assistant",
@@ -850,7 +867,8 @@
         "pictureUrl": "https://github.com/a1mery.png",
         "name": "Aimery Thomas"
       }
-    ]
+    ],
+    "Folder": "da-PnPPowerShell-assistant"
   },
   {
     "name": "pnp-copilot-pro-dev-da-PnPScriptSamplesAgent",
@@ -895,7 +913,8 @@
         "pictureUrl": "https://github.com/pkbullock.png",
         "name": "Paul Bullock"
       }
-    ]
+    ],
+    "Folder": "da-PnPScriptSamplesAgent"
   },
   {
     "name": "pnp-copilot-pro-dev-positivityagent",
@@ -932,7 +951,8 @@
         "pictureUrl": "https://github.com/pkbullock.png",
         "name": "Paul Bullock"
       }
-    ]
+    ],
+    "Folder": "da-PositivityAgent"
   },
   {
     "name": "pnp-copilot-pro-dev-da-environmentSustainability",
@@ -981,7 +1001,8 @@
         "pictureUrl": "https://avatars.githubusercontent.com/u/20379311?v=4",
         "name": "Rabia Williams"
       }
-    ]
+    ],
+    "Folder": "da-PostPilotAgent"
   },
   {
     "name": "pnp-copilot-pro-dev-da-PresentationAgent",
@@ -1027,7 +1048,8 @@
         "pictureUrl": "https://github.com/jthake.png",
         "name": "Jeremy Thake"
       }
-    ]
+    ],
+    "Folder": "da-PresentationAgent"
   },
   {
     "name": "pnp-copilot-pro-dev-da-product-support",
@@ -1072,7 +1094,8 @@
         "pictureUrl": "https://github.com/garrytrinder.png",
         "name": "Garry Trinder"
       }
-    ]
+    ],
+    "Folder": "da-product-support"
   },
   {
     "name": "pnp-copilot-pro-dev-PromptCoach",
@@ -1117,7 +1140,8 @@
         "pictureUrl": "https://github.com/MarcusCastroMS.png",
         "name": "Marcus Castro"
       }
-    ]
+    ],
+    "Folder": "da-PromptCoach"
   },
   {
     "name": "pnp-copilot-pro-dev-da-qna-graphapi-plugin",
@@ -1162,7 +1186,8 @@
         "pictureUrl": "https://avatars.githubusercontent.com/u/5659122?v=4",
         "name": "Franck Cornu"
       }
-    ]
+    ],
+    "Folder": "da-qna-graphapi-plugin"
   },
   {
     "name": "pnp-copilot-pro-dev-da-repairs-oauth",
@@ -1207,7 +1232,8 @@
         "pictureUrl": "https://github.com/waldekmastykarz.png",
         "name": "Waldek Mastykarz"
       }
-    ]
+    ],
+    "Folder": "da-repairs-oauth"
   },
   {
     "name": "pnp-copilot-pro-dev-da-repairs-oauth-validated",
@@ -1257,7 +1283,8 @@
         "pictureUrl": "https://github.com/waldekmastykarz.png",
         "name": "Waldek Mastykarz"
       }
-    ]
+    ],
+    "Folder": "da-repairs-oauth-validated"
   },
   {
     "name": "pnp-copilot-pro-dev-da-resolvemate-api",
@@ -1304,7 +1331,8 @@
         "name": "Ejaz Hussain",
         "twitter": "EjazHussain_"
       }
-    ]
+    ],
+    "Folder": "da-resolvemate-api"
   },
   {
     "name": "pnp-copilot-pro-dev-resource-allocation",
@@ -1349,7 +1377,8 @@
         "pictureUrl": "https://github.com/ValerasNarbutas.png",
         "name": "Valeras Narbutas"
       }
-    ]
+    ],
+    "Folder": "da-resource-allocation"
   },
   {
     "name": "pnp-copilot-pro-dev-da-ristorante-api",
@@ -1400,7 +1429,8 @@
         "pictureUrl": "https://github.com/waldekmastykarz.png",
         "name": "Waldek Mastykarz"
       }
-    ]
+    ],
+    "Folder": "da-ristorante-api"
   },
   {
     "name": "pnp-copilot-pro-dev-da-SalesGenie",
@@ -1458,7 +1488,8 @@
         "pictureUrl": "https://github.com/akhilsaivalluri.png",
         "name": "Akhil Sai Valluri"
       }
-    ]
+    ],
+    "Folder": "da-SalesGenie"
   },
   {
     "name": "pnp-copilot-pro-dev-snow-wizard",
@@ -1514,7 +1545,8 @@
         "pictureUrl": "https://github.com/luishdemetrio.png",
         "name": "Luis Demetrio"
       }
-    ]
+    ],
+    "Folder": "da-SnowWizard"
   },
   {
     "name": "pnp-copilot-pro-dev-da-sp-agents-finder",
@@ -1566,7 +1598,8 @@
         "pictureUrl": "https://github.com/mohammadamer.png",
         "name": "Mohammad Amer"
       }
-    ]
+    ],
+    "Folder": "da-sp-agents-finder"
   },
   {
     "name": "pnp-copilot-pro-dev-da-teacher",
@@ -1636,7 +1669,8 @@
         "pictureUrl": "https://github.com/petkir.png",
         "name": "Peter Paul Kirschner"
       }
-    ]
+    ],
+    "Folder": "da-teacher"
   },
   {
     "name": "pnp-da-todo-tasks-graphapi-plugin",
@@ -1687,7 +1721,8 @@
         "pictureUrl": "https://github.com/reshmee011.png",
         "name": "Reshmee Auckloo"
       }
-    ]
+    ],
+    "Folder": "da-todo-tasks-graphapi-plugin"
   },
   {
     "name": "pnp-copilot-pro-dev-da-trey-research",
@@ -1737,7 +1772,8 @@
         "pictureUrl": "https://github.com/garrytrinder.png",
         "name": "Garry Trinder"
       }
-    ]
+    ],
+    "Folder": "da-trey-research"
   },
   {
     "name": "pnp-copilot-pro-dev-da-trey-research-auth",
@@ -1791,7 +1827,8 @@
         "pictureUrl": "https://github.com/garrytrinder.png",
         "name": "Garry Trinder"
       }
-    ]
+    ],
+    "Folder": "da-trey-research-auth"
   },
   {
     "name": "pnp-copilot-pro-dev-da-volunteeringapp",
@@ -1847,7 +1884,8 @@
         "pictureUrl": "https://github.com/leeford.png",
         "name": "Lee Ford"
       }
-    ]
+    ],
+    "Folder": "da-typespec-AzureAISearch_MsGraph-volunteeringapp"
   },
   {
     "name": "pnp-copilot-pro-dev-da-typespec-azureopenai",
@@ -1898,7 +1936,8 @@
         "pictureUrl": "https://github.com/reshmee011.png",
         "name": "Reshmee"
       }
-    ]
+    ],
+    "Folder": "da-typespec-azureopenai"
   },
   {
     "name": "pnp-copilot-pro-dev-da-typespec-github",
@@ -1955,7 +1994,8 @@
         "pictureUrl": "https://github.com/sebastienlevert.png",
         "name": "Sébastien Levert"
       }
-    ]
+    ],
+    "Folder": "da-typespec-github"
   },
   {
     "name": "pnp-copilot-pro-dev-da-typespec-repairs",
@@ -2006,7 +2046,8 @@
         "pictureUrl": "https://github.com/sebastienlevert.png",
         "name": "Sébastien Levert"
       }
-    ]
+    ],
+    "Folder": "da-typespec-repairs"
   },
   {
     "name": "pnp-copilot-pro-dev-da-typespec-repairs-apikey",
@@ -2057,7 +2098,8 @@
         "pictureUrl": "https://github.com/sebastienlevert.png",
         "name": "Sébastien Levert"
       }
-    ]
+    ],
+    "Folder": "da-typespec-repairs-apikey"
   },
   {
     "name": "pnp-copilot-pro-dev-da-typespec-repairs-oauth",
@@ -2108,7 +2150,8 @@
         "pictureUrl": "https://github.com/sebastienlevert.png",
         "name": "Sébastien Levert"
       }
-    ]
+    ],
+    "Folder": "da-typespec-repairs-oauth"
   },
   {
     "name": "pnp-copilot-pro-dev-da-typespec-repairs-oauth",
@@ -2153,7 +2196,8 @@
         "pictureUrl": "https://github.com/sebastienlevert.png",
         "name": "Sébastien Levert"
       }
-    ]
+    ],
+    "Folder": "da-typespec-tech-support"
   },
   {
     "name": "pnp-copilot-pro-dev-da-typespec-todo",
@@ -2204,7 +2248,8 @@
         "pictureUrl": "https://github.com/sebastienlevert.png",
         "name": "Sébastien Levert"
       }
-    ]
+    ],
+    "Folder": "da-typespec-todo"
   },
   {
     "name": "pnp-copilot-pro-dev-da-typespec-trey-research",
@@ -2254,7 +2299,8 @@
         "pictureUrl": "https://github.com/rabwill.png",
         "name": "Rabia Williams"
       }
-    ]
+    ],
+    "Folder": "da-typespec-trey-research"
   },
   {
     "name": "pnp-copilot-pro-dev-da-visual-mind-agent",
@@ -2306,7 +2352,8 @@
         "pictureUrl": "https://github.com/mohammadamer.png",
         "name": "Mohammad Amer"
       }
-    ]
+    ],
+    "Folder": "da-visual-mind-agent"
   },
   {
     "name": "pnp-copilot-pro-dev-da-volunteeringapp",
@@ -2362,7 +2409,8 @@
         "pictureUrl": "https://github.com/leeford.png",
         "name": "Lee Ford"
       }
-    ]
+    ],
+    "Folder": "da-volunteeringapp"
   },
   {
     "name": "pnp-copilot-pro-dev-WritingCoach",
@@ -2407,7 +2455,8 @@
         "pictureUrl": "https://github.com/phnguy.png",
         "name": "Phi-Lay NGUYEN"
       }
-    ]
+    ],
+    "Folder": "da-WritingCoach"
   },
   {
     "name": "pnp-copilot-pro-dev-da-xboxgamemaster",
@@ -2452,6 +2501,7 @@
         "pictureUrl": "https://github.com/BobGerman.png",
         "name": "Bob German"
       }
-    ]
+    ],
+    "Folder": "da-XBoxGameMaster"
   }
 ]
