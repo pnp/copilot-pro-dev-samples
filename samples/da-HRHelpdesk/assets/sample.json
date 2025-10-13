@@ -1,13 +1,13 @@
 [
   {
-    "name": "pnp-copilot-pro-dev-da-HR-Helpdesk",
+    "name": "pnp-copilot-pro-dev-da-HRHelpdesk",
     "source": "pnp",
     "title": "HR Heldpdesk Declarative Agent",
     "shortDescription": "Sales Genie is a Declarative Agent designed to help sales executives get instant, actionable insights from their Salesforce CRM, Microsoft 365, and the web — all via natural language. Whether you're preparing for an upcoming customer meeting, reviewing your opportunity pipeline, or logging call notes into Salesforce, Sales Genie acts as a smart assistant that streamlines your daily sales activities. It showcases complex workflows directly using instructions.",
-    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SalesGenie",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SalesGenie",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
     "longDescription": [
-      "Sales Genie is a Declarative Agent designed to help sales executives get instant, actionable insights from their Salesforce CRM, Microsoft 365, and the web — all via natural language. Whether you're preparing for an upcoming customer meeting, reviewing your opportunity pipeline, or logging call notes into Salesforce, Sales Genie acts as a smart assistant that streamlines your daily sales activities. It showcases complex workflows directly using instructions."
+      "HR Helpdesk is a template Declarative Agent designed to help employees troubleshoot their issues using insights from ServiceNow KB, and if not successful create a case in the right Centre of Excellence/table without much burden on the end user."
     ],
     "creationDateTime": "2025-07-09",
     "updateDateTime": "2025-07-09",
@@ -32,20 +32,8 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SalesGenie/assets/sales-genie-video.gif",
-        "alt": "Sales Genie"
-      },
-      {
-        "type": "image",
-        "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SalesGenie/assets/prompt-meeting.png",
-        "alt": "Help me prepare for customer meeting"
-      },
-      {
-        "type": "image",
-        "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SalesGenie/assets/prompt-log-call.png",
-        "alt": "Log call for a recent customer conversation"
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-HRHelpdesk/assets/hrhelpdesk.png",
+        "alt": "HR Helpdesk"
       }
     ],
     "authors": [
@@ -58,6 +46,11 @@
         "gitHubAccount": "akhilsaivalluri",
         "pictureUrl": "https://github.com/akhilsaivalluri.png",
         "name": "Akhil Sai Valluri"
+      },
+      {
+        "gitHubAccount": "garrytrinder",
+        "pictureUrl": "https://github.com/garrytrinder.png",
+        "name": "Garry Trinder"
       }
     ],
     "references": [
