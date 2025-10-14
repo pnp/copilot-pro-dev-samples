@@ -9,8 +9,8 @@
     "longDescription": [
       "IT Helpdesk Agent is a Declarative Agent designed to assist employees with IT issues through (a) guided, conversational troubleshooting, (b) outage detection, and ticket creation for escalation – powered through ServiceNow offerings (Knowledge, Catalogue and Tickets)."
     ],
-    "creationDateTime": "2025-07-09",
-    "updateDateTime": "2025-07-09",
+    "creationDateTime": "2025-10-14",
+    "updateDateTime": "2025-10-14",
     "products": [
       "Microsoft 365 Copilot"
     ],

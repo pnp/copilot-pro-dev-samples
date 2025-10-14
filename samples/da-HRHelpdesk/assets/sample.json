@@ -3,14 +3,14 @@
     "name": "pnp-copilot-pro-dev-da-HRHelpdesk",
     "source": "pnp",
     "title": "HR Heldpdesk Declarative Agent",
-    "shortDescription": "Sales Genie is a Declarative Agent designed to help sales executives get instant, actionable insights from their Salesforce CRM, Microsoft 365, and the web — all via natural language. Whether you're preparing for an upcoming customer meeting, reviewing your opportunity pipeline, or logging call notes into Salesforce, Sales Genie acts as a smart assistant that streamlines your daily sales activities. It showcases complex workflows directly using instructions.",
+    "shortDescription": "HR Helpdesk is a template Declarative Agent designed to help employees troubleshoot their issues using insights from ServiceNow KB, and if not successful create a case in the right Centre of Excellence/table without much burden on the end user.",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
     "longDescription": [
       "HR Helpdesk is a template Declarative Agent designed to help employees troubleshoot their issues using insights from ServiceNow KB, and if not successful create a case in the right Centre of Excellence/table without much burden on the end user."
     ],
-    "creationDateTime": "2025-07-09",
-    "updateDateTime": "2025-07-09",
+    "creationDateTime": "2025-10-14",
+    "updateDateTime": "2025-10-14",
     "products": [
       "Microsoft 365 Copilot"
     ],
