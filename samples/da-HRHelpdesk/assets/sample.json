@@ -1,0 +1,74 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-HRHelpdesk",
+    "source": "pnp",
+    "title": "HR Heldpdesk Declarative Agent",
+    "shortDescription": "HR Helpdesk is a template Declarative Agent designed to help employees troubleshoot their issues using insights from ServiceNow KB, and if not successful create a case in the right Centre of Excellence/table without much burden on the end user.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
+    "longDescription": [
+      "HR Helpdesk is a template Declarative Agent designed to help employees troubleshoot their issues using insights from ServiceNow KB, and if not successful create a case in the right Centre of Excellence/table without much burden on the end user."
+    ],
+    "creationDateTime": "2025-10-14",
+    "updateDateTime": "2025-10-14",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-HRHelpdesk/assets/hrhelpdesk.png",
+        "alt": "HR Helpdesk"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "sebastienlevert",
+        "pictureUrl": "https://github.com/sebastienlevert.png",
+        "name": "Sébastien Levert"
+      },
+      {
+        "gitHubAccount": "akhilsaivalluri",
+        "pictureUrl": "https://github.com/akhilsaivalluri.png",
+        "name": "Akhil Sai Valluri"
+      },
+      {
+        "gitHubAccount": "garrytrinder",
+        "pictureUrl": "https://github.com/garrytrinder.png",
+        "name": "Garry Trinder"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Declarative agents for Microsoft 365 Copilot overview",
+        "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+      },
+      {
+        "name": "Build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot",
+        "description": "Learn how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents-typespec"
+      }
+    ]
+  }
+]

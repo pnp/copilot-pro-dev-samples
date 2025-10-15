@@ -1,0 +1,74 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-ITHelpdesk",
+    "source": "pnp",
+    "title": "IT Helpdesk Declarative Agent",
+    "shortDescription": "IT Helpdesk Agent is a Declarative Agent designed to assist employees with IT issues through (a) guided, conversational troubleshooting, (b) outage detection, and ticket creation for escalation – powered through ServiceNow offerings (Knowledge, Catalogue and Tickets). ",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ITHelpdesk",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ITHelpdesk",
+    "longDescription": [
+      "IT Helpdesk Agent is a Declarative Agent designed to assist employees with IT issues through (a) guided, conversational troubleshooting, (b) outage detection, and ticket creation for escalation – powered through ServiceNow offerings (Knowledge, Catalogue and Tickets)."
+    ],
+    "creationDateTime": "2025-10-14",
+    "updateDateTime": "2025-10-14",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ITHelpdesk/assets/ithelpdesk.png",
+        "alt": "IT Helpdesk"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "sebastienlevert",
+        "pictureUrl": "https://github.com/sebastienlevert.png",
+        "name": "Sébastien Levert"
+      },
+      {
+        "gitHubAccount": "akhilsaivalluri",
+        "pictureUrl": "https://github.com/akhilsaivalluri.png",
+        "name": "Akhil Sai Valluri"
+      },
+      {
+        "gitHubAccount": "garrytrinder",
+        "pictureUrl": "https://github.com/garrytrinder.png",
+        "name": "Garry Trinder"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Declarative agents for Microsoft 365 Copilot overview",
+        "description": "Learn more about what declarative agents for Microsoft 365 Copilot are.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+      },
+      {
+        "name": "Build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot",
+        "description": "Learn how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents-typespec"
+      }
+    ]
+  }
+]

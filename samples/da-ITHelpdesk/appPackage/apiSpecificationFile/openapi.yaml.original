@@ -1,0 +1,418 @@
+openapi: 3.0.0
+info:
+  title: ServiceNow Knowledge Management REST API
+  description: API for searching, retrieving, creation, updating and deletion of ticket incidents from ServiceNow.
+  version: 1.0.0
+servers:
+  - url: https://dev328797.service-now.com/
+    description: ServiceNow instance URL
+    variables:
+      instance:
+        default: your_instance_name
+paths:
+  /api/now/table/sys_user:
+    get:
+      security:
+        - oAuth2AuthCode: []
+      operationId: getUserDetails
+      description: Retrieve user details from ServiceNow sys_user table
+      parameters:
+        - name: sysparm_query
+          in: query
+          required: false
+          description: Query to filter users by caller_id
+          schema:
+            type: string
+        - name: sysparm_fields
+          in: query
+          required: false
+          description: Comma-separated list of fields to return (default is sys_id)
+          schema:
+            type: string
+            default: sys_id       
+      responses:
+        '200':
+          description: User details retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SysUser'
+        '400':
+          description: Bad request due to invalid parameters.
+        '401':
+          description: Unauthorized access due to invalid credentials.
+        '500':
+          description: Internal server error.
+  /api/now/table/incident:
+    get:
+      security:
+        - oAuth2AuthCode: []
+      operationId: listIncidents
+      summary: Retrieve a list of incidents
+      description: Retrieve a list of incidents with optional filtering and pagination.
+      parameters:
+        - name: sysparm_query
+          in: query
+          required: false
+          description: >
+            Query to filter incidents using ServiceNow query language.
+            Example: `caller_id.name=<value>` or `sys_id=<value>` or any other valid query.
+          schema:
+            type: string
+            pattern: "^sys_id=.*$"
+        - name: sysparm_limit
+          in: query
+          required: false
+          description: Maximum number of results to return.
+          schema:
+            type: integer
+            default: 10
+        - name: sysparm_offset
+          in: query
+          required: false
+          description: Number of records to skip for pagination.
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: A list of incidents.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Incident'
+        '400':
+          description: Bad request due to invalid parameters.
+        '401':
+          description: Unauthorized access due to invalid credentials.
+        '500':
+          description: Internal server error.
+    post:
+      security:
+        - oAuth2AuthCode: []
+      operationId: createIncident
+      summary: Create a new incident
+      description: Create a new incident record in the ServiceNow instance.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncidentCreate'
+      responses:
+        '201':
+          description: Incident created successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    $ref: '#/components/schemas/Incident'
+        '400':
+          description: Bad request due to invalid input.
+        '401':
+          description: Unauthorized access due to invalid credentials.
+        '500':
+          description: Internal server error.
+  /api/now/table/incident/{sys_id}:
+    patch:
+      security:
+        - oAuth2AuthCode: []
+      operationId: updateIncident
+      summary: Update an existing incident
+      description: Update fields of an existing incident record.
+      parameters:
+        - name: sys_id
+          in: path
+          required: true
+          description: Sys_id of the incident to update.
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IncidentUpdate'
+      responses:
+        '200':
+          description: Incident updated successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    $ref: '#/components/schemas/Incident'
+        '400':
+          description: Bad request due to invalid input.
+        '401':
+          description: Unauthorized access due to invalid credentials.
+        '404':
+          description: Incident not found.
+        '500':
+          description: Internal server error.
+    delete:
+      security:
+        - oAuth2AuthCode: []
+      operationId: deleteIncident
+      summary: Delete an existing incident
+      description: Delete an incident record from the ServiceNow instance.
+      parameters:
+        - name: sys_id
+          in: path
+          required: true
+          description: Sys_id of the incident to delete.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Incident deleted successfully.
+        '401':
+          description: Unauthorized access due to invalid credentials.
+        '404':
+          description: Incident not found.
+        '500':
+          description: Internal server error.
+  /api/now/table/cmdb_ci_outage:
+    get:
+      summary: Get ongoing outages
+      operationId: getOngoingOutages
+      parameters:
+        - name: sysparm_query
+          in: query
+          description: Always use value:start<=javascript:gs.now()^end>javascript:gs.now()^OR(end=NULL^active=true)
+          required: false
+          schema:
+            type: string
+          example: start<=javascript:gs.now()^end>javascript:gs.now()^OR(end=NULL^active=true)
+        - name: sysparm_limit
+          in: query
+          description: Maximum number of results to return
+          required: false
+          schema:
+            type: integer
+            default: 100
+      responses:
+        '200':
+          description: List of ongoing outages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Outage'
+        '401':
+          description: Unauthorized – Invalid credentials
+        '500':
+          description: Server error
+
+components:
+  securitySchemes:
+    oAuth2AuthCode:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://dev328797.service-now.com/oauth_auth.do
+          tokenUrl: https://dev328797.service-now.com/oauth_token.do
+          refreshUrl: https://dev328797.service-now.com/oauth_token.do
+          scopes: {}
+  schemas:
+    SysUser:
+      type: object
+      properties:
+        sys_id:
+          type: string
+          description: GUID to identify the user sys_id
+        name:
+          type: string
+          description: Name of the user.
+        email:
+          type: string
+          description: Email address of the user.
+        user_name:
+          type: string
+          description: Username of the user.
+        phone:
+          type: string
+          description: Phone number of the user.
+        department:
+          type: string
+          description: Department of the user.
+    Incident:
+      type: object
+      properties:
+        sys_id:
+          type: string
+          description: GUID to identify the incident.
+        number:
+          type: string
+          description: Incident number.
+        short_description:
+          type: string
+          description: Brief description of the incident.
+        description:
+          type: string
+          description: Detailed description of the incident.
+        priority:
+          type: integer
+          description: Priority level of the incident.
+        caller_id:
+          type: string
+          description: name of the user reporting the incident.
+        state:
+          type: integer
+          description: Current state of the incident.
+        category:
+          type: string
+          description: Category of the incident.
+        subcategory:
+          type: string
+          description: Subcategory of the incident.
+        impact:
+          type: integer
+          description: Impact level of the incident.
+        urgency:
+          type: integer
+          description: Urgency level of the incident.
+    IncidentCreate:
+      type: object
+      properties:
+        short_description:
+          type: string
+          description: Brief description of the incident.
+        description:
+          type: string
+          description: Detailed description of the incident.
+        caller_id:
+          type: string
+          description: Email or UPN of the user reporting the incident.
+        category:
+          type: string
+          description: Category of the incident.
+        subcategory:
+          type: string
+          description: Subcategory of the incident.
+        impact:
+          type: integer
+          description: Impact level of the incident. Default value 2.
+        urgency:
+          type: integer
+          description: Urgency level of the incident. Default value 2.
+      required:
+        - short_description
+        - caller_id
+    IncidentUpdate:
+      type: object
+      properties:
+        short_description:
+          type: string
+          description: Brief description of the incident.
+        description:
+          type: string
+          description: Detailed description of the incident.
+        priority:
+          type: integer
+          description: Priority level of the incident.
+        caller_id:
+          type: string
+          description: name of the user reporting the incident.
+        state:
+          type: integer
+          description: The state of the incident, 1 (New), 2 (In Progress), 3 (On Hold), 6 (Resolved), 7 (Closed), 8 (Canceled). It is enum, possible values are 1, 2, 3, 6, 7, 8
+          example: 1
+        close_code:
+          type: string
+          description: Required when state is set to 6 (Resolved) or 7 (Closed). Provides the resolution code. It is enum, possible values are No resolution provided, Resolved by request, Resolved by caller, Solution provided, Duplicate, Resolved by change, Workaround provided, Known error, Resolved by problem, User error
+          example: No resolution provided
+        close_notes:
+          type: string
+          description: Additional notes about the resolution, required when state is set to 6 (Resolved), 7 (Closed).
+          example: "Issue resolved by restarting the server."
+        category:
+          type: string
+          description: Category of the incident.
+        subcategory:
+          type: string
+          description: Subcategory of the incident.
+        impact:
+          type: integer
+          description: Impact level of the incident.
+        urgency:
+          type: integer
+          description: Urgency level of the incident.
+      required:
+        - short_description
+        - caller_id
+    Outage:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            type: object
+            properties:
+              short_description:
+                type: string
+              cmdb_ci:
+                type: object
+                properties:
+                  link:
+                    type: string
+                    format: uri
+                  value:
+                    type: string
+              sys_mod_count:
+                type: string
+              sys_updated_on:
+                type: string
+                format: date-time
+              message:
+                type: string
+              sys_domain_path:
+                type: string
+              sys_tags:
+                type: string
+              type:
+                type: string
+              duration:
+                type: string
+                format: date-time
+              number:
+                type: string
+              sys_id:
+                type: string
+              sys_updated_by:
+                type: string
+              sys_created_on:
+                type: string
+                format: date-time
+              sys_domain:
+                type: object
+                properties:
+                  link:
+                    type: string
+                    format: uri
+                  value:
+                    type: string
+              details:
+                type: string
+              end:
+                type: string
+                format: date-time
+              task_number:
+                type: string
+              begin:
+                type: string
+                format: date-time
+              sys_created_by:
+                type: string

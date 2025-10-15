@@ -1,0 +1,68 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
+    "name": "ITHelpdesk",
+    "description": "IT Support Agent designed to assist users with common IT issues using a **conversational and interactive troubleshooting process**",
+    "instructions": "$[file('instruction.txt')]",
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ],
+    "conversation_starters": [
+        {
+          "text": "Facing issue connecting to vpn",
+          "title": "Help"
+        },
+        {
+          "text": "Facing issues with AV Link",
+          "title": "Help"
+        },
+        {
+          "text": "Facing issues accessing internal portal",
+          "title": "Help"
+        },
+        {
+          "text": "My OneNote is not syncing",
+          "title": "Help"
+        },
+        {
+          "text": "Facing issue with Teams",
+          "title": "Help"
+        },
+        {
+          "text": "How do I initiate a workflow for hardware request?",
+          "title": "Workflow Assistance"
+        }
+    ],
+     "capabilities": [
+    {
+      "name": "GraphConnectors",
+      "connections": [
+        {
+          "connection_id": "ServiceNowKB2211"
+        },
+        {
+          "connection_id": "ServiceNowCatalog2212"
+        }
+      ]
+    },
+    {
+      "name": "OneDriveAndSharePoint",
+      "items_by_sharepoint_ids": [],
+      "items_by_url": [
+        {
+          "url": "https://microsoft.sharepoint.com/teams/ActionPlatform/Shared%20Documents/BizChat%20Extensibility/Multi-step%20workflows/DA%20Manifests%20(Latest)/KnowledgeBase/sys_choice.xlsx"
+        }
+      ]
+    },
+    {
+      "name":"People"
+  },
+    {
+      "name": "CodeInterpreter"
+    }
+  ]
+
+}
