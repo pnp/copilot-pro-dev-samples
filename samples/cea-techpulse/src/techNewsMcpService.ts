@@ -30,7 +30,7 @@ export class TechNewsMcpService {
         env: {
           ...process.env,
           // Add News API key if available from either environment variable name
-          NEWS_API_KEY: process.env.NEWS_API_KEY || process.env.SECRET_NEWS_API_KEY || 'YOUR_API_KEY_HERE'
+          NEWS_API_KEY: process.env.NEWS_API_KEY
         }
       });
 

@@ -22,7 +22,7 @@ const server = new McpServer({
 // Helper function for making News API requests
 async function makeNewsAPIRequest(endpoint, params = {}) {
     // Check if API key is available
-    if (NEWS_API_KEY === "DEMO_KEY") {
+    if (NEWS_API_KEY === " ") {
         throw new Error("News API key is required. Get your free API key from https://newsapi.org/");
     }
 
