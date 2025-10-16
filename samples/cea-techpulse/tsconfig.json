@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "outDir": "./lib",
+    "rootDir": "./",
+    "sourceMap": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./lib/.tsbuildinfo",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
+}

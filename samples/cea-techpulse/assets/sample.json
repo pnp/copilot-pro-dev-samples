@@ -1,0 +1,68 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-cea-techpulse",
+      "source": "pnp",
+      "title": "TechPulse - Custom Engine Agent for Real-Time Technology News",
+      "shortDescription": "An intelligent tech news companion powered by Microsoft 365 Agents SDK and Model Context Protocol (MCP)",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse",
+      "longDescription": [
+        "The \"TechPulse\" is a custom engine agent that acts as your intelligent tech news companion, delivering the latest technology news, trends, and insights from the most trusted sources in the industry. Built with Microsoft 365 Agents SDK and powered by Model Context Protocol (MCP), this agent provides real-time access to tech news across multiple categories including AI/ML, startups, cybersecurity, mobile technology, and gaming. The agent understands natural language queries and can search for specific topics, provide trending tech news, and deliver company-specific updates."
+    ],
+      "creationDateTime": "2025-09-26",
+      "updateDateTime": "2025-10-16",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Node.js"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "TypeScript, JavaScript"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "No"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "gif",
+          "order": 100,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/cea-techpulse/assets/techPulse.gif",
+          "alt": "Declarative Agent with API Plugin for Microsoft 365 Copilot Sample"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "AjayJ12-MSFT",
+          "pictureUrl": "https://github.com/AjayJ12-MSFT.png",
+          "name": "Ajay Jadhav"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Custom engine agents for Microsoft 365 overview",
+          "description": "Learn more about what custom engine agents for Microsoft 365 Copilot are.",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-custom-engine-agent"
+        },
+        {
+          "name": "Create JavaScript agents in Visual Studio Code with the Microsoft 365 Agents Toolkit",
+          "description": "Learn how to build a custom engine agent for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/agents-sdk/create-new-toolkit-project-vsc?context=%2Fmicrosoft-365-copilot%2Fextensibility%2Fcontext"
+        }
+      ]
+    }
+  ]
