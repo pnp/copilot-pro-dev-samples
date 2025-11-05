@@ -1,79 +1,91 @@
-# Overview of the Custom Engine Agent "TechPulseNews"
+# TechPulse News Agent
 
-The custom engine agent "TechPulse" acts as your intelligent tech news companion, delivering the latest technology news, trends, and insights from the most trusted sources in the industry. Built with Microsoft 365 Agents SDK and powered by Model Context Protocol (MCP), this agent provides real-time access to tech news across multiple categories including AI/ML, startups, cybersecurity, mobile technology, and gaming. The agent understands natural language queries and can search for specific topics, provide trending tech news, and deliver company-specific updates from major tech players like Microsoft, Apple, Google, and more.
+## Summary
+
+TechPulse is an intelligent tech news companion that delivers the latest technology news, trends, and insights from trusted sources in the industry. Built with Microsoft 365 Agents SDK and powered by Model Context Protocol (MCP), this agent provides real-time access to tech news across multiple categories including AI/ML, startups, cybersecurity, mobile technology, and gaming. The agent understands natural language queries and can search for specific topics, provide trending tech news, and deliver company-specific updates from major tech players like Microsoft, Apple, Google, and more.
 
 ![Tech Pulse News](./assets/techPulse.gif)
 
-> **Prerequisites**
->
-> To run this app template in your local dev machine, you will need:
->
-> - [Node.js](https://nodejs.org/), supported versions: 18, 20, 22
-> - A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts).
-> - [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher
-> - [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites) (for Copilot integration)
-> - An [OpenAI API key](https://platform.openai.com/) for general chat functionality
-> - A [NewsAPI key](https://newsapi.org/) for real-time tech news data
+## Version history
 
-1. First, select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. In file *env/.env.local.user*, fill in your API keys:
-   - `SECRET_OPENAI_API_KEY=<your-openai-key>`
-   - `SECRET_NEWS_API_KEY=<your-newsapi-key>`
-4. Create Teams app by clicking `Provision` in "Lifecycle" section.
-5. Select `Preview in Copilot (Edge)` or `Preview in Copilot (Chrome)` from the launch configuration dropdown, or use `Debug in Microsoft 365 Agents Playground` for local testing.
-6. Once the agent is loaded, you can ask questions like:
-   - "Latest AI news"
-   - "What's trending in tech?"
-   - "News about Microsoft"
-   - "Search for cybersecurity updates"
-7. The agent will respond with real-time tech news data and can handle both specific news requests and general conversations.
+Version|Date|Comments
+-------|----|--------
+1.0|September 26, 2025|Initial release
 
-## Tech News Commands
+## Prerequisites
 
-Users can interact with the agent using natural language for various tech news queries:
+* Microsoft 365 tenant with Microsoft 365 Copilot
+* [Node.js](https://nodejs.org/), supported versions: 18, 20, 22
+* A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts)
+* [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher
+* [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
+* An [OpenAI API key](https://platform.openai.com/) for general chat functionality
+* A [NewsAPI key](https://newsapi.org/) for real-time tech news data
 
-### Category-based News
+## Minimal path to awesome
 
-- "Latest AI news" or "AI updates"
-- "Startup news" or "venture capital news"
-- "Cybersecurity headlines"
-- "Mobile technology news"
-- "Gaming news" or "esports updates"
-
-### Company-specific News
-
-- "News about Microsoft"
-- "Apple updates"
-- "What's happening with Google?"
-- "Tesla news"
-
-### Search & Trending
-
-- "Search for blockchain news"
-- "What's trending in tech?"
-- "Popular tech topics"
-- "Find news about machine learning"
-
-### General Queries
-
-- "Latest tech headlines"
-- "Tech industry updates"
-- "Innovation news"
-- "Technology breakthroughs"
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse) then unzip it)
+* Select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar
+* In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
+* In file `env/.env.local.user`, fill in your API keys:
+  * `SECRET_OPENAI_API_KEY=<your-openai-key>`
+  * `SECRET_NEWS_API_KEY=<your-newsapi-key>`
+* Create Teams app by selecting **Provision** in "Lifecycle" section
+* Select **Preview in Copilot (Edge)** or **Preview in Copilot (Chrome)** from the launch configuration dropdown, or use **Debug in Microsoft 365 Agents Playground** for local testing
+* Once the agent is loaded, you can ask questions like:
+  * "Latest AI news"
+  * "What's trending in tech?"
+  * "News about Microsoft"
+  * "Search for cybersecurity updates"
+* The agent will respond with real-time tech news data and can handle both specific news requests and general conversations
 
 ## Features
 
-- **Real-time Tech News**: Latest technology news from trusted sources
-- **Category Filtering**: AI, startups, cybersecurity, mobile, gaming
-- **Company News**: Specific news about major tech companies
-- **Search Functionality**: Search for specific tech topics and keywords
-- **Trending Topics**: Get what's currently trending in technology
-- **MCP Integration**: Uses Model Context Protocol for efficient news data retrieval
-- **Natural Language Processing**: Understands various ways of asking for news
+Using this sample you can extend Microsoft 365 Copilot with an agent that:
 
-## Addition information and references
+* Provides real-time tech news from trusted sources across multiple categories (AI, startups, cybersecurity, mobile, gaming)
+* Searches for specific tech topics and keywords using natural language queries
+* Delivers company-specific news about major tech companies (Microsoft, Apple, Google, Tesla, etc.)
+* Shows trending topics in technology
+* Uses Model Context Protocol (MCP) for efficient news data retrieval
+* Understands various natural language ways of asking for news
 
-- [Microsoft 365 Agents SDK](https://github.com/Microsoft/Agents)
-- [Model Context Protocol](https://modelcontextprotocol.io/)
-- [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-custom-engine-agent)
+### Example Queries
+
+#### Category-based News
+
+* "Latest AI news" or "AI updates"
+* "Startup news" or "venture capital news"
+* "Cybersecurity headlines"
+* "Mobile technology news"
+* "Gaming news" or "esports updates"
+
+#### Company-specific News
+
+* "News about Microsoft"
+* "Apple updates"
+* "What's happening with Google?"
+* "Tesla news"
+
+#### Search & Trending
+
+* "Search for blockchain news"
+* "What's trending in tech?"
+* "Popular tech topics"
+* "Find news about machine learning"
+
+## Help
+
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20cea-techpulse%22) to see if anybody else is having the same issues.
+
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+![visitor stats](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/cea-techpulse)
