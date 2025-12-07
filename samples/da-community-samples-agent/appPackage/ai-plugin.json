@@ -1,0 +1,102 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "Community Samples",
+    "description_for_human": "An MCP Community Samples Plugin to demonstrate declarative agent capabilities.",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "mcpcommunitysamples",
+    "functions": [
+        {
+            "name": "samples_by_author",
+            "description": "Allows retrieving samples by author in the Community Samples Gallery.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "author": {
+                        "description": "The author to use for filtering samples.",
+                        "type": "string"
+                    },
+                    "pageIndex": {
+                        "description": "The page index for pagination.",
+                        "type": "integer"
+                    },
+                    "pageSize": {
+                        "description": "The page size for pagination.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "author",
+                    "pageIndex",
+                    "pageSize"
+                ]
+            }
+        },
+        {
+            "name": "samples_by_keyword",
+            "description": "Allows retrieving samples by keyword in the Community Samples Gallery.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "keyword": {
+                        "description": "The keyword to use for filtering samples.",
+                        "type": "string"
+                    },
+                    "pageIndex": {
+                        "description": "The page index for pagination.",
+                        "type": "integer"
+                    },
+                    "pageSize": {
+                        "description": "The page size for pagination.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "keyword",
+                    "pageIndex",
+                    "pageSize"
+                ]
+            }
+        },
+        {
+            "name": "samples_by_product",
+            "description": "Allows retrieving samples by product in the Community Samples Gallery.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "product": {
+                        "description": "The product to use for filtering samples.",
+                        "type": "string"
+                    },
+                    "pageIndex": {
+                        "description": "The page index for pagination.",
+                        "type": "integer"
+                    },
+                    "pageSize": {
+                        "description": "The page size for pagination.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "product",
+                    "pageIndex",
+                    "pageSize"
+                ]
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "spec": {
+                "url": "https://m365-galleries-mcp-edaufudugfc4c8hy.centralus-01.azurewebsites.net",
+                "enable_dynamic_discovery": false
+            },
+            "run_for_functions": [
+                "samples_by_author",
+                "samples_by_keyword",
+                "samples_by_product"
+            ]
+        }
+    ]
+}

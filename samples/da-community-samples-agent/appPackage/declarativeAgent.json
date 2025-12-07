@@ -1,0 +1,27 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+    "version": "v1.6",
+    "name": "Microsoft 365 Community Samples Agent",
+    "description": "Declarative agent created with Microsoft 365 Agents Toolkit can assist user in finding Community samples by calling MCP Servers",
+    "instructions": "$[file('instruction.md')]",
+    "conversation_starters": [
+        {
+			"title": "Adaptive Cards",
+			"text": "Give me 3 samples demonstrating adaptive cards"
+		},
+        {
+			"title": "Samples for Product",
+			"text": "Find samples for Copilot"
+		},
+        {
+			"title": "Samples By Keyword",
+			"text": "Find me a samples by [keyword]"
+		}
+    ],
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ]
+}

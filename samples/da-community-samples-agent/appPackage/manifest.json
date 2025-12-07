@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.24/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.24",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "Paul Bullock",
+        "websiteUrl": "https://pkbullock.com",
+        "privacyUrl": "https://pkbullock.com/community-terms",
+        "termsOfUseUrl": "https://pkbullock.com/community-terms"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "M365 Community Samples ${{APP_NAME_SUFFIX}}",
+        "full": "Microsoft 365 Community Samples Agent"
+    },
+    "description": {
+        "short": "Microsoft 365 Agent for finding community samples",
+        "full": "Agent for finding Microsoft 365 Community Samples, searching by tool, author or keyword using the MCP Server"
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}
