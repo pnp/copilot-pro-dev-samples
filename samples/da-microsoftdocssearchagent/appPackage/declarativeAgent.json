@@ -1,0 +1,43 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
+    "version": "v1.5",
+    "name": "Microsoft Learn Search Agent",
+    "description": "Declarative agent created with Microsoft 365 Agents Toolkit can assist user in calling MCP Servers",
+    "instructions": "$[file('instruction.txt')]",
+    "behavior_overrides": {
+        "special_instructions": {
+            "discourage_model_knowledge": true
+        }
+    },
+    "capabilities": [
+        {
+            "name": "CodeInterpreter"
+        },
+        {
+            "name":"GraphicArt"
+        }
+    ],
+    "disclaimer": {
+        "text": "This declarative agent and its samples are provided as is without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement."
+    },
+    "conversation_starters": [
+        {
+			"title": "Microsoft 365 Agents",
+			"text": "Summarize the choices for development tools to create Microsoft 365 Agents"
+		},
+        {
+            "title": "SharePoint",
+            "text": "Describe how I should set up my developer machine for SPFx development?"
+        },
+        {
+            "title": "Microsoft Graph",
+            "text": "Describe the chat api in Microsoft Graph and how to use it?"
+        }
+    ],
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ]
+}

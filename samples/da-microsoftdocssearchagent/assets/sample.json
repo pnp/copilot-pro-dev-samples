@@ -1,0 +1,58 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-microsoftdocssearchagent",
+    "source": "pnp",
+    "title": "YOUR-SAMPLE-TITLE",
+    "shortDescription": "An agent that helps users search and retrieve content from Microsoft Learn. ",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-microsoftdocssearchagent",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-microsoftdocssearchagent",
+    "longDescription": [
+      "An agent that helps users search and retrieve content from Microsoft Learn. "
+    ],
+    "creationDateTime": "2025-12-15",
+    "updateDateTime": "2024-10-03",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JSON"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-microsoftdocssearchagent/assets/preview.png",
+        "alt": "Declarative agent that helps users search and retrieve content from Microsoft Learn."
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "pkbullock",
+        "pictureUrl": "https://github.com/pkbullock.png",
+        "name": "Paul Bullock"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      }
+    ]
+  }
+]
