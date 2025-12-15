@@ -6,7 +6,7 @@ Microsoft Learn Search Agent - a declarative Microsoft 365 agent that helps user
 
 ## Example
 
-![Preview of the agent](/assets/preview.png)
+![Preview of the agent](assets/preview.png)
 
 ## Version history
 
