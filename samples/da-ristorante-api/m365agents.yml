@@ -3,6 +3,9 @@
 # Visit https://aka.ms/teamsfx-actions for details on actions
 version: v1.7
 
+additionalMetadata:
+  sampleTag: copilot-pro-dev-samples:da-ristorante-api
+
 environmentFolderPath: ./env
 
 # Triggered when 'teamsapp provision' is executed
@@ -133,4 +136,3 @@ publish:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
-projectId: 3391c281-740d-4efd-9d79-a598e1eb8c4b
