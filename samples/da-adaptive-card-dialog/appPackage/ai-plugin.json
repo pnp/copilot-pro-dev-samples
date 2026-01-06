@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+  "schema_version": "v2.2",
+  "name_for_human": "Adaptive Card Dialog",
+  "namespace": "da_adaptive_card_dialog",
+  "description_for_human": "Programming tutorials with video lessons and interactive quizzes",
+  "description_for_model": "Plugin for discovering programming learning resources. Each topic includes video tutorials and interactive quizzes with instant feedback.",
+  "functions": [
+    {
+      "name": "listLearningResources",
+      "description": "Returns a list of programming learning topics with video URLs and quiz information",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.results",
+          "static_template": {
+            "file": "adaptiveCards/listLearningResources.json"
+          }
+        }
+      }
+    }    
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "None"
+      },
+      "spec": {
+        "url": "apiSpecificationFile/learningResources.yml"
+      },
+      "run_for_functions": ["listLearningResources"]
+    }
+  ],
+  "capabilities": {
+    "conversation_starters": [
+      {
+        "text": "Show me programming tutorials"
+      }
+    ]
+  }
+}

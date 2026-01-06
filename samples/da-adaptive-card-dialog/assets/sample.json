@@ -1,0 +1,73 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-da-adaptive-card-dialog",
+      "source": "pnp",
+      "title": "Adaptive Card dialog",
+      "shortDescription": "A declarative agent demonstrating how to open dialog boxes from Adaptive Cards in Microsoft 365 Copilot",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-dialog",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-dialog",
+      "longDescription": [
+        "This sample demonstrates how to open dialog boxes from Adaptive Cards in a Microsoft 365 Copilot declarative agent. Users can browse programming tutorials for Node.js, JavaScript, and Git, watch official Microsoft video tutorials embedded in dialog boxes, and take interactive quizzes with instant feedback—all within the Copilot interface. The sample showcases Action.OpenUrlDialog from Adaptive Cards v1.5, Azure Functions backend, and API Plugin integration."
+    ],
+      "creationDateTime": "2026-01-06",
+      "updateDateTime": "2026-01-06",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Copilot"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "JavaScript"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "Yes"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-adaptive-card-dialog/assets/AdaptiveCardsDilogBox.gif",
+          "alt": "Declarative Agent with API Plugin for Microsoft 365 Copilot Sample"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "v-ypradhan",
+          "pictureUrl": "https://github.com/v-ypradhan.png",
+          "name": "Yugal Pradhan"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Build declarative agents for Microsoft 365 Copilot",
+          "description": "Learn more about declarative agents for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+        },
+        {
+          "name": "Action.OpenUrlDialog Documentation",
+          "description": "Learn about the Action.OpenUrlDialog feature in Adaptive Cards.",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/adaptive-card-dialog-box"
+        },
+        {
+          "name": "API Plugins for Microsoft 365 Copilot",
+          "description": "Learn how to integrate external APIs with Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins"
+        }
+      ]
+    }
+  ]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "topic": "Introduction to Node.js",
+    "description": "Learn Node.js fundamentals - runtime, modules, and server basics from Microsoft",
+    "level": "Beginner",
+    "duration": "8 minutes",
+    "videoId": "FeJVdCz_uco"
+  },
+  {
+    "id": "2",
+    "topic": "JavaScript Fundamentals",
+    "description": "Master JavaScript core concepts with Microsoft's Beginner's Series",
+    "level": "Beginner",
+    "duration": "8 minutes",
+    "videoId": "_EDM5aPVLmo"
+  },
+  {
+    "id": "3",
+    "topic": "Git and GitHub Basics",
+    "description": "Introduction to Git version control from Microsoft Developer",
+    "level": "Beginner",
+    "duration": "6 minutes",
+    "videoId": "9uGS1ak_FGg"
+  }
+]

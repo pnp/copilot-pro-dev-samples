@@ -1,0 +1,72 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "$data": "${$root}",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "${topic}",
+          "size": "Large",
+          "weight": "Bolder",
+          "color": "Accent",
+          "wrap": true
+        },
+        {
+          "type": "ColumnSet",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "Level: ${level}",
+                  "color": "Good",
+                  "weight": "Bolder"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "text": "⏱️ ${duration}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "text": "${description}",
+          "wrap": true,
+          "spacing": "Medium"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrlDialog",
+      "title": "Watch Video",
+      "url": "https://www.youtube.com/embed/${videoId}",
+      "dialogHeight": "large",
+      "dialogWidth": "large",
+      "dialogTitle": "${topic} - Video Tutorial"
+    },
+    {
+      "type": "Action.OpenUrlDialog",
+      "title": "Interactive Quiz",
+      "url": "${{OPENAPI_SERVER_URL}}/api/interactiveLearning?topic=${topic}&level=${level}",
+      "dialogHeight": "800px",
+      "dialogWidth": "600px",
+      "dialogTitle": "${topic} - Quiz"
+    }
+  ]
+}

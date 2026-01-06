@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  title: Learning Resources Service
+  description: A service to discover programming learning resources with videos and quizzes
+  version: 1.0.0
+servers:
+  - url: ${{OPENAPI_SERVER_URL}}/api
+    description: The learning resources api server
+paths:
+  /learningResources:
+    get:
+      operationId: listLearningResources
+      summary: List all learning resources
+      description: Returns a list of programming learning topics with video tutorials and interactive quizzes
+      responses:
+        '200':
+          description: A list of learning resources
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: The unique identifier of the learning resource
+                        topic:
+                          type: string
+                          description: The name of the programming topic
+                        description:
+                          type: string
+                          description: A brief description of what you'll learn
+                        level:
+                          type: string
+                          description: The difficulty level (Beginner, Intermediate, Advanced)
+                        duration:
+                          type: string
+                          description: Estimated time to complete
+                        videoUrl:
+                          type: string
+                          format: uri
+                          description: The URL of the video tutorial
