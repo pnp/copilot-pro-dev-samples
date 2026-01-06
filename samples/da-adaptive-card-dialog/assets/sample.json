@@ -36,7 +36,7 @@
         {
           "type": "image",
           "order": 100,
-          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-adaptive-card-dialog/assets/AdaptiveCardsDilogBox.gif",
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-adaptive-card-dialog/assets/AdaptiveCardsDialogBox.gif",
           "alt": "Declarative Agent with API Plugin for Microsoft 365 Copilot Sample"
         }
       ],

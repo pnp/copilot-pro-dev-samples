@@ -7,7 +7,7 @@ This sample demonstrates how to open dialog boxes from Adaptive Cards in a Micro
 
 The sample showcases Action.OpenUrlDialog from Adaptive Cards v1.5, Azure Functions backend, and API Plugin integration.
 
-![Adaptive Card Dialog](assets/AdaptiveCardsDilogBox.gif)
+![Adaptive Card Dialog](assets/AdaptiveCardsDialogBox.gif)
 
 
 ## Prerequisites
