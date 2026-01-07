@@ -118,3 +118,5 @@ This assistant helps you find Microsoft 365 community samples and example projec
 Happy building! 
 
 With MCP + Declarative Agents, you’ll have a turnkey path from your existing APIs to a fully operational Copilot‑powered experience. 
+
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-community-samples-agent" />
