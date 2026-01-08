@@ -7,8 +7,14 @@ This sample demonstrates how to open dialog boxes from Adaptive Cards in a Micro
 
 The sample showcases Action.OpenUrlDialog from Adaptive Cards v1.5, Azure Functions backend, and API Plugin integration.
 
-![Adaptive Card Dialog](assets/AdaptiveCardsDialogBox.gif)
+<img src="assets/AdaptiveCardsDialogBox.gif" alt="Adaptive Card Dialog" width="100%" />
 
+
+## Version history
+
+Version|Date|Author|Comments
+-------|----|----|--------
+1.0|January 6, 2026|Microsoft|Initial release
 
 ## Prerequisites
 
@@ -17,18 +23,6 @@ The sample showcases Action.OpenUrlDialog from Adaptive Cards v1.5, Azure Functi
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Microsoft 365 Agents Toolkit for VS Code](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
 * [Dev tunnels CLI](https://learn.microsoft.com/azure/developer/dev-tunnels/get-started) for local development
-
-## Version history
-
-Version|Date|Author|Comments
--------|----|----|--------
-1.0|January 6, 2026|Microsoft|Initial release
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
 
 ## Minimal Path to Awesome
 
@@ -95,6 +89,23 @@ Click "Interactive Quiz" button:
 - Final score and key takeaways
 - Option to retake quiz
 
+
+## Help
+
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-adaptive-card-dialog%22) to see if anybody else is having the same issues.
+
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+
 ## Further reading
 
 - [Action.OpenUrlDialog Documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/adaptive-card-dialog-box)
@@ -103,3 +114,5 @@ Click "Interactive Quiz" button:
 - [API Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins)
 
 <img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-adaptive-card-dialog" />
+
+---
