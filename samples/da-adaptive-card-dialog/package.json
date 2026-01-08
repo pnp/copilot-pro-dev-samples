@@ -2,7 +2,7 @@
     "name": "da-adaptive-card-dialog",
     "version": "1.0.0",
     "engines": {
-        "node": "18 || 20 || 22"
+        "node": ">=20"
     },
     "scripts": {
         "dev:teamsfx": "env-cmd --silent -f .localConfigs npm run dev",

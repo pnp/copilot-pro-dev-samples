@@ -2,10 +2,27 @@
 // Licensed under the MIT License.
 
 const { app } = require("@azure/functions");
+const resources = require("../learningResourcesData.json");
+const fs = require('fs');
+const path = require('path');
+
+// Cache the HTML template at module initialization
+const templatePath = path.join(__dirname, '..', 'Pages', 'quiz-template.html');
+const htmlTemplate = fs.readFileSync(templatePath, 'utf8');
+
+// HTML-encode function to prevent XSS attacks
+function escapeHtml(unsafe) {
+  if (typeof unsafe !== 'string') return unsafe;
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
 // Returns a list of available learning resources from JSON data
 async function learningResources(req, context) {
-  const resources = require("../learningResourcesData.json");
   const res = {
     status: 200,
     jsonBody: {
@@ -120,22 +137,19 @@ async function interactiveLearning(req, context) {
     }
   };
   const quiz = quizData[quizKey];
-  const fs = require('fs');
-  const path = require('path');
-  const templatePath = path.join(__dirname, '..', 'Pages', 'quiz-template.html');
-  let html = fs.readFileSync(templatePath, 'utf8');
+  let html = htmlTemplate;
   const questionsHtml = quiz.questions.map((q, index) => `
     <div class="question-container ${index === 0 ? 'active' : ''}" data-question="${index}">
       <div class="question-number">Question ${index + 1} of ${quiz.questions.length}</div>
-      <div class="question">${q.question}</div>
+      <div class="question">${escapeHtml(q.question)}</div>
       <div class="options">
         ${q.options.map((opt, optIndex) => `
-          <div class="option" data-option="${optIndex}">${opt}</div>
+          <div class="option" data-option="${optIndex}">${escapeHtml(opt)}</div>
         `).join('')}
       </div>
       <div class="feedback" id="feedback-${index}">
         <strong></strong>
-        <p>${q.explanation}</p>
+        <p>${escapeHtml(q.explanation)}</p>
       </div>
       <div class="buttons">
         <button class="next-btn" id="next-${index}" disabled>
@@ -144,8 +158,8 @@ async function interactiveLearning(req, context) {
       </div>
     </div>
   `).join('');
-  const keyPointsHtml = quiz.keyPoints.map(point => `<li>${point}</li>`).join('');
-  html = html.replace(/\{\{TITLE\}\}/g, quiz.title);
+  const keyPointsHtml = quiz.keyPoints.map(point => `<li>${escapeHtml(point)}</li>`).join('');
+  html = html.replace(/\{\{TITLE\}\}/g, escapeHtml(quiz.title));
   html = html.replace(/\{\{COLOR\}\}/g, quiz.color);
   html = html.replace(/\{\{QUESTION_COUNT\}\}/g, quiz.questions.length);
   html = html.replace('{{QUESTIONS}}', questionsHtml);

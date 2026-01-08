@@ -34,8 +34,8 @@ Version|Date|Author|Comments
 
 * Clone this repository (or download this solution as a .ZIP file then unzip it)
     ```bash
-    git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
-    cd samples/da-adaptive-card-dialog
+    git clone https://github.com/pnp/copilot-pro-dev-samples.git
+    cd copilot-pro-dev-samples/samples/da-adaptive-card-dialog
     ```
 * Open the project in Visual Studio Code
 * Select the **Microsoft 365 Agents Toolkit** icon on the left in the VS Code toolbar
@@ -97,7 +97,7 @@ Click "Interactive Quiz" button:
 
 ## Further reading
 
-- [Action.OpenUrlDialog Documentation](https://learn.microsoft.com/adaptive-cards/authoring-cards/universal-action-model#actionopendialog)
+- [Action.OpenUrlDialog Documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/adaptive-card-dialog-box)
 - [Build declarative agents for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent)
 - [Adaptive Cards Schema Explorer](https://adaptivecards.io/explorer/)
 - [API Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins)

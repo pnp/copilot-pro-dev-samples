@@ -40,7 +40,6 @@ paths:
                         duration:
                           type: string
                           description: Estimated time to complete
-                        videoUrl:
+                        videoId:
                           type: string
-                          format: uri
-                          description: The URL of the video tutorial
+                          description: The identifier of the video tutorial
