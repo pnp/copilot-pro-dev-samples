@@ -1,0 +1,381 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\m365agents.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\m365agents.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\m365agents.local.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\m365agents.local.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\.funcignore||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\.funcignore||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\learningResourcesData.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\src\\learningResourcesData.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\Pages\\quiz-template.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\src\\Pages\\quiz-template.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\functions\\learningResources.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\src\\functions\\learningResources.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\env\\.env.dev||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\env\\.env.dev||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\appPackage\\manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\learningDeclarativeAgent.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\appPackage\\learningDeclarativeAgent.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\instruction.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\appPackage\\instruction.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\ai-plugin.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\appPackage\\ai-plugin.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\apiSpecificationFile\\learningResources.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\appPackage\\apiSpecificationFile\\learningResources.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\adaptiveCards\\listLearningResources.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:samples\\da-adaptive-card-dialog\\appPackage\\adaptiveCards\\listLearningResources.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\.vs\\copilot-pro-dev-samples_yugal.slnx\\config\\applicationhost.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\copilot-pro-dev-samples_yugal.slnx\\config\\applicationhost.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "local.settings.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\local.settings.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\local.settings.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\local.settings.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\local.settings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:43:36.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\README.md",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\README.md",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\README.md",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\README.md",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-01-06T10:31:17.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\package.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\package.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\package.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\package.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:31:12.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "package-lock.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\package-lock.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\package-lock.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\package-lock.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\package-lock.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:31:07.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "m365agents.yml",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\m365agents.yml",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\m365agents.yml",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\m365agents.yml",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\m365agents.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-01-06T10:31:04.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "m365agents.local.yml",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\m365agents.local.yml",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\m365agents.local.yml",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\m365agents.local.yml",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\m365agents.local.yml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-01-06T10:30:53.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "host.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\host.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\host.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\host.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\host.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:30:49.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\.gitignore",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\.gitignore",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\.gitignore",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-06T10:30:43.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": ".funcignore",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\.funcignore",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\.funcignore",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\.funcignore",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\.funcignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-06T10:30:39.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "learningResourcesData.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\learningResourcesData.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\src\\learningResourcesData.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\learningResourcesData.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\src\\learningResourcesData.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:30:33.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "quiz-template.html",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\Pages\\quiz-template.html",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\src\\Pages\\quiz-template.html",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\Pages\\quiz-template.html",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\src\\Pages\\quiz-template.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-01-06T10:30:29.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "learningResources.js",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\functions\\learningResources.js",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\src\\functions\\learningResources.js",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\src\\functions\\learningResources.js",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\src\\functions\\learningResources.js",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-06T10:30:20.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": ".env.dev",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\env\\.env.dev",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\env\\.env.dev",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\env\\.env.dev",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\env\\.env.dev",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-06T10:30:14.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "manifest.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\manifest.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\appPackage\\manifest.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\manifest.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\appPackage\\manifest.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:29:54.793Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "learningDeclarativeAgent.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\learningDeclarativeAgent.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\appPackage\\learningDeclarativeAgent.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\learningDeclarativeAgent.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\appPackage\\learningDeclarativeAgent.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:29:45.933Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "instruction.txt",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\instruction.txt",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\appPackage\\instruction.txt",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\instruction.txt",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\appPackage\\instruction.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-01-06T10:29:39.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ai-plugin.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\ai-plugin.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\appPackage\\ai-plugin.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\ai-plugin.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\appPackage\\ai-plugin.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:29:33.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "learningResources.yml",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\apiSpecificationFile\\learningResources.yml",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\appPackage\\apiSpecificationFile\\learningResources.yml",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\apiSpecificationFile\\learningResources.yml",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\appPackage\\apiSpecificationFile\\learningResources.yml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-01-06T10:29:27.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "applicationhost.config",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\.vs\\copilot-pro-dev-samples_yugal.slnx\\config\\applicationhost.config",
+              "RelativeDocumentMoniker": ".vs\\copilot-pro-dev-samples_yugal.slnx\\config\\applicationhost.config",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\.vs\\copilot-pro-dev-samples_yugal.slnx\\config\\applicationhost.config",
+              "RelativeToolTip": ".vs\\copilot-pro-dev-samples_yugal.slnx\\config\\applicationhost.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-01-06T10:28:59.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "listLearningResources.json",
+              "DocumentMoniker": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\adaptiveCards\\listLearningResources.json",
+              "RelativeDocumentMoniker": "samples\\da-adaptive-card-dialog\\appPackage\\adaptiveCards\\listLearningResources.json",
+              "ToolTip": "C:\\Users\\v-ypradhan\\source\\repos\\copilot-pro-dev-samples_yugal\\samples\\da-adaptive-card-dialog\\appPackage\\adaptiveCards\\listLearningResources.json",
+              "RelativeToolTip": "samples\\da-adaptive-card-dialog\\appPackage\\adaptiveCards\\listLearningResources.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-06T10:28:52.72Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 817,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
