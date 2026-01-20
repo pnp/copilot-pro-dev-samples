@@ -1,0 +1,43 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "✅ Repair updated successfully",
+      "weight": "Bolder",
+      "size": "Medium",
+      "color": "Good"
+    },
+    {
+      "type": "Container",
+      "items": [
+        { "type": "TextBlock", "text": "ID: ${updatedRepair.id}", "wrap": true },
+        {
+          "type": "Input.Text",
+          "id": "title",
+          "label": "Title",
+          "value": "${if(updatedRepair.title, updatedRepair.title, '')}",
+          "placeholder": "Enter title"
+        },
+        {
+          "type": "Input.Text",
+          "id": "assignedTo",
+          "label": "Assigned To",
+          "value": "${if(updatedRepair.assignedTo, updatedRepair.assignedTo, '')}",
+          "placeholder": "Enter assignee"
+        },
+        { "type": "TextBlock", "text": "Date: ${updatedRepair.date}", "wrap": true }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Execute",
+      "title": "Update",
+      "verb": "updateRepair",
+      "data": { "id": "${updatedRepair.id}" }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-da-adaptive-card-inline-edit",
+      "source": "pnp",
+      "title": "Adaptive Card Inline Edit",
+      "shortDescription": "A declarative agent demonstrating inline editing of Adaptive Card responses in Microsoft 365 Copilot",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-inline-edit",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-inline-edit",
+      "longDescription": [
+        "This sample demonstrates how to allow inline editing of Adaptive Card responses in a Microsoft 365 Copilot declarative agent. Users can view car repair records, edit fields directly within the card (title, assigned technician), and submit updates—all without leaving the Copilot interface. The sample showcases Action.Execute from Adaptive Cards v1.5, stateful card updates, Azure Functions backend, and API Plugin integration."
+    ],
+      "creationDateTime": "2026-01-20",
+      "updateDateTime": "2026-01-20",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Copilot"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "JavaScript"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "Yes"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-adaptive-card-inline-edit/assets/AdaptiveCardsInlineEdit.gif",
+          "alt": "Adaptive Card Inline Edit for Microsoft 365 Copilot Sample"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "v-ypradhan",
+          "pictureUrl": "https://github.com/v-ypradhan.png",
+          "name": "Yugal Pradhan"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Build declarative agents for Microsoft 365 Copilot",
+          "description": "Learn more about declarative agents for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+        },
+        {
+          "name": "Allow inline editing of Adaptive Card responses",
+          "description": "Learn about the Action.Execute feature for inline editing in Adaptive Cards.",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/adaptive-card-edits"
+        },
+        {
+          "name": "API Plugins for Microsoft 365 Copilot",
+          "description": "Learn how to integrate external APIs with Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins"
+        }
+      ]
+    }
+  ]
