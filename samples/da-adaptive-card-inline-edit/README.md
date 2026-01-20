@@ -136,11 +136,11 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 ## Further reading
 
-- [Action.OpenUrlDialog Documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/adaptive-card-dialog-box)
+- [Action.Execute Documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/adaptive-card-edits)
 - [Build declarative agents for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent)
 - [Adaptive Cards Schema Explorer](https://adaptivecards.io/explorer/)
 - [API Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins)
 
-<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-adaptive-card-dialog" />
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-adaptive-card-inline-edit" />
 
 ---
