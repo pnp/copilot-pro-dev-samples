@@ -184,3 +184,5 @@ consultant, the API has no way to know if the user was seeking the consultant's 
 6. In POST requests, use a command style such as `/me/chargeTime`, as opposed to asking the API to update a data structure
 
 7. Don't expect Copilot to filter data; instead provide parameters and filter it server side. (I have seen some filtering by Copilot however - this is for further study)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/cext-trey-research-python" />
