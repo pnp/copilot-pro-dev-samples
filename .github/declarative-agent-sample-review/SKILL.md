@@ -78,3 +78,11 @@ Submit:
 ```bash
 gh api repos/pnp/copilot-pro-dev-samples/pulls/<PR>/reviews --method POST --input review.json
 ```
+
+### Convert to Draft
+
+After submitting a review with requested changes, convert the PR to draft:
+
+```bash
+gh pr ready <PR> --undo
+```
