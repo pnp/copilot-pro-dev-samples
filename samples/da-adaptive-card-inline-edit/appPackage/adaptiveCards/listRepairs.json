@@ -1,0 +1,36 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        { "type": "TextBlock", "text": "ID: ${id}", "wrap": true },
+        {
+          "type": "Input.Text",
+          "id": "title",
+          "label": "Title",
+          "value": "${if(title, title, '')}",
+          "placeholder": "Enter title"
+        },
+        {
+          "type": "Input.Text",
+          "id": "assignedTo",
+          "label": "Assigned To",
+          "value": "${if(assignedTo, assignedTo, '')}",
+          "placeholder": "Enter assignee"
+        },
+        { "type": "TextBlock", "text": "Date: ${date}", "wrap": true }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Execute",
+      "title": "Update",
+      "verb": "updateRepair",
+      "data": { "id": "${id}" }
+    }
+  ]
+}
