@@ -1,13 +1,13 @@
 [
   {
-    "name": "pnp-copilot-pro-dev-YOUR_AGENT_FOLDER",
+    "name": "pnp-copilot-pro-dev-mcs-BlogPostHelper",
     "source": "pnp",
-    "title": "YOUR-SAMPLE-TITLE",
-    "shortDescription": "YOUR-SHORT-DESCRIPTION",
-    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR_AGENT_FOLDER",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR_AGENT_FOLDER",
+    "title": "Blog Post Helper",
+    "shortDescription": "A Copilot Studio agent that assists in creating and managing blog posts.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-BlogPostHelper",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-BlogPostHelper",
     "longDescription": [
-      "YOUR-SHORT-DESCRIPTION"
+      "A Copilot Studio agent that assists in creating and managing blog posts."
     ],
     "creationDateTime": "2026-02-14",
     "updateDateTime": "2026-02-14",
@@ -37,21 +37,15 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/YOUR_AGENT_FOLDER/assets/YOUR-IMAGE-NAME-HERE",
-        "alt": "Copilot Studio agent doing x"
-      },
-      {
-        "type": "video",
-        "order": 101,
-        "url": "https://www.youtube.com/embed/FS-_0KENJkI",
-        "alt": "Copilot Studio agent doing x"
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-BlogPostHelper/assets/pending-image.png",
+        "alt": "Copilot Studio agent placeholder image for the moment"
       }
     ],
     "authors": [
       {
-        "gitHubAccount": "YOUR-GITHUB-ACCOUNT",
-        "pictureUrl": "https://github.com/YOUR-GITHUB-ACCOUNT.png",
-        "name": "YOUR-NAME"
+        "gitHubAccount": "pkbullock",
+        "pictureUrl": "https://github.com/pkbullock.png",
+        "name": "Paul Bullock"
       }
     ],
     "references": [
