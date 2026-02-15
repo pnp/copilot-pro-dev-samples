@@ -5,6 +5,9 @@ on:
     paths:
       - "samples/**"
 
+env:
+  WORKFLOW_DISABLED: true
+
 permissions:
   contents: read
   pull-requests: write
