@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr7f7_blogHelperAgent.gpt.default">
+  <componenttype>15</componenttype>
+  <description>Declarative agent that supports the authoring, reviews and creation of blog posts.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Blog helper agent (CS)</name>
+  <parentbotid>
+    <schemaname>cr7f7_blogHelperAgent</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
