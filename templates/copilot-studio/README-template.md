@@ -1,0 +1,136 @@
+<!--
+This template is for Copilot Studio samples only. Please update YOUR_AGENT_FOLDER to the folder of this agent. Please delete this line before submission.
+-->
+
+# Title of the sample
+
+<!--
+This is how you want the sample to appear in the samples browser.
+When naming your sample, try to give it a friendly name that describes what it does. Avoid using terms like `Microsoft 365 Copilot` and `sample` -- because that's what all the samples in this repo are all about.
+
+GOOD 👍:
+  Answering questions about repairs.
+BAD 👎:
+  copilot-agent-contoso
+  Sample code that shows how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs.
+-->
+
+## Summary
+
+Short summary on the contents of the sample. What does the agent do? How does it help users? What type of skills and knowledge does it have?
+
+<!--
+Please provide a high-quality screenshot of the sample in action. Include a screenshot of the agent answering some sample prompts.
+
+Upload the image in a subfolder named `assets`. Use a resolution of 1920x1080.
+
+You can add multiple screenshots to help users understand your samples without having to download  and install it.
+-->
+
+## Contributors
+<!--
+We use this section to recognize and promote your contributions. Please provide one author per line -- even if you worked together on it.
+
+We'll only use the info you provided here. Make sure to include your full name, not just your GitHub username.
+
+Provide a link to your GitHub profile to help others find more cool things you have done. The only link we'll accept is a link to your GitHub profile.
+
+If you want to provide links to your social media, blog, and employer name, make sure to update your GitHub profile.
+-->
+
+* [Author Name](LinkToYourGitHubProfile)
+
+## Version history
+
+Version|Date|Comments
+-------|----|--------
+1.0|Feburary 01, 2026|Initial release
+
+## Prerequisites
+
+* Microsoft 365 tenant with Microsoft 365 Copilot
+* ...add more prerequisites
+
+## Minimal path to awesome
+
+**Import Solution into Copilot Studio**
+
+This sample uses the Power Platform CLI to import samples, for documenation and installation instructions please visit: [What is Microsoft Power Platform CLI? | Microsoft Learn](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction) 
+
+- Ensure you are authenticated with ```pac auth```
+
+
+```powershell
+
+# Package up the solution
+pac solution pack --zipfile <YourAgent>.zip --folder ./mcs-YOUR_AGENT_FOLDER/src
+
+# Import into Power Platform (default enviroment)
+pac solution import --path <YourAgent>.zip
+
+# Import into specific environment
+pac env list
+pac solution import --path <YourAgent>.zip -env <environment-guid>
+
+```
+
+<!-- 
+PRO TIP:
+
+As tempting as it may be, don't just use images to describe the steps. Let's be as inclusive as possible and think about accessibility.
+
+We have basic documentation about Microsoft 365 Copilot extensibility that you can reference on top of any additional steps that your sample needs:
+
+* [Microsoft 365 Copilot extensibility](https://learn.microsoft.com/microsoft-365-copilot/extensibility/)
+
+-->
+
+## Features
+
+Extended description of the contents of the sample. What elements does it include? What concepts does illustrate?
+
+Using this sample you can extend Microsoft 365 Copilot with an agent that:
+
+* objective 1
+* objective 2
+* objective 3
+
+<!--
+Note that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions in advance! You rock ❤.
+-->
+
+## Help
+
+<!--
+You can just search and replace this page with the following values:
+
+Search for:
+YOUR-SOLUTION-NAME
+
+Replace with your sample folder name. E.g.: my-agent
+
+Search for:
+@YOURGITHUBUSERNAME
+
+Replace with your GitHub username, prefixed with an "@". If you have more than one author, use %20 to separate them, making sure to prefix everyone's username individually with an "@".
+
+Example:
+@pkbullock
+
+Or:
+@pkbullock%20@bobgerman
+-->
+
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20YOUR_AGENT_FOLDER%22) to see if anybody else is having the same issues.
+
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/YOUR_AGENT_FOLDER)
