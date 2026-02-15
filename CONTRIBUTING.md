@@ -1,6 +1,6 @@
 # Contribution Guidance
 
-This is a community repository for sample Microsoft 365 Copilot agents developed using code-first approaches using tools such as Visual Studio Code and Teasm Toolkit. 
+This is a community repository for sample Microsoft 365 Copilot agents developed using code-first approaches using tools such as Visual Studio Code and Microsoft 365 Agents Toolkit, and now support for Copilot Studio samples. 
 
 If you'd like to contribute to this repository, please read the following guidelines. Contributors are more than welcome to share their learnings with others in this centralized location.
 
@@ -83,8 +83,9 @@ Each sample should be in its own folder within the /samples directory. Your fold
 | Prefix | Description |
 | --- | --- |
 | cea- | These are Custom engine agents that interact with users in the Bizchat chat surface via the Azure Bot Framework |
-| da - | These are Declarative agents that run using Microsoft 365 Copilot's AI and orchestration and may include API plugins and Graph connectors |
+| da- | These are Declarative agents that run using Microsoft 365 Copilot's AI and orchestration and may include API plugins and Graph connectors |
 | msgext- | These are agents implemented as Microsoft 365 Message extensions |
+| mcs- | Indiciate this agent is Microsoft Copilot Studio |
 
 ### 2. README.md file
 
@@ -92,8 +93,8 @@ Your sample folder should contain a `README.md` file for your contribution. Plea
 
 | If your sample is | use this template |
 | --- | --- |
-| built with Teams Toolkit for VS Code | [README.md](/samples/_SAMPLE_templates/ttk-vs-code-sample/README.md) |
-| built with Teams Toolkit for Visual Studio | [README.md](/samples/_SAMPLE_templates/ttk-vs-sample/README.md) |
+| built with Microsoft 365 Agents Toolkit for VS Code | [README.md](/samples/_SAMPLE_templates/ttk-vs-code-sample/README.md) |
+| built with Microsoft 365 Agents Toolkit for Visual Studio | [README.md](/samples/_SAMPLE_templates/ttk-vs-sample/README.md) |
 | something else | [README.md](/samples/_SAMPLE_templates/any-sample/README.md) |
 
 Please copy the template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
@@ -158,11 +159,41 @@ The preview image must be located in the `/assets/` folder in the root your solu
 
 Your sample should include a clearly marked folder containing a Teams/M365 `manifest.json` file and well-formed application icons along with any additional files such as declarative agent and API plugin JSON files.
 
- * If the manifest works as-is, you may optionally include an installable Teams application package (zip archive containing these files).
+* If the manifest works as-is, you may optionally include an installable Teams application package (zip archive containing these files).
 
- * If the `manifest.json` requires modification before use, please do not include a zip archive. Instead, include instructions in your `README.md` file explaining how to modify the manifest and create the Teams application package
+* If the `manifest.json` requires modification before use, please do not include a zip archive. Instead, include instructions in your `README.md` file explaining how to modify the manifest and create the Teams application package
 
-### 7. Telemetry
+### 7. Microsoft Copilot Studio Samples
+
+Since Microsoft Copilot Studio (MCS) Samples are a package/zip file, for security reasons we will only accept the contents of these packages rather than the package files.
+
+The intended folder structure for a MCS samples would look like this:
+
+- mcs-MyCoolSample
+  - assets
+  - src 
+  - README.md 
+
+To get the source quickly, please use the following commands using the [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction):
+
+ - Ensure you are authenticated with [```pac auth```](https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/auth)
+
+ - Add your agent to a solution package
+
+ - Export Solution Contents
+
+  ```powershell
+  # Navigste to samples folder
+
+  mkdir mcs-MyNewAgent
+  cd mcs-MyNewAgent
+
+  pac solution clone --name <your-package-name> --outputDirectory . --packagetype Unmanaged
+
+  ```
+Use the template ```template/mcs/README.md``` and complete a template of ```sample.json``` and place this in your assets folder.
+
+### 8. Telemetry
 
 The README template contains a specific tracking image at the end of the file with an `img` tag, where the `src` attribute points to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
 
