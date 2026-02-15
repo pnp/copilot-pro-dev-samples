@@ -52,4 +52,4 @@ This declarative agent includes:
 * Able to generate images based on XBOX games
 * Shows how to use the `WebSearch` and `GraphicArt` capabilities for declarative agents
 
-<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-xbox-game-master" />
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-XBoxGameMaster" />

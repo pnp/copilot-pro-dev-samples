@@ -32,4 +32,4 @@ Version|Date|Author|Comments
 - [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
 - [Copilot Developer Camp](https://microsoft.github.io/copilot-camp/)
 
-<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-MyCommsBuddy" />
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-PositivityAgent" />
