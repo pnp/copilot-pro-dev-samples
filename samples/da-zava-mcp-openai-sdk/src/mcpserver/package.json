@@ -1,0 +1,18 @@
+{
+  "name": "zava-insurance-mcp",
+  "version": "1.0.0",
+  "description": "Zava Insurance MCP Server with ChatGPT Widgets",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../widgets && npm install",
+    "start:azurite": "npx azurite-table --tableHost 127.0.0.1 --tablePort 10002 --location .azurite ",
+    "seed": "cd server && npm run seed",
+    "build:widgets": "cd widgets && npm run build",
+    "start:server": "cd server && npm start",
+    "dev:server": "cd server && npm run dev",
+    "inspector": "npx @modelcontextprotocol/inspector"
+  },
+  "devDependencies": {
+    "azurite": "^3.31.0"
+  }
+}

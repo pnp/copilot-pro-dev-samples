@@ -1,0 +1,325 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "zava-mcp-agent01",
+    "description_for_human": "zava-mcp-agent01${{APP_NAME_SUFFIX}}",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "zavamcpagent01",
+    "functions": [
+        {
+            "name": "create-inspection",
+            "description": "Creates a new inspection record. Only claimNumber is required. ID is auto-generated, status defaults to 'open'. claimId is optional."
+        },
+        {
+            "name": "get-claim-summary",
+            "description": "Returns a text summary for a specific claim with key details. Use claim ID or claim number."
+        },
+        {
+            "name": "list-inspectors",
+            "description": "Lists all available inspectors with their specializations."
+        },
+        {
+            "name": "show-claim-detail",
+            "description": "Displays detailed information about a specific insurance claim including related inspections, purchase orders, and contractor assignments. Use claim ID (e.g. '1', '2') or claim number (e.g. 'CN202504990')."
+        },
+        {
+            "name": "show-claims-dashboard",
+            "description": "Displays the Zava Insurance claims dashboard showing all claims with status overview, filters, and summary metrics. Supports filtering by status and/or policy holder name. When the user mentions a person's name, first name, last name, or partial name, always pass it as the policyHolderName parameter. The name filter is case-insensitive and supports partial matches (e.g. 'kim' will match 'Kimberly King' and 'Kimberly Williams')."
+        },
+        {
+            "name": "show-contractors",
+            "description": "Displays the list of contractors available for insurance repair work. Optionally filter by specialty or preferred status."
+        },
+        {
+            "name": "update-claim-status",
+            "description": "Updates the status of an insurance claim. Use claim ID (e.g. '1', '2')."
+        },
+        {
+            "name": "update-inspection",
+            "description": "Updates an inspection record — status, findings, recommended actions, property, or inspector assignment."
+        },
+        {
+            "name": "update-purchase-order",
+            "description": "Updates a purchase order status (e.g. approve, reject, complete)."
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "spec": {
+                "url": "https://t3n5kh44-3001.aue.devtunnels.ms/mcp",
+                "x-mcp_tool_description": {
+                    "tools": [
+                        {
+                            "name": "show-claims-dashboard",
+                            "title": "Show Claims Dashboard",
+                            "description": "Displays the Zava Insurance claims dashboard showing all claims with status overview, filters, and summary metrics. Supports filtering by status and/or policy holder name. When the user mentions a person's name, first name, last name, or partial name, always pass it as the policyHolderName parameter. The name filter is case-insensitive and supports partial matches (e.g. 'kim' will match 'Kimberly King' and 'Kimberly Williams').",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "string",
+                                        "description": "Filter claims by status keyword (e.g. 'Open', 'Approved', 'Pending', 'Denied', 'Closed')"
+                                    },
+                                    "policyHolderName": {
+                                        "type": "string",
+                                        "description": "Filter claims by policy holder name. Supports partial, case-insensitive matching — pass the first name, last name, or any part of the name (e.g. 'Kimberly', 'king', 'kim'). When the user asks about a specific person's claims, always use this parameter."
+                                    }
+                                }
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            },
+                            "_meta": {
+                                "openai/outputTemplate": "ui://widget/claims-dashboard.html",
+                                "openai/toolInvocation/invoking": "Loading claims dashboard…",
+                                "openai/toolInvocation/invoked": "Claims dashboard ready",
+                                "openai/widgetAccessible": true
+                            }
+                        },
+                        {
+                            "name": "show-claim-detail",
+                            "title": "Show Claim Detail",
+                            "description": "Displays detailed information about a specific insurance claim including related inspections, purchase orders, and contractor assignments. Use claim ID (e.g. '1', '2') or claim number (e.g. 'CN202504990').",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "claimId": {
+                                        "type": "string",
+                                        "description": "The claim ID or claim number to look up"
+                                    }
+                                },
+                                "required": [
+                                    "claimId"
+                                ]
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            },
+                            "_meta": {
+                                "openai/outputTemplate": "ui://widget/claim-detail.html",
+                                "openai/toolInvocation/invoking": "Loading claim details…",
+                                "openai/toolInvocation/invoked": "Claim details ready",
+                                "openai/widgetAccessible": true
+                            }
+                        },
+                        {
+                            "name": "show-contractors",
+                            "title": "Show Contractors",
+                            "description": "Displays the list of contractors available for insurance repair work. Optionally filter by specialty or preferred status.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "specialty": {
+                                        "type": "string",
+                                        "description": "Filter by contractor specialty (e.g. 'Roofing', 'Water Damage', 'Fire')"
+                                    },
+                                    "preferredOnly": {
+                                        "type": "boolean",
+                                        "description": "Show only preferred contractors"
+                                    }
+                                }
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            },
+                            "_meta": {
+                                "openai/outputTemplate": "ui://widget/contractors-list.html",
+                                "openai/toolInvocation/invoking": "Loading contractors…",
+                                "openai/toolInvocation/invoked": "Contractors ready",
+                                "openai/widgetAccessible": true
+                            }
+                        },
+                        {
+                            "name": "update-claim-status",
+                            "title": "Update Claim Status",
+                            "description": "Updates the status of an insurance claim. Use claim ID (e.g. '1', '2').",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "claimId": {
+                                        "type": "string",
+                                        "description": "The claim ID"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "New status (e.g. 'Approved', 'Denied', 'Closed', 'Open - Under Investigation')"
+                                    },
+                                    "note": {
+                                        "type": "string",
+                                        "description": "Optional note to add to the claim"
+                                    }
+                                },
+                                "required": [
+                                    "claimId",
+                                    "status"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "update-inspection",
+                            "title": "Update Inspection",
+                            "description": "Updates an inspection record — status, findings, recommended actions, property, or inspector assignment.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "inspectionId": {
+                                        "type": "string",
+                                        "description": "The inspection ID (e.g. 'insp-001')"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "New status (e.g. 'completed', 'scheduled', 'in-progress', 'cancelled')"
+                                    },
+                                    "findings": {
+                                        "type": "string",
+                                        "description": "Updated findings text"
+                                    },
+                                    "recommendedActions": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "Updated recommended actions"
+                                    },
+                                    "property": {
+                                        "type": "string",
+                                        "description": "Updated property address"
+                                    },
+                                    "inspectorId": {
+                                        "type": "string",
+                                        "description": "Inspector ID to assign (e.g. 'inspector-003')"
+                                    }
+                                },
+                                "required": [
+                                    "inspectionId"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "update-purchase-order",
+                            "title": "Update Purchase Order",
+                            "description": "Updates a purchase order status (e.g. approve, reject, complete).",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "purchaseOrderId": {
+                                        "type": "string",
+                                        "description": "The purchase order ID (e.g. 'po-001')"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "New status (e.g. 'approved', 'rejected', 'completed', 'in-progress')"
+                                    },
+                                    "note": {
+                                        "type": "string",
+                                        "description": "Optional note to add"
+                                    }
+                                },
+                                "required": [
+                                    "purchaseOrderId",
+                                    "status"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "get-claim-summary",
+                            "title": "Get Claim Summary",
+                            "description": "Returns a text summary for a specific claim with key details. Use claim ID or claim number.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "claimId": {
+                                        "type": "string",
+                                        "description": "Claim ID or claim number"
+                                    }
+                                },
+                                "required": [
+                                    "claimId"
+                                ]
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        },
+                        {
+                            "name": "create-inspection",
+                            "title": "Create Inspection",
+                            "description": "Creates a new inspection record. Only claimNumber is required. ID is auto-generated, status defaults to 'open'. claimId is optional.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "claimNumber": {
+                                        "type": "string",
+                                        "description": "The claim number (e.g. 'CN202504990')"
+                                    },
+                                    "claimId": {
+                                        "type": "string",
+                                        "description": "Optional claim ID"
+                                    },
+                                    "taskType": {
+                                        "type": "string",
+                                        "description": "Type of inspection: 'initial', 're-inspection', 'final'. Defaults to 'initial'"
+                                    },
+                                    "priority": {
+                                        "type": "string",
+                                        "description": "Priority: 'low', 'medium', 'high'. Defaults to 'medium'"
+                                    },
+                                    "status": {
+                                        "type": "string",
+                                        "description": "Status. Defaults to 'open'"
+                                    },
+                                    "scheduledDate": {
+                                        "type": "string",
+                                        "description": "Scheduled date (ISO string)"
+                                    },
+                                    "inspectorId": {
+                                        "type": "string",
+                                        "description": "Inspector ID to assign"
+                                    },
+                                    "property": {
+                                        "type": "string",
+                                        "description": "Property address"
+                                    },
+                                    "instructions": {
+                                        "type": "string",
+                                        "description": "Inspection instructions"
+                                    }
+                                },
+                                "required": [
+                                    "claimNumber"
+                                ]
+                            }
+                        },
+                        {
+                            "name": "list-inspectors",
+                            "title": "List Inspectors",
+                            "description": "Lists all available inspectors with their specializations.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {}
+                            },
+                            "annotations": {
+                                "readOnlyHint": true
+                            }
+                        }
+                    ]
+                }
+            },
+            "run_for_functions": [
+                "create-inspection",
+                "get-claim-summary",
+                "list-inspectors",
+                "show-claim-detail",
+                "show-claims-dashboard",
+                "show-contractors",
+                "update-claim-status",
+                "update-inspection",
+                "update-purchase-order"
+            ],
+            "auth": {
+                "type": "None"
+            }
+        }
+    ]
+}

@@ -1,0 +1,697 @@
+[
+  {
+    "id": "insp-001",
+    "claimId": "1",
+    "claimNumber": "CN202504990",
+    "taskType": "initial",
+    "priority": "low",
+    "status": "completed",
+    "scheduledDate": "2025-08-03T22:21:49.883Z",
+    "inspectorId": "inspector-020",
+    "property": "9901 Valley Rd, Spokane, WA 99201",
+    "instructions": "Assess Fire damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Fire damage - severe severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Document all damages"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-02T15:21:49.883Z",
+    "updatedAt": "2025-08-04T06:21:49.883Z",
+    "completedDate": "2025-08-04T06:21:49.883Z"
+  },
+  {
+    "id": "insp-002",
+    "claimId": "1",
+    "claimNumber": "CN202504990",
+    "taskType": "re-inspection",
+    "priority": "medium",
+    "status": "completed",
+    "scheduledDate": "2025-08-09T00:21:49.883Z",
+    "inspectorId": "inspector-003",
+    "property": "9901 Valley Rd, Spokane, WA 99201",
+    "instructions": "Assess Fire damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Fire damage - severe severity confirmed. Damage within policy coverage.",
+    "recommendedActions": [
+      "Full replacement recommended",
+      "Obtain multiple quotes"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-02T15:21:49.883Z",
+    "updatedAt": "2025-08-09T03:21:49.883Z",
+    "completedDate": "2025-08-09T03:21:49.883Z"
+  },
+  {
+    "id": "insp-003",
+    "claimId": "3",
+    "claimNumber": "CN202504992",
+    "taskType": "initial",
+    "priority": "medium",
+    "status": "completed",
+    "scheduledDate": "2025-12-07T02:20:21.023Z",
+    "inspectorId": "inspector-014",
+    "property": "8006 Oak Ave, Seattle, WA 98101",
+    "instructions": "Assess Vandalism - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Vandalism - severe severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Full replacement recommended",
+      "Document all damages"
+    ],
+    "flaggedIssues": [
+      "Potential code violations"
+    ],
+    "createdAt": "2025-12-05T03:20:21.023Z",
+    "updatedAt": "2025-12-07T10:20:21.023Z",
+    "completedDate": "2025-12-07T10:20:21.023Z"
+  },
+  {
+    "id": "insp-004",
+    "claimId": "3",
+    "claimNumber": "CN202504992",
+    "taskType": "initial",
+    "priority": "low",
+    "status": "completed",
+    "scheduledDate": "2025-12-11T13:20:21.023Z",
+    "inspectorId": "inspector-018",
+    "property": "8006 Oak Ave, Seattle, WA 98101",
+    "instructions": "Assess Vandalism - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Vandalism - severe severity confirmed. Temporary stabilization required.",
+    "recommendedActions": [
+      "Obtain multiple quotes"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-12-05T03:20:21.023Z",
+    "updatedAt": "2025-12-11T16:20:21.023Z",
+    "completedDate": "2025-12-11T16:20:21.023Z"
+  },
+  {
+    "id": "insp-005",
+    "claimId": "4",
+    "claimNumber": "CN202504993",
+    "taskType": "initial",
+    "priority": "low",
+    "status": "completed",
+    "scheduledDate": "2025-10-27T06:30:06.931Z",
+    "inspectorId": "inspector-006",
+    "property": "6927 Lake View Dr, Salem, OR 97301",
+    "instructions": "Assess Mold damage - minor severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Mold damage - minor severity confirmed. Multiple areas affected.",
+    "recommendedActions": [
+      "Document all damages"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-10-19T18:30:06.931Z",
+    "updatedAt": "2025-10-27T12:30:06.931Z",
+    "completedDate": "2025-10-27T12:30:06.931Z"
+  },
+  {
+    "id": "insp-006",
+    "claimId": "4",
+    "claimNumber": "CN202504993",
+    "taskType": "final",
+    "priority": "high",
+    "status": "completed",
+    "scheduledDate": "2025-10-24T07:30:06.931Z",
+    "inspectorId": "inspector-017",
+    "property": "6927 Lake View Dr, Salem, OR 97301",
+    "instructions": "Assess Mold damage - minor severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Mold damage - minor severity confirmed. Multiple areas affected.",
+    "recommendedActions": [
+      "Emergency repairs required",
+      "Coordinate with adjuster"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-10-19T18:30:06.931Z",
+    "updatedAt": "2025-10-24T14:30:06.931Z",
+    "completedDate": "2025-10-24T14:30:06.931Z"
+  },
+  {
+    "id": "insp-007",
+    "claimId": "4",
+    "claimNumber": "CN202504993",
+    "taskType": "follow-up",
+    "priority": "high",
+    "status": "completed",
+    "scheduledDate": "2025-10-29T08:30:06.931Z",
+    "inspectorId": "inspector-002",
+    "property": "6927 Lake View Dr, Salem, OR 97301",
+    "instructions": "Assess Mold damage - minor severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Mold damage - minor severity confirmed. Multiple areas affected.",
+    "recommendedActions": [
+      "Coordinate with adjuster"
+    ],
+    "flaggedIssues": [
+      "Additional specialist required"
+    ],
+    "createdAt": "2025-10-19T18:30:06.931Z",
+    "updatedAt": "2025-10-29T10:30:06.931Z",
+    "completedDate": "2025-10-29T10:30:06.931Z"
+  },
+  {
+    "id": "insp-008",
+    "claimId": "4",
+    "claimNumber": "CN202504993",
+    "taskType": "final",
+    "priority": "high",
+    "status": "completed",
+    "scheduledDate": "2025-10-27T05:30:06.931Z",
+    "inspectorId": "inspector-020",
+    "property": "6927 Lake View Dr, Salem, OR 97301",
+    "instructions": "Assess Mold damage - minor severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Mold damage - minor severity confirmed. Multiple areas affected.",
+    "recommendedActions": [
+      "Emergency repairs required",
+      "Coordinate with adjuster"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-10-19T18:30:06.931Z",
+    "updatedAt": "2025-10-27T12:30:06.931Z",
+    "completedDate": "2025-10-27T12:30:06.931Z"
+  },
+  {
+    "id": "insp-009",
+    "claimId": "5",
+    "claimNumber": "CN202504994",
+    "taskType": "initial",
+    "priority": "low",
+    "status": "completed",
+    "scheduledDate": "2025-09-01T20:40:04.181Z",
+    "inspectorId": "inspector-009",
+    "property": "9978 Washington Blvd, Bellevue, WA 98004",
+    "instructions": "Assess Water damage - moderate severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Water damage - moderate severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Standard repair procedures"
+    ],
+    "flaggedIssues": [
+      "Secondary damage detected"
+    ],
+    "createdAt": "2025-08-23T03:40:04.181Z",
+    "updatedAt": "2025-09-01T23:40:04.181Z",
+    "completedDate": "2025-09-01T23:40:04.181Z"
+  },
+  {
+    "id": "insp-010",
+    "claimId": "6",
+    "claimNumber": "CN202504995",
+    "taskType": "initial",
+    "priority": "medium",
+    "status": "completed",
+    "scheduledDate": "2025-08-21T23:24:43.175Z",
+    "inspectorId": "inspector-003",
+    "property": "2380 Lake View Dr, Eugene, OR 97401",
+    "instructions": "Assess Water damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Water damage - severe severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Standard repair procedures"
+    ],
+    "flaggedIssues": [
+      "Potential code violations"
+    ],
+    "createdAt": "2025-08-20T18:24:43.175Z",
+    "updatedAt": "2025-08-22T01:24:43.175Z",
+    "completedDate": "2025-08-22T01:24:43.175Z"
+  },
+  {
+    "id": "insp-011",
+    "claimId": "6",
+    "claimNumber": "CN202504995",
+    "taskType": "re-inspection",
+    "priority": "low",
+    "status": "scheduled",
+    "scheduledDate": "2025-08-29T09:24:43.175Z",
+    "inspectorId": "inspector-009",
+    "property": "2380 Lake View Dr, Eugene, OR 97401",
+    "instructions": "Assess Water damage - severe severity and document findings",
+    "photos": [],
+    "findings": "",
+    "recommendedActions": [],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-20T18:24:43.175Z",
+    "updatedAt": "2025-08-29T09:24:43.175Z"
+  },
+  {
+    "id": "insp-012",
+    "claimId": "6",
+    "claimNumber": "CN202504995",
+    "taskType": "initial",
+    "priority": "medium",
+    "status": "scheduled",
+    "scheduledDate": "2025-08-29T10:24:43.175Z",
+    "inspectorId": "inspector-004",
+    "property": "2380 Lake View Dr, Eugene, OR 97401",
+    "instructions": "Assess Water damage - severe severity and document findings",
+    "photos": [],
+    "findings": "",
+    "recommendedActions": [],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-20T18:24:43.175Z",
+    "updatedAt": "2025-08-29T10:24:43.175Z"
+  },
+  {
+    "id": "insp-013",
+    "claimId": "6",
+    "claimNumber": "CN202504995",
+    "taskType": "initial",
+    "priority": "high",
+    "status": "completed",
+    "scheduledDate": "2025-08-25T12:24:43.175Z",
+    "inspectorId": "inspector-020",
+    "property": "2380 Lake View Dr, Eugene, OR 97401",
+    "instructions": "Assess Water damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Water damage - severe severity confirmed. Temporary stabilization required.",
+    "recommendedActions": [
+      "Emergency repairs required",
+      "Obtain multiple quotes"
+    ],
+    "flaggedIssues": [
+      "Safety hazard present"
+    ],
+    "createdAt": "2025-08-20T18:24:43.175Z",
+    "updatedAt": "2025-08-25T14:24:43.175Z",
+    "completedDate": "2025-08-25T14:24:43.175Z"
+  },
+  {
+    "id": "insp-014",
+    "claimId": "7",
+    "claimNumber": "CN202504996",
+    "taskType": "initial",
+    "priority": "low",
+    "status": "completed",
+    "scheduledDate": "2025-09-24T01:03:31.335Z",
+    "inspectorId": "inspector-020",
+    "property": "9338 Elm St, Vancouver, WA 98660",
+    "instructions": "Assess Hail damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Hail damage - severe severity confirmed. Temporary stabilization required.",
+    "recommendedActions": [
+      "Standard repair procedures"
+    ],
+    "flaggedIssues": [
+      "Potential code violations"
+    ],
+    "createdAt": "2025-09-15T05:03:31.335Z",
+    "updatedAt": "2025-09-24T11:03:31.335Z",
+    "completedDate": "2025-09-24T11:03:31.335Z"
+  },
+  {
+    "id": "insp-015",
+    "claimId": "8",
+    "claimNumber": "CN202504997",
+    "taskType": "initial",
+    "priority": "urgent",
+    "status": "completed",
+    "scheduledDate": "2025-09-23T15:22:24.528Z",
+    "inspectorId": "inspector-003",
+    "property": "2167 Lincoln Ave, Portland, OR 97201",
+    "instructions": "Assess Hail damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Hail damage - severe severity confirmed. Temporary stabilization required.",
+    "recommendedActions": [
+      "Emergency repairs required"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-09-20T19:22:24.528Z",
+    "updatedAt": "2025-09-23T20:22:24.528Z",
+    "completedDate": "2025-09-23T20:22:24.528Z"
+  },
+  {
+    "id": "insp-016",
+    "claimId": "8",
+    "claimNumber": "CN202504997",
+    "taskType": "follow-up",
+    "priority": "medium",
+    "status": "completed",
+    "scheduledDate": "2025-09-27T20:22:24.528Z",
+    "inspectorId": "inspector-002",
+    "property": "2167 Lincoln Ave, Portland, OR 97201",
+    "instructions": "Assess Hail damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Hail damage - severe severity confirmed. Further assessment needed.",
+    "recommendedActions": [
+      "Emergency repairs required"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-09-20T19:22:24.528Z",
+    "updatedAt": "2025-09-27T22:22:24.528Z",
+    "completedDate": "2025-09-27T22:22:24.528Z"
+  },
+  {
+    "id": "insp-017",
+    "claimId": "9",
+    "claimNumber": "CN202504998",
+    "taskType": "initial",
+    "priority": "medium",
+    "status": "completed",
+    "scheduledDate": "2025-11-27T15:27:57.613Z",
+    "inspectorId": "inspector-001",
+    "property": "292 Main St, Vancouver, WA 98660",
+    "instructions": "Assess Hail damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Hail damage - severe severity confirmed. Further assessment needed.",
+    "recommendedActions": [
+      "Emergency repairs required",
+      "Document all damages"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-11-18T05:27:57.613Z",
+    "updatedAt": "2025-11-28T00:27:57.613Z",
+    "completedDate": "2025-11-28T00:27:57.613Z"
+  },
+  {
+    "id": "insp-018",
+    "claimId": "10",
+    "claimNumber": "CN202504999",
+    "taskType": "initial",
+    "priority": "low",
+    "status": "in-progress",
+    "scheduledDate": "2025-09-09T13:37:01.908Z",
+    "inspectorId": "inspector-012",
+    "property": "1069 Lake View Dr, Tacoma, WA 98401",
+    "instructions": "Assess Structural damage - severe severity and document findings",
+    "photos": [],
+    "findings": "",
+    "recommendedActions": [],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-31T00:37:01.908Z",
+    "updatedAt": "2025-09-09T13:37:01.908Z"
+  },
+  {
+    "id": "insp-019",
+    "claimId": "10",
+    "claimNumber": "CN202504999",
+    "taskType": "follow-up",
+    "priority": "urgent",
+    "status": "completed",
+    "scheduledDate": "2025-09-07T07:37:01.908Z",
+    "inspectorId": "inspector-014",
+    "property": "1069 Lake View Dr, Tacoma, WA 98401",
+    "instructions": "Assess Structural damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Structural damage - severe severity confirmed. Temporary stabilization required.",
+    "recommendedActions": [
+      "Full replacement recommended",
+      "Document all damages"
+    ],
+    "flaggedIssues": [
+      "Additional specialist required"
+    ],
+    "createdAt": "2025-08-31T00:37:01.908Z",
+    "updatedAt": "2025-09-07T13:37:01.908Z",
+    "completedDate": "2025-09-07T13:37:01.908Z"
+  },
+  {
+    "id": "insp-020",
+    "claimId": "10",
+    "claimNumber": "CN202504999",
+    "taskType": "follow-up",
+    "priority": "urgent",
+    "status": "completed",
+    "scheduledDate": "2025-09-08T14:37:01.908Z",
+    "inspectorId": "inspector-001",
+    "property": "1069 Lake View Dr, Tacoma, WA 98401",
+    "instructions": "Assess Structural damage - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Structural damage - severe severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Full replacement recommended",
+      "Document all damages"
+    ],
+    "flaggedIssues": [
+      "Potential code violations"
+    ],
+    "createdAt": "2025-08-31T00:37:01.908Z",
+    "updatedAt": "2025-09-08T21:37:01.908Z",
+    "completedDate": "2025-09-08T21:37:01.908Z"
+  },
+  {
+    "id": "insp-021",
+    "claimId": "10",
+    "claimNumber": "CN202504999",
+    "taskType": "follow-up",
+    "priority": "high",
+    "status": "cancelled",
+    "scheduledDate": "2025-09-07T09:37:01.908Z",
+    "inspectorId": "inspector-008",
+    "property": "1069 Lake View Dr, Tacoma, WA 98401",
+    "instructions": "Assess Structural damage - severe severity and document findings",
+    "photos": [],
+    "findings": "",
+    "recommendedActions": [],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-31T00:37:01.908Z",
+    "updatedAt": "2025-09-07T09:37:01.908Z"
+  },
+  {
+    "id": "insp-022",
+    "claimId": "11",
+    "claimNumber": "CN202505000",
+    "taskType": "initial",
+    "priority": "medium",
+    "status": "scheduled",
+    "scheduledDate": "2025-09-28T10:21:46.570Z",
+    "inspectorId": "inspector-004",
+    "property": "3929 River St, Salem, OR 97301",
+    "instructions": "Assess Fire damage - severe severity and document findings",
+    "photos": [],
+    "findings": "",
+    "recommendedActions": [],
+    "flaggedIssues": [],
+    "createdAt": "2025-09-21T00:21:46.570Z",
+    "updatedAt": "2025-09-28T10:21:46.570Z"
+  },
+  {
+    "id": "insp-023",
+    "claimId": "12",
+    "claimNumber": "CN202505001",
+    "taskType": "initial",
+    "priority": "urgent",
+    "status": "completed",
+    "scheduledDate": "2025-08-11T21:30:51.531Z",
+    "inspectorId": "inspector-009",
+    "property": "3702 Mountain Rd, Portland, OR 97201",
+    "instructions": "Assess Wind damage - minor severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Wind damage - minor severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Full replacement recommended",
+      "Coordinate with adjuster"
+    ],
+    "flaggedIssues": [
+      "Secondary damage detected"
+    ],
+    "createdAt": "2025-08-02T04:30:51.531Z",
+    "updatedAt": "2025-08-12T01:30:51.531Z",
+    "completedDate": "2025-08-12T01:30:51.531Z"
+  },
+  {
+    "id": "insp-024",
+    "claimId": "12",
+    "claimNumber": "CN202505001",
+    "taskType": "follow-up",
+    "priority": "medium",
+    "status": "completed",
+    "scheduledDate": "2025-08-09T23:30:51.531Z",
+    "inspectorId": "inspector-009",
+    "property": "3702 Mountain Rd, Portland, OR 97201",
+    "instructions": "Assess Wind damage - minor severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Wind damage - minor severity confirmed. Further assessment needed.",
+    "recommendedActions": [
+      "Standard repair procedures"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-02T04:30:51.531Z",
+    "updatedAt": "2025-08-10T04:30:51.531Z",
+    "completedDate": "2025-08-10T04:30:51.531Z"
+  },
+  {
+    "id": "insp-025",
+    "claimId": "13",
+    "claimNumber": "CN202505002",
+    "taskType": "initial",
+    "priority": "urgent",
+    "status": "completed",
+    "scheduledDate": "2025-08-25T11:33:03.662Z",
+    "inspectorId": "inspector-012",
+    "property": "1647 Lake View Dr, Eugene, OR 97401",
+    "instructions": "Assess Flooding - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Flooding - severe severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Full replacement recommended",
+      "Obtain multiple quotes"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-19T07:33:03.662Z",
+    "updatedAt": "2025-08-25T15:33:03.662Z",
+    "completedDate": "2025-08-25T15:33:03.662Z"
+  },
+  {
+    "id": "insp-026",
+    "claimId": "13",
+    "claimNumber": "CN202505002",
+    "taskType": "follow-up",
+    "priority": "high",
+    "status": "completed",
+    "scheduledDate": "2025-08-28T19:33:03.662Z",
+    "inspectorId": "inspector-009",
+    "property": "1647 Lake View Dr, Eugene, OR 97401",
+    "instructions": "Assess Flooding - severe severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Flooding - severe severity confirmed. Temporary stabilization required.",
+    "recommendedActions": [
+      "Emergency repairs required"
+    ],
+    "flaggedIssues": [
+      "Potential code violations"
+    ],
+    "createdAt": "2025-08-19T07:33:03.662Z",
+    "updatedAt": "2025-08-29T05:33:03.662Z",
+    "completedDate": "2025-08-29T05:33:03.662Z"
+  },
+  {
+    "id": "insp-027",
+    "claimId": "14",
+    "claimNumber": "CN202505003",
+    "taskType": "initial",
+    "priority": "urgent",
+    "status": "completed",
+    "scheduledDate": "2025-08-30T07:16:46.673Z",
+    "inspectorId": "inspector-010",
+    "property": "2824 Park Pl, Eugene, OR 97401",
+    "instructions": "Assess Roof damage - minor severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Roof damage - minor severity confirmed. Further assessment needed.",
+    "recommendedActions": [],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-24T23:16:46.673Z",
+    "updatedAt": "2025-08-30T13:16:46.673Z",
+    "completedDate": "2025-08-30T13:16:46.673Z"
+  },
+  {
+    "id": "insp-028",
+    "claimId": "15",
+    "claimNumber": "CN202505004",
+    "taskType": "initial",
+    "priority": "urgent",
+    "status": "completed",
+    "scheduledDate": "2025-08-27T05:37:04.909Z",
+    "inspectorId": "inspector-012",
+    "property": "4549 Cedar Ln, Olympia, WA 98501",
+    "instructions": "Assess Flooding - moderate severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Flooding - moderate severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Obtain multiple quotes"
+    ],
+    "flaggedIssues": [],
+    "createdAt": "2025-08-20T14:37:04.909Z",
+    "updatedAt": "2025-08-27T14:37:04.909Z",
+    "completedDate": "2025-08-27T14:37:04.909Z"
+  },
+  {
+    "id": "insp-029",
+    "claimId": "15",
+    "claimNumber": "CN202505004",
+    "taskType": "initial",
+    "priority": "low",
+    "status": "completed",
+    "scheduledDate": "2025-08-21T23:37:04.909Z",
+    "inspectorId": "inspector-017",
+    "property": "4549 Cedar Ln, Olympia, WA 98501",
+    "instructions": "Assess Flooding - moderate severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true"
+    ],
+    "findings": "Inspection completed. Flooding - moderate severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [],
+    "flaggedIssues": [
+      "Additional specialist required"
+    ],
+    "createdAt": "2025-08-20T14:37:04.909Z",
+    "updatedAt": "2025-08-22T05:37:04.909Z",
+    "completedDate": "2025-08-22T05:37:04.909Z"
+  },
+  {
+    "id": "insp-030",
+    "claimId": "15",
+    "claimNumber": "CN202505004",
+    "taskType": "re-inspection",
+    "priority": "urgent",
+    "status": "completed",
+    "scheduledDate": "2025-08-26T08:37:04.909Z",
+    "inspectorId": "inspector-003",
+    "property": "4549 Cedar Ln, Olympia, WA 98501",
+    "instructions": "Assess Flooding - moderate severity and document findings",
+    "photos": [
+      "https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true"
+    ],
+    "findings": "Inspection completed. Flooding - moderate severity confirmed. Immediate repairs recommended.",
+    "recommendedActions": [
+      "Coordinate with adjuster"
+    ],
+    "flaggedIssues": [
+      "Additional specialist required"
+    ],
+    "createdAt": "2025-08-20T14:37:04.909Z",
+    "updatedAt": "2025-08-26T11:37:04.909Z",
+    "completedDate": "2025-08-26T11:37:04.909Z"
+  }
+]

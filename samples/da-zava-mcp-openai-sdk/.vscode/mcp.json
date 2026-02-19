@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "t3n5kh4430": {
+      "type": "http",
+      "url": "https://t3n5kh44-3001.aue.devtunnels.ms/mcp"
+    }
+  }
+}
