@@ -48,7 +48,9 @@ Built with the [Agents Toolkit (ATK)](https://aka.ms/teams-toolkit) in VS Code. 
 
 ## Getting Started
 
-1. **Install dependencies** — from `src/mcpserver/`, run `npm run install:all`
+Run all scripts from `src/mcpserver/`
+
+1. **Install dependencies** — run `npm run install:all`
 2. **Start Azurite** (local storage emulator) — `npm run start:azurite` in a separate terminal
 3. **Seed the database** — `npm run seed`
 4. **Build widgets** — `npm run build:widgets`
