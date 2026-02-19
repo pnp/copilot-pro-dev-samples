@@ -1,0 +1,39 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.24/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.24",
+    "version": "1.0.1",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "M365 Cloud Advocates",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/privacy",
+        "termsOfUseUrl": "https://www.example.com/termofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "trey-mcp-agent${{APP_NAME_SUFFIX}}",
+        "full": "Full name for trey-mcp-agent"
+    },
+    "description": {
+        "short": "Short description for trey-mcp-agent",
+        "full": "Full description for trey-mcp-agent"
+    },
+    "accentColor": "#FFFFFF",
+    "composeExtensions": [],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}

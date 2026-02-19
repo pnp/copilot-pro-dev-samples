@@ -1,0 +1,451 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "trey-mcp-agent",
+    "description_for_human": "trey-mcp-agent${{APP_NAME_SUFFIX}}",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "treymcpagent",
+    "functions": [
+        {
+            "name": "assign-consultant-to-project",
+            "description": "Assign a single consultant to a project with a specified role, optional billing rate, and optional forecast hours."
+        },
+        {
+            "name": "bulk-assign-consultants",
+            "description": "Assign multiple consultants to a project at once. Each assignment includes a role, optional billing rate, and optional forecast."
+        },
+        {
+            "name": "bulk-update-consultants",
+            "description": "Batch-update multiple consultant records at once."
+        },
+        {
+            "name": "remove-assignment",
+            "description": "Remove a consultant's assignment from a project."
+        },
+        {
+            "name": "search-consultants",
+            "description": "Search consultants by skill or name. Returns matching consultants in the bulk editor widget for easy viewing and editing."
+        },
+        {
+            "name": "show-bulk-editor",
+            "description": "Open the bulk editor widget to view and edit consultant records. Accepts optional filters: skill, name — to show only matching consultants."
+        },
+        {
+            "name": "show-consultant-profile",
+            "description": "Display a detailed profile card for a specific consultant, including contact info, skills, certifications, roles, and current assignments."
+        },
+        {
+            "name": "show-hr-dashboard",
+            "description": "Display the HR consultant dashboard with KPIs. Accepts optional filters: consultantName, projectName, skill, role, billable — the dashboard auto-applies them so users see a focused view."
+        },
+        {
+            "name": "show-project-details",
+            "description": "Display detailed information about a specific project including its assigned consultants and forecasted hours."
+        },
+        {
+            "name": "update-consultant",
+            "description": "Update a single consultant's information (name, email, phone, skills, roles)."
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "spec": {
+                "url": "https://t3n5kh44-3001.aue.devtunnels.ms/mcp",
+                "x-mcp_tool_description": {
+                    "tools": [
+                        {
+                            "name": "show-hr-dashboard",
+                            "title": "Show HR Dashboard",
+                            "description": "Display the HR consultant dashboard with KPIs. Accepts optional filters: consultantName, projectName, skill, role, billable — the dashboard auto-applies them so users see a focused view.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "consultantName": {
+                                        "type": "string",
+                                        "description": "Optional consultant name to pre-filter the dashboard (partial match, case-insensitive)."
+                                    },
+                                    "projectName": {
+                                        "type": "string",
+                                        "description": "Optional project name to pre-filter the dashboard (partial match, case-insensitive)."
+                                    },
+                                    "skill": {
+                                        "type": "string",
+                                        "description": "Optional skill to pre-filter the dashboard — shows only consultants with this skill and their assignments."
+                                    },
+                                    "role": {
+                                        "type": "string",
+                                        "description": "Optional role to pre-filter assignments (e.g. 'Developer', 'Architect')."
+                                    },
+                                    "billable": {
+                                        "type": "boolean",
+                                        "description": "Optional — set true to show only billable assignments, false for non-billable."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true,
+                                "destructiveHint": false,
+                                "openWorldHint": false
+                            },
+                            "_meta": {
+                                "openai/outputTemplate": "ui://widget/hr-dashboard.html",
+                                "openai/toolInvocation/invoking": "Loading HR dashboard…",
+                                "openai/toolInvocation/invoked": "Dashboard ready",
+                                "openai/widgetAccessible": true
+                            }
+                        },
+                        {
+                            "name": "show-consultant-profile",
+                            "title": "Show Consultant Profile",
+                            "description": "Display a detailed profile card for a specific consultant, including contact info, skills, certifications, roles, and current assignments.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "consultantId": {
+                                        "type": "string",
+                                        "description": "The ID of the consultant to view."
+                                    }
+                                },
+                                "required": [
+                                    "consultantId"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true,
+                                "destructiveHint": false,
+                                "openWorldHint": false
+                            },
+                            "_meta": {
+                                "openai/outputTemplate": "ui://widget/consultant-profile.html",
+                                "openai/toolInvocation/invoking": "Loading consultant profile…",
+                                "openai/toolInvocation/invoked": "Profile ready",
+                                "openai/widgetAccessible": true
+                            }
+                        },
+                        {
+                            "name": "search-consultants",
+                            "title": "Search Consultants",
+                            "description": "Search consultants by skill or name. Returns matching consultants in the bulk editor widget for easy viewing and editing.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "skill": {
+                                        "type": "string",
+                                        "description": "Skill to search for (partial match)."
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Name to search for (partial match)."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true,
+                                "destructiveHint": false,
+                                "openWorldHint": false
+                            },
+                            "_meta": {
+                                "openai/outputTemplate": "ui://widget/bulk-editor.html",
+                                "openai/toolInvocation/invoking": "Opening bulk editor…",
+                                "openai/toolInvocation/invoked": "Editor ready",
+                                "openai/widgetAccessible": true
+                            }
+                        },
+                        {
+                            "name": "show-bulk-editor",
+                            "title": "Show Bulk Editor",
+                            "description": "Open the bulk editor widget to view and edit consultant records. Accepts optional filters: skill, name — to show only matching consultants.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "skill": {
+                                        "type": "string",
+                                        "description": "Optional skill to filter consultants (partial match, case-insensitive)."
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Optional name to filter consultants (partial match, case-insensitive)."
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": false,
+                                "destructiveHint": false,
+                                "openWorldHint": false
+                            },
+                            "_meta": {
+                                "openai/outputTemplate": "ui://widget/bulk-editor.html",
+                                "openai/toolInvocation/invoking": "Opening bulk editor…",
+                                "openai/toolInvocation/invoked": "Editor ready",
+                                "openai/widgetAccessible": true
+                            }
+                        },
+                        {
+                            "name": "update-consultant",
+                            "title": "Update Consultant",
+                            "description": "Update a single consultant's information (name, email, phone, skills, roles).",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "consultantId": {
+                                        "type": "string",
+                                        "description": "The ID of the consultant to update."
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Updated name."
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "description": "Updated email."
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "description": "Updated phone."
+                                    },
+                                    "skills": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "Updated skills list."
+                                    },
+                                    "roles": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "Updated roles list."
+                                    }
+                                },
+                                "required": [
+                                    "consultantId"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": false,
+                                "destructiveHint": true,
+                                "openWorldHint": false
+                            }
+                        },
+                        {
+                            "name": "bulk-update-consultants",
+                            "title": "Bulk Update Consultants",
+                            "description": "Batch-update multiple consultant records at once.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "consultantIds": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "Array of consultant IDs to update."
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "description": "New name for all."
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "description": "New email for all."
+                                    },
+                                    "phone": {
+                                        "type": "string",
+                                        "description": "New phone for all."
+                                    },
+                                    "skills": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "New skills list for all."
+                                    },
+                                    "roles": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "New roles list for all."
+                                    }
+                                },
+                                "required": [
+                                    "consultantIds"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": false,
+                                "destructiveHint": true,
+                                "openWorldHint": false
+                            }
+                        },
+                        {
+                            "name": "show-project-details",
+                            "title": "Show Project Details",
+                            "description": "Display detailed information about a specific project including its assigned consultants and forecasted hours.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "projectId": {
+                                        "type": "string",
+                                        "description": "The project ID."
+                                    }
+                                },
+                                "required": [
+                                    "projectId"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": true,
+                                "destructiveHint": false,
+                                "openWorldHint": false
+                            },
+                            "_meta": {
+                                "openai/outputTemplate": "ui://widget/hr-dashboard.html",
+                                "openai/toolInvocation/invoking": "Loading HR dashboard…",
+                                "openai/toolInvocation/invoked": "Dashboard ready",
+                                "openai/widgetAccessible": true
+                            }
+                        },
+                        {
+                            "name": "assign-consultant-to-project",
+                            "title": "Assign Consultant to Project",
+                            "description": "Assign a single consultant to a project with a specified role, optional billing rate, and optional forecast hours.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "projectId": {
+                                        "type": "string",
+                                        "description": "The project ID to assign the consultant to."
+                                    },
+                                    "consultantId": {
+                                        "type": "string",
+                                        "description": "The consultant ID to assign."
+                                    },
+                                    "role": {
+                                        "type": "string",
+                                        "description": "The role the consultant will play on the project (e.g. Architect, Developer, Designer, Project lead)."
+                                    },
+                                    "billable": {
+                                        "type": "boolean",
+                                        "description": "Whether the assignment is billable. Defaults to true."
+                                    },
+                                    "rate": {
+                                        "type": "number",
+                                        "description": "Hourly rate for the consultant on this project. Defaults to 0."
+                                    }
+                                },
+                                "required": [
+                                    "projectId",
+                                    "consultantId",
+                                    "role"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": false,
+                                "destructiveHint": false,
+                                "openWorldHint": false
+                            }
+                        },
+                        {
+                            "name": "bulk-assign-consultants",
+                            "title": "Bulk Assign Consultants",
+                            "description": "Assign multiple consultants to a project at once. Each assignment includes a role, optional billing rate, and optional forecast.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "projectId": {
+                                        "type": "string",
+                                        "description": "The project ID to assign consultants to."
+                                    },
+                                    "consultantIds": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "Array of consultant IDs to assign."
+                                    },
+                                    "role": {
+                                        "type": "string",
+                                        "description": "The role for all assigned consultants."
+                                    },
+                                    "billable": {
+                                        "type": "boolean",
+                                        "description": "Whether the assignments are billable. Defaults to true."
+                                    },
+                                    "rate": {
+                                        "type": "number",
+                                        "description": "Hourly rate for all assigned consultants. Defaults to 0."
+                                    }
+                                },
+                                "required": [
+                                    "projectId",
+                                    "consultantIds",
+                                    "role"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": false,
+                                "destructiveHint": false,
+                                "openWorldHint": false
+                            }
+                        },
+                        {
+                            "name": "remove-assignment",
+                            "title": "Remove Assignment",
+                            "description": "Remove a consultant's assignment from a project.",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "projectId": {
+                                        "type": "string",
+                                        "description": "The project ID."
+                                    },
+                                    "consultantId": {
+                                        "type": "string",
+                                        "description": "The consultant ID to remove from the project."
+                                    }
+                                },
+                                "required": [
+                                    "projectId",
+                                    "consultantId"
+                                ],
+                                "additionalProperties": false
+                            },
+                            "annotations": {
+                                "readOnlyHint": false,
+                                "destructiveHint": true,
+                                "openWorldHint": false
+                            }
+                        }
+                    ]
+                }
+            },
+            "run_for_functions": [
+                "assign-consultant-to-project",
+                "bulk-assign-consultants",
+                "bulk-update-consultants",
+                "remove-assignment",
+                "search-consultants",
+                "show-bulk-editor",
+                "show-consultant-profile",
+                "show-hr-dashboard",
+                "show-project-details",
+                "update-consultant"
+            ],
+            "auth": {
+                "type": "None"
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "trey-hr-mcp-server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "HR Consultant MCP Server with Streamable HTTP transport",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --env-file=../.env --import tsx src/index.ts",
+    "dev": "node --env-file=../.env --import tsx --watch src/index.ts",
+    "seed": "tsx src/seed.ts"
+  },
+  "dependencies": {
+    "@azure/data-tables": "^13.3.0",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

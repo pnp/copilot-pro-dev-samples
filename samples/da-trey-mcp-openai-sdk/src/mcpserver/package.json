@@ -1,0 +1,21 @@
+{
+  "name": "trey-hr-consultant-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HR Consultant MCP Server with Fluent UI React widgets for ChatGPT",
+  "scripts": {
+    "build:widgets": "cd widgets && npm run build",
+    "build:server": "cd server && npm run build",
+    "build": "npm run build:widgets && npm run build:server",
+    "seed": "cd server && npm run seed",
+    "start:azurite": "npx azurite-table --tableHost 127.0.0.1 --tablePort 10002 --location .azurite --silent",
+    "start:server": "cd server && npm start",
+    "dev:server": "cd server && npm run dev",
+    "start": "cd server && npm start",
+    "install:all": "npm install && cd server && npm install && cd ../widgets && npm install",
+    "inspector": "npx @modelcontextprotocol/inspector"
+  },
+  "devDependencies": {
+    "azurite": "^3.31.0"
+  }
+}
