@@ -28,7 +28,12 @@
         "value": "No"
       }
     ],
-    "thumbnails": [],
+    "thumbnails": [   {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-zava-mcp-openai-sdk/assets/demo.png",
+        "alt": "Rich dashboard on Copilot"
+      }],
     "authors": [
       {
         "gitHubAccount": "rabwill",
