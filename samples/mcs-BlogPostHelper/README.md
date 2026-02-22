@@ -6,7 +6,14 @@ This template is for Copilot Studio samples only. Please update mcs-BlogPostHelp
 
 ## Summary
 
-This agent is built with Copilot Studio, as an equivelant variation of ```da-BlogPostHelper``` sample and and advising example of how to import a  studio agent
+This sample helps users that often create blog post to help with elements of the creation process to get posts created quicker using capabilities within Declarative Agents.
+
+Common features that the agent can help with:
+
+ - Suggest an introduction based on a topic 
+ - Review existing articles, or Find content that I would reference quickly.
+
+> Note: This agent is built with Copilot Studio, as an equivelant variation of ```da-BlogPostHelper``` sample and and advising example of how to import a Copilot Studio agent
 
 ## Contributors
 
