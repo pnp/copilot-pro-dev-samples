@@ -165,33 +165,81 @@ Your sample should include a clearly marked folder containing a Teams/M365 `mani
 
 ### 7. Microsoft Copilot Studio Samples
 
-Since Microsoft Copilot Studio (MCS) Samples are a package/zip file, for security reasons we will only accept the contents of these packages rather than the package files.
+There are two types of Copilot Studio Agents within this repository:
+
+1. Copilot Studio using Solution Export
+2. Copilot Studio using Cloned with Visual Studio Code.
+
+#### Sample Setup applies to both methods
 
 The intended folder structure for a MCS samples would look like this:
 
-- mcs-MyCoolSample
+- mcs-MyNewAgent
   - assets
   - src 
   - README.md 
+
+Quick way to scaffold the sample:
+
+ ```powershell
+  # Navigste to samples folder
+  cd samples
+  cp -R ../templates/mcs-copilot-studio mcs-MyNewAgent
+  cd mcs-MyNewAgent
+```
+
+#### Copilot Studio using Solution Export
+
+Submitting a Microsoft Copilot Studio (MCS) Samples using the Clone Method
+
+> Note: Package/zip files, for security reasons we will only accept the contents of these packages rather than the package files.
 
 To get the source quickly, please use the following commands using the [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction):
 
  - Ensure you are authenticated with [```pac auth```](https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/auth)
 
- - Add your agent to a solution package
+ - Add your agent to a solution package e.g. MyAgent
 
  - Export Solution Contents
 
   ```powershell
   # Navigste to samples folder
-
-  mkdir mcs-MyNewAgent
+  cd samples
+  cp -R ../templates/mcs-copilot-studio mcs-MyNewAgent
   cd mcs-MyNewAgent
 
-  pac solution clone --name <your-package-name> --outputDirectory . --packagetype Unmanaged
+  pac solution clone --name <your-package-name, e.g. MyAgent> --outputDirectory . --packagetype Unmanaged
 
   ```
-Use the template ```template/mcs/README.md``` and complete a template of ```sample.json``` and place this in your assets folder.
+
+Ensure that all the solution files are located in the root of the scaffolded sample location e.g. /samples/mcs-MyNewAgent
+See example agent: [mcs-BlogPostHelper](/samples/mcs-BlogPostHelper)
+
+Thats it, proceed to Finalising the sample
+
+#### Copilot Studio using Copilot Studio for Visual Studio Code clone method
+
+This method assumes you have the Copilot Studio Extension for Visual Studio Code installed; found in the market place [Copilot Studio | Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio)
+
+Steps
+
+- Ensure you have followed the Sample setup instructions
+- Clone the agent in the folder (e.g. mcs-MyNewAgent) using the extension, this will create a new folder with the Yaml files in, rename the folder to `src`
+
+Thats it, proceed to Finalising the sample
+
+#### Finalising the sample
+
+**Updating the Readme.md file**
+
+- Rename the file from ```README-template.md``` to ```README.md```
+- Read and complete the commented out sections within README file.
+
+**Updating the assets/sample.json file**
+
+- Rename the file from ```template-sample.json``` to ```sample.json``` 
+- Complete the sections within the sample.json file. Tip: there are tokens such as ```YOUR_AGENT_FOLDER``` that will help you complete this quicker.
+
 
 ### 8. Telemetry
 
