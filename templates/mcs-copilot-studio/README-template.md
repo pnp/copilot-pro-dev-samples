@@ -53,7 +53,27 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-**Import Solution into Copilot Studio**
+<!-- 
+  There are two methods in which samples could have been created for Copilot Studio, 
+
+  1. Copilot Studio using Solution Export
+  2. Copilot Studio using Cloned with Visual Studio Code.
+
+  Simpliest way to tell which one is which, if the sample folder contains a <file>.cdsproj file, then it was creatd with method 1, solution export.
+  Method 2, would have a series of yaml files in the src folder.
+
+  Remove the method that doesn't apply from this README.md file.
+
+  ---
+  PRO TIP:
+
+  As tempting as it may be, don't just use images to describe the steps. Let's be as inclusive as possible and think about accessibility.
+  We have basic documentation about Microsoft 365 Copilot extensibility that you can reference on top of any additional steps that your sample needs:
+  * [Microsoft 365 Copilot extensibility](https://learn.microsoft.com/microsoft-365-copilot/extensibility/)
+  ---
+-->
+
+### Copilot Studio using Solution Import
 
 This sample uses the Power Platform CLI to import samples, for documenation and installation instructions please visit: [What is Microsoft Power Platform CLI? | Microsoft Learn](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction) 
 
@@ -74,16 +94,22 @@ pac solution import --path <YourAgent>.zip -env <environment-guid>
 
 ```
 
-<!-- 
-PRO TIP:
+That's it.
 
-As tempting as it may be, don't just use images to describe the steps. Let's be as inclusive as possible and think about accessibility.
+### Copilot Studio using Copilot Studio for Visual Studio Code extension
 
-We have basic documentation about Microsoft 365 Copilot extensibility that you can reference on top of any additional steps that your sample needs:
+This method assumes you have the Copilot Studio Extension for Visual Studio Code installed; found in the market place [Copilot Studio | Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio) - this will use the reattach agent feature.
 
-* [Microsoft 365 Copilot extensibility](https://learn.microsoft.com/microsoft-365-copilot/extensibility/)
+- Ensure you are signed into the tenant and have access to the environment you are apply this solution to.
+- In the sample folder, important - ensure you open Visual Studio Code with the ```src``` folder as the root folder
+- The Copilot Studio extension may show "clone agent" button, use the F1 tool
+  - Run ```Copilot Studio: Reattach Agent```
+  - Select the target environment
+  - You should see a message "New Agent <guid> reattached" toast notification.
+  - Check in Copilot Studio portal, for the sample
 
--->
+That's it.
+
 
 ## Features
 
