@@ -1,81 +1,59 @@
-# Overview of the Data Manager Agent
+# Data Manager
 
-With the Data Manager agent, you can build a custom version of Copilot that helps users manage and organize their SharePoint sites and Microsoft 365 content. This agent leverages OneDrive and SharePoint access along with web search capabilities to provide guidance and information based on your content.
+## Summary
 
-## Get started with the Data Manager
+A declarative agent for Microsoft 365 Copilot that helps users manage and organize their SharePoint sites and OneDrive content. The agent leverages OneDrive and SharePoint access along with web search capabilities to provide document search, organization guidance, and best practices for content management.
 
-## Features
-
-### Document Search
-- Search across SharePoint sites and libraries
-- Filter by content and metadata
-- Discover relevant documents 
-
-### File Organization
-- Smart folder structure suggestions
-- Metadata tagging and classification advice
-- Content type recommendations
-
-### Document Management Guidance
-- Best practices for document organization
-- SharePoint organization strategies
-- Content classification recommendations
-
-### Web Search Integration
-- Access to relevant documentation and guidelines
-- Search for information from trusted sources
-- Up-to-date guidance from official documentation
-
-### Pharmaceutical Manufacturing Intelligence
-- Guidance on FDA, EMA, WHO, and ICH regulatory requirements
-- Pharmaceutical documentation management according to industry standards
-- GxP data integrity, traceability, and audit readiness recommendations
-- Access to regulatory information from official sources
-
-> **Note**: All required environment variables (TEAMS_APP_ID, TEAMS_APP_TENANT_ID, etc.) are automatically generated during the provisioning step. You don't need to set up any environment files manually.
-
-> **Prerequisites**
->
-> To run this Data Manager Agent in your local dev machine, you will need:
->
-> - [Node.js](https://nodejs.org/), supported versions: 18, 20, 22
-> - A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts).
-> - [Teams Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) version 5.0.0 and higher or [Teams Toolkit CLI](https://aka.ms/teamsfx-toolkit-cli)
-> - [Microsoft 365 Copilot license](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
-
-![image](https://github.com/user-attachments/assets/e1c2a3b3-2e59-4e9b-8335-19315e92ba30)
-
-1. First, select the Teams Toolkit icon on the left in the VS Code toolbar.
-2. In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already.
-3. Create Teams app by clicking `Provision` in "Lifecycle" section.
-4. Select `Preview in Copilot (Edge)` or `Preview in Copilot (Chrome)` from the launch configuration dropdown.
-5. Once the Copilot app is loaded in the browser, click on the "…" menu and select "Copilot chats". You will see your Data Manager agent on the right rail. Clicking on it will change the experience to showcase the logo and name of your data management agent.
-6. Ask questions about your SharePoint content, and the agent will help you manage and organize your data.
-
-
-## Version history
-
-Version|Date|Comments
--------|----|--------
-1.0|May 2025|Initial release
+![Data Manager in action](./assets/example_response.png)
 
 ## Contributors
 
-* [Kateryna Turuntseva](https://github.com/KatyaT27)
+* [Kateryna Turuntseva](https://github.com/KatT-AI)
+
+## Version history
+
+Version|Date|Author|Comments
+-------|----|----|--------
+1.0|May 19, 2025|Kateryna Turuntseva|Initial release
+
+## Prerequisites
+
+* [Microsoft 365 tenant with Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/prerequisites#prerequisites)
+* [Node.js](https://nodejs.org/), supported versions: 18, 20, 22
+* [Microsoft 365 Agents Toolkit for VS Code](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
+
+## Minimal path to awesome
+
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sharepoint-data-manager) then unzip it)
+* Open the `samples/da-sharepoint-data-manager` folder with Visual Studio Code
+* Select the **Microsoft 365 Agents Toolkit** icon on the left in the VS Code toolbar
+* In the **Account** section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
+* Create Teams app by selecting **Provision** in the **Lifecycle** section
+* Select **Preview in Copilot (Edge)** or **Preview in Copilot (Chrome)** from the launch configuration dropdown
+* Once the Copilot app is loaded in the browser, select the "..." menu and select **Copilot chats**. You will see your Data Manager agent on the right rail. Selecting it will change the experience to showcase the logo and name of your data management agent
+* Ask questions about your SharePoint content, and the agent will help you manage and organize your data
+
+## Features
+
+This declarative agent illustrates the following concepts:
+
+* **Document Search** - Search across SharePoint sites and libraries, filter by content and metadata, discover relevant documents
+* **File Organization** - Smart folder structure suggestions, metadata tagging and classification advice, content type recommendations
+* **Document Management Guidance** - Best practices for document organization, SharePoint organization strategies, content classification recommendations
+* **Web Search Integration** - Access to relevant documentation and guidelines from trusted sources
 
 ## Help
 
-We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-qna-graphapi-plugin%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-sharepoint-data-manager%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
-
 ## Disclaimer
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/da-sharepoint-data-manager" />
+![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-sharepoint-data-manager)
