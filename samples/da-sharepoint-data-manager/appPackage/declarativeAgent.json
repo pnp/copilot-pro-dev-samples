@@ -1,0 +1,55 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
+    "version": "v1.5",
+    "name": "DataManager",
+    "description": "A declarative agent that helps users manage and organize SharePoint and OneDrive content with document search, organization guidance, and access to official Microsoft documentation via MCP.",
+    "instructions": "$[file('instruction.txt')]",
+    "behavior_overrides": {
+        "special_instructions": {
+            "discourage_model_knowledge": true
+        }
+    },
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint"
+        },
+        {
+            "name": "GraphicArt"
+        }
+    ],
+    "disclaimer": {
+        "text": "This declarative agent is provided as is without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement."
+    },
+    "conversation_starters": [
+        {
+            "title": "Organize files",
+            "text": "Help me organize my files in SharePoint"
+        },
+        {
+            "title": "Folder structure",
+            "text": "Suggest a folder structure for my documents"
+        },
+        {
+            "title": "Naming conventions",
+            "text": "What are best practices for document naming in SharePoint?"
+        },
+        {
+            "title": "Metadata tips",
+            "text": "Show me how to use metadata in SharePoint"
+        },
+        {
+            "title": "Search docs",
+            "text": "Search Microsoft documentation for SharePoint content types"
+        },
+        {
+            "title": "Visualize structure",
+            "text": "Create a diagram of a recommended SharePoint site structure"
+        }
+    ],
+    "actions": [
+        {
+            "id": "action_1",
+            "file": "ai-plugin.json"
+        }
+    ]
+}
