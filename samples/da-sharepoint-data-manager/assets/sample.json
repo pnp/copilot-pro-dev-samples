@@ -3,11 +3,11 @@
     "name": "pnp-copilot-pro-dev-da-sharepoint-data-manager",
     "source": "pnp",
     "title": "Data Manager - Declarative Agent for SharePoint",
-    "shortDescription": "A declarative agent that helps users manage and organize SharePoint and OneDrive content with document search, organization guidance, and best practices.",
+    "shortDescription": "A declarative agent that helps users manage and organize SharePoint and OneDrive content with document search, organization guidance, and access to official Microsoft documentation via MCP.",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sharepoint-data-manager",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sharepoint-data-manager",
     "longDescription": [
-      "A declarative agent that helps users manage and organize SharePoint and OneDrive content with document search, organization guidance, and best practices."
+      "A declarative agent that helps users manage and organize SharePoint and OneDrive content with document search, organization guidance, and access to official Microsoft documentation via MCP. Features include Microsoft Learn search and fetch via Model Context Protocol, GraphicArt diagram generation, and grounded responses using behavior overrides."
     ],
     "creationDateTime": "2025-05-19",
     "updateDateTime": "2025-05-20",
@@ -25,7 +25,7 @@
       },
       {
         "key": "API-PLUGIN",
-        "value": "No"
+        "value": "Yes"
       },
       {
         "key": "GRAPH-CONNECTOR",
