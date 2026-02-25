@@ -26,6 +26,7 @@ import {
 } from "@fluentui/react-icons";
 import { useOpenAiGlobal } from "../hooks/useOpenAiGlobal";
 import { useThemeColors } from "../hooks/useThemeColors";
+import { useCapabilities } from "../hooks/useCapabilities";
 import type { ContractorsListData, Contractor } from "../types";
 
 const useStyles = makeStyles({
@@ -54,6 +55,7 @@ function renderStars(rating: number) {
 export function ContractorsList() {
   const styles = useStyles();
   const colors = useThemeColors();
+  const capabilities = useCapabilities();
   const toolOutput = useOpenAiGlobal("toolOutput") as ContractorsListData | null;
   const contractors = toolOutput?.contractors ?? [];
 
@@ -65,8 +67,11 @@ export function ContractorsList() {
     if (window.openai?.requestDisplayMode) {
       const current = window.openai.displayMode;
       await window.openai.requestDisplayMode({ mode: current === "fullscreen" ? "inline" : "fullscreen" });
+      setIsFullscreen(prev => !prev);
       return;
     }
+    // Fallback: use native Fullscreen API when host doesn't support requestDisplayMode
+    console.warn("requestDisplayMode is not available on this platform — falling back to native fullscreen.");
     try {
       if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
       else await document.exitFullscreen();

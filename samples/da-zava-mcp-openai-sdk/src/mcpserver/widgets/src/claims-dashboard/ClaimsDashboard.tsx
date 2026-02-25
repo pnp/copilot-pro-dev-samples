@@ -44,6 +44,7 @@ import {
 } from "@fluentui/react-icons";
 import { useOpenAiGlobal } from "../hooks/useOpenAiGlobal";
 import { useThemeColors } from "../hooks/useThemeColors";
+import { useCapabilities } from "../hooks/useCapabilities";
 import { FakeMap } from "./FakeMap";
 import type {
   ClaimsDashboardData,
@@ -326,6 +327,7 @@ function ClaimCard({ claim, colors, styles, onClick }: {
 export function ClaimsDashboard() {
   const styles = useStyles();
   const colors = useThemeColors();
+  const capabilities = useCapabilities();
   const data = useOpenAiGlobal("toolOutput") as ClaimsDashboardData | null;
 
   const claims = data?.claims ?? [];
@@ -418,6 +420,8 @@ export function ClaimsDashboard() {
       setIsFullscreen(p => !p);
       return;
     }
+    // Fallback: use native Fullscreen API when host doesn't support requestDisplayMode
+    console.warn("requestDisplayMode is not available on this platform — falling back to native fullscreen.");
     try {
       if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
       else await document.exitFullscreen();
@@ -427,7 +431,12 @@ export function ClaimsDashboard() {
 
   /* ── Save handlers ─────────────────────────────────────────────────── */
   const handleSaveClaim = useCallback(async () => {
-    if (!window.openai?.callTool || !selectedClaim) return;
+    if (!selectedClaim) return;
+    if (!window.openai?.callTool) {
+      console.warn("callTool is not available on this platform — cannot save claim.");
+      showToast("Saving is not supported on this platform.", "error");
+      return;
+    }
     setSavingClaim(true);
     try {
       const a: Record<string, unknown> = { claimId: selectedClaim.id, status: claimStatus };
@@ -442,7 +451,11 @@ export function ClaimsDashboard() {
   }, [selectedClaim, claimStatus, claimNote]);
 
   const handleSaveInspection = useCallback(async (inspId: string) => {
-    if (!window.openai?.callTool) return;
+    if (!window.openai?.callTool) {
+      console.warn("callTool is not available on this platform — cannot save inspection.");
+      showToast("Saving is not supported on this platform.", "error");
+      return;
+    }
     setSavingInspection(true);
     try {
       const a: Record<string, unknown> = { inspectionId: inspId };
@@ -458,7 +471,11 @@ export function ClaimsDashboard() {
   }, [inspStatus, inspFindings, inspActions]);
 
   const handleSavePO = useCallback(async (poId: string) => {
-    if (!window.openai?.callTool) return;
+    if (!window.openai?.callTool) {
+      console.warn("callTool is not available on this platform — cannot save purchase order.");
+      showToast("Saving is not supported on this platform.", "error");
+      return;
+    }
     setSavingPO(true);
     try {
       const a: Record<string, unknown> = { purchaseOrderId: poId, status: poStatus };
@@ -527,7 +544,8 @@ export function ClaimsDashboard() {
             </div>
           </div>
           <div style={{ display: "flex", gap: "6px" }}>
-            {!editingClaim && (
+            {/* Only show edit button when callTool API is available */}
+            {!editingClaim && capabilities.canCallTools && (
               <Button icon={<EditRegular />} appearance="subtle" onClick={startEditClaim} title="Edit claim" size="small"
                 style={{ borderRadius: "10px" }} />
             )}
@@ -809,9 +827,12 @@ export function ClaimsDashboard() {
                                   </div>
                                 </div>
                               )}
-                              <Button icon={<EditRegular />} appearance="subtle" size="small" onClick={() => startEditInspection(insp)} style={{ marginTop: "8px" }}>
-                                Edit Inspection
-                              </Button>
+                              {/* Only show edit button when callTool API is available */}
+                              {capabilities.canCallTools && (
+                                <Button icon={<EditRegular />} appearance="subtle" size="small" onClick={() => startEditInspection(insp)} style={{ marginTop: "8px" }}>
+                                  Edit Inspection
+                                </Button>
+                              )}
                             </>
                           )}
                         </div>
@@ -845,7 +866,8 @@ export function ClaimsDashboard() {
                           </div>
                           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                             <Text weight="bold" style={{ color: colors.primary }}>${po.total.toLocaleString()}</Text>
-                            {!isEditing && <Button icon={<EditRegular />} appearance="subtle" size="small" onClick={() => startEditPO(po)} title="Edit PO" />}
+                            {/* Only show edit button when callTool API is available */}
+                            {!isEditing && capabilities.canCallTools && <Button icon={<EditRegular />} appearance="subtle" size="small" onClick={() => startEditPO(po)} title="Edit PO" />}
                           </div>
                         </div>
                       }
