@@ -51,7 +51,7 @@ function inputStyle(t: ThemeColors) {
     border: `1px solid ${t.divider}`,
     background: t.surface,
     color: t.textPrimary,
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: "inherit",
     outline: "none",
     width: "100%",
@@ -232,7 +232,7 @@ export function BulkEditor() {
         flexDirection: "column",
         gap: 20,
         padding: 24,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+        fontFamily: '"Segoe Sans", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif',
         boxSizing: "border-box",
         width: "100%",
         background: t.surface,
@@ -433,7 +433,7 @@ export function BulkEditor() {
       ) : (
         <div style={{ ...cardStyle(t, false), padding: "48px 24px", textAlign: "center", color: t.textTertiary }}>
           <People24Regular style={{ fontSize: 40, display: "block", margin: "0 auto 12px" }} />
-          <div style={{ fontSize: 14 }}>No consultant data loaded.</div>
+          <div style={{ fontSize: 16 }}>No consultant data loaded.</div>
           <div style={{ fontSize: 12, marginTop: 4 }}>Use the MCP tool to open the bulk editor.</div>
         </div>
       )}

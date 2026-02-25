@@ -265,7 +265,7 @@ export function Dashboard() {
   return (
     <div style={{
       display: "flex", flexDirection: "column", gap: 20, padding: 24,
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      fontFamily: '"Segoe Sans", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif',
       boxSizing: "border-box", width: "100%", background: t.surface,
       minHeight: "100%", color: t.textPrimary,
       ...(isFullscreen ? { position: "fixed" as const, top: 0, left: 0, right: 0, bottom: 0, zIndex: 9999, overflowY: "auto" as const } : {}),
@@ -389,7 +389,7 @@ export function Dashboard() {
       {/* ── Consultants ── */}
       {analytics.consultantSummaries.length > 0 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <div style={{ fontSize: 14, fontWeight: 600, color: t.textPrimary, display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ fontSize: 16, fontWeight: 600, color: t.textPrimary, display: "flex", alignItems: "center", gap: 8 }}>
             <People24Regular style={{ fontSize: 18, color: t.brand }} /> Consultants
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -399,7 +399,7 @@ export function Dashboard() {
                 <div key={c.id} style={{ ...cardStyle, padding: "12px 16px", display: "flex", alignItems: "center", gap: 12 }}>
                   <Avatar src={c.photoUrl} name={c.name} size={36} />
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: t.textPrimary }}>{c.name}</div>
+                    <div style={{ fontSize: 16, fontWeight: 600, color: t.textPrimary }}>{c.name}</div>
                     <div style={{ fontSize: 11, color: t.textSecondary }}>
                       {c.location?.city}{c.location?.country ? `, ${c.location.country}` : ""} &middot; {c.projectCount} project{c.projectCount !== 1 ? "s" : ""} &middot; {c.forecastHrs.toLocaleString()} hrs
                     </div>
@@ -419,7 +419,7 @@ export function Dashboard() {
       {/* ── Projects ── */}
       {analytics.projectSummaries.length > 0 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <div style={{ fontSize: 14, fontWeight: 600, color: t.textPrimary, display: "flex", alignItems: "center", gap: 8 }}>
+          <div style={{ fontSize: 16, fontWeight: 600, color: t.textPrimary, display: "flex", alignItems: "center", gap: 8 }}>
             <Briefcase24Regular style={{ fontSize: 18, color: t.purple }} /> Projects
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
@@ -431,7 +431,7 @@ export function Dashboard() {
                     <Briefcase24Regular style={{ fontSize: 18 }} />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: t.textPrimary }}>{p.name}</div>
+                    <div style={{ fontSize: 16, fontWeight: 600, color: t.textPrimary }}>{p.name}</div>
                     <div style={{ fontSize: 11, color: t.textSecondary }}>
                       {p.clientName} &middot; {p.teamSize} member{p.teamSize !== 1 ? "s" : ""} &middot; {p.forecastHrs.toLocaleString()} hrs
                     </div>

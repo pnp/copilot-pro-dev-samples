@@ -40,7 +40,7 @@ const useStyles = makeStyles({
     flexDirection: "column",
     gap: "16px",
     padding: "16px",
-    fontFamily: tokens.fontFamilyBase,
+    fontFamily: '"Segoe Sans", "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif',
     boxSizing: "border-box",
     width: "100%",
     overflowX: "hidden" as const,
