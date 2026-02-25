@@ -198,11 +198,15 @@ export function BulkEditor() {
   const handleSave = async () => {
     const dirty = rows.filter((r) => r._dirty);
     if (dirty.length === 0) return;
+    if (!window.openai?.callTool) {
+      setMessage({ type: "error", text: "Save is not available on this platform." });
+      return;
+    }
     setSaving(true);
     setMessage(null);
     try {
       for (const r of dirty) {
-        await window.openai?.callTool?.("update-consultant", {
+        await window.openai.callTool("update-consultant", {
           consultantId: r.id,
           name: r.name,
           email: r.email,

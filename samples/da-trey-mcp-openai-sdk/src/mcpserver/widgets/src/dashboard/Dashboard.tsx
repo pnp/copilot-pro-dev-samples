@@ -1154,7 +1154,9 @@ export function Dashboard() {
                                           setAssignSelectedIds(new Set());
                                           // Refresh dashboard data to show the new assignments
                                           try {
-                                            await window.openai?.callTool?.("show-hr-dashboard", {});
+                                            if (window.openai?.callTool) {
+                                              await window.openai.callTool("show-hr-dashboard", {});
+                                            }
                                           } catch { /* refresh is best-effort */ }
                                         } catch (err: any) {
                                           setAssignMessage({ type: "error", text: `Failed: ${err?.message ?? "Unknown error"}` });
