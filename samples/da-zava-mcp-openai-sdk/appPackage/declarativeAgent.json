@@ -9,6 +9,25 @@
 			"text": "Hi! What can you do for me?"
 		}
     ],
+    "capabilities": [
+        {
+            "name": "EmbeddedKnowledge",
+            "files": [
+                {
+                    "file": "EmbeddedKnowledge/Claims_Inspection_Guidelines.pdf"
+                },
+                {
+                    "file": "EmbeddedKnowledge/Pacific Water Restoration-Pricing.pdf"
+                },
+                {
+                    "file": "EmbeddedKnowledge/Thompson Roofing Solutions-Pricing.pdf"
+                },
+                {
+                    "file": "EmbeddedKnowledge/Wilson General Contractors-Pricing.pdf"
+                }
+            ]
+        }
+    ],
     "actions": [
         {
             "id": "action_1",

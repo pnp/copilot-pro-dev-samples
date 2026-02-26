@@ -1,24 +1,20 @@
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback } from "react";
 import {
   makeStyles,
   Text,
   Badge,
   Card,
   CardHeader,
-  Input,
   Button,
   Divider,
-  Switch,
   tokens,
 } from "@fluentui/react-components";
 import {
-  SearchRegular,
   ArrowMaximizeRegular,
   ArrowMinimizeRegular,
   WrenchRegular,
   StarRegular,
   StarFilled,
-  PersonRegular,
   MailRegular,
   PhoneRegular,
   LocationRegular,
@@ -26,13 +22,11 @@ import {
 } from "@fluentui/react-icons";
 import { useOpenAiGlobal } from "../hooks/useOpenAiGlobal";
 import { useThemeColors } from "../hooks/useThemeColors";
-import { useCapabilities } from "../hooks/useCapabilities";
 import type { ContractorsListData, Contractor } from "../types";
 
 const useStyles = makeStyles({
   container: { padding: "16px", fontFamily: tokens.fontFamilyBase },
   header: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" },
-  filters: { display: "flex", gap: "8px", marginBottom: "16px", flexWrap: "wrap" as const, alignItems: "center" },
   grid: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: "12px" },
   card: { padding: "12px", borderRadius: "8px" },
   infoRow: { display: "flex", alignItems: "center", gap: "6px", marginTop: "4px" },
@@ -55,12 +49,8 @@ function renderStars(rating: number) {
 export function ContractorsList() {
   const styles = useStyles();
   const colors = useThemeColors();
-  const capabilities = useCapabilities();
   const toolOutput = useOpenAiGlobal("toolOutput") as ContractorsListData | null;
-  const contractors = toolOutput?.contractors ?? [];
-
-  const [search, setSearch] = useState("");
-  const [preferredOnly, setPreferredOnly] = useState(false);
+  const contractors = (toolOutput?.contractors ?? []).filter(c => c.isActive);
 
   const [isFullscreen, setIsFullscreen] = useState(false);
   const toggleFullscreen = useCallback(async () => {
@@ -79,17 +69,6 @@ export function ContractorsList() {
     setIsFullscreen(prev => !prev);
   }, []);
 
-  const filtered = useMemo(() => {
-    return contractors.filter(c => {
-      const matchesSearch = !search ||
-        c.name.toLowerCase().includes(search.toLowerCase()) ||
-        c.businessName.toLowerCase().includes(search.toLowerCase()) ||
-        c.specialties.some(s => s.toLowerCase().includes(search.toLowerCase()));
-      const matchesPreferred = !preferredOnly || c.isPreferred;
-      return matchesSearch && matchesPreferred && c.isActive;
-    });
-  }, [contractors, search, preferredOnly]);
-
   return (
     <div className={styles.container} style={{ backgroundColor: colors.background, color: colors.text }}>
       {/* Header */}
@@ -105,31 +84,15 @@ export function ContractorsList() {
         />
       </div>
 
-      {/* Filters */}
-      <div className={styles.filters}>
-        <Input
-          placeholder="Search contractors or specialties..."
-          contentBefore={<SearchRegular />}
-          value={search}
-          onChange={(_, d) => setSearch(d.value)}
-          style={{ flex: "1 1 250px" }}
-        />
-        <Switch
-          label="Preferred only"
-          checked={preferredOnly}
-          onChange={(_, d) => setPreferredOnly(d.checked)}
-        />
-      </div>
-
       <Text size={300} style={{ color: colors.textSecondary, marginBottom: "12px", display: "block" }}>
-        Showing {filtered.length} of {contractors.length} contractors
+        {contractors.length} contractor{contractors.length !== 1 ? "s" : ""}
       </Text>
 
       <Divider style={{ marginBottom: "12px" }} />
 
       {/* Contractors Grid */}
       <div className={styles.grid}>
-        {filtered.map(contractor => {
+        {contractors.map(contractor => {
           const addr = typeof contractor.address === "object" && contractor.address
             ? contractor.address
             : null;
