@@ -24,7 +24,7 @@
         },
         {
             "name": "show-claims-dashboard",
-            "description": "Displays the Zava Insurance claims dashboard showing all claims with status overview, filters, and summary metrics. Supports filtering by status and/or policy holder name. When the user mentions a person's name, first name, last name, or partial name, always pass it as the policyHolderName parameter. The name filter is case-insensitive and supports partial matches (e.g. 'kim' will match 'Kimberly King' and 'Kimberly Williams')."
+            "description": "Displays the Zava Insurance claims dashboard showing all claims with status overview, filters, and summary metrics. Supports filtering by status and/or policy holder name, and sorting by estimated loss or date reported. When the user asks to sort, order, or rank claims, you MUST re-invoke this tool with sortBy and sortOrder to refresh the dashboard."
         },
         {
             "name": "show-contractors",
@@ -53,7 +53,7 @@
                         {
                             "name": "show-claims-dashboard",
                             "title": "Show Claims Dashboard",
-                            "description": "Displays the Zava Insurance claims dashboard showing all claims with status overview, filters, and summary metrics. Supports filtering by status and/or policy holder name. When the user mentions a person's name, first name, last name, or partial name, always pass it as the policyHolderName parameter. The name filter is case-insensitive and supports partial matches (e.g. 'kim' will match 'Kimberly King' and 'Kimberly Williams').",
+                            "description": "Displays the Zava Insurance claims dashboard showing all claims with status overview, filters, and summary metrics. Supports filtering by status and/or policy holder name, and sorting by estimated loss or date reported. When the user mentions a person's name, first name, last name, or partial name, always pass it as the policyHolderName parameter. The name filter is case-insensitive and supports partial matches (e.g. 'kim' will match 'Kimberly King' and 'Kimberly Williams'). When the user asks to sort or order claims, ALWAYS re-invoke this tool with the sortBy and sortOrder parameters so the dashboard refreshes with the new order.",
                             "inputSchema": {
                                 "type": "object",
                                 "properties": {
@@ -64,6 +64,22 @@
                                     "policyHolderName": {
                                         "type": "string",
                                         "description": "Filter claims by policy holder name. Supports partial, case-insensitive matching — pass the first name, last name, or any part of the name (e.g. 'Kimberly', 'king', 'kim'). When the user asks about a specific person's claims, always use this parameter."
+                                    },
+                                    "sortBy": {
+                                        "type": "string",
+                                        "enum": [
+                                            "estimatedLoss",
+                                            "dateReported"
+                                        ],
+                                        "description": "Sort claims by this field. Valid values: 'estimatedLoss' or 'dateReported'."
+                                    },
+                                    "sortOrder": {
+                                        "type": "string",
+                                        "enum": [
+                                            "asc",
+                                            "desc"
+                                        ],
+                                        "description": "Sort direction: 'asc' for ascending or 'desc' for descending. Defaults to 'desc'."
                                     }
                                 }
                             },

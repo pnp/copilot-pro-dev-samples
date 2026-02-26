@@ -222,12 +222,14 @@ export function createMcpServer(): Server {
       {
         name: "show-claims-dashboard",
         title: "Show Claims Dashboard",
-        description: "Displays the Zava Insurance claims dashboard showing all claims with status overview, filters, and summary metrics. Supports filtering by status and/or policy holder name. When the user mentions a person's name, first name, last name, or partial name, always pass it as the policyHolderName parameter. The name filter is case-insensitive and supports partial matches (e.g. 'kim' will match 'Kimberly King' and 'Kimberly Williams').",
+        description: "Displays the Zava Insurance claims dashboard showing all claims with status overview, filters, and summary metrics. Supports filtering by status and/or policy holder name, and sorting by estimated loss or date reported. When the user mentions a person's name, first name, last name, or partial name, always pass it as the policyHolderName parameter. The name filter is case-insensitive and supports partial matches (e.g. 'kim' will match 'Kimberly King' and 'Kimberly Williams'). When the user asks to sort or order claims, ALWAYS re-invoke this tool with the sortBy and sortOrder parameters so the dashboard refreshes with the new order.",
         inputSchema: {
           type: "object" as const,
           properties: {
             status: { type: "string", description: "Filter claims by status keyword (e.g. 'Open', 'Approved', 'Pending', 'Denied', 'Closed')" },
             policyHolderName: { type: "string", description: "Filter claims by policy holder name. Supports partial, case-insensitive matching — pass the first name, last name, or any part of the name (e.g. 'Kimberly', 'king', 'kim'). When the user asks about a specific person's claims, always use this parameter." },
+            sortBy: { type: "string", enum: ["estimatedLoss", "dateReported"], description: "Sort claims by this field. Valid values: 'estimatedLoss' or 'dateReported'." },
+            sortOrder: { type: "string", enum: ["asc", "desc"], description: "Sort direction: 'asc' for ascending or 'desc' for descending. Defaults to 'desc'." },
           },
         },
         _meta: descriptorMeta(CLAIMS_DASHBOARD),
@@ -369,6 +371,25 @@ export function createMcpServer(): Server {
           claims = claims.filter(c => c.policyHolderName.toLowerCase().includes(n));
         }
 
+        // Sort claims (only estimatedLoss and dateReported are supported)
+        const validSortFields = ["estimatedLoss", "dateReported"];
+        const sortBy = validSortFields.includes(args.sortBy as string) ? (args.sortBy as string) : null;
+        const sortOrder = (args.sortOrder as string) === "asc" ? 1 : -1;
+        if (sortBy) {
+          claims.sort((a: any, b: any) => {
+            let va = a[sortBy];
+            let vb = b[sortBy];
+            if (va == null && vb == null) return 0;
+            if (va == null) return 1;
+            if (vb == null) return -1;
+            if (typeof va === "string") va = va.toLowerCase();
+            if (typeof vb === "string") vb = vb.toLowerCase();
+            if (va < vb) return -1 * sortOrder;
+            if (va > vb) return 1 * sortOrder;
+            return 0;
+          });
+        }
+
         // Enrich: fetch all related data so the widget can do client-side master-detail
         const allInspections = (await db.getAllInspections()).map(parseInspection);
         const allPurchaseOrders = (await db.getAllPurchaseOrders()).map(parsePurchaseOrder);
@@ -387,8 +408,10 @@ export function createMcpServer(): Server {
           if (i) allInspectors[iid] = parseInspector(i);
         }
 
+        const orderLabel = sortOrder === 1 ? "ascending" : "descending";
+        const sortLabel = sortBy ? `, sorted by ${sortBy} (${orderLabel})` : "";
         return {
-          content: [{ type: "text" as const, text: `Loaded ${claims.length} claims.` }],
+          content: [{ type: "text" as const, text: `Loaded ${claims.length} claims${sortLabel}.` }],
           structuredContent: {
             claims,
             inspections: allInspections,
