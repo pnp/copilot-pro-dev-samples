@@ -6,11 +6,9 @@ Executive Helper is a declarative agent for Microsoft 365 Copilot that automates
 
 Executives spend significant time preparing for meetings by researching participants' backgrounds, roles, and expertise. This agent reduces meeting-prep time by up to 90% through a structured 5-phase workflow: adaptive interview, comprehensive research, bio generation, optional summarization, and human-in-the-loop review.
 
-![Executive Helper in action](assets/executive-helper.png)
+![Executive Helper conversation starters](assets/ExecutiveHelper1.png)
 
-## Contributors
-
-* [YOUR NAME](https://github.com/YOUR-GITHUB-USERNAME)
+![Executive Helper in action](assets/ExecutiveHelper2.png)
 
 ## Version history
 
