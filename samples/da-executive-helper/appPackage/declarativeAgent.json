@@ -1,0 +1,41 @@
+{
+    "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.2/schema.json",
+    "version": "v1.2",
+    "name": "[[agentName]]",
+    "description": "[[agentDescription]]",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "WebSearch"
+        },
+        {
+            "name": "GraphConnectors"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "[[agentCSTitle1]]",
+            "text": "[[agentCSText1]]"
+        },
+        {
+            "title": "[[agentCSTitle2]]",
+            "text": "[[agentCSText2]]"
+        },
+        {
+            "title": "[[agentCSTitle3]]",
+            "text": "[[agentCSText3]]"
+        },
+        {
+            "title": "[[agentCSTitle4]]",
+            "text": "[[agentCSText4]]"
+        },
+        {
+            "title": "[[agentCSTitle5]]",
+            "text": "[[agentCSText5]]"
+        },
+        {
+            "title": "[[agentCSTitle6]]",
+            "text": "[[agentCSText6]]"
+        }
+    ]
+}
