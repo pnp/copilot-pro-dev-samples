@@ -30,7 +30,7 @@ Do not start research or writing yet.
 
 Auto-populate Q1 using any provided name, title.
 
-If title is missing: ask for them.
+If the title is missing, ask for the title.
 
 After Q1 is answered, ask:
 "Would you like to add more details before research? For example: meeting purpose, relationship history, or sensitivities?"
