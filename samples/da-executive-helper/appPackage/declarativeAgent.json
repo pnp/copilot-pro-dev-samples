@@ -1,0 +1,41 @@
+{
+    "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+    "version": "v1.6",
+    "name": "Executive Helper",
+    "description": "Executive Helper is a declarative agent that automates meeting preparation by researching public information about participants and generating comprehensive executive bios with career insights.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "WebSearch"
+        },
+        {
+            "name": "GraphConnectors"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Create executive bio",
+            "text": "I am preparing for a first-time introduction with Michael Chen, CFO of Microsoft Asia. Provide a short profile and five rapport-building questions."
+        },
+        {
+            "title": "Meeting preparation",
+            "text": "I have a strategic meeting next week with the CEO of Contoso. Help me prepare by creating a comprehensive bio."
+        },
+        {
+            "title": "Quick bio lookup",
+            "text": "Create a bio for Jane Smith, VP of Engineering at Fabrikam."
+        },
+        {
+            "title": "Networking prep",
+            "text": "I'm attending a networking event and will meet several executives. Start with a bio for the keynote speaker."
+        },
+        {
+            "title": "Advisory meeting prep",
+            "text": "I have an advisory board meeting coming up. Help me understand the background of our new board member."
+        },
+        {
+            "title": "Research a participant",
+            "text": "I have a meeting with John Doe, Senior Product Manager. What can you tell me about his background and expertise?"
+        }
+    ]
+}
