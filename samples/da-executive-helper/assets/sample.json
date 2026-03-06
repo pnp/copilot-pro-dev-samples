@@ -36,7 +36,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-executive-helper/assets/executive-helper.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-executive-helper/assets/ExecutiveHelper1.png",
         "alt": "Executive Helper declarative agent generating executive bios"
       }
     ],
