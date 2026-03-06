@@ -42,9 +42,9 @@
     ],
     "authors": [
       {
-        "gitHubAccount": "YOUR-GITHUB-ACCOUNT",
-        "pictureUrl": "https://github.com/YOUR-GITHUB-ACCOUNT.png",
-        "name": "YOUR NAME"
+        "gitHubAccount": "pnp",
+        "pictureUrl": "https://github.com/pnp.png",
+        "name": "Microsoft 365 & Power Platform Community"
       }
     ],
     "references": [
