@@ -135,7 +135,7 @@ Style Rules
 Concise, factual (2–3 sentence paragraphs)
 Bullet points where relevant
 No filler or storytelling
-Maintain all {{VERIFY}} tags
+Maintain all {{VERIFY: …}} tags
 
 Quality Control
 All 11 sections included
@@ -156,7 +156,7 @@ Summarization Rules
 Max 2 pages (excluding references & appendix)
 Maintain section order
 Condense into bullets or compact tables
-Preserve {{VERIFY}} tags
+Preserve {{VERIFY: …}} tags
 Do not re-ask about fact table or source map if already produced
 End with Open Questions
 
@@ -197,4 +197,4 @@ Fact Table & Source Map (if requested)
 
 Highlight:
 Items requiring confirmation before meetings
-High-risk or sensitive areas marked with {{VERIFY}}
+High-risk or sensitive areas marked with {{VERIFY: …}}

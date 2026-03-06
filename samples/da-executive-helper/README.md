@@ -74,7 +74,7 @@ The agent follows a strict 5-phase workflow:
 | `appPackage/instruction.txt` | Agent instructions defining the 5-phase workflow |
 | `appPackage/manifest.json` | Teams application manifest that defines metadata for the declarative agent |
 | `env` | Environment files |
-| `teamsapp.yml` | Main Teams Toolkit project file with provision and publish lifecycle definitions |
+| `m365agents.yml` | Main Microsoft 365 Agents Toolkit project file with provision and publish lifecycle definitions |
 
 ## Help
 

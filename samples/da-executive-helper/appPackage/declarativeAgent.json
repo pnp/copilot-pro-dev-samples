@@ -1,6 +1,6 @@
 {
-    "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.2/schema.json",
-    "version": "v1.2",
+    "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+    "version": "v1.6",
     "name": "Executive Helper",
     "description": "Executive Helper is a declarative agent that automates meeting preparation by researching public information about participants and generating comprehensive executive bios with career insights.",
     "instructions": "$[file('instruction.txt')]",
