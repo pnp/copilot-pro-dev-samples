@@ -1,3 +1,7 @@
+<!--
+This template is for Copilot Studio samples only. Please update YOUR_AGENT_FOLDER to the folder of this agent. Please delete this line before submission.
+-->
+
 # Title of the sample
 
 <!--
@@ -40,8 +44,7 @@ If you want to provide links to your social media, blog, and employer name, make
 
 Version|Date|Comments
 -------|----|--------
-1.1|November 1, 2022|Update comment
-1.0|October 29, 2022|Initial release
+1.0|Feburary 01, 2026|Initial release
 
 ## Prerequisites
 
@@ -51,20 +54,62 @@ Version|Date|Comments
 ## Minimal path to awesome
 
 <!-- 
-PRO TIP:
+  There are two methods in which samples could have been created for Copilot Studio, 
 
-For commands, use the `code syntax`. For button labels, page names, dialog names, etc. as they appear on the screen, use **Bold**. Don't use "click", use "select" or "use".
+  1. Copilot Studio using Solution Export
+  2. Copilot Studio using Cloned with Visual Studio Code.
 
-As tempting as it may be, don't just use images to describe the steps. Let's be as inclusive as possible and think about accessibility.
+  Simpliest way to tell which one is which, if the sample folder contains a <file>.cdsproj file, then it was creatd with method 1, solution export.
+  Method 2, would have a series of yaml files in the src folder.
 
-We have basic documentation about Microsoft 365 Copilot extensibility that you can reference on top of any additional steps that your sample needs:
+  Remove the method that doesn't apply from this README.md file.
 
-* [Microsoft 365 Copilot extensibility](https://learn.microsoft.com/microsoft-365-copilot/extensibility/)
+  ---
+  PRO TIP:
 
+  As tempting as it may be, don't just use images to describe the steps. Let's be as inclusive as possible and think about accessibility.
+  We have basic documentation about Microsoft 365 Copilot extensibility that you can reference on top of any additional steps that your sample needs:
+  * [Microsoft 365 Copilot extensibility](https://learn.microsoft.com/microsoft-365-copilot/extensibility/)
+  ---
 -->
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR-SOLUTION-NAME) then unzip it)
-* ...provide further instructions
+### Copilot Studio using Solution Import
+
+This sample uses the Power Platform CLI to import samples, for documenation and installation instructions please visit: [What is Microsoft Power Platform CLI? | Microsoft Learn](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction) 
+
+- Ensure you are authenticated with ```pac auth```
+
+
+```powershell
+
+# Package up the solution
+pac solution pack --zipfile <YourAgent>.zip --folder ./mcs-YOUR_AGENT_FOLDER/src
+
+# Import into Power Platform (default enviroment)
+pac solution import --path <YourAgent>.zip
+
+# Import into specific environment
+pac env list
+pac solution import --path <YourAgent>.zip -env <environment-guid>
+
+```
+
+That's it.
+
+### Copilot Studio using Copilot Studio for Visual Studio Code extension
+
+This method assumes you have the Copilot Studio Extension for Visual Studio Code installed; found in the market place [Copilot Studio | Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio) - this will use the reattach agent feature.
+
+- Ensure you are signed into the tenant and have access to the environment you are apply this solution to.
+- In the sample folder, important - ensure you open Visual Studio Code with the ```src``` folder as the root folder
+- The Copilot Studio extension may show "clone agent" button, use the F1 tool
+  - Run ```Copilot Studio: Reattach Agent```
+  - Select the target environment
+  - You should see a message "New Agent <guid> reattached" toast notification.
+  - Check in Copilot Studio portal, for the sample
+
+That's it.
+
 
 ## Features
 
@@ -78,16 +123,6 @@ Using this sample you can extend Microsoft 365 Copilot with an agent that:
 
 <!--
 Note that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions in advance! You rock ❤.
--->
-
-<!--
-RESERVED FOR REPO MAINTAINERS
-
-We'll add the video from the community call recording here
-
-## Video
-
-[![YouTube video title](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=XXXXX "YouTube video title")
 -->
 
 ## Help
@@ -106,15 +141,15 @@ Search for:
 Replace with your GitHub username, prefixed with an "@". If you have more than one author, use %20 to separate them, making sure to prefix everyone's username individually with an "@".
 
 Example:
-@waldekmastykarz
+@pkbullock
 
 Or:
-@waldekmastykarz%20@bobgerman
+@pkbullock%20@bobgerman
 -->
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20YOUR-SOLUTION-NAME%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20YOUR_AGENT_FOLDER%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
@@ -124,4 +159,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/OUR-SAMPLE-FOLDER-NAME)
+![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/YOUR_AGENT_FOLDER)
