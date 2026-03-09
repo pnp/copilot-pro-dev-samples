@@ -18,7 +18,6 @@ Prefix the folder name based on sample type:
 |--------|------|
 | `da-` | Declarative agent |
 | `cea-` | Custom engine agent (Azure Bot Framework) |
-| `msgext-` | Message extension agent |
 
 Rules: lowercase, hyphens only, no periods.
 
@@ -50,6 +49,7 @@ Rules: lowercase, hyphens only, no periods.
     "metadata": [
       { "key": "PLATFORM", "value": "Node.js" },
       { "key": "LANGUAGE", "value": "TypeScript" },
+      { "key": "AGENT-TYPE", "value": "Declarative Agent" },
       { "key": "API-PLUGIN", "value": "No" },
       { "key": "GRAPH-CONNECTOR", "value": "No" }
     ],
