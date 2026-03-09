@@ -1,0 +1,63 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-sharepoint-data-manager",
+    "source": "pnp",
+    "title": "Data Manager - Declarative Agent for SharePoint",
+    "shortDescription": "A declarative agent that helps users manage and organize SharePoint and OneDrive content with document search, organization guidance, and access to official Microsoft documentation via MCP.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sharepoint-data-manager",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sharepoint-data-manager",
+    "longDescription": [
+      "A declarative agent that helps users manage and organize SharePoint and OneDrive content with document search, organization guidance, and access to official Microsoft documentation via MCP. Features include Microsoft Learn search and fetch via Model Context Protocol, GraphicArt diagram generation, and grounded responses using behavior overrides."
+    ],
+    "creationDateTime": "2025-05-19",
+    "updateDateTime": "2025-05-20",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JSON"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-sharepoint-data-manager/assets/example_response.png",
+        "alt": "Data Manager agent helping organize SharePoint content"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "KatT-AI",
+        "pictureUrl": "https://github.com/KatT-AI.png",
+        "name": "Kateryna Turuntseva"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Build declarative agents for Microsoft 365 Copilot",
+        "description": "Learn more about declarative agents for Microsoft 365 Copilot.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+      }
+    ]
+  }
+]
