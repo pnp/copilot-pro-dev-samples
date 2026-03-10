@@ -14,12 +14,12 @@ The sample showcases Action.Execute from Adaptive Cards v1.5, stateful card upda
 
 Version|Date|Author|Comments
 -------|----|----|--------
-1.0|January 20, 2026|Microsoft|Initial release
+1.0|January 20, 2026|[Harikrishnan-MSFT](https://github.com/Harikrishnan-MSFT)|Initial release
 
 ## Prerequisites
 
 * [Microsoft 365 account with Copilot access](https://www.microsoft.com/microsoft-365/enterprise/copilot-for-microsoft-365)
-* [Node.js](https://nodejs.org) version 18.x, 20.x, or 22.x
+* [Node.js](https://nodejs.org) version 20.x or 22.x
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Microsoft 365 Agents Toolkit for VS Code](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
 * [Dev tunnels CLI](https://learn.microsoft.com/azure/developer/dev-tunnels/get-started) for local development
@@ -136,11 +136,11 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 ## Further reading
 
-- [Action.Execute Documentation](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/adaptive-card-edits)
+- [Action.Execute Documentation](https://learn.microsoft.com/microsoft-365-copilot/extensibility/adaptive-card-edits)
 - [Build declarative agents for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent)
 - [Adaptive Cards Schema Explorer](https://adaptivecards.io/explorer/)
 - [API Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins)
 
-<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-adaptive-card-inline-edit" />
+![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-adaptive-card-inline-edit)
 
 ---

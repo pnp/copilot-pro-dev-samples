@@ -33,7 +33,7 @@ components:
           description: The user who is responsible for the repair
         date:
           type: string
-          format: date-time
+          format: date
           description: The date of the repair
         image:
           type: string
@@ -65,6 +65,26 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/Repair'
+        '401':
+          description: Unauthorized - Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: 'Unauthorized'
+        '500':
+          description: Internal server error - Failed to retrieve repair records
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: 'Failed to retrieve repair records'
 
   /repairs/{id}:
     patch:
@@ -99,3 +119,43 @@ paths:
                 properties:
                   updatedRepair:
                     $ref: '#/components/schemas/Repair'
+        '400':
+          description: Bad request - Invalid input data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: 'Title must be a non-empty string'
+        '401':
+          description: Unauthorized - Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: 'Unauthorized'
+        '404':
+          description: Not found - Repair record with specified ID does not exist
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: 'Repair not found'
+        '500':
+          description: Internal server error - Failed to update repair record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: 'Failed to update repair record'
