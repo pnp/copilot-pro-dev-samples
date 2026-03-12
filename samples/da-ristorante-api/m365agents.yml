@@ -4,7 +4,7 @@
 version: v1.7
 
 additionalMetadata:
-  sampleTag: copilot-pro-dev-samples:da-ristorante-api
+  sampleTag: pnp-copilot-pro-dev:da-ristorante-api
 
 environmentFolderPath: ./env
 

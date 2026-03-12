@@ -3,6 +3,9 @@
 # Visit https://aka.ms/teamsfx-actions for details on actions
 version: v1.8
 
+additionalMetadata:
+  sampleTag: pnp-copilot-pro-dev:cea-techpulse
+
 provision:
   # Creates an app
   - uses: teamsApp/create
