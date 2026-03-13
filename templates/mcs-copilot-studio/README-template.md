@@ -96,21 +96,6 @@ pac solution import --path <YourAgent>.zip -env <environment-guid>
 
 That's it.
 
-### Copilot Studio using Copilot Studio for Visual Studio Code extension
-
-This method assumes you have the Copilot Studio Extension for Visual Studio Code installed; found in the market place [Copilot Studio | Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio) - this will use the reattach agent feature.
-
-- Ensure you are signed into the tenant and have access to the environment you are apply this solution to.
-- In the sample folder, important - ensure you open Visual Studio Code with the ```src``` folder as the root folder
-- The Copilot Studio extension may show "clone agent" button, use the F1 tool
-  - Run ```Copilot Studio: Reattach Agent```
-  - Select the target environment
-  - You should see a message "New Agent <guid> reattached" toast notification.
-  - Check in Copilot Studio portal, for the sample
-
-That's it.
-
-
 ## Features
 
 Extended description of the contents of the sample. What elements does it include? What concepts does illustrate?
