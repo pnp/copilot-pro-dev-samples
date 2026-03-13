@@ -194,7 +194,7 @@ Submitting a Microsoft Copilot Studio (MCS) Samples using the Clone Method
 
 > Note: Package/zip files, for security reasons we will only accept the contents of these packages rather than the package files.
 
-To get the source quickly, please use the following commands using the [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction):
+To get the source quickly, please use the following commands using the [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction), alternatively to install the CLI quickly in the terminal, you can use the [Power Platform Tools for Visual Studio Code (as this installs the Power Platform CLI as well)](https://marketplace.visualstudio.com/items?itemName=microsoft-IsvExpTools.powerplatform-vscode):
 
  - Ensure you are authenticated with [```pac auth```](https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/auth)
 
