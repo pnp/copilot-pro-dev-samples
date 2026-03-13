@@ -95,8 +95,17 @@ Always use the latest published schema version. Use the links below to identify 
 | Declarative agent manifest | [declarative-agent-manifest-1.6](https://learn.microsoft.com/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.6) — replace `1.6` with latest |
 | API plugin manifest | [api-plugin-manifest-2.4](https://learn.microsoft.com/microsoft-365-copilot/extensibility/api-plugin-manifest-2.4) — replace `2.4` with latest |
 
+## `m365agents.yml` metadata
+If the sample includes an `m365agents.yml`, add the following property after `version`:
+```yaml
+additionalMetadata:
+  sampleTag: pnp-copilot-pro-dev:<sample-folder-name>
+```
+Replace `<sample-folder-name>` with the name of your sample folder under `samples/`.
+
 ## Rules
 - Add the sample to the samples table in the root `README.md`
+- Include `additionalMetadata` with the correct `sampleTag` in `m365agents.yml`
 - DO NOT include `projectId` in `m365agents.yml`
 - DO NOT commit secrets, API keys, tenant IDs, or app IDs
 - DO NOT reference assets from external URLs — all assets in `assets/`
@@ -111,6 +120,7 @@ Always use the latest published schema version. Use the links below to identify 
 - [ ] Uses correct templates for `README.md` and `sample.json`
 - [ ] All schema versions target latest (see links above)
 - [ ] No `projectId` in `m365agents.yml`
+- [ ] `additionalMetadata.sampleTag` set in `m365agents.yml` (format: `pnp-copilot-pro-dev:<sample-folder-name>`)
 - [ ] No `teamsapp.yml` or `teamsapp.local.yml` (update if present)
 - [ ] No secrets or external asset links
 - [ ] One PR per sample
