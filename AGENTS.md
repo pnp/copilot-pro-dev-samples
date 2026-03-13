@@ -96,7 +96,7 @@ Always use the latest published schema version. Use the links below to identify 
 | API plugin manifest | [api-plugin-manifest-2.4](https://learn.microsoft.com/microsoft-365-copilot/extensibility/api-plugin-manifest-2.4) — replace `2.4` with latest |
 
 ## `m365agents.yml` metadata
-If the sample includes an `m365agents.yml` (or `teamsapp.yml`), add the following property after `version`:
+If the sample includes an `m365agents.yml`, add the following property after `version`:
 ```yaml
 additionalMetadata:
   sampleTag: pnp-copilot-pro-dev:<sample-folder-name>
