@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "GitHub.copilot-chat",
+        "TeamsDevApp.ms-teams-vscode-extension",
+        "TeamsDevApp.vscode-adaptive-cards",
+        "redhat.vscode-yaml",
+        "ms-dotnettools.csharp"
+    ]
+}
