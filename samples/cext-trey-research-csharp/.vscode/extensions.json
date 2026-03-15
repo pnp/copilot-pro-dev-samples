@@ -2,11 +2,8 @@
     "recommendations": [
         "GitHub.copilot-chat",
         "TeamsDevApp.ms-teams-vscode-extension",
-        "microsoft-IsvExpTools.powerplatform-vscode",
         "TeamsDevApp.vscode-adaptive-cards",
-        "ms-python.python",
         "redhat.vscode-yaml",
-        "ms-dotnettools.csharp",
-        "typespec.typespec-vscode"
+        "ms-dotnettools.csharp"
     ]
 }
