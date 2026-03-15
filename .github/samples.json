@@ -1,5 +1,177 @@
 [
   {
+    "name": "pnp-copilot-pro-dev-cea-techpulse",
+    "title": "TechPulse - Custom Engine Agent for Real-Time Technology News",
+    "shortDescription": "An intelligent tech news companion powered by Microsoft 365 Agents SDK and Model Context Protocol (MCP)",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse",
+    "creationDateTime": "2025-09-26",
+    "updateDateTime": "2025-10-16",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "TypeScript, JavaScript"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "gif",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/cea-techpulse/assets/techPulse.gif",
+        "alt": "Declarative Agent with API Plugin for Microsoft 365 Copilot Sample"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "AjayJ12-MSFT",
+        "pictureUrl": "https://github.com/AjayJ12-MSFT.png",
+        "name": "Ajay Jadhav"
+      }
+    ],
+    "Folder": "cea-techpulse"
+  },
+  {
+    "name": "officedev-microsoft-365-copilot-samples-cext-trey-research-csharp",
+    "title": "Trey Research C#",
+    "shortDescription": "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects.",
+    "url": "https://github.com/OfficeDev/Microsoft-365-Copilot-Samples/tree/main/samples/cext-trey-research-csharp",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/OfficeDev/Microsoft-365-Copilot-Samples/tree/main/samples/cext-trey-research-csharp",
+    "creationDateTime": "2025-04-16",
+    "updateDateTime": "2025-04-16",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": ".NET"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "csharp"
+      },
+      {
+        "key": "TEAMS-PACKAGE",
+        "value": "Yes"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 50,
+        "url": "https://github.com/OfficeDev/Microsoft-365-Copilot-Samples/raw/main/samples/cext-trey-research-csharp/assets/preview.png",
+        "alt": "Screenshot of the Trey Research sample"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "bobgerman",
+        "pictureUrl": "https://github.com/bobgerman.png",
+        "name": "Bob German"
+      }
+    ],
+    "Folder": "cext-trey-research-csharp"
+  },
+  {
+    "name": "officedev-microsoft-365-copilot-samples-cext-trey-research-python",
+    "title": "Trey Research Python",
+    "shortDescription": "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects.",
+    "url": "https://github.com/OfficeDev/Microsoft-365-Copilot-Samples/tree/main/samples/cext-trey-research-python",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/OfficeDev/Microsoft-365-Copilot-Samples/tree/main/samples/cext-trey-research-python",
+    "creationDateTime": "2025-04-16",
+    "updateDateTime": "2025-04-16",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "LANGUAGE",
+        "value": "python"
+      },
+      {
+        "key": "TEAMS-PACKAGE",
+        "value": "Yes"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 50,
+        "url": "https://github.com/OfficeDev/Microsoft-365-Copilot-Samples/raw/main/samples/cext-trey-research-python/assets/preview.png",
+        "alt": "Screenshot of the Trey Research sample"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "bobgerman",
+        "pictureUrl": "https://github.com/bobgerman.png",
+        "name": "Bob German"
+      }
+    ],
+    "Folder": "cext-trey-research-python"
+  },
+  {
+    "name": "pnp-copilot-pro-dev-da-adaptive-card-dialog",
+    "title": "Adaptive Card dialog",
+    "shortDescription": "A declarative agent demonstrating how to open dialog boxes from Adaptive Cards in Microsoft 365 Copilot",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-dialog",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-dialog",
+    "creationDateTime": "2026-01-06",
+    "updateDateTime": "2026-01-06",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JavaScript"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-adaptive-card-dialog/assets/AdaptiveCardsDialogBox.gif",
+        "alt": "Declarative Agent with API Plugin for Microsoft 365 Copilot Sample"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "v-ypradhan",
+        "pictureUrl": "https://github.com/v-ypradhan.png",
+        "name": "Yugal Pradhan"
+      }
+    ],
+    "Folder": "da-adaptive-card-dialog"
+  },
+  {
     "name": "pnp-copilot-pro-dev-da-azureopenai",
     "title": "Call chat completions from Azure Open AI - No code!",
     "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to call Azure Open AI endpoint without any code.",
@@ -310,6 +482,52 @@
     "Folder": "da-CLIForM365-helper"
   },
   {
+    "name": "pnp-copilot-pro-dev-da-community-samples-agent",
+    "title": "Microsoft 365 Community Sample Agent",
+    "shortDescription": "Agent that connects to the Sample Solution Gallery APIs, using MCP to allow users to find samples within an agent.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-community-samples-agent",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-community-samples-agent",
+    "creationDateTime": "2025-12-07",
+    "updateDateTime": "2025-12-07",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Declarative Agent"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JSON"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-community-samples-agent/assets/Example.png",
+        "alt": "Declarative agent doing that connects to the Sample Solution Gallery APIs, using MCP to allow users to find samples within an agent."
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "pkbullock",
+        "pictureUrl": "https://github.com/pkbullock.png",
+        "name": "Paul Bullock"
+      }
+    ],
+    "Folder": "da-community-samples-agent"
+  },
+  {
     "name": "pnp-copilot-pro-dev-da-docfinder",
     "title": "Document Finder Declarative Agent for Microsoft 365 Copilot Sample",
     "shortDescription": "First Party Declarative Agent Document Finder shared as a sample",
@@ -458,6 +676,58 @@
     "Folder": "da-geolocator-game"
   },
   {
+    "name": "pnp-copilot-pro-dev-da-HRHelpdesk",
+    "title": "HR Heldpdesk Declarative Agent",
+    "shortDescription": "HR Helpdesk is a template Declarative Agent designed to help employees troubleshoot their issues using insights from ServiceNow KB, and if not successful create a case in the right Centre of Excellence/table without much burden on the end user.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
+    "creationDateTime": "2025-10-14",
+    "updateDateTime": "2025-10-14",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-HRHelpdesk/assets/hrhelpdesk.png",
+        "alt": "HR Helpdesk"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "sebastienlevert",
+        "pictureUrl": "https://github.com/sebastienlevert.png",
+        "name": "Sébastien Levert"
+      },
+      {
+        "gitHubAccount": "akhilsaivalluri",
+        "pictureUrl": "https://github.com/akhilsaivalluri.png",
+        "name": "Akhil Sai Valluri"
+      },
+      {
+        "gitHubAccount": "garrytrinder",
+        "pictureUrl": "https://github.com/garrytrinder.png",
+        "name": "Garry Trinder"
+      }
+    ],
+    "Folder": "da-HRHelpdesk"
+  },
+  {
     "name": "pnp-copilot-pro-dev-IdeaCoach",
     "title": "Idea Coach Declarative Agent for Microsoft 365 Copilot Sample",
     "shortDescription": "First Party Declarative Agent Idea Coach shared as a sample",
@@ -502,6 +772,58 @@
       }
     ],
     "Folder": "da-IdeaCoach"
+  },
+  {
+    "name": "pnp-copilot-pro-dev-da-ITHelpdesk",
+    "title": "IT Helpdesk Declarative Agent",
+    "shortDescription": "IT Helpdesk Agent is a Declarative Agent designed to assist employees with IT issues through (a) guided, conversational troubleshooting, (b) outage detection, and ticket creation for escalation – powered through ServiceNow offerings (Knowledge, Catalogue and Tickets). ",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ITHelpdesk",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ITHelpdesk",
+    "creationDateTime": "2025-10-14",
+    "updateDateTime": "2025-10-14",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ITHelpdesk/assets/ithelpdesk.png",
+        "alt": "IT Helpdesk"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "sebastienlevert",
+        "pictureUrl": "https://github.com/sebastienlevert.png",
+        "name": "Sébastien Levert"
+      },
+      {
+        "gitHubAccount": "akhilsaivalluri",
+        "pictureUrl": "https://github.com/akhilsaivalluri.png",
+        "name": "Akhil Sai Valluri"
+      },
+      {
+        "gitHubAccount": "garrytrinder",
+        "pictureUrl": "https://github.com/garrytrinder.png",
+        "name": "Garry Trinder"
+      }
+    ],
+    "Folder": "da-ITHelpdesk"
   },
   {
     "name": "pnp-copilot-pro-dev-LearningCoach",
@@ -601,6 +923,52 @@
       }
     ],
     "Folder": "da-m365-roadmap-tracker"
+  },
+  {
+    "name": "pnp-copilot-pro-dev-da-microsoftdocssearchagent",
+    "title": "Microsoft Learn Search Agent",
+    "shortDescription": "An agent that helps users search and retrieve content from Microsoft Learn. ",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-microsoftdocssearchagent",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-microsoftdocssearchagent",
+    "creationDateTime": "2025-12-15",
+    "updateDateTime": "2025-12-15",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JSON"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-microsoftdocssearchagent/assets/preview.png",
+        "alt": "Declarative agent that helps users search and retrieve content from Microsoft Learn."
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "pkbullock",
+        "pictureUrl": "https://github.com/pkbullock.png",
+        "name": "Paul Bullock"
+      }
+    ],
+    "Folder": "da-microsoftdocssearchagent"
   },
   {
     "name": "pnp-copilot-pro-dev-myadvancedcommsbuddy",

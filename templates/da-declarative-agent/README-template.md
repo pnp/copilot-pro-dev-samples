@@ -1,3 +1,7 @@
+<!--
+This template is for Declarative Agent samples such as those built with Microsoft 365 Agents toolkit. Please update YOUR_AGENT_FOLDER to the folder of this agent. Please delete this line before submission.
+-->
+
 # Title of the sample
 
 <!--
@@ -40,8 +44,7 @@ If you want to provide links to your social media, blog, and employer name, make
 
 Version|Date|Comments
 -------|----|--------
-1.1|November 1, 2022|Update comment
-1.0|October 29, 2022|Initial release
+1.0|Feburary 28, 2026|Initial release
 
 ## Prerequisites
 
@@ -63,7 +66,7 @@ We have basic documentation about Microsoft 365 Copilot extensibility that you c
 
 -->
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR-SOLUTION-NAME) then unzip it)
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR_AGENT_FOLDER) then unzip it)
 * ...provide further instructions
 
 ## Features
@@ -114,7 +117,7 @@ Or:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20YOUR-SOLUTION-NAME%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20YOUR_AGENT_FOLDER%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
@@ -124,4 +127,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/OUR-SAMPLE-FOLDER-NAME)
+![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/YOUR_AGENT_FOLDER)
