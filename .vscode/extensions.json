@@ -6,6 +6,7 @@
         "TeamsDevApp.vscode-adaptive-cards",
         "ms-python.python",
         "redhat.vscode-yaml",
-        "ms-dotnettools.csharp"
+        "ms-dotnettools.csharp",
+        "typespec.typespec-vscode"
     ]
 }
