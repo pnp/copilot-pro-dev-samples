@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Copilot (browser)",
+    "Projects": [
+      {
+        "Path": "M365Agent\\M365Agent.atkproj",
+        "Action": "StartWithoutDebugging",
+        "DebugTarget": "Copilot (browser)"
+      },
+      {
+        "Path": "AdaptiveCardInlineEdit\\AdaptiveCardInlineEdit.csproj",
+        "Action": "Start",
+        "DebugTarget": "Start Project"
+      }
+    ]
+  },
+  {
+    "Name": "Copilot (browser) (skip update app)",
+    "Projects": [
+      {
+        "Path": "M365Agent\\M365Agent.atkproj",
+        "Action": "StartWithoutDebugging",
+        "DebugTarget": "Copilot (browser) (skip update app)"
+      },
+      {
+        "Path": "AdaptiveCardInlineEdit\\AdaptiveCardInlineEdit.csproj",
+        "Action": "Start",
+        "DebugTarget": "Start Project"
+      }
+    ]
+  }
+]
