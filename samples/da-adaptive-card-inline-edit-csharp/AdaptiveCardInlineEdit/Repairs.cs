@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using AdaptiveCardInlineEdit.Models;
 using System.Net;
+using System.Text.Json;
 
 namespace AdaptiveCardInlineEdit
 {
@@ -48,7 +49,7 @@ namespace AdaptiveCardInlineEdit
                 {
                     var fullName = r.AssignedTo.ToLowerInvariant();
                     if (fullName == query) return true;
-                    var nameParts = fullName.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    var nameParts = fullName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
                     return nameParts.Any(part => part == query);
                 });
 
@@ -76,16 +77,24 @@ namespace AdaptiveCardInlineEdit
                 return req.CreateResponse(HttpStatusCode.Unauthorized);
             }
 
-            var body = await req.ReadFromJsonAsync<RepairUpdateModel>();
+            RepairUpdateModel? body = null;
+            try { body = await req.ReadFromJsonAsync<RepairUpdateModel>(); } catch (JsonException) { }
 
-            // Validate input - match Node.js behavior
-            if (body?.Title != null && (body.Title is not string || string.IsNullOrWhiteSpace(body.Title)))
+            if (body is null)
+            {
+                var badReq = req.CreateResponse(HttpStatusCode.BadRequest);
+                await badReq.WriteAsJsonAsync(new { error = "Invalid or missing request body" });
+                return badReq;
+            }
+
+            // Validate input
+            if (body.Title != null && string.IsNullOrWhiteSpace(body.Title))
             {
                 var badReq = req.CreateResponse(HttpStatusCode.BadRequest);
                 await badReq.WriteAsJsonAsync(new { error = "Title must be a non-empty string" });
                 return badReq;
             }
-            if (body?.AssignedTo != null && (body.AssignedTo is not string || string.IsNullOrWhiteSpace(body.AssignedTo)))
+            if (body.AssignedTo != null && string.IsNullOrWhiteSpace(body.AssignedTo))
             {
                 var badReq = req.CreateResponse(HttpStatusCode.BadRequest);
                 await badReq.WriteAsJsonAsync(new { error = "AssignedTo must be a non-empty string" });
@@ -94,7 +103,7 @@ namespace AdaptiveCardInlineEdit
 
             try
             {
-                var updatedRepair = RepairData.UpdateRepair(id, body?.Title, body?.AssignedTo);
+                var updatedRepair = RepairData.UpdateRepair(id, body.Title, body.AssignedTo);
                 if (updatedRepair == null)
                 {
                     return req.CreateResponse(HttpStatusCode.NotFound);
@@ -115,15 +124,16 @@ namespace AdaptiveCardInlineEdit
 
         private bool IsApiKeyValid(HttpRequestData req)
         {
-            // Try to get the value of the 'Authorization' header from the request.
-            // If the header is not present, return false.
-            if (!req.Headers.TryGetValues("X-API-Key", out var authValue))
+            // Try to get the value of the 'X-API-Key' header from the request.
+            // If the header is not present, or the value is null/empty, return false.
+            if (!req.Headers.TryGetValues("X-API-Key", out var authValue)
+                || string.IsNullOrEmpty(authValue.FirstOrDefault()?.Trim()))
             {
                 return false;
             }
 
-            // Get the api key value from the 'Authorization' header.
-            var apiKey = authValue.FirstOrDefault().Trim();
+            // Get the api key value from the 'X-API-Key' header.
+            var apiKey = authValue.FirstOrDefault()!.Trim();
 
             // Get the API key from the configuration.
             var configApiKey = _configuration["API_KEY"];

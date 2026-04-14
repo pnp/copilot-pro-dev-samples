@@ -18,7 +18,7 @@ provision:
   - uses: script
     with:
       run:
-        echo "::set-teamsfx-env OPENAPI_SERVER_URL=https://${{DEV_TUNNEL_URL}}";
+        echo "::set-teamsfx-env OPENAPI_SERVER_URL=https://${{DEV_TUNNEL_URL}}"
 
   # Generate runtime settings to JSON file
   - uses: file/createOrUpdateJsonFile
