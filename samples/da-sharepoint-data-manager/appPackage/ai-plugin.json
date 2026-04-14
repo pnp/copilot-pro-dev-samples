@@ -1,6 +1,6 @@
 {
     "$schema": "https://aka.ms/json-schemas/copilot-extensions/v2.1/plugin.schema.json",
-    "schema_version": "v2.4",
+    "schema_version": "v2.1",
     "name_for_human": "Microsoft Learn Search",
     "description_for_human": "Search official Microsoft documentation for SharePoint and Microsoft 365 guidance",
     "contact_email": "publisher-email@example.com",
