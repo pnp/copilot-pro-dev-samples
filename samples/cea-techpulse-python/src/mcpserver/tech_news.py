@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import os
 import json
 from datetime import datetime, timedelta
@@ -18,7 +20,7 @@ mcp = FastMCP("tech-news")
 
 def _make_news_api_request(endpoint: str, params: dict | None = None) -> dict:
     """Make a request to the News API."""
-    if NEWS_API_KEY == " ":
+    if not NEWS_API_KEY or NEWS_API_KEY == "DEMO_KEY":
         raise RuntimeError("News API key is required. Get your free API key from https://newsapi.org/")
 
     query_params = {"apiKey": NEWS_API_KEY}

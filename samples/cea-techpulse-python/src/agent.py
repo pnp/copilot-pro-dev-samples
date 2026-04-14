@@ -143,10 +143,7 @@ async def on_message(context: TurnContext, _state: TurnState):
                 re.search(r"(?:news about|about|tell me about|update on|what about)\s+(.+?)(?:\s|$)", user_message, re.I)
                 or re.search(r"(.+?)\s+(?:news|updates|headlines)", user_message, re.I)
             )
-            if company_match and any(
-                kw in user_message
-                for kw in ("news about", "company news", "tell me about", "update on", "what about")
-            ):
+            if company_match:
                 company = company_match.group(1).strip()
                 result = await tech_news_service.get_company_news(company)
                 await context.send_activity(f"News about {company}:\n\n{result}")

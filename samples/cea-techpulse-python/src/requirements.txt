@@ -3,3 +3,4 @@ microsoft-agents-hosting-aiohttp
 microsoft-agents-authentication-msal
 openai
 mcp
+gunicorn

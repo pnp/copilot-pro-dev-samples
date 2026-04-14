@@ -7,6 +7,10 @@ param resourceBaseName string
 @description('Required in your bot project to access OpenAI service. You can get it from OpenAI > API > API Key')
 param openaiKey string
 
+@secure()
+@description('Required to fetch tech news. Get your free API key from https://newsapi.org/')
+param newsApiKey string
+
 param webAppSKU string
 param linuxFxVersion string
 
@@ -76,6 +80,10 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
         {
           name: 'OPENAI_API_KEY'
           value: openaiKey
+        }
+        {
+          name: 'NEWS_API_KEY'
+          value: newsApiKey
         }
         {
           name: 'BOT_TENANT_ID'

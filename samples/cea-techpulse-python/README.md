@@ -15,7 +15,7 @@ Version|Date|Comments
 ## Prerequisites
 
 * Microsoft 365 tenant with Microsoft 365 Copilot
-* [Python](https://www.python.org/), version 3.8 to 3.11
+* [Python](https://www.python.org/), version 3.10 or higher
 * [Python extension](https://code.visualstudio.com/docs/languages/python), version v2024.0.1 or higher
 * A [Microsoft 365 account for development](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts)
 * [Microsoft 365 Agents Toolkit Visual Studio Code Extension](https://aka.ms/teams-toolkit) latest version or [Microsoft 365 Agents Toolkit CLI](https://aka.ms/teams-toolkit-cli)

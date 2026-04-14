@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+import asyncio
 import os
 import sys
 from mcp import ClientSession, StdioServerParameters
@@ -13,39 +16,53 @@ class TechNewsMcpService:
         self._client_cm = None  
         self._session_cm = None
         self._is_connected = False
+        self._lock = asyncio.Lock()
 
 
 
     async def connect(self) -> None:
-        if self._is_connected:
-            return
+        async with self._lock:
+            if self._is_connected:
+                return
 
-        env = {**os.environ, "NEWS_API_KEY": os.environ.get("NEWS_API_KEY", "")}
+            env = {**os.environ, "NEWS_API_KEY": os.environ.get("NEWS_API_KEY", "")}
 
-        server_params = StdioServerParameters(
-            command=sys.executable,
-            args=[self._mcp_server_path],
-            env=env,
-        )
+            server_params = StdioServerParameters(
+                command=sys.executable,
+                args=[self._mcp_server_path],
+                env=env,
+            )
 
-        self._client_cm = stdio_client(server_params)
-        read_stream, write_stream = await self._client_cm.__aenter__()
+            client_cm = stdio_client(server_params)
+            try:
+                read_stream, write_stream = await client_cm.__aenter__()
+            except Exception:
+                raise
 
-        self._session_cm = ClientSession(read_stream, write_stream)
-        self._session = await self._session_cm.__aenter__()
+            session_cm = ClientSession(read_stream, write_stream)
+            try:
+                session = await session_cm.__aenter__()
+                await session.initialize()
+            except Exception:
+                await session_cm.__aexit__(None, None, None)
+                await client_cm.__aexit__(None, None, None)
+                raise
 
-        await self._session.initialize()
-        self._is_connected = True
+            self._client_cm = client_cm
+            self._session_cm = session_cm
+            self._session = session
+            self._is_connected = True
 
     async def disconnect(self) -> None:
-        if self._session_cm:
-            await self._session_cm.__aexit__(None, None, None)
-        if self._client_cm:
-            await self._client_cm.__aexit__(None, None, None)
-        self._session = None
-        self._client_cm = None
-        self._session_cm = None
-        self._is_connected = False
+        async with self._lock:
+            if self._session_cm:
+                await self._session_cm.__aexit__(None, None, None)
+            if self._client_cm:
+                await self._client_cm.__aexit__(None, None, None)
+            self._session = None
+            self._client_cm = None
+            self._session_cm = None
+            self._is_connected = False
 
     def is_service_connected(self) -> bool:
         return self._is_connected

@@ -1,5 +1,5 @@
 import os
-from microsoft_agents.hosting.core import AgentApplication, AgentAuthConfiguration
+from microsoft_agents.hosting.core import AgentApplication
 from microsoft_agents.hosting.aiohttp import (
     start_agent_process,
     jwt_authorization_middleware,
