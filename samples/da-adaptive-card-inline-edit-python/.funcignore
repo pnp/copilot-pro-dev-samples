@@ -1,0 +1,16 @@
+.funcignore
+.git*
+.vscode
+local.settings.json
+.DS_Store
+.deployment
+__pycache__
+.venv
+*.pyc
+README.md
+m365agents.yml
+m365agents.*.yml
+/env/
+/appPackage/
+/infra/
+/devTools/
