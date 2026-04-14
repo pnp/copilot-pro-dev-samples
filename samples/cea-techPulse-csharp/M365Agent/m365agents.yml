@@ -83,8 +83,7 @@ provision:
 deploy:
   - uses: cli/runDotnetCommand
     with:
-      args: publish --configuration Release --runtime win-x86 --self-contained
-        cea-techPulse-csharp.csproj
+      args: publish --configuration Release --runtime win-x86 --self-contained cea-techPulse-csharp.csproj
       workingDirectory: ../cea-techPulse-csharp
   # Deploy your application to Azure App Service using the zip deploy feature.
   # For additional details, refer to https://aka.ms/zip-deploy-to-app-services.

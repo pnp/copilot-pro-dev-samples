@@ -37,7 +37,4 @@
       <CopyToPublishDirectory>None</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="appsettings.Development.json" />
-  </ItemGroup>
 </Project>

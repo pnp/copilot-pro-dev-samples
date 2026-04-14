@@ -4,7 +4,7 @@
 
 TechPulse is an intelligent tech news companion that delivers the latest technology news, trends, and insights from trusted sources in the industry. Built with Microsoft 365 Agents SDK and Semantic Kernel, this agent provides real-time access to tech news across multiple categories including AI/ML, startups, cybersecurity, mobile technology, and gaming. The agent understands natural language queries and can search for specific topics, provide trending tech news, and deliver company-specific updates from major tech players like Microsoft, Apple, Google, and more.
 
-![Tech Pulse News](../assets/techPulse.gif)
+![Tech Pulse News](./assets/techPulse.gif)
 
 ## Version history
 
@@ -26,7 +26,7 @@ Version|Date|Comments
 ## Quick Start
 
 ### Debug agent in Microsoft 365 Agents Playground
-1. Ensure your API keys are filled in `appsettings.Playground.json`:
+1. Ensure your API keys are filled in `cea-techPulse-csharp/appsettings.Playground.json`:
     ```json
     "OpenAI": {
       "ApiKey": "<your-openai-api-key>"
@@ -44,7 +44,7 @@ Version|Date|Comments
    * "Search for cybersecurity updates"
 
 ### Debug agent in Teams Web Client
-1. Ensure your API keys are filled in `env/.env.local.user`:
+1. Ensure your API keys are filled in `M365Agent/env/.env.local.user`:
     ```
     SECRET_OPENAI_API_KEY="<your-openai-api-key>"
     SECRET_NEWS_API_KEY="<your-newsapi-key>"
@@ -116,7 +116,7 @@ The following files can be customized and demonstrate an example implementation 
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20cea-techpulse-csharp%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20cea-techPulse-csharp%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 

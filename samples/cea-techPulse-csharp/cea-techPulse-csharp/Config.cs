@@ -2,8 +2,8 @@ namespace cea_techPulse_csharp
 {
     public class ConfigOptions
     {
-        public OpenAIConfigOptions OpenAI { get; set; }
-        public NewsApiConfigOptions NewsApi { get; set; }
+        public required OpenAIConfigOptions OpenAI { get; set; }
+        public required NewsApiConfigOptions NewsApi { get; set; }
     }
 
     /// <summary>
@@ -11,8 +11,8 @@ namespace cea_techPulse_csharp
     /// </summary>
     public class OpenAIConfigOptions
     {
-        public string ApiKey { get; set; }
-        public string DefaultModel = "gpt-4o";
+        public required string ApiKey { get; set; }
+        public string DefaultModel { get; set; } = "gpt-4o";
     }
 
     /// <summary>
@@ -20,6 +20,6 @@ namespace cea_techPulse_csharp
     /// </summary>
     public class NewsApiConfigOptions
     {
-        public string ApiKey { get; set; }
+        public required string ApiKey { get; set; }
     }
 }

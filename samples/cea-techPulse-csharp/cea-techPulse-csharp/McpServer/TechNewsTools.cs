@@ -36,8 +36,7 @@ public static class TechNewsTools
     [McpServerTool(Name = "get_tech_news"), Description("Get latest technology news headlines")]
     public static async Task<string> GetTechNews(
         [Description("Tech category: general, ai, startups, cybersecurity, mobile, or gaming")] string category = "general",
-        [Description("Number of articles (1-20)")] int limit = 10,
-        [Description("Two-letter country code (e.g. us, gb)")] string country = "us")
+        [Description("Number of articles (1-20)")] int limit = 10)
     {
         limit = Math.Clamp(limit, 1, 20);
         var query = TechQueries.GetValueOrDefault(category, TechQueries["general"]);
@@ -50,6 +49,9 @@ public static class TechNewsTools
             ["pageSize"] = limit.ToString(),
             ["domains"] = TechDomains,
         });
+
+        if (data?.ErrorMessage is not null)
+            return $"Unable to fetch tech news: {data.ErrorMessage}";
 
         var articles = data?.Articles;
         if (articles == null || articles.Count == 0)
@@ -80,6 +82,9 @@ public static class TechNewsTools
             ["domains"] = SearchDomains,
         });
 
+        if (data?.ErrorMessage is not null)
+            return $"Unable to search tech news: {data.ErrorMessage}";
+
         var articles = data?.Articles;
         if (articles == null || articles.Count == 0)
             return $"No tech news found for keyword: {keyword} in timeframe: {timeframe}";
@@ -100,6 +105,9 @@ public static class TechNewsTools
             ["country"] = region,
             ["pageSize"] = limit.ToString(),
         });
+
+        if (data?.ErrorMessage is not null)
+            return $"Unable to fetch trending tech: {data.ErrorMessage}";
 
         var articles = data?.Articles;
         if (articles == null || articles.Count == 0)
@@ -127,6 +135,9 @@ public static class TechNewsTools
             ["domains"] = CompanyDomains,
         });
 
+        if (data?.ErrorMessage is not null)
+            return $"Unable to fetch company news: {data.ErrorMessage}";
+
         var articles = data?.Articles;
         if (articles == null || articles.Count == 0)
             return $"No recent news found for company: {company} in timeframe: {timeframe}";
@@ -135,6 +146,16 @@ public static class TechNewsTools
     }
 
     // ── Helpers ──────────────────────────────────────────────────────
+
+    private static readonly HttpClient SharedHttpClient = CreateHttpClient();
+
+    private static HttpClient CreateHttpClient()
+    {
+        var client = new HttpClient();
+        client.DefaultRequestHeaders.Add("User-Agent", "tech-news-mcp-server/1.0");
+        client.DefaultRequestHeaders.Add("Accept", "application/json");
+        return client;
+    }
 
     private static async Task<NewsApiResponse?> MakeRequestAsync(string endpoint, Dictionary<string, string> parameters)
     {
@@ -153,13 +174,31 @@ public static class TechNewsTools
 
         var url = $"{NewsApiBase}/{endpoint}?{queryString}";
 
-        using var httpClient = new HttpClient();
-        var request = new HttpRequestMessage(HttpMethod.Get, url);
-        request.Headers.Add("User-Agent", "tech-news-mcp-server/1.0");
-        request.Headers.Add("Accept", "application/json");
+        HttpResponseMessage response;
+        try
+        {
+            response = await SharedHttpClient.GetAsync(url);
+        }
+        catch (HttpRequestException ex)
+        {
+            return new NewsApiResponse
+            {
+                Status = "error",
+                Articles = [],
+                ErrorMessage = $"Network error contacting NewsAPI: {ex.Message}",
+            };
+        }
 
-        var response = await httpClient.SendAsync(request);
-        response.EnsureSuccessStatusCode();
+        if (!response.IsSuccessStatusCode)
+        {
+            var body = await response.Content.ReadAsStringAsync();
+            return new NewsApiResponse
+            {
+                Status = "error",
+                Articles = [],
+                ErrorMessage = $"NewsAPI returned {(int)response.StatusCode} {response.ReasonPhrase}: {body}",
+            };
+        }
 
         return await response.Content.ReadFromJsonAsync<NewsApiResponse>();
     }
@@ -214,6 +253,12 @@ public class NewsApiResponse
 
     [JsonPropertyName("articles")]
     public List<NewsArticle>? Articles { get; set; }
+
+    /// <summary>
+    /// Populated locally when the HTTP request fails or returns a non-success status.
+    /// </summary>
+    [JsonIgnore]
+    public string? ErrorMessage { get; set; }
 }
 
 public class NewsArticle

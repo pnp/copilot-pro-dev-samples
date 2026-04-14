@@ -15,17 +15,44 @@ builder.Logging.AddConsole();
 // Register Semantic Kernel
 builder.Services.AddKernel();
 
-// Register the AI service of your choice.
-var config = builder.Configuration.Get<ConfigOptions>();
+// Validate and register the AI service of your choice.
+var openAiSection = builder.Configuration.GetRequiredSection("OpenAI");
+var openAiModel = openAiSection["DefaultModel"] ?? "gpt-4o";
+var openAiApiKey = openAiSection["ApiKey"];
+if (string.IsNullOrWhiteSpace(openAiApiKey))
+{
+    throw new InvalidOperationException("Configuration value 'OpenAI:ApiKey' is required.");
+}
 
 builder.Services.AddOpenAIChatCompletion(
-   modelId: config.OpenAI.DefaultModel,
-   apiKey: config.OpenAI.ApiKey
+   modelId: openAiModel,
+   apiKey: openAiApiKey
 );
 
 // Register the TechNewsMcpService
-var mcpServerPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "McpServer"));
-builder.Services.AddSingleton(new TechNewsMcpService(mcpServerPath, config.NewsApi?.ApiKey ?? ""));
+var isLocalMcpDevelopment = builder.Environment.IsDevelopment() || builder.Environment.EnvironmentName == "Playground";
+var configuredMcpServerPath = builder.Configuration["TechNewsMcpServer:Path"];
+var mcpServerPath = isLocalMcpDevelopment
+    ? Path.GetFullPath(Path.Combine(builder.Environment.ContentRootPath, "McpServer"))
+    : string.IsNullOrWhiteSpace(configuredMcpServerPath)
+        ? throw new InvalidOperationException(
+            "TechNews MCP server path is not configured for this environment. " +
+            "Set configuration key 'TechNewsMcpServer:Path' to the deployed MCP server artifact " +
+            "(or connect to the MCP server via a separately hosted supported transport).")
+        : Path.GetFullPath(configuredMcpServerPath);
+if (!Directory.Exists(mcpServerPath) && !File.Exists(mcpServerPath))
+{
+    throw new InvalidOperationException(
+        $"TechNews MCP server path '{mcpServerPath}' does not exist. " +
+        "Ensure the MCP server is packaged with the deployment artifact for local execution, " +
+        "or configure 'TechNewsMcpServer:Path' to a valid deployed location.");
+}
+var newsApiKey = builder.Configuration.GetSection("NewsApi")["ApiKey"];
+if (string.IsNullOrWhiteSpace(newsApiKey))
+{
+    throw new InvalidOperationException("Configuration value 'NewsApi:ApiKey' is required.");
+}
+builder.Services.AddSingleton(new TechNewsMcpService(mcpServerPath, newsApiKey));
 
 // Add AspNet token validation
 builder.Services.AddBotAspNetAuthentication(builder.Configuration);

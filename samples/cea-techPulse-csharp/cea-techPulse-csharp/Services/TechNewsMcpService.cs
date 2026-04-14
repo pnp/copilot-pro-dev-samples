@@ -12,6 +12,7 @@ public class TechNewsMcpService : IAsyncDisposable
 {
     private readonly string _mcpServerPath;
     private readonly string _newsApiKey;
+    private readonly SemaphoreSlim _connectLock = new(1, 1);
     private McpClient? _client;
     private bool _isConnected;
 
@@ -27,28 +28,47 @@ public class TechNewsMcpService : IAsyncDisposable
     {
         if (_isConnected) return;
 
-        var transport = new StdioClientTransport(new StdioClientTransportOptions
+        await _connectLock.WaitAsync();
+        try
         {
-            Command = "dotnet",
-            Arguments = ["run", "--project", _mcpServerPath],
-            EnvironmentVariables = new Dictionary<string, string>
-            {
-                ["NEWS_API_KEY"] = _newsApiKey,
-            },
-        });
+            if (_isConnected) return;
 
-        _client = await McpClient.CreateAsync(transport);
-        _isConnected = true;
+            var transport = new StdioClientTransport(new StdioClientTransportOptions
+            {
+                Command = "dotnet",
+                Arguments = ["run", "--project", _mcpServerPath],
+                EnvironmentVariables = new Dictionary<string, string>
+                {
+                    ["NEWS_API_KEY"] = _newsApiKey,
+                },
+            });
+
+            _client = await McpClient.CreateAsync(transport);
+            _isConnected = true;
+        }
+        finally
+        {
+            _connectLock.Release();
+        }
     }
 
     public async ValueTask DisposeAsync()
     {
-        if (_client is not null)
+        await _connectLock.WaitAsync();
+        try
         {
-            await _client.DisposeAsync();
+            if (_client is not null)
+            {
+                await _client.DisposeAsync();
+            }
+            _client = null;
+            _isConnected = false;
         }
-        _client = null;
-        _isConnected = false;
+        finally
+        {
+            _connectLock.Release();
+        }
+        _connectLock.Dispose();
     }
 
     private async Task<string> CallToolAsync(string name, Dictionary<string, object?> arguments)

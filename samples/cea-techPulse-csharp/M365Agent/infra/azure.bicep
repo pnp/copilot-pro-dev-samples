@@ -4,6 +4,8 @@
 param resourceBaseName string
 @secure()
 param openAIApiKey string
+@secure()
+param newsApiKey string
 
 param webAppSKU string
 
@@ -64,6 +66,10 @@ resource webApp 'Microsoft.Web/sites@2021-02-01' = {
         {
           name: 'OpenAI__ApiKey'
           value: openAIApiKey
+        }
+        {
+          name: 'NewsApi__ApiKey'
+          value: newsApiKey
         }
       ]
       ftpsState: 'FtpsOnly'
