@@ -1,0 +1,72 @@
+[
+    {
+        "name": "pnp-copilot-pro-dev-da-foodbank-friend",
+        "source": "pnp",
+        "title": "Foodbank Friend",
+        "shortDescription": "A declarative agent that helps users in the UK find local food banks, see what items they need, and schedule volunteer donation visits.",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-foodbank-friend",
+        "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-foodbank-friend",
+        "longDescription": [
+            "Foodbank Friend connects users with local food banks across the UK using the GiveFood API, shows what donation items are currently needed, and coordinates volunteer visits by creating Outlook calendar appointments and tracking commitments in a SharePoint list. The agent demonstrates combining multiple action types: Remote MCP Servers for Microsoft 365 services (Outlook Calendar and SharePoint Lists) alongside a traditional OpenAPI connector for an external API."
+        ],
+        "creationDateTime": "2026-01-19",
+        "updateDateTime": "2026-03-25",
+        "products": [
+            "Microsoft 365 Copilot"
+        ],
+        "metadata": [
+            {
+                "key": "PLATFORM",
+                "value": "Node.js"
+            },
+            {
+                "key": "LANGUAGE",
+                "value": "JSON"
+            },
+            {
+                "key": "AGENT-TYPE",
+                "value": "Declarative Agent"
+            },
+            {
+                "key": "API-PLUGIN",
+                "value": "Yes"
+            },
+            {
+                "key": "GRAPH-CONNECTOR",
+                "value": "No"
+            }
+        ],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-foodbank-friend/assets/example.gif",
+                "alt": "Screenshot of the Foodbank Friend declarative agent in action"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "leeford",
+                "pictureUrl": "https://github.com/leeford.png",
+                "name": "Lee Ford"
+            }
+        ],
+        "references": [
+            {
+                "name": "Microsoft 365 Copilot extensibility",
+                "description": "Learn more about extending Microsoft 365 Copilot.",
+                "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+            },
+            {
+                "name": "Declarative agents for Microsoft 365 Copilot",
+                "description": "Learn how to build declarative agents for Microsoft 365 Copilot.",
+                "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+            },
+            {
+                "name": "GiveFood API",
+                "description": "The GiveFood API provides data on UK food banks and their current donation needs.",
+                "url": "https://www.givefood.org.uk/api/"
+            }
+        ]
+    }
+]

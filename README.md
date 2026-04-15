@@ -28,6 +28,7 @@ This repository contains [Microsoft 365 Copilot](https://learn.microsoft.com/mic
 | [Declarative for Microsoft 365 Copilot with an API plugin connected to an API secured with OAuth](./samples/da-repairs-oauth) | This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses the built-in Azure App Service authentication and authorization capabilities (also referred to as Easy Auth) to secure access to APIs. | Waldek Mastykarz |
 | [Document Finder Declarative Agent for Microsoft 365 Copilot Sample](./samples/da-DocFinder) | First Party Declarative Agent Document Finder shared as a sample | Jeremy Thake |
 | [ESA, The Environment Sustainability Agent using Microsoft 365 Copilot](./samples/da-environmentSustainability) | This sample showcases how to build a declarative agent for Microsoft 365 Copilot connected to a SharePoint site as knowledge base, named ESA, the Environment Sustainability Agent. ESA is an intelligent assistant developed to assist organizations in monitoring and optimizing their environmental impact. | Rabia Williams |
+| [Foodbank Friend](./samples/da-foodbank-friend) | A declarative agent that helps users in the UK find local food banks, see what items they need, and schedule volunteer donation visits using the GiveFood API, Outlook Calendar, and SharePoint Lists. | Lee Ford |
 | [Finding and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search - No code!](./samples/da-typespec-AzureAISearch_MsGraph-volunteeringapp) | This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec that allows you to find and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search integration and authentication. | Reshmee Auckloo, Lee Ford |
 | [Finding and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search - No code!](./samples/da-volunteeringapp) | This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to find and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search integration and authentication. | Reshmee Auckloo, Lee Ford |
 | [Geo Locator Game](./samples/da-geolocator-game) | This sample demonstrates how to create a Geo Locator Game declarative agent using Microsoft 365 Copilot. | Ayca Bas, Garry Trinder |
@@ -68,8 +69,8 @@ This repository contains [Microsoft 365 Copilot](https://learn.microsoft.com/mic
 | [Trey Research TypeSpec](./samples/da-typespec-trey-research) | This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects. | Bob German, Rabia Williams |
 | [Visual Mind agent Visualizer Assistant](./samples/da-visual-mind-agent) | The Visual Mind agent is a Visualizer Assistant that will help the user with tasks related to creating clear, structured, and engaging visuals using Mermaid.js code. | Mohammad Amer |
 | [Writing Coach Declarative Agent for Microsoft 365 Copilot Sample](./samples/da-WritingCoach) | First Party Declarative Agent Writing Coach shared as a sample | Phi-Lay NGUYEN |<!-- end_sample_list -->
-</details>
 
+</details>
 
 ## Have issues or questions?
 
@@ -92,8 +93,3 @@ This repository has adopted the [Microsoft Open Source Code of Conduct](https://
 > Sharing is caring!
 
 ![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/README.md)
-
-
-
-
-

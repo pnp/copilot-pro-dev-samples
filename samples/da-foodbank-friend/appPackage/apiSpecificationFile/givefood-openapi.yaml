@@ -1,0 +1,202 @@
+openapi: 3.0.0
+info:
+  title: GiveFood UK API
+  description: UK Food Bank Location and Needs API
+  version: 2.0.0
+servers:
+  - url: https://www.givefood.org.uk/api/2
+paths:
+  /locations/search/:
+    get:
+      operationId: searchFoodBanks
+      summary: Search for food banks near a UK location
+      description: Returns a list of food banks sorted by distance from the specified address, including current needs, contact information, and location details
+      parameters:
+        - name: address
+          in: query
+          required: true
+          description: Full UK address, postcode, or location to search near
+          schema:
+            type: string
+          example: SW1P 4QE
+      responses:
+        "200":
+          description: Successful response with list of nearby food banks
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      format: uuid
+                      description: Unique identifier for the location
+                      example: d3268f14-4e5f-4f3d-8e3a-9b0c5d6e7f8a
+                    type:
+                      type: string
+                      description: Type of location (location or organisation)
+                    slug:
+                      type: string
+                      description: Slugified name of the food bank
+                      example: hull
+                    name:
+                      type: string
+                      description: Name of the food bank location
+                      example: Sid Valley
+                    lat_lng:
+                      type: string
+                      description: Comma separated latitude and longitude
+                      example: 51.4630738,-0.1207938
+                    distance_m:
+                      type: number
+                      format: float
+                      description: Distance from the inputted location to this food bank in metres
+                      example: 5218
+                    distance_mi:
+                      type: number
+                      format: float
+                      description: Distance from the inputted location to this food bank in miles to two decimal places
+                      example: 7.12
+                    address:
+                      type: string
+                      description: Multiline string with full address
+                      example: |
+                        Sidmouth Youth Centre
+                        Manstone Lane
+                        Sidmouth
+                        EX10 9TS
+                    postcode:
+                      type: string
+                      description: UK postcode
+                      example: GU16 7HF
+                    phone:
+                      type: string
+                      description: Phone number
+                      example: "07413858335"
+                    email:
+                      type: string
+                      format: email
+                      description: Email address
+                      example: info@sidvalleyfoodbank.org.uk
+                    politics:
+                      type: object
+                      description: Political constituency information
+                      properties:
+                        parliamentary_constituency:
+                          type: string
+                          description: Name of the parliamentary constituency the food bank's main location is in
+                          example: Vauxhall
+                        mp:
+                          type: string
+                          description: Name of the member of parliament who represents parliamentary constituency that the food bank's main location is in
+                          example: Florence Eshalomi
+                        mp_party:
+                          type: string
+                          description: Political party of the member of parliament
+                          example: Labour
+                        mp_parl_id:
+                          type: integer
+                          description: Parliamentary ID of the member of parliament
+                        ward:
+                          type: string
+                          description: Name of the ward the food bank's main location is in
+                          example: Streatham Hill
+                        district:
+                          type: string
+                          description: Name of the district the food bank's main location is in
+                          example: Lambeth
+                        urls:
+                          type: object
+                          properties:
+                            html:
+                              type: string
+                              format: uri
+                              description: HTML URL of the parliamentary constituency
+                              example: https://www.givefood.org.uk/needs/in/constituency/vauxhall/
+                            self:
+                              type: string
+                              format: uri
+                              description: API URL of the parliamentary constituency
+                              example: https://www.givefood.org.uk/api/2/constituency/vauxhall/
+                    needs:
+                      type: object
+                      description: Current donation needs
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                          description: Unique identifier for needs record
+                        needs:
+                          type: string
+                          description: Linebreak separated list of items in the need. Or 'Unknown', 'Nothing' or 'Facebook' keywords
+                          example: |
+                            UHT Milk
+                            Tinned Tomatoes
+                            Tinned Sweetcorn
+                            Custard
+                        excess:
+                          type: string
+                          description: Linebreak separated list of items the food bank has excess of
+                          example: |
+                            Baked Beans
+                            Pasta
+                        number:
+                          type: integer
+                          description: Number of different items requested by the food bank
+                          example: 6
+                        found:
+                          type: string
+                          format: date-time
+                          description: Date and time of when we found what the food bank needs
+                          example: "2020-11-27T09:55:57.877Z"
+                    foodbank:
+                      type: object
+                      description: Parent food bank organization
+                      properties:
+                        name:
+                          type: string
+                          description: Name of the food bank
+                          example: Sid Valley
+                        slug:
+                          type: string
+                          description: Slugified name
+                          example: sid-valley
+                        network:
+                          type: string
+                          description: Network affiliation
+                          example: Independent
+                        facebook_page:
+                          type: string
+                          description: Facebook page handle
+                        urls:
+                          type: object
+                          properties:
+                            html:
+                              type: string
+                              format: uri
+                              description: HTML URL of the food bank
+                              example: https://www.givefood.org.uk/needs/in/sid-valley/
+                            self:
+                              type: string
+                              format: uri
+                              description: API URL of the food bank
+                              example: https://www.givefood.org.uk/api/2/foodbank/sid-valley/
+                    urls:
+                      type: object
+                      description: Related URLs
+                      properties:
+                        html:
+                          type: string
+                          format: uri
+                          description: HTML URL of the location
+                          example: https://www.givefood.org.uk/needs/at/norwoodbrixton/brixton/
+                        homepage:
+                          type: string
+                          format: uri
+                          description: Food bank's homepage URL
+                          example: https://www.givefood.org.uk/
+
+components:
+  schemas: {}

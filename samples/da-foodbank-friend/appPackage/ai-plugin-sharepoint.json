@@ -1,0 +1,81 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "SharePoint Lists",
+    "description_for_human": "Manage SharePoint sites and lists",
+    "description_for_model": "Plugin for creating and querying SharePoint list items to track volunteer commitments to UK food banks.",
+    "namespace": "sharepoint",
+    "functions": [
+        {
+            "name": "createListItem",
+            "description": "Create a new item in a SharePoint list.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "siteId": {
+                        "type": "string",
+                        "description": "The unique ID of the site",
+                        "default": "${{SHAREPOINT_SITE_ID}}"
+                    },
+                    "listId": {
+                        "type": "string",
+                        "description": "The unique ID of the list",
+                        "default": "${{SHAREPOINT_LIST_ID}}"
+                    },
+                    "fields": {
+                        "type": "string",
+                        "description": "JSON string with field values for the list item (key/value map)"
+                    }
+                },
+                "required": [
+                    "siteId",
+                    "listId",
+                    "fields"
+                ]
+            }
+        },
+        {
+            "name": "listListItems",
+            "description": "Query items from a SharePoint list.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "siteId": {
+                        "type": "string",
+                        "description": "The unique ID of the site",
+                        "default": "${{SHAREPOINT_SITE_ID}}"
+                    },
+                    "listId": {
+                        "type": "string",
+                        "description": "The unique ID of the list",
+                        "default": "${{SHAREPOINT_LIST_ID}}"
+                    },
+                    "filter": {
+                        "type": "string",
+                        "description": "OData filter query (e.g., 'VolunteerName eq \\'Lee Ford\\'')"
+                    }
+                },
+                "required": [
+                    "siteId",
+                    "listId"
+                ]
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{OAUTH_REFERENCE_ID}}"
+            },
+            "spec": {
+                "url": "https://agent365.svc.cloud.microsoft/agents/servers/mcp_SharepointListsTools"
+            },
+            "run_for_functions": [
+                "createListItem",
+                "listListItems"
+            ]
+        }
+    ]
+}

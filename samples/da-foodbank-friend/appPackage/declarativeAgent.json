@@ -1,0 +1,35 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+    "version": "v1.6",
+    "name": "Foodbank Friend",
+    "description": "Your friendly guide to find local food banks, see what they need, and schedule volunteer visits with calendar appointments",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Find food banks near me",
+            "text": "Show me food banks in my area"
+        },
+        {
+            "title": "Schedule a donation",
+            "text": "I want to donate to a food bank"
+        },
+        {
+            "title": "My volunteer commitments",
+            "text": "What have I volunteered for?"
+        }
+    ],
+    "actions": [
+        {
+            "id": "givefood_api",
+            "file": "ai-plugin-givefood.json"
+        },
+        {
+            "id": "sharepoint_mcp",
+            "file": "ai-plugin-sharepoint.json"
+        },
+        {
+            "id": "outlook_mcp",
+            "file": "ai-plugin-outlook.json"
+        }
+    ]
+}

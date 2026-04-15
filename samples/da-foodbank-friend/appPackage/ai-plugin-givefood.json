@@ -1,0 +1,28 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "GiveFood UK API",
+    "description_for_human": "Search UK food banks and their current needs",
+    "description_for_model": "Search for UK food banks by location and retrieve their current donation needs using the GiveFood API",
+    "namespace": "givefood",
+    "functions": [
+        {
+            "name": "searchFoodBanks",
+            "description": "Search for food banks near a UK location using address, postcode, or place name."
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/givefood-openapi.yaml"
+            },
+            "run_for_functions": [
+                "searchFoodBanks"
+            ]
+        }
+    ]
+}
