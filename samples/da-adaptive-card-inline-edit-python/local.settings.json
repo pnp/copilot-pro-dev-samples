@@ -2,6 +2,6 @@
 	"IsEncrypted": false,
 	"Values": {
 		"FUNCTIONS_WORKER_RUNTIME": "python",
-		"API_KEY": "{{SECRET_API_KEY}}"
+		"API_KEY": ""
 	}
 }

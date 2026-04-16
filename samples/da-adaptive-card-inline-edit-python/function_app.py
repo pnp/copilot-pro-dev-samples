@@ -11,17 +11,21 @@ DATA_FILE = Path(__file__).parent / "src" / "repairsData.json"
 
 
 def _is_api_key_valid(req: func.HttpRequest) -> bool:
+    expected_key = os.environ.get("API_KEY", "").strip()
+    if not expected_key:
+        return False
     api_key = (req.headers.get("X-API-Key") or "").strip()
-    print(f"Received API Key: {api_key}")
-    key=os.environ.get("API_KEY", "")
-    print(f"Expected API Key: {key}")
-    return api_key == key
+    return api_key == expected_key
 
 
 @app.route(route="repairs", methods=["GET"])
 def repairs(req: func.HttpRequest) -> func.HttpResponse:
     if not _is_api_key_valid(req):
-        return func.HttpResponse(status_code=401)
+        return func.HttpResponse(
+            json.dumps({"error": "Unauthorized"}),
+            status_code=401,
+            mimetype="application/json",
+        )
 
     try:
         repair_records = json.loads(DATA_FILE.read_text(encoding="utf-8"))
@@ -52,7 +56,11 @@ def repairs(req: func.HttpRequest) -> func.HttpResponse:
 @app.route(route="repairs/{id}", methods=["PATCH"])
 def update_repair(req: func.HttpRequest) -> func.HttpResponse:
     if not _is_api_key_valid(req):
-        return func.HttpResponse(status_code=401)
+        return func.HttpResponse(
+            json.dumps({"error": "Unauthorized"}),
+            status_code=401,
+            mimetype="application/json",
+        )
 
     repair_id = req.route_params.get("id")
 
@@ -85,7 +93,11 @@ def update_repair(req: func.HttpRequest) -> func.HttpResponse:
         repair_records = json.loads(DATA_FILE.read_text(encoding="utf-8"))
         idx = next((i for i, r in enumerate(repair_records) if r["id"] == repair_id), -1)
         if idx < 0:
-            return func.HttpResponse(status_code=404)
+            return func.HttpResponse(
+                json.dumps({"error": "Repair not found"}),
+                status_code=404,
+                mimetype="application/json",
+            )
 
         if new_title is not None:
             repair_records[idx]["title"] = new_title
