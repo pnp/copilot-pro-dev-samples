@@ -1,0 +1,69 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-RubberDuck",
+    "source": "pnp",
+    "title": "Rubber Duck Debugging Assistant",
+    "shortDescription": "AI-powered debugging companion for rubber duck debugging methodology",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-RubberDuck",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-RubberDuck",
+    "longDescription": [
+      "This declarative agent acts as a rubber duck debugging assistant, inspired by the classic programming practice where developers explain their code problems out loud to uncover issues and clarify their thinking. Instead of talking to an actual rubber duck, you can interact with an AI-powered debugging assistant that listens patiently and asks thoughtful questions to guide you toward solutions."
+    ],
+    "creationDateTime": "2026-04-16",
+    "updateDateTime": "2026-04-16",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Microsoft 365 Agents Toolkit"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "N/A"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-RubberDuck/assets/da-RubberDuck-screenshot.png",
+        "alt": "Rubber Duck Debugging Assistant in action"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-RubberDuck/assets/da-RubberDuck.gif",
+        "alt": "Rubber Duck Debugging Assistant conversation flow"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "guidozam",
+        "pictureUrl": "https://github.com/guidozam.png",
+        "name": "Guido Zambarda"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Rubber Duck Debugging",
+        "description": "Learn more about the rubber duck debugging methodology.",
+        "url": "https://en.wikipedia.org/wiki/Rubber_duck_debugging"
+      }
+    ]
+  }
+]

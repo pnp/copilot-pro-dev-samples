@@ -1,0 +1,40 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.25/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.25",
+    "version": "1.0.0",
+    "id": "${{TEAMS_APP_ID}}",
+    "developer": {
+        "name": "GuidoZam",
+        "websiteUrl": "https://iamguidozam.blog",
+        "privacyUrl": "https://iamguidozam.blog/privacy",
+        "termsOfUseUrl": "https://iamguidozam.blog/term-of-use"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Rubber duck${{APP_NAME_SUFFIX}}",
+        "full": "Rubber duck: your personal coding assistant"
+    },
+    "description": {
+        "short": "Rubber duck is your personal coding assistant that helps developers.",
+        "full": "Rubber duck is your personal coding assistant that helps you debug and understand your code by explaining it in simple terms."
+    },
+    "accentColor": "#FFFFFF",
+    "supportsChannelFeatures": "tier1",
+    "composeExtensions": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "copilotAgents": {
+        "declarativeAgents": [            
+            {
+                "id": "declarativeAgent",
+                "file": "declarativeAgent.json"
+            }
+        ]
+    },
+    "validDomains": []
+}
