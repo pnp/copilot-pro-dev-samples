@@ -1,0 +1,15 @@
+# TeamsFx files
+appPackage/build
+env/.env.*.user
+env/.env.local
+
+# User-specific files
+*.user
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
