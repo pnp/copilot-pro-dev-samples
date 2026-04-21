@@ -14,7 +14,7 @@ try:
     _html_template = TEMPLATE_FILE.read_text(encoding="utf-8")
 except Exception:
     logging.exception("Failed to load quiz HTML template")
-    _html_template = ""
+    raise
 
 QUIZ_DATA = {
     "nodejs": {
@@ -130,6 +130,13 @@ def learning_resources(req: func.HttpRequest) -> func.HttpResponse:
 
 @app.route(route="interactiveLearning", methods=["GET"])
 def interactive_learning(req: func.HttpRequest) -> func.HttpResponse:
+    if not _html_template:
+        return func.HttpResponse(
+            "<html><body><h2>Error: Quiz template unavailable.</h2></body></html>",
+            status_code=500,
+            mimetype="text/html",
+        )
+
     topic = (req.params.get("topic") or "Node.js").strip()
     topic_lower = topic.lower()
 

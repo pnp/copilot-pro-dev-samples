@@ -87,7 +87,7 @@ Click "Watch Video" button:
 
 **Step 4: Take Interactive Quiz**
 Click "Interactive Quiz" button:
-- Opens custom HTML quiz in dialog (700px height)
+- Opens custom HTML quiz in dialog (800px height)
 - 3 questions with multiple choice options
 - Instant feedback with explanations
 - Progress bar showing completion
