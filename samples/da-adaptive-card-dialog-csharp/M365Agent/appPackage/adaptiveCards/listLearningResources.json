@@ -63,7 +63,7 @@
     {
       "type": "Action.OpenUrlDialog",
       "title": "Interactive Quiz",
-      "url": "${{OPENAPI_SERVER_URL}}/api/interactiveLearning?topic=${topic}&level=${level}",
+      "url": "${{OPENAPI_SERVER_URL}}/api/interactiveLearning?topic=${uriComponent(topic)}",
       "dialogHeight": "800px",
       "dialogWidth": "600px",
       "dialogTitle": "${topic} - Quiz"

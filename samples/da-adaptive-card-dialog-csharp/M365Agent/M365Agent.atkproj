@@ -4,9 +4,6 @@
     <ProjectGuid>b069b3bd-f6bc-cc40-82ab-3fcc2ea50fdf</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="GenerateApiKey.ps1" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectCapability Include="ProjectConfigurationsDeclaredDimensions" />
     <ProjectCapability Include="DeclarativeAgent" />
   </ItemGroup>

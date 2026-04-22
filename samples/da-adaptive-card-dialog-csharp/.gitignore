@@ -1,7 +1,7 @@
 # TeamsFx files
-appPackage/build
-env/.env.*.user
-env/.env.local
+M365Agent/appPackage/build
+M365Agent/env/.env.*.user
+M365Agent/env/.env.local
 
 # User-specific files
 *.user
