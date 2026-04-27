@@ -4,7 +4,7 @@
 version: v1.8
 
 additionalMetadata:
-  sampleTag: pnp-copilot-pro-dev:cea-techpulse
+  sampleTag: pnp-copilot-pro-dev:cea-techpulse-js
 
 environmentFolderPath: ./env
 
