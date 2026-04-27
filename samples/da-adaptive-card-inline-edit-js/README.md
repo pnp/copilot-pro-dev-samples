@@ -29,7 +29,7 @@ Version|Date|Author|Comments
 * Clone this repository (or download this solution as a .ZIP file then unzip it)
     ```bash
     git clone https://github.com/pnp/copilot-pro-dev-samples.git
-    cd copilot-pro-dev-samples/samples/da-adaptive-card-inline-edit
+    cd copilot-pro-dev-samples/samples/da-adaptive-card-inline-edit-js
     ```
 * Open the project in Visual Studio Code
 * Select the **Microsoft 365 Agents Toolkit** icon on the left in the VS Code toolbar
@@ -122,7 +122,7 @@ The card refreshes with:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-adaptive-card-inline-edit%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-adaptive-card-inline-edit-js%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
@@ -141,6 +141,6 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 - [Adaptive Cards Schema Explorer](https://adaptivecards.io/explorer/)
 - [API Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins)
 
-![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-adaptive-card-inline-edit)
+![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-adaptive-card-inline-edit-js)
 
 ---
