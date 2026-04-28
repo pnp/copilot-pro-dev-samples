@@ -1,4 +1,4 @@
-﻿# Dynamics 365 Advisor Agent
+# Dynamics 365 Advisor Agent
 
 ## Summary
 
@@ -22,7 +22,7 @@ An expert declarative agent for Microsoft 365 Copilot that provides guidance on 
 
 Version|Date|Author|Comments
 -------|----|----|--------
-1.0|April 28, 2026|Muhammad Shahzad Shafique|Initial release
+1.0|January 17, 2025|Muhammad Shahzad Shafique|Initial release
 
 ## Disclaimer
 
@@ -40,15 +40,15 @@ Version|Date|Author|Comments
 
 ## Features
 
-This Declarative Agent demonstrates:
+This agent provides expert guidance on:
 
-* **CRM Architecture Guidance** - Expert advice on Dynamics 365 CRM design and implementation
-* **Entity & Table Design** - Best practices for data model design in Dynamics 365
-* **Security Model Design** - Help with security roles, access levels, and multi-region deployments
-* **Power Automate Integration** - Workflow recommendations and automation patterns
-* **Copilot Studio Use Cases** - Chatbot scenarios for customer service automation
-* **Business Process Optimization** - Sales pipeline and customer service process improvements
-* **Plugin & Custom Code** - Development recommendations and best practices
+* **CRM Architecture Guidance** - Dynamics 365 CRM design and implementation
+* **Entity & Table Design** - Data model design in Dynamics 365
+* **Security Model Design** - Security roles, access levels, and multi-region deployment architecture
+* **Power Automate Integration** - Workflow automation and business process recommendations
+* **Copilot Studio Use Cases** - Customer service chatbot scenarios and implementations
+* **Business Process Optimization** - Sales pipeline and customer service improvements
+* **Plugin & Custom Code** - Custom development guidance and best practices
 
 ## Conversation Starters
 
@@ -63,18 +63,18 @@ The agent includes several conversation starters:
 
 ```
 da-dynamics365-advisor/
-├── src/
-│   ├── declarativeAgent.json    # Agent configuration
-│   ├── instruction.txt           # Agent instructions and behavior
-│   ├── manifest.json             # Teams app manifest
-│   ├── color.png                 # App icon (color)
-│   └── outline.png               # App icon (outline)
-├── assets/
-│   ├── screenshot.png            # Demo screenshot
-│   └── sample.json               # Sample metadata
-├── .env.local.sample             # Environment variables template
-├── .gitignore
-└── README.md
++-- src/
+�   +-- declarativeAgent.json    # Agent configuration
+�   +-- instruction.txt           # Agent instructions and behavior
+�   +-- manifest.json             # Teams app manifest
+�   +-- color.png                 # App icon (color)
+�   +-- outline.png               # App icon (outline)
++-- assets/
+�   +-- screenshot.png            # Demo screenshot
+�   +-- sample.json               # Sample metadata
++-- .env.local.sample             # Environment variables template
++-- .gitignore
++-- README.md
 ```
 
 ## Setup Instructions
@@ -100,10 +100,6 @@ da-dynamics365-advisor/
      - Power Platform solutions
      - Security and access control
      - Business process automation
-
-## Contributing
-
-This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA).
 
 ## Author
 

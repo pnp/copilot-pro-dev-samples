@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "name": "pnp-copilot-pro-dev-da-dynamics365-advisor",
     "source": "pnp",
@@ -7,10 +7,10 @@
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor",
     "longDescription": [
-      "This sample demonstrates a declarative agent for Microsoft 365 Copilot that serves as an expert advisor for Dynamics 365 CRM and Power Platform solutions. The agent provides guidance on CRM architecture decisions, entity and table design, security models, Power Automate workflows, plugin development, Copilot Studio chatbot scenarios, and business process automation. It helps users make informed decisions about Dynamics 365 implementations, security role design for multi-region deployments, sales pipeline optimization, and customer service automation."
+      "A declarative agent that serves as an expert advisor for Dynamics 365 CRM and Power Platform solutions. Provides guidance on CRM architecture decisions, entity and table design, security models, Power Automate workflows, plugin development, Copilot Studio chatbot scenarios, and business process automation. Helps teams design scalable Dynamics 365 implementations with proper security role structures, optimized sales pipelines, and customer service automation."
     ],
-    "creationDateTime": "2026-04-28",
-    "updateDateTime": "2026-04-28",
+    "creationDateTime": "2025-01-17",
+    "updateDateTime": "2025-01-17",
     "products": [
       "Microsoft 365 Copilot",
       "Dynamics 365",
