@@ -1,4 +1,4 @@
-﻿# Microsoft 365 Copilot pro-developer samples
+# Microsoft 365 Copilot pro-developer samples
 
 This repository contains [Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/) samples.
 

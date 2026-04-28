@@ -22,7 +22,7 @@ An expert declarative agent for Microsoft 365 Copilot that provides guidance on 
 
 Version|Date|Author|Comments
 -------|----|----|--------
-1.0|January 17, 2025|Muhammad Shahzad Shafique|Initial release
+1.0|April 28, 2026|Muhammad Shahzad Shafique|Initial release
 
 ## Disclaimer
 

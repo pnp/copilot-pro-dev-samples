@@ -9,8 +9,8 @@
     "longDescription": [
       "A declarative agent that serves as an expert advisor for Dynamics 365 CRM and Power Platform solutions. Provides guidance on CRM architecture decisions, entity and table design, security models, Power Automate workflows, plugin development, Copilot Studio chatbot scenarios, and business process automation. Helps teams design scalable Dynamics 365 implementations with proper security role structures, optimized sales pipelines, and customer service automation."
     ],
-    "creationDateTime": "2025-01-17",
-    "updateDateTime": "2025-01-17",
+    "creationDateTime": "2026-04-28",
+    "updateDateTime": "2026-04-28",
     "products": [
       "Microsoft 365 Copilot",
       "Dynamics 365",
