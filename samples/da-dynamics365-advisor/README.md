@@ -63,15 +63,18 @@ The agent includes several conversation starters:
 
 ```
 da-dynamics365-advisor/
++-- appPackage/
+Â¦   +-- manifest.json              # Teams app manifest
+Â¦   +-- color.png                   # App color icon
+Â¦   +-- outline.png                 # App outline icon
++-- env/
+Â¦   +-- .env.dev                    # Environment variables for dev
 +-- src/
-¦   +-- declarativeAgent.json    # Agent configuration
-¦   +-- instruction.txt           # Agent instructions and behavior
-¦   +-- manifest.json             # Teams app manifest
-¦   +-- color.png                 # App icon (color)
-¦   +-- outline.png               # App icon (outline)
+Â¦   +-- declarativeAgent.json    # Agent configuration
+Â¦   +-- instruction.txt           # Agent instructions and behavior
 +-- assets/
-¦   +-- screenshot.png            # Demo screenshot
-¦   +-- sample.json               # Sample metadata
+Â¦   +-- screenshot.png            # Demo screenshot
+Â¦   +-- sample.json               # Sample metadata
 +-- .env.local.sample             # Environment variables template
 +-- .gitignore
 +-- README.md
