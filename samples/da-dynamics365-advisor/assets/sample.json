@@ -1,0 +1,75 @@
+﻿[
+  {
+    "name": "pnp-copilot-pro-dev-da-dynamics365-advisor",
+    "source": "pnp",
+    "title": "Dynamics 365 Advisor",
+    "shortDescription": "Expert declarative agent for Dynamics 365 CRM, Power Platform, and Copilot solutions guidance",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor",
+    "longDescription": [
+      "This sample demonstrates a declarative agent for Microsoft 365 Copilot that serves as an expert advisor for Dynamics 365 CRM and Power Platform solutions. The agent provides guidance on CRM architecture decisions, entity and table design, security models, Power Automate workflows, plugin development, Copilot Studio chatbot scenarios, and business process automation. It helps users make informed decisions about Dynamics 365 implementations, security role design for multi-region deployments, sales pipeline optimization, and customer service automation."
+    ],
+    "creationDateTime": "2026-04-28",
+    "updateDateTime": "2026-04-28",
+    "products": [
+      "Microsoft 365 Copilot",
+      "Dynamics 365",
+      "Power Platform"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JSON"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/da-dynamics365-advisor/assets/screenshot.png",
+        "alt": "Dynamics 365 Advisor Agent for Microsoft 365 Copilot"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "MrShahzadShafique",
+        "pictureUrl": "https://github.com/MrShahzadShafique.png",
+        "name": "Muhammad Shahzad Shafique"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Build declarative agents for Microsoft 365 Copilot",
+        "description": "Learn more about declarative agents for Microsoft 365 Copilot.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+      },
+      {
+        "name": "Dynamics 365 documentation",
+        "description": "Official Dynamics 365 documentation and best practices.",
+        "url": "https://learn.microsoft.com/dynamics365/"
+      },
+      {
+        "name": "Power Platform documentation",
+        "description": "Learn about Power Apps, Power Automate, and Copilot Studio.",
+        "url": "https://learn.microsoft.com/power-platform/"
+      }
+    ]
+  }
+]

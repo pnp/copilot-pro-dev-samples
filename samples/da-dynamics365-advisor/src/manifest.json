@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.20/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.20",
+  "version": "1.0.1",
+  "id": "${{TEAMS_APP_ID}}",
+  "name": {
+    "short": "Dynamics 365 Advisor",
+    "full": "Dynamics 365 Advisor for Microsoft 365 Copilot"
+  },
+  "developer": {
+    "name": "Dynamics 365 Advisor",
+    "websiteUrl": "https://www.contoso.com",
+    "privacyUrl": "https://www.contoso.com/privacy",
+    "termsOfUseUrl": "https://www.contoso.com/termsofuse"
+  },
+  "description": {
+    "short": "CRM & Power Platform advisory assistant",
+    "full": "Provides expert guidance for Dynamics 365 CRM, Power Platform, automation and Copilot."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#FFFFFF",
+  "copilotAgents": {
+    "declarativeAgents": [
+      {
+        "id": "declarative-agent",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  },
+  "permissions": [
+    "identity"
+  ],
+  "validDomains": []
+}
