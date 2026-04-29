@@ -9,9 +9,9 @@
   },
   "developer": {
     "name": "Dynamics 365 Advisor",
-    "websiteUrl": "https://www.contoso.com",
-    "privacyUrl": "https://www.contoso.com/privacy",
-    "termsOfUseUrl": "https://www.contoso.com/termsofuse"
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/privacy",
+    "termsOfUseUrl": "https://www.example.com/termsofuse"
   },
   "description": {
     "short": "CRM & Power Platform advisory assistant",
