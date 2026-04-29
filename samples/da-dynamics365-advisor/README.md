@@ -61,23 +61,22 @@ The agent includes several conversation starters:
 
 ## File Structure
 
-```
-da-dynamics365-advisor/
-+-- appPackage/
-¦   +-- manifest.json              # Teams app manifest
-¦   +-- color.png                   # App color icon
-¦   +-- outline.png                 # App outline icon
-+-- env/
-¦   +-- .env.dev                    # Environment variables for dev
-+-- src/
-¦   +-- declarativeAgent.json    # Agent configuration
-¦   +-- instruction.txt           # Agent instructions and behavior
-+-- assets/
-¦   +-- screenshot.png            # Demo screenshot
-¦   +-- sample.json               # Sample metadata
-+-- .env.local.sample             # Environment variables template
-+-- .gitignore
-+-- README.md
+```\r
+da-dynamics365-advisor/\r
++-- appPackage/\r
+|   +-- declarativeAgent.json       # Agent configuration\r
+|   +-- instruction.txt              # Agent instructions and behavior\r
+|   +-- manifest.json               # Teams app manifest\r
+|   +-- color.png                    # App color icon\r
+|   +-- outline.png                  # App outline icon\r
++-- env/\r
+|   +-- .env.dev                     # Environment variables for dev\r
++-- assets/\r
+|   +-- screenshot.png               # Demo screenshot\r
+|   +-- sample.json                  # Sample metadata\r
++-- .env.local.sample               # Environment variables template\r
++-- .gitignore\r
++-- README.md\r
 ```
 
 ## Setup Instructions
@@ -87,8 +86,8 @@ da-dynamics365-advisor/
    - Ensure Teams Toolkit extension is installed
 
 2. **Review the Configuration**
-   - Check `src/declarativeAgent.json` for agent settings
-   - Review `src/instruction.txt` for agent behavior
+   - Check `appPackage/declarativeAgent.json` for agent settings
+   - Review `appPackage/instruction.txt` for agent behavior
 
 3. **Run the Agent**
    - Press F5 or use Teams Toolkit to start debugging
