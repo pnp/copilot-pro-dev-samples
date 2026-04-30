@@ -1,0 +1,75 @@
+{
+  "description": "Extracts structured rows from a financial statement with analytics-ready output.",
+  "baseAnalyzerId": "prebuilt-documentAnalyzer",
+  "config": {
+    "returnDetails": true,
+    "enableOcr": true,
+    "enableLayout": true,
+    "estimateFieldSourceAndConfidence": true
+  },
+  "fieldSchema": {
+    "fields": {
+      "columns": {
+        "type": "array",
+        "method": "generate",
+        "description": "Extract the period column headers from the FIRST financial statement table found in the document. Ignore any reconciliation tables, supplemental tables, or non-GAAP tables that may appear on the same page. For each column return: label (English normalized, e.g. 'Q4 2025'), label_raw (original language), period_type (quarter/annual/year_to_date/half_year/nine_months/instant/other), fiscal_year (integer), is_comparative (true for prior period).",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label": {"type": "string", "description": "English normalized period label"},
+            "label_raw": {"type": "string", "description": "Period label in original language"},
+            "period_type": {"type": "string", "description": "quarter/annual/year_to_date/half_year/nine_months/instant/other"},
+            "fiscal_year": {"type": "integer"},
+            "is_comparative": {"type": "boolean"}
+          }
+        }
+      },
+      "rows": {
+        "type": "array",
+        "method": "generate",
+        "description": "Extract EVERY INDIVIDUAL row from the FIRST financial statement table found in the document. Do NOT summarize or combine rows. If the table shows 'Cost of revenue', 'Research and development', 'Marketing and sales', 'General and administrative' as separate line items, extract EACH ONE as its own row. Do NOT collapse them into a single 'Costs and expenses' row. Ignore any GAAP-to-non-GAAP reconciliation tables, supplemental tables, segment tables, or free cash flow calculations that may appear on the same or adjacent pages. CRITICAL RULES: (1) For 'values', return a JSON array string with one entry per column. Each entry is the numeric value (negative for parenthesised amounts like (26,248) becomes -26248), or null for blank cells. Example: '[59893, 48385, 200966, 164501]' or '[null, 94, null, 383]'. (2) For non-English labels, canonical_key MUST be the English IFRS/GAAP equivalent in snake_case (e.g. 货币资金->cash_and_cash_equivalents). (3) section must be one of: current_assets, non_current_assets, assets, current_liabilities, non_current_liabilities, liabilities, equity, revenue, operating_expenses, non_operating, tax, eps, shares, operating_activities, investing_activities, financing_activities, cash_reconciliation, supplemental_disclosures, other.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "label_raw": {
+              "type": "string",
+              "description": "Row label exactly as in the document (original language)"
+            },
+            "label_normalized": {
+              "type": "string",
+              "description": "English IFRS/GAAP equivalent label"
+            },
+            "label_language": {
+              "type": "string",
+              "description": "ISO 639-1: en, zh, ja, etc."
+            },
+            "canonical_key": {
+              "type": "string",
+              "description": "English snake_case key (e.g. revenue, total_assets, net_income)"
+            },
+            "row_type": {
+              "type": "string",
+              "description": "section_header, line_item, subtotal, or total"
+            },
+            "indent_level": {
+              "type": "integer",
+              "description": "0=top level, 1=within section, 2=sub-item"
+            },
+            "section": {
+              "type": "string",
+              "description": "Section identifier (e.g. current_assets, operating_activities)"
+            },
+            "values": {
+              "type": "string",
+              "description": "JSON array of numeric values, one per column. Use null for blank cells. Example: '[59893, 48385, 200966, 164501]' or '[null, null, -26248, -30125]'. Parenthesised amounts become negative."
+            },
+            "values_raw": {
+              "type": "string",
+              "description": "JSON array of display strings, one per column. Example: '[\"59,893\", \"48,385\", \"200,966\", \"164,501\"]' or '[null, null, \"(26,248)\", \"(30,125)\"]'"
+            }
+          }
+        }
+      }
+    }
+  }
+}

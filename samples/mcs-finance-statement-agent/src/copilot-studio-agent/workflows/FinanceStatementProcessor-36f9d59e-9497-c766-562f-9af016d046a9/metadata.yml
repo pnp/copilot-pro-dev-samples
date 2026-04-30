@@ -1,0 +1,30 @@
+﻿jsonFileName: workflows/FinanceStatementProcessor-36f9d59e-9497-c766-562f-9af016d046a9/workflow.json
+workflowId: 36f9d59e-9497-c766-562f-9af016d046a9
+name: Finance Statement Processor
+type: 1
+description: When an agent calls the flow and send back a response.
+subprocess: false
+category: 5
+mode: 0
+scope: 4
+onDemand: false
+triggerOnCreate: false
+triggerOnDelete: false
+asyncAutodelete: false
+syncWorkflowLogOnFailure: false
+stateCode: 1
+statusCode: 2
+runAs: 1
+isTransacted: true
+introducedVersion: 1.0
+isCustomizable:
+  value: true
+  canBeChanged: true
+  managedPropertyLogicalName: iscustomizableanddeletable
+businessProcessType: 0
+isCustomProcessingStepAllowedForOtherPublishers:
+  value: true
+  canBeChanged: true
+  managedPropertyLogicalName: canbedeleted
+modernFlowType: 1
+primaryEntity: none

@@ -1,0 +1,7 @@
+# Name: cash_flow
+kind: Variable
+name: cash_flow
+scope: Conversation
+isExternalInitializationAllowed: false
+isOutputToExternalCallers: true
+initializationTimeoutInMilliseconds: 0

@@ -1,0 +1,14 @@
+# Name: Conversation Start
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendActivity_greeting
+      activity: |-
+        Welcome to the Financial Statement Analyzer.
+
+        Upload a PDF financial report and I'll extract the Income Statement, Balance Sheet, and Cash Flow — with confidence scores and source references.
+
+        After extraction, you can review and correct the data, then I'll generate an Excel workbook for you.

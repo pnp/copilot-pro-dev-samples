@@ -1,0 +1,170 @@
+# Name: HITL Review
+kind: AdaptiveDialog
+modelDescription: HITL review workflow for extracted financial statements. Uses session-state driven loop — backend owns all review logic.
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  actions:
+    - kind: BeginDialog
+      id: buildFirstCard
+      input:
+        binding:
+          jobId: =Global.jobId
+          sessionState: ="{}"
+
+      dialog: cree1_FinanceStatementAnalysisAgent.action.FinancialExtractor-BuildanAdaptiveCardforHITLstatementrev
+      output:
+        binding:
+          cardJson: Topic.cardJson
+          sessionState: Topic.sessionState
+
+    - kind: ConditionGroup
+      id: condGrp_initErr
+      conditions:
+        - id: condItem_noCard
+          condition: =IsBlank(Topic.cardJson)
+          actions:
+            - kind: SendActivity
+              id: sendMsg_initErr
+              activity: Something went wrong loading the review navigator.
+
+            - kind: EndDialog
+              id: endDlg_initErr
+
+    - kind: ConditionGroup
+      id: reviewLoop
+      conditions:
+        - id: condItem_loopEntry
+          condition: =!IsBlank(Topic.cardJson)
+          actions:
+            - kind: AdaptiveCardPrompt
+              id: acPrompt_card
+              card: =Topic.cardJson
+              output:
+                binding:
+                  submitPayload: Topic.submitResult
+
+              outputType:
+                properties:
+                  submitPayload:
+                    displayName: submitPayload
+                    type:
+                      kind: Record
+
+            - kind: SetVariable
+              id: setVar_payload
+              variable: Topic.payload
+              value: =System.Activity.Value
+
+            - kind: BeginDialog
+              id: parseSubmission
+              input:
+                binding:
+                  payload: =JSON(Topic.payload)
+                  sessionState: =Topic.sessionState
+
+              dialog: cree1_FinanceStatementAnalysisAgent.action.FinancialExtractor-ParseanAdaptiveCardsubmissionintocorre
+              output:
+                binding:
+                  action: Topic.action
+                  sessionState: Topic.sessionState
+
+            - kind: ConditionGroup
+              id: condGrp_action
+              conditions:
+                - id: condItem_skip
+                  condition: =Topic.action = "skip"
+                  actions:
+                    - kind: SendActivity
+                      id: sendMsg_skip
+                      activity: Skipping review. Generating your Excel report now...
+
+                    - kind: BeginDialog
+                      id: beginDlg_skipExport
+                      input:
+                        binding:
+                          text: =Global.balance_sheet
+                          text_1: =Global.income_statement
+                          text_2: =Global.cash_flow
+                          text_3: =Global.summary
+                          text_4: =Global.companyName
+
+                      dialog: cree1_FinanceStatementAnalysisAgent.action.FinanceStatementProcessor
+                      output:
+                        binding:
+                          filename: Topic.filename
+                          fileurl: Topic.fileurl
+
+                    - kind: SendActivity
+                      id: sendMsg_skipDone
+                      activity: "Your report is ready: [{Topic.filename}]({Topic.fileurl})"
+
+                    - kind: EndDialog
+                      id: endDlg_skip
+
+                - id: condItem_done
+                  condition: =Topic.action = "done"
+                  actions:
+                    - kind: SendActivity
+                      id: sendMsg_applying
+                      activity: Applying your corrections and generating the Excel report...
+
+                    - kind: BeginDialog
+                      id: beginDlg_applyCorr
+                      input:
+                        binding:
+                          jobId: =Global.jobId
+                          sessionState: =Topic.sessionState
+
+                      dialog: cree1_FinanceStatementAnalysisAgent.action.FinancialExtractor-Applyanalystcorrectionsandreturnfinald
+                      output:
+                        binding:
+                          balanceSheet: Global.balance_sheet
+                          cashFlow: Global.cash_flow
+                          companyName: Global.companyName
+                          incomeStatement: Global.income_statement
+                          summary: Global.summary
+
+                    - kind: BeginDialog
+                      id: beginDlg_doneExport
+                      input:
+                        binding:
+                          text: =Global.balance_sheet
+                          text_1: =Global.income_statement
+                          text_2: =Global.cash_flow
+                          text_3: =Global.summary
+                          text_4: =Global.companyName
+
+                      dialog: cree1_FinanceStatementAnalysisAgent.action.FinanceStatementProcessor
+                      output:
+                        binding:
+                          filename: Topic.filename
+                          fileurl: Topic.fileurl
+
+                    - kind: SendActivity
+                      id: sendMsg_doneDone
+                      activity: "Your corrected report is ready: [{Topic.filename}]({Topic.fileurl})"
+
+                    - kind: EndDialog
+                      id: endDlg_done
+
+              elseActions:
+                - kind: BeginDialog
+                  id: buildNextCard
+                  input:
+                    binding:
+                      jobId: =Global.jobId
+                      sessionState: =Topic.sessionState
+
+                  dialog: cree1_FinanceStatementAnalysisAgent.action.FinancialExtractor-BuildanAdaptiveCardforHITLstatementrev
+                  output:
+                    binding:
+                      cardJson: Topic.cardJson
+                      sessionState: Topic.sessionState
+
+                - kind: GotoAction
+                  id: goto_reviewLoop
+                  actionId: reviewLoop
+
+inputType: {}
+outputType: {}

@@ -1,0 +1,886 @@
+{
+  "DocumentMetadata": {
+    "Pages": 1
+  },
+  "JobStatus": "SUCCEEDED",
+  "Blocks": [
+    {
+      "Id": "block-page-001",
+      "BlockType": "PAGE",
+      "Page": 1,
+      "Confidence": 99.0,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 1.0,
+          "Height": 1.0,
+          "Left": 0.0,
+          "Top": 0.0
+        },
+        "Polygon": [
+          {"X": 0.0, "Y": 0.0},
+          {"X": 1.0, "Y": 0.0},
+          {"X": 1.0, "Y": 1.0},
+          {"X": 0.0, "Y": 1.0}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "block-line-heading",
+            "block-line-units",
+            "block-table-001"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "block-line-heading",
+      "BlockType": "LINE",
+      "Page": 1,
+      "Confidence": 99.12,
+      "Text": "CONSOLIDATED BALANCE SHEET",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.45,
+          "Height": 0.022,
+          "Left": 0.05,
+          "Top": 0.04
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.04},
+          {"X": 0.50, "Y": 0.04},
+          {"X": 0.50, "Y": 0.062},
+          {"X": 0.05, "Y": 0.062}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "block-word-consolidated",
+            "block-word-balance",
+            "block-word-sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-consolidated",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.3,
+      "Text": "CONSOLIDATED",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.15,
+          "Height": 0.02,
+          "Left": 0.05,
+          "Top": 0.04
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.04},
+          {"X": 0.20, "Y": 0.04},
+          {"X": 0.20, "Y": 0.06},
+          {"X": 0.05, "Y": 0.06}
+        ]
+      }
+    },
+    {
+      "Id": "block-word-balance",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.5,
+      "Text": "BALANCE",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.10,
+          "Height": 0.02,
+          "Left": 0.21,
+          "Top": 0.04
+        },
+        "Polygon": [
+          {"X": 0.21, "Y": 0.04},
+          {"X": 0.31, "Y": 0.04},
+          {"X": 0.31, "Y": 0.06},
+          {"X": 0.21, "Y": 0.06}
+        ]
+      }
+    },
+    {
+      "Id": "block-word-sheet",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.7,
+      "Text": "SHEET",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.08,
+          "Height": 0.02,
+          "Left": 0.32,
+          "Top": 0.04
+        },
+        "Polygon": [
+          {"X": 0.32, "Y": 0.04},
+          {"X": 0.40, "Y": 0.04},
+          {"X": 0.40, "Y": 0.06},
+          {"X": 0.32, "Y": 0.06}
+        ]
+      }
+    },
+    {
+      "Id": "block-line-units",
+      "BlockType": "LINE",
+      "Page": 1,
+      "Confidence": 98.45,
+      "Text": "(In millions)",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.15,
+          "Height": 0.018,
+          "Left": 0.05,
+          "Top": 0.068
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.068},
+          {"X": 0.20, "Y": 0.068},
+          {"X": 0.20, "Y": 0.086},
+          {"X": 0.05, "Y": 0.086}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "block-word-in",
+            "block-word-millions"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-in",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 98.1,
+      "Text": "(In",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.04,
+          "Height": 0.018,
+          "Left": 0.05,
+          "Top": 0.068
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.068},
+          {"X": 0.09, "Y": 0.068},
+          {"X": 0.09, "Y": 0.086},
+          {"X": 0.05, "Y": 0.086}
+        ]
+      }
+    },
+    {
+      "Id": "block-word-millions",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 98.9,
+      "Text": "millions)",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.10,
+          "Height": 0.018,
+          "Left": 0.10,
+          "Top": 0.068
+        },
+        "Polygon": [
+          {"X": 0.10, "Y": 0.068},
+          {"X": 0.20, "Y": 0.068},
+          {"X": 0.20, "Y": 0.086},
+          {"X": 0.10, "Y": 0.086}
+        ]
+      }
+    },
+    {
+      "Id": "block-table-001",
+      "BlockType": "TABLE",
+      "EntityTypes": ["STRUCTURED_TABLE"],
+      "Page": 1,
+      "Confidence": 97.85,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.60,
+          "Height": 0.30,
+          "Left": 0.05,
+          "Top": 0.10
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.10},
+          {"X": 0.65, "Y": 0.10},
+          {"X": 0.65, "Y": 0.40},
+          {"X": 0.05, "Y": 0.40}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": [
+            "block-cell-r1c1",
+            "block-cell-r1c2",
+            "block-cell-r1c3",
+            "block-cell-r2c1",
+            "block-cell-r2c2",
+            "block-cell-r2c3",
+            "block-cell-r3c1",
+            "block-cell-r3c2",
+            "block-cell-r3c3",
+            "block-cell-r4c1",
+            "block-cell-r4c2",
+            "block-cell-r4c3"
+          ]
+        },
+        {
+          "Type": "TABLE_TITLE",
+          "Ids": [
+            "block-line-heading"
+          ]
+        },
+        {
+          "Type": "TABLE_FOOTER",
+          "Ids": [
+            "block-line-units"
+          ]
+        }
+      ]
+    },
+    {
+      "Id": "block-cell-r1c1",
+      "BlockType": "CELL",
+      "EntityTypes": ["COLUMN_HEADER"],
+      "Page": 1,
+      "Confidence": 99.0,
+      "RowIndex": 1,
+      "ColumnIndex": 1,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.25,
+          "Height": 0.05,
+          "Left": 0.05,
+          "Top": 0.10
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.10},
+          {"X": 0.30, "Y": 0.10},
+          {"X": 0.30, "Y": 0.15},
+          {"X": 0.05, "Y": 0.15}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r1c2",
+      "BlockType": "CELL",
+      "EntityTypes": ["COLUMN_HEADER"],
+      "Page": 1,
+      "Confidence": 99.0,
+      "RowIndex": 1,
+      "ColumnIndex": 2,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.17,
+          "Height": 0.05,
+          "Left": 0.30,
+          "Top": 0.10
+        },
+        "Polygon": [
+          {"X": 0.30, "Y": 0.10},
+          {"X": 0.47, "Y": 0.10},
+          {"X": 0.47, "Y": 0.15},
+          {"X": 0.30, "Y": 0.15}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-2024"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-2024",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.8,
+      "Text": "2024",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.06,
+          "Height": 0.03,
+          "Left": 0.355,
+          "Top": 0.11
+        },
+        "Polygon": [
+          {"X": 0.355, "Y": 0.11},
+          {"X": 0.415, "Y": 0.11},
+          {"X": 0.415, "Y": 0.14},
+          {"X": 0.355, "Y": 0.14}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r1c3",
+      "BlockType": "CELL",
+      "EntityTypes": ["COLUMN_HEADER"],
+      "Page": 1,
+      "Confidence": 99.0,
+      "RowIndex": 1,
+      "ColumnIndex": 3,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.18,
+          "Height": 0.05,
+          "Left": 0.47,
+          "Top": 0.10
+        },
+        "Polygon": [
+          {"X": 0.47, "Y": 0.10},
+          {"X": 0.65, "Y": 0.10},
+          {"X": 0.65, "Y": 0.15},
+          {"X": 0.47, "Y": 0.15}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-2023"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-2023",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.7,
+      "Text": "2023",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.06,
+          "Height": 0.03,
+          "Left": 0.525,
+          "Top": 0.11
+        },
+        "Polygon": [
+          {"X": 0.525, "Y": 0.11},
+          {"X": 0.585, "Y": 0.11},
+          {"X": 0.585, "Y": 0.14},
+          {"X": 0.525, "Y": 0.14}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r2c1",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 98.5,
+      "RowIndex": 2,
+      "ColumnIndex": 1,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.25,
+          "Height": 0.05,
+          "Left": 0.05,
+          "Top": 0.15
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.15},
+          {"X": 0.30, "Y": 0.15},
+          {"X": 0.30, "Y": 0.20},
+          {"X": 0.05, "Y": 0.20}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-total", "block-word-assets"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-total",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.1,
+      "Text": "Total",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.07,
+          "Height": 0.03,
+          "Left": 0.06,
+          "Top": 0.16
+        },
+        "Polygon": [
+          {"X": 0.06, "Y": 0.16},
+          {"X": 0.13, "Y": 0.16},
+          {"X": 0.13, "Y": 0.19},
+          {"X": 0.06, "Y": 0.19}
+        ]
+      }
+    },
+    {
+      "Id": "block-word-assets",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.4,
+      "Text": "Assets",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.08,
+          "Height": 0.03,
+          "Left": 0.14,
+          "Top": 0.16
+        },
+        "Polygon": [
+          {"X": 0.14, "Y": 0.16},
+          {"X": 0.22, "Y": 0.16},
+          {"X": 0.22, "Y": 0.19},
+          {"X": 0.14, "Y": 0.19}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r2c2",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 98.3,
+      "RowIndex": 2,
+      "ColumnIndex": 2,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.17,
+          "Height": 0.05,
+          "Left": 0.30,
+          "Top": 0.15
+        },
+        "Polygon": [
+          {"X": 0.30, "Y": 0.15},
+          {"X": 0.47, "Y": 0.15},
+          {"X": 0.47, "Y": 0.20},
+          {"X": 0.30, "Y": 0.20}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-total-assets-2024"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-total-assets-2024",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 97.9,
+      "Text": "125,435",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.09,
+          "Height": 0.03,
+          "Left": 0.335,
+          "Top": 0.16
+        },
+        "Polygon": [
+          {"X": 0.335, "Y": 0.16},
+          {"X": 0.425, "Y": 0.16},
+          {"X": 0.425, "Y": 0.19},
+          {"X": 0.335, "Y": 0.19}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r2c3",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 98.1,
+      "RowIndex": 2,
+      "ColumnIndex": 3,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.18,
+          "Height": 0.05,
+          "Left": 0.47,
+          "Top": 0.15
+        },
+        "Polygon": [
+          {"X": 0.47, "Y": 0.15},
+          {"X": 0.65, "Y": 0.15},
+          {"X": 0.65, "Y": 0.20},
+          {"X": 0.47, "Y": 0.20}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-total-assets-2023"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-total-assets-2023",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 97.6,
+      "Text": "118,290",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.09,
+          "Height": 0.03,
+          "Left": 0.495,
+          "Top": 0.16
+        },
+        "Polygon": [
+          {"X": 0.495, "Y": 0.16},
+          {"X": 0.585, "Y": 0.16},
+          {"X": 0.585, "Y": 0.19},
+          {"X": 0.495, "Y": 0.19}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r3c1",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 98.7,
+      "RowIndex": 3,
+      "ColumnIndex": 1,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.25,
+          "Height": 0.05,
+          "Left": 0.05,
+          "Top": 0.20
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.20},
+          {"X": 0.30, "Y": 0.20},
+          {"X": 0.30, "Y": 0.25},
+          {"X": 0.05, "Y": 0.25}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-revenue"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-revenue",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.6,
+      "Text": "Revenue",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.09,
+          "Height": 0.03,
+          "Left": 0.06,
+          "Top": 0.21
+        },
+        "Polygon": [
+          {"X": 0.06, "Y": 0.21},
+          {"X": 0.15, "Y": 0.21},
+          {"X": 0.15, "Y": 0.24},
+          {"X": 0.06, "Y": 0.24}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r3c2",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 97.8,
+      "RowIndex": 3,
+      "ColumnIndex": 2,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.17,
+          "Height": 0.05,
+          "Left": 0.30,
+          "Top": 0.20
+        },
+        "Polygon": [
+          {"X": 0.30, "Y": 0.20},
+          {"X": 0.47, "Y": 0.20},
+          {"X": 0.47, "Y": 0.25},
+          {"X": 0.30, "Y": 0.25}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-revenue-2024"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-revenue-2024",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 97.5,
+      "Text": "59,893",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.08,
+          "Height": 0.03,
+          "Left": 0.345,
+          "Top": 0.21
+        },
+        "Polygon": [
+          {"X": 0.345, "Y": 0.21},
+          {"X": 0.425, "Y": 0.21},
+          {"X": 0.425, "Y": 0.24},
+          {"X": 0.345, "Y": 0.24}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r3c3",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 97.9,
+      "RowIndex": 3,
+      "ColumnIndex": 3,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.18,
+          "Height": 0.05,
+          "Left": 0.47,
+          "Top": 0.20
+        },
+        "Polygon": [
+          {"X": 0.47, "Y": 0.20},
+          {"X": 0.65, "Y": 0.20},
+          {"X": 0.65, "Y": 0.25},
+          {"X": 0.47, "Y": 0.25}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-revenue-2023"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-revenue-2023",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 97.3,
+      "Text": "54,210",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.08,
+          "Height": 0.03,
+          "Left": 0.505,
+          "Top": 0.21
+        },
+        "Polygon": [
+          {"X": 0.505, "Y": 0.21},
+          {"X": 0.585, "Y": 0.21},
+          {"X": 0.585, "Y": 0.24},
+          {"X": 0.505, "Y": 0.24}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r4c1",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 98.9,
+      "RowIndex": 4,
+      "ColumnIndex": 1,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.25,
+          "Height": 0.05,
+          "Left": 0.05,
+          "Top": 0.25
+        },
+        "Polygon": [
+          {"X": 0.05, "Y": 0.25},
+          {"X": 0.30, "Y": 0.25},
+          {"X": 0.30, "Y": 0.30},
+          {"X": 0.05, "Y": 0.30}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-net", "block-word-income"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-net",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.2,
+      "Text": "Net",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.04,
+          "Height": 0.03,
+          "Left": 0.06,
+          "Top": 0.26
+        },
+        "Polygon": [
+          {"X": 0.06, "Y": 0.26},
+          {"X": 0.10, "Y": 0.26},
+          {"X": 0.10, "Y": 0.29},
+          {"X": 0.06, "Y": 0.29}
+        ]
+      }
+    },
+    {
+      "Id": "block-word-income",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 99.5,
+      "Text": "Income",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.08,
+          "Height": 0.03,
+          "Left": 0.11,
+          "Top": 0.26
+        },
+        "Polygon": [
+          {"X": 0.11, "Y": 0.26},
+          {"X": 0.19, "Y": 0.26},
+          {"X": 0.19, "Y": 0.29},
+          {"X": 0.11, "Y": 0.29}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r4c2",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 97.6,
+      "RowIndex": 4,
+      "ColumnIndex": 2,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.17,
+          "Height": 0.05,
+          "Left": 0.30,
+          "Top": 0.25
+        },
+        "Polygon": [
+          {"X": 0.30, "Y": 0.25},
+          {"X": 0.47, "Y": 0.25},
+          {"X": 0.47, "Y": 0.30},
+          {"X": 0.30, "Y": 0.30}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-net-income-2024"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-net-income-2024",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 96.8,
+      "Text": "15,320",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.08,
+          "Height": 0.03,
+          "Left": 0.345,
+          "Top": 0.26
+        },
+        "Polygon": [
+          {"X": 0.345, "Y": 0.26},
+          {"X": 0.425, "Y": 0.26},
+          {"X": 0.425, "Y": 0.29},
+          {"X": 0.345, "Y": 0.29}
+        ]
+      }
+    },
+    {
+      "Id": "block-cell-r4c3",
+      "BlockType": "CELL",
+      "Page": 1,
+      "Confidence": 97.2,
+      "RowIndex": 4,
+      "ColumnIndex": 3,
+      "RowSpan": 1,
+      "ColumnSpan": 1,
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.18,
+          "Height": 0.05,
+          "Left": 0.47,
+          "Top": 0.25
+        },
+        "Polygon": [
+          {"X": 0.47, "Y": 0.25},
+          {"X": 0.65, "Y": 0.25},
+          {"X": 0.65, "Y": 0.30},
+          {"X": 0.47, "Y": 0.30}
+        ]
+      },
+      "Relationships": [
+        {
+          "Type": "CHILD",
+          "Ids": ["block-word-net-income-2023"]
+        }
+      ]
+    },
+    {
+      "Id": "block-word-net-income-2023",
+      "BlockType": "WORD",
+      "Page": 1,
+      "Confidence": 96.5,
+      "Text": "12,890",
+      "Geometry": {
+        "BoundingBox": {
+          "Width": 0.08,
+          "Height": 0.03,
+          "Left": 0.505,
+          "Top": 0.26
+        },
+        "Polygon": [
+          {"X": 0.505, "Y": 0.26},
+          {"X": 0.585, "Y": 0.26},
+          {"X": 0.585, "Y": 0.29},
+          {"X": 0.505, "Y": 0.29}
+        ]
+      }
+    }
+  ]
+}

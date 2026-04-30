@@ -1,0 +1,30 @@
+﻿jsonFileName: workflows/DelayedPoll-8997e33f-5c86-55cd-708c-8818dff10d9e/workflow.json
+workflowId: 8997e33f-5c86-55cd-708c-8818dff10d9e
+name: Delayed Poll
+type: 1
+description: When an agent calls the flow and send back a response.
+subprocess: false
+category: 5
+mode: 0
+scope: 4
+onDemand: false
+triggerOnCreate: false
+triggerOnDelete: false
+asyncAutodelete: false
+syncWorkflowLogOnFailure: false
+stateCode: 1
+statusCode: 2
+runAs: 1
+isTransacted: true
+introducedVersion: 1.0
+isCustomizable:
+  value: true
+  canBeChanged: true
+  managedPropertyLogicalName: iscustomizableanddeletable
+businessProcessType: 0
+isCustomProcessingStepAllowedForOtherPublishers:
+  value: true
+  canBeChanged: true
+  managedPropertyLogicalName: canbedeleted
+modernFlowType: 1
+primaryEntity: none

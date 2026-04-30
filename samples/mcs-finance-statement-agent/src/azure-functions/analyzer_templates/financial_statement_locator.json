@@ -1,0 +1,69 @@
+{
+  "description": "Identifies financial statements (Balance Sheet, Income Statement, Cash Flow) in a document. Works for any language, any accounting standard.",
+  "baseAnalyzerId": "prebuilt-documentAnalyzer",
+  "config": {
+    "returnDetails": true
+  },
+  "fieldSchema": {
+    "fields": {
+      "statements": {
+        "type": "array",
+        "method": "generate",
+        "description": "Identify ALL financial statements in this document. Look for: balance_sheet (Statement of Financial Position / Balance Sheet / 资产负债表 / 貸借対照表), income_statement (Income Statement / P&L / Statement of Operations / 利润表 / 損益計算書), cash_flow (Cash Flow Statement / 现金流量表 / キャッシュ・フロー計算書). IMPORTANT: prefer the CONSOLIDATED version over parent/standalone. Each statement must be followed by actual numeric financial data (not just a heading in a table of contents). For each statement found, return all of the following fields.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "statement_type": {
+              "type": "string",
+              "description": "One of: balance_sheet, income_statement, cash_flow"
+            },
+            "title_raw": {
+              "type": "string",
+              "description": "Statement heading exactly as it appears in the document (original language)"
+            },
+            "title_english": {
+              "type": "string",
+              "description": "English translation of the statement title (e.g. 'Consolidated Balance Sheet')"
+            },
+            "page_start": {
+              "type": "integer",
+              "description": "First page number where this statement's data begins"
+            },
+            "page_end": {
+              "type": "integer",
+              "description": "Last page number where this statement's data ends"
+            },
+            "company_name": {
+              "type": "string",
+              "description": "Normalized English company name"
+            },
+            "company_name_raw": {
+              "type": "string",
+              "description": "Company name as it appears in the document (original language)"
+            },
+            "report_language": {
+              "type": "string",
+              "description": "ISO 639-1 language code (e.g. 'en', 'zh', 'ja')"
+            },
+            "currency": {
+              "type": "string",
+              "description": "ISO 4217 currency code (e.g. 'USD', 'CNY', 'JPY'). Normalize RMB to CNY."
+            },
+            "unit": {
+              "type": "string",
+              "description": "Unit of measurement: ones, thousands, millions, billions. Chinese 元=ones, 万元=ten_thousands, 千元=thousands."
+            },
+            "is_consolidated": {
+              "type": "boolean",
+              "description": "true if this is a consolidated statement (合并/Consolidated), false if parent/standalone"
+            },
+            "accounting_standard": {
+              "type": "string",
+              "description": "One of: US_GAAP, IFRS, Chinese_ASBE, Japanese_GAAP, other"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,170 @@
+# Name: Document ProcessorV2
+kind: AdaptiveDialog
+modelDescription: Handles PDF financial statement extraction. Triggered when user uploads a file or asks to extract a financial statement. Uses Question node with FilePrebuiltEntity to collect the file (supports >5MB uploads). Submits to extraction API, polls for results, presents summary, then routes to HITL review.
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - extract financial statements
+      - analyze this report
+      - process this PDF
+      - file review
+
+  actions:
+    # Step 1: Collect file via Question node (FilePrebuiltEntity)
+    # If user already attached a file, this auto-fills — no extra prompt.
+    # If no file attached, the agent asks for one.
+    # This is the proven pattern for >5MB file uploads.
+    - kind: Question
+      id: question_collectFile
+      interruptionPolicy:
+        allowInterruption: true
+      variable: init:Topic.UploadedFile
+      prompt: Please upload your PDF financial report.
+      entity: FilePrebuiltEntity
+
+    - kind: SendActivity
+      id: sendActivity_processing
+      activity: "Processing **{First(System.Activity.Attachments).Name}**. This may take up to a minute..."
+
+    # Step 2: Submit the file to the extraction API
+    # Topic.UploadedFile holds the file reference from the Question node.
+    # fileName comes from System.Activity.Attachments.Name.
+    - kind: BeginDialog
+      id: submitExtraction
+      input:
+        binding:
+          file: =Topic.UploadedFile
+          fileName: =First(System.Activity.Attachments).Name
+
+      dialog: cree1_FinanceStatementAnalysisAgent.action.FinancialExtractor-SubmitaPDFforfinancialstatementextract
+      output:
+        binding:
+          jobId: Global.jobId
+          status: Topic.status
+
+    # Step 3: Check if submission succeeded
+    - kind: ConditionGroup
+      id: conditionGroup_submitCheck
+      conditions:
+        - id: conditionItem_submitFailed
+          condition: =IsBlank(Global.jobId)
+          actions:
+            - kind: SendActivity
+              id: sendActivity_submitError
+              activity: |-
+                I wasn't able to submit your document for extraction. This could mean:
+                - The file format isn't supported (PDF required)
+                - The extraction service is temporarily unavailable
+
+                Please try uploading again, or try a different file.
+
+            - kind: EndDialog
+              id: endDialog_submitError
+
+    - kind: SendActivity
+      id: sendActivity_submitted
+      activity: "Document submitted successfully. Extracting financial statements..."
+
+    # Step 4: Polling loop (max 20 polls × 30s delay = ~10 minutes)
+    - kind: SetVariable
+      id: setVar_pollCount
+      variable: Topic.pollCount
+      value: =0
+
+    - kind: ConditionGroup
+      id: conditionGroup_pollLoop
+      conditions:
+        - id: conditionItem_polling
+          condition: =Topic.status = "processing" && Topic.pollCount < 20
+          actions:
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_delay
+              input: {}
+              output: {}
+              flowId: 8997e33f-5c86-55cd-708c-8818dff10d9e
+
+            - kind: BeginDialog
+              id: beginDialog_poll
+              input:
+                binding:
+                  jobId: =Global.jobId
+
+              dialog: cree1_FinanceStatementAnalysisAgent.action.FinancialExtractor-Pollforextractionresults
+              output:
+                binding:
+                  balanceSheet: Global.balance_sheet
+                  cashFlow: Global.cash_flow
+                  companyName: Global.companyName
+                  confidence: Global.confidence
+                  incomeStatement: Global.income_statement
+                  jobId: Global.jobId
+                  status: Topic.status
+                  summary: Global.summary
+
+            - kind: SetVariable
+              id: setVar_incrementPoll
+              variable: Topic.pollCount
+              value: =Topic.pollCount + 1
+
+            - kind: GotoAction
+              id: goto_pollLoop
+              actionId: conditionGroup_pollLoop
+
+    # Step 5: Check if polling timed out
+    - kind: ConditionGroup
+      id: conditionGroup_timeoutCheck
+      conditions:
+        - id: conditionItem_timedOut
+          condition: =Topic.status = "processing"
+          actions:
+            - kind: SendActivity
+              id: sendActivity_timeout
+              activity: |-
+                The extraction is taking longer than expected. This can happen with very large or complex documents.
+
+                Your job ID is **{Global.jobId}** — you can ask me to check the status later.
+
+            - kind: EndDialog
+              id: endDialog_timeout
+
+    # Step 6: Check if extraction failed
+    - kind: ConditionGroup
+      id: conditionGroup_failCheck
+      conditions:
+        - id: conditionItem_failed
+          condition: =Topic.status = "failed" || (IsBlank(Global.balance_sheet) && IsBlank(Global.income_statement) && IsBlank(Global.cash_flow))
+          actions:
+            - kind: SendActivity
+              id: sendActivity_failed
+              activity: |-
+                The extraction could not complete successfully. The document may not contain recognizable financial statements, or it may be in a format the extractor can't process.
+
+                Please verify the file contains readable financial statements and try again.
+
+            - kind: EndDialog
+              id: endDialog_failed
+
+    # Step 7: Extraction succeeded — show summary
+    - kind: SendActivity
+      id: sendActivity_summary
+      activity: |-
+        Extraction complete for **{Global.companyName}**.
+
+        **Confidence:** {Global.confidence}
+
+        **Summary:** {Global.summary}
+
+        The financial statements (Income Statement, Balance Sheet, Cash Flow) have been extracted and are ready for review.
+
+    # Step 8: Route to HITL review (navigator card has "Start Review" deep link)
+    - kind: BeginDialog
+      id: beginDialog_hitlReview
+      dialog: cree1_FinanceStatementAnalysisAgent.topic.HITLReview_wX5
+
+    - kind: CancelAllDialogs
+      id: cancelAll_done
+
+inputType: {}
+outputType: {}
