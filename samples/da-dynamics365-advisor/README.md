@@ -32,11 +32,14 @@ Version|Date|Author|Comments
 
 ## Minimal Path to Awesome
 
-* Clone this repository
-* Navigate to the `samples/da-dynamics365-advisor` folder
-* Open the folder with Visual Studio Code
-* Press F5 to run the application with Teams Toolkit
-* Follow the prompts to add the declarative agent to Microsoft 365 Copilot
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor) then unzip it)
+* Open the `samples/da-dynamics365-advisor` folder in Visual Studio Code
+* Select the Teams Toolkit icon on the left in the VS Code toolbar
+* In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
+* Create the Teams app by selecting **Provision** in the "Lifecycle" section
+* Select `Preview in Copilot (Edge)` or `Preview in Copilot (Chrome)` from the launch configuration dropdown
+* Once the Copilot app is loaded in the browser, select the "..." menu and select **Copilot chats**. You will see the Dynamics 365 Advisor agent on the right rail
+* Select the agent and start asking questions about Dynamics 365 CRM, Power Platform, or Copilot Studio
 
 ## Features
 
