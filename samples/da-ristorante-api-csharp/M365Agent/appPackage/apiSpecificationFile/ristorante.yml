@@ -1,0 +1,128 @@
+openapi: 3.0.0
+info:
+  title: Il Ristorante menu API
+  version: 1.0.0
+  description: API to retrieve dishes and place orders for Il Ristorante.
+servers:
+  - url: ${{OPENAPI_SERVER_URL}}/api
+    description: Il Ristorante API server
+paths:
+  /dishes:
+    get:
+      operationId: getDishes
+      summary: Get all available dishes
+      description: Retrieve a list of all dishes, optionally filtered by course and allergens.
+      parameters:
+        - in: query
+          name: course
+          schema:
+            type: string
+          description: Filter dishes by course. Can be breakfast, lunch, or dinner.
+        - in: query
+          name: name
+          schema:
+            type: string
+          description: Find dishes by name.
+        - in: query
+          name: type
+          schema:
+            type: string
+          description: Filter dishes by type. Can be dish or drink.
+        - in: query
+          name: allergens
+          schema:
+            type: array
+            items:
+              type: string
+          description: Filter dishes to exclude specific allergens.
+      responses:
+        '200':
+          description: A list of dishes.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dish'
+
+  /orders:
+    post:
+      operationId: placeOrder
+      summary: Place an order
+      description: Place an order by providing an array of dishes and quantities.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dishes:
+                  type: array
+                  description: List of items to order. Each item consists of a dish and a quantity.
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        description: The name of the dish to order.
+                      quantity:
+                        type: integer
+                        description: The quantity of the dish to order.
+                    required:
+                      - name
+                      - quantity
+              required:
+                - dishes
+      responses:
+        '201':
+          description: Order placed successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  order_id:
+                    type: integer
+                  status:
+                    type: string
+                    example: confirmed
+                  total_price:
+                    type: number
+                    format: float
+        '400':
+          description: Invalid order request.
+
+components:
+  schemas:
+    Dish:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the dish.
+        name:
+          type: string
+          description: The name of the dish.
+        description:
+          type: string
+          description: A short description of the dish.
+        image_url:
+          type: string
+          description: URL to an image of the dish.
+        price:
+          type: number
+          format: float
+          description: The price of the dish.
+        allergens:
+          type: array
+          items:
+            type: string
+          description: List of allergens in the dish, if any.
+        type:
+          type: string
+          description: The type of dish. Can be either a dish or a drink.
+        course:
+          type: string
+          description: The course to which the dish belongs. Can be breakfast, lunch, or dinner.
+
