@@ -1,0 +1,64 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-mcs-BlogPostHelper",
+    "source": "pnp",
+    "title": "Blog Post Helper",
+    "shortDescription": "A Copilot Studio agent that assists in creating and managing blog posts.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-BlogPostHelper",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-BlogPostHelper",
+    "longDescription": [
+      "A Copilot Studio agent that assists in creating and managing blog posts."
+    ],
+    "creationDateTime": "2026-02-14",
+    "updateDateTime": "2026-02-14",
+    "products": [
+      "Microsoft 365 Copilot",
+      "Microsoft Copilot Studio"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot Studio"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "None"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-BlogPostHelper/assets/pending-image.png",
+        "alt": "Copilot Studio agent placeholder image for the moment"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "pkbullock",
+        "pictureUrl": "https://github.com/pkbullock.png",
+        "name": "Paul Bullock"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Microsoft Copilot Studio",
+        "description": "Discover how to build AI-driven agents and workflows easily with Microsoft Copilot Studio with online training courses, docs, and videos. Learn how to quickly and simply integrate chat into your website.",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
+      }
+    ]
+  }
+]

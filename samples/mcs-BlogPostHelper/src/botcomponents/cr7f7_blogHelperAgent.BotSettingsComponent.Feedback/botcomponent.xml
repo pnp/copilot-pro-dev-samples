@@ -1,0 +1,9 @@
+<botcomponent schemaname="cr7f7_blogHelperAgent.BotSettingsComponent.Feedback">
+  <componenttype>18</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <parentbotid>
+    <schemaname>cr7f7_blogHelperAgent</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

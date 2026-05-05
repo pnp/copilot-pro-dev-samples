@@ -30,7 +30,7 @@ param (
 )
 begin {
 
-    $sourceFile = "$(Get-Location)\..\README.md"
+    $sourceFile = Join-Path -Path (Get-Location) -ChildPath ".." | Join-Path -ChildPath "README.md"
     
 
     # ------------------------------------------------------------------------------
@@ -65,7 +65,7 @@ begin {
         exit
     }
 
-    $BaseDir = "$(Get-Location)\.."
+    $BaseDir = Join-Path -Path (Get-Location) -ChildPath ".."
     $assetsFolder = "assets"
     $samplesFolderName = "samples"
     $content = Get-Content -Path $sourceFile -Raw
@@ -203,7 +203,7 @@ process {
 '@
 
     
-    $sampleFiles = Get-ChildItem -Path "$(Get-Location)\Samples" -Filter "sample.json" -Recurse
+    $sampleFiles = Get-ChildItem -Path (Join-Path -Path (Get-Location) -ChildPath "Samples") -Filter "sample.json" -Recurse
 
 
 

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.24/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.24",
+  "id": "${{TEAMS_APP_ID}}",
+  "version": "1.0.0",
+  "developer": {
+    "name": "My App, Inc.",
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/privacy",
+    "termsOfUseUrl": "https://www.example.com/termsofuse"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Adaptive Card Dialog",
+    "full": "Copilot Adaptive Card Dialog Box Sample"
+  },
+  "description": {
+    "short": "Open videos and quizzes in dialog boxes.",
+    "full": "A Microsoft 365 Copilot sample that demonstrates how to open YouTube videos and interactive HTML quizzes in dialog boxes from Adaptive Cards."
+  },
+  "accentColor": "#FFFFFF",
+  "copilotAgents": {   
+    "declarativeAgents": [
+      {
+        "id": "learningDeclarativeAgent",
+        "file": "learningDeclarativeAgent.json"
+      }
+    ]
+  },
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "*.youtube.com",
+    "${{BOT_DOMAIN}}"
+  ]
+}

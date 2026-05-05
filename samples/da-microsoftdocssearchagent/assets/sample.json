@@ -2,7 +2,7 @@
   {
     "name": "pnp-copilot-pro-dev-da-microsoftdocssearchagent",
     "source": "pnp",
-    "title": "YOUR-SAMPLE-TITLE",
+    "title": "Microsoft Learn Search Agent",
     "shortDescription": "An agent that helps users search and retrieve content from Microsoft Learn. ",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-microsoftdocssearchagent",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-microsoftdocssearchagent",
@@ -10,7 +10,7 @@
       "An agent that helps users search and retrieve content from Microsoft Learn. "
     ],
     "creationDateTime": "2025-12-15",
-    "updateDateTime": "2024-10-03",
+    "updateDateTime": "2025-12-15",
     "products": [
       "Microsoft 365 Copilot"
     ],

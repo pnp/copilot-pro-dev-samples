@@ -1,0 +1,74 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
+    "name_for_human": "Outlook Calendar",
+    "description_for_human": "Create and manage Outlook calendar events",
+    "description_for_model": "Create Outlook calendar appointments for volunteer food bank visits",
+    "namespace": "outlook",
+    "functions": [
+        {
+            "name": "createEvent",
+            "description": "Create a calendar appointment for the volunteer's food bank visit",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "subject": {
+                        "type": "string",
+                        "description": "The subject/title of the calendar event"
+                    },
+                    "startDateTime": {
+                        "type": "string",
+                        "description": "Start timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SS with timezone offset. MUST use this exact format, e.g. 2026-03-29T10:00:00+01:00"
+                    },
+                    "endDateTime": {
+                        "type": "string",
+                        "description": "End timestamp in ISO 8601 format YYYY-MM-DDTHH:MM:SS with timezone offset. MUST use this exact format, e.g. 2026-03-29T11:00:00+01:00"
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "The plain text address of the location, e.g. \"Sutton Coldfield Baptist Church, Trinity Hill, Sutton Coldfield, West Midlands, B72 1TA\""
+                    },
+                    "isOnlineMeeting": {
+                        "type": "boolean",
+                        "description": "Whether to create a Teams online meeting. MUST be set to false for in-person food bank visits."
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "JSON string representing the event body with contentType and content properties. contentType MUST be \"HTML\". Example: {\"contentType\": \"HTML\", \"content\": \"<p>Event details</p>\"}"
+                    },
+                    "attendeeEmails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Array of attendee email addresses. Pass an empty array [] as the organiser is already added automatically."
+                    }
+                },
+                "required": [
+                    "subject",
+                    "startDateTime",
+                    "endDateTime",
+                    "attendeeEmails",
+                    "isOnlineMeeting",
+                    "location",
+                    "body"
+                ]
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "auth": {
+                "type": "OAuthPluginVault",
+                "reference_id": "${{OAUTH_REFERENCE_ID}}"
+            },
+            "spec": {
+                "url": "https://agent365.svc.cloud.microsoft/agents/servers/mcp_CalendarTools"
+            },
+            "run_for_functions": [
+                "createEvent"
+            ]
+        }
+    ]
+}

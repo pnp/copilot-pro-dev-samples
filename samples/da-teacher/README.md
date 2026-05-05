@@ -45,3 +45,5 @@ The declarative agent "The Simple Teacher" acts as a friendly, patient, and humo
 
 ![Copilot agent .net SSE question](./assets/da-teacher-sse-net10.gif)
 *Copilot agent .net SSE question*
+
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-teacher" />

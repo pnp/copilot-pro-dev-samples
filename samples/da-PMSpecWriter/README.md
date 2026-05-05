@@ -70,4 +70,4 @@ This project is licensed under the MIT License - see the [LICENSE](../../LICENSE
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net//copilot-pro-dev-samples/samples/da-PMSpecWriter)
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-PMSpecWriter" />

@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "TeamsDevApp.ms-teams-vscode-extension",
+        "TeamsDevApp.vscode-adaptive-cards",
+        "redhat.vscode-yaml"
+    ]
+}

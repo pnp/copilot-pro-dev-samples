@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "resourceBaseName": {
+        "value": "bot${{RESOURCE_SUFFIX}}"
+      },
+      "openAIApiKey": {
+        "value": "${{SECRET_OPENAI_API_KEY}}"
+      },
+      "newsApiKey": {
+        "value": "${{SECRET_NEWS_API_KEY}}"
+      },
+      "webAppSKU": {
+        "value": "B1"
+      },
+      "botDisplayName": {
+        "value": "cea-techPulse-csharp"
+      }
+    }
+  }

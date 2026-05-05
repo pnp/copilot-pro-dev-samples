@@ -1,0 +1,55 @@
+{
+    "$schema": "https://aka.ms/json-schemas/copilot-extensions/v2.1/plugin.schema.json",
+    "schema_version": "v2.1",
+    "name_for_human": "Microsoft Learn Search",
+    "description_for_human": "Search official Microsoft documentation for SharePoint and Microsoft 365 guidance",
+    "contact_email": "publisher-email@example.com",
+    "namespace": "microsoftlearnsearch",
+    "functions": [
+        {
+            "name": "microsoft_docs_search",
+            "description": "Search official Microsoft documentation to find relevant content about SharePoint, OneDrive, Microsoft 365, and content management. Returns up to 10 content chunks from Microsoft Learn and other official sources. Use this tool when the user asks about SharePoint features, best practices, or Microsoft 365 capabilities.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "query": {
+                        "description": "A query about Microsoft 365, SharePoint, OneDrive, or content management topics",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "query"
+                ]
+            }
+        },
+        {
+            "name": "microsoft_docs_fetch",
+            "description": "Fetch and convert a Microsoft Learn documentation page to markdown format. Use this tool after microsoft_docs_search when you identify a specific page that needs complete content for a detailed answer.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "url": {
+                        "description": "URL of the Microsoft documentation page to read",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url"
+                ]
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "RemoteMCPServer",
+            "spec": {
+                "url": "https://learn.microsoft.com/api/mcp",
+                "enable_dynamic_discovery": false
+            },
+            "run_for_functions": [
+                "microsoft_docs_search",
+                "microsoft_docs_fetch"
+            ]
+        }
+    ]
+}

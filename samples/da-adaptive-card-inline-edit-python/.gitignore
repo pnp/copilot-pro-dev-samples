@@ -1,0 +1,27 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# TeamsFx files
+env/.env.*.user
+.DS_Store
+build
+appPackage/build
+.deployment
+
+# dependencies
+__pycache__/
+*.pyc
+.venv/
+
+# testing
+/coverage
+
+# Dev tool directories
+/devTools/
+
+# Python output
+*.egg-info/
+*.egg
+
+# Azure Functions artifacts
+bin
+obj
+appsettings.json

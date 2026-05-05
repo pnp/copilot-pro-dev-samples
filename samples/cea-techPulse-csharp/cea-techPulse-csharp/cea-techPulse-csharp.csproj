@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>$(NoWarn);SKEXP0110;SKEXP0010</NoWarn>
+  </PropertyGroup>
+
+  <!-- Exclude the McpServer sub-project from this project's compilation -->
+  <ItemGroup>
+    <Compile Remove="McpServer\**" />
+    <Content Remove="McpServer\**" />
+    <EmbeddedResource Remove="McpServer\**" />
+    <None Remove="McpServer\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Bcl.Memory" Version="10.0.5" />
+    <PackageReference Include="ModelContextProtocol" Version="1.*" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.74.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.74.0" />
+    <PackageReference Include="Microsoft.Agents.Authentication.Msal" Version="1.*" />
+    <PackageReference Include="Microsoft.Agents.Hosting.AspNetCore" Version="1.*" />
+  </ItemGroup>
+
+  <!-- Exclude local settings from publish -->
+  <ItemGroup>
+    <Content Remove="appsettings.Development.json" />
+    <Content Include="appsettings.Development.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>None</CopyToPublishDirectory>
+    </Content>
+    <Content Remove="appsettings.Playground.json" />
+    <Content Include="appsettings.Playground.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>None</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

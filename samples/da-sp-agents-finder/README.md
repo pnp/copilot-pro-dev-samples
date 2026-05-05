@@ -130,3 +130,5 @@ The following are Microsoft 365 Agents Toolkit specific project files. You can [
 - [Declarative agents for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-declarative-agent?wt.mc_id=MVP_433449)
 - [Copilot developer Camp](https://aka.ms/copilotdevcamp?wt.mc_id=MVP_433449)
 - [Microsoft 365 Copilot pro-developer samples](https://github.com/pnp/copilot-pro-dev-samples/)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-sp-agents-finder" />
