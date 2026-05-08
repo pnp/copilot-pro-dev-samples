@@ -1,0 +1,61 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-da-repairs-oauth-validated-python",
+      "source": "pnp",
+      "title": "Declarative Agent with OAuth-secured API Plugin (Python)",
+      "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains a Python Azure Function that validates Entra ID tokens.",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-validated-python",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-validated-python",
+      "longDescription": [
+        "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains a Python Azure Function that serves as the API and uses PyJWT to validate Entra ID tokens to secure access to APIs."
+      ],
+      "creationDateTime": "2026-05-07",
+      "updateDateTime": "2026-05-07",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Copilot"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "Python"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "Yes"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [],
+      "authors": [
+        {
+          "gitHubAccount": "YugalPradhan31",
+          "pictureUrl": "https://github.com/YugalPradhan31.png",
+          "name": "Yugal Pradhan"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        },
+        {
+          "name": "Build declarative agents for Microsoft 365 Copilot",
+          "description": "Learn more about declarative agents for Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent"
+        },
+        {
+          "name": "API Plugins for Microsoft 365 Copilot",
+          "description": "Learn how to integrate external APIs with Microsoft 365 Copilot.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins"
+        }
+      ]
+    }
+  ]
