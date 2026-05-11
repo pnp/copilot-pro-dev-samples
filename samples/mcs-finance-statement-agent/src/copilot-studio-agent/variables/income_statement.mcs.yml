@@ -1,0 +1,7 @@
+# Name: income_statement
+kind: Variable
+name: income_statement
+scope: Conversation
+isExternalInitializationAllowed: false
+isOutputToExternalCallers: true
+initializationTimeoutInMilliseconds: 0

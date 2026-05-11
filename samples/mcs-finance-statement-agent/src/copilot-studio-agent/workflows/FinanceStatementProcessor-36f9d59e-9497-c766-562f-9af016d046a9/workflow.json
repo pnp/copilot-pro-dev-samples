@@ -1,0 +1,378 @@
+﻿{
+  "properties": {
+    "connectionReferences": {
+      "shared_excelonlinebusiness": {
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedexcelonlinebusiness_5805e"
+        },
+        "runtimeSource": "invoker"
+      },
+      "shared_sharepointonline": {
+        "api": {
+          "name": "shared_sharepointonline"
+        },
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedsharepointonline_199f1"
+        },
+        "runtimeSource": "invoker"
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "JSON string containing the extracted balance sheet data",
+                  "title": "balance_sheet",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_1": {
+                  "description": "JSON string containing the extracted income statement data",
+                  "title": "income_statement",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_2": {
+                  "description": "JSON string containing the extracted cash flow data",
+                  "title": "cash_flow",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_3": {
+                  "description": "JSON string containing the extraction summary with company info and statement status",
+                  "title": "summary",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_4": {
+                  "description": "The company name extracted from the financial report",
+                  "title": "company_name",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text",
+                "text_1",
+                "text_2",
+                "text_3",
+                "text_4"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "b8f61c18-7224-4f8a-9c5f-72fbce5df764"
+          }
+        }
+      },
+      "actions": {
+        "Try_Scope": {
+          "type": "Scope",
+          "actions": {
+            "Run_script": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "source": "sites/m365cpi10857483.sharepoint.com,6413b9f0-43cc-4e1d-94e5-cbf0afade7b3,5b45571c-0fa9-4f5d-ab7b-b05659fec730",
+                  "drive": "b!8LkTZMxDHU6U5cvwr63nsxxXRVupD11Pq3uwVln-xzCI_RJ-rQOtSIuZbxyft70d",
+                  "file": "@outputs(\u0027Create_file\u0027)?[\u0027body/Id\u0027]",
+                  "scriptId": "ms-officescript%3A%2F%2Fonedrive_business_itemlink%2F01M4YLOE3VBZLNOWXKEJBI5UT2RWBZRDUP",
+                  "ScriptParameters/balanceSheet": "@triggerBody()?[\u0027text\u0027]",
+                  "ScriptParameters/incomeStatement": "@triggerBody()?[\u0027text_1\u0027]",
+                  "ScriptParameters/cashFlow": "@triggerBody()?[\u0027text_2\u0027]",
+                  "ScriptParameters/summary": "@triggerBody()?[\u0027text_3\u0027]"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+                  "operationId": "RunScriptProd",
+                  "connectionName": "shared_excelonlinebusiness"
+                }
+              },
+              "runAfter": {
+                "Create_file": [
+                  "SUCCEEDED"
+                ]
+              },
+              "limit": {
+                "timeout": "PT5M"
+              },
+              "metadata": {
+                "01DGYMCVFCOPO5YHZ45JH2LCWJFXMIGETF": "/Xiamen ITG Group Corp_Financial_Statements_2026-03-15_060416.xlsx"
+              }
+            },
+            "Create_sharing_link_for_a_file_or_folder": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "https://m365cpi10857483.sharepoint.com/sites/DemoFiles",
+                  "table": "7e12fd88-03ad-48ad-8b99-6f1c9fb7bd1d",
+                  "id": "@outputs(\u0027Create_file\u0027)?[\u0027body/ItemId\u0027]",
+                  "permission/type": "edit",
+                  "permission/scope": "organization"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "CreateSharingLink",
+                  "connectionName": "shared_sharepointonline"
+                }
+              },
+              "runAfter": {
+                "Run_script": [
+                  "SUCCEEDED"
+                ]
+              }
+            },
+            "Get_file_content": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "https://m365cpi10857483.sharepoint.com/sites/DemoFiles",
+                  "id": "%252fShared%2bDocuments%252ftemplate.xlsx",
+                  "inferContentType": true
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "GetFileContent",
+                  "connectionName": "shared_sharepointonline"
+                }
+              },
+              "metadata": {
+                "%252fShared%2bDocuments%252ftemplate.xlsx": "/Shared Documents/template.xlsx"
+              }
+            },
+            "Create_file": {
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "https://m365cpi10857483.sharepoint.com/sites/DemoFiles",
+                  "folderPath": "/Shared Documents/Financials",
+                  "name": "@variables(\u0027FileName\u0027)",
+                  "body": "@body(\u0027Get_file_content\u0027)"
+                },
+                "host": {
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+                  "operationId": "CreateFile",
+                  "connectionName": "shared_sharepointonline"
+                }
+              },
+              "runAfter": {
+                "Get_file_content": [
+                  "SUCCEEDED"
+                ]
+              },
+              "runtimeConfiguration": {
+                "contentTransfer": {
+                  "transferMode": "Chunked"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Initialize_ErrorMessage": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "Catch_Scope": {
+          "type": "Scope",
+          "actions": {
+            "Set_ErrorMessage": {
+              "type": "SetVariable",
+              "inputs": {
+                "name": "ErrorMessage",
+                "value": "@{concat(\u0027Flow failed at action: \u0027, coalesce(first(result(\u0027Try_Scope\u0027))?[\u0027name\u0027], \u0027unknown\u0027), \u0027. Error: \u0027, coalesce(first(result(\u0027Try_Scope\u0027))?[\u0027error\u0027]?[\u0027message\u0027], \u0027Unknown error\u0027))}"
+              }
+            },
+            "Respond_with_error": {
+              "type": "Response",
+              "kind": "Skills",
+              "inputs": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "fileurl": {
+                      "title": "fileUrl",
+                      "description": "URL of the generated Excel file",
+                      "type": "string",
+                      "x-ms-content-hint": "TEXT",
+                      "x-ms-dynamically-added": true
+                    },
+                    "filename": {
+                      "title": "fileName",
+                      "description": "Name of the generated Excel file",
+                      "type": "string",
+                      "x-ms-content-hint": "TEXT",
+                      "x-ms-dynamically-added": true
+                    }
+                  },
+                  "additionalProperties": {}
+                },
+                "statusCode": 200,
+                "body": {
+                  "fileurl": "",
+                  "filename": "@{concat(\u0027ERROR: \u0027, variables(\u0027ErrorMessage\u0027))}"
+                }
+              },
+              "runAfter": {
+                "Set_ErrorMessage": [
+                  "SUCCEEDED"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "81c94f73-dd52-465c-ad3b-a4686da63cc3"
+              }
+            }
+          },
+          "runAfter": {
+            "Try_Scope": [
+              "FAILED",
+              "TIMEDOUT"
+            ]
+          }
+        },
+        "Respond_to_the_agent": {
+          "type": "Response",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fileurl": {
+                  "title": "fileUrl",
+                  "description": "URL of the generated Excel file",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "filename": {
+                  "title": "fileName",
+                  "description": "Name of the generated Excel file",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "fileurl": "@{outputs(\u0027Create_sharing_link_for_a_file_or_folder\u0027)?[\u0027body/link/webUrl\u0027]}",
+              "filename": "@{variables(\u0027FileName\u0027)}"
+            }
+          },
+          "runAfter": {
+            "Try_Scope": [
+              "SUCCEEDED"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "81c94f73-dd52-465c-ad3b-a4686da63cc3"
+          }
+        },
+        "Initialize_FileName": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "FileName",
+                "type": "string",
+                "value": "@concat(coalesce(triggerBody()?[\u0027text_4\u0027], \u0027Company\u0027), \u0027_Financial_Statements_\u0027, utcNow(\u0027yyyy-MM-dd_HHmmss\u0027), \u0027.xlsx\u0027)"
+              }
+            ]
+          },
+          "runAfter": {
+            "Parse_Summary": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "Initialize_ErrorMessage": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "ErrorMessage",
+                "type": "string",
+                "value": ""
+              }
+            ]
+          },
+          "runAfter": {
+            "Initialize_FileName": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "Parse_Summary": {
+          "type": "ParseJson",
+          "inputs": {
+            "content": "@triggerBody()?[\u0027text_3\u0027]",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "statement_type": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "row_count": {
+                    "type": "integer"
+                  },
+                  "column_count": {
+                    "type": "integer"
+                  },
+                  "validation_status": {
+                    "type": "string"
+                  },
+                  "page_range": {
+                    "type": "object",
+                    "properties": {
+                      "start": {
+                        "type": "integer"
+                      },
+                      "end": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "runAfter": {}
+        }
+      },
+      "outputs": {}
+    }
+  },
+  "schemaVersion": "1.0.0.0"
+}

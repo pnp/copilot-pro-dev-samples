@@ -1,0 +1,50 @@
+# Node
+node_modules/
+dist/
+.vite/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Power Platform
+.power/
+power.config.json
+.mcs/
+
+# Azure Functions
+local.settings.json
+.python_packages/
+bin/
+obj/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment — never commit secrets
+.env
+.env.local
+
+# Build artifacts / pip install noise
+=*
+
+# Sample / customer-specific artifacts — never commit
+*.xlsx
+*.pdf
+*.pptx
+*.docx
+docs/samples/
+_*
+_tmp_logos/
+
+# MCP widget test scaffolding (cloned from microsoft/mcp-interactiveUI-samples)
+mcp-widget-test/

@@ -1,0 +1,20 @@
+# Name: Financial Extractor - Submit a PDF for financial statement extraction
+kind: TaskDialog
+modelDisplayName: Submit a PDF for financial statement extraction
+modelDescription: Uploads a PDF and starts extraction. Returns a jobId to poll for results.
+outputs:
+  - propertyName: jobId
+
+  - propertyName: status
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+  connectionProperties:
+    name: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+    mode: Invoker
+
+  operationId: submitExtraction
+
+outputMode: All
+triggerCondition: false

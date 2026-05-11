@@ -1,0 +1,7 @@
+# Name: companyName
+kind: Variable
+name: companyName
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: true
+initializationTimeoutInMilliseconds: 0

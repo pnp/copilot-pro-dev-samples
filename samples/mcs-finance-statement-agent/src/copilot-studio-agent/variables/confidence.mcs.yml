@@ -1,0 +1,7 @@
+# Name: confidence
+kind: Variable
+name: confidence
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: true
+initializationTimeoutInMilliseconds: 0

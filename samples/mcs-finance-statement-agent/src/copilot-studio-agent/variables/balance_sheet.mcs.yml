@@ -1,0 +1,7 @@
+# Name: balance_sheet
+kind: Variable
+name: balance_sheet
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: true
+initializationTimeoutInMilliseconds: 0

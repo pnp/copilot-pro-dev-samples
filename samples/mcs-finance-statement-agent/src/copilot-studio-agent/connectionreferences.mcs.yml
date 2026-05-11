@@ -1,0 +1,13 @@
+﻿connectionReferences:
+  - connectionReferenceLogicalName: cree1_FinanceStatementAnalysisAgent.shared_a365copilotchatmcp.faee38bb680e46e0a54499a411171423
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_a365copilotchatmcp
+  - connectionReferenceLogicalName: cree1_FinanceStatementAnalysisAgent.shared_a365copilotchatmcp.faee38bb680e46e0a54499a411171423
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_a365copilotchatmcp
+  - connectionReferenceLogicalName: cree1_FinanceStatementAnalysisAgent.shared_a365memcp.shared-a365memcp-f5273f1e-57a1-4641-b20f-5f53a8f2d782
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_a365memcp
+  - connectionReferenceLogicalName: cree1_FinanceStatementAnalysisAgent.shared_a365memcp.shared-a365memcp-f5273f1e-57a1-4641-b20f-5f53a8f2d782
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_a365memcp
+  - connectionReferenceLogicalName: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2
+  - connectionReferenceLogicalName: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2

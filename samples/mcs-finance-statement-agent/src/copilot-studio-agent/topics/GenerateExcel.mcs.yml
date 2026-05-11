@@ -1,0 +1,146 @@
+# Name: Generate Excel
+kind: AdaptiveDialog
+modelDescription: Generates an Excel workbook from approved extraction data. Triggered when the user wants to export, download, or create an Excel report after extraction and review are complete. Requires an active jobId.
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - generate Excel
+      - create report
+      - download Excel
+      - create Excel
+      - I'm done reviewing
+      - export to Excel
+
+  actions:
+    # Step 1: Validate that we have an active job
+    - kind: ConditionGroup
+      id: condGrp_checkJob
+      conditions:
+        - id: condItem_noJob
+          condition: =IsBlank(Global.jobId)
+          actions:
+            - kind: SendActivity
+              id: sendAct_noJob
+              activity: "I don't have an active extraction job. Please upload a PDF first."
+
+            - kind: CancelAllDialogs
+              id: cancelAll_noJob
+
+    # Step 2: Let the user know we're generating
+    - kind: SendActivity
+      id: sendAct_generating
+      activity: "Generating your Excel report for **{Global.companyName}**. One moment..."
+
+    # Step 3: Call the GenerateExcel connector action
+    - kind: BeginDialog
+      id: beginDlg_genExcel
+      input:
+        binding:
+          jobId: =Global.jobId
+
+      dialog: cree1_FinanceStatementAnalysisAgent.action.FinancialExtractor-GenerateExcel
+      output:
+        binding:
+          fileUrl: Topic.fileUrl
+          fileName: Topic.fileName
+
+    # Step 4: Check if the action returned a valid result
+    - kind: ConditionGroup
+      id: condGrp_resultCheck
+      conditions:
+        - id: condItem_noResult
+          condition: =IsBlank(Topic.fileUrl)
+          actions:
+            - kind: SendActivity
+              id: sendAct_error
+              activity: |-
+                Something went wrong generating the Excel report. This could be a temporary issue with the service.
+
+                Please try again in a moment, or ask me to retry.
+
+            - kind: CancelAllDialogs
+              id: cancelAll_error
+
+    # Step 5: Display the result as an Adaptive Card
+    - kind: SendActivity
+      id: sendAct_excelCard
+      activity:
+        kind: Message
+        attachments:
+          - kind: AdaptiveCardTemplate
+            cardContent: |-
+              {
+                "type": "AdaptiveCard",
+                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+                "version": "1.5",
+                "body": [
+                  {
+                    "type": "ColumnSet",
+                    "columns": [
+                      {
+                        "type": "Column",
+                        "width": "auto",
+                        "items": [
+                          {
+                            "type": "Image",
+                            "url": "https://cdn-icons-png.flaticon.com/512/732/732220.png",
+                            "size": "Small"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "Column",
+                        "width": "stretch",
+                        "items": [
+                          {
+                            "type": "TextBlock",
+                            "text": "Excel Report Ready",
+                            "weight": "Bolder",
+                            "size": "Large",
+                            "wrap": true
+                          }
+                        ],
+                        "verticalContentAlignment": "Center"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "FactSet",
+                    "facts": [
+                      {
+                        "title": "Company",
+                        "value": "{Global.companyName}"
+                      },
+                      {
+                        "title": "File",
+                        "value": "{Topic.fileName}"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "Link expires in 24 hours.",
+                    "size": "Small",
+                    "isSubtle": true,
+                    "wrap": true,
+                    "spacing": "Medium"
+                  }
+                ],
+                "actions": [
+                  {
+                    "type": "Action.OpenUrl",
+                    "title": "Download",
+                    "url": "{Topic.fileUrl}",
+                    "style": "positive"
+                  }
+                ]
+              }
+
+    # Step 6: End conversation cleanly
+    - kind: CancelAllDialogs
+      id: cancelAll_done
+
+inputType: {}
+outputType: {}

@@ -1,0 +1,7 @@
+# Name: summary
+kind: Variable
+name: summary
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: true
+initializationTimeoutInMilliseconds: 0

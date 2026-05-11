@@ -1,0 +1,38 @@
+name: Deploy Azure Function
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'azure-functions/**'
+  workflow_dispatch:
+
+env:
+  AZURE_FUNCTIONAPP_NAME: fin-stmt-extractor-v2
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: azure-functions
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          cd ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          pip install -r requirements.txt --target=".python_packages/lib/site-packages"
+
+      - name: Deploy to Azure Functions
+        uses: Azure/functions-action@v1
+        with:
+          app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
+          scm-do-build-during-deployment: false
+          enable-oryx-build: false

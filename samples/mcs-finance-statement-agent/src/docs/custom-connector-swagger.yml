@@ -1,0 +1,237 @@
+swagger: '2.0'
+info:
+  title: Financial Statement Extractor
+  description: >-
+    Extracts financial statements from uploaded PDF reports with HITL review
+    support.
+  version: 5.0.0
+host: fin-stmt-extractor-v2.azurewebsites.net
+basePath: /api
+schemes:
+  - https
+produces:
+  - application/json
+consumes:
+  - application/json
+paths:
+  /extract:
+    post:
+      operationId: submitExtraction
+      summary: Submit a PDF for financial statement extraction
+      description: >-
+        Uploads a PDF and starts extraction. Returns a jobId to poll for
+        results.
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: file
+          in: formData
+          type: file
+          required: true
+          description: The PDF file to extract financial statements from
+        - name: fileName
+          in: formData
+          type: string
+          required: true
+          description: Original file name of the uploaded PDF
+      responses:
+        '202':
+          description: Extraction started
+          schema:
+            type: object
+            properties:
+              jobId:
+                type: string
+              status:
+                type: string
+  /extract-by-url:
+    post:
+      operationId: submitExtractionByUrl
+      summary: Submit a PDF URL for financial statement extraction
+      description: Accepts a direct download URL for a PDF and starts extraction.
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - fileUrl
+              - fileName
+            properties:
+              fileUrl:
+                type: string
+                description: Direct download URL for the PDF file
+              fileName:
+                type: string
+                description: Original file name of the PDF
+              authToken:
+                type: string
+                description: Optional Bearer token for authenticated URLs
+      responses:
+        '202':
+          description: Extraction started
+          schema:
+            type: object
+            properties:
+              jobId:
+                type: string
+              status:
+                type: string
+  /extract/status/{jobId}:
+    get:
+      operationId: getExtractionStatus
+      summary: Poll for extraction results
+      description: Returns the current status and results of an extraction job.
+      parameters:
+        - name: jobId
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Extraction status and results
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              jobId:
+                type: string
+              companyName:
+                type: string
+              summary:
+                type: string
+              balanceSheet:
+                type: string
+              incomeStatement:
+                type: string
+              cashFlow:
+                type: string
+              confidence:
+                type: string
+  /build-review-card:
+    post:
+      operationId: buildReviewCard
+      summary: Build an Adaptive Card for HITL statement review
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - jobId
+            properties:
+              jobId:
+                type: string
+              sessionState:
+                type: string
+      responses:
+        '200':
+          description: Adaptive Card JSON and session state
+          schema:
+            type: object
+            properties:
+              cardJson:
+                type: string
+              sessionState:
+                type: string
+  /parse-card-submission:
+    post:
+      operationId: parseCardSubmission
+      summary: Parse an Adaptive Card submission
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - sessionState
+              - payload
+            properties:
+              sessionState:
+                type: string
+              payload:
+                type: string
+      responses:
+        '200':
+          description: Action and updated state
+          schema:
+            type: object
+            properties:
+              action:
+                type: string
+              sessionState:
+                type: string
+  /apply-corrections:
+    post:
+      operationId: applyCorrections
+      summary: Apply analyst corrections and return final data
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - jobId
+              - sessionState
+            properties:
+              jobId:
+                type: string
+              sessionState:
+                type: string
+      responses:
+        '200':
+          description: Corrected extraction data
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+              companyName:
+                type: string
+              summary:
+                type: string
+              balanceSheet:
+                type: string
+              incomeStatement:
+                type: string
+              cashFlow:
+                type: string
+  /generate-excel:
+    post:
+      operationId: generateExcel
+      summary: Generate Excel workbook from approved extraction data
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            required:
+              - jobId
+            properties:
+              jobId:
+                type: string
+      responses:
+        '200':
+          description: Excel download URL
+          schema:
+            type: object
+            properties:
+              fileUrl:
+                type: string
+              fileName:
+                type: string
+              cardJson:
+                type: string
+securityDefinitions:
+  api_key:
+    type: apiKey
+    in: query
+    name: code
+security:
+  - api_key: []

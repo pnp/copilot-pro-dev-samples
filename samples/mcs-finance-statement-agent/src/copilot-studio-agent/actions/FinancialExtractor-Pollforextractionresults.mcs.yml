@@ -1,0 +1,31 @@
+# Name: Financial Extractor - Poll for extraction results
+kind: TaskDialog
+modelDisplayName: Poll for extraction results
+modelDescription: Returns the current status and results of an extraction job.
+outputs:
+  - propertyName: balance_sheet
+
+  - propertyName: cash_flow
+
+  - propertyName: company_name
+
+  - propertyName: income_statement
+
+  - propertyName: status
+
+  - propertyName: summary
+
+  - propertyName: job_id
+
+  - propertyName: confidence
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+  connectionProperties:
+    mode: Invoker
+
+  operationId: getExtractionStatus
+
+outputMode: All
+triggerCondition: false

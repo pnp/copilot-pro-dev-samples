@@ -1,0 +1,7 @@
+# Name: fileName
+kind: Variable
+name: fileName
+scope: Conversation
+isExternalInitializationAllowed: true
+isOutputToExternalCallers: false
+initializationTimeoutInMilliseconds: 0

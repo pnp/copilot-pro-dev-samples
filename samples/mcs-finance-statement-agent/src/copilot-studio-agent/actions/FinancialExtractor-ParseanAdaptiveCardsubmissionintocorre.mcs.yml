@@ -1,0 +1,28 @@
+# Name: Financial Extractor - Parse an Adaptive Card submission into corrections
+kind: TaskDialog
+inputs:
+  - kind: AutomaticTaskInput
+    propertyName: sessionState
+    description: Current session state JSON string from the previous buildReviewCard or parseCardSubmission call.
+
+  - kind: AutomaticTaskInput
+    propertyName: payload
+    description: The raw Adaptive Card submission payload as a JSON string.
+
+modelDisplayName: Parse an Adaptive Card submission and advance review state
+modelDescription: Parses the Adaptive Card submit payload, diffs corrections, advances the session state machine, and returns a topic-facing action (continue/done/skip).
+outputs:
+  - propertyName: action
+
+  - propertyName: sessionState
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+  connectionProperties:
+    name: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+    mode: Invoker
+
+  operationId: parseCardSubmission
+
+outputMode: All

@@ -1,0 +1,36 @@
+# Name: Financial Extractor - Apply analyst corrections and return final data for Excel generation
+kind: TaskDialog
+inputs:
+  - kind: AutomaticTaskInput
+    propertyName: jobId
+    description: The extraction job ID.
+
+  - kind: AutomaticTaskInput
+    propertyName: sessionState
+    description: Session state containing accumulated corrections from the review process.
+
+modelDisplayName: Apply analyst corrections and return final data
+modelDescription: Applies all accumulated corrections from session state to the cached extraction result. Returns corrected statement JSONs ready for Excel generation.
+outputs:
+  - propertyName: balanceSheet
+
+  - propertyName: cashFlow
+
+  - propertyName: companyName
+
+  - propertyName: incomeStatement
+
+  - propertyName: status
+
+  - propertyName: summary
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+  connectionProperties:
+    name: cree1_FinanceStatementAnalysisAgent.shared_cree1-5ffinancial-20extractor-5f60bfe6cc042375d2.d3c0a08e298a466ca3ac729ffa60e337
+    mode: Invoker
+
+  operationId: applyCorrections
+
+outputMode: All

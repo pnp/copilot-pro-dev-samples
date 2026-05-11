@@ -1,0 +1,38 @@
+# Name: Finance Statement Processor
+kind: TaskDialog
+inputs:
+  - kind: AutomaticTaskInput
+    propertyName: text
+    description: JSON string containing the extracted balance sheet data. The values are extracted by the tool Extract financial statements from a PDF document. This contains assets, liabilities, and equity line items with values.
+
+  - kind: AutomaticTaskInput
+    propertyName: text_1
+    description: |
+      JSON string containing the extracted income statement data. The value includes revenue, expenses, and profit/loss line items with values. The values are extracted by the tool Extract financial statements from a PDF document
+
+  - kind: AutomaticTaskInput
+    propertyName: text_2
+    description: |
+      JSON string containing the extracted cash flow data. The field contains operating, investing, and financing activities with values. The values are extracted by the tool Extract financial statements from a PDF document. 
+
+  - kind: AutomaticTaskInput
+    propertyName: text_3
+    description: "JSON string containing the extraction summary with company info and statement status. The values are extracted by the tool Extract financial statements from a PDF document. "
+
+  - kind: AutomaticTaskInput
+    propertyName: text_4
+    description: "The company name extracted from the financial report. The values are extracted by the tool Extract financial statements from a PDF document. "
+
+modelDescription: Generates a formatted Excel workbook from previously extracted financial statement data. Takes the balance sheet, income statement, cash flow statement, summary, and company name as inputs, and produces a downloadable Excel file with dedicated worksheets for each financial statement. Use this action after extracting financial data from a PDF when the user wants to export, download, or save the results as an Excel spreadsheet.
+outputs:
+  - propertyName: fileurl
+    description: URL of the generated Excel file located in the SharePoint. This must be displayed to the user in the chat.
+
+  - propertyName: filename
+
+action:
+  kind: InvokeFlowTaskAction
+  flowId: 36f9d59e-9497-c766-562f-9af016d046a9
+
+outputMode: All
+triggerCondition: false
