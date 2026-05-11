@@ -1,11 +1,11 @@
 [
     {
-      "name": "pnp-copilot-pro-dev-cea-techpulse",
+      "name": "pnp-copilot-pro-dev-cea-techpulse-js",
       "source": "pnp",
       "title": "TechPulse - Custom Engine Agent for Real-Time Technology News",
       "shortDescription": "An intelligent tech news companion powered by Microsoft 365 Agents SDK and Model Context Protocol (MCP)",
-      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse",
-      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse-js",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse-js",
       "longDescription": [
         "The \"TechPulse\" is a custom engine agent that acts as your intelligent tech news companion, delivering the latest technology news, trends, and insights from the most trusted sources in the industry. Built with Microsoft 365 Agents SDK and powered by Model Context Protocol (MCP), this agent provides real-time access to tech news across multiple categories including AI/ML, startups, cybersecurity, mobile technology, and gaming. The agent understands natural language queries and can search for specific topics, provide trending tech news, and deliver company-specific updates."
     ],
@@ -36,7 +36,7 @@
         {
           "type": "gif",
           "order": 100,
-          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/cea-techpulse/assets/techPulse.gif",
+          "url": "https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/refs/heads/main/samples/cea-techpulse-js/assets/techPulse.gif",
           "alt": "Declarative Agent with API Plugin for Microsoft 365 Copilot Sample"
         }
       ],

@@ -24,7 +24,7 @@ Version|Date|Comments
 
 ## Minimal path to awesome
 
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse) then unzip it)
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse-js) then unzip it)
 * Select the Microsoft 365 Agents Toolkit icon on the left in the VS Code toolbar
 * In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
 * In file `env/.env.local.user`, fill in your API keys:
@@ -78,7 +78,7 @@ Using this sample you can extend Microsoft 365 Copilot with an agent that:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20cea-techpulse%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20cea-techpulse-js%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
@@ -88,4 +88,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![visitor stats](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/cea-techpulse)
+![visitor stats](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/cea-techpulse-js)
