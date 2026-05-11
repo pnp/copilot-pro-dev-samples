@@ -1,11 +1,11 @@
 [
   {
-    "name": "pnp-copilot-pro-dev-da-ristorante-api",
+    "name": "pnp-copilot-pro-dev-da-ristorante-api-js",
     "source": "pnp",
     "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot",
     "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an anonymous API. The project contains an Azure Function that serves as the API.",
-    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-js",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-js",
     "longDescription": [
       "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an anonymous API. The project contains an Azure Function that serves as the API."
     ],
@@ -36,13 +36,13 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api/assets/screenshot-menu.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-js/assets/screenshot-menu.png",
         "alt": "Declarative agent showing what's on the menu for lunch"
       },
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api/assets/screenshot-order.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-js/assets/screenshot-order.png",
         "alt": "Declarative agent ordering lunch"
       }
     ],
