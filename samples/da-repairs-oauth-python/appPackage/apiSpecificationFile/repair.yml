@@ -60,8 +60,8 @@ paths:
                           description: The user who is responsible for the repair
                         date:
                           type: string
-                          format: date-time
-                          description: The date and time when the repair is scheduled or completed
+                          format: date
+                          description: The date when the repair is scheduled or completed
                         image:
                           type: string
                           format: uri

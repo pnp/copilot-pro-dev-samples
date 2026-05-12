@@ -1,2 +1,2 @@
 azure-functions
-PyJWT
+PyJWT[crypto]

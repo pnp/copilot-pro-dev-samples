@@ -18,26 +18,54 @@ _repairs_data_path = os.path.join(os.path.dirname(__file__), "repairsData.json")
 with open(_repairs_data_path, "r", encoding="utf-8") as f:
     repair_records = json.load(f)
 
+# Entra ID configuration for token validation
+_tenant_id = os.environ.get("AAD_APP_TENANT_ID", "")
+_client_id = os.environ.get("AAD_APP_CLIENT_ID", "")
+_jwks_url = f"https://login.microsoftonline.com/{_tenant_id}/discovery/v2.0/keys"
+_issuer = f"https://login.microsoftonline.com/{_tenant_id}/v2.0"
+_jwks_client = jwt.PyJWKClient(_jwks_url) if _tenant_id else None
 
-def has_required_scopes(req: func.HttpRequest, required_scopes: str | list[str]) -> bool:
-    """Validate that the request has the required OAuth scopes."""
+
+def check_auth(req: func.HttpRequest, required_scopes: str | list[str]) -> int:
+    """Validate the request token and scopes.
+
+    Returns 0 if authorized, 401 if the token is missing/invalid, or 403 if
+    the token is valid but lacks the required scopes.
+    """
     if isinstance(required_scopes, str):
         required_scopes = [required_scopes]
 
     auth_header = req.headers.get("Authorization")
     if not auth_header:
-        return False
+        return 401
 
     parts = auth_header.split(" ")
     if len(parts) != 2 or parts[0] != "Bearer":
-        return False
+        return 401
+
+    if not _jwks_client or not _client_id:
+        logging.error("AAD_APP_TENANT_ID or AAD_APP_CLIENT_ID not configured")
+        return 401
 
     try:
-        decoded_token = jwt.decode(parts[1], options={"verify_signature": False})
-        token_scopes = decoded_token.get("scp", "").split(" ")
-        return all(scope in token_scopes for scope in required_scopes)
+        token = parts[1]
+        signing_key = _jwks_client.get_signing_key_from_jwt(token)
+        decoded_token = jwt.decode(
+            token,
+            signing_key.key,
+            algorithms=["RS256"],
+            audience=f"api://{_client_id}",
+            issuer=_issuer,
+        )
     except Exception:
-        return False
+        logging.exception("Token validation failed")
+        return 401
+
+    token_scopes = decoded_token.get("scp", "").split(" ")
+    if not all(scope in token_scopes for scope in required_scopes):
+        return 403
+
+    return 0
 
 
 @app.route(route="repairs", methods=["GET"])
@@ -45,7 +73,10 @@ def repairs(req: func.HttpRequest) -> func.HttpResponse:
     """HTTP trigger function that returns repair information."""
     logging.info("HTTP trigger function processed a request.")
 
-    if not has_required_scopes(req, "repairs_read"):
+    auth_status = check_auth(req, "repairs_read")
+    if auth_status == 401:
+        return func.HttpResponse("Unauthorized", status_code=401)
+    if auth_status == 403:
         return func.HttpResponse("Insufficient permissions", status_code=403)
 
     # Get the assignedTo query parameter
