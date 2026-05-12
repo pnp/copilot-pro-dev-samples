@@ -10,7 +10,7 @@ Key aspects of the sample:
 
 - Shows how to configure Microsoft 365 Agents Toolkit to make a declarative agent with an API plugin that is secured with Entra ID with just F5 to run locally.
 
-- Shows how to validate an Entra ID access token in **Python** using [PyJWT](https://pyjwt.readthedocs.io/) rather than rely on an external service. This differs from the Teams Toolkit scaffolding, which doesn't authenticate users locally but instead relies on [Azure App Services authentication (EasyAuth)](https://learn.microsoft.com/azure/app-service/overview-authentication-authorization) for security in Azure only.
+- Shows how to validate an Entra ID access token in **Python** using [PyJWT](https://pyjwt.readthedocs.io/) rather than rely on an external service. This differs from the Teams Toolkit scaffolding, which doesn't authenticate users locally but instead relies on [Azure App Services authentication (EasyAuth)](https://learn.microsoft.com/azure/app-service/overview-authentication-authorization) for security in Azure only. Note: the included Bicep still enables Easy Auth as defense-in-depth when deployed to Azure, but the primary validation is done in code.
 
 Here are some advantages of validating the token in your code instead of using Easy Auth:
 

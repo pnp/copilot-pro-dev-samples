@@ -43,7 +43,8 @@ def repairs(req: func.HttpRequest) -> func.HttpResponse:
 
     try:
         auth_header = req.headers.get("Authorization", "")
-        token = auth_header.split(" ")[1] if auth_header.startswith("Bearer ") else None
+        parts = auth_header.split(None, 1)
+        token = parts[1].strip() if len(parts) == 2 and parts[0] == "Bearer" else None
 
         if not token:
             logging.error("No token found in request")
