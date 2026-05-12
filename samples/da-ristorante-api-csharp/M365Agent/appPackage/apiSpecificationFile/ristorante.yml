@@ -41,9 +41,12 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Dish'
+                type: object
+                properties:
+                  dishes:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Dish'
 
   /orders:
     post:

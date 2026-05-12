@@ -33,20 +33,20 @@ namespace DaRistoranteApi
             var course = req.Query["course"];
             if (!string.IsNullOrEmpty(course))
             {
-                filtered = filtered.Where(d => d.Course == course);
+                filtered = filtered.Where(d => string.Equals(d.Course, course, StringComparison.OrdinalIgnoreCase));
             }
 
             var type = req.Query["type"];
             if (!string.IsNullOrEmpty(type))
             {
-                filtered = filtered.Where(d => d.Type == type);
+                filtered = filtered.Where(d => string.Equals(d.Type, type, StringComparison.OrdinalIgnoreCase));
             }
 
             var allergensParam = req.Query["allergens"];
             if (!string.IsNullOrEmpty(allergensParam))
             {
-                var allergens = allergensParam.Split(',', StringSplitOptions.RemoveEmptyEntries);
-                filtered = filtered.Where(d => allergens.All(a => !d.Allergens.Contains(a)));
+                var allergens = allergensParam.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+                filtered = filtered.Where(d => allergens.All(a => !d.Allergens.Any(da => string.Equals(da, a, StringComparison.OrdinalIgnoreCase))));
             }
 
             var response = req.CreateResponse(HttpStatusCode.OK);
@@ -84,6 +84,13 @@ namespace DaRistoranteApi
 
             foreach (var orderedDish in order.Dishes)
             {
+                if (string.IsNullOrWhiteSpace(orderedDish.Name) || orderedDish.Quantity <= 0)
+                {
+                    var badResponse = req.CreateResponse(HttpStatusCode.BadRequest);
+                    await badResponse.WriteAsJsonAsync(new { message = "Each dish must have a non-empty name and a quantity greater than zero" });
+                    return badResponse;
+                }
+
                 var match = allDishes.FirstOrDefault(d =>
                     d.Name.Contains(orderedDish.Name, StringComparison.OrdinalIgnoreCase));
 
