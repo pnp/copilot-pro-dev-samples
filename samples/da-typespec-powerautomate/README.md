@@ -103,10 +103,15 @@ Copy the value of the Oauth Client Registration ID.
 
 ### Step 4
 
-1. Open the file .env.dev within the 'env' folder and update the following variables
-PAAGENTAUTH_REGISTRATION_ID=<oAUthRegistrationId>
-PA_APP_SERVER_URL=<PowerPlatformURL>
-PA_APP_INVOKE_PATH=<flowInvokePath>
+1. Open the file `.env.dev` within the `env` folder and update the following variables
+
+- `PAAGENTAUTH_REGISTRATION_ID` is the OAuth client registration ID you copied from step 3.
+  Example: `PAAGENTAUTH_REGISTRATION_ID=<oAuth Client Reg Id>`
+- `PA_APP_SERVER_URL` is the base URL of the Power Platform environment where your Power Automate flow is hosted.
+  Example: `PA_APP_SERVER_URL=https://<environmentname>.api.powerplatform.com`
+- `PA_APP_INVOKE_PATH` is the relative invoke path for the flow trigger, not the full URL.
+  Use the path portion from the flow HTTP URL after the base Power Platform URL.
+  Example: `PA_APP_INVOKE_PATH=/powerautomate/automations/direct/workflows/.../triggers/manual/paths/invoke`
 
 ## Help
 

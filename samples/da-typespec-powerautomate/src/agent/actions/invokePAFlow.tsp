@@ -29,16 +29,18 @@ namespace PowerAutomateAPI {
   @route(FLOW_URL)
   @post op sendEmail(
     @query("api-version") apiVersion: string = "1",
-    @doc("The email details that needs to be passed from the current conversation.")
+    @doc("The EmailData model containing the email body, recipient email address, and subject to be sent via Power Automate.")
       @body request: EmailData
   ): {
     @statusCode statusCode: 200;
     @body response: string;
   } | {
     @statusCode statusCode: 400;
+    @doc("Bad request: the flow invocation request was invalid or missing required fields.")
     @body error: string;
   } | {
     @statusCode statusCode: 500;
+    @doc("Server error: an unexpected error occurred while invoking the Power Automate flow.")
     @body error: string;
   };
   

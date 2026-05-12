@@ -5,6 +5,9 @@ version: v1.10
 
 environmentFolderPath: ./env
 
+additionalMetadata:
+   sampleTag: pnp-copilot-pro-dev:da-typespec-powerautomate
+   
 # Triggered when 'teamsapp provision' is executed
 provision:
   # Creates an app
@@ -16,23 +19,6 @@ provision:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       teamsAppId: TEAMS_APP_ID
-  - uses: oauth/register
-    with:
-      name: PAAgentAuth
-      appId: ${{TEAMS_APP_ID}}
-      apiSpecPath: ./appPackage/.generated/powerautomateapi-openapi.yml
-      flow: authorizationCode
-    writeToEnvironmentFile:
-      configurationId: PAAGENTAUTH_REGISTRATION_ID
-  - uses: oauth/register
-    with:
-      name: PAAgentAuth
-      appId: ${{TEAMS_APP_ID}}
-      apiSpecPath: ./appPackage/.generated/msgraphapi-openapi.yml
-      flow: authorizationCode
-    writeToEnvironmentFile:
-      configurationId: PAAGENTAUTH_REGISTRATION_ID
-
   # Install all dependencies (including TypeSpec for Microsoft 365 Copilot)
   - uses: cli/runNpmCommand
     name: install dependencies
@@ -56,7 +42,6 @@ provision:
       manifestPath: ./appPackage/manifest.json
       outputDir: ./appPackage/.generated
       typeSpecConfigPath: ./tspconfig.yaml
-
   # Build app package with latest env value
   - uses: teamsApp/zipAppPackage
     with:
@@ -94,6 +79,12 @@ publish:
     name: install dependencies
     with:
       args: install --no-audit --progress=false
+
+    # Generates a TypeSpec version of the environment variables
+  - uses: cli/runNpmCommand
+    name: Generate TypeSpec environment variables
+    with:
+      args: run generate:env -- ${{TEAMSFX_ENV}}
 
   # Compile typespec files and generate necessary files for agent.
   # If you want to update the outputDir, please make sure the following paths are also updated.
@@ -136,4 +127,3 @@ publish:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
-projectId: dc9d69d3-1af8-48e6-b196-222e62a2f7c0
