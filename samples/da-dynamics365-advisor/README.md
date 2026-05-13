@@ -6,44 +6,9 @@ An expert declarative agent for Microsoft 365 Copilot that provides guidance on 
 
 ![Dynamics 365 Advisor in action](assets/screenshot.png)
 
-## Tools and Frameworks
-
-![drop](https://img.shields.io/badge/Teams&nbsp;Toolkit&nbsp;for&nbsp;VS&nbsp;Code-5.0+-green.svg)
-![drop](https://img.shields.io/badge/Declarative&nbsp;Agent-v1.3-blue.svg)
-
-## Prerequisites
-
-* [Microsoft 365 Developer Account](https://developer.microsoft.com/microsoft-365/dev-program)
-* [Teams Toolkit for Visual Studio Code](https://learn.microsoft.com/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode)
-* [Node.js LTS](https://nodejs.org/)
-* [Visual Studio Code](https://code.visualstudio.com/)
-
-## Version history
-
-Version|Date|Author|Comments
--------|----|----|--------
-1.0.0|April 28, 2026|Muhammad Shahzad Shafique|Initial release
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
-
-## Minimal Path to Awesome
-
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor) then unzip it)
-* Open the `samples/da-dynamics365-advisor` folder in Visual Studio Code
-* Select the Teams Toolkit icon on the left in the VS Code toolbar
-* In the Account section, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts) if you haven't already
-* Create the Teams app by selecting **Provision** in the "Lifecycle" section
-* Select `Preview in Copilot (Edge)` or `Preview in Copilot (Chrome)` from the launch configuration dropdown
-* Once the Copilot app is loaded in the browser, select the "..." menu and select **Copilot chats**. You will see the Dynamics 365 Advisor agent on the right rail
-* Select the agent and start asking questions about Dynamics 365 CRM, Power Platform, or Copilot Studio
-
 ## Features
 
-This agent provides expert guidance on:
+This sample illustrates the following concepts:
 
 * **CRM Architecture Guidance** - Dynamics 365 CRM design and implementation
 * **Entity & Table Design** - Data model design in Dynamics 365
@@ -53,61 +18,42 @@ This agent provides expert guidance on:
 * **Business Process Optimization** - Sales pipeline and customer service improvements
 * **Plugin & Custom Code** - Custom development guidance and best practices
 
-## Conversation Starters
+## Contributors
 
-The agent includes several conversation starters:
+* [Muhammad Shahzad Shafique](https://github.com/MrShahzadShafique)
 
-* **CRM Design** - "Help me design a case management solution in Dynamics 365."
-* **Power Automate** - "Suggest a Power Automate flow for lead qualification."
-* **Copilot Studio** - "Give me chatbot use cases for customer service."
-* **Security Model** - "How should I design security roles for a 3-country CRM deployment?"
+## Version history
 
-## File Structure
+Version|Date|Comments
+-------|----|----|
+1.0.0|April 28, 2026|Initial release
 
-```
-da-dynamics365-advisor/
-+-- appPackage/
-|   +-- declarativeAgent.json       # Agent configuration
-|   +-- instruction.txt              # Agent instructions and behavior
-|   +-- manifest.json               # Teams app manifest
-|   +-- color.png                    # App color icon
-|   +-- outline.png                  # App outline icon
-+-- env/
-|   +-- .env.dev                     # Environment variables for dev
-+-- assets/
-|   +-- screenshot.png               # Demo screenshot
-|   +-- sample.json                  # Sample metadata
-+-- .env.local.sample               # Environment variables template
-+-- .gitignore
-+-- README.md
-```
+## Prerequisites
 
-## Setup Instructions
+* Microsoft 365 tenant with Microsoft 365 Copilot
+* [Visual Studio Code](https://code.visualstudio.com/) with the [Microsoft 365 Agents Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) extension
+* [Node.js v18](https://nodejs.org/en/download/package-manager)
 
-1. **Open in VS Code**
-   - Open the `da-dynamics365-advisor` folder in Visual Studio Code
-   - Ensure Teams Toolkit extension is installed
+## Minimal path to awesome
 
-2. **Review the Configuration**
-   - Check `appPackage/declarativeAgent.json` for agent settings
-   - Review `appPackage/instruction.txt` for agent behavior
+* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor) then unzip it)
+* From your command line, change your current directory to the `samples/da-dynamics365-advisor` folder
+* In the command line, run: `copy .env.local.sample env\.env.local`
+* Open the Microsoft 365 Agents Toolkit extension and sign in to your Microsoft 365 tenant with Microsoft 365 Copilot
+* Select **Debug in Copilot (Edge)** from the launch configuration dropdown
 
-3. **Run the Agent**
-   - Press F5 or use Teams Toolkit to start debugging
-   - Sign in with your Microsoft 365 account
-   - The agent will be deployed to your Copilot environment
+## Help
 
-4. **Test the Agent**
-   - Open Microsoft 365 Copilot
-   - Find "Dynamics 365 Advisor" in your agents
-   - Try the conversation starters or ask your own questions about:
-     - Dynamics 365 CRM architecture
-     - Power Platform solutions
-     - Security and access control
-     - Business process automation
+We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
-## Author
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-dynamics365-advisor%22) to see if anybody else is having the same issues.
 
-* **Muhammad Shahzad Shafique** - [GitHub Profile](https://github.com/MrShahzadShafique)
+If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 <img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-dynamics365-advisor" />
