@@ -66,9 +66,13 @@
 
       // Add a comment with the original env key for traceability
       tspLines.push(`  // ${originalKey}`);
-
-      // Escape backslashes and double quotes for safe TS string literal
-      const escaped = value.replace(/\\/g, "\\\\").replace(/\"/g, '\\"');
+      
+  // Escape backslashes, double quotes, and control characters for a safe TypeSpec string literal
+       const escaped = value
+         .replace(/\\/g, "\\\\")
+         .replace(/"/g, '\\"')
+         .replace(/\r/g, "\\r")
+         .replace(/\n/g, "\\n");
 
       tspLines.push(`  const ${ident} = "${escaped}";`);
       tspLines.push("");

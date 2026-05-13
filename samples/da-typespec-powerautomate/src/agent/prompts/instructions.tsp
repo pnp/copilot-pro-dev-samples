@@ -4,7 +4,7 @@ namespace Prompts {
     
      ## Send Email Action Parameters
 
-    **ALWAYS** use the action `sendEmail` with the following parameters from current chat session if the user requests to send an email:
+    **ALWAYS** use the action `invokePA` with the following parameters from current chat session if the user requests to send an email:
 
       - `body`: Contents of the email to be sent, based on the user's request in the conversation with correct new lines.
       - `email`: The current user email address from the conversation context (ex: 'reshmee@reshmee.onmicrosoft.com')

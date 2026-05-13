@@ -15,11 +15,10 @@ namespace PowerAutomateAPI {
     descriptionForHuman: "Invoke a Power Automate flow.",
     descriptionForModel: "Invoke a Power Automate flow.",
   };
-
+ 
   /**
-   * The base URL for the Microsoft Graph API.
+   * The invoke path for the Power Automate flow.
    */
-  const SERVER_URL = Environment.PA_APP_SERVER_URL;  
   const FLOW_URL = Environment.PA_APP_INVOKE_PATH;
 
   /**

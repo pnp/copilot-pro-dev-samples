@@ -1,4 +1,4 @@
-# Tasks Agent using TypeSpec for Microsoft 365 Copilot that connects to the Microsoft Graph APIs
+# Invoking Power Automate Agent using TypeSpec for Microsoft 365 Copilot
 
 ## Summary
 
@@ -94,9 +94,9 @@ Add any actions like "Send an Email".
    - **Client Secret:** `<Entra ID Application Secret>`  
    - **Authorization Endpoint:** https://login.microsoftonline.com/tenantid/oauth2/v2.0/authorize  
    - **Token Endpoint:** https://login.microsoftonline.com/tenantid/oauth2/v2.0/token  
-   - **Scope:** https://service.flow.microsoft.com//.default (note the double slash before "default") otherwise you will encounter a forbidden error with a single quote.
+   - **Scope:** https://service.flow.microsoft.com//.default (note the double slash before "default") otherwise you will encounter a forbidden error with a single slash.
 
-Replace tenantid with your tenantid which is a GUID.
+Replace `tenantid` with your tenant ID, which is a GUID.
 
 Copy the value of the Oauth Client Registration ID.
 ![oAuth Client Reg Id](./assets/oauthclientReg.jpg)
@@ -117,7 +117,7 @@ Copy the value of the Oauth Client Registration ID.
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-typespec-todo%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-typespec-powerautomate%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
@@ -127,4 +127,4 @@ Finally, if you have an idea for improvement, [make a suggestion](https://github
 
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-typespec-todo)
+![](https://m365-visitor-stats.azurewebsites.net/SamplesGallery/da-typespec-powerautomate)
