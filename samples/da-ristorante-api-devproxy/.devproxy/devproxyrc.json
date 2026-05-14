@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/rc.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.4.0/rc.schema.json",
   "plugins": [
     {
       "name": "CrudApiPlugin",
@@ -18,11 +18,11 @@
     "http://api.ristorante.com/*"
   ],
   "dishesApi": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/crudapiplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.4.0/crudapiplugin.schema.json",
     "apiFile": "dishes-api.json"
   },
   "ordersApi": {
-    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/crudapiplugin.schema.json",
+    "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.4.0/crudapiplugin.schema.json",
     "apiFile": "orders-api.json"
   }
 }
