@@ -1,0 +1,32 @@
+@baseUrl = {{$dotenv OPENAPI_SERVER_URL}}
+@token = <your-entra-access-token>
+
+### Get all dishes
+GET {{baseUrl}}/dishes
+Authorization: Bearer {{token}}
+
+### Get a single dish by ID
+GET {{baseUrl}}/dishes/1
+Authorization: Bearer {{token}}
+
+### Place an order
+POST {{baseUrl}}/orders
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "dishes": [
+    {
+      "name": "frittata",
+      "quantity": 2
+    },
+    {
+      "name": "cappuccino",
+      "quantity": 1
+    }
+  ]
+}
+
+### Get all orders
+GET {{baseUrl}}/orders
+Authorization: Bearer {{token}}

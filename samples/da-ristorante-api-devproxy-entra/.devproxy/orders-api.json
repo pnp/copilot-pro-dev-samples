@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/crudapiplugin.apifile.schema.json",
+  "baseUrl": "http://api.ristorante.com/orders",
+  "dataFile": "orders-data.json",
+  "auth": "entra",
+  "entraAuthConfig": {
+    "audience": "137e538e-25d8-4b89-aaa1-edb7daac8078",
+    "issuer": "https://login.microsoftonline.com/0ba24274-387c-4708-8823-ddec0a7043d1/v2.0"
+  },
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{order-id}",
+      "query": "$.[?(@.order_id == {order-id})]"
+    },
+    {
+      "action": "create"
+    }
+  ]
+}
