@@ -28,7 +28,7 @@
         {
             "label": "Create symlink to .env.local",
             "type": "shell",
-            "command": "test -e .env || ln -s env/.env.local .env",
+            "command": "node -e \"const fs=require('fs'); if(!fs.existsSync('.env')) fs.symlinkSync('env/.env.local','.env')\"",
             "presentation": {
                 "reveal": "silent"
             }

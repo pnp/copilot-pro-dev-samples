@@ -24,6 +24,5 @@
   "ordersApi": {
     "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/crudapiplugin.schema.json",
     "apiFile": "orders-api.json"
-  },
-  "logLevel": "trace"
+  }
 }

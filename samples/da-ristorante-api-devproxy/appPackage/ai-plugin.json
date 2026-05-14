@@ -1,6 +1,6 @@
 {
-  "$schema": "https://aka.ms/json-schemas/copilot/plugin/v2.1/schema.json",
-  "schema_version": "v2.1",
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+  "schema_version": "v2.4",
   "namespace": "ilristorante",
   "name_for_human": "Il Ristorante",
   "description_for_human": "See the today's menu and place orders",
@@ -55,7 +55,7 @@
             ]
           }
         }
-      } 
+      }
     },
     {
       "name": "placeOrder",
@@ -90,10 +90,10 @@
                 ]
               }
             ]
-          }          
+          }
         }
-      } 
-    }    
+      }
+    }
   ],
   "runtimes": [
     {
@@ -105,18 +105,10 @@
         "url": "apiSpecificationFile/ristorante.yml",
         "progress_style": "ShowUsageWithInputAndOutput"
       },
-      "run_for_functions": ["getDishes", "placeOrder"]
+      "run_for_functions": [
+        "getDishes",
+        "placeOrder"
+      ]
     }
-  ],
-  "capabilities": {
-    "localization": {},
-    "conversation_starters": [
-      {
-        "text": "What's for lunch today?"
-      },
-      {
-        "text": "What can I order for dinner that is gluten-free?"
-      }
-    ]
-  }
+  ]
 }
