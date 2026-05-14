@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.0/crudapiplugin.apifile.schema.json",
+  "baseUrl": "http://api.ristorante.com/orders",
+  "dataFile": "orders-data.json",
+  "auth": "apiKey",
+  "apiKeyAuthConfig": {
+    "apiKey": "Bearer devproxyrules",
+    "headerName": "authorization"
+  },
+  "actions": [
+    {
+      "action": "getAll"
+    },
+    {
+      "action": "getOne",
+      "url": "/{order-id}",
+      "query": "$.[?(@.order_id == {order-id})]"
+    },
+    {
+      "action": "create"
+    }
+  ]
+}

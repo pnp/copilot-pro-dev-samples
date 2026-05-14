@@ -1,0 +1,32 @@
+@baseUrl = {{$dotenv OPENAPI_SERVER_URL}}
+@apiKey = devproxyrules
+
+### Get all dishes
+GET {{baseUrl}}/dishes
+authorization: Bearer {{apiKey}}
+
+### Get a single dish by ID
+GET {{baseUrl}}/dishes/1
+Authorization: Bearer {{apiKey}}
+
+### Place an order
+POST {{baseUrl}}/orders
+Content-Type: application/json
+Authorization: Bearer {{apiKey}}
+
+{
+  "dishes": [
+    {
+      "name": "frittata",
+      "quantity": 2
+    },
+    {
+      "name": "cappuccino",
+      "quantity": 1
+    }
+  ]
+}
+
+### Get all orders
+GET {{baseUrl}}/orders
+authorization: Bearer {{apiKey}}
