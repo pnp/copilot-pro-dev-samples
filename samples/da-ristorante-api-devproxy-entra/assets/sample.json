@@ -47,6 +47,12 @@
       },
       {
         "type": "image",
+        "order": 150,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-entra/assets/screenshot-auth-challenge.png",
+        "alt": "Microsoft 365 Copilot prompting the user to authenticate"
+      },
+      {
+        "type": "image",
         "order": 200,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-entra/assets/screenshot-vscode.png",
         "alt": "Visual Studio Code with Dev Proxy running and dev tunnel connected"

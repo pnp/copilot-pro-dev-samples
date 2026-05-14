@@ -6,6 +6,7 @@ This sample demonstrates how to build a declarative agent for Microsoft 365 Copi
 
 ![Declarative agent showing what's on the menu for lunch](./assets/screenshot-menu.png)
 ![Declarative agent ordering lunch](./assets/screenshot-order.png)
+![Microsoft 365 Copilot prompting the user to authenticate](./assets/screenshot-auth-challenge.png)
 ![Visual Studio Code with Dev Proxy running and dev tunnel connected](./assets/screenshot-vscode.png)
 
 ## How it works

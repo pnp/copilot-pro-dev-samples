@@ -3,3 +3,4 @@ env/.env.*.user
 .DS_Store
 appPackage/build
 .deployment
+build
