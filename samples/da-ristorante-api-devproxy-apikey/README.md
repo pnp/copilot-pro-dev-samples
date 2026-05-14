@@ -2,10 +2,31 @@
 
 ## Summary
 
-This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with an API key. [Dev Proxy](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/overview) is used to simulate the API.
+This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with an API key. [Dev Proxy](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/overview) is used to simulate the API, so you don't need to build or maintain a real backend. This is useful when the API doesn't exist yet, is owned by a third party, or you want to avoid writing code that won't ship.
 
 ![Declarative agent showing what's on the menu for lunch](./assets/screenshot-menu.png)
 ![Declarative agent ordering lunch](./assets/screenshot-order.png)
+![Visual Studio Code with Dev Proxy running and dev tunnel connected](./assets/screenshot-vscode.png)
+
+## How it works
+
+Microsoft 365 Copilot runs in the cloud and needs a publicly accessible API endpoint. Dev Proxy simulates the API on your machine, and a dev tunnel exposes it over the internet so Copilot can reach it. No API infrastructure is deployed — the simulated API runs entirely on your local machine.
+
+```mermaid
+sequenceDiagram
+    participant Copilot as Microsoft 365 Copilot
+    participant Vault as Teams Vault
+    participant Tunnel as Dev Tunnel
+    participant Proxy as Dev Proxy
+    Copilot->>Vault: Get API key
+    Vault->>Copilot: API key
+    Copilot->>Tunnel: API request with API key (internet)
+    Note over Tunnel: Rewrites host header<br/>to api.ristorante.com
+    Tunnel->>Proxy: Forward to localhost:8000
+    Note over Proxy: Validates API key
+    Proxy->>Tunnel: Simulated response
+    Tunnel->>Copilot: Response (internet)
+```
 
 ## Features
 
@@ -13,8 +34,8 @@ This sample illustrates the following concepts:
 
 * Building a declarative agent for Microsoft 365 Copilot with an API plugin
 * Connecting an API plugin to an API secured with an API key
-* Using [Dev Proxy](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/overview) to simulate a CRUD API
-* Using [dev tunnels](https://learn.microsoft.com/azure/developer/dev-tunnels/overview) to test the API plugin locally
+* Using [Dev Proxy](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/overview) to simulate a CRUD API secured with an API key locally
+* Using [dev tunnels](https://learn.microsoft.com/azure/developer/dev-tunnels/overview) to expose the local API over the internet for use with Microsoft 365 Copilot
 
 ## Contributors
 
@@ -25,15 +46,19 @@ This sample illustrates the following concepts:
 
 Version|Date|Comments
 -------|----|--------
-1.0|May 5, 2026|Initial release
+1.0|May 14, 2026|Initial release
 
 ## Prerequisites
 
 * Microsoft 365 tenant with Microsoft 365 Copilot
+* [Dev Proxy](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/overview) v3.0.0-beta.2 or later
+* [Node.js](https://nodejs.org/)
 * [Visual Studio Code](https://code.visualstudio.com/) with the following extensions:
   * [Microsoft 365 Agents Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
-  * [Dev Proxy Toolkit](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit)
+  * [Dev Proxy Toolkit](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit) v1.27.2 or later (pre-release)
   * [Dev Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-devtunnels.ms-devtunnels)
+
+> **Note:** API key authentication support in the CrudApiPlugin requires Dev Proxy v3.0.0-beta.2 or later. You can use the **Dev Proxy: Switch Version** command in the Dev Proxy Toolkit extension to download and switch to the latest v3.0.0 beta.
 
 ## Minimal path to awesome
 

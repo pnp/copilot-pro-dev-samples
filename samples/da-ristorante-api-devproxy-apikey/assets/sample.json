@@ -2,7 +2,7 @@
   {
     "name": "pnp-copilot-pro-dev-da-ristorante-api-devproxy-apikey",
     "source": "pnp",
-    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot and Dev Proxy",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot, Dev Proxy and API key authentication",
     "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with an API key. Dev Proxy is used to simulate the API.",
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-apikey",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-apikey",
@@ -44,6 +44,12 @@
         "order": 100,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-apikey/assets/screenshot-order.png",
         "alt": "Declarative agent ordering lunch"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-apikey/assets/screenshot-vscode.png",
+        "alt": "Visual Studio Code with Dev Proxy running and dev tunnel connected"
       }
     ],
     "authors": [
