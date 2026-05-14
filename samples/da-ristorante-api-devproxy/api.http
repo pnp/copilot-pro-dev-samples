@@ -1,0 +1,27 @@
+@baseUrl = {{$dotenv OPENAPI_SERVER_URL}}
+
+### Get all dishes
+GET {{baseUrl}}/dishes
+
+### Get a single dish by ID
+GET {{baseUrl}}/dishes/1
+
+### Place an order
+POST {{baseUrl}}/orders
+Content-Type: application/json
+
+{
+  "dishes": [
+    {
+      "name": "frittata",
+      "quantity": 2
+    },
+    {
+      "name": "cappuccino",
+      "quantity": 1
+    }
+  ]
+}
+
+### Get all orders
+GET {{baseUrl}}/orders
