@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "TeamsDevApp.ms-teams-vscode-extension",
+    "TeamsDevApp.vscode-adaptive-cards",
+    "garrytrinder.dev-proxy-toolkit",
+    "garrytrinder.vsc-devtunnels",
+    "humao.rest-client"
+  ]
+}
