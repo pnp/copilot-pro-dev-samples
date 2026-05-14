@@ -1,0 +1,13 @@
+{
+    "debug.onTaskErrors": "abort",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/entra.*.json"
+            ],
+            "schema": {}
+        }
+    ],
+    "azureFunctions.stopFuncTaskPostDebug": false,
+    "azureFunctions.showProjectWarning": false,
+}

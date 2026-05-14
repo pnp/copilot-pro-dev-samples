@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+  "schema_version": "v2.4",
+  "namespace": "ilristorante",
+  "name_for_human": "Il Ristorante",
+  "description_for_human": "See the today's menu and place orders",
+  "description_for_model": "Plugin for getting the today's menu, optionally filtered by course and allergens, and placing orders",
+  "functions": [
+    {
+      "name": "getDishes",
+      "description": "Returns information about the dishes on the menu.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.description"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "Image",
+                    "url": "${image_url}",
+                    "size": "large"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "${name}",
+                    "weight": "Bolder"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "${description}",
+                    "wrap": true
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "Allergens: ${if(count(allergens) > 0, join(allergens, ', '), 'none')}",
+                    "weight": "Lighter"
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "**Price:** €${formatNumber(price, 2)}",
+                    "weight": "Lighter",
+                    "spacing": "None"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "placeOrder",
+      "description": "Places an order and returns the order details",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.dishes[0].name"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "Order Confirmation 🤌",
+                "size": "Large",
+                "weight": "Bolder",
+                "horizontalAlignment": "Center"
+              },
+              {
+                "type": "Container",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "Your order has been placed!",
+                    "weight": "Bolder",
+                    "spacing": "Small"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "OAuthPluginVault",
+        "reference_id": "${{OAUTH_CONFIGURATION_ID}}"
+      },
+      "spec": {
+        "url": "apiSpecificationFile/ristorante.yml",
+        "progress_style": "ShowUsageWithInputAndOutput"
+      },
+      "run_for_functions": [
+        "getDishes",
+        "placeOrder"
+      ]
+    }
+  ]
+}

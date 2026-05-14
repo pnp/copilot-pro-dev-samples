@@ -1,0 +1,6 @@
+env/.env.*.user
+.env
+.DS_Store
+appPackage/build
+.deployment
+build
