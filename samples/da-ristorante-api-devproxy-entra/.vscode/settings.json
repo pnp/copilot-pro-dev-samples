@@ -3,7 +3,7 @@
     "json.schemas": [
         {
             "fileMatch": [
-                "/aad.*.json"
+                "/entra.*.json"
             ],
             "schema": {}
         }

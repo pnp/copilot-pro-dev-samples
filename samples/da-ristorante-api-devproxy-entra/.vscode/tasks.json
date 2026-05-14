@@ -29,7 +29,7 @@
         {
             "label": "Create symlink to .env.local",
             "type": "shell",
-            "command": "test -e .env || ln -s env/.env.local .env",
+            "command": "node -e \"const fs=require('fs'); if(!fs.existsSync('.env')) fs.symlinkSync('env/.env.local','.env')\"",
             "presentation": {
                 "reveal": "silent"
             }
@@ -56,7 +56,7 @@
         {
             "label": "Update Dev Proxy config",
             "type": "shell",
-            "command": "bash scripts/update-devproxy-config.sh",
+            "command": "node scripts/update-devproxy-config.js",
             "presentation": {
                 "reveal": "silent"
             }

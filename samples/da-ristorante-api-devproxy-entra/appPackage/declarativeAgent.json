@@ -1,6 +1,6 @@
 {
-    "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
-    "version": "v1.0",
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.7/schema.json",
+    "version": "v1.7",
     "name": "Il Ristorante",
     "description": "Order the most delicious Italian dishes and drinks from the comfort of your desk.",
     "instructions": "$[file('instruction.txt')]",

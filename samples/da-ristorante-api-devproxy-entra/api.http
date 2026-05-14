@@ -1,4 +1,7 @@
 @baseUrl = {{$dotenv OPENAPI_SERVER_URL}}
+# Generate a test token using the Dev Proxy CLI:
+# devproxy token new --name "Dev Proxy" --audience {ENTRA_APP_CLIENT_ID} --issuer https://login.microsoftonline.com/{ENTRA_APP_TENANT_ID}/v2.0 --scopes "api://{ENTRA_APP_CLIENT_ID}/Dishes.Read api://{ENTRA_APP_CLIENT_ID}/Orders.Write"
+# Replace {ENTRA_APP_CLIENT_ID} and {ENTRA_APP_TENANT_ID} with values from env/.env.local
 @token = <your-entra-access-token>
 
 ### Get all dishes

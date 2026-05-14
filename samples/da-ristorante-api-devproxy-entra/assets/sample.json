@@ -44,6 +44,12 @@
         "order": 100,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-entra/assets/screenshot-order.png",
         "alt": "Declarative agent ordering lunch"
+      },
+      {
+        "type": "image",
+        "order": 200,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-entra/assets/screenshot-vscode.png",
+        "alt": "Visual Studio Code with Dev Proxy running and dev tunnel connected"
       }
     ],
     "authors": [
