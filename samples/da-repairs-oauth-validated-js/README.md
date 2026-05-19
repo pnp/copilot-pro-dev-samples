@@ -69,4 +69,4 @@ This sample illustrates the following concepts:
 - Service authentication and authorization without Easy Auth
 - Using dev tunnels to test the API plugin locally
 
-<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-repairs-oauth-validated" />
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-repairs-oauth-validated-js" />

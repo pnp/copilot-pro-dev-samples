@@ -1,11 +1,11 @@
 [
   {
-    "name": "pnp-copilot-pro-dev-da-repairs-oauth-validated",
+    "name": "pnp-copilot-pro-dev-da-repairs-oauth-validated-js",
     "source": "pnp",
     "title": "Declarative Agent with an API plugin that secured by Entra ID that validates its own tokens",
     "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that validates tokens using an open source library.",
-    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-validated-js",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-validated-js",
     "longDescription": [
       "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses an open source library to validate Entra ID tokens to secure access to APIs."
     ],
@@ -36,7 +36,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/main/samples/da-repairs-oauth-validated/assets/screenshot.gif?raw=true",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/main/samples/da-repairs-oauth-validated-js/assets/screenshot.gif?raw=true",
         "alt": "Declarative agent answering questions about repairs using the information from an API secured with Entra ID"
       }
     ],

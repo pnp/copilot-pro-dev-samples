@@ -4,7 +4,7 @@
 version: v1.7
 
 additionalMetadata:
-  sampleTag: pnp-copilot-pro-dev:da-repairs-oauth-validated
+  sampleTag: pnp-copilot-pro-dev:da-repairs-oauth-validated-js
 
 environmentFolderPath: ./env
 
@@ -183,4 +183,3 @@ publish:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
-projectId: 3bbfb625-ccb6-4542-9925-63b86a2e6927
