@@ -4,7 +4,7 @@
 version: v1.8
 
 additionalMetadata:
-  sampleTag: pnp-copilot-pro-dev:da-trey-research-auth
+  sampleTag: pnp-copilot-pro-dev:da-trey-research-auth-js
 
 environmentFolderPath: ./env
 
@@ -137,4 +137,3 @@ publish:
     # the specified environment variable(s).
     writeToEnvironmentFile:
       publishedAppId: TEAMS_APP_PUBLISHED_APP_ID
-projectId: 78453b3d-a046-4146-a4a9-df1482d7f7b3
