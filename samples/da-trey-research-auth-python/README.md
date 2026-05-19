@@ -60,7 +60,7 @@ For this sample, we will use OneDrive to store the documents that the agent will
 1. Navigate to the **Legal** folder
 1. Expand the **Details** tab on the right
 1. Expand the **More details** tab
-1. Copy the Path to the Products folder using the **Copy** button
+1. Copy the Path to the **Legal** folder using the **Copy** button
 
 ### 2. Test the agent
 
@@ -108,7 +108,7 @@ Try the following prompts:
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-trey-resarch%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-trey-research%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 

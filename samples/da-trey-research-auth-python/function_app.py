@@ -60,7 +60,7 @@ async def _consultants_handler(req: func.HttpRequest, user_info: UserInfo) -> fu
         )
 
 
-@app.route(route="consultants/{id:alpha?}", methods=["GET"])
+@app.route(route="consultants/{id?}", methods=["GET"])
 async def consultants(req: func.HttpRequest) -> func.HttpResponse:
     handler = with_auth(_consultants_handler)
     return await handler(req)
