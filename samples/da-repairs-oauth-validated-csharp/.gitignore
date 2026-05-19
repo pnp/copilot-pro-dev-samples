@@ -6,6 +6,7 @@ M365Agent/env/.env.local
 
 # User-specific files
 *.user
+local.settings.json
 
 # Visual Studio
 .vs/

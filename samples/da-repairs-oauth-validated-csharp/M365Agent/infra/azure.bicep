@@ -11,6 +11,18 @@ param aadAppOauthAuthorityHost string
 param location string = resourceGroup().location
 param serverfarmsName string = resourceBaseName
 param functionAppName string = resourceBaseName
+param storageAccountName string = resourceBaseName
+
+// Storage account required by Azure Functions runtime
+resource storageAccount 'Microsoft.Storage/storageAccounts@2021-09-01' = {
+  name: storageAccountName
+  location: location
+  kind: 'StorageV2'
+  sku: {
+    name: 'Standard_LRS'
+  }
+}
+
 // Compute resources for Azure Functions
 resource serverfarms 'Microsoft.Web/serverfarms@2021-02-01' = {
   name: serverfarmsName
@@ -31,6 +43,10 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
     httpsOnly: true
     siteConfig: {
       appSettings: [
+        {
+          name: 'AzureWebJobsStorage'
+          value: 'DefaultEndpointsProtocol=https;AccountName=${storageAccount.name};AccountKey=${storageAccount.listKeys().keys[0].value};EndpointSuffix=${environment().suffixes.storage}'
+        }
         {
           name: 'FUNCTIONS_EXTENSION_VERSION'
           value: '~4'
@@ -62,6 +78,10 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
         {
           name: 'AAD_APP_OAUTH_AUTHORITY_HOST'
           value: aadAppOauthAuthorityHost
+        }
+        {
+          name: 'AAD_APP_OAUTH_AUTHORITY'
+          value: oauthAuthority
         }
       ]
       ftpsState: 'FtpsOnly'

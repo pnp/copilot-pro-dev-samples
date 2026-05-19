@@ -50,7 +50,7 @@
     "references": [
       {
         "name": "Microsoft 365 Copilot extensibility",
-        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "description": "Learn more about what Microsoft 365 Copilot is and how you can extend it.",
         "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
       },
       {

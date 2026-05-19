@@ -57,7 +57,7 @@ namespace RepairsApi
                         metadataUrl, new OpenIdConnectConfigurationRetriever());
                 }
 
-                var openIdConfig = await _configManager.GetConfigurationAsync();
+                var openIdConfig = await _configManager.GetConfigurationAsync(CancellationToken.None);
 
                 var validationParameters = new TokenValidationParameters
                 {

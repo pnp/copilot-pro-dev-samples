@@ -47,7 +47,7 @@ Version|Date|Comments
 * Microsoft 365 tenant with Microsoft 365 Copilot
 * [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
 * [Azure Functions Core Tools v4](https://learn.microsoft.com/azure/azure-functions/functions-run-local#install-the-azure-functions-core-tools)
-* [Visual Studio 2022](https://aka.ms/vs) 17.11 or higher
+* [Visual Studio 2022](https://aka.ms/vs) 17.14 or higher (required for .NET 10 support)
 * [Microsoft 365 Agents Toolkit for Visual Studio](https://aka.ms/install-teams-toolkit-vs)
 
 ## Minimal Path to Awesome
