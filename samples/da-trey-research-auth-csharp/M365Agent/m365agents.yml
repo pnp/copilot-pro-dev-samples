@@ -1,0 +1,112 @@
+# yaml-language-server: $schema=https://aka.ms/m365-agents-toolkits/v1.9/yaml.schema.json
+# Visit https://aka.ms/teamsfx-v5.0-guide for details on this file
+# Visit https://aka.ms/teamsfx-actions for details on actions
+version: v1.9
+
+environmentFolderPath: ./env
+
+# Triggered when 'teamsapp provision' is executed
+provision:
+  # Creates a new Microsoft Entra app
+  - uses: aadApp/create
+    with:
+      name: trey-oauth-entra-csharp
+      generateClientSecret: true
+      signInAudience: AzureADMyOrg
+    writeToEnvironmentFile:
+      clientId: ENTRA_APP_CLIENT_ID
+      clientSecret: SECRET_ENTRA_APP_CLIENT_SECRET
+      objectId: ENTRA_APP_OBJECT_ID
+      tenantId: ENTRA_APP_TENANT_ID
+      authority: ENTRA_APP_OAUTH_AUTHORITY
+      authorityHost: ENTRA_APP_OAUTH_AUTHORITY_HOST
+
+  # Apply the Microsoft Entra manifest
+  - uses: aadApp/update
+    with:
+      manifestPath: ./entra.manifest.json
+      outputFilePath: ./build/entra.manifest.${{TEAMSFX_ENV}}.json
+
+  # Creates a Teams app
+  - uses: teamsApp/create
+    with:
+      name: TreyResearchCSharp${{APP_NAME_SUFFIX}}
+    writeToEnvironmentFile:
+      teamsAppId: TEAMS_APP_ID
+
+  - uses: arm/deploy
+    with:
+      subscriptionId: ${{AZURE_SUBSCRIPTION_ID}}
+      resourceGroupName: ${{AZURE_RESOURCE_GROUP_NAME}}
+      templates:
+        - path: ./infra/azure.bicep
+          parameters: ./infra/azure.parameters.json
+          deploymentName: Create-resources-for-trey-research-csharp
+      bicepCliVersion: v0.9.1
+
+  # Register OAuth client configuration
+  - uses: oauth/register
+    with:
+      name: oAuth2AuthCode
+      flow: authorizationCode
+      appId: ${{TEAMS_APP_ID}}
+      clientId: ${{ENTRA_APP_CLIENT_ID}}
+      clientSecret: ${{SECRET_ENTRA_APP_CLIENT_SECRET}}
+      apiSpecPath: ./appPackage/apiSpecificationFile/trey-definition.yml
+    writeToEnvironmentFile:
+      configurationId: OAUTH2AUTHCODE_CONFIGURATION_ID
+
+  - uses: oauth/update
+    with:
+      name: oAuth2AuthCode
+      appId: ${{TEAMS_APP_ID}}
+      clientId: ${{ENTRA_APP_CLIENT_ID}}
+      apiSpecPath: ./appPackage/apiSpecificationFile/trey-definition.yml
+      configurationId: ${{OAUTH2AUTHCODE_CONFIGURATION_ID}}
+
+  # Build Teams app package with latest env value
+  - uses: teamsApp/zipAppPackage
+    with:
+      manifestPath: ./appPackage/manifest.json
+      outputZipPath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+      outputFolder: ./appPackage/build
+
+  # Validate app package using validation rules
+  - uses: teamsApp/validateAppPackage
+    with:
+      appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+
+  # Apply the Teams app manifest to an existing Teams app in Developer Portal.
+  - uses: teamsApp/update
+    with:
+      appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+
+  # Extend your Teams app to Outlook and the Microsoft 365 app
+  - uses: teamsApp/extendToM365
+    with:
+      appPackagePath: ./appPackage/build/appPackage.${{TEAMSFX_ENV}}.zip
+    writeToEnvironmentFile:
+      titleId: M365_TITLE_ID
+      appId: M365_APP_ID
+
+# Triggered when 'teamsapp deploy' is executed
+deploy:
+  # Setup database
+  - uses: script
+    name: Setup database tables
+    with:
+      run: node db-setup.js ${{SECRET_STORAGE_ACCOUNT_CONNECTION_STRING}}
+      workingDirectory: ../scripts
+
+  - uses: cli/runDotnetCommand
+    with:
+      args: publish --configuration Release --runtime win-x86 --self-contained
+        TreyResearchApi.csproj
+      workingDirectory: ../TreyResearchApi
+
+  # Deploy your application to Azure Functions using the zip deploy feature.
+  - uses: azureFunctions/zipDeploy
+    with:
+      artifactFolder: bin/Release/net10.0/win-x86/publish
+      resourceId: ${{API_FUNCTION_RESOURCE_ID}}
+      workingDirectory: ../TreyResearchApi

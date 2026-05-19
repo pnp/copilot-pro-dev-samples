@@ -1,0 +1,7 @@
+{
+    "status": 200,
+    "clientName": "Woodgrove Bank",
+    "projectName": "Financial data plugin for Microsoft Copilot",
+    "remainingForecast": -37,
+    "message": "Charged 3 hours to Woodgrove Bank on project \"Financial data plugin for Microsoft Copilot\". You are 37 hours over your forecast this month."
+}
