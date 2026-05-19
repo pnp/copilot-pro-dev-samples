@@ -2,7 +2,7 @@
 
 ## Summary
 
-Trey Research is a fictitious consulting company that supplies talent in the software and pharmaceuticals industries. This is the **Python** version of the [da-trey-research-auth](../README.md) sample.
+Trey Research is a fictitious consulting company that supplies talent in the software and pharmaceuticals industries.
 
 The solution consists of an API plugin that calls a set of Azure Functions (Python), which store the consulting data in Azure Table Storage (it uses the Azurite storage emulator when running locally).
 
