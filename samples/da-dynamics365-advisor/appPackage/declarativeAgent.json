@@ -1,6 +1,6 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
-  "version": "v1.3",
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.7/schema.json",
+  "version": "v1.7",
   "name": "Dynamics 365 Advisor",
   "description": "Expert assistant for Dynamics 365 CRM, Power Platform, and Copilot solutions.",
   "instructions": "$[file('instruction.txt')]",

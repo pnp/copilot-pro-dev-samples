@@ -30,8 +30,8 @@
         "value": "No"
       },
       {
-        "key": "GRAPH-CONNECTOR",
-        "value": "No"
+        "key": "AGENT-TYPE",
+        "value": "Declarative Agent"
       }
     ],
     "thumbnails": [
