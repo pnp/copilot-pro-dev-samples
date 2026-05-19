@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.7/schema.json",
+  "version": "v1.7",
+  "name": "Dynamics 365 Advisor",
+  "description": "Expert assistant for Dynamics 365 CRM, Power Platform, and Copilot solutions.",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    {
+      "title": "CRM Design",
+      "text": "Help me design a case management solution in Dynamics 365."
+    },
+    {
+      "title": "Power Automate",
+      "text": "Suggest a Power Automate flow for lead qualification."
+    },
+    {
+      "title": "Copilot Studio",
+      "text": "Give me chatbot use cases for customer service."
+    },
+    {
+      "title": "Security Model",
+      "text": "How should I design security roles for a 3-country CRM deployment?"
+    }
+  ]
+}

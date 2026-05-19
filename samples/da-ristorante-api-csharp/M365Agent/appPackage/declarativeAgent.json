@@ -1,0 +1,21 @@
+{
+    "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
+    "version": "v1.0",
+    "name": "Il Ristorante",
+    "description": "Order the most delicious Italian dishes and drinks from the comfort of your desk.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "text": "What's for lunch today?"
+        },
+        {
+            "text": "What can I order for dinner that is gluten-free?"
+        }
+    ],
+    "actions": [
+        {
+            "id": "menuPlugin",
+            "file": "ai-plugin.json"
+        }
+    ]
+}
