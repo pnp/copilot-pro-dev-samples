@@ -35,10 +35,6 @@ Version|Date|Comments
 * [Node.js v18](https://nodejs.org/en/download/package-manager)
 
 ## Minimal path to awesome
-
-* Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor) then unzip it)
-* From your command line, change your current directory to the `samples/da-dynamics365-advisor` folder
-* In the command line, run: `copy .env.local.sample env\.env.local`
 * Open the Microsoft 365 Agents Toolkit extension and sign in to your Microsoft 365 tenant with Microsoft 365 Copilot
 * Select **Debug in Copilot (Edge)** from the launch configuration dropdown
 
