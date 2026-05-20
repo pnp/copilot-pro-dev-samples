@@ -1,11 +1,11 @@
 [
   {
-    "name": "pnp-copilot-pro-dev-da-repairs-oauth",
+    "name": "pnp-copilot-pro-dev-da-repairs-oauth-js",
     "source": "pnp",
     "title": "Declarative for Microsoft 365 Copilot with an API plugin connected to an API secured with OAuth",
     "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses the built-in Azure App Service authentication and authorization capabilities (also referred to as Easy Auth) to secure access to APIs.",
-    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-js",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-js",
     "longDescription": [
       "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses the built-in Azure App Service authentication and authorization capabilities (also referred to as Easy Auth) to secure access to APIs."
     ],
@@ -36,7 +36,7 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/main/samples/da-repairs-oauth/assets/screenshot.png?raw=true",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/blob/main/samples/da-repairs-oauth-js/assets/screenshot.png?raw=true",
         "alt": "Declarative agent answering questions about repairs using the information from an API secured with OAuth"
       }
     ],
