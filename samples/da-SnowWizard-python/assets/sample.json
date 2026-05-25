@@ -1,0 +1,69 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-snow-wizard-python",
+      "source": "pnp",
+      "title": "Copilot Snow Wizard (Python)",
+      "shortDescription": "M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents using Python Azure Functions",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard-python",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard-python",
+      "longDescription": [
+        "This project demonstrates a sample implementation of an M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents, built with Python and Azure Functions."
+      ],
+      "creationDateTime": "2024-10-11",
+      "updateDateTime": "2024-10-11",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Python"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "Python"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "Yes"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SnowWizard-python/assets/2024-10-11_16-39.png",
+          "alt": "Declarative agent listing ServiceNow incidents"
+        },
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SnowWizard-python/assets/2024-10-11_16-40.png",
+          "alt": "Declarative agent creating a ServiceNow incident"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "cristianoag",
+          "pictureUrl": "https://github.com/cristianoag.png",
+          "name": "Cristiano Goncalves"
+        },
+        {
+          "gitHubAccount": "luishdemetrio",
+          "pictureUrl": "https://github.com/luishdemetrio.png",
+          "name": "Luis Demetrio"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        }
+      ]
+    }
+  ]
