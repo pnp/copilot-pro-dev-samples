@@ -1,0 +1,67 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-mcp-cs-customers-secure-server",
+    "source": "pnp",
+    "title": "Secure Customers MCP Server with C# and ASP.NET Core",
+    "shortDescription": "This sample demonstrates how to build a secure Model Context Protocol (MCP) server in C# using ASP.NET Core, Microsoft Identity Web authentication, scoped authorization, and customer data tools.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcp-cs-customers-secure-server",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcp-cs-customers-secure-server",
+    "longDescription": [
+      "This sample demonstrates how to build and run a secure MCP server using C# and ASP.NET Core. The server is configured with HTTP transport and stateless MCP operations, and exposes customer tools backed by local JSON data.",
+      "Security is enabled by default and can be toggled via configuration. When enabled, the server validates Microsoft Entra access tokens with Microsoft Identity Web and enforces scope-based authorization for MCP tool access.",
+      "The sample also includes practical middleware and hosting patterns, such as CORS for browser clients, forwarded headers support for tunnels and proxies, and dynamic MCP resource metadata generation for different host URLs."
+    ],
+    "creationDateTime": "2026-05-25",
+    "updateDateTime": "2026-05-25",
+    "products": [
+      "Microsoft 365 Copilot",
+      "AzureAD",
+      "CopilotStudio",
+      "MCP",
+      ".NET",
+      "Microsoft Entra ID"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "ASP.NET Core"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "C#"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcp-cs-customers-secure-server/assets/mcp-inspector.png",
+        "alt": "MCP Inspector connected to the secure Customers MCP Server"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "paolopia",
+        "pictureUrl": "https://github.com/paolopia.png",
+        "name": "paolopia"
+      }
+    ],
+    "references": [
+      {
+        "name": "Create a minimal MCP server using C#",
+        "description": "Learn how to create a minimal Model Context Protocol (MCP) server in C# with ASP.NET Core.",
+        "url": "https://learn.microsoft.com/en-us/dotnet/ai/quickstarts/build-mcp-server "
+      },
+      {
+        "name": "MCP C# SDK",
+        "description": "Explore the ModelContextProtocol ASP.NET Core package and C# SDK docs.",
+        "url": "https://modelcontextprotocol.github.io/csharp-sdk"
+      },
+      {
+        "name": "Microsoft Identity Web for Web APIs",
+        "description": "Learn how to secure ASP.NET Core APIs with Microsoft Identity Web.",
+        "url": "https://learn.microsoft.com/entra/identity-platform/scenario-protected-web-api-overview"
+      }
+    ]
+  }
+]
