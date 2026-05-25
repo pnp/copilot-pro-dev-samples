@@ -1,0 +1,62 @@
+[
+  {
+    "Id": "9a4f0897-bf0f-45b1-8f24-814dc8f66da9",
+    "CompanyName": "Contoso Dynamics",
+    "Country": "United States",
+    "WebsiteUrl": "https://www.contosodynamics.com"
+  },
+  {
+    "Id": "c1eebcc4-4cf0-447a-941e-45f75fec27e0",
+    "CompanyName": "Zava Health",
+    "Country": "United Kingdom",
+    "WebsiteUrl": "https://www.zavahealth.co.uk"
+  },
+  {
+    "Id": "3f2e8104-fbe4-4413-9f8e-54403f467cc0",
+    "CompanyName": "Zava Insurance Group",
+    "Country": "Canada",
+    "WebsiteUrl": "https://www.zavainsurance.ca"
+  },
+  {
+    "Id": "30e4a074-af9f-4bce-8854-3fb79391c5d2",
+    "CompanyName": "Northwind Traders",
+    "Country": "Germany",
+    "WebsiteUrl": "https://www.northwindtraders.de"
+  },
+  {
+    "Id": "f47f4ecf-127a-4d68-a4a2-8753e8ffdf20",
+    "CompanyName": "Fabrikam Retail",
+    "Country": "Australia",
+    "WebsiteUrl": "https://www.fabrikamretail.com.au"
+  },
+  {
+    "Id": "9e9013bb-1c53-4b57-ac2a-9531da824bae",
+    "CompanyName": "Adventure Works Global",
+    "Country": "Spain",
+    "WebsiteUrl": "https://www.adventureworksglobal.es"
+  },
+  {
+    "Id": "f0f7f269-4f8a-4f41-ad79-f56fca5dc56f",
+    "CompanyName": "Tailspin Logistics",
+    "Country": "Netherlands",
+    "WebsiteUrl": "https://www.tailspinlogistics.nl"
+  },
+  {
+    "Id": "ea0326eb-5858-44d7-9ed7-9b44696c9bf8",
+    "CompanyName": "Blue Yonder Labs",
+    "Country": "Singapore",
+    "WebsiteUrl": "https://www.blueyonderlabs.sg"
+  },
+  {
+    "Id": "1b4ddf7c-8930-4a58-af53-463127b80b23",
+    "CompanyName": "Proseware Digital",
+    "Country": "France",
+    "WebsiteUrl": "https://www.prosewaredigital.fr"
+  },
+  {
+    "Id": "ca1dd770-e5aa-4303-9af9-90a35b39c307",
+    "CompanyName": "Woodgrove Financial",
+    "Country": "Italy",
+    "WebsiteUrl": "https://www.woodgrovefinancial.it"
+  }
+]

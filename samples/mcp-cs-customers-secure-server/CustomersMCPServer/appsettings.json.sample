@@ -1,0 +1,21 @@
+{
+  "Security": {
+    "Enabled": false
+  },
+  "Mcp": {
+    "ServerUrl": "https://your-server-url.example.com/",
+    "AllowedOrigins": [
+      "https://your-client-origin.example.com"
+    ],
+    "UniqueUri": "api://00000000-0000-0000-0000-000000000000",
+    "ScopesSupported": [
+      "Customers.ReadWrite.All"
+    ]
+  },
+  "AzureAd": {
+    "Instance": "https://login.microsoftonline.com/",
+    "Domain": "your-tenant.onmicrosoft.com",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
+    "ClientId": "00000000-0000-0000-0000-000000000000"
+  }
+}
