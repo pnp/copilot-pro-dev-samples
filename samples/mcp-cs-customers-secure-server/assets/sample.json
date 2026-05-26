@@ -40,11 +40,13 @@
       }
     ],
     "authors": [
-      {
-        "gitHubAccount": "paolopia",
+        {
+        "gitHubAccount": "PaoloPia",
+        "company": "Microsoft",
         "pictureUrl": "https://github.com/paolopia.png",
-        "name": "paolopia"
-      }
+        "name": "Paolo Pialorsi",
+        "twitter": "PaoloPia"
+        }
     ],
     "references": [
       {
