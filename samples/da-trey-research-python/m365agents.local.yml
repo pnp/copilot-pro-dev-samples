@@ -18,6 +18,13 @@ provision:
         echo "::set-teamsfx-env FUNC_ENDPOINT=http://localhost:7071";
         echo "::set-teamsfx-env SECRET_STORAGE_ACCOUNT_CONNECTION_STRING=UseDevelopmentStorage=true";
 
+  # Increment manifest version
+  - uses: script
+    name: Increment manifest version
+    with:
+      run: node increment-version.js
+      workingDirectory: scripts
+
   # Creates a Teams app
   - uses: teamsApp/create
     with:

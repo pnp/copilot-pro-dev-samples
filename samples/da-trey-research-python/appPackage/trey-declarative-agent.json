@@ -18,6 +18,16 @@
             "text": "Write a summary of each project based on the statement of work"
         }
     ],
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [
+                {
+                    "url": "${{DOCUMENTS_URL}}"
+                }
+            ]
+        }
+    ],
     "actions": [
         {
             "id": "treyResearchPlugin",

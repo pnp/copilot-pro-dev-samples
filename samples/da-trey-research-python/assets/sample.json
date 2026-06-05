@@ -32,8 +32,21 @@
                 "value": "No"
             }
         ],
-        "thumbnails": [],
-        "authors": [],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 50,
+                "url": "https://github.com/pnp/pnp-copilot-pro-dev-samples/raw/main/samples/da-trey-research-python/assets/preview.gif",
+                "alt": "Demonstration of Trey Research sample"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "AjayJ12-MSFT",
+                "pictureUrl": "https://github.com/AjayJ12-MSFT.png",
+                "name": "Ajay Jadhav"
+            }
+        ],
         "references": [
             {
                 "name": "Microsoft 365 Copilot extensibility",
