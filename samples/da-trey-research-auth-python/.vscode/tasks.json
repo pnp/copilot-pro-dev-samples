@@ -1,0 +1,105 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Agent Locally",
+            "dependsOn": [
+                "Validate prerequisites",
+                "Start local tunnel",
+                "Start Azurite emulator",
+                "Create resources",
+                "Build project"
+            ],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "Validate prerequisites",
+            "type": "teamsfx",
+            "command": "debug-check-prerequisites",
+            "args": {
+                "prerequisites": [
+                    "m365Account",
+                    "portOccupancy"
+                ],
+                "portOccupancy": [
+                    7071
+                ]
+            }
+        },
+        {
+            "label": "Start local tunnel",
+            "type": "teamsfx",
+            "command": "debug-start-local-tunnel",
+            "args": {
+                "type": "dev-tunnel",
+                "ports": [
+                    {
+                        "portNumber": 7071,
+                        "protocol": "http",
+                        "access": "public",
+                        "writeToEnvironmentFile": {
+                            "endpoint": "OPENAPI_SERVER_URL"
+                        }
+                    }
+                ],
+                "env": "local"
+            },
+            "isBackground": true,
+            "problemMatcher": "$teamsfx-local-tunnel-watch"
+        },
+        {
+            "label": "Create resources",
+            "type": "teamsfx",
+            "command": "provision",
+            "args": {
+                "env": "local"
+            }
+        },
+        {
+            "label": "Build project",
+            "type": "teamsfx",
+            "command": "deploy",
+            "args": {
+                "env": "local"
+            }
+        },
+        {
+            "label": "Start Azurite emulator",
+            "type": "shell",
+            "command": "npx azurite --silent --location ./_storage_emulator --debug ./_storage_emulator/debug.log",
+            "isBackground": true,
+            "problemMatcher": {
+                "pattern": [
+                    {
+                        "regexp": "^.*$",
+                        "file": 0,
+                        "location": 1,
+                        "message": 2
+                    }
+                ],
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Azurite",
+                    "endsPattern": "successfully listening"
+                }
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "silent"
+            }
+        },
+        {
+            "label": "pip install",
+            "type": "shell",
+            "command": "python -m pip install -r requirements.txt --quiet",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "presentation": {
+                "reveal": "silent"
+            }
+        }
+    ]
+}
