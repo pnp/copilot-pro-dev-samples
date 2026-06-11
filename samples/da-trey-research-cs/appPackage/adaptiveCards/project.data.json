@@ -1,0 +1,23 @@
+{
+    "id": "2",
+    "name": "Supply Chain Optimization",
+    "description": "Develop supply chain automation solution in Azure",
+    "clientName": "Alpine Ski House",
+    "clientContact": "Felix Henderson",
+    "clientEmail": "fhenderson@alpineskihouse.com",
+    "location": {
+        "street": "3601 West 76th Street, Suite 600",
+        "city": "Edina",
+        "state": "MN",
+        "country": "USA",
+        "postalCode": "55435",
+        "latitude": 44.877582,
+        "longitude": -93.328504
+    },
+    "mapUrl": "https://microsoft.github.io/copilot-camp/demo-assets/images/maps/alpine-ski-house.jpg",
+    "consultants": [],
+    "forecastThisMonth": 0,
+    "forecastNextMonth": 0,
+    "deliveredLastMonth": 0,
+    "deliveredThisMonth": 0
+}

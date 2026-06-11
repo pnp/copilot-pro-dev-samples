@@ -1,0 +1,35 @@
+{
+    "id": "1",
+    "name": "Avery Howard",
+    "email": "avery@treyresearch.com",
+    "phone": "1-555-456-7890",
+    "consultantPhotoUrl": "https://bobgerman.github.io/fictitiousAiGenerated/Avery.jpg",
+    "location": {
+        "street": "5 Wayside Rd.",
+        "city": "Burlington",
+        "state": "MA",
+        "country": "USA",
+        "postalCode": "01803",
+        "latitude": 42.5048,
+        "longitude": -71.1956
+    },
+    "skills": [
+        "C#",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js"
+    ],
+    "certifications": [
+        "MCSADA",
+        "Azure Developer Associate",
+        "MCAAF",
+        "Azure AI Fundamentals"
+    ],
+    "roles": [
+        "Project lead",
+        "Developer",
+        "Architect",
+        "DevOps"
+    ]
+}
