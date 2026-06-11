@@ -1,11 +1,11 @@
 [
     {
-      "name": "pnp-copilot-pro-dev-snow-wizard-csharp",
+      "name": "pnp-copilot-pro-dev-da-snowwizard-cs",
       "source": "pnp",
       "title": "Copilot Snow Wizard (C#)",
       "shortDescription": "M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents using C# Azure Functions",
-      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard-cs",
-      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard-cs",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-snowwizard-cs",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-snowwizard-cs",
       "longDescription": [
         "This project demonstrates a sample implementation of an M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents, built with C# and Azure Functions (.NET 8 isolated worker)."
       ],
@@ -36,13 +36,13 @@
         {
           "type": "image",
           "order": 100,
-          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SnowWizard-cs/assets/2024-10-11_16-39.png",
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-snowwizard-cs/assets/2024-10-11_16-39.png",
           "alt": "Declarative agent listing ServiceNow incidents"
         },
         {
           "type": "image",
           "order": 100,
-          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SnowWizard-cs/assets/2024-10-11_16-40.png",
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-snowwizard-cs/assets/2024-10-11_16-40.png",
           "alt": "Declarative agent creating a ServiceNow incident"
         }
       ],

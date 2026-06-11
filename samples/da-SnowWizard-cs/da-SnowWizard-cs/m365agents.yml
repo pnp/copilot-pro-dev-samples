@@ -4,7 +4,7 @@
 version: v1.9
 
 additionalMetadata:
-  sampleTag: pnp-copilot-pro-dev:da-SnowWizard-cs
+  sampleTag: pnp-copilot-pro-dev:da-snowwizard-cs
 
 environmentFolderPath: ./env
 
