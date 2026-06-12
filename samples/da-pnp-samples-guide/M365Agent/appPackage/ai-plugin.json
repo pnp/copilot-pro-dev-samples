@@ -249,7 +249,6 @@
     }
   ],
   "capabilities": {
-    "localization": {},
     "conversation_starters": [
       { "text": "Find me a sample that uses Code Interpreter" },
       { "text": "Show me samples that include an API plugin with authentication" },
