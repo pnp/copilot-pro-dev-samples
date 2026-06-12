@@ -1,0 +1,262 @@
+{
+  "$schema": "https://aka.ms/json-schemas/copilot/plugin/v2.4/schema.json",
+  "schema_version": "v2.4",
+  "namespace": "githubSamples",
+  "name_for_human": "GitHub Samples",
+  "description_for_human": "Browse the pnp/copilot-pro-dev-samples repo for declarative agent samples.",
+  "description_for_model": "Plugin for searching and reading declarative agent samples in the public `pnp/copilot-pro-dev-samples` GitHub repository. Use `searchCode` (always scoped with `repo:pnp/copilot-pro-dev-samples`) to find samples by capability name (e.g., CodeInterpreter, WebSearch, OneDriveAndSharePoint, GraphConnectors) or by scenario keyword (e.g., HR, finance, support). Use `getRepoContent` with `owner=pnp` and `repo=copilot-pro-dev-samples` to read a sample's README.md, declarativeAgent.json, or ai-plugin.json; decode the base64 `content` field for text. Use `searchRepositories` for broader PnP repo discovery. Use `getRepo` and `getRepoReadme` for repo-level metadata and overview. All calls are UNAUTHENTICATED and limited to ~60 requests/hour per client IP. If a 403 with rate-limit message is returned, tell the user to wait an hour or browse the repo directly at https://github.com/pnp/copilot-pro-dev-samples.",
+  "functions": [
+    {
+      "name": "searchRepositories",
+      "description": "Search public GitHub repositories. Useful for discovering related PnP repos (e.g., `q=topic:m365-copilot user:pnp`). Returns a list of repositories with metadata.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.items",
+          "properties": {
+            "title": "$.full_name",
+            "subtitle": "$.description",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "${full_name}",
+                "weight": "Bolder",
+                "size": "Medium",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${if(description, description, 'No description.')}",
+                "wrap": true,
+                "spacing": "Small"
+              },
+              {
+                "type": "FactSet",
+                "separator": true,
+                "facts": [
+                  { "title": "Stars", "value": "${stargazers_count}" },
+                  { "title": "Forks", "value": "${forks_count}" },
+                  { "title": "Updated", "value": "${updated_at}" }
+                ]
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "Open on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "searchCode",
+      "description": "Search code inside the pnp/copilot-pro-dev-samples repo. ALWAYS include `repo:pnp/copilot-pro-dev-samples` in the `q` parameter. Examples: `repo:pnp/copilot-pro-dev-samples CodeInterpreter`, `repo:pnp/copilot-pro-dev-samples OneDriveAndSharePoint path:declarativeAgent.json`. Returns a list of matching files with their path inside the repo.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.items",
+          "properties": {
+            "title": "$.path",
+            "subtitle": "$.repository.full_name",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "${path}",
+                "weight": "Bolder",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${repository.full_name}",
+                "isSubtle": true,
+                "spacing": "None",
+                "wrap": true
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "View file",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "getRepo",
+      "description": "Get metadata for a single public GitHub repository. Typical use: owner=`pnp`, repo=`copilot-pro-dev-samples`.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.full_name",
+            "subtitle": "$.description",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "${full_name}",
+                "weight": "Bolder",
+                "size": "Medium",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${if(description, description, 'No description.')}",
+                "wrap": true,
+                "spacing": "Small"
+              },
+              {
+                "type": "FactSet",
+                "separator": true,
+                "facts": [
+                  { "title": "Stars", "value": "${stargazers_count}" },
+                  { "title": "Forks", "value": "${forks_count}" },
+                  { "title": "Default branch", "value": "${default_branch}" },
+                  { "title": "Updated", "value": "${updated_at}" }
+                ]
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "Open on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "getRepoContent",
+      "description": "Read the contents of a file or directory inside a public GitHub repo. For files, the response includes base64-encoded `content` (decode it for text). For directories, the response is an array of entries (file/dir). Typical use: owner=`pnp`, repo=`copilot-pro-dev-samples`, path=`samples` (to list samples) or path=`samples/da-ristorante-api-csharp/README.md` (to read a specific sample's README).",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.path",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "${if(name, name, 'Directory contents')}",
+                "weight": "Bolder",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${if(path, path, '')}",
+                "isSubtle": true,
+                "spacing": "None",
+                "wrap": true
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "View on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "getRepoReadme",
+      "description": "Read the top-level README of a public GitHub repo. Returns a base64-encoded `content` field; decode it for the markdown.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.path",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "README",
+                "weight": "Bolder",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${path}",
+                "isSubtle": true,
+                "spacing": "None",
+                "wrap": true
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "View on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": { "type": "None" },
+      "spec": {
+        "url": "github-openapi.json",
+        "progress_style": "ShowUsageWithInputAndOutput"
+      },
+      "run_for_functions": [
+        "searchRepositories",
+        "searchCode",
+        "getRepo",
+        "getRepoContent",
+        "getRepoReadme"
+      ]
+    }
+  ],
+  "capabilities": {
+    "localization": {},
+    "conversation_starters": [
+      { "text": "Find me a sample that uses Code Interpreter" },
+      { "text": "Show me samples that include an API plugin with authentication" },
+      { "text": "I want to build an agent for HR: which samples are closest?" },
+      { "text": "How do I clone and run the da-ristorante-api-csharp sample?" },
+      { "text": "What does declarativeAgent.json need at minimum?" },
+      { "text": "I have an OpenAPI spec for my internal API. How do I wire it into a sample?" }
+    ]
+  }
+}

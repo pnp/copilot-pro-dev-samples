@@ -1,0 +1,304 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "GitHub REST API (stripped for pnp/copilot-pro-dev-samples discovery)",
+    "description": "A minimal subset of the GitHub REST API exposing only the read-only, unauthenticated endpoints needed to discover and browse declarative agent samples in the pnp/copilot-pro-dev-samples repository. All endpoints are anonymous and subject to GitHub's 60 requests/hour per-IP rate limit.",
+    "version": "2022-11-28",
+    "contact": {
+      "name": "GitHub REST API documentation",
+      "url": "https://docs.github.com/rest"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/github/rest-api-description/blob/main/LICENSE.md"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.github.com",
+      "description": "GitHub REST API v3"
+    }
+  ],
+  "paths": {
+    "/search/repositories": {
+      "get": {
+        "operationId": "searchRepositories",
+        "summary": "Search public repositories.",
+        "description": "Search public repositories on GitHub. Use the `q` parameter with qualifiers like `topic:`, `language:`, `user:pnp`, or free-text keywords. Sort by stars, forks, or updated.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Search query. Example: `copilot declarative agent user:pnp`.",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["stars", "forks", "help-wanted-issues", "updated"]
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["asc", "desc"],
+              "default": "desc"
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 10, "maximum": 30 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/RepositorySearchResult" }
+              }
+            }
+          },
+          "403": { "$ref": "#/components/responses/RateLimited" }
+        }
+      }
+    },
+    "/search/code": {
+      "get": {
+        "operationId": "searchCode",
+        "summary": "Search code in public repositories.",
+        "description": "Search code in public repositories. ALWAYS scope the search to the samples repo by including `repo:pnp/copilot-pro-dev-samples` in the query. Examples: `repo:pnp/copilot-pro-dev-samples CodeInterpreter`, `repo:pnp/copilot-pro-dev-samples OneDriveAndSharePoint path:declarativeAgent.json`.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Search query. MUST include `repo:pnp/copilot-pro-dev-samples` to limit scope.",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 10, "maximum": 30 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Code search results.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CodeSearchResult" }
+              }
+            }
+          },
+          "403": { "$ref": "#/components/responses/RateLimited" }
+        }
+      }
+    },
+    "/repos/{owner}/{repo}": {
+      "get": {
+        "operationId": "getRepo",
+        "summary": "Get a repository's metadata.",
+        "description": "Returns metadata about a public repository (description, stars, default branch, license, topics, etc.). Use with owner=`pnp` and repo=`copilot-pro-dev-samples`.",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "repo",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Repository metadata.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Repository" }
+              }
+            }
+          },
+          "404": { "description": "Repository not found." }
+        }
+      }
+    },
+    "/repos/{owner}/{repo}/contents/{path}": {
+      "get": {
+        "operationId": "getRepoContent",
+        "summary": "Get the contents of a file or directory.",
+        "description": "Returns the contents of a file (base64-encoded) or directory listing. Use this to browse `samples/` or read a specific sample's `README.md`, `declarativeAgent.json`, or `ai-plugin.json`. For text files, decode the base64 `content` field. For directories, the response is a JSON array of entries.",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "repo",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "path",
+            "in": "path",
+            "required": true,
+            "description": "Path inside the repo (e.g., `samples` for the directory listing, or `samples/da-ristorante-api-csharp/README.md`).",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File or directory contents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/FileContent" },
+                    {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/DirectoryEntry" }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": { "description": "Path not found." }
+        }
+      }
+    },
+    "/repos/{owner}/{repo}/readme": {
+      "get": {
+        "operationId": "getRepoReadme",
+        "summary": "Get a repository's top-level README.",
+        "description": "Returns the README of a public repository as a file content object (base64-encoded). Decode `content` to read the markdown.",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "repo",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "README contents.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/FileContent" }
+              }
+            }
+          },
+          "404": { "description": "README not found." }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "RateLimited": {
+        "description": "Rate limit exceeded (60 requests/hour for unauthenticated calls)."
+      }
+    },
+    "schemas": {
+      "Repository": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "full_name": { "type": "string" },
+          "html_url": { "type": "string", "format": "uri" },
+          "description": { "type": "string", "nullable": true },
+          "stargazers_count": { "type": "integer" },
+          "forks_count": { "type": "integer" },
+          "default_branch": { "type": "string" },
+          "topics": { "type": "array", "items": { "type": "string" } },
+          "updated_at": { "type": "string", "format": "date-time" }
+        }
+      },
+      "RepositorySearchResult": {
+        "type": "object",
+        "properties": {
+          "total_count": { "type": "integer" },
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Repository" }
+          }
+        }
+      },
+      "CodeSearchItem": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "html_url": { "type": "string", "format": "uri" },
+          "repository": {
+            "type": "object",
+            "properties": {
+              "full_name": { "type": "string" },
+              "html_url": { "type": "string", "format": "uri" }
+            }
+          }
+        }
+      },
+      "CodeSearchResult": {
+        "type": "object",
+        "properties": {
+          "total_count": { "type": "integer" },
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/CodeSearchItem" }
+          }
+        }
+      },
+      "FileContent": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "sha": { "type": "string" },
+          "size": { "type": "integer" },
+          "html_url": { "type": "string", "format": "uri" },
+          "download_url": { "type": "string", "format": "uri", "nullable": true },
+          "type": { "type": "string", "enum": ["file"] },
+          "encoding": { "type": "string", "example": "base64" },
+          "content": { "type": "string", "description": "Base64-encoded file content." }
+        }
+      },
+      "DirectoryEntry": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "type": { "type": "string", "enum": ["file", "dir", "symlink", "submodule"] },
+          "size": { "type": "integer" },
+          "html_url": { "type": "string", "format": "uri" },
+          "download_url": { "type": "string", "format": "uri", "nullable": true }
+        }
+      }
+    }
+  }
+}

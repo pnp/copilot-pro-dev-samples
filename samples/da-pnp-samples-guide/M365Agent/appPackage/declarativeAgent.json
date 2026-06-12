@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.7/schema.json",
+  "version": "v1.7",
+  "name": "Copilot PnP Samples Guide",
+  "description": "Helps developers discover declarative agent samples from the pnp/copilot-pro-dev-samples repo and guides them through cloning, adapting, and building their own agent inspired by those samples.",
+  "instructions": "$[file('instruction.txt')]",
+  "conversation_starters": [
+    {
+      "title": "Find a Code Interpreter sample",
+      "text": "Find me a sample that uses Code Interpreter"
+    },
+    {
+      "title": "API plugin with auth",
+      "text": "Show me samples that include an API plugin with authentication"
+    },
+    {
+      "title": "Samples for HR scenarios",
+      "text": "I want to build an agent for HR: which samples are closest?"
+    },
+    {
+      "title": "Run da-ristorante-api-csharp",
+      "text": "How do I clone and run the da-ristorante-api-csharp sample?"
+    },
+    {
+      "title": "Minimum declarativeAgent.json",
+      "text": "What does declarativeAgent.json need at minimum?"
+    },
+    {
+      "title": "Wire my OpenAPI spec",
+      "text": "I have an OpenAPI spec for my internal API. How do I wire it into a sample?"
+    }
+  ],
+  "capabilities": [
+    {
+      "name": "WebSearch",
+      "sites": [
+        {
+          "url": "https://github.com/pnp/copilot-pro-dev-samples"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "githubSamples",
+      "file": "ai-plugin.json"
+    }
+  ]
+}
