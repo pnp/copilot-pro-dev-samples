@@ -1,0 +1,362 @@
+{
+  "$schema": "https://aka.ms/json-schemas/copilot/plugin/v2.4/schema.json",
+  "schema_version": "v2.4",
+  "namespace": "githubSamples",
+  "name_for_human": "PnP Samples",
+  "description_for_human": "Browse the pnp/copilot-pro-dev-samples registry of declarative agent samples.",
+  "description_for_model": "Plugin for discovering and reading declarative agent samples in the public `pnp/copilot-pro-dev-samples` GitHub repository. ALL calls are unauthenticated - there is no `search/code` function in this plugin (GitHub's code-search endpoint requires auth and has been intentionally removed). Discovery is driven by a structured registry plus a one-shot file-tree call, not by code search.\n\nROUTING RULES - pick the right tool first, then optionally drill into a single file:\n\n1. FOR ANY 'find me a sample / which samples / show me samples that…' QUESTION → ALWAYS call `getSamplesRegistry` FIRST. It returns the full sample registry (~100 KB JSON array) in one anonymous call. After receiving the response, base64-decode the `content` field, parse as JSON, then filter the array client-side by: (a) folder-name prefix on the `Folder` property (`da-*` = declarative agents, `mcs-*` = Microsoft Copilot Studio, `cea-*` = custom engine agents), (b) `metadata` entries - look for `{ \"key\": \"PLATFORM\", \"value\": \"M365\" }`, `{ \"key\": \"LANGUAGE\", \"value\": \"<lang>\" }`, `{ \"key\": \"API-PLUGIN\", \"value\": \"YES\" }`, `{ \"key\": \"GRAPH-CONNECTOR\", \"value\": \"YES\" }`, etc., or (c) scenario keywords inside `title`, `shortDescription`, and `longDescription`. Cite the `Folder` value in your reply and link to `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/{Folder}`.\n\n2. FOR FILE-STRUCTURE QUESTIONS ('which samples ship an `ai-plugin.json`?', 'which samples have a Python backend?', 'list every `m365agents.yml`', 'which samples define an OpenAPI spec file?') → call `getRepoTree` with `tree_sha=main` and `recursive=1`. It returns the full repo file tree (~3,000+ entries) in ONE anonymous call. Filter the returned `tree` array client-side by `path` globbing: e.g., `samples/da-*/M365Agent/appPackage/ai-plugin.json`, `samples/*/*.py`, `samples/*/M365Agent/appPackage/declarativeAgent.json`. Group matches by sample folder (the second path segment) and cite folder names in your reply. Combine with `getRepoContent` for targeted reads of the specific files the tree surfaced. DO NOT iterate every blob with `getRepoContent` (rate limit).\n\n3. FOR DEEP-DIVES into a specific sample (read its README, declarativeAgent.json, ai-plugin.json, OpenAPI spec) → call `getRepoContent` with owner=`pnp`, repo=`copilot-pro-dev-samples`, path=`samples/{Folder}/README.md` (or the specific file path the registry / tree surfaced). Decode the base64 `content` field for text. Only call this AFTER the registry or tree has identified the relevant file path.\n\n4. AS A FALLBACK ONLY (when the registry seems stale or a brand-new sample isn't listed yet) → call `listSamples` to get the raw directory listing of `samples/`.\n\n5. FOR REPO-LEVEL OVERVIEW (description, star count, topics, top-level README) → call `getRepo` or `getRepoReadme`.\n\n6. FOR DISCOVERING OTHER PNP REPOS (NOT samples inside this repo) → call `searchRepositories` with a query like `topic:m365-copilot user:pnp`. Anonymous limit: ~10 requests/minute.\n\nNO `search/code` FUNCTION EXISTS in this plugin (auth-only, intentionally removed). DO NOT ask for it; use `getRepoTree` + path globbing instead.\n\nRATE LIMITS: All calls are unauthenticated → ~60 req/hour per client IP overall; Search API additionally caps at ~10 req/minute. On HTTP 403 with a rate-limit message, tell the user to wait an hour or browse the repo directly at https://github.com/pnp/copilot-pro-dev-samples.",
+  "functions": [
+    {
+      "name": "getSamplesRegistry",
+      "description": "PRIMARY discovery tool - always call this first for any 'find a sample / which samples / show me samples that…' question. Returns the contents of `.github/samples.json` (the hand-maintained registry of every sample in pnp/copilot-pro-dev-samples). Response is a standard contents object with a base64-encoded `content` field; decode and parse as JSON to get the full array of sample entries (each has `name`, `title`, `shortDescription`, `longDescription`, `Folder`, `metadata`, `thumbnails`, `authors`).",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.path",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "📚 PnP samples registry",
+                "weight": "Bolder",
+                "size": "Medium",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "Loaded the full sample registry from `.github/samples.json` - every declarative agent sample in pnp/copilot-pro-dev-samples is now available for filtering.",
+                "wrap": true,
+                "spacing": "Small",
+                "isSubtle": true
+              },
+              {
+                "type": "FactSet",
+                "separator": true,
+                "facts": [
+                  { "title": "Path", "value": "${path}" },
+                  { "title": "Size", "value": "${size} bytes" }
+                ]
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "View samples.json on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "listSamples",
+      "description": "FALLBACK only - call this when the `getSamplesRegistry` result seems stale or a brand-new sample isn't listed. Returns the raw directory listing for `samples/` in pnp/copilot-pro-dev-samples. Each entry's `name` is the sample folder (e.g., `da-ristorante-api-csharp`).",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.path",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "📁 ${name}",
+                "weight": "Bolder",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${path}",
+                "isSubtle": true,
+                "spacing": "None",
+                "wrap": true
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "Open on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "getRepoTree",
+      "description": "Returns the full repo file tree (every path, with `type` blob/tree, `sha`, `size`) for pnp/copilot-pro-dev-samples in ONE anonymous call (~3,000+ entries). USE THIS AFTER `getSamplesRegistry` when the user asks about file structure: 'which samples ship an `ai-plugin.json`?', 'which samples have a Python backend?', 'list every `m365agents.yml`', 'which samples define an OpenAPI spec?'. Pass `tree_sha=main` and `recursive=1`. Filter the returned `tree` array client-side by `path` globbing (`samples/da-*/M365Agent/appPackage/declarativeAgent.json`, `samples/*/*.py`, etc.), then combine with `getRepoContent` for targeted reads of the files you decided to inspect. DO NOT iterate every blob (rate limit).",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.tree",
+          "properties": {
+            "title": "$.path",
+            "subtitle": "$.type"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "🌳 Repo file tree",
+                "weight": "Bolder",
+                "size": "Medium",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "Loaded the full pnp/copilot-pro-dev-samples tree. Filter `tree[]` by `path` glob to find files of interest, then call `getRepoContent` for targeted reads.",
+                "wrap": true,
+                "spacing": "Small",
+                "isSubtle": true
+              },
+              {
+                "type": "FactSet",
+                "separator": true,
+                "facts": [
+                  { "title": "Tree SHA", "value": "${sha}" },
+                  { "title": "Truncated", "value": "${string(truncated)}" }
+                ]
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "Browse repo on GitHub",
+                "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "searchRepositories",
+      "description": "Search public GitHub repositories. Use ONLY for cross-repo discovery (e.g., `q=topic:m365-copilot user:pnp`), NOT for in-repo sample discovery. Anonymous limit: ~10 requests/minute.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.items",
+          "properties": {
+            "title": "$.full_name",
+            "subtitle": "$.description",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "${full_name}",
+                "weight": "Bolder",
+                "size": "Medium",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${if(description, description, 'No description.')}",
+                "wrap": true,
+                "spacing": "Small"
+              },
+              {
+                "type": "FactSet",
+                "separator": true,
+                "facts": [
+                  { "title": "Stars", "value": "${stargazers_count}" },
+                  { "title": "Forks", "value": "${forks_count}" },
+                  { "title": "Updated", "value": "${updated_at}" }
+                ]
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "Open on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "getRepo",
+      "description": "Get metadata for a single public GitHub repository (description, stars, default branch, topics). Typical use: owner=`pnp`, repo=`copilot-pro-dev-samples`.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.full_name",
+            "subtitle": "$.description",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "${full_name}",
+                "weight": "Bolder",
+                "size": "Medium",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${if(description, description, 'No description.')}",
+                "wrap": true,
+                "spacing": "Small"
+              },
+              {
+                "type": "FactSet",
+                "separator": true,
+                "facts": [
+                  { "title": "Stars", "value": "${stargazers_count}" },
+                  { "title": "Forks", "value": "${forks_count}" },
+                  { "title": "Default branch", "value": "${default_branch}" },
+                  { "title": "Updated", "value": "${updated_at}" }
+                ]
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "Open on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "getRepoContent",
+      "description": "Read a file or directory inside a public GitHub repo. ONLY call this AFTER `getSamplesRegistry` has identified the specific sample Folder - pass owner=`pnp`, repo=`copilot-pro-dev-samples`, path=`samples/{Folder}/README.md` (or the specific declarativeAgent.json / ai-plugin.json). For files, decode the base64 `content` field for text. For directories, the response is an array of entries.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.path",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "${if(name, name, 'Directory contents')}",
+                "weight": "Bolder",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${if(path, path, '')}",
+                "isSubtle": true,
+                "spacing": "None",
+                "wrap": true
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "View on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "getRepoReadme",
+      "description": "Read the top-level README of a public GitHub repo (repo-level overview, NOT a per-sample README - for the latter, call `getRepoContent`). Returns a base64-encoded `content` field; decode for the markdown.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$",
+          "properties": {
+            "title": "$.name",
+            "subtitle": "$.path",
+            "url": "$.html_url"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "README",
+                "weight": "Bolder",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "${path}",
+                "isSubtle": true,
+                "spacing": "None",
+                "wrap": true
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "View on GitHub",
+                "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": { "type": "None" },
+      "spec": {
+        "url": "github-openapi.json",
+        "progress_style": "ShowUsageWithInputAndOutput"
+      },
+      "run_for_functions": [
+        "getSamplesRegistry",
+        "listSamples",
+        "getRepoTree",
+        "searchRepositories",
+        "getRepo",
+        "getRepoContent",
+        "getRepoReadme"
+      ]
+    }
+  ],
+  "capabilities": {
+    "conversation_starters": [
+      { "text": "Find me a sample that uses Code Interpreter" },
+      { "text": "Which samples include an API plugin?" },
+      { "text": "I want to build an agent for HR - which samples are closest?" },
+      { "text": "How do I clone and run the da-ristorante-api-csharp sample?" },
+      { "text": "What does declarativeAgent.json need at minimum?" },
+      { "text": "Which samples ship an ai-plugin.json with an OpenAPI spec file? I have my own spec and want the closest pattern to copy." }
+    ]
+  }
+}
