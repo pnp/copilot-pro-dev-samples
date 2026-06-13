@@ -4,7 +4,7 @@
   "namespace": "githubSamples",
   "name_for_human": "PnP Samples",
   "description_for_human": "Browse the pnp/copilot-pro-dev-samples registry of declarative agent samples.",
-  "description_for_model": "Plugin for discovering and reading declarative agent samples in the public `pnp/copilot-pro-dev-samples` GitHub repository. ALL calls are unauthenticated - there is no `search/code` function in this plugin (GitHub's code-search endpoint requires auth and has been intentionally removed). Discovery is driven by a structured registry, not by code search.\n\nROUTING RULES - pick exactly one tool first, then optionally drill into a single sample:\n\n1. FOR ANY 'find me a sample / which samples / show me samples that…' QUESTION → ALWAYS call `getSamplesRegistry` FIRST. It returns the full sample registry (~100 KB JSON array) in one anonymous call. After receiving the response, base64-decode the `content` field, parse as JSON, then filter the array client-side by: (a) folder-name prefix on the `Folder` property (`da-*` = declarative agents, `mcs-*` = Microsoft Copilot Studio, `cea-*` = custom engine agents), (b) `metadata` entries - look for `{ \"key\": \"PLATFORM\", \"value\": \"M365\" }`, `{ \"key\": \"LANGUAGE\", \"value\": \"<lang>\" }`, `{ \"key\": \"API-PLUGIN\", \"value\": \"YES\" }`, `{ \"key\": \"GRAPH-CONNECTOR\", \"value\": \"YES\" }`, etc., or (c) scenario keywords inside `title`, `shortDescription`, and `longDescription`. Cite the `Folder` value in your reply and link to `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/{Folder}`.\n\n2. FOR DEEP-DIVES into a specific sample (read its README, its declarativeAgent.json, its ai-plugin.json) → call `getRepoContent` with owner=`pnp`, repo=`copilot-pro-dev-samples`, path=`samples/{Folder}/README.md` (or the specific file). Decode the base64 `content` field for text. Only call this AFTER the registry has identified the relevant Folder.\n\n3. AS A FALLBACK ONLY (when the registry seems stale or a brand-new sample isn't listed yet) → call `listSamples` to get the raw directory listing of `samples/`.\n\n4. FOR REPO-LEVEL OVERVIEW (description, star count, topics, top-level README) → call `getRepo` or `getRepoReadme`.\n\n5. FOR DISCOVERING OTHER PNP REPOS (NOT samples inside this repo) → call `searchRepositories` with a query like `topic:m365-copilot user:pnp`. Anonymous limit: ~10 requests/minute.\n\nRATE LIMITS: All calls are unauthenticated → ~60 req/hour per client IP overall; Search API additionally caps at ~10 req/minute. On HTTP 403 with a rate-limit message, tell the user to wait an hour or browse the repo directly at https://github.com/pnp/copilot-pro-dev-samples.",
+  "description_for_model": "Plugin for discovering and reading declarative agent samples in the public `pnp/copilot-pro-dev-samples` GitHub repository. ALL calls are unauthenticated - there is no `search/code` function in this plugin (GitHub's code-search endpoint requires auth and has been intentionally removed). Discovery is driven by a structured registry plus a one-shot file-tree call, not by code search.\n\nROUTING RULES - pick the right tool first, then optionally drill into a single file:\n\n1. FOR ANY 'find me a sample / which samples / show me samples that…' QUESTION → ALWAYS call `getSamplesRegistry` FIRST. It returns the full sample registry (~100 KB JSON array) in one anonymous call. After receiving the response, base64-decode the `content` field, parse as JSON, then filter the array client-side by: (a) folder-name prefix on the `Folder` property (`da-*` = declarative agents, `mcs-*` = Microsoft Copilot Studio, `cea-*` = custom engine agents), (b) `metadata` entries - look for `{ \"key\": \"PLATFORM\", \"value\": \"M365\" }`, `{ \"key\": \"LANGUAGE\", \"value\": \"<lang>\" }`, `{ \"key\": \"API-PLUGIN\", \"value\": \"YES\" }`, `{ \"key\": \"GRAPH-CONNECTOR\", \"value\": \"YES\" }`, etc., or (c) scenario keywords inside `title`, `shortDescription`, and `longDescription`. Cite the `Folder` value in your reply and link to `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/{Folder}`.\n\n2. FOR FILE-STRUCTURE QUESTIONS ('which samples ship an `ai-plugin.json`?', 'which samples have a Python backend?', 'list every `m365agents.yml`', 'which samples define an OpenAPI spec file?') → call `getRepoTree` with `tree_sha=main` and `recursive=1`. It returns the full repo file tree (~3,000+ entries) in ONE anonymous call. Filter the returned `tree` array client-side by `path` globbing: e.g., `samples/da-*/M365Agent/appPackage/ai-plugin.json`, `samples/*/*.py`, `samples/*/M365Agent/appPackage/declarativeAgent.json`. Group matches by sample folder (the second path segment) and cite folder names in your reply. Combine with `getRepoContent` for targeted reads of the specific files the tree surfaced. DO NOT iterate every blob with `getRepoContent` (rate limit).\n\n3. FOR DEEP-DIVES into a specific sample (read its README, declarativeAgent.json, ai-plugin.json, OpenAPI spec) → call `getRepoContent` with owner=`pnp`, repo=`copilot-pro-dev-samples`, path=`samples/{Folder}/README.md` (or the specific file path the registry / tree surfaced). Decode the base64 `content` field for text. Only call this AFTER the registry or tree has identified the relevant file path.\n\n4. AS A FALLBACK ONLY (when the registry seems stale or a brand-new sample isn't listed yet) → call `listSamples` to get the raw directory listing of `samples/`.\n\n5. FOR REPO-LEVEL OVERVIEW (description, star count, topics, top-level README) → call `getRepo` or `getRepoReadme`.\n\n6. FOR DISCOVERING OTHER PNP REPOS (NOT samples inside this repo) → call `searchRepositories` with a query like `topic:m365-copilot user:pnp`. Anonymous limit: ~10 requests/minute.\n\nNO `search/code` FUNCTION EXISTS in this plugin (auth-only, intentionally removed). DO NOT ask for it; use `getRepoTree` + path globbing instead.\n\nRATE LIMITS: All calls are unauthenticated → ~60 req/hour per client IP overall; Search API additionally caps at ~10 req/minute. On HTTP 403 with a rate-limit message, tell the user to wait an hour or browse the repo directly at https://github.com/pnp/copilot-pro-dev-samples.",
   "functions": [
     {
       "name": "getSamplesRegistry",
@@ -91,6 +91,55 @@
                 "type": "Action.OpenUrl",
                 "title": "Open on GitHub",
                 "url": "${html_url}"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "getRepoTree",
+      "description": "Returns the full repo file tree (every path, with `type` blob/tree, `sha`, `size`) for pnp/copilot-pro-dev-samples in ONE anonymous call (~3,000+ entries). USE THIS AFTER `getSamplesRegistry` when the user asks about file structure: 'which samples ship an `ai-plugin.json`?', 'which samples have a Python backend?', 'list every `m365agents.yml`', 'which samples define an OpenAPI spec?'. Pass `tree_sha=main` and `recursive=1`. Filter the returned `tree` array client-side by `path` globbing (`samples/da-*/M365Agent/appPackage/declarativeAgent.json`, `samples/*/*.py`, etc.), then combine with `getRepoContent` for targeted reads of the files you decided to inspect. DO NOT iterate every blob (rate limit).",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.tree",
+          "properties": {
+            "title": "$.path",
+            "subtitle": "$.type"
+          },
+          "static_template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "TextBlock",
+                "text": "🌳 Repo file tree",
+                "weight": "Bolder",
+                "size": "Medium",
+                "wrap": true
+              },
+              {
+                "type": "TextBlock",
+                "text": "Loaded the full pnp/copilot-pro-dev-samples tree. Filter `tree[]` by `path` glob to find files of interest, then call `getRepoContent` for targeted reads.",
+                "wrap": true,
+                "spacing": "Small",
+                "isSubtle": true
+              },
+              {
+                "type": "FactSet",
+                "separator": true,
+                "facts": [
+                  { "title": "Tree SHA", "value": "${sha}" },
+                  { "title": "Truncated", "value": "${string(truncated)}" }
+                ]
+              }
+            ],
+            "actions": [
+              {
+                "type": "Action.OpenUrl",
+                "title": "Browse repo on GitHub",
+                "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main"
               }
             ]
           }
@@ -292,6 +341,7 @@
       "run_for_functions": [
         "getSamplesRegistry",
         "listSamples",
+        "getRepoTree",
         "searchRepositories",
         "getRepo",
         "getRepoContent",
@@ -306,7 +356,7 @@
       { "text": "I want to build an agent for HR - which samples are closest?" },
       { "text": "How do I clone and run the da-ristorante-api-csharp sample?" },
       { "text": "What does declarativeAgent.json need at minimum?" },
-      { "text": "I have an OpenAPI spec for my internal API - how do I wire it into a sample?" }
+      { "text": "Which samples ship an ai-plugin.json with an OpenAPI spec file? I have my own spec and want the closest pattern to copy." }
     ]
   }
 }

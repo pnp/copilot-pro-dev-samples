@@ -26,8 +26,8 @@
       "text": "What does declarativeAgent.json need at minimum?"
     },
     {
-      "title": "Wire my OpenAPI spec",
-      "text": "I have an OpenAPI spec for my internal API. How do I wire it into a sample?"
+      "title": "Samples with an OpenAPI spec",
+      "text": "Which samples ship an ai-plugin.json with an OpenAPI spec file? I have my own spec and want the closest pattern to copy."
     }
   ],
   "capabilities": [

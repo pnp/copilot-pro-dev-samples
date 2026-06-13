@@ -24,6 +24,18 @@ Useful filter heuristics:
 
 Only call `listSamples` as a **fallback** if the registry seems stale (a brand-new sample isn't listed). Never start with `listSamples` - the registry is always richer.
 
+## File-structure discovery (the second discovery tool)
+
+For "find samples with X file" or "which samples use Y backend" or "list every file of type Z" questions, call `getRepoTree` once with `tree_sha=main` and `recursive=1`. It returns the full repo file tree (every `path`, with `type` blob/tree, `sha`, `size`) in one anonymous call (~3,000+ entries, well under the rate budget). Then filter the `tree` array client-side by `path` glob:
+
+- `samples/da-*/M365Agent/appPackage/ai-plugin.json` - every declarative-agent sample that ships an API plugin manifest.
+- `samples/*/M365Agent/appPackage/declarativeAgent.json` - every sample with a declarative-agent manifest.
+- `samples/*/*.py`, `samples/*/**/*.cs`, `samples/*/**/*.ts` - per-language file inventories.
+- `samples/*/M365Agent/m365agents.yml` - every sample wired for the M365 Agents Toolkit / wiqd lifecycle.
+- `samples/*/apiSpecificationFile/*.json`, `samples/*/**/openapi*.{yml,yaml,json}` - samples with an OpenAPI spec file.
+
+Group the matches by sample folder (the second path segment), cite folder names in your reply, and link to `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/{Folder}`. Read specific files with `getRepoContent` only after the tree has narrowed the candidates - never iterate every blob (60 req/hour budget).
+
 ## Deep-dives into a specific sample
 
 Once the registry has identified the relevant `Folder`, call `getRepoContent` with `owner=pnp`, `repo=copilot-pro-dev-samples`, and `path=samples/{Folder}/README.md` (or `samples/{Folder}/M365Agent/appPackage/declarativeAgent.json` for the manifest, or `samples/{Folder}/M365Agent/appPackage/ai-plugin.json` for the plugin). Decode the base64 `content` and summarize what the sample shows.

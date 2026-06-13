@@ -18,10 +18,11 @@ This sample illustrates the following concepts:
 * Building a **declarative agent** for Microsoft 365 Copilot using **v1.7** of the manifest
 * Wiring an **API plugin** (v2.4) to an external, **unauthenticated** REST API (`auth.type: None`)
 * Driving sample discovery through a **structured registry** (`.github/samples.json`) instead of code search — one call returns every sample, and the LLM filters client-side by `metadata` (`PLATFORM`, `LANGUAGE`, `API-PLUGIN`, `GRAPH-CONNECTOR`), `Folder` prefix, or scenario keywords
+* Layering a **one-shot recursive file tree** (`GET /git/trees/main?recursive=1`) on top of the registry so "which samples ship an `ai-plugin.json`?" or "which samples have a Python backend?" resolve to a single anonymous call and a `path`-glob filter — no per-file requests until the user picks one
 * Stripping a large public OpenAPI spec down to only the endpoints that work anonymously (no `search/code` — it requires auth)
 * Using the **`WebSearch`** capability scoped to a single site (max 4 sites, max 2 path segments — per the v1.7 schema)
 * Designing **`description_for_model`** so the LLM picks the right action with the right query, every time
-* Adaptive Cards tailored per operation (`getSamplesRegistry`, `listSamples`, `searchRepositories`, `getRepo`, `getRepoContent`, `getRepoReadme`)
+* Adaptive Cards tailored per operation (`getSamplesRegistry`, `listSamples`, `getRepoTree`, `searchRepositories`, `getRepo`, `getRepoContent`, `getRepoReadme`)
 * Documenting and gracefully handling **rate limits** (~60 req/hour per IP for unauthenticated GitHub calls; ~10 req/minute additional cap on the Search API)
 
 ## Applies to
@@ -92,7 +93,7 @@ GitHub's REST API limits **unauthenticated** clients to roughly **60 requests/ho
 * Tell the user to wait an hour, **or**
 * Browse the samples directly at [github.com/pnp/copilot-pro-dev-samples](https://github.com/pnp/copilot-pro-dev-samples).
 
-Because the agent reaches for the structured `.github/samples.json` registry on the first turn of any discovery question, most sessions cost **one** anonymous GitHub call up front and then `getRepoContent` calls only when the user drills into a specific sample. The Search API is reserved for cross-repo discovery only.
+Because the agent reaches for the structured `.github/samples.json` registry on the first turn of any discovery question and the `/git/trees/main?recursive=1` tree for any file-structure question, most sessions cost **one or two** anonymous GitHub calls up front and then `getRepoContent` calls only when the user drills into a specific file. The Search API is reserved for cross-repo discovery only.
 
 For higher limits, an authenticated variant would require swapping the API plugin's auth block to `OAuthPluginVault` with a GitHub OAuth app — out of scope for this sample by design.
 

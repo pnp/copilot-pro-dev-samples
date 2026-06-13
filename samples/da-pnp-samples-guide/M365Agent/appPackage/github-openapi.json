@@ -38,6 +38,41 @@
         }
       }
     },
+    "/repos/pnp/copilot-pro-dev-samples/git/trees/{tree_sha}": {
+      "get": {
+        "operationId": "getRepoTree",
+        "summary": "Get the full recursive file tree of pnp/copilot-pro-dev-samples in one anonymous call.",
+        "description": "Returns the full recursive Git tree for the `pnp/copilot-pro-dev-samples` repo in a SINGLE anonymous call (~3,000+ entries, ~860 KB, `truncated: false` as of 2026-06-12). Pass `tree_sha` = `main` (the default branch, recommended) or any branch name, tag, or commit SHA. Set `recursive=1` to traverse every subdirectory. The response contains `tree[]` where each entry has `path` (full path from repo root), `type` (`blob` for files, `tree` for directories), `sha`, `size` (blobs only), and `url`. USE THIS for path-pattern questions: 'which samples ship an `ai-plugin.json`?', 'find every Python file under samples/', 'list every `m365agents.yml`', 'which samples have a `M365Agent/appPackage/` folder?'. Filter the `tree` array client-side by `path` glob; then call `getRepoContent` ONLY for the specific files you decide to read. Never iterate every blob with `getRepoContent` (rate limit).",
+        "parameters": [
+          {
+            "name": "tree_sha",
+            "in": "path",
+            "required": true,
+            "description": "Tree reference. Use `main` for the default branch (recommended), or any branch name, tag, or commit SHA.",
+            "schema": { "type": "string", "default": "main" }
+          },
+          {
+            "name": "recursive",
+            "in": "query",
+            "required": false,
+            "description": "Set to `1` to traverse every subdirectory and return the full repo file tree in one call (recommended). Omit for a shallow listing of the root tree only.",
+            "schema": { "type": "string", "enum": ["1"] }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recursive Git tree object.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/GitTree" }
+              }
+            }
+          },
+          "404": { "description": "Tree reference not found." },
+          "422": { "description": "Tree too large to return (would only happen if the repo grew enormously)." }
+        }
+      }
+    },
     "/repos/pnp/copilot-pro-dev-samples/contents/samples": {
       "get": {
         "operationId": "listSamples",
@@ -282,6 +317,43 @@
           "size": { "type": "integer" },
           "html_url": { "type": "string", "format": "uri" },
           "download_url": { "type": "string", "format": "uri", "nullable": true }
+        }
+      },
+      "GitTree": {
+        "type": "object",
+        "description": "GitHub Git Tree response. The full recursive tree for pnp/copilot-pro-dev-samples currently fits in one call (`truncated: false`).",
+        "properties": {
+          "sha": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "truncated": {
+            "type": "boolean",
+            "description": "True only when GitHub had to truncate the result. Currently false for pnp/copilot-pro-dev-samples."
+          },
+          "tree": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/GitTreeEntry" }
+          }
+        }
+      },
+      "GitTreeEntry": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Full path from repo root, e.g. `samples/da-pnp-samples-guide/M365Agent/appPackage/ai-plugin.json`."
+          },
+          "mode": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["blob", "tree", "commit"],
+            "description": "`blob` = file, `tree` = directory, `commit` = submodule."
+          },
+          "sha": { "type": "string" },
+          "size": {
+            "type": "integer",
+            "description": "Size in bytes (present on `blob` entries only)."
+          },
+          "url": { "type": "string", "format": "uri" }
         }
       }
     }
