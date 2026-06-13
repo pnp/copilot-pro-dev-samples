@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.7/schema.json",
+  "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.7/schema.json",
   "version": "v1.7",
   "name": "Copilot PnP Samples Guide",
   "description": "Helps developers discover declarative agent samples from the pnp/copilot-pro-dev-samples repo and guides them through cloning, adapting, and building their own agent inspired by those samples.",
@@ -10,12 +10,12 @@
       "text": "Find me a sample that uses Code Interpreter"
     },
     {
-      "title": "API plugin with auth",
-      "text": "Show me samples that include an API plugin with authentication"
+      "title": "Samples with an API plugin",
+      "text": "Which samples include an API plugin?"
     },
     {
       "title": "Samples for HR scenarios",
-      "text": "I want to build an agent for HR: which samples are closest?"
+      "text": "I want to build an agent for HR. Which samples are closest?"
     },
     {
       "title": "Run da-ristorante-api-csharp",

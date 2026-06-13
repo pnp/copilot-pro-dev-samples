@@ -4,7 +4,7 @@
 
 This sample is a **declarative agent** for Microsoft 365 Copilot that helps developers discover, understand, and adopt declarative agent samples from the [pnp/copilot-pro-dev-samples](https://github.com/pnp/copilot-pro-dev-samples) repository — and guides them on how to bootstrap their own agent inspired by those samples.
 
-The agent uses an **API plugin** that calls a small, hand-stripped subset of the public, unauthenticated **GitHub REST API** to search code, list repo contents, and read READMEs. It also uses **WebSearch** scoped to the samples repo as a low-cost grounding fallback.
+The agent uses an **API plugin** that calls a small, hand-stripped subset of the public, unauthenticated **GitHub REST API**. Discovery is driven by the repo's structured `.github/samples.json` registry — one anonymous call returns metadata for every sample in the repo, which the agent filters client-side by capability, scenario, language, or folder prefix. It also uses **WebSearch** scoped to the samples repo as a low-cost grounding fallback.
 
 > No backend service is required. The agent talks directly to `api.github.com` with anonymous calls.
 
@@ -17,11 +17,12 @@ This sample illustrates the following concepts:
 
 * Building a **declarative agent** for Microsoft 365 Copilot using **v1.7** of the manifest
 * Wiring an **API plugin** (v2.4) to an external, **unauthenticated** REST API (`auth.type: None`)
-* Stripping a large public OpenAPI spec down to only the endpoints you need
+* Driving sample discovery through a **structured registry** (`.github/samples.json`) instead of code search — one call returns every sample, and the LLM filters client-side by `metadata` (`PLATFORM`, `LANGUAGE`, `API-PLUGIN`, `GRAPH-CONNECTOR`), `Folder` prefix, or scenario keywords
+* Stripping a large public OpenAPI spec down to only the endpoints that work anonymously (no `search/code` — it requires auth)
 * Using the **`WebSearch`** capability scoped to a single site (max 4 sites, max 2 path segments — per the v1.7 schema)
-* Designing **`description_for_model`** so the LLM picks the right action with the right query
-* Adaptive Cards for each operation (`searchRepositories`, `searchCode`, `getRepo`, `getRepoContent`, `getRepoReadme`)
-* Documenting and gracefully handling **rate limits** (60 req/hour per IP for unauthenticated GitHub calls)
+* Designing **`description_for_model`** so the LLM picks the right action with the right query, every time
+* Adaptive Cards tailored per operation (`getSamplesRegistry`, `listSamples`, `searchRepositories`, `getRepo`, `getRepoContent`, `getRepoReadme`)
+* Documenting and gracefully handling **rate limits** (~60 req/hour per IP for unauthenticated GitHub calls; ~10 req/minute additional cap on the Search API)
 
 ## Applies to
 
@@ -52,7 +53,7 @@ Version | Date | Comments
 
 ## Minimal permissions and data
 
-This sample uses **anonymous** GitHub REST calls. **No GitHub token is stored, sent, or required.** The only data flowing out of the user's tenant is the search query and the path/owner/repo parameters passed to GitHub's public API.
+This sample uses **anonymous** GitHub REST calls. **No GitHub token is stored, sent, or required.** The only data flowing out of the user's tenant is the path/owner/repo parameters passed to GitHub's public API.
 
 The Teams app manifest declares `validDomains` of:
 
@@ -79,17 +80,19 @@ These are needed for the API plugin runtime and for the `WebSearch` capability t
      ```
 5. **Open Microsoft 365 Copilot**, switch to the agent named **"Copilot PnP Samples Guide"**, and try one of the conversation starters:
    * *"Find me a sample that uses Code Interpreter"*
-   * *"Show me samples that include an API plugin with authentication"*
+   * *"Which samples include an API plugin?"*
    * *"How do I clone and run the da-ristorante-api-csharp sample?"*
 
 > The first call against `api.github.com` may take a moment as Copilot warms up the plugin runtime. Subsequent calls are fast.
 
 ## Rate limits to be aware of
 
-GitHub's REST API limits **unauthenticated** clients to roughly **60 requests/hour per IP**. If the agent returns an HTTP 403 with a rate-limit message:
+GitHub's REST API limits **unauthenticated** clients to roughly **60 requests/hour per IP** overall, with an additional **~10 requests/minute** cap on the Search API. If the agent returns an HTTP 403 with a rate-limit message:
 
 * Tell the user to wait an hour, **or**
 * Browse the samples directly at [github.com/pnp/copilot-pro-dev-samples](https://github.com/pnp/copilot-pro-dev-samples).
+
+Because the agent reaches for the structured `.github/samples.json` registry on the first turn of any discovery question, most sessions cost **one** anonymous GitHub call up front and then `getRepoContent` calls only when the user drills into a specific sample. The Search API is reserved for cross-repo discovery only.
 
 For higher limits, an authenticated variant would require swapping the API plugin's auth block to `OAuthPluginVault` with a GitHub OAuth app — out of scope for this sample by design.
 
