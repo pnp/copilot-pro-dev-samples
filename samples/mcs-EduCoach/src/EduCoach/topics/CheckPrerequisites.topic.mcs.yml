@@ -1,0 +1,459 @@
+mcs.metadata:
+  componentName: Check Prerequisites
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - Show pre-requisite for PHYS201
+      - Show pre-requisite for
+      - Show prerequisite for
+      - Show prerequisites for
+      - What is the pre-requisite for
+      - What is the prerequisite for
+      - What are the pre-requisites for
+      - What are the prerequisites for this course
+      - What courses do I need before taking
+      - What do I need to take before enrolling in
+      - Check prerequisites for a course
+      - Show me the prerequisites for
+      - Do I have the prerequisites for this course
+      - Have I completed the prerequisites for
+      - What must I complete before taking this class
+      - What prerequisite courses are required for
+      - Is there a prerequisite for this course
+      - What requirements do I need before this course
+
+  actions:
+    - kind: SetVariable
+      id: setVar_initialPrereqRequest
+      variable: init:Topic.VarCourseCode
+      value: =Trim(System.Activity.Text)
+
+    - kind: ConditionGroup
+      id: conditionGroup_needCourseName
+      conditions:
+        - id: condition_genericRequest
+          condition: =Lower(Trim(System.Activity.Text)) = "show prerequisite for" || Lower(Trim(System.Activity.Text)) = "show pre-requisite for" || Lower(Trim(System.Activity.Text)) = "show prerequisites for" || Lower(Trim(System.Activity.Text)) = "what is the prerequisite for" || Lower(Trim(System.Activity.Text)) = "what is the pre-requisite for" || Lower(Trim(System.Activity.Text)) = "what are the prerequisites for this course" || Lower(Trim(System.Activity.Text)) = "check prerequisites for a course"
+          actions:
+            - kind: Question
+              id: question_xK9mPq
+              variable: Topic.VarCourseCode
+              prompt:
+              entity: StringPrebuiltEntity
+
+    - kind: SetVariable
+      id: setVar_normalizedCourseLookup
+      variable: Topic.VarNormalizedCourseLookup
+      value: =If(IsBlank(Match(Upper(Trim(Text(Topic.VarCourseCode))), "[A-Z]{2,5}[0-9]{3}")), Trim(Text(Topic.VarCourseCode)), Match(Upper(Trim(Text(Topic.VarCourseCode))), "[A-Z]{2,5}[0-9]{3}").FullMatch)
+
+    - kind: SetVariable
+      id: setVar_matchedCourseRowsInit
+      variable: init:Topic.VarMatchedCourseRows
+      value: =""
+
+    - kind: InvokeConnectorAction
+      id: invokeConnectorAction_16kThK
+      input:
+        binding:
+          dataset: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+          table: 05f1ec63-6cc2-43f1-bba2-0b8fb2c78586
+
+      output:
+        kind: SingleVariableOutputBinding
+        variable: Topic.GetItems
+
+      connectionReference: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+      connectionProperties:
+        mode: Invoker
+
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          value:
+            description: List of Items
+            order: 0
+            type:
+              kind: Table
+              properties:
+                "{ContentType}":
+                  displayName: Content type
+                  description: Name of the Content type of the item.
+                  order: 23
+                  type:
+                    kind: Record
+                    properties:
+                      Id:
+                        displayName: Id
+                        order: 0
+                        dynamicValuesConfig:
+                          capability: List
+
+                        type: String
+
+                      Name:
+                        displayName: Name
+                        order: 1
+                        type: String
+
+                "{FilenameWithExtension}":
+                  displayName: File name with extension
+                  description: For libraries, returns file name including extension. For lists, returns the title property.
+                  order: 18
+                  type: String
+
+                "{FullPath}":
+                  displayName: Full Path
+                  description: Full path of an item or a folder or a file
+                  order: 20
+                  type: String
+
+                "{HasAttachments}":
+                  displayName: Has attachments
+                  description: Indicates the presence of attachments in the item.
+                  order: 24
+                  type: Boolean
+
+                "{Identifier}":
+                  displayName: Identifier
+                  description: Value that can be used in file related actions for selecting a file.
+                  order: 13
+                  type: String
+
+                "{IsFolder}":
+                  displayName: IsFolder
+                  description: True when the item is a folder, false otherwise.
+                  order: 14
+                  type: Boolean
+
+                "{Link}":
+                  displayName: Link to item
+                  description: Link that can be used to get to the file or list item. Only people with permissions to the item will be able to open the link.
+                  order: 16
+                  type: String
+
+                "{ModerationComment}":
+                  displayName: Comments associated with the content approval of this list item
+                  description: The comments associated with moderation of the list item.
+                  order: 22
+                  type: String
+
+                "{ModerationStatus}":
+                  displayName: Content approval status
+                  description: "The content approval status. It can be one of the following: Draft, Pending, Approved, or Rejected"
+                  order: 21
+                  type: String
+
+                "{Name}":
+                  displayName: Name
+                  description: File name of the item in document libraries, display name of the item in lists.
+                  order: 17
+                  type: String
+
+                "{Path}":
+                  displayName: Folder path
+                  description: Path to the folder the item is in, relative to the site address.
+                  order: 19
+                  type: String
+
+                "{Thumbnail}":
+                  displayName: Thumbnail
+                  description: URL to the thumbnails of the item in 3 different sizes, if available.
+                  order: 15
+                  type:
+                    kind: Record
+                    properties:
+                      Large:
+                        displayName: Large
+                        description: URL to the largest size thumbnail of the item, if available.
+                        order: 2
+                        type: String
+
+                      Medium:
+                        displayName: Medium
+                        description: URL to the standard size thumbnail of the item, if available.
+                        order: 1
+                        type: String
+
+                      Small:
+                        displayName: Small
+                        description: URL to the small, highly compressed size thumbnail of the item, if available.
+                        order: 0
+                        type: String
+
+                "{TriggerWindowEndToken}":
+                  displayName: Trigger Window End Token
+                  description: A token expressing the time of the current flow check. Use this if you want to check if one or more columns were modified since the last flow check.
+                  order: 27
+                  type: String
+
+                "{TriggerWindowStartToken}":
+                  displayName: Trigger Window Start Token
+                  description: A token expressing the time of the last flow check. Use this if you want to check if one or more columns were modified since the last flow check.
+                  order: 26
+                  type: String
+
+                "{VersionNumber}":
+                  displayName: Version number
+                  description: The version number of the file or the list item.
+                  order: 25
+                  type: String
+
+                Author:
+                  displayName: Created By
+                  description: The user who created this item.
+                  order: 11
+                  type:
+                    kind: Record
+                    properties:
+                      Claims:
+                        displayName: Claims
+                        description: Internal identifier for the user who created this item.
+                        order: 0
+                        dynamicValuesConfig:
+                          capability: List
+
+                        type: String
+
+                      Department:
+                        displayName: Department
+                        description: Department name of the user who created this item.
+                        order: 4
+                        type: String
+
+                      DisplayName:
+                        displayName: DisplayName
+                        description: The name of the user who created this item.
+                        order: 1
+                        type: String
+
+                      Email:
+                        displayName: Email
+                        description: Email address of the user who created this item.
+                        order: 2
+                        type: String
+
+                      JobTitle:
+                        displayName: JobTitle
+                        description: Job title of the user who created this item.
+                        order: 5
+                        type: String
+
+                      Picture:
+                        displayName: Picture
+                        description: Link to a picture of the user who created this item.
+                        order: 3
+                        type: String
+
+                ComplianceAssetId:
+                  displayName: Compliance Asset Id
+                  order: 8
+                  type: String
+
+                Created:
+                  displayName: Created
+                  description: When this item was created.
+                  order: 10
+                  type: DateTime
+
+                Editor:
+                  displayName: Modified By
+                  description: The user who last changed this item.
+                  order: 12
+                  type:
+                    kind: Record
+                    properties:
+                      Claims:
+                        displayName: Claims
+                        description: Internal identifier for the user who last changed this item.
+                        order: 0
+                        dynamicValuesConfig:
+                          capability: List
+
+                        type: String
+
+                      Department:
+                        displayName: Department
+                        description: Department name of the user who last changed this item.
+                        order: 4
+                        type: String
+
+                      DisplayName:
+                        displayName: DisplayName
+                        description: The name of the user who last changed this item.
+                        order: 1
+                        type: String
+
+                      Email:
+                        displayName: Email
+                        description: Email address of the user who last changed this item.
+                        order: 2
+                        type: String
+
+                      JobTitle:
+                        displayName: JobTitle
+                        description: Job title of the user who last changed this item.
+                        order: 5
+                        type: String
+
+                      Picture:
+                        displayName: Picture
+                        description: Link to a picture of the user who last changed this item.
+                        order: 3
+                        type: String
+
+                field_1:
+                  displayName: title
+                  order: 2
+                  type: String
+
+                field_2:
+                  displayName: credits
+                  order: 3
+                  type: Number
+
+                field_3:
+                  displayName: prerequisites
+                  order: 4
+                  type:
+                    kind: Table
+                    properties:
+                      Value:
+                        displayName: Value
+                        order: 0
+                        dynamicValuesConfig:
+                          capability: List
+
+                        type: String
+
+                field_4:
+                  displayName: degree_requirement
+                  order: 5
+                  type: String
+
+                field_5:
+                  displayName: semester_offered
+                  order: 6
+                  type:
+                    kind: Table
+                    properties:
+                      Value:
+                        displayName: Value
+                        order: 0
+                        dynamicValuesConfig:
+                          capability: List
+
+                        type: String
+
+                ID:
+                  displayName: ID
+                  description: List item id. Use this value for specifying the item to act on in other list related actions.
+                  order: 0
+                  type: Number
+
+                Modified:
+                  displayName: Modified
+                  description: When this item was last changed.
+                  order: 9
+                  type: DateTime
+
+                OData__ColorTag:
+                  displayName: Color Tag
+                  order: 7
+                  type: String
+
+                Title:
+                  displayName: Title
+                  order: 1
+                  type: String
+
+      operationId: GetItems
+
+    - kind: SetVariable
+      id: setVar_matchedCourseRowsFromGetItems
+      variable: Topic.VarMatchedCourseRows
+      value: =JSON(Topic.GetItems.value)
+
+    - kind: ConditionGroup
+      id: conditionGroup_renderPrerequisiteResult
+      conditions:
+        - id: condition_courseFound
+          condition: =CountRows(Filter(Topic.GetItems.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarNormalizedCourseLookup))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarNormalizedCourseLookup))))) > 0
+          actions:
+            - kind: SetVariable
+              id: setVar_matchedCourse
+              variable: init:Topic.VarMatchedCourse
+              value: =First(Filter(Topic.GetItems.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarNormalizedCourseLookup))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarNormalizedCourseLookup)))))
+
+
+            - kind: SetVariable
+              id: setVar_prerequisiteResponse   
+              value: |-
+                =If(CountRows(Topic.VarMatchedCourse.field_3) = 0 || Lower(Trim(Concat(Topic.VarMatchedCourse.field_3, Value, ""))) = "none", Coalesce(Text(Topic.VarMatchedCourse.Title), "This course") & " has no prerequisite requirements.", "Prerequisite for " & Coalesce(Text(Topic.VarMatchedCourse.Title), "this course") & ": " & Concat(Topic.VarMatchedCourse.field_3, Value, "; ") & Char(10) & "You must complete " & Concat(Topic.VarMatchedCourse.field_3, Value, "; ") & " before enrolling in " & Coalesce(Text(Topic.VarMatchedCourse.Title), "this course") & ".")
+              variable: Topic.VarPrerequisiteResponse
+
+            - kind: SendActivity
+              id: sendActivity_prerequisiteResult
+              activity: '{Topic.VarPrerequisiteResponse}'
+
+        - id: condition_courseNotFound
+          condition: =CountRows(Topic.GetItems.value) = 0
+          actions:
+            - kind: SendActivity
+              id: sendActivity_courseNotFound
+              activity: I could not find a verified course match for that request. Share the exact course code or full course name and I will check again.
+
+    - kind: SendActivity
+      id: sendActivity_3dTvHc
+      activity: Would you like me to check whether any of those prerequisite courses are offered this semester, or help you find a different course?
+
+    - kind: Question
+      id: question_nextAction
+      variable: Topic.VarNextAction
+      prompt:
+        quickReplies:
+          - kind: MessageBack
+            title: Check available prerequisites
+            text: Check available prerequisites
+
+          - kind: MessageBack
+            title: Find a different course
+            text: Find a different course
+
+          - kind: MessageBack
+            title: Enrol in this course
+            text: Enrol in this course
+
+      entity: StringPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: conditionGroup_handleNextAction
+      conditions:
+        - id: condition_checkAvailability
+          condition: =Lower(Trim(Topic.VarNextAction)) = "check available prerequisites"
+          actions:
+            - kind: AnswerQuestionWithAI
+              id: answerAI_availability
+              userInput: "=Text(\"From this student request: \") & Topic.VarCourseCode & Text(\". Use this structured SharePoint GetItems output first: \") & Text(Topic.VarMatchedCourseRows) & Text(\". Determine whether the matched course is offered this semester from semester_offered. Return Title, title, semester_offered, credits, and prerequisites. If semester data is missing, state that it is not specified in source. Use only verified source data and do not provide data on your own.\")"
+
+        - id: condition_findDifferent
+          condition: =Lower(Trim(Topic.VarNextAction)) = "find a different course"
+          actions:
+            - kind: BeginDialog
+              id: beginDialog_courseSearch
+              input: {}
+              dialog: edu_EduCoach.topic.CourseSearch.topic
+              output: {}
+
+        - id: condition_enrollNow
+          condition: =Lower(Trim(Topic.VarNextAction)) = "enrol in this course"
+          actions:
+            - kind: BeginDialog
+              id: beginDialog_enrollmentCard
+              input:
+                binding:
+                  CourseHint: =Topic.VarNormalizedCourseLookup
+                  EnrolmentRequest: =Concatenate("Enrol in ", Topic.VarNormalizedCourseLookup)
+              dialog: edu_EduCoach.topic.CourseEnrolmentCard.topic
+              output: {}

@@ -1,0 +1,51 @@
+course_code,title,credits,prerequisites,degree_requirement,semester_offered
+CS101,Introduction to Computer Science,3,None,General Education,Fall;Spring
+CS201,Data Structures,3,CS101,Major Required,Fall;Spring
+CS301,Algorithms,3,CS201,Major Required,Fall
+CS401,Advanced Algorithms,3,CS301,Major Elective,Spring
+CS211,Object-Oriented Programming,3,CS101,Major Required,Fall;Spring
+CS321,Database Systems,3,CS201,Major Elective,Fall
+CS331,Operating Systems,3,CS201,Major Required,Spring
+CS341,Computer Networks,3,CS201,Major Elective,Fall
+CS411,Machine Learning,3,CS301,Major Elective,Spring
+CS421,Computer Vision,3,CS411,Major Elective,Fall
+CS431,Natural Language Processing,3,CS411,Major Elective,Spring
+CS451,Software Engineering,3,CS211,Major Required,Fall;Spring
+CS461,Cybersecurity Fundamentals,3,CS331,Major Elective,Fall
+CS471,Cloud Computing,3,CS341,Major Elective,Spring
+CS491,Senior Capstone Project,6,CS451,Major Required,Fall;Spring
+MATH101,Calculus I,4,None,General Education,Fall;Spring
+MATH201,Calculus II,4,MATH101,Major Required,Fall;Spring
+MATH301,Linear Algebra,3,MATH201,Major Required,Fall
+MATH311,Discrete Mathematics,3,MATH101,Major Required,Spring
+MATH401,Probability and Statistics,3,MATH201,Major Elective,Fall;Spring
+ENG101,Freshman Composition,3,None,General Education,Fall;Spring
+ENG201,Technical Writing,3,ENG101,General Education,Fall;Spring
+ENG301,Advanced Writing for STEM,3,ENG201,Free Elective,Spring
+PHYS101,Physics I — Mechanics,4,MATH101,General Education,Fall;Spring
+PHYS201,Physics II — Electromagnetism,4,PHYS101,Major Elective,Spring
+CHEM101,General Chemistry,4,None,General Education,Fall;Spring
+BIO101,Introduction to Biology,3,None,General Education,Fall;Spring
+BIO201,Cell Biology,3,BIO101,Free Elective,Spring
+HIST101,World History to 1500,3,None,General Education,Fall;Spring
+HIST201,Modern World History,3,None,General Education,Fall;Spring
+PSYC101,Introduction to Psychology,3,None,General Education,Fall;Spring
+PSYC201,Developmental Psychology,3,PSYC101,Free Elective,Spring
+ECON101,Principles of Microeconomics,3,None,General Education,Fall;Spring
+ECON201,Principles of Macroeconomics,3,None,General Education,Fall;Spring
+SOC101,Introduction to Sociology,3,None,General Education,Fall
+PHIL101,Introduction to Ethics,3,None,General Education,Fall;Spring
+ARTS101,Art History Survey,3,None,General Education,Fall;Spring
+COMM101,Public Speaking,3,None,General Education,Fall;Spring
+COMM201,Interpersonal Communication,3,COMM101,Free Elective,Spring
+BUS101,Introduction to Business,3,None,Free Elective,Fall;Spring
+BUS201,Business Statistics,3,MATH101,Free Elective,Fall
+BUS301,Project Management,3,BUS101,Free Elective,Spring
+ENV101,Environmental Science,3,None,General Education,Spring
+DATA201,Data Analysis with Python,3,CS101;MATH401,Major Elective,Spring
+DATA301,Big Data Engineering,3,DATA201;CS321,Major Elective,Fall
+AI201,Foundations of Artificial Intelligence,3,CS201;MATH311,Major Elective,Spring
+AI301,Deep Learning,3,AI201;MATH401,Major Elective,Fall
+SEC201,Network Security,3,CS341,Major Elective,Spring
+SEC301,Ethical Hacking,3,SEC201;CS461,Major Elective,Fall
+PE101,Physical Education — Wellness,1,None,Free Elective,Fall;Spring

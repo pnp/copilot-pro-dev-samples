@@ -1,0 +1,12 @@
+mcs.metadata:
+  componentName: New course added in Courses
+  description: "Trigger your agent with certain message upon event: When an item is created."
+kind: ExternalTriggerConfiguration
+externalTriggerSource:
+  kind: WorkflowExternalTrigger
+  flowId: 7a6992ce-3d5e-f111-a826-7c1e523d94de
+
+extensionData:
+  flowName: YOUR_FLOW_ID
+  flowUrl: /providers/Microsoft.ProcessSimple/environments/YOUR_ENVIRONMENT_ID/flows/YOUR_FLOW_ID
+  triggerConnectionType: SharePoint

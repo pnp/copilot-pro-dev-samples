@@ -1,0 +1,30 @@
+﻿jsonFileName: workflows/NewcourseaddedinCourses-7a6992ce-3d5e-f111-a826-7c1e523d94de/workflow.json
+workflowId: 7a6992ce-3d5e-f111-a826-7c1e523d94de
+name: New course added in Courses
+type: 1
+description: 'Trigger your agent with certain message upon event: When an item is created.'
+subprocess: false
+category: 5
+mode: 0
+scope: 4
+onDemand: false
+triggerOnCreate: false
+triggerOnDelete: false
+asyncAutodelete: false
+syncWorkflowLogOnFailure: false
+stateCode: 1
+statusCode: 2
+runAs: 1
+isTransacted: true
+introducedVersion: 1.0.0.0
+isCustomizable:
+  value: true
+  canBeChanged: true
+  managedPropertyLogicalName: iscustomizableanddeletable
+businessProcessType: 0
+isCustomProcessingStepAllowedForOtherPublishers:
+  value: true
+  canBeChanged: true
+  managedPropertyLogicalName: canbedeleted
+modernFlowType: 1
+primaryEntity: none

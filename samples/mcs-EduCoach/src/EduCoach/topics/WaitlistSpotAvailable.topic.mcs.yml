@@ -1,0 +1,221 @@
+mcs.metadata:
+  componentName: Waitlist Spot Available
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - WAITLIST_OPENED
+      - waitlist opened
+
+  actions:
+    - kind: SetVariable
+      id: setVar_waitlistRawMessage
+      variable: init:Topic.VarWaitlistRawMessage
+      value: =Trim(Text(System.Activity.Text))
+
+    - kind: SetVariable
+      id: setVar_waitlistCourseCodeLine
+      variable: init:Topic.VarWaitlistCourseCodeLine
+      value: =If(IsBlank(Match(Topic.VarWaitlistRawMessage, "COURSE_CODE:[ ].*")), "", Match(Topic.VarWaitlistRawMessage, "COURSE_CODE:[ ].*").FullMatch)
+
+    - kind: SetVariable
+      id: setVar_waitlistCourseNameLine
+      variable: init:Topic.VarWaitlistCourseNameLine
+      value: =If(IsBlank(Match(Topic.VarWaitlistRawMessage, "COURSE_NAME:[ ].*")), "", Match(Topic.VarWaitlistRawMessage, "COURSE_NAME:[ ].*").FullMatch)
+
+    - kind: SetVariable
+      id: setVar_cC4nRp
+      variable: init:Topic.VarCourseCode
+      value: =Trim(Substitute(Topic.VarWaitlistCourseCodeLine, "COURSE_CODE:", ""))
+
+    - kind: SetVariable
+      id: setVar_nM8wQv
+      variable: init:Topic.VarCourseName
+      value: =Coalesce(Trim(Substitute(Topic.VarWaitlistCourseNameLine, "COURSE_NAME:", "")), Topic.VarCourseCode)
+
+    - kind: SetVariable
+      id: setVar_sJ2xBh
+      variable: init:Topic.VarStudentId
+      value: =""
+
+    - kind: SetVariable
+      id: setVar_waitlistStudentName
+      variable: init:Topic.VarStudentName
+      value: =""
+
+    - kind: SetVariable
+      id: setVar_waitlistStudentEmailFromEvent
+      variable: init:Topic.VarStudentEmail
+      value: =""
+
+    - kind: SetVariable
+      id: setVar_waitlistRequestId
+      variable: init:Topic.VarPlannerTaskId
+      value: =Blank()
+
+    - kind: SetVariable
+      id: setVar_waitlistCommentsDefault
+      variable: init:Topic.VarEnrolComments
+      value: =Blank()
+
+    - kind: SetVariable
+      id: setVar_waitlistPrereqConfirmedDefault
+      variable: init:Topic.VarPrereqConfirmed
+      value: ="false"
+
+    - kind: ConditionGroup
+      id: conditionGroup_waitlistCourseRequired
+      conditions:
+        - id: conditionItem_waitlistMissingCourseCode
+          condition: =IsBlank(Trim(Text(Topic.VarCourseCode)))
+          actions:
+            - kind: SendActivity
+              id: sendActivity_waitlistMissingCourseCode
+              activity: I could not start this waitlist enrolment because the event is missing courseCode. Please update the trigger payload and retry.
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_waitlistSummary
+          activity: |-
+            A waitlist spot opened for **{Topic.VarCourseName}** ({Topic.VarCourseCode}).
+
+        - kind: AdaptiveCardPrompt
+          id: adaptiveCard_waitlistEnrollmentDetails
+          card: |
+            {
+              "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+              "type": "AdaptiveCard",
+              "version": "1.5",
+              "body": [
+                {
+                  "type": "TextBlock",
+                  "text": "Enrolment details",
+                  "weight": "Bolder",
+                  "size": "Medium"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "Please confirm your details so I can submit the enrolment request.",
+                  "wrap": true
+                },
+                {
+                  "type": "Input.Text",
+                  "id": "studentName",
+                  "label": "Full name",
+                  "placeholder": "e.g. Amina Khan"
+                },
+                {
+                  "type": "Input.Text",
+                  "id": "studentId",
+                  "label": "Student ID",
+                  "placeholder": "e.g. 123456"
+                },
+                {
+                  "type": "Input.Text",
+                  "id": "studentEmail",
+                  "label": "Student email id",
+                  "placeholder": "name@university.edu",
+                  "style": "Email"
+                },
+                {
+                  "type": "Input.Text",
+                  "id": "enrolComments",
+                  "label": "Notes (optional)",
+                  "placeholder": "Add any notes for your enrolment request",
+                  "isMultiline": true
+                },
+                {
+                  "type": "Input.Toggle",
+                  "id": "prereqConfirmed",
+                  "label": "Prerequisite confirmation",
+                  "title": "I confirm all prerequisites for this course are completed.",
+                  "valueOn": "true",
+                  "valueOff": "false",
+                  "value": "false",
+                  "isRequired": true,
+                  "errorMessage": "Please confirm the prerequisite checkbox before continuing."
+                }
+              ],
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Continue"
+                }
+              ]
+            }
+          output:
+            binding:
+              studentName: Topic.VarStudentName
+              studentId: Topic.VarStudentId
+              studentEmail: Topic.VarStudentEmail
+              enrolComments: Topic.VarEnrolComments
+              prereqConfirmed: Topic.VarPrereqConfirmed
+          outputType:
+            properties:
+              studentName: String
+              studentId: String
+              studentEmail: String
+              enrolComments: String
+              prereqConfirmed: String
+
+        - kind: SetVariable
+          id: setVar_waitlistCommentsEffective
+          variable: Topic.VarEnrolComments
+          value: =If(IsBlank(Trim(Text(Topic.VarEnrolComments))), "N/A", Trim(Text(Topic.VarEnrolComments)))
+
+        - kind: SetVariable
+          id: setVar_waitlistStudentEmailSanitized
+          variable: Topic.VarStudentEmail
+          value: =Trim(Concat(MatchAll(Text(Topic.VarStudentEmail), "[ -~]"), FullMatch))
+
+        - kind: ConditionGroup
+          id: conditionGroup_waitlistPrereqConfirmation
+          conditions:
+            - id: condition_waitlistPrereqConfirmed
+              condition: =Lower(Trim(Topic.VarPrereqConfirmed)) = "true"
+              actions:
+                - kind: SetVariable
+                  id: setVar_waitlistStudentNameFallback
+                  variable: Topic.VarStudentName
+                  value: =If(IsBlank(Trim(Text(Topic.VarStudentName))), "Not provided", Trim(Text(Topic.VarStudentName)))
+
+                - kind: SetVariable
+                  id: setVar_waitlistStudentIdFallback
+                  variable: Topic.VarStudentId
+                  value: =If(IsBlank(Trim(Text(Topic.VarStudentId))), "Not provided", Trim(Text(Topic.VarStudentId)))
+
+                - kind: SetVariable
+                  id: setVar_waitlistStudentEmailFallback
+                  variable: Topic.VarStudentEmail
+                  value: =If(IsBlank(Trim(Text(Topic.VarStudentEmail))), "Not provided", Trim(Text(Topic.VarStudentEmail)))
+
+                - kind: BeginDialog
+                  id: beginDialog_waitlistSubmission
+                  dialog: edu_EduCoach.topic.EnrollmentSubmissionGate.topic
+                  input:
+                    binding:
+                      Course: =Text(Topic.VarCourseCode)
+                      StudentName: =Topic.VarStudentName
+                      StudentId: =Text(Topic.VarStudentId)
+                      StudentEmail: =Topic.VarStudentEmail
+                      PrerequisiteHierarchy: ="Not provided"
+                      PrerequisiteConfirmed: ="Yes"
+                      Comments: =Concatenate("Submitted from waitlist opening notification for ", Topic.VarCourseName, " Notes: ", Topic.VarEnrolComments)
+                  output:
+                    binding:
+                      TaskId: Topic.VarPlannerTaskId
+                      EmailSent: Topic.VarEmailSent
+
+          elseActions:
+            - kind: SendActivity
+              id: sendActivity_waitlistSubmitNotConfirmed
+              activity: No problem. I have not submitted the enrolment request. Please check the prerequisite box, then click Continue when you are ready.
+
+        - kind: SendActivity
+          id: sendActivity_enrolled
+          activity: |-
+            Done! Your enrolment request for **{Topic.VarCourseName}** ({Topic.VarCourseCode}) has been submitted.
+
+            A confirmation email has been sent to **{Topic.VarStudentEmail}**. An advisor will review and confirm shortly. (Task ID: {Topic.VarPlannerTaskId})

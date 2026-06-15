@@ -1,0 +1,9 @@
+mcs.metadata:
+  componentName: Student Handbook
+  description: This knowledge source provides student guidance and related policy information from the student handbook.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  triggerCondition: true
+  site: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+  additionalSearchTerms: student handbook, student-handbook.md, shared documents, guidance, advising, academic policy, enrollment policy, graduation guidance, student support, academic calendar, enrollment deadlines, add drop, withdrawal deadline, finals, grade release, general education, gen ed, graduation requirement credits, degree credit requirements

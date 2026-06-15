@@ -1,0 +1,41 @@
+mcs.metadata:
+  componentName: Escalate to Human Advisor
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - I need to speak to an advisor
+      - I need to talk to an advisor
+      - Connect me to an advisor
+      - Put me in touch with advising
+      - I want advisor support
+      - I need academic advising help
+      - I need a human advisor
+      - I need to talk to a human
+      - Let me talk to a real person
+      - I want to speak with a real person
+      - Can I talk to a person
+      - Connect me to a human
+      - I need helpdesk support
+      - I need support desk help
+      - I need student services support
+      - I want to appeal my grade
+      - I need a medical withdrawal
+      - I need a petition
+      - Talk to a real person
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_7hRmTq
+      activity: |-
+        Some situations need a human touch, and this sounds like one of them.
+
+        Please use your official advising resources:
+
+        📘 Student handbook: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE/Shared%20Documents/student-handbook.md
+        🔗 Advising portal: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+        ℹ️ Contact details and hours are listed in the handbook.
+
+        Is there anything else I can help you with today?

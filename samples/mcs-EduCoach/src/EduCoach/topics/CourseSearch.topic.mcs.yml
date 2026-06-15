@@ -1,0 +1,189 @@
+mcs.metadata:
+  componentName: Course Search
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - Find all the courses available
+      - Find all courses available
+      - Show all available courses
+      - List all available courses
+      - Find available courses
+      - Find courses for biology
+      - Find biology courses
+      - Search available courses
+      - What courses are available this semester
+      - Show me available courses
+      - What computer science courses can I take
+      - Search for courses in biology
+      - What classes are open for enrolment
+      - Find me a course in mathematics
+      - What subjects are available
+      - List courses for my major
+      - What courses are offered this semester
+      - Search available classes
+      - What can I enrol in
+
+  actions:
+    - kind: SetVariable
+      id: setVar_searchRequest
+      variable: init:Topic.VarSearchRequest
+      value: =Trim(System.Activity.Text)
+
+    - kind: SetVariable
+      id: setVar_defaultLevel
+      variable: init:Topic.VarCourseLevel
+      value: Any level
+
+    - kind: ConditionGroup
+      id: conditionGroup_searchRequestType
+      conditions:
+        - id: condition_genericSearchRequest
+          condition: =Lower(Topic.VarSearchRequest) = "find all the courses available" || Lower(Topic.VarSearchRequest) = "find all courses available" || Lower(Topic.VarSearchRequest) = "show all available courses" || Lower(Topic.VarSearchRequest) = "list all available courses" || Lower(Topic.VarSearchRequest) = "find available courses" || Lower(Topic.VarSearchRequest) = "search available courses" || Lower(Topic.VarSearchRequest) = "show me available courses" || Lower(Topic.VarSearchRequest) = "what courses are available this semester" || Lower(Topic.VarSearchRequest) = "what subjects are available" || Lower(Topic.VarSearchRequest) = "what can i enrol in"
+          actions:
+            - kind: Question
+              id: question_searchMode
+              variable: init:Topic.VarSearchMode
+              prompt:
+                text:
+                  - How would you like me to search?
+                quickReplies:
+                  - kind: MessageBack
+                    title: Show all available courses
+                    text: Show all available courses
+
+                  - kind: MessageBack
+                    title: Filter by subject
+                    text: Filter by subject
+              entity: StringPrebuiltEntity
+
+            - kind: ConditionGroup
+              id: conditionGroup_searchMode
+              conditions:
+                - id: condition_filterBySubject
+                  condition: =Lower(Trim(Topic.VarSearchMode)) = "filter by subject"
+                  actions:
+                    - kind: Question
+                      id: question_subject
+                      variable: init:Topic.VarSubject
+                      prompt:
+                        text: What subject or department are you looking for? (e.g. Computer Science, Biology, Mathematics, Business)
+                      entity: StringPrebuiltEntity
+
+                    - kind: Question
+                      id: question_level
+                      variable: Topic.VarCourseLevel
+                      prompt:
+                        text: |-
+                          Any preference on course level?
+                          - 100 (Introductory)
+                          - 200 (Intermediate)
+                          - 300 (Advanced)
+                          - 400 (Senior / Honours)
+                          - Any level
+                      entity: StringPrebuiltEntity
+
+                    - kind: SetVariable
+                      id: setVar_searchRequestFromSubject
+                      variable: Topic.VarSearchRequest
+                      value: =Concatenate("Find available ", Topic.VarSubject, " courses")
+
+              elseActions:
+                - kind: SetVariable
+                  id: setVar_showAllSearchRequest
+                  variable: Topic.VarSearchRequest
+                  value: Find all available courses
+
+    - kind: SendActivity
+      id: sendActivity_fetching
+      activity: Great, pulling the course list now.
+
+    - kind: SetVariable
+      id: setVar_coursesListRawInit
+      variable: init:Topic.VarCoursesListRaw
+      value: =""
+
+    - kind: InvokeConnectorAction
+      id: invokeConnectorAction_getCourseItems
+      input:
+        binding:
+          dataset: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+          table: 05f1ec63-6cc2-43f1-bba2-0b8fb2c78586
+
+      output:
+        kind: SingleVariableOutputBinding
+        variable: Topic.GetItemsCourseSearch
+
+      connectionReference: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+      connectionProperties:
+        mode: Invoker
+
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          value:
+            description: List of Items
+            order: 0
+            type:
+              kind: Table
+              properties:
+                field_1:
+                  displayName: title
+                  order: 2
+                  type: String
+
+                field_2:
+                  displayName: credits
+                  order: 3
+                  type: Number
+
+                field_3:
+                  displayName: prerequisites
+                  order: 4
+                  type:
+                    kind: Table
+                    properties:
+                      Value:
+                        displayName: Value
+                        order: 0
+                        type: String
+
+                field_4:
+                  displayName: degree_requirement
+                  order: 5
+                  type: String
+
+                field_5:
+                  displayName: semester_offered
+                  order: 6
+                  type:
+                    kind: Table
+                    properties:
+                      Value:
+                        displayName: Value
+                        order: 0
+                        type: String
+
+                Title:
+                  displayName: Title
+                  order: 1
+                  type: String
+
+      operationId: GetItems
+
+    - kind: SetVariable
+      id: setVar_coursesListRawFromGetItems
+      variable: Topic.VarCoursesListRaw
+      value: =JSON(Topic.GetItemsCourseSearch.value)
+
+    - kind: AnswerQuestionWithAI
+      id: answerAI_courseSearch
+      userInput: ="Use this student request to search courses: " & Topic.VarSearchRequest & "." & If(Topic.VarCourseLevel = "Any level", "", " Apply the course level filter hint: " & Topic.VarCourseLevel & ".") & " First use this structured SharePoint GetItems output: " & Text(Topic.VarCoursesListRaw) & ". Use only rows from this connector output as the source of truth. Do not invent course data. The schema is: Title=course code, title=course name, credits=number, prerequisites=single value, degree_requirement=text, semester_offered=choice values that may contain ';'. Return up to 10 matching courses. Format the answer in clean student-friendly markdown. Start with exactly one short heading sentence: 'Here are the verified courses that match your search.' Then for each course use this exact pattern and nothing else: '- <course code> - <course name>' on the first line, '  Credits: <value> | Prerequisite: <value> | Requirement: <value> | Offered: <value>' on the second line. Replace semicolons in semester values with commas and spaces. Use 'None' when prerequisites are empty. Use 'Not specified in source' for missing values. Do not use labels such as 'Title' or 'Title (course name)'. Do not repeat the user's request. Do not add any closing question or recommendation sentence. If no matching rows exist, say exactly: 'No verified course was found for that request.'"
+
+    - kind: SendActivity
+      id: sendActivity_followUp
+      activity: Would you like to **refine this search** (subject or level), **check prerequisites**, get a **course recommendation**, or go ahead and **enrol**?
+
+outputType: {}

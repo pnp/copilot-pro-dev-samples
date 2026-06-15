@@ -1,0 +1,9 @@
+mcs.metadata:
+  componentName: EduCoach
+  description: This knowledge source provides information found in EduCoach SharePoint.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  triggerCondition: true
+  site: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE/Lists/Courses/AllItems.aspx
+  additionalSearchTerms: Courses list, Title, title, credits, prerequisites, degree_requirement, semester_offered

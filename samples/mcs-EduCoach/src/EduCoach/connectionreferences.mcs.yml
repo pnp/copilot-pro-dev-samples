@@ -1,0 +1,9 @@
+﻿connectionReferences:
+  - connectionReferenceLogicalName: edu_EduCoach.shared_office365.fce6b6a55f7a4d90aa6f42dea20af0ef
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_office365
+  - connectionReferenceLogicalName: edu_EduCoach.shared_planner.f9d467c88d5046f48118e7a909bc28c9
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_planner
+  - connectionReferenceLogicalName: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_sharepointonline
+  - connectionReferenceLogicalName: edu_sharedmicrosoftcopilotstudio_f68d8
+    connectorId: /providers/Microsoft.PowerApps/apis/shared_microsoftcopilotstudio

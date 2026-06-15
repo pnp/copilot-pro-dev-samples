@@ -1,0 +1,25 @@
+mcs.metadata:
+  componentName: Conversation Start
+  description: This system topic triggers when the agent receives an Activity indicating the beginning of a new conversation. If you do not want the agent to initiate the conversation, disable this topic.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendMessage_M0LuhV
+      activity:
+        text:
+          - |-
+            Hello, I'm {System.Bot.Name}, your academic advising assistant for Contoso University.
+
+            I help with course planning, prerequisite checks, enrolment requests, graduation progress, GPA guidance, waitlist support, and important academic dates.
+
+            You can start with something like:
+            - "Find courses for computer science"
+            - "Can I take CS101?"
+            - "Help me submit an enrolment request"
+
+            If you want the full capability list, say: "What can you do"
+        speak:
+          - Hello, I am {System.Bot.Name}, your academic advising assistant. I can help with courses, prerequisites, enrolment, graduation progress, GPA, and important dates. Ask me a question, or say what can you do for a full list.

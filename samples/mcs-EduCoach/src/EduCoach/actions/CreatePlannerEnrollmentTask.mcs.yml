@@ -1,0 +1,41 @@
+mcs.metadata:
+  componentName: CreatePlannerEnrollmentTask
+kind: TaskDialog
+
+inputs:
+  - kind: ManualTaskInput
+    propertyName: groupId
+    value: "EduCoach"
+
+  - kind: ManualTaskInput
+    propertyName: planId
+    value: "YOUR_PLANNER_PLAN_ID"
+
+  - kind: ManualTaskInput
+    propertyName: bucketId
+    value: "YOUR_PLANNER_BUCKET_ID"
+
+  - kind: AutomaticTaskInput
+    propertyName: title
+    description: Enrollment details in column format (e.g. "Enrollment: CS401 | Student: 12345 | Name: Alex Doe | Notes: Requires advisor approval").
+    entity: StringPrebuiltEntity
+    shouldPromptUser: true
+
+modelDisplayName: Create Enrollment Task in Planner
+modelDescription: Creates a new Microsoft Planner task to track a course enrollment request for a student. Use when a student submits an enrollment request so it can be tracked by advisors.
+
+outputs:
+  - propertyName: id
+  - propertyName: title
+  - propertyName: groupId
+  - propertyName: planId
+  - propertyName: bucketId
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: edu_EduCoach.shared_planner.f9d467c88d5046f48118e7a909bc28c9
+  connectionProperties:
+    mode: Invoker
+  operationId: CreateTask_V3
+
+outputMode: All
