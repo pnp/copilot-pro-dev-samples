@@ -1,0 +1,35 @@
+@baseUrl = {{$dotenv OPENAPI_SERVER_URL}}
+# Generate a test token using the Dev Proxy CLI:
+# devproxy token new --name "Dev Proxy" --audience {ENTRA_APP_CLIENT_ID} --issuer https://login.microsoftonline.com/{ENTRA_APP_TENANT_ID}/v2.0 --scopes "api://{ENTRA_APP_CLIENT_ID}/Dishes.Read api://{ENTRA_APP_CLIENT_ID}/Orders.Write"
+# Replace {ENTRA_APP_CLIENT_ID} and {ENTRA_APP_TENANT_ID} with values from env/.env.local
+@token = <your-entra-access-token>
+
+### Get all dishes
+GET {{baseUrl}}/dishes
+Authorization: Bearer {{token}}
+
+### Get a single dish by ID
+GET {{baseUrl}}/dishes/1
+Authorization: Bearer {{token}}
+
+### Place an order
+POST {{baseUrl}}/orders
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "dishes": [
+    {
+      "name": "frittata",
+      "quantity": 2
+    },
+    {
+      "name": "cappuccino",
+      "quantity": 1
+    }
+  ]
+}
+
+### Get all orders
+GET {{baseUrl}}/orders
+Authorization: Bearer {{token}}

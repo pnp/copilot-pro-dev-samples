@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.27/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.27",
+  "id": "${{TEAMS_APP_ID}}",
+  "version": "1.0.0",
+  "developer": {
+    "name": "Teams App, Inc.",
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/privacy",
+    "termsOfUseUrl": "https://www.example.com/termsofuse"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Il Ristorante (SSO)",
+    "full": "See the today's menu and place orders using SSO"
+  },
+  "description": {
+    "short": "Order delicious Italian dishes and drinks right from the comfort of your desk.",
+    "full": "Order the most delicious Italian dishes and drinks from the comfort of your desk. Uses Entra ID SSO for seamless authentication."
+  },
+  "accentColor": "#FFFFFF",
+  "copilotAgents": { 
+    "declarativeAgents": [            
+      {
+        "id": "declarativeAgent",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  },
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ]
+}
