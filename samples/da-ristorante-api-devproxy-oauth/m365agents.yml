@@ -4,7 +4,7 @@
 version: v1.11
 
 additionalMetadata:
-  sampleTag: pnp-copilot-pro-dev:da-ristorante-api-devproxy-entra
+  sampleTag: pnp-copilot-pro-dev:da-ristorante-api-devproxy-oauth
 
 environmentFolderPath: ./env
 
@@ -14,7 +14,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: da-ristorante-api-devproxy-entra${{APP_NAME_SUFFIX}}
+      name: da-ristorante-api-devproxy-oauth${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
@@ -23,7 +23,7 @@ provision:
   # Create Microsoft Entra app registration
   - uses: aadApp/create
     with:
-      name: da-ristorante-api-devproxy-entra${{APP_NAME_SUFFIX}}
+      name: da-ristorante-api-devproxy-oauth${{APP_NAME_SUFFIX}}
       generateClientSecret: true
       signInAudience: AzureADMyOrg
     writeToEnvironmentFile:

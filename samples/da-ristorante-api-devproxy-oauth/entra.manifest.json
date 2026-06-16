@@ -1,7 +1,7 @@
 {
   "id": "${{ENTRA_APP_OBJECT_ID}}",
   "appId": "${{ENTRA_APP_CLIENT_ID}}",
-  "displayName": "da-ristorante-api-devproxy-entra${{APP_NAME_SUFFIX}}",
+  "displayName": "da-ristorante-api-devproxy-oauth${{APP_NAME_SUFFIX}}",
   "identifierUris": [
     "api://${{ENTRA_APP_CLIENT_ID}}"
   ],
