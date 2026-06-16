@@ -46,19 +46,18 @@ This sample illustrates the following concepts:
 
 Version|Date|Comments
 -------|----|--------
+1.1|June 16, 2026|Updated Dev Proxy schemas to v3.0.1
 1.0|May 14, 2026|Initial release
 
 ## Prerequisites
 
 * Microsoft 365 tenant with Microsoft 365 Copilot
-* [Dev Proxy](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/overview) v3.0.0-beta.2 or later
+* [Dev Proxy](https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/overview) v3.0.1 or later
 * [Node.js](https://nodejs.org/)
 * [Visual Studio Code](https://code.visualstudio.com/) with the following extensions:
   * [Microsoft 365 Agents Toolkit](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
-  * [Dev Proxy Toolkit](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit) v1.27.2 or later (pre-release)
+  * [Dev Proxy Toolkit](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit)
   * [Dev Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-devtunnels.ms-devtunnels)
-
-> **Note:** API key authentication support in the CrudApiPlugin requires Dev Proxy v3.0.0-beta.2 or later. You can use the **Dev Proxy: Switch Version** command in the Dev Proxy Toolkit extension to download and switch to the latest v3.0.0 beta.
 
 ## Minimal path to awesome
 
