@@ -10,7 +10,7 @@
       "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with OAuth (Microsoft Entra). Dev Proxy is used to simulate the API."
     ],
     "creationDateTime": "2026-05-14",
-    "updateDateTime": "2026-05-14",
+    "updateDateTime": "2026-06-16",
     "products": [
       "Microsoft 365 Copilot"
     ],

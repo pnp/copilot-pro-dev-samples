@@ -51,6 +51,7 @@ This sample illustrates the following concepts:
 
 Version|Date|Comments
 -------|----|--------
+1.1|June 16, 2026|Updated Dev Proxy schemas to v3.0.1
 1.0|May 14, 2026|Initial release
 
 ## Prerequisites

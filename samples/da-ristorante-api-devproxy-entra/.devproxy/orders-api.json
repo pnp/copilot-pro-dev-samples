@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v2.4.0/crudapiplugin.apifile.schema.json",
+  "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/crudapiplugin.apifile.schema.json",
   "baseUrl": "http://api.ristorante.com/orders",
   "dataFile": "orders-data.json",
   "auth": "entra",
