@@ -1,0 +1,42 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Order Confirmation 🤌",
+      "size": "Large",
+      "weight": "Bolder",
+      "horizontalAlignment": "Center"
+    },
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "text": "Your order has been successfully placed!",
+          "weight": "Bolder",
+          "spacing": "Small"
+        },
+        {
+          "type": "FactSet",
+          "facts": [
+            {
+              "title": "Order ID:",
+              "value": "${order_id} "
+            },
+            {
+              "title": "Status:",
+              "value": "${status}"
+            },
+            {
+              "title": "Total Price:",
+              "value": "€${formatNumber(total_price, 2)}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
