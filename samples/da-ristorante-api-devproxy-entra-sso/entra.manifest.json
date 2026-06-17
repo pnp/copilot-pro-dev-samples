@@ -1,0 +1,57 @@
+{
+  "id": "${{ENTRA_APP_OBJECT_ID}}",
+  "appId": "${{ENTRA_APP_CLIENT_ID}}",
+  "displayName": "da-ristorante-api-devproxy-entra-sso${{APP_NAME_SUFFIX}}",
+  "identifierUris": [
+    "api://${{ENTRA_APP_CLIENT_ID}}",
+    "${{SSO_APPLICATION_ID_URI}}"
+  ],
+  "signInAudience": "AzureADMyOrg",
+  "api": {
+    "requestedAccessTokenVersion": 2,
+    "oauth2PermissionScopes": [
+      {
+        "adminConsentDescription": "Read dishes from the menu",
+        "adminConsentDisplayName": "Read dishes",
+        "id": "a7d4e28c-1b3f-4e5a-9c6d-8f0e2b1a3c5d",
+        "isEnabled": true,
+        "type": "User",
+        "userConsentDescription": "Read dishes from the menu",
+        "userConsentDisplayName": "Read dishes",
+        "value": "Dishes.Read"
+      },
+      {
+        "adminConsentDescription": "Place orders",
+        "adminConsentDisplayName": "Place orders",
+        "id": "b946efb1-2c3d-4e5f-a6b7-c8d9e0f1a2b3",
+        "isEnabled": true,
+        "type": "User",
+        "userConsentDescription": "Place orders",
+        "userConsentDisplayName": "Place orders",
+        "value": "Orders.Write"
+      }
+    ],
+    "preAuthorizedApplications": [
+      {
+        "appId": "ab3be6b7-f5df-413d-ac2d-abf1e3fd9c0b",
+        "delegatedPermissionIds": [
+          "a7d4e28c-1b3f-4e5a-9c6d-8f0e2b1a3c5d",
+          "b946efb1-2c3d-4e5f-a6b7-c8d9e0f1a2b3"
+        ]
+      }
+    ]
+  },
+  "info": {},
+  "publicClient": {
+    "redirectUris": []
+  },
+  "web": {
+    "redirectUris": [
+      "https://teams.microsoft.com/api/platform/v1.0/oAuthConsentRedirect"
+    ],
+    "implicitGrantSettings": {}
+  },
+  "spa": {
+    "redirectUris": []
+  }
+}

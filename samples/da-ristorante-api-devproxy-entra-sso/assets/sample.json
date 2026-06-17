@@ -1,15 +1,15 @@
 [
   {
-    "name": "pnp-copilot-pro-dev-da-ristorante-api-devproxy-apikey",
+    "name": "pnp-copilot-pro-dev-da-ristorante-api-devproxy-entra-sso",
     "source": "pnp",
-    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot, Dev Proxy and API key authentication",
-    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with an API key. Dev Proxy is used to simulate the API.",
-    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-apikey",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-apikey",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot, Dev Proxy and Entra ID SSO authentication",
+    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with Microsoft Entra ID SSO. Dev Proxy is used to simulate the API.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-entra-sso",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-entra-sso",
     "longDescription": [
-      "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with an API key. Dev Proxy is used to simulate the API."
+      "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with Microsoft Entra ID SSO authentication. Dev Proxy is used to simulate the API."
     ],
-    "creationDateTime": "2026-05-14",
+    "creationDateTime": "2026-06-16",
     "updateDateTime": "2026-06-16",
     "products": [
       "Microsoft 365 Copilot"
@@ -36,19 +36,19 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-apikey/assets/screenshot-menu.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-entra-sso/assets/screenshot-menu.png",
         "alt": "Declarative agent showing what's on the menu for lunch"
       },
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-apikey/assets/screenshot-order.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-entra-sso/assets/screenshot-order.png",
         "alt": "Declarative agent ordering lunch"
       },
       {
         "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-apikey/assets/screenshot-vscode.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-entra-sso/assets/screenshot-vscode.png",
         "alt": "Visual Studio Code with Dev Proxy running and dev tunnel connected"
       }
     ],
@@ -81,6 +81,11 @@
         "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/build-declarative-agents"
       },
       {
+        "name": "Configure Authentication for API plugins",
+        "description": "Learn how to configure Microsoft Entra ID SSO authentication for API plugins.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/plugin-authentication#microsoft-entra-id-sso-authentication"
+      },
+      {
         "name": "Simulate a CRUD API",
         "description": "Learn how to simulate a CRUD API with Dev Proxy.",
         "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api"
@@ -91,9 +96,9 @@
         "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api-dev-tunnel"
       },
       {
-        "name": "Simulate a CRUD API secured with API key authentication",
-        "description": "Learn how to simulate a CRUD API secured with API key authentication using Dev Proxy.",
-        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api-apikey"
+        "name": "Simulate a CRUD API secured with OAuth",
+        "description": "Learn how to simulate a CRUD API secured with OAuth authentication using Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api-entra"
       }
     ]
   }

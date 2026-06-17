@@ -2,7 +2,11 @@
   "$schema": "https://raw.githubusercontent.com/dotnet/dev-proxy/main/schemas/v3.0.1/crudapiplugin.apifile.schema.json",
   "baseUrl": "http://api.ristorante.com/dishes",
   "dataFile": "dishes-data.json",
-  "auth": "none",
+  "auth": "entra",
+  "entraAuthConfig": {
+    "audience": "9e89f802-4b3a-4166-91fb-3c30f09757ed",
+    "issuer": "https://login.microsoftonline.com/0ba24274-387c-4708-8823-ddec0a7043d1/v2.0"
+  },
   "actions": [
     {
       "action": "getAll"

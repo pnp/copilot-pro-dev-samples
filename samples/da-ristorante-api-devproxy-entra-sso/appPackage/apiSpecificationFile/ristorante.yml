@@ -1,0 +1,120 @@
+openapi: 3.0.0
+info:
+  title: Il Ristorante menu API
+  version: 1.0.0
+  description: API to retrieve dishes and place orders for Il Ristorante.
+servers:
+  - url: ${{OPENAPI_SERVER_URL}}
+    description: Il Ristorante API server
+paths:
+  /dishes:
+    get:
+      operationId: getDishes
+      summary: Get all available dishes
+      description: Retrieve a list of all dishes on the menu.
+      security:
+        - EntraSSO:
+          - api://${{ENTRA_APP_CLIENT_ID}}/Dishes.Read
+      responses:
+        '200':
+          description: A list of dishes.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dish'
+
+  /orders:
+    post:
+      operationId: placeOrder
+      summary: Place an order
+      description: Place an order by providing an array of dishes and quantities.
+      security:
+        - EntraSSO:
+          - api://${{ENTRA_APP_CLIENT_ID}}/Orders.Write
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dishes:
+                  type: array
+                  description: List of items to order. Each item consists of a dish and a quantity.
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        description: The name of the dish to order.
+                      quantity:
+                        type: integer
+                        description: The quantity of the dish to order.
+                    required:
+                      - name
+                      - quantity
+              required:
+                - dishes
+      responses:
+        '201':
+          description: Order placed successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  dishes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        quantity:
+                          type: integer
+
+components:
+  securitySchemes:
+    EntraSSO:
+      type: oauth2
+      description: Microsoft Entra ID SSO token
+      flows:
+        authorizationCode:
+          authorizationUrl: https://login.microsoftonline.com/${{ENTRA_APP_TENANT_ID}}/oauth2/v2.0/authorize
+          tokenUrl: https://login.microsoftonline.com/${{ENTRA_APP_TENANT_ID}}/oauth2/v2.0/token
+          scopes:
+            api://${{ENTRA_APP_CLIENT_ID}}/Dishes.Read: Read dishes
+            api://${{ENTRA_APP_CLIENT_ID}}/Orders.Write: Place orders
+  schemas:
+    Dish:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the dish.
+        name:
+          type: string
+          description: The name of the dish.
+        description:
+          type: string
+          description: A short description of the dish.
+        image_url:
+          type: string
+          description: URL to an image of the dish.
+        price:
+          type: number
+          format: float
+          description: The price of the dish.
+        allergens:
+          type: array
+          items:
+            type: string
+          description: List of allergens in the dish, if any.
+        type:
+          type: string
+          description: The type of dish. Can be either a dish or a drink.
+        course:
+          type: string
+          description: The course to which the dish belongs. Can be breakfast, lunch, or dinner.

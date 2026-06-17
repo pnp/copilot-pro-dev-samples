@@ -1,13 +1,13 @@
 [
   {
-    "name": "pnp-copilot-pro-dev-da-ristorante-api-devproxy-apikey",
+    "name": "pnp-copilot-pro-dev-da-ristorante-api-devproxy-oauth",
     "source": "pnp",
-    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot, Dev Proxy and API key authentication",
-    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with an API key. Dev Proxy is used to simulate the API.",
-    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-apikey",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-apikey",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot, Dev Proxy and OAuth authentication",
+    "shortDescription": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with OAuth. Dev Proxy is used to simulate the API.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-oauth",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-oauth",
     "longDescription": [
-      "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with an API key. Dev Proxy is used to simulate the API."
+      "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with OAuth. Dev Proxy is used to simulate the API."
     ],
     "creationDateTime": "2026-05-14",
     "updateDateTime": "2026-06-16",
@@ -36,19 +36,25 @@
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-apikey/assets/screenshot-menu.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-oauth/assets/screenshot-menu.png",
         "alt": "Declarative agent showing what's on the menu for lunch"
       },
       {
         "type": "image",
         "order": 100,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-apikey/assets/screenshot-order.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-oauth/assets/screenshot-order.png",
         "alt": "Declarative agent ordering lunch"
       },
       {
         "type": "image",
+        "order": 150,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-oauth/assets/screenshot-auth-challenge.png",
+        "alt": "Microsoft 365 Copilot prompting the user to authenticate"
+      },
+      {
+        "type": "image",
         "order": 200,
-        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-apikey/assets/screenshot-vscode.png",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-ristorante-api-devproxy-oauth/assets/screenshot-vscode.png",
         "alt": "Visual Studio Code with Dev Proxy running and dev tunnel connected"
       }
     ],
@@ -91,9 +97,9 @@
         "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api-dev-tunnel"
       },
       {
-        "name": "Simulate a CRUD API secured with API key authentication",
-        "description": "Learn how to simulate a CRUD API secured with API key authentication using Dev Proxy.",
-        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api-apikey"
+        "name": "Simulate a CRUD API secured with OAuth",
+        "description": "Learn how to simulate a CRUD API secured with OAuth authentication using Dev Proxy.",
+        "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/simulate-crud-api-entra"
       }
     ]
   }
