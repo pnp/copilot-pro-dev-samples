@@ -82,7 +82,7 @@ You can test the API directly using the `api.http` file included in the project 
 To generate a test token for use with the `api.http` file, run the following command:
 
 ```bash
-devproxy token new --name "Dev Proxy" --audience {ENTRA_APP_CLIENT_ID} --issuer https://login.microsoftonline.com/{ENTRA_APP_TENANT_ID}/v2.0 --scopes "api://{ENTRA_APP_CLIENT_ID}/Dishes.Read api://{ENTRA_APP_CLIENT_ID}/Orders.Write"
+devproxy jwt create -n "Dev Proxy" -a {ENTRA_APP_CLIENT_ID} -i https://login.microsoftonline.com/{ENTRA_APP_TENANT_ID}/v2.0 -s "api://{ENTRA_APP_CLIENT_ID}/Dishes.Read" -s "api://{ENTRA_APP_CLIENT_ID}/Orders.Write"
 ```
 
 Replace `{ENTRA_APP_CLIENT_ID}` and `{ENTRA_APP_TENANT_ID}` with the values from your `env/.env.local` file. Copy the generated token and paste it as the `@token` value in `api.http`.
