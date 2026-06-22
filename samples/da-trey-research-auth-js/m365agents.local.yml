@@ -4,7 +4,7 @@
 version: v1.8
 
 additionalMetadata:
-  sampleTag: pnp-copilot-pro-dev:da-trey-research-auth
+  sampleTag: pnp-copilot-pro-dev:da-trey-research-auth-js
 
 environmentFolderPath: ./env
 
