@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  title: ServiceNow Data Service
+  description: A simple service to manage ServiceNow data, including incidents.
+  version: 1.0.0
+servers:
+  - url: ${{OPENAPI_SERVER_URL}}/api
+    description: The ServiceNow data service api server
+paths:
+  /incidents/:
+    get:
+      operationId: listIncidents
+      summary: List incidents from ServiceNow
+      description: Returns a list of incidents from ServiceNow with their details and images
+      parameters:
+        - name: opened_by
+          in: query
+          description: Filter incidents by who opened them
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: A list of incidents returned by ServiceNow
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        priority:
+                          type: string
+                          description: Priority level of the incident.
+                        number:
+                          type: string
+                          description: Unique identifier for the incident.
+                        short_description:
+                          type: string
+                          description: Short description of the incident.
+                        description:
+                          type: string
+                          description: Detailed description of the incident.
+                        opened_at:
+                          type: string
+                          format: date-time
+                          description: Timestamp of when the incident was opened.
+                        made_sla:
+                          type: string
+                          enum: ["true", "false"]
+                          description: Indicates if the incident met the Service Level Agreement (SLA).
+    post:
+      operationId: createIncident
+      summary: Create a new incident in ServiceNow
+      description: Creates a new incident in ServiceNow with the provided details
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                short_description:
+                  type: string
+                  description: Short description of the incident.
+                description:
+                  type: string
+                  description: Detailed description of the incident.
+      responses:
+        '201':
+          description: ServiceNow Incident created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: object
+                    properties:
+                      priority:
+                        type: string
+                        description: Priority level of the incident.
+                      number:
+                        type: string
+                        description: Unique identifier for the incident.
+                      short_description:
+                        type: string
+                        description: Short description of the incident.
+                      description:
+                        type: string
+                        description: Detailed description of the incident.
+                      opened_at:
+                        type: string
+                        format: date-time
+                        description: Timestamp of when the incident was opened.
+                      made_sla:
+                        type: string
+                        enum: ["true", "false"]
+                        description: Indicates if the incident met the Service Level Agreement (SLA).

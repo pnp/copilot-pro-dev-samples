@@ -1,0 +1,97 @@
+{
+  "schema_version": "v2.1",
+  "name_for_human": "SnowWizard",
+  "namespace": "SnowWizard",
+  "description_for_human": "API to list, create and update ServiceNow incidents",
+  "description_for_model": "Plugin for listing, creating and updating ServiceNow incidents, you can list, create or update ServiceNow incidents.",
+  "functions": [
+    {
+      "name": "listIncidents",
+      "description": "Returns a detailed list of incidents from ServiceNow with their details.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.results",
+          "properties": {
+            "title": "$.title",
+            "subtitle": "$.description"
+           },
+          "static_template": {
+            "type": "AdaptiveCard",
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "version": "1.5",
+            "body": [
+              {
+                "type": "Container",
+                "$data": "${$root}",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "text": "Number: ${if(number, number, 'N/A')}",
+                    "wrap": true
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "Short Description: ${if(short_description, short_description, 'N/A')}",
+                    "wrap": true
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "Priority: ${if(priority, priority, 'N/A')}",
+                    "wrap": true
+                  },
+                  {
+                    "type": "TextBlock",
+                    "text": "Opened: ${if(sys_created_on, sys_created_on, 'N/A')}",
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      } 
+    },
+    {
+      "name": "createIncident",
+      "description": "Creates a new incident in ServiceNow.",
+      "capabilities": {
+        "response_semantics": {
+          "data_path": "$.results",
+          "properties": {
+            "title": "$.title",
+            "subtitle": "$.description"
+          }
+        },
+      "confirmation": {
+          "type": "AdaptiveCard",
+          "title": "Create a new ServiceNow incident on behalf of the logged user?",
+          "body": "* **Incident**: {{function.parameters.short_description}}\n*"
+        }
+      } 
+    }
+  ],
+  "runtimes": [
+    {
+      "type": "OpenApi",
+      "auth": {
+        "type": "None"
+      },
+      "spec": {
+        "url": "apiSpecificationFile/incident.yml",
+        "progress_style": "ShowUsageWithInputAndOutput"
+      },
+      "run_for_functions": ["listIncidents", "createIncident"]
+    }
+  ],
+  "capabilities": {
+    "localization": {},
+    "conversation_starters": [
+      {
+        "text": "List all ServiceNow incidents"
+      },
+      {
+          "text": "Create a ServiceNow incident with the 'The 3rd floor printer is not working' short description"
+      }
+    ]
+  }
+}
