@@ -4,8 +4,8 @@
     "source": "pnp",
     "title": "Trey Research Python Auth",
     "shortDescription": "This sample demonstrates how to create a Python-based agent that interacts with a protected consulting API to provide information about consultants and projects.",
-    "url": "https://github.com/pnp/pnp-copilot-pro-dev-samples/tree/main/samples/da-trey-research-auth-python",
-    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/pnp-copilot-pro-dev-samples/tree/main/samples/da-trey-research-auth-python",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-auth-python",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-auth-python",
     "longDescription": [
       "This sample demonstrates how to create a Python-based agent that interacts with a protected consulting API to provide information about consultants and projects. The agent can answer questions about consultants and their projects"
     ],
@@ -38,7 +38,7 @@
       {
         "type": "image",
         "order": 50,
-        "url": "https://github.com/pnp/pnp-copilot-pro-dev-samples/raw/main/samples/da-trey-research-auth-python/assets/preview.gif",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-trey-research-auth-python/assets/preview.gif",
         "alt": "Demonstration of Trey Research Auth Python sample"
       }
     ],
