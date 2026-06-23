@@ -1,0 +1,23 @@
+﻿# TeamsFx files
+M365Agent/appPackage/build
+M365Agent/env/.env.*.user
+M365Agent/env/.env.local
+M365Agent/build
+
+# User-specific files
+*.user
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# Node modules (for scripts)
+node_modules/
+package-lock.json
+
+# Azurite storage emulator
+_storage_emulator/

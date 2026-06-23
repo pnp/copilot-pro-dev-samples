@@ -1,0 +1,16 @@
+{
+  "name": "da-trey-research-auth-csharp-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Database setup scripts for Trey Research C# sample",
+  "scripts": {
+    "db-setup": "node scripts/db-setup.js",
+    "increment-version": "node scripts/increment-version.js",
+    "storage": "azurite --silent --location ./_storage_emulator --debug ./_storage_emulator/debug.log"
+  },
+  "dependencies": {
+    "@azure/data-tables": "^13.2.2",
+    "azurite": "^3.12.0",
+    "semver": "^7.6.0"
+  }
+}

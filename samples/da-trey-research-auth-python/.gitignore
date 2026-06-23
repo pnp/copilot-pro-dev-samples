@@ -1,0 +1,30 @@
+# TeamsFx files
+env/.env.*.user
+.localConfigs
+.DS_Store
+build
+appPackage/build
+.deployment
+
+# dependencies
+__pycache__/
+*.pyc
+.venv/
+
+# testing
+/coverage
+
+# Dev tool directories
+/devTools/
+
+# Azurite storage emulator
+_storage_emulator/
+
+# Python output
+*.egg-info/
+*.egg
+
+# Azure Functions artifacts
+bin
+obj
+appsettings.json
