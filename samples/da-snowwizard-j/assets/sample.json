@@ -1,11 +1,11 @@
 [
     {
-      "name": "pnp-copilot-pro-dev-snow-wizard",
+      "name": "pnp-copilot-pro-dev-da-snowwizard-js",
       "source": "pnp",
       "title": "Copilot Snow Wizard",
       "shortDescription": "M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents",
-      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard-js",
-      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard-js",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-snowwizard-js",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-snowwizard-js",
       "longDescription": [
         "This project demonstrates a sample implementation of an M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents."
       ],
@@ -36,13 +36,13 @@
         {
           "type": "image",
           "order": 100,
-          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SnowWizard-js/assets/2024-10-11_16-39.png",
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-snowwizard-js/assets/2024-10-11_16-39.png",
           "alt": "Declarative agent doing x"
         },
         {
             "type": "image",
             "order": 100,
-            "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-SnowWizard-js/assets/2024-10-11_16-40.png",
+            "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-snowwizard-js/assets/2024-10-11_16-40.png",
             "alt": "Declarative agent doing x"
           },
         
