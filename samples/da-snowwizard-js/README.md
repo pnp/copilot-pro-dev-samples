@@ -10,7 +10,8 @@ This sample project demonstrates an implementation of an M365 Declarative Copilo
 
 ## Contributors
 
-* [AjayJ12-MSFT](https://github.com/AjayJ12-MSFT)
+* [Cristiano Goncalves](https://github.com/cristianoag)
+* [Luis Demetrio](https://github.com/luishdemetrio)
 
 ## Version history
 
