@@ -9,24 +9,14 @@ This sample project demonstrates an implementation of an M365 Declarative Copilo
 
 
 ## Contributors
-<!--
-We use this section to recognize and promote your contributions. Please provide one author per line -- even if you worked together on it.
 
-We'll only use the info you provided here. Make sure to include your full name, not just your GitHub username.
-
-Provide a link to your GitHub profile to help others find more cool things you have done. The only link we'll accept is a link to your GitHub profile.
-
-If you want to provide links to your social media, blog, and employer name, make sure to update your GitHub profile.
--->
-
-* [Cristiano Goncalves](https://github.com/cristianoag)
-* [Luis Demetrio](https://github.com/luishdemetrio)
+* [AjayJ12-MSFT](https://github.com/AjayJ12-MSFT)
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.0|October 11, 2024|Initial release
+1.0|June 24, 2026|Initial release
 
 ## Prerequisites
 
@@ -132,41 +122,7 @@ Please note that the code is limiting the return from the ServiceNow interface i
 
 List and creates Service Now incidents
 
-<!--
-Note that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions in advance! You rock ❤.
--->
-
-<!--
-RESERVED FOR REPO MAINTAINERS
-
-We'll add the video from the community call recording here
-
-## Video
-
-[![YouTube video title](./assets/video-thumbnail.jpg)](https://www.youtube.com/watch?v=XXXXX "YouTube video title")
--->
-
 ## Help
-
-<!--
-You can just search and replace this page with the following values:
-
-Search for:
-YOUR-SOLUTION-NAME
-
-Replace with your sample folder name. E.g.: my-agent
-
-Search for:
-@YOURGITHUBUSERNAME
-
-Replace with your GitHub username, prefixed with an "@". If you have more than one author, use %20 to separate them, making sure to prefix everyone's username individually with an "@".
-
-Example:
-@waldekmastykarz
-
-Or:
-@waldekmastykarz%20@bobgerman
--->
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for  community members to volunteer their time and help resolve issues.
 
