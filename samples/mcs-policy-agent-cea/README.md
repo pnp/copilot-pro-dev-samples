@@ -8,6 +8,10 @@ This pattern is useful when self-service answers are not enough and you need a c
 
 ![Policy Agent CEA preview](./assets/preview.png)
 
+## Demo
+
+https://github.com/user-attachments/assets/cc37e754-7ecd-4627-aa7e-3a8cf059467b
+
 > Note: This is one of three sibling samples — `mcs-policy-agent-da` (declarative / knowledge-only) and `mcs-policy-agent-topics` (deterministic topic routing) cover the same business scenario in different styles.
 
 ## Contributors

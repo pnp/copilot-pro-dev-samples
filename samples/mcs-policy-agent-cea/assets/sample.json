@@ -31,6 +31,12 @@
         "order": 100,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-policy-agent-cea/assets/preview.png",
         "alt": "Policy Agent Custom Engine Agent with Salesforce escalation"
+      },
+      {
+        "type": "video",
+        "order": 101,
+        "url": "https://github.com/user-attachments/assets/cc37e754-7ecd-4627-aa7e-3a8cf059467b",
+        "alt": "Demo - Policy Agent Custom Engine Agent with Salesforce escalation"
       }
     ],
     "authors": [
