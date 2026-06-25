@@ -1,4 +1,5 @@
-# Name: Salesforce Flow
+mcs.metadata:
+  componentName: Salesforce Flow
 kind: TaskDialog
 modelDescription: |-
   Use this tool to Search detailed Policy.

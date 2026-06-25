@@ -1,5 +1,6 @@
-# Name: Multiple Topics Matched
-# This system topic triggers when the agent matches multiple Topics with the incoming message and needs to clarify which one should be triggered.
+mcs.metadata:
+  componentName: Multiple Topics Matched
+  description: This system topic triggers when the agent matches multiple Topics with the incoming message and needs to clarify which one should be triggered.
 kind: AdaptiveDialog
 beginDialog:
   kind: OnSelectIntent

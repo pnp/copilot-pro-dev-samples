@@ -1,4 +1,5 @@
-# Name: Start Over
+mcs.metadata:
+  componentName: Start Over
 kind: AdaptiveDialog
 beginDialog:
   kind: OnRecognizedIntent

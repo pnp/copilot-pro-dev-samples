@@ -1,5 +1,6 @@
-# Name: On Error
-# This system topic triggers when the agent encounters an error. When using the test chat pane, the full error description is displayed.
+mcs.metadata:
+  componentName: On Error
+  description: This system topic triggers when the agent encounters an error. When using the test chat pane, the full error description is displayed.
 kind: AdaptiveDialog
 startBehavior: UseLatestPublishedContentAndCancelOtherTopics
 beginDialog:

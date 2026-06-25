@@ -1,87 +1,124 @@
-# Policy Agent (Custom Engine Agent with Salesforce Escalation) for Copilot Studio
+# Policy Agent - Custom Engine Agent with Escalation
 
-## Summary
-
-A **Custom Engine Agent (CEA)** built in **Microsoft Copilot Studio** that handles both summary-level and detailed clause-level policy queries. When the user asks for in-depth information ("give me more details…"), the agent escalates to **Salesforce** via an Agent Flow to fetch authoritative clause-level data and continue the conversation.
-
-This pattern is useful when self-service answers are not enough and you need a clean hand-off to an expert / system of record without losing context.
-
-![Policy Agent CEA preview](./assets/preview.png)
+A Custom Engine Agent built in Microsoft Copilot Studio that handles both summary-level and detailed clause-level policy queries, with Salesforce escalation for in-depth assistance.
 
 ## Demo
 
 https://github.com/user-attachments/assets/cc37e754-7ecd-4627-aa7e-3a8cf059467b
 
-> Note: This is one of three sibling samples — `mcs-policy-agent-da` (declarative / knowledge-only) and `mcs-policy-agent-topics` (deterministic topic routing) cover the same business scenario in different styles.
+## Problem Statement
 
-## Contributors
+Employees need varying levels of policy information - from quick summaries to detailed clause-level specifics. Common challenges include:
+- Simple queries require quick answers from SharePoint
+- Complex queries need deeper investigation and expert assistance
+- No seamless handoff between self-service and expert support
+- Difficulty accessing detailed policy clauses and exceptions
 
-* [Keshav](https://github.com/keshavk-msft)
+## Solution Overview
 
-## Version history
+This solution uses a **Custom Engine Agent (CEA)** in Copilot Studio with SharePoint integration and Salesforce escalation:
 
-Version|Date|Comments
--------|----|--------
-1.0|June 25, 2026|Initial release
+| Component | Description |
+|-----------|-------------|
+| **Custom Engine Agent** | Handles both summary and detailed policy queries |
+| **SharePoint Integration** | Primary knowledge source for policy documents |
+| **Salesforce Escalation** | API-based escalation for detailed clause-level assistance |
+| **Agent Flows** | Workflow automation for seamless escalation |
 
-## Prerequisites
+## Architecture
 
-* Microsoft 365 tenant with Microsoft 365 Copilot
-* Microsoft Copilot Studio license
-* SharePoint site containing your policy documents (used as the primary knowledge source)
-* Salesforce instance with API access — used by the Agent Flow for escalation
-* (Optional) [Power Platform Tools for VS Code](https://marketplace.visualstudio.com/items?itemName=microsoft-IsvExpTools.powerplatform-vscode) and the [Copilot Studio extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio)
+```
+                    ┌─────────────────────────┐
+                    │      User Query         │
+                    └───────────┬─────────────┘
+                                │
+                    ┌───────────▼─────────────┐
+                    │   Custom Engine Agent   │
+                    │   (Policy Agent CEA)    │
+                    └───────────┬─────────────┘
+                                │
+              ┌─────────────────┴─────────────────┐
+              │                                   │
+    ┌─────────▼─────────┐             ┌──────────▼─────────┐
+    │  Summary Query    │             │  Detail Query      │
+    │                   │             │  "Give me more     │
+    │  SharePoint       │             │   details..."      │
+    │  Knowledge        │             │                    │
+    └─────────┬─────────┘             └──────────┬─────────┘
+              │                                   │
+              │                       ┌──────────▼─────────┐
+              │                       │  Salesforce API    │
+              │                       │  (Agent Flows)     │
+              │                       └──────────┬─────────┘
+              │                                   │
+              └─────────────────┬─────────────────┘
+                                │
+                    ┌───────────▼─────────────┐
+                    │   Response to User      │
+                    └─────────────────────────┘
+```
 
-## Minimal path to awesome
+## Technical Details
 
-### Copilot Studio using cloned source
+| Aspect | Details |
+|--------|---------|
+| **Platform** | Microsoft Copilot Studio |
+| **Agent Type** | Custom Engine Agent (CEA) |
+| **Knowledge Sources** | SharePoint folders dedicated to policy documents |
+| **Integration Logic** | SharePoint for primary queries, Salesforce API via Agent Flows for escalation |
+| **Escalation Trigger** | Requests for in-depth information (e.g., "Give me more details") |
 
-This sample was exported using the Copilot Studio extension for VS Code (Method 2 in the contributing guide). The agent source files live under `src/` and use the `.mcs.yml` format.
+## Sample Prompts
 
-1. Open Microsoft Copilot Studio in your environment.
-2. Create a new Custom Engine Agent.
-3. From VS Code with the Copilot Studio extension installed, connect to the same environment and pull down the new agent.
-4. Replace the generated files with the contents of `src/` from this sample. Folder layout:
-   * `agent.mcs.yml`, `settings.mcs.yml` — agent definition + settings
-   * `knowledge/` — SharePoint knowledge source (update the URL to your tenant's policy site)
-   * `topics/` — full topic set (`Greeting`, `Fallback`, `Escalate`, `Search`, `Signin`, etc.)
-   * `actions/SalesforceFlow.mcs.yml` — declarative action that calls the Salesforce escalation flow
-   * `workflows/SalesforceFlow-*/` — Agent Flow definition (`workflow.json` + `metadata.yml`) — connect it to **your** Salesforce connection
-5. Update the Salesforce connection reference in the workflow to point to a connection in your environment.
-6. Push the changes back to Copilot Studio and publish.
-7. Test in the **Test your agent** panel:
-   * **Summary path** — "How many paid holidays do employees get per year?"
-   * **Escalation path** — "Give me more details about the parental leave policy" (this should trigger `Escalate` topic and call the Salesforce flow)
+- "How many paid holidays do employees get per year?"
+- "List the exceptions mentioned in the travel reimbursement policy"
+- "What is the approval process for expense claims over $500?"
+- "Give me more details about the parental leave policy" (triggers escalation)
 
-## Features
+## Business Value
 
-This sample shows how to build a Copilot Studio CEA that:
+| Metric | Value |
+|--------|-------|
+| **Reduced Retrieval Time** | Quick access to policy information from SharePoint |
+| **Faster Query Resolution** | Immediate answers for common questions |
+| **Optimized Access** | Smart routing between short summaries and detailed info |
+| **Seamless Escalation** | Automatic handoff to Salesforce for complex queries |
 
-* Answers everyday policy questions from a SharePoint knowledge source
-* Recognises when the user wants deeper clause-level information and routes to an `Escalate` topic
-* Calls an **Agent Flow** that talks to **Salesforce** to retrieve the detailed payload
-* Brings the response back into the same conversation — no channel switch for the user
+## Deployment
 
-Concepts illustrated:
+### Prerequisites
+- Microsoft Copilot Studio license
+- SharePoint site with policy documentation
+- Salesforce instance with API access
+- VS Code with Copilot Studio extension (optional, for source control)
 
-* Custom Engine Agent topology in Copilot Studio
-* SharePoint as primary knowledge source
-* Declarative action (`actions/*.mcs.yml`) pointing to an Agent Flow
-* Agent Flow with a third-party connector (Salesforce) used as an escalation backend
-* Source-controlled Copilot Studio agent (`.mcs.yml`)
+### Import Steps
+1. Open Microsoft Copilot Studio
+2. Import the agent source from the `src/` folder using the Copilot Studio extension for VS Code
+3. Configure SharePoint knowledge sources with your policy documents (update the `site` URL in `src/knowledge/`)
+4. Set up the Salesforce connection in your environment and update the workflow under `src/workflows/SalesforceFlow-*/`. Replace the `<YOUR_SALESFORCE_*>` placeholders in `workflow.json` (Consumer Key, Consumer Secret, Username, Security Token) and the `<YOUR_SALESFORCE_INSTANCE>` host with your org values.
+5. Test the agent with sample prompts (both summary and detail queries)
+6. Publish to your desired channel
 
-## Help
+## Folder Structure
 
-We do not support samples, but the community is willing to help. We use GitHub to track issues.
+```
+mcs-policy-agent-cea/
+├── README.md                    # This file
+├── assets/
+│   └── sample.json              # PnP sample gallery metadata
+└── src/
+    ├── agent.mcs.yml            # Agent definition
+    ├── settings.mcs.yml         # Agent settings
+    ├── icon.png                 # Agent icon
+    ├── knowledge/               # Knowledge configuration
+    ├── topics/                  # Conversation topics
+    ├── actions/                 # API action definitions
+    └── workflows/               # Agent flow workflows
+```
 
-You can look at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20mcs-policy-agent-cea%22) to see if anybody else is having the same issues.
+## Related Resources
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
-
-If you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
-![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/mcs-policy-agent-cea)
+- [Copilot Studio Documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/)
+- [VS Code Copilot Studio Extension](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio)
+- [Salesforce API Documentation](https://developer.salesforce.com/docs/apis)
