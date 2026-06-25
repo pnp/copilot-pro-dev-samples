@@ -30,6 +30,12 @@
         "order": 100,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-policy-agent-da/assets/preview.png",
         "alt": "Policy Agent Declarative Agent in Copilot Studio"
+      },
+      {
+        "type": "video",
+        "order": 101,
+        "url": "https://github.com/user-attachments/assets/2d68cfe9-1742-472a-ac77-f36d05d009b6",
+        "alt": "Demo - Policy Agent Declarative Agent in Copilot Studio"
       }
     ],
     "authors": [

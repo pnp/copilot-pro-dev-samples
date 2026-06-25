@@ -8,6 +8,10 @@ The agent relies on Microsoft 365 grounding so it can return rich, multi-file re
 
 ![Policy Agent DA preview](./assets/preview.png)
 
+## Demo
+
+https://github.com/user-attachments/assets/2d68cfe9-1742-472a-ac77-f36d05d009b6
+
 > Note: This agent is built with Copilot Studio. Two sibling samples (`mcs-policy-agent-cea` and `mcs-policy-agent-topics`) show the same business problem solved as a Custom Engine Agent and as a topic-based agent respectively.
 
 ## Contributors
