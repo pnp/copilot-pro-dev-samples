@@ -1,4 +1,5 @@
-# Name: Legal & Compliance
+mcs.metadata:
+  componentName: Legal & Compliance
 kind: AdaptiveDialog
 modelDescription: |-
   Legal & Compliance Policies

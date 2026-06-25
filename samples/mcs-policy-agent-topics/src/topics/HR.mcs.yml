@@ -1,4 +1,5 @@
-# Name: HR
+mcs.metadata:
+  componentName: HR
 kind: AdaptiveDialog
 modelDescription: |-
   Human Resources (HR) Policies

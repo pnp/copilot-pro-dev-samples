@@ -1,5 +1,7 @@
-# Name: KK Policy Agent(Topic)
+mcs.metadata:
+  componentName: KK Policy Agent(Topic)
 kind: GptComponentMetadata
+displayName: KK Policy Agent(Topic)
 instructions: |+
   ### 🧭 **Agent Instruction for KK Policy Agent**
 
@@ -73,4 +75,3 @@ instructions: |+
 
   > “I couldn’t find a specific policy on that topic. You may refer to the HR or IT policy section on the intranet for detailed guidance, or contact the relevant department.”
 
-displayName: KK Policy Agent(Topic)

@@ -1,5 +1,6 @@
-# Name: Sign in 
-# This system topic triggers when the agent needs to sign in the user or require the user to sign in
+mcs.metadata:
+  componentName: Sign in
+  description: This system topic triggers when the agent needs to sign in the user or require the user to sign in
 kind: AdaptiveDialog
 beginDialog:
   kind: OnSignIn

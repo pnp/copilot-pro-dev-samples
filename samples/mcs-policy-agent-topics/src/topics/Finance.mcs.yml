@@ -1,4 +1,5 @@
-# Name: Finance
+mcs.metadata:
+  componentName: Finance
 kind: AdaptiveDialog
 modelDescription: |-
   Finance Policies

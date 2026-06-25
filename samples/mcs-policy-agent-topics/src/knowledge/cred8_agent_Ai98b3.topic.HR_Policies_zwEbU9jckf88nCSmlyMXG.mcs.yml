@@ -1,7 +1,7 @@
-# Name: HR_Policies
-# This knowledge source provides information found in HR_Policies SharePoint.
+mcs.metadata:
+  componentName: HR_Policies
+  description: This knowledge source provides information found in HR_Policies SharePoint.
 kind: KnowledgeSourceConfiguration
 source:
   kind: SharePointSearchSource
-  # TODO: replace with your tenant's SharePoint folder URL for HR policies
   site: https://contoso.sharepoint.com/sites/PolicyHub/Shared%20Documents/Policies/HR_Policies

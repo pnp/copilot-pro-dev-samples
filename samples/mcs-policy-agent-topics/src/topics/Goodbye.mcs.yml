@@ -1,5 +1,6 @@
-# Name: Goodbye
-# This topic triggers when the user says goodbye. By default, it does not end the conversation. If you would like to end the conversation when the user says goodbye, you can add an "End of Conversation" action to this topic, or redirect to the "End of Conversation" system topic.
+mcs.metadata:
+  componentName: Goodbye
+  description: This topic triggers when the user says goodbye. By default, it does not end the conversation. If you would like to end the conversation when the user says goodbye, you can add an "End of Conversation" action to this topic, or redirect to the "End of Conversation" system topic.
 kind: AdaptiveDialog
 startBehavior: CancelOtherTopics
 beginDialog:

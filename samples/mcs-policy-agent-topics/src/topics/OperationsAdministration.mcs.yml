@@ -1,4 +1,5 @@
-# Name: Operations & Administration
+mcs.metadata:
+  componentName: Operations & Administration
 kind: AdaptiveDialog
 modelDescription: |-
   Operations & Administration Policies

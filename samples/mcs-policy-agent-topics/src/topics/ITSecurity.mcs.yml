@@ -1,4 +1,5 @@
-# Name: IT & Security
+mcs.metadata:
+  componentName: IT & Security
 kind: AdaptiveDialog
 modelDescription: |-
   IT & Security Policies
