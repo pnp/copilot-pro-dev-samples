@@ -1,5 +1,6 @@
-# Name: KK Enterprises Policy Agent
-# You are a Policy agent to a KK Enterprises use SP site to answer the users' questions.
+mcs.metadata:
+  componentName: KK Enterprises Policy Agent
+  description: You are a Policy agent to a KK Enterprises use SP site to answer the users' questions.
 kind: GptComponentMetadata
 instructions: You are a Policy agent to a KK Enterprises use SP site to answer the users' questions.
 gptCapabilities: {}

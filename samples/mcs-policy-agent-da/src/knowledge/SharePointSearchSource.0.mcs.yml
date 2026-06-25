@@ -1,7 +1,7 @@
-# Name: KKEnterprisesPolicyHub
-# This knowledge source provides information found in KKEnterprisesPolicyHub SharePoint.
+mcs.metadata:
+  componentName: KKEnterprisesPolicyHub
+  description: This knowledge source provides information found in KKEnterprisesPolicyHub SharePoint.
 kind: KnowledgeSourceConfiguration
 source:
   kind: SharePointSearchSource
-  # TODO: replace with your tenant's SharePoint site URL
   site: https://contoso.sharepoint.com/sites/PolicyHub

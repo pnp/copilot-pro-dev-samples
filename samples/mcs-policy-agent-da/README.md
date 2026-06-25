@@ -1,83 +1,111 @@
-# Policy Agent (Declarative Agent) for Copilot Studio
+# Policy Agent - Declarative Agent
 
-## Summary
-
-A SharePoint-grounded **Declarative Agent** built in **Microsoft Copilot Studio** that gives employees quick, summary-level answers to internal policy questions across HR, IT, Finance and other departments — without forcing them to dig through multiple SharePoint sites.
-
-The agent relies on Microsoft 365 grounding so it can return rich, multi-file referenced answers with very little configuration.
-
-![Policy Agent DA preview](./assets/preview.png)
+A SharePoint-grounded Declarative Agent built in Microsoft Copilot Studio that provides quick, summary-level answers to policy-related questions.
 
 ## Demo
 
 https://github.com/user-attachments/assets/2d68cfe9-1742-472a-ac77-f36d05d009b6
 
-> Note: This agent is built with Copilot Studio. Two sibling samples (`mcs-policy-agent-cea` and `mcs-policy-agent-topics`) show the same business problem solved as a Custom Engine Agent and as a topic-based agent respectively.
+## Problem Statement
 
-## Contributors
+Employees frequently need quick access to company policies across HR, IT, Finance, and other departments. Common challenges include:
+- Time wasted searching through multiple SharePoint sites and documents
+- Inconsistent answers when policies are spread across different locations
+- Inability to get quick summaries without reading entire policy documents
+- Lack of multi-file referencing for comprehensive answers
 
-* [Keshav](https://github.com/keshavk-msft)
+## Solution Overview
 
-## Version history
+This solution uses a **Declarative Agent (DA)** in Copilot Studio with SharePoint as the primary knowledge source:
 
-Version|Date|Comments
--------|----|--------
-1.0|June 25, 2026|Initial release
+| Component | Description |
+|-----------|-------------|
+| **Declarative Agent** | Leverages M365 grounding capabilities for quick deployment and powerful retrieval |
+| **SharePoint Knowledge** | Uses SharePoint site pages as the information source |
+| **Enablement Portal** | SharePoint-based portal for policy documentation |
 
-## Prerequisites
+## Architecture
 
-* Microsoft 365 tenant with Microsoft 365 Copilot
-* Microsoft Copilot Studio license
-* A SharePoint site containing your policy documents (HR, IT, Finance, etc.)
-* (Optional) [Power Platform Tools for VS Code](https://marketplace.visualstudio.com/items?itemName=microsoft-IsvExpTools.powerplatform-vscode) and the [Copilot Studio extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio) if you want to clone / edit the agent from source
+```
+                    ┌─────────────────────────┐
+                    │      User Query         │
+                    │  "What is the IT usage  │
+                    │       policy?"          │
+                    └───────────┬─────────────┘
+                                │
+                    ┌───────────▼─────────────┐
+                    │   Declarative Agent     │
+                    │   (Policy Agent DA)     │
+                    └───────────┬─────────────┘
+                                │
+                    ┌───────────▼─────────────┐
+                    │   M365 Grounding        │
+                    │   - SharePoint Sites    │
+                    │   - Graph Knowledge     │
+                    └───────────┬─────────────┘
+                                │
+                    ┌───────────▼─────────────┐
+                    │   Summary Response      │
+                    │   with Multi-File       │
+                    │   References            │
+                    └─────────────────────────┘
+```
 
-## Minimal path to awesome
+## Technical Details
 
-### Copilot Studio using cloned source
+| Aspect | Details |
+|--------|---------|
+| **Platform** | Microsoft Copilot Studio |
+| **Agent Type** | Declarative Agent (DA) |
+| **Knowledge Sources** | SharePoint site containing informational pages |
+| **Integration Logic** | Declarative configurations using SharePoint site pages |
 
-This sample was exported using the Copilot Studio extension for VS Code (Method 2 in the contributing guide). The agent source files live under `src/` and use the `.mcs.yml` format.
+## Sample Prompts
 
-1. Open Microsoft Copilot Studio in your environment.
-2. Create a new agent (Declarative Agent).
-3. From VS Code with the Copilot Studio extension installed, connect to the same environment and pull down the new agent.
-4. Replace the generated files with the contents of `src/` from this sample:
-   * `agent.mcs.yml` — agent definition (name, description, instructions)
-   * `settings.mcs.yml` — agent settings
-   * `knowledge/SharePointSearchSource.0.mcs.yml` — SharePoint knowledge source — **update the site URL to point to your tenant's policy site**
-   * `topics/OnError.mcs.yml` — global error topic
-5. Push the changes back to Copilot Studio.
-6. Test in the **Test your agent** panel with prompts like:
-   * "What is the company's IT usage policy?"
-   * "Summarize the vacation policy for full-time employees"
-   * "What documents are required under the health insurance policy?"
-7. Publish to your channel of choice (Microsoft 365 Copilot, Teams, etc.).
+- "What is the company's IT usage policy?"
+- "What documents or evidence are required under the health insurance policy?"
+- "Summarize the vacation policy for full-time employees"
+- "What are the key points in our data protection policy?"
 
-## Features
+## Business Value
 
-This sample shows how to extend Microsoft 365 Copilot with a Declarative Agent that:
+| Metric | Value |
+|--------|-------|
+| **Faster Go-Live** | Quick to build and deploy with minimal configuration |
+| **Enhanced Retrieval** | Deep answers with multi-file referencing capabilities |
+| **Scalability** | Ability to cover larger data sets for grounding |
+| **M365 Integration** | Powerful grounding on organizational data via SharePoint and Graph |
 
-* Answers policy questions grounded on a SharePoint site
-* Returns multi-file referenced summaries instead of forcing the user to open documents
-* Ships as a small, fully declarative footprint — no custom code, no plugin
+## Deployment
 
-Key concepts illustrated:
+### Prerequisites
+- Microsoft Copilot Studio license
+- SharePoint site with policy documentation
+- VS Code with Copilot Studio extension (optional, for source control)
 
-* Declarative Agent + SharePoint knowledge source
-* Source-controlled Copilot Studio agent (`.mcs.yml`)
-* Minimal configuration / fastest time-to-value path for a knowledge agent
+### Import Steps
+1. Open Microsoft Copilot Studio
+2. Import the agent source from the `src/` folder using the Copilot Studio extension for VS Code
+3. Configure SharePoint knowledge sources with your policy documents (update the `site` URL in `src/knowledge/SharePointSearchSource.0.mcs.yml`)
+4. Test the agent with sample prompts
+5. Publish to your desired channel
 
-## Help
+## Folder Structure
 
-We do not support samples, but the community is willing to help. We use GitHub to track issues.
+```
+mcs-policy-agent-da/
+├── README.md                    # This file
+├── assets/
+│   └── sample.json              # PnP sample gallery metadata
+└── src/
+    ├── agent.mcs.yml            # Agent definition
+    ├── settings.mcs.yml         # Agent settings
+    ├── icon.png                 # Agent icon
+    ├── knowledge/               # Knowledge configuration
+    └── topics/                  # Conversation topics
+```
 
-You can look at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20mcs-policy-agent-da%22) to see if anybody else is having the same issues.
+## Related Resources
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
-
-If you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
-![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/mcs-policy-agent-da)
+- [Copilot Studio Documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/)
+- [VS Code Copilot Studio Extension](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio)
