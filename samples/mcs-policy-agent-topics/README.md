@@ -1,95 +1,131 @@
-# Policy Agent (Topic-Based Grounding) for Copilot Studio
+# Policy Agent - Topic-Based Grounding
 
-## Summary
-
-A **Custom Engine Agent** built in **Microsoft Copilot Studio** that uses a topic-based grounding pattern: each policy domain (HR, Finance, IT Security, Legal & Compliance, Operations & Administration) maps to a dedicated SharePoint folder and a dedicated agent topic. This gives **deterministic** routing — the agent reaches into the right knowledge source for the right question instead of relying on a single generic search.
-
-![Policy Agent Topics preview](./assets/preview.png)
+A Custom Engine Agent built in Microsoft Copilot Studio that uses topic-based folder structure in SharePoint for deterministic, precise policy responses.
 
 ## Demo
 
 https://github.com/user-attachments/assets/e6c3d7d3-015e-4f67-ac9e-2f5d4a6c8294
 
-> Note: This is one of three sibling samples — `mcs-policy-agent-da` (declarative / knowledge-only) and `mcs-policy-agent-cea` (CEA with Salesforce escalation) cover the same business scenario in different styles.
+## Problem Statement
 
-## Contributors
+Organizations with policies spread across multiple departments need precise, targeted responses. Common challenges include:
+- Generic responses that don't address specific departmental policies
+- Difficulty routing queries to the right knowledge source
+- Lack of precision when policies overlap across departments
+- Need for deterministic behavior in policy lookups
 
-* [Keshav](https://github.com/keshavk-msft)
+## Solution Overview
 
-## Version history
+This solution uses a **Custom Engine Agent (CEA)** in Copilot Studio with topic-based SharePoint folder mapping:
 
-Version|Date|Comments
--------|----|--------
-1.0|June 25, 2026|Initial release
+| Component | Description |
+|-----------|-------------|
+| **Custom Engine Agent** | Provides targeted responses based on topic classification |
+| **Topic-Based Grounding** | SharePoint folders organized by department/topic |
+| **Folder-to-Topic Mapping** | Each SharePoint folder maps to a specific agent topic |
+| **Deterministic Routing** | Structured approach ensures precise, relevant answers |
 
-## Prerequisites
+## Architecture
 
-* Microsoft 365 tenant with Microsoft 365 Copilot
-* Microsoft Copilot Studio license
-* SharePoint site with policy documents organised into per-domain folders (see below)
-* (Optional) [Power Platform Tools for VS Code](https://marketplace.visualstudio.com/items?itemName=microsoft-IsvExpTools.powerplatform-vscode) and the [Copilot Studio extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio)
+```
+                    ┌─────────────────────────┐
+                    │      User Query         │
+                    │  "What's the expense    │
+                    │   claim process?"       │
+                    └───────────┬─────────────┘
+                                │
+                    ┌───────────▼─────────────┐
+                    │   Custom Engine Agent   │
+                    │   (Topic Classifier)    │
+                    └───────────┬─────────────┘
+                                │
+              ┌─────────────────┼─────────────────┐
+              │                 │                 │
+    ┌─────────▼─────┐  ┌───────▼───────┐  ┌─────▼─────────┐
+    │  HR Topic     │  │ Finance Topic │  │  IT Topic     │
+    │               │  │               │  │               │
+    │  SharePoint   │  │  SharePoint   │  │  SharePoint   │
+    │  /HR Folder   │  │  /Finance     │  │  /IT Folder   │
+    └───────────────┘  └───────┬───────┘  └───────────────┘
+                               │
+                    ┌──────────▼──────────┐
+                    │  Targeted Response  │
+                    │  from Finance       │
+                    │  Policy Documents   │
+                    └─────────────────────┘
+```
 
-### Recommended SharePoint folder layout
+## Technical Details
 
+| Aspect | Details |
+|--------|---------|
+| **Platform** | Microsoft Copilot Studio |
+| **Agent Type** | Custom Engine Agent (CEA) |
+| **Knowledge Sources** | SharePoint folders organized by topic (Finance, HR, IT, etc.) |
+| **Integration Logic** | Topic folders mapped to specific agent topics for targeted responses |
+| **Routing Method** | Deterministic topic-based classification |
+
+## Sample Prompts
+
+- "What's the code of conduct policy for new employees?"
+- "Explain the step-by-step process for submitting expense claims"
+- "What are the IT security guidelines for remote work?"
+- "How do I request time off according to HR policy?"
+
+## Business Value
+
+| Metric | Value |
+|--------|-------|
+| **Faster Info Retrieval** | Direct routing to relevant policy folder |
+| **Better Resolution Rate** | Improved user query resolution percentage |
+| **Enhanced Precision** | Deterministic systems provide accurate, targeted answers |
+| **Structured Organization** | Clear folder structure makes maintenance easier |
+
+## Deployment
+
+### Prerequisites
+- Microsoft Copilot Studio license
+- SharePoint site with topic-organized folder structure
+- VS Code with Copilot Studio extension (optional, for source control)
+
+### SharePoint Setup
+Create folders for each policy domain:
 ```
 /Policies
-├── /Finance        → Finance topic
-├── /HR             → HR topic
-├── /IT             → IT Security topic
-├── /Legal          → Legal & Compliance topic
-└── /Operations     → Operations & Administration topic
+  ├── /Finance
+  │   ├── expense-policy.docx
+  │   └── travel-reimbursement.docx
+  ├── /HR
+  │   ├── code-of-conduct.docx
+  │   └── leave-policy.docx
+  └── /IT
+      ├── security-guidelines.docx
+      └── acceptable-use.docx
 ```
 
-Each folder is wired to its own knowledge source under `src/knowledge/` and to its own topic under `src/topics/`.
+### Import Steps
+1. Open Microsoft Copilot Studio
+2. Import the agent source from the `src/` folder using the Copilot Studio extension for VS Code
+3. Configure SharePoint knowledge sources with your topic folders (update the `site` URLs in `src/knowledge/`)
+4. Map each folder to corresponding agent topics
+5. Test the agent with sample prompts across different topics
+6. Publish to your desired channel
 
-## Minimal path to awesome
+## Folder Structure
 
-### Copilot Studio using cloned source
+```
+mcs-policy-agent-topics/
+├── README.md                    # This file
+├── assets/
+│   └── sample.json              # PnP sample gallery metadata
+└── src/
+    ├── agent.mcs.yml            # Agent definition
+    ├── settings.mcs.yml         # Agent settings
+    ├── knowledge/               # Topic-organized knowledge config
+    └── topics/                  # Topic definitions (mapped to folders)
+```
 
-This sample was exported using the Copilot Studio extension for VS Code (Method 2 in the contributing guide). The agent source files live under `src/` and use the `.mcs.yml` format.
+## Related Resources
 
-1. Open Microsoft Copilot Studio in your environment.
-2. Create a new Custom Engine Agent.
-3. From VS Code with the Copilot Studio extension installed, connect to the same environment and pull down the new agent.
-4. Replace the generated files with the contents of `src/` from this sample. Folder layout:
-   * `agent.mcs.yml`, `settings.mcs.yml` — agent definition + settings
-   * `knowledge/` — three SharePoint knowledge sources (Finance, HR, IT Security) — **update the SharePoint URLs to your tenant**
-   * `topics/` — per-domain topics: `Finance`, `HR`, `ITSecurity`, `LegalCompliance`, `OperationsAdministration`, plus the standard system topics
-5. Push the changes back to Copilot Studio.
-6. Test in the **Test your agent** panel:
-   * "How do I request time off according to HR policy?" → routes to **HR**
-   * "Explain the step-by-step process for submitting expense claims" → routes to **Finance**
-   * "What are the IT security guidelines for remote work?" → routes to **IT Security**
-7. Publish to your channel of choice.
-
-## Features
-
-This sample shows how to build a Copilot Studio agent that:
-
-* Routes each user question to the right departmental policy topic
-* Grounds each topic on a focused SharePoint folder for precision
-* Gives consistent, deterministic answers — no cross-domain "blending" of unrelated policies
-* Scales cleanly: add a new department by adding one knowledge source and one topic
-
-Concepts illustrated:
-
-* Topic-based routing in Copilot Studio
-* SharePoint folder-per-domain knowledge pattern
-* Per-topic knowledge scoping for higher precision than a single global search
-* Source-controlled Copilot Studio agent (`.mcs.yml`)
-
-## Help
-
-We do not support samples, but the community is willing to help. We use GitHub to track issues.
-
-You can look at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20mcs-policy-agent-topics%22) to see if anybody else is having the same issues.
-
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
-
-If you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
-![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/mcs-policy-agent-topics)
+- [Copilot Studio Documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/)
+- [VS Code Copilot Studio Extension](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio)

@@ -44,12 +44,6 @@
         ],
         "thumbnails": [
             {
-                "type": "image",
-                "order": 100,
-                "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-policy-agent-topics/assets/preview.png",
-                "alt": "Policy Agent with topic-based SharePoint grounding"
-            },
-            {
                 "type": "video",
                 "order": 101,
                 "url": "https://github.com/user-attachments/assets/e6c3d7d3-015e-4f67-ac9e-2f5d4a6c8294",
