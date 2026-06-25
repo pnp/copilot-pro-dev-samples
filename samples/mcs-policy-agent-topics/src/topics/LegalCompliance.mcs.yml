@@ -1,0 +1,30 @@
+# Name: Legal & Compliance
+kind: AdaptiveDialog
+modelDescription: |-
+  Legal & Compliance Policies
+  Ensure adherence to laws and regulations.
+  Anti-Bribery & Corruption Policy
+  Whistleblower Policy
+  GDPR / Data Protection Policy
+  Intellectual Property Policy
+  Contract Management Policy
+  Regulatory Compliance Policy
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: udeNWC
+      userInput: =System.Activity.Text
+      fileSearchDataSource:
+        searchFilesMode:
+          kind: DoNotSearchFiles
+
+      knowledgeSources:
+        kind: SearchSpecificKnowledgeSources
+        knowledgeSources:
+          - cred8_agent_Ai98b3.topic.Legal_Compliance_Policies_OUsCnpvz6ucQVqG2o4Nx3
+
+inputType: {}
+outputType: {}

@@ -1,0 +1,7 @@
+# Name: Finance_Policies
+# This knowledge source provides information found in Finance_Policies SharePoint.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  # TODO: replace with your tenant's SharePoint folder URL for Finance policies
+  site: https://contoso.sharepoint.com/sites/PolicyHub/Shared%20Documents/Policies/Finance_Policies

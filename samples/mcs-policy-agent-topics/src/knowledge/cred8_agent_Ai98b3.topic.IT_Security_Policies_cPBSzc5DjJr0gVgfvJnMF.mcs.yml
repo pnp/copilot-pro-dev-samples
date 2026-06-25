@@ -1,0 +1,7 @@
+# Name: IT_Security_Policies
+# This knowledge source provides information found in IT_Security_Policies SharePoint.
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  # TODO: replace with your tenant's SharePoint folder URL for IT Security policies
+  site: https://contoso.sharepoint.com/sites/PolicyHub/Shared%20Documents/Policies/IT_Security_Policies
