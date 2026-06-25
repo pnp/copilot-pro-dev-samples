@@ -6,6 +6,10 @@ A **Custom Engine Agent** built in **Microsoft Copilot Studio** that uses a topi
 
 ![Policy Agent Topics preview](./assets/preview.png)
 
+## Demo
+
+https://github.com/user-attachments/assets/e6c3d7d3-015e-4f67-ac9e-2f5d4a6c8294
+
 > Note: This is one of three sibling samples — `mcs-policy-agent-da` (declarative / knowledge-only) and `mcs-policy-agent-cea` (CEA with Salesforce escalation) cover the same business scenario in different styles.
 
 ## Contributors
