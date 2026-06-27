@@ -1,11 +1,12 @@
 ---
 name: copilot-studio-sample-review
-description: Review PRs for Microsoft Copilot Studio samples (mcs-* folders) in pnp/copilot-pro-dev-samples. Use when reviewing mcs-* sample submissions for folder structure, README/sample metadata, and prohibited zip files. Triggers on "review PR", "review this sample", or PR review requests for Copilot Studio samples.
+description: Review PRs for Microsoft Copilot Studio samples (mcs-* folders) in pnp/copilot-pro-dev-samples.
 ---
 
 # Copilot Studio Sample Review
 
 Review Copilot Studio sample PRs (folders starting with `mcs-`) for compliance with repo guidelines.
+Use when a request asks to review an `mcs-*` sample PR (e.g., "review PR" or "review this sample").
 
 ## Workflow
 
@@ -24,12 +25,12 @@ Review Copilot Studio sample PRs (folders starting with `mcs-`) for compliance w
 
 ### 2. No packaged exports
 
-- Reject committed `.zip` files in `samples/**`
+- Request changes if any packaged `.zip` exports are committed under `samples/mcs-*` (e.g., `samples/mcs-example/export.zip`). Extracted source files are required, whether the contributor used `pac solution clone` or the VS Code clone method.
 - Copilot Studio exports must be committed as extracted source files only
 
 ### 3. README and template alignment
 
-- README is based on `templates/mcs-copilot-studio/README-template.md`
+- README is based on `/templates/mcs-copilot-studio/README-template.md`
 - Setup steps include one of the supported contributor flows:
   - Solution export via Power Platform CLI (`pac solution clone`)
   - Copilot Studio Visual Studio Code clone method
@@ -42,7 +43,7 @@ Review Copilot Studio sample PRs (folders starting with `mcs-`) for compliance w
 
 ## Submitting Reviews
 
-GitHub API cannot add comments to pending reviews after creation. Collect all comments first.
+GitHub API does not support adding comments to a review after it has been created. Collect all comments first and submit them in one API call.
 
 Get commit SHA:
 ```bash
@@ -53,13 +54,19 @@ Create `review.json`:
 ```json
 {
   "commit_id": "<sha>",
-  "event": "REQUEST_CHANGES",
+  "event": "<REQUEST_CHANGES|COMMENT|APPROVE>",
   "body": "Summary message",
   "comments": [
     {"path": "file/path", "line": 10, "body": "Issue description"}
   ]
 }
 ```
+
+Use the review event type based on findings:
+
+- `REQUEST_CHANGES`: blocking issues (e.g., `.zip` files in `samples/mcs-*/`, missing required `mcs-*` structure, or incorrect sample metadata paths)
+- `COMMENT`: non-blocking feedback (e.g., small README wording/template improvements)
+- `APPROVE`: checks pass
 
 Submit:
 ```bash
