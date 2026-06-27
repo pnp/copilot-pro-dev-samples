@@ -215,7 +215,7 @@ To get the source quickly, please use the following commands using the [Power Pl
 Ensure that all the solution files are located in the root of the scaffolded sample location e.g. /samples/mcs-MyNewAgent
 See example agent: [mcs-BlogPostHelper](/samples/mcs-BlogPostHelper)
 
-Thats it, proceed to Finalising the sample
+That's it, proceed to Finalising the sample
 
 #### Copilot Studio using Copilot Studio for Visual Studio Code clone method
 
@@ -226,7 +226,7 @@ Steps
 - Ensure you have followed the Sample setup instructions
 - Clone the agent in the folder (e.g. mcs-MyNewAgent) using the extension, this will create a new folder with the Yaml files in, rename the folder to `src`
 
-Thats it, proceed to Finalising the sample
+That's it, proceed to Finalising the sample
 
 #### Finalising the sample
 
