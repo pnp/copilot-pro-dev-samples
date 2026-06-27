@@ -165,10 +165,10 @@ Your sample should include a clearly marked folder containing a Teams/M365 `mani
 
 ### 7. Microsoft Copilot Studio Samples
 
-There are one type of Copilot Studio Agent within this repository:
+There are two types of Copilot Studio Agents within this repository:
 
 1. ✅ Copilot Studio using Solution Export 
-2. ❌ Copilot Studio using Cloned with Visual Studio Code. (Not Recommended at this time)
+2. ✅ Copilot Studio using Cloned with Visual Studio Code
 
 #### Sample Setup applies to both methods
 
@@ -215,9 +215,21 @@ To get the source quickly, please use the following commands using the [Power Pl
 Ensure that all the solution files are located in the root of the scaffolded sample location e.g. /samples/mcs-MyNewAgent
 See example agent: [mcs-BlogPostHelper](/samples/mcs-BlogPostHelper)
 
-Thats it, proceed to Finalising the sample
+That's it, proceed to Finalizing the sample
 
-#### Finalising the sample
+#### Copilot Studio using Copilot Studio for Visual Studio Code clone method
+
+This method assumes you have the Copilot Studio Extension for Visual Studio Code installed; found in the marketplace [Copilot Studio | Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio). If the direct link changes, search for "Copilot Studio" in the Visual Studio Code Extensions marketplace.
+
+Steps
+
+- Ensure you have followed the Sample setup instructions
+- Clone the agent into the sample folder (for example, `samples/mcs-MyNewAgent`).
+- The extension creates a new folder that contains the YAML files; rename that generated folder to `src` so the final structure is `samples/mcs-MyNewAgent/src`.
+
+That's it, proceed to Finalizing the sample
+
+#### Finalizing the sample
 
 **Updating the Readme.md file**
 
