@@ -1,0 +1,22 @@
+mcs.metadata:
+  componentName: Fallback
+  description: This system topic triggers when the user's utterance does not match any existing topics.
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  actions:
+    - kind: ConditionGroup
+      id: conditionGroup_LktzXw
+      conditions:
+        - id: conditionItem_tlGIVo
+          condition: =System.FallbackCount < 3
+          actions:
+            - kind: SendActivity
+              id: sendMessage_QZreqo
+              activity: I can still help. Tell me one of these so I can move this forward: your course code (for example, CS101), your goal (search, prerequisites, enrolment, GPA, graduation), or the deadline/policy you need.
+
+      elseActions:
+        - kind: BeginDialog
+          id: 5aXj5M
+          dialog: edu_EduCoach.topic.Escalate

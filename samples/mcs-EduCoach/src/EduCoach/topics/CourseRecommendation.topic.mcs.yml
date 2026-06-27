@@ -1,0 +1,172 @@
+mcs.metadata:
+  componentName: Course Recommendation
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - What courses should I take next semester
+      - Recommend courses for me
+      - What should I take this semester
+      - Can you suggest courses for my major
+      - What classes do you recommend
+      - Help me choose courses
+      - What courses fit my interests
+      - What electives should I take
+      - I don't know what to enrol in
+      - Suggest something to take next semester
+      - What courses are good for my degree
+
+  actions:
+    - kind: SetVariable
+      id: setVar_recommendationRequest
+      variable: init:Topic.VarRecommendationRequest
+      value: =Trim(System.Activity.Text)
+
+    - kind: SetVariable
+      id: setVar_defaultMajor
+      variable: init:Topic.VarMajor
+      value: Not provided
+
+    - kind: SetVariable
+      id: setVar_defaultYear
+      variable: init:Topic.VarStudentYear
+      value: Not provided
+
+    - kind: SetVariable
+      id: setVar_defaultInterests
+      variable: init:Topic.VarInterests
+      value: Not provided
+
+    - kind: SetVariable
+      id: setVar_defaultCompleted
+      variable: init:Topic.VarCompletedCourses
+      value: Not provided
+
+    - kind: SetVariable
+      id: setVar_recommendationSourceRowsInit
+      variable: init:Topic.VarRecommendationSourceRows
+      value: =""
+
+    - kind: ConditionGroup
+      id: conditionGroup_recommendationDetail
+      conditions:
+        - id: condition_genericRecommendationRequest
+          condition: =Lower(Topic.VarRecommendationRequest) = "recommend courses for me" || Lower(Topic.VarRecommendationRequest) = "what should i take this semester" || Lower(Topic.VarRecommendationRequest) = "what classes do you recommend" || Lower(Topic.VarRecommendationRequest) = "help me choose courses" || Lower(Topic.VarRecommendationRequest) = "what electives should i take" || Lower(Topic.VarRecommendationRequest) = "suggest something to take next semester"
+          actions:
+            - kind: Question
+              id: question_major
+              variable: Topic.VarMajor
+              prompt:
+                text: What is your major or area of study? (e.g. Computer Science, Business, Biology)
+              entity: StringPrebuiltEntity
+
+            - kind: Question
+              id: question_year
+              variable: Topic.VarStudentYear
+              prompt:
+                text: |-
+                  What year are you in?
+                  - Freshman (Year 1)
+                  - Sophomore (Year 2)
+                  - Junior (Year 3)
+                  - Senior (Year 4)
+              entity: StringPrebuiltEntity
+
+            - kind: Question
+              id: question_interests
+              variable: Topic.VarInterests
+              prompt:
+                text: What are your academic interests or career goals? For example — software development, research, entrepreneurship, healthcare, education. This helps me tailor my suggestions.
+              entity: StringPrebuiltEntity
+
+            - kind: Question
+              id: question_completed
+              variable: Topic.VarCompletedCourses
+              prompt:
+                text: Are there any courses you have already completed that are relevant? List a few course codes or names, or type "none" if you're just starting out.
+              entity: StringPrebuiltEntity
+
+    - kind: InvokeConnectorAction
+      id: invokeConnectorAction_getCourseItemsForRecommendation
+      input:
+        binding:
+          dataset: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+          table: 05f1ec63-6cc2-43f1-bba2-0b8fb2c78586
+
+      output:
+        kind: SingleVariableOutputBinding
+        variable: Topic.GetItemsRecommendation
+
+      connectionReference: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+      connectionProperties:
+        mode: Invoker
+
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          value:
+            description: List of Items
+            order: 0
+            type:
+              kind: Table
+              properties:
+                field_1:
+                  displayName: title
+                  order: 2
+                  type: String
+
+                field_2:
+                  displayName: credits
+                  order: 3
+                  type: Number
+
+                field_3:
+                  displayName: prerequisites
+                  order: 4
+                  type:
+                    kind: Table
+                    properties:
+                      Value:
+                        displayName: Value
+                        order: 0
+                        type: String
+
+                field_4:
+                  displayName: degree_requirement
+                  order: 5
+                  type: String
+
+                field_5:
+                  displayName: semester_offered
+                  order: 6
+                  type:
+                    kind: Table
+                    properties:
+                      Value:
+                        displayName: Value
+                        order: 0
+                        type: String
+
+                Title:
+                  displayName: Title
+                  order: 1
+                  type: String
+
+      operationId: GetItems
+
+    - kind: SetVariable
+      id: setVar_recommendationSourceRows
+      variable: Topic.VarRecommendationSourceRows
+      value: =JSON(Topic.GetItemsRecommendation.value)
+
+    - kind: AnswerQuestionWithAI
+      id: answerAI_recommendation
+      userInput: ="Use this student request for course recommendations: " & Topic.VarRecommendationRequest & ". Additional details if available: major=" & Topic.VarMajor & ", year=" & Topic.VarStudentYear & ", interests=" & Topic.VarInterests & ", completed courses=" & Topic.VarCompletedCourses & ". Use the request text as primary context (for example, subject interest and year level mentioned by the student), even when extra fields are 'Not provided'. First use this structured SharePoint GetItems output: " & Topic.VarRecommendationSourceRows & ". Recommend up to 5 courses only from verified SharePoint Courses list results. Return at least 1 verified course if any verified match exists. Do not invent course data. The source schema is: Title=course code, title=course name, credits=number, prerequisites=single value, degree_requirement=text, semester_offered=choice values that may contain multiple terms separated by ';'. If a candidate course cannot be verified in the source, do not include it. For each verified course include: Title (course code), title (course name), why it fits, prerequisites, credits, degree_requirement, and semester_offered (or 'Not specified in source' when missing). If only 1 or 2 verified courses are found, return them and add: 'I found a limited number of verified matches. Share a focus area (for example pure math, applied math, or statistics) so I can refine further.' If zero verified courses are found, say exactly: 'I could not find verified courses for that request.' Then ask for a subject, level, or career goal to refine recommendations. Start your response with: 'Here are verified course recommendations from the source.'"
+
+    - kind: SendActivity
+      id: sendActivity_followUp
+      activity: Would you like me to refine these recommendations, check prerequisites, or help you submit an enrolment request?
+
+outputType: {}

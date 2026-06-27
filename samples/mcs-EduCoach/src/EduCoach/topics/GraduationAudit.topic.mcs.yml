@@ -1,0 +1,163 @@
+mcs.metadata:
+  componentName: Graduation Audit
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - How many credits do I need to graduate
+      - how many credits required for General Education
+      - how many General Education credits are required
+      - what are the General Education credit requirements
+      - what are the degree requirements
+      - what are the graduation credit requirements
+      - what does the student handbook say about graduation requirements
+      - what are the academic policy requirements for graduation
+      - what is the add drop deadline
+      - when is the withdrawal deadline
+      - when are grades released
+      - where can I find the academic calendar
+      - what is the enrollment policy
+      - what is the withdrawal policy
+      - what are the general education requirements
+      - how many gen ed credits do I need
+      - Am I on track to graduate
+      - Check my degree progress
+      - Graduation requirements
+      - How close am I to finishing
+
+  actions:
+    - kind: SetVariable
+      id: setVar_prefillStudentId
+      variable: init:Topic.VarStudentId
+      value: =Text(System.Activity.Value.studentId)
+
+    - kind: SetVariable
+      id: setVar_prefillCompletedCredits
+      variable: init:Topic.VarCompletedCreditsFromRecord
+      value: =Value(System.Activity.Value.completedCredits)
+
+    - kind: SetVariable
+      id: setVar_prefillRequiredCredits
+      variable: init:Topic.VarRequiredCreditsFromRecord
+      value: =Value(System.Activity.Value.creditsRequired)
+
+    - kind: ConditionGroup
+      id: conditionGroup_handbookQuestion
+      conditions:
+        - id: conditionItem_isHandbookQuestion
+          condition: =!IsBlank(Match(Lower(System.Activity.Text), ".*(general education|gen ed|graduation requirement|degree requirement|credit requirement|academic policy|enrollment policy|add drop|withdrawal deadline|academic calendar|grade release|student handbook|deadline).*"))
+          actions:
+            - kind: AnswerQuestionWithAI
+              id: answerAI_handbookQuestion
+              userInput: ="Answer this question using verified Student Handbook content from Contoso University only: '" & System.Activity.Text & "'. If the exact policy or credit value is present, provide it with a concise source-grounded explanation. If unavailable in approved sources, clearly say it is not specified and ask one brief follow-up question to narrow by program, term, or policy area."
+
+            - kind: EndDialog
+              id: endDialog_handbookQuestion
+              clearTopicQueue: true
+
+    - kind: SendActivity
+      id: sendActivity_pL3mQr
+      activity: I can run a personalized graduation audit. If your student record is available, I will use it. Please confirm or provide the details below.
+
+    - kind: AdaptiveCardPrompt
+      id: adaptiveCardPrompt_9wXnBk
+      card: |
+        {
+          "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+          "type": "AdaptiveCard",
+          "version": "1.5",
+          "body": [
+            {
+              "type": "TextBlock",
+              "text": "Degree Audit Overview",
+              "weight": "Bolder",
+              "size": "Large"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Provide your student and program details for a personalized credit audit.",
+              "isSubtle": true,
+              "wrap": true
+            },
+            {
+              "type": "Input.Text",
+              "id": "studentId",
+              "label": "Student ID (optional)",
+              "placeholder": "e.g. 1098"
+            },
+            {
+              "type": "Input.Number",
+              "id": "completedCredits",
+              "label": "How many total credits have you completed so far?",
+              "placeholder": "e.g. 72",
+              "min": 0,
+              "max": 300,
+              "isRequired": true,
+              "errorMessage": "Please enter completed credits."
+            }
+          ],
+          "actions": [
+            {
+              "type": "Action.Submit",
+              "title": "Calculate Remaining Credits"
+            }
+          ]
+        }
+      output:
+        binding:
+          studentId: Topic.VarStudentIdInput
+          completedCredits: Topic.VarCompletedCredits
+
+      outputType:
+        properties:
+          studentId: String
+          completedCredits: Number
+
+    - kind: SetVariable
+      id: setVar_studentIdFinal
+      variable: Topic.VarStudentId
+      value: =Coalesce(Topic.VarStudentIdInput, Topic.VarStudentId, "Not provided")
+
+    - kind: SetVariable
+      id: setVar_requiredCreditsFinal
+      variable: init:Topic.VarRequiredCredits
+      value: =120
+
+    - kind: SetVariable
+      id: setVar_completedCreditsFinal
+      variable: init:Topic.VarCompletedCredits
+      value: =Coalesce(Topic.VarCompletedCredits, Topic.VarCompletedCreditsFromRecord, 0)
+
+    - kind: SetVariable
+      id: setVar_creditsRemaining
+      variable: init:Topic.VarCreditsRemaining
+      value: =Max(Topic.VarRequiredCredits - Topic.VarCompletedCredits, 0)
+
+    - kind: SetVariable
+      id: setVar_progressPercent
+      variable: init:Topic.VarProgressPercent
+      value: =Round((Topic.VarCompletedCredits / Topic.VarRequiredCredits) * 100, 1)
+
+    - kind: ConditionGroup
+      id: conditionGroup_5tHjWm
+      conditions:
+        - id: conditionItem_2vRpNe
+          condition: =Topic.VarCreditsRemaining <= 12
+          actions:
+            - kind: SendActivity
+              id: sendActivity_8cKqZd
+              activity: You are in the home stretch! You have completed {Topic.VarCompletedCredits} of {Topic.VarRequiredCredits} credits ({Topic.VarProgressPercent}% complete) and only need {Topic.VarCreditsRemaining} more to graduate.
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_4xFbYs
+          activity: You have completed {Topic.VarCompletedCredits} of {Topic.VarRequiredCredits} credits ({Topic.VarProgressPercent}% complete) and need {Topic.VarCreditsRemaining} more to graduate. You are making great progress!
+
+    - kind: SendActivity
+      id: sendActivity_studentSpecificSummary
+      activity: Student ID: {Topic.VarStudentId}
+
+    - kind: AnswerQuestionWithAI
+      id: answerAI_auditAdvice
+      userInput: ="Provide concise, student-specific graduation audit guidance for Contoso University based on these details. Student ID: " & Coalesce(Topic.VarStudentId, "Not provided") & ". Program required credits: " & Text(Topic.VarRequiredCredits) & ". Completed credits: " & Text(Topic.VarCompletedCredits) & ". Remaining credits: " & Text(Topic.VarCreditsRemaining) & ". Include: (1) whether the student is on track, (2) what to do next semester, and (3) when to book an advisor appointment to validate final degree requirements. Use only verified source data and do not provide data on your own."

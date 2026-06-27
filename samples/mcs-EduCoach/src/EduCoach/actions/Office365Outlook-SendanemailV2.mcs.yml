@@ -1,0 +1,36 @@
+mcs.metadata:
+  componentName: Office 365 Outlook - Send an email (V2)
+kind: TaskDialog
+inputs:
+  - kind: AutomaticTaskInput
+    propertyName: To
+    description: Recipient email address for the enrollment confirmation.
+    entity: StringPrebuiltEntity
+    shouldPromptUser: true
+
+  - kind: AutomaticTaskInput
+    propertyName: Subject
+    description: Subject line for the enrollment confirmation email.
+    entity: StringPrebuiltEntity
+    shouldPromptUser: true
+
+  - kind: AutomaticTaskInput
+    propertyName: Body
+    description: Body content for the enrollment confirmation email.
+    entity: StringPrebuiltEntity
+    shouldPromptUser: true
+
+modelDisplayName: Send an email (V2)
+modelDescription: This operation sends an email message.
+outputs:
+  - propertyName: Response
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: edu_EduCoach.shared_office365.fce6b6a55f7a4d90aa6f42dea20af0ef
+  connectionProperties:
+    mode: Invoker
+
+  operationId: SendEmailV2
+
+outputMode: All

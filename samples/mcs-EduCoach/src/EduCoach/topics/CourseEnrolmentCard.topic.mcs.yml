@@ -1,0 +1,705 @@
+mcs.metadata:
+  componentName: Course Enrolment Card
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - I want to enrol in a course
+      - I would like to register for a class
+      - Can I sign up for this course
+      - Enroll for
+      - Enrol for
+      - Add me to the waitlist for a course
+      - Enroll me in a course
+      - How do I enroll in a class
+      - I need to register for a course
+      - Sign me up for this class
+      - I want to register for a course
+      - I would like to enrol in a subject
+      - How do I sign up for a course
+      - I want to enrol using a form
+      - Show me a form to enrol
+      - Enrol me using a form
+      - Show enrolment form
+      - I want to fill in an enrolment form
+      - Open enrolment card
+
+  actions:
+    - kind: SetVariable
+      id: setVar_enrolRequest
+      variable: init:Topic.VarEnrolRequest
+      value: =Trim(Coalesce(Text(Topic.EnrolmentRequest), System.Activity.Text))
+
+    - kind: SetVariable
+      id: setVar_enrolCourseFromRequest
+      variable: init:Topic.VarEnrolCourse
+      value: =If(!IsBlank(Trim(Coalesce(Text(Topic.CourseHint), ""))), Upper(Trim(Text(Topic.CourseHint))), If(IsBlank(Match(Upper(Topic.VarEnrolRequest), "[A-Z]{2,5}[0-9]{3}")), Blank(), Match(Upper(Topic.VarEnrolRequest), "[A-Z]{2,5}[0-9]{3}").FullMatch))
+
+    - kind: SetVariable
+      id: setVar_studentIdFromRequest
+      variable: init:Topic.VarStudentId
+      value: =If(IsBlank(Match(Topic.VarEnrolRequest, "[0-9]{4,}")), Blank(), Match(Topic.VarEnrolRequest, "[0-9]{4,}").FullMatch)
+
+    - kind: SetVariable
+      id: setVar_studentNameDefault
+      variable: init:Topic.VarStudentName
+      value: =Blank()
+
+    - kind: SetVariable
+      id: setVar_studentEmailFromRequest
+      variable: init:Topic.VarStudentEmail
+      value: =If(IsBlank(Match(Lower(Topic.VarEnrolRequest), "[a-z0-9._%+\-]+@[a-z0-9.\-]+[.][a-z]{2,}")), Blank(), Match(Lower(Topic.VarEnrolRequest), "[a-z0-9._%+\-]+@[a-z0-9.\-]+[.][a-z]{2,}").FullMatch)
+
+    - kind: SetVariable
+      id: setVar_commentsFromRequest
+      variable: init:Topic.VarEnrolCommentsParsed
+      value: =If(IsBlank(Match(Topic.VarEnrolRequest, "[Nn][Oo][Tt][Ee][Ss][ ]*:[ ].*")), Blank(), Trim(Mid(Match(Topic.VarEnrolRequest, "[Nn][Oo][Tt][Ee][Ss][ ]*:[ ].*").FullMatch, Find(":", Match(Topic.VarEnrolRequest, "[Nn][Oo][Tt][Ee][Ss][ ]*:[ ].*").FullMatch) + 1, Len(Match(Topic.VarEnrolRequest, "[Nn][Oo][Tt][Ee][Ss][ ]*:[ ].*").FullMatch))))
+
+    - kind: SetVariable
+      id: setVar_commentsDefault
+      variable: init:Topic.VarEnrolComments
+      value: =Blank()
+
+    - kind: SendActivity
+      id: sendActivity_intro
+      activity: I will use any enrollment details already in your request and only ask for the missing information.
+
+    - kind: ConditionGroup
+      id: conditionGroup_needCourse
+      conditions:
+        - id: condition_missingCourse
+          condition: =Len(Trim(Coalesce(Text(Topic.VarEnrolCourse), ""))) = 0
+          actions:
+            - kind: Question
+              id: question_course
+              alwaysPrompt: true
+              variable: Topic.VarEnrolCourse
+              prompt:
+                text: Which course would you like to enrol in? Please enter the course code (for example, CS401).
+              entity: StringPrebuiltEntity
+
+    - kind: SetVariable
+      id: setVar_enrolCourseNormalized
+      variable: Topic.VarEnrolCourse
+      value: =Upper(Trim(Text(Topic.VarEnrolCourse)))
+
+    - kind: InvokeConnectorAction
+      id: invokeConnectorAction_getCourseItemsForPrerequisites
+      input:
+        binding:
+          dataset: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+          table: 05f1ec63-6cc2-43f1-bba2-0b8fb2c78586
+
+      output:
+        kind: SingleVariableOutputBinding
+        variable: Topic.GetItemsForPrerequisites
+
+      connectionReference: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+      connectionProperties:
+        mode: Invoker
+
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          value:
+            description: List of Items
+            order: 0
+            type:
+              kind: Table
+              properties:
+                field_1:
+                  displayName: title
+                  order: 2
+                  type: String
+
+                field_3:
+                  displayName: prerequisites
+                  order: 4
+                  type:
+                    kind: Table
+                    properties:
+                      Value:
+                        displayName: Value
+                        order: 0
+                        type: String
+
+                Title:
+                  displayName: Title
+                  order: 1
+                  type: String
+
+      operationId: GetItems
+
+    - kind: SetVariable
+      id: setVar_prerequisitesLookupRaw
+      variable: Topic.VarPrerequisiteListRaw
+      value: =If(CountRows(Filter(Topic.GetItemsForPrerequisites.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarEnrolCourse))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarEnrolCourse))))) = 0, "course not found", If(CountRows(First(Filter(Topic.GetItemsForPrerequisites.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarEnrolCourse))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarEnrolCourse))))).field_3) = 0, "None", Concat(First(Filter(Topic.GetItemsForPrerequisites.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarEnrolCourse))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarEnrolCourse))))).field_3, Value, "; ")))
+
+    - kind: SetVariable
+      id: setVar_prerequisiteListForDisplay
+      variable: init:Topic.VarPrerequisiteList
+      value: =If(IsBlank(Trim(Coalesce(Text(Topic.VarPrerequisiteListRaw), ""))) || StartsWith(Lower(Trim(Text(Topic.VarPrerequisiteListRaw))), "there is no course") || StartsWith(Lower(Trim(Text(Topic.VarPrerequisiteListRaw))), "course not found"), "NA", Trim(Concat(MatchAll(Text(Topic.VarPrerequisiteListRaw), "[ -~\\r\\n]"), FullMatch)))
+
+    - kind: AdaptiveCardPrompt
+      id: adaptiveCard_enrolmentDetails
+      card: |
+        {
+          "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+          "type": "AdaptiveCard",
+          "version": "1.5",
+          "body": [
+            {
+              "type": "TextBlock",
+              "text": "Enrolment details",
+              "weight": "Bolder",
+              "size": "Medium"
+            },
+            {
+              "type": "TextBlock",
+              "text": "Please confirm your details so I can submit the enrolment request.",
+              "wrap": true
+            },
+            {
+              "type": "Input.Text",
+              "id": "studentName",
+              "label": "Full name",
+              "placeholder": "e.g. Amina Khan"
+            },
+            {
+              "type": "Input.Text",
+              "id": "studentId",
+              "label": "Student ID",
+              "placeholder": "e.g. 123456"
+            },
+            {
+              "type": "Input.Text",
+              "id": "studentEmail",
+              "label": "Student email id",
+              "placeholder": "name@university.edu",
+              "style": "Email"
+            },
+            {
+              "type": "Input.Text",
+              "id": "enrolComments",
+              "label": "Notes (optional)",
+              "placeholder": "Add any notes for your enrolment request",
+              "isMultiline": true
+            },
+            {
+              "type": "Input.Toggle",
+              "id": "prereqConfirmed",
+              "label": "Prerequisite confirmation",
+              "title": "I confirm all prerequisites for this course are completed.",
+              "valueOn": "true",
+              "valueOff": "false",
+              "value": "false",
+              "isRequired": true,
+              "errorMessage": "Please confirm the prerequisite checkbox before continuing."
+            }
+          ],
+          "actions": [
+            {
+              "type": "Action.Submit",
+              "title": "Continue"
+            }
+          ]
+        }
+      output:
+        binding:
+          studentName: Topic.VarStudentName
+          studentId: Topic.VarStudentId
+          studentEmail: Topic.VarStudentEmail
+          enrolComments: Topic.VarEnrolComments
+          prereqConfirmed: Topic.VarPrereqConfirmed
+      outputType:
+        properties:
+          studentName: String
+          studentId: String
+          studentEmail: String
+          enrolComments: String
+          prereqConfirmed: String
+
+    - kind: SetVariable
+      id: setVar_enrolCommentsEffective
+      variable: Topic.VarEnrolComments
+      value: =If(IsBlank(Trim(Text(Topic.VarEnrolComments))), If(IsBlank(Trim(Text(Topic.VarEnrolCommentsParsed))), "N/A", Trim(Text(Topic.VarEnrolCommentsParsed))), Trim(Text(Topic.VarEnrolComments)))
+
+    - kind: SetVariable
+      id: setVar_studentEmailSanitized
+      variable: Topic.VarStudentEmail
+      value: =Trim(Concat(MatchAll(Text(Topic.VarStudentEmail), "[ -~]"), FullMatch))
+
+    - kind: SetVariable
+      id: setVar_prerequisiteListSanitized
+      variable: Topic.VarPrerequisiteList
+      value: =If(IsBlank(Trim(Text(Topic.VarPrerequisiteList))), "NA", Trim(Concat(MatchAll(Text(Topic.VarPrerequisiteList), "[ -~\\r\\n]"), FullMatch)))
+
+    - kind: SetVariable
+      id: setVar_commentsSanitized
+      variable: Topic.VarEnrolComments
+      value: =If(IsBlank(Trim(Text(Topic.VarEnrolComments))), "N/A", Trim(Concat(MatchAll(Text(Topic.VarEnrolComments), "[ -~\\r\\n]"), FullMatch)))
+
+    - kind: ConditionGroup
+      id: conditionGroup_prereqConfirmation
+      conditions:
+        - id: condition_prereqConfirmed
+          condition: =Lower(Trim(Topic.VarPrereqConfirmed)) = "true"
+          actions:
+            - kind: SendActivity
+              id: sendActivity_reviewAndConfirm
+              activity: |-
+                **Review Enrolment Request**
+
+                Please review the details below before final submission.
+
+                - Course: {Topic.VarEnrolCourse}
+                - Full Name: {Topic.VarStudentName}
+                - Student ID: {Topic.VarStudentId}
+                - Student Email: {Topic.VarStudentEmail}
+                - Prerequisites (Hierarchy):
+
+                {Topic.VarPrerequisiteList}
+
+                - Notes:
+
+                {Topic.VarEnrolComments}
+
+            - kind: Question
+              id: question_finalConfirmAction
+              variable: Topic.VarFinalConfirmAction
+              prompt:
+                text: Please confirm: submit this enrolment request?
+                quickReplies:
+                  - kind: MessageBack
+                    title: OK to confirm
+                    text: ok
+
+                  - kind: MessageBack
+                    title: Cancel
+                    text: cancel
+              entity: StringPrebuiltEntity
+
+            - kind: ConditionGroup
+              id: conditionGroup_finalConfirmAction
+              conditions:
+                - id: condition_finalConfirmed
+                  condition: =Lower(Trim(Topic.VarFinalConfirmAction)) = "ok"
+                  actions:
+                    - kind: SetVariable
+                      id: setVar_enrolmentRequestId
+                      variable: init:Topic.VarPlannerTaskId
+                      value: =Blank()
+
+                    - kind: InvokeConnectorAction
+                      id: invokeConnectorAction_getCourseItemsBeforeSubmit
+                      input:
+                        binding:
+                          dataset: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+                          table: 05f1ec63-6cc2-43f1-bba2-0b8fb2c78586
+
+                      output:
+                        kind: SingleVariableOutputBinding
+                        variable: Topic.GetItemsBeforeSubmit
+
+                      connectionReference: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+                      connectionProperties:
+                        mode: Invoker
+
+                      dynamicOutputSchema:
+                        kind: Record
+                        properties:
+                          value:
+                            description: List of Items
+                            order: 0
+                            type:
+                              kind: Table
+                              properties:
+                                field_1:
+                                  displayName: title
+                                  order: 2
+                                  type: String
+
+                                Title:
+                                  displayName: Title
+                                  order: 1
+                                  type: String
+
+                      operationId: GetItems
+
+                    - kind: SetVariable
+                      id: setVar_acceptingEnrollmentRawBeforeSubmit
+                      variable: Topic.VarAcceptingEnrollmentRaw
+                      value: =JSON(Topic.GetItemsBeforeSubmit.value)
+
+                    - kind: SetVariable
+                      id: setVar_acceptingEnrollmentBeforeSubmit
+                      variable: Topic.VarAcceptingEnrollment
+                      value: =If(CountRows(Filter(Topic.GetItemsBeforeSubmit.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarEnrolCourse))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarEnrolCourse))))) > 0, "true", "false")
+
+                    - kind: ConditionGroup
+                      id: conditionGroup_acceptingEnrollmentBeforeSubmit
+                      conditions:
+                        - id: condition_acceptingEnrollmentBeforeSubmitTrue
+                          condition: =Lower(Trim(Text(Topic.VarAcceptingEnrollment))) = "true"
+                          actions:
+                            - kind: BeginDialog
+                              id: beginDialog_submitEnrollment
+                              dialog: edu_EduCoach.topic.EnrollmentSubmissionGate.topic
+                              input:
+                                binding:
+                                  Course: =Topic.VarEnrolCourse
+                                  StudentName: =Topic.VarStudentName
+                                  StudentId: =Topic.VarStudentId
+                                  StudentEmail: =Topic.VarStudentEmail
+                                  PrerequisiteHierarchy: =If(Lower(Trim(Topic.VarPrereqConfirmed)) = "true", Coalesce(Topic.VarPrerequisiteList, "NA"), "Not provided")
+                                  PrerequisiteConfirmed: =If(Lower(Trim(Topic.VarPrereqConfirmed)) = "true", "Yes", "No")
+                                  Comments: =If(IsBlank(Trim(Topic.VarEnrolComments)), "N/A", Trim(Topic.VarEnrolComments))
+                              output:
+                                binding:
+                                  TaskId: Topic.VarPlannerTaskId
+                                  EmailSent: Topic.VarEmailSent
+
+                      elseActions:
+                        - kind: SendActivity
+                          id: sendActivity_notAcceptingEnrollmentOnSubmit
+                          activity: I could not submit an enrolment request for {Topic.VarEnrolCourse} because I could not verify that course in the SharePoint Courses list. Please check the course name/code (Title/title) and try again, or ask me to find another course.
+
+              elseActions:
+                - kind: Question
+                  id: question_editAfterCancel
+                  variable: Topic.VarEditAfterCancel
+                  prompt:
+                    text: No problem. Would you like to update any details before deciding again?
+                    quickReplies:
+                      - kind: MessageBack
+                        title: Yes, edit details
+                        text: yes
+
+                      - kind: MessageBack
+                        title: No, keep cancelled
+                        text: no
+                  entity: StringPrebuiltEntity
+
+                - kind: ConditionGroup
+                  id: conditionGroup_editAfterCancel
+                  conditions:
+                    - id: condition_editAfterCancelYes
+                      condition: =Lower(Trim(Topic.VarEditAfterCancel)) = "yes"
+                      actions:
+                        - kind: Question
+                          id: question_updateFieldSelection
+                          variable: Topic.VarUpdateFieldSelection
+                          prompt:
+                            text: What would you like to update?
+                            quickReplies:
+                              - kind: MessageBack
+                                title: Course
+                                text: course
+
+                              - kind: MessageBack
+                                title: Full name
+                                text: full name
+
+                              - kind: MessageBack
+                                title: Student ID
+                                text: student id
+
+                              - kind: MessageBack
+                                title: Student email id
+                                text: student email id
+
+                              - kind: MessageBack
+                                title: Notes
+                                text: notes
+
+                              - kind: MessageBack
+                                title: No changes
+                                text: no changes
+                          entity: StringPrebuiltEntity
+
+                        - kind: ConditionGroup
+                          id: conditionGroup_updateFieldSelection
+                          conditions:
+                            - id: condition_updateCourse
+                              condition: =Lower(Trim(Topic.VarUpdateFieldSelection)) = "course"
+                              actions:
+                                - kind: Question
+                                  id: question_updateCourse
+                                  alwaysPrompt: true
+                                  variable: Topic.VarEnrolCourse
+                                  prompt:
+                                    text: Please enter the updated course code.
+                                  entity: StringPrebuiltEntity
+
+                                - kind: SetVariable
+                                  id: setVar_enrolCourseNormalizedAfterUpdate
+                                  variable: Topic.VarEnrolCourse
+                                  value: =Upper(Trim(Text(Topic.VarEnrolCourse)))
+
+                                - kind: InvokeConnectorAction
+                                  id: invokeConnectorAction_getCourseItemsForPrerequisitesAfterUpdate
+                                  input:
+                                    binding:
+                                      dataset: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+                                      table: 05f1ec63-6cc2-43f1-bba2-0b8fb2c78586
+
+                                  output:
+                                    kind: SingleVariableOutputBinding
+                                    variable: Topic.GetItemsForPrerequisitesAfterUpdate
+
+                                  connectionReference: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+                                  connectionProperties:
+                                    mode: Invoker
+
+                                  dynamicOutputSchema:
+                                    kind: Record
+                                    properties:
+                                      value:
+                                        description: List of Items
+                                        order: 0
+                                        type:
+                                          kind: Table
+                                          properties:
+                                            field_1:
+                                              displayName: title
+                                              order: 2
+                                              type: String
+
+                                            field_3:
+                                              displayName: prerequisites
+                                              order: 4
+                                              type:
+                                                kind: Table
+                                                properties:
+                                                  Value:
+                                                    displayName: Value
+                                                    order: 0
+                                                    type: String
+
+                                            Title:
+                                              displayName: Title
+                                              order: 1
+                                              type: String
+
+                                  operationId: GetItems
+
+                                - kind: SetVariable
+                                  id: setVar_prerequisitesLookupRawAfterUpdate
+                                  variable: Topic.VarPrerequisiteListRaw
+                                  value: =If(CountRows(Filter(Topic.GetItemsForPrerequisitesAfterUpdate.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarEnrolCourse))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarEnrolCourse))))) = 0, "course not found", If(CountRows(First(Filter(Topic.GetItemsForPrerequisitesAfterUpdate.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarEnrolCourse))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarEnrolCourse))))).field_3) = 0, "None", Concat(First(Filter(Topic.GetItemsForPrerequisitesAfterUpdate.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarEnrolCourse))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarEnrolCourse))))).field_3, Value, "; ")))
+
+                                - kind: SetVariable
+                                  id: setVar_prerequisiteListAfterCourseUpdate
+                                  variable: Topic.VarPrerequisiteList
+                                  value: =If(IsBlank(Trim(Coalesce(Text(Topic.VarPrerequisiteListRaw), ""))) || StartsWith(Lower(Trim(Text(Topic.VarPrerequisiteListRaw))), "there is no course") || StartsWith(Lower(Trim(Text(Topic.VarPrerequisiteListRaw))), "course not found"), "NA", Trim(Concat(MatchAll(Text(Topic.VarPrerequisiteListRaw), "[ -~\\r\\n]"), FullMatch)))
+
+                            - id: condition_updateName
+                              condition: =Lower(Trim(Topic.VarUpdateFieldSelection)) = "full name"
+                              actions:
+                                - kind: Question
+                                  id: question_updateName
+                                  alwaysPrompt: true
+                                  variable: Topic.VarStudentName
+                                  prompt:
+                                    text: Please enter the updated full name.
+                                  entity: StringPrebuiltEntity
+
+                            - id: condition_updateStudentId
+                              condition: =Lower(Trim(Topic.VarUpdateFieldSelection)) = "student id"
+                              actions:
+                                - kind: Question
+                                  id: question_updateStudentId
+                                  alwaysPrompt: true
+                                  variable: Topic.VarStudentId
+                                  prompt:
+                                    text: Please enter the updated student ID.
+                                  entity: StringPrebuiltEntity
+
+                            - id: condition_updateStudentEmail
+                              condition: =Lower(Trim(Topic.VarUpdateFieldSelection)) = "student email id"
+                              actions:
+                                - kind: Question
+                                  id: question_updateStudentEmail
+                                  alwaysPrompt: true
+                                  variable: Topic.VarStudentEmail
+                                  prompt:
+                                    text: Please enter the updated student email id.
+                                  entity: StringPrebuiltEntity
+
+                            - id: condition_updateNotes
+                              condition: =Lower(Trim(Topic.VarUpdateFieldSelection)) = "notes"
+                              actions:
+                                - kind: Question
+                                  id: question_updateNotes
+                                  alwaysPrompt: true
+                                  variable: Topic.VarEnrolComments
+                                  prompt:
+                                    text: Please enter updated notes (or type N/A if none).
+                                  entity: StringPrebuiltEntity
+
+                        - kind: SendActivity
+                          id: sendActivity_reviewAfterEdit
+                          activity: |-
+                            **Updated Enrolment Request Review**
+
+                            - Course: {Topic.VarEnrolCourse}
+                            - Full Name: {Topic.VarStudentName}
+                            - Student ID: {Topic.VarStudentId}
+                            - Student Email: {Topic.VarStudentEmail}
+                            - Prerequisites (Hierarchy):
+
+                            {Topic.VarPrerequisiteList}
+
+                            - Notes:
+
+                            {Topic.VarEnrolComments}
+
+                        - kind: Question
+                          id: question_finalConfirmActionAfterEdit
+                          variable: Topic.VarFinalConfirmAction
+                          prompt:
+                            text: Submit this enrolment request now?
+                            quickReplies:
+                              - kind: MessageBack
+                                title: OK to confirm
+                                text: ok
+
+                              - kind: MessageBack
+                                title: Cancel
+                                text: cancel
+                          entity: StringPrebuiltEntity
+
+                        - kind: ConditionGroup
+                          id: conditionGroup_finalConfirmAfterEdit
+                          conditions:
+                            - id: condition_finalConfirmAfterEditOk
+                              condition: =Lower(Trim(Topic.VarFinalConfirmAction)) = "ok"
+                              actions:
+                                - kind: SetVariable
+                                  id: setVar_enrolmentRequestIdAfterEdit
+                                  variable: Topic.VarPlannerTaskId
+                                  value: =Blank()
+
+                                - kind: InvokeConnectorAction
+                                  id: invokeConnectorAction_getCourseItemsBeforeSubmitAfterEdit
+                                  input:
+                                    binding:
+                                      dataset: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+                                      table: 05f1ec63-6cc2-43f1-bba2-0b8fb2c78586
+
+                                  output:
+                                    kind: SingleVariableOutputBinding
+                                    variable: Topic.GetItemsBeforeSubmitAfterEdit
+
+                                  connectionReference: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+                                  connectionProperties:
+                                    mode: Invoker
+
+                                  dynamicOutputSchema:
+                                    kind: Record
+                                    properties:
+                                      value:
+                                        description: List of Items
+                                        order: 0
+                                        type:
+                                          kind: Table
+                                          properties:
+                                            field_1:
+                                              displayName: title
+                                              order: 2
+                                              type: String
+
+                                            Title:
+                                              displayName: Title
+                                              order: 1
+                                              type: String
+
+                                  operationId: GetItems
+
+                                - kind: SetVariable
+                                  id: setVar_acceptingEnrollmentRawBeforeSubmitAfterEdit
+                                  variable: Topic.VarAcceptingEnrollmentRaw
+                                  value: =JSON(Topic.GetItemsBeforeSubmitAfterEdit.value)
+
+                                - kind: SetVariable
+                                  id: setVar_acceptingEnrollmentBeforeSubmitAfterEdit
+                                  variable: Topic.VarAcceptingEnrollment
+                                  value: =If(CountRows(Filter(Topic.GetItemsBeforeSubmitAfterEdit.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.VarEnrolCourse))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.VarEnrolCourse))))) > 0, "true", "false")
+
+                                - kind: ConditionGroup
+                                  id: conditionGroup_acceptingEnrollmentBeforeSubmitAfterEdit
+                                  conditions:
+                                    - id: condition_acceptingEnrollmentBeforeSubmitAfterEditTrue
+                                      condition: =Lower(Trim(Text(Topic.VarAcceptingEnrollment))) = "true"
+                                      actions:
+                                        - kind: BeginDialog
+                                          id: beginDialog_submitEnrollmentAfterEdit
+                                          dialog: edu_EduCoach.topic.EnrollmentSubmissionGate.topic
+                                          input:
+                                            binding:
+                                              Course: =Topic.VarEnrolCourse
+                                              StudentName: =Topic.VarStudentName
+                                              StudentId: =Topic.VarStudentId
+                                              StudentEmail: =Topic.VarStudentEmail
+                                              PrerequisiteHierarchy: =If(Lower(Trim(Topic.VarPrereqConfirmed)) = "true", Coalesce(Topic.VarPrerequisiteList, "NA"), "Not provided")
+                                              PrerequisiteConfirmed: =If(Lower(Trim(Topic.VarPrereqConfirmed)) = "true", "Yes", "No")
+                                              Comments: =If(IsBlank(Trim(Topic.VarEnrolComments)), "N/A", Trim(Topic.VarEnrolComments))
+                                          output:
+                                            binding:
+                                              TaskId: Topic.VarPlannerTaskId
+                                              EmailSent: Topic.VarEmailSent
+
+                                  elseActions:
+                                    - kind: SendActivity
+                                      id: sendActivity_notAcceptingEnrollmentOnSubmitAfterEdit
+                                      activity: I could not submit an enrolment request for {Topic.VarEnrolCourse} because I could not verify that course in the SharePoint Courses list. Please check the course name/code (Title/title) and try again, or ask me to find another course.
+
+                          elseActions:
+                            - kind: SendActivity
+                              id: sendActivity_finalCancelledAfterEdit
+                              activity: No problem. I have not submitted this enrolment request.
+
+                  elseActions:
+                    - kind: SendActivity
+                      id: sendActivity_finalConfirmationCancelled
+                      activity: No problem. I have not submitted this enrolment request.
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_submitNotConfirmed
+          activity: No problem. I have not submitted the enrolment request. Please check the prerequisite box, then click Continue when you are ready.
+
+    - kind: ConditionGroup
+      id: conditionGroup_enrolResult
+      conditions:
+        - id: condition_success
+          condition: =!IsBlank(Topic.VarPlannerTaskId)
+          actions:
+            - kind: SendActivity
+              id: sendActivity_success
+              activity: |-
+                Your enrolment request for **{Topic.VarEnrolCourse}** has been submitted successfully!
+
+                A confirmation email has been sent to **{Topic.VarStudentEmail}** and an advisor will review your request shortly.
+
+                **Reference Task ID:** {Topic.VarPlannerTaskId}
+
+        - id: condition_submitFailedAfterConfirmed
+          condition: =Lower(Trim(Topic.VarFinalConfirmAction)) = "ok"
+          actions:
+            - kind: SendActivity
+              id: sendActivity_submitFailed
+              activity: I could not submit your enrolment request right now. Please try again in a moment, or I can connect you with an advisor.
+
+    - kind: SendActivity
+      id: sendActivity_followUp
+      activity: Is there anything else I can help you with?
+
+outputType: {}
+
+inputType:
+  properties:
+    CourseHint: String
+    EnrolmentRequest: String

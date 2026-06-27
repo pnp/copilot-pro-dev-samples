@@ -1,0 +1,65 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-mcs-EduCoach",
+    "source": "pnp",
+    "title": "EduCoach – Academic Advising Agent",
+    "shortDescription": "A Microsoft Copilot Studio agent that helps university students with course search, prerequisite checks, enrollment, course recommendations, graduation audits, and waitlist notifications.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-EduCoach",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-EduCoach",
+    "longDescription": [
+      "EduCoach is a Copilot Studio agent designed for undergraduate academic advising at a university. It connects to a SharePoint Courses list and a Student Handbook document to answer grounded questions about available courses, prerequisites, credits, and graduation requirements.",
+      "Students can submit enrollment requests via an adaptive card, receive confirmation emails via Office 365 Outlook, and have their requests tracked in Microsoft Planner. A Power Automate flow monitors the SharePoint Courses list for new items and notifies the agent so it can contact waitlisted students automatically.",
+      "The agent is published to Microsoft Teams and Microsoft 365 Copilot and uses generative AI orchestration to route requests to the right topic without explicit keyword triggers."
+    ],
+    "creationDateTime": "2026-06-15",
+    "updateDateTime": "2026-06-15",
+    "products": [
+      "Microsoft Copilot Studio",
+      "Microsoft Teams",
+      "Microsoft 365 Copilot",
+      "SharePoint",
+      "Microsoft Planner",
+      "Office 365 Outlook",
+      "Power Automate"
+    ],
+    "metadata": [
+      { "key": "PLATFORM", "value": "Microsoft Copilot Studio" },
+      { "key": "LANGUAGE", "value": "N/A" },
+      { "key": "AGENT-TYPE", "value": "Copilot Studio Agent" },
+      { "key": "API-PLUGIN", "value": "No" },
+      { "key": "GRAPH-CONNECTOR", "value": "No" }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-EduCoach/assets/screenshot.png",
+        "alt": "EduCoach agent in action inside Microsoft Teams"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "lovyjain",
+        "pictureUrl": "https://github.com/lovyjain.png",
+        "name": "Lovy Jain"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Copilot Studio documentation",
+        "description": "Official documentation for building agents with Microsoft Copilot Studio.",
+        "url": "https://learn.microsoft.com/microsoft-copilot-studio/"
+      },
+      {
+        "name": "Export and import agents (Copilot Studio)",
+        "description": "How to export an agent as a solution and import it into another environment.",
+        "url": "https://learn.microsoft.com/microsoft-copilot-studio/authoring-export-import-bots"
+      },
+      {
+        "name": "Microsoft Planner connector",
+        "description": "Reference for the Planner connector used in Power Automate flows.",
+        "url": "https://learn.microsoft.com/connectors/planner/"
+      }
+    ]
+  }
+]

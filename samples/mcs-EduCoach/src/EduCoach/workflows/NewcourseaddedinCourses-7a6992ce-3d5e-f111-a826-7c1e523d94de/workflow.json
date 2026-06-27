@@ -1,0 +1,85 @@
+﻿{
+  "properties": {
+    "connectionReferences": {
+      "shared_microsoftcopilotstudio_1": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "edu_sharedmicrosoftcopilotstudio_f68d8"
+        },
+        "api": {
+          "name": "shared_microsoftcopilotstudio"
+        }
+      },
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_an_item_is_created": {
+          "recurrence": {
+            "interval": 1,
+            "frequency": "Minute"
+          },
+          "metadata": {
+            "operationMetadataId": "b4f7cf41-daab-4eb5-955f-fb43f29a0630"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetOnNewItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "parameters": {
+              "dataset": "https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE",
+              "table": "YOUR_SHAREPOINT_LIST_ID"
+            },
+            "authentication": "@parameters(\u0027$authentication\u0027)"
+          }
+        }
+      },
+      "actions": {
+        "Sends_a_prompt_to_the_specified_copilot_for_processing": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "68efe8f9-124f-4972-ae0e-b5b195dd259f"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_microsoftcopilotstudio_1",
+              "operationId": "ExecuteCopilot",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_microsoftcopilotstudio"
+            },
+            "parameters": {
+              "Copilot": "edu_EduCoach",
+              "body/message": "@{concat(\u0027WAITLIST_OPENED\u0027, decodeUriComponent(\u0027%0A\u0027), \u0027COURSE_CODE: \u0027, coalesce(first(triggerOutputs()?[\u0027body/value\u0027])?[\u0027Title\u0027], first(triggerOutputs()?[\u0027body/value\u0027])?[\u0027title\u0027], \u0027\u0027), decodeUriComponent(\u0027%0A\u0027), \u0027COURSE_NAME: \u0027, coalesce(first(triggerOutputs()?[\u0027body/value\u0027])?[\u0027title\u0027], first(triggerOutputs()?[\u0027body/value\u0027])?[\u0027Title\u0027], \u0027\u0027))}"
+            },
+            "authentication": "@parameters(\u0027$authentication\u0027)"
+          }
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

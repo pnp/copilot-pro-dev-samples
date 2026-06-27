@@ -1,0 +1,9 @@
+# Copilot Studio local connection state — never commit
+src/EduCoach/.mcs/conn.json
+src/EduCoach/.mcs/changetoken.txt
+src/EduCoach/.mcs/filechangetrack.json
+
+# OS / editor artefacts
+.DS_Store
+Thumbs.db
+*.swp

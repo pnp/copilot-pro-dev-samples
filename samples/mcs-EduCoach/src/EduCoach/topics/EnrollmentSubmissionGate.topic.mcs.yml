@@ -1,0 +1,155 @@
+mcs.metadata:
+  componentName: Enrollment Submission Gate
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+
+  actions:
+    - kind: SetVariable
+      id: setVar_backendTaskId
+      variable: init:Topic.TaskId
+      value: =Blank()
+
+    - kind: SetVariable
+      id: setVar_backendEmailSent
+      variable: init:Topic.EmailSent
+      value: =false
+
+    - kind: InvokeConnectorAction
+      id: invokeConnectorAction_submissionGateGetItems
+      input:
+        binding:
+          dataset: https://YOUR_TENANT.sharepoint.com/sites/YOUR_SITE
+          table: 05f1ec63-6cc2-43f1-bba2-0b8fb2c78586
+
+      output:
+        kind: SingleVariableOutputBinding
+        variable: Topic.GetItemsSubmissionGate
+
+      connectionReference: edu_EduCoach.shared_sharepointonline.bf2820bba98147698974601586093f98
+      connectionProperties:
+        mode: Invoker
+
+      dynamicOutputSchema:
+        kind: Record
+        properties:
+          value:
+            description: List of Items
+            order: 0
+            type:
+              kind: Table
+              properties:
+                field_1:
+                  displayName: title
+                  order: 2
+                  type: String
+
+                Title:
+                  displayName: Title
+                  order: 1
+                  type: String
+
+      operationId: GetItems
+
+    - kind: SetVariable
+      id: setVar_acceptingEnrollmentRaw
+      variable: Topic.VarAcceptingEnrollmentRaw
+      value: =JSON(Topic.GetItemsSubmissionGate.value)
+
+    - kind: SetVariable
+      id: setVar_acceptingEnrollment
+      variable: Topic.VarAcceptingEnrollment
+      value: =If(CountRows(Filter(Topic.GetItemsSubmissionGate.value, Lower(Trim(Text(Title))) = Lower(Trim(Text(Topic.Course))) || Lower(Trim(Text(field_1))) = Lower(Trim(Text(Topic.Course))))) > 0, "true", "false")
+
+    - kind: ConditionGroup
+      id: conditionGroup_acceptingEnrollment
+      conditions:
+        - id: condition_acceptingEnrollmentTrue
+          condition: =Lower(Trim(Text(Topic.VarAcceptingEnrollment))) = "true"
+          actions:
+            - kind: SetVariable
+              id: setVar_safeCourse
+              variable: Topic.VarSafeCourse
+              value: =Trim(Concat(MatchAll(Text(Topic.Course), "[ -~]"), FullMatch))
+
+            - kind: SetVariable
+              id: setVar_safeStudentName
+              variable: Topic.VarSafeStudentName
+              value: =Trim(Concat(MatchAll(Text(Topic.StudentName), "[ -~]"), FullMatch))
+
+            - kind: SetVariable
+              id: setVar_safeStudentId
+              variable: Topic.VarSafeStudentId
+              value: =Trim(Concat(MatchAll(Text(Topic.StudentId), "[ -~]"), FullMatch))
+
+            - kind: SetVariable
+              id: setVar_safeStudentEmail
+              variable: Topic.VarSafeStudentEmail
+              value: =Trim(Concat(MatchAll(Text(Topic.StudentEmail), "[ -~]"), FullMatch))
+
+            - kind: SetVariable
+              id: setVar_safePrerequisiteHierarchy
+              variable: Topic.VarSafePrerequisiteHierarchy
+              value: =If(IsBlank(Trim(Text(Topic.PrerequisiteHierarchy))), "N/A", Trim(Concat(MatchAll(Text(Topic.PrerequisiteHierarchy), "[ -~\\r\\n]"), FullMatch)))
+
+            - kind: SetVariable
+              id: setVar_safePrerequisiteConfirmed
+              variable: Topic.VarSafePrerequisiteConfirmed
+              value: =If(IsBlank(Trim(Text(Topic.PrerequisiteConfirmed))), "N/A", Trim(Concat(MatchAll(Text(Topic.PrerequisiteConfirmed), "[ -~]"), FullMatch)))
+
+            - kind: SetVariable
+              id: setVar_safeComments
+              variable: Topic.VarSafeComments
+              value: =If(IsBlank(Trim(Text(Topic.Comments))), "N/A", Trim(Concat(MatchAll(Text(Topic.Comments), "[ -~\\r\\n]"), FullMatch)))
+
+            - kind: BeginDialog
+              id: beginDialog_createPlannerTask
+              dialog: edu_EduCoach.action.CreatePlannerEnrollmentTask
+              input:
+                binding:
+                  title: =Concatenate("Enrollment: ", Topic.VarSafeCourse, " - ", Topic.VarSafeStudentName, " (", Topic.VarSafeStudentId, ")")
+              output:
+                binding:
+                  id: Topic.TaskId
+
+            - kind: ConditionGroup
+              id: conditionGroup_backendResult
+              conditions:
+                - id: condition_taskCreated
+                  condition: =!IsBlank(Topic.TaskId)
+                  actions:
+                    - kind: BeginDialog
+                      id: beginDialog_sendEnrollmentEmail
+                      dialog: edu_EduCoach.action.Office365Outlook-SendanemailV2
+                      input:
+                        binding:
+                          To: =Text(Topic.VarSafeStudentEmail)
+                          Subject: =Concatenate("Enrollment request received for ", Topic.VarSafeCourse)
+                          Body: =Concatenate("<html><body><p>Hello ", Topic.VarSafeStudentName, ",</p><p>Your enrollment request has been submitted successfully.</p><table border='1' cellpadding='6' cellspacing='0'><tr><th align='left'>Enrollment</th><td>", Topic.VarSafeCourse, "</td></tr><tr><th align='left'>Student</th><td>", Topic.VarSafeStudentId, "</td></tr><tr><th align='left'>Name</th><td>", Topic.VarSafeStudentName, "</td></tr><tr><th align='left'>Prerequisites (Hierarchy)</th><td style='white-space:pre-wrap'>", Topic.VarSafePrerequisiteHierarchy, "</td></tr><tr><th align='left'>Prerequisites confirmed</th><td>", Topic.VarSafePrerequisiteConfirmed, "</td></tr><tr><th align='left'>Notes</th><td style='white-space:pre-wrap'>", Topic.VarSafeComments, "</td></tr><tr><th align='left'>Task ID</th><td>", Topic.TaskId, "</td></tr></table><p>An advisor will review your request shortly.</p><p>Thank you,<br/>EduCoach</p></body></html>")
+
+                    - kind: SetVariable
+                      id: setVar_backendEmailSentTrue
+                      variable: Topic.EmailSent
+                      value: =true
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_notAcceptingEnrollment
+          activity: I could not submit an enrolment request for {Topic.Course} because I could not verify that course in the SharePoint Courses list. Please check the course name/code (Title/title) and try again, or ask me to find another course.
+
+inputType:
+  properties:
+    Course: String
+    StudentName: String
+    StudentId: String
+    StudentEmail: String
+    PrerequisiteHierarchy: String
+    PrerequisiteConfirmed: String
+    Comments: String
+
+outputType:
+  properties:
+    TaskId: String
+    EmailSent: Boolean

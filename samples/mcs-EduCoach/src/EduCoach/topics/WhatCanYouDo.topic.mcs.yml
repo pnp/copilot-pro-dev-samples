@@ -1,0 +1,54 @@
+mcs.metadata:
+  componentName: What Can You Do
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - What can you help me with
+      - What can you do
+      - Help
+      - How can you help me
+      - What are your capabilities
+      - What do you do
+      - Show me what you can do
+      - What features do you have
+      - What topics can you help with
+      - I need help
+      - What questions can I ask
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_capabilities
+      activity: |-
+        Here's everything I can help you with:
+
+        **Course Planning**
+        - Check prerequisites for a course
+        - Search available courses
+        - Get personalised course recommendations
+
+        **Enrolment**
+        - Submit an enrolment request for a course
+        - Get notified when waitlist spots open and submit an enrolment request quickly
+
+        **Academic Progress**
+        - Run a graduation audit and check your credit progress
+        - Calculate the GPA impact of a grade
+        - Review your remaining degree requirements
+
+        **Deadlines & Policies**
+        - Look up important academic dates and deadlines
+        - Share guidance grounded in the academic calendar and student handbook
+
+        **Support**
+        - Connect you with a human advisor for appeals, petitions, or medical withdrawals
+
+        Just ask me anything — or pick one of the above to get started!
+
+    - kind: SendActivity
+      id: sendActivity_prompt
+      activity: What would you like to do today?
+
+outputType: {}
