@@ -6,7 +6,8 @@ import { getLatestSamples, getSamples, getSampleStats } from "../lib/samples";
 const samples = await getSamples();
 const latestSamplesWindowMonths = 1;
 const latestSamples = getLatestSamples(samples, latestSamplesWindowMonths);
-const { total, topTypes } = getSampleStats(samples);
+const { total, byType } = getSampleStats(samples);
+const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
 ---
 
 <SiteLayout title="Copilot Pro Dev Samples" description="Explore Microsoft 365 Copilot community samples.">
@@ -26,25 +27,18 @@ const { total, topTypes } = getSampleStats(samples);
       </div>
     </div>
 
-    <div class="frost-panel grid gap-3 p-4 md:p-6">
-      <h2 class="text-xl font-bold text-white">Quick Stats</h2>
-      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <article class="rounded-xl border border-white/15 bg-white/3 p-4">
-          <p class="text-xs uppercase tracking-wide text-slate-300">Total Samples</p>
-          <p class="mt-2 text-3xl font-bold text-white">{total}</p>
-        </article>
-        <article class="rounded-xl border border-white/15 bg-white/3 p-4">
-          <p class="text-xs uppercase tracking-wide text-slate-300">Top Type</p>
-          <p class="mt-2 text-base font-semibold text-white">{topTypes[0] ? `${topTypes[0][0]} (${topTypes[0][1]})` : "N/A"}</p>
-        </article>
-        <article class="rounded-xl border border-white/15 bg-white/3 p-4 sm:col-span-2">
-          <p class="text-xs uppercase tracking-wide text-slate-300">Second + Third</p>
-          <p class="mt-2 text-base font-semibold text-white">
-            {topTypes[1] ? `${topTypes[1][0]} (${topTypes[1][1]})` : "N/A"}
-            <span class="mx-2 text-slate-500">|</span>
-            {topTypes[2] ? `${topTypes[2][0]} (${topTypes[2][1]})` : "N/A"}
-          </p>
-        </article>
+    <div class="frost-panel p-6 md:p-7">
+      <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-300">Quick Stats</h2>
+      <div class="mt-4">
+        <p class="text-xs uppercase tracking-wide text-slate-300">Total Samples</p>
+        <p class="mt-2 text-3xl font-bold text-white">{total}</p>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-3">
+        {typeBreakdown.map(([name, count]) => (
+          <span class="rounded-full border border-cyan-300/55 bg-cyan-300/12 px-5 py-2 text-xl font-semibold text-cyan-100">
+            {name}: {count}
+          </span>
+        ))}
       </div>
     </div>
   </section>
