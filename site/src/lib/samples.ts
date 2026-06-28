@@ -1,4 +1,4 @@
-import { readdir, readFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export type SampleEntry = {
@@ -35,54 +35,44 @@ function parseDate(value: unknown): Date | null {
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
 
-function getSamplesRoot(): string {
-  return path.resolve(process.cwd(), "..", "samples");
+type StoredSampleEntry = Omit<SampleEntry, "updatedAt"> & {
+  updatedAt: string | null;
+};
+
+function getSamplesDataPath(): string {
+  return path.resolve(process.cwd(), "public", "samples.json");
 }
 
 export async function getSamples(): Promise<SampleEntry[]> {
-  const samplesRoot = getSamplesRoot();
-  const entries = await readdir(samplesRoot, { withFileTypes: true });
+  const samplesDataPath = getSamplesDataPath();
 
-  const folders = entries
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name)
-    .filter((name) => !name.startsWith(".") && name !== "_SAMPLE_templates")
-    .sort((a, b) => a.localeCompare(b));
+  try {
+    const raw = await readFile(samplesDataPath, "utf8");
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) {
+      return [];
+    }
 
-  const samples = await Promise.all(
-    folders.map(async (folder) => {
-      const sampleJsonPath = path.join(samplesRoot, folder, "assets", "sample.json");
-      let title = folder;
-      let description = fallbackDescription;
-      let updatedAt: Date | null = null;
-
-      try {
-        const raw = await readFile(sampleJsonPath, "utf8");
-        const parsed = JSON.parse(raw);
-        if (Array.isArray(parsed) && parsed[0]) {
-          title = parsed[0].title || parsed[0].name || title;
-          description = parsed[0].shortDescription || description;
-          updatedAt = parseDate(parsed[0].updateDateTime) || parseDate(parsed[0].creationDateTime);
-        }
-      } catch {
-        // Keep fallback metadata for samples missing or failing to parse sample.json.
-      }
-
+    return parsed.map((item: Partial<StoredSampleEntry>) => {
+      const folder = typeof item.folder === "string" ? item.folder : "unknown";
       const typeKey = folder.split("-")[0] || "other";
-      const type = typeLabels[typeKey] || "Other";
 
       return {
         folder,
-        title,
-        description,
-        type,
-        href: `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/${folder}`,
-        updatedAt,
+        title: typeof item.title === "string" && item.title.trim().length > 0 ? item.title : folder,
+        description:
+          typeof item.description === "string" && item.description.trim().length > 0 ? item.description : fallbackDescription,
+        type: typeof item.type === "string" && item.type.trim().length > 0 ? item.type : typeLabels[typeKey] || "Other",
+        href:
+          typeof item.href === "string" && item.href.trim().length > 0
+            ? item.href
+            : `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/${folder}`,
+        updatedAt: parseDate(item.updatedAt),
       };
-    })
-  );
-
-  return samples;
+    });
+  } catch {
+    return [];
+  }
 }
 
 export function getLatestSamples(samples: SampleEntry[], months: number, now = new Date()): SampleEntry[] {

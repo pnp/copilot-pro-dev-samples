@@ -49,8 +49,10 @@ Astro-based multi-page catalog site for browsing sample projects in the reposito
 
 ## Data Source
 
-The catalog reads directories from `../samples` and attempts to parse each sample's `assets/sample.json`.
-If metadata is missing or invalid, fallback values are used.
+During build, a prebuild task consolidates metadata from `../samples/*/assets/sample.json` into `public/samples.json`.
+The site then reads from this single consolidated source.
+
+If metadata is missing or invalid for an individual sample, fallback values are used during consolidation.
 
 ## Local Development
 
@@ -67,6 +69,8 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+`npm run build` automatically runs `prebuild`, which generates `public/samples.json`.
 
 ## Notes
 
