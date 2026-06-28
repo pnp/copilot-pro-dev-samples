@@ -37,12 +37,7 @@ export function initSampleBrowser() {
     pill.addEventListener("click", () => {
       activeType = pill.dataset.type || "all";
       for (const item of pills) {
-        const selected = item === pill;
-        item.classList.toggle("bg-cyan-300", selected);
-        item.classList.toggle("text-slate-950", selected);
-        item.classList.toggle("border-cyan-300", selected);
-        item.classList.toggle("text-slate-300", !selected);
-        item.classList.toggle("border-white/20", !selected);
+        item.classList.toggle("chip-button-active", item === pill);
       }
       applyFilters();
     });

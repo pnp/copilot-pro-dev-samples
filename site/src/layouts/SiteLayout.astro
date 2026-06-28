@@ -13,6 +13,8 @@ const navItems = [
   { href: "/about", label: "About" },
 ];
 const currentPath = Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/$/, "");
+const siteTitle = "Copilot Pro Dev Samples";
+const documentTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 ---
 
 <html lang="en">
@@ -23,12 +25,12 @@ const currentPath = Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replac
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <title>{title}</title>
+    <title>{documentTitle}</title>
   </head>
   <body>
     <header class="sticky top-0 z-30 border-b border-white/10 bg-ink-950/70 backdrop-blur-lg">
       <div class="mx-auto flex h-20 w-full max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
-        <a class="text-lg font-bold tracking-wide text-white" href="/">Copilot <span class="text-sky-300">Samples</span></a>
+        <a class="text-lg font-bold tracking-wide text-white" href="/">Copilot <span class="text-sky-300">Pro Dev Samples</span></a>
         <nav class="flex items-center gap-2 md:gap-3">
           {navItems.map((item) => {
             const isCurrent = currentPath === item.href;
@@ -37,7 +39,7 @@ const currentPath = Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replac
                 href={item.href}
                 class:list={[
                   "chip-button text-xs md:text-sm",
-                  isCurrent && "border-cyan-300 bg-cyan-300 text-slate-950",
+                  isCurrent && "chip-button-active",
                 ]}
               >
                 {item.label}

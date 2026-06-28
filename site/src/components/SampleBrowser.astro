@@ -25,7 +25,7 @@ const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
         placeholder="Search by folder, title, or description..."
       />
       <div class="flex flex-wrap gap-2" id="type-pills">
-        <button type="button" class="chip-button pill border-cyan-300 bg-cyan-300 text-slate-950" data-type="all">All</button>
+        <button type="button" class="chip-button chip-button-active pill" data-type="all">All</button>
         {sortedTypes.map((type) => (
           <button type="button" class="chip-button pill" data-type={type}>{type}</button>
         ))}
@@ -42,7 +42,7 @@ const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
         data-description={sample.description.toLowerCase()}
         data-type={sample.type}
       >
-        <div class="inline-flex h-9 w-52 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-amber-200 to-yellow-100 px-3 text-center text-xs font-semibold uppercase tracking-wide whitespace-nowrap text-slate-950">
+        <div class="sample-type-pill">
           {sample.type}
         </div>
         <h3 class="text-lg font-semibold text-white">{sample.title}</h3>

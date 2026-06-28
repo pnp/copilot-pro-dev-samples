@@ -10,18 +10,36 @@
 }
 
 @layer base {
+  :root {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --text-primary: #eaf2ff;
+    --text-muted: #cbd7ee;
+    --page-bg:
+      radial-gradient(circle at 80% -20%, rgb(63 224 255 / 18%), transparent 40%),
+      radial-gradient(circle at 15% 10%, rgb(129 239 182 / 14%), transparent 42%),
+      linear-gradient(180deg, #040b18 0%, #09152a 45%, #040b18 100%);
+    --panel-border: rgb(255 255 255 / 15%);
+    --panel-bg-from: rgb(19 38 73 / 95%);
+    --panel-bg-to: rgb(13 26 55 / 95%);
+    --chip-border: rgb(255 255 255 / 20%);
+    --chip-text: #cbd5e1;
+    --chip-hover-border: #6ad9ff;
+    --chip-active-bg: #6ad9ff;
+    --chip-active-text: #020617;
+    --badge-from: #fde68a;
+    --badge-to: #fef9c3;
+    --badge-text: #0f172a;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
     margin: 0;
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    color: #eaf2ff;
-    background:
-      radial-gradient(circle at 80% -20%, rgb(63 224 255 / 18%), transparent 40%),
-      radial-gradient(circle at 15% 10%, rgb(129 239 182 / 14%), transparent 42%),
-      linear-gradient(180deg, #040b18 0%, #09152a 45%, #040b18 100%);
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: var(--page-bg);
     min-height: 100vh;
   }
 
@@ -29,7 +47,7 @@
   h2,
   h3,
   h4 {
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--font-sans);
     letter-spacing: -0.02em;
   }
 
@@ -40,10 +58,30 @@
 
 @layer components {
   .frost-panel {
-    @apply rounded-2xl border border-white/15 bg-gradient-to-br from-panel-800/95 to-panel-900/95;
+    @apply rounded-2xl border;
+    border-color: var(--panel-border);
+    background: linear-gradient(135deg, var(--panel-bg-from), var(--panel-bg-to));
   }
 
   .chip-button {
-    @apply rounded-full border border-white/20 px-3 py-2 text-sm text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-300;
+    @apply rounded-full border px-3 py-2 text-sm transition hover:-translate-y-0.5;
+    border-color: var(--chip-border);
+    color: var(--chip-text);
+  }
+
+  .chip-button:hover {
+    border-color: var(--chip-hover-border);
+  }
+
+  .chip-button-active {
+    border-color: var(--chip-active-bg);
+    background-color: var(--chip-active-bg);
+    color: var(--chip-active-text);
+  }
+
+  .sample-type-pill {
+    @apply inline-flex h-9 w-52 items-center justify-center overflow-hidden rounded-full px-3 text-center text-xs font-semibold uppercase tracking-wide whitespace-nowrap;
+    background: linear-gradient(90deg, var(--badge-from), var(--badge-to));
+    color: var(--badge-text);
   }
 }
