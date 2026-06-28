@@ -1,0 +1,125 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { getSamples, getSampleStats } from "../lib/samples";
+
+const samples = await getSamples();
+const { total, byType } = getSampleStats(samples);
+const types = Object.entries(byType).sort((a, b) => b[1] - a[1]);
+
+const contributionCards = [
+  {
+    title: "Start From A Fork",
+    description: "Fork the repository and create a branch from main for each submission.",
+  },
+  {
+    title: "One Sample Per PR",
+    description: "Keep each pull request focused on a single sample. Split unrelated edits into separate PRs.",
+  },
+  {
+    title: "Follow Folder Prefixes",
+    description: "Place samples under the samples folder with a valid prefix like da-, cea-, msgext-, or mcs-.",
+  },
+  {
+    title: "Include Required Assets",
+    description: "Provide README.md, source code, an assets folder with at least one screenshot, and an appropriate .gitignore.",
+  },
+  {
+    title: "Use The README Templates",
+    description: "Use the matching template and include complete setup and usage instructions.",
+  },
+  {
+    title: "Protect Secrets",
+    description: "Do not commit tenant-specific or sensitive values. Share .env sample files instead.",
+  },
+  {
+    title: "Manifest Readiness",
+    description: "Include manifest files and only include a package when it is installable as-is.",
+  },
+];
+
+const prFlowCards = [
+  {
+    step: "Step 1",
+    title: "Sign The CLA",
+    description: "Complete the Contributor License Agreement before final submission.",
+  },
+  {
+    step: "Step 2",
+    title: "Sync Your Fork",
+    description: "Update from upstream main so your branch starts from current project state.",
+  },
+  {
+    step: "Step 3",
+    title: "Commit And Push",
+    description: "Use descriptive commit messages and push your branch to your fork.",
+  },
+  {
+    step: "Step 4",
+    title: "Open The Pull Request",
+    description: "Target main and complete all requested details in the PR template.",
+  },
+];
+---
+
+<SiteLayout title="Contributing" description="How to contribute Microsoft 365 Copilot samples to this repository.">
+  <section class="space-y-10">
+    <div class="space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-lime-200">Contributing</p>
+      <h1 class="max-w-3xl text-4xl font-extrabold text-white md:text-5xl">Contribute a sample to this repository</h1>
+      <p class="max-w-3xl text-base leading-relaxed text-slate-300">
+        This repository accepts community Microsoft 365 Copilot sample submissions. Follow the contribution guidance to submit
+        one focused pull request at a time, using the required sample structure and documentation.
+      </p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-3">
+      <article class="frost-panel p-5">
+        <h2 class="text-sm uppercase tracking-wide text-slate-300">Total Samples</h2>
+        <p class="mt-2 text-3xl font-bold text-white">{total}</p>
+      </article>
+      <article class="frost-panel p-5 md:col-span-2">
+        <h2 class="text-sm uppercase tracking-wide text-slate-300">Type Breakdown</h2>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {types.map(([name, count]) => (
+            <span class="rounded-full border border-cyan-300/45 bg-cyan-300/12 px-3 py-1 text-sm text-cyan-100">
+              {name}: {count}
+            </span>
+          ))}
+        </div>
+      </article>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold text-white">Contribution Checklist</h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        {contributionCards.map((item) => (
+          <article class="frost-panel rounded-3xl p-5 md:p-6">
+            <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-300/90 to-sky-500/75 text-ink-950">
+              <svg viewBox="0 0 24 24" class="h-6 w-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-base leading-relaxed text-slate-300">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-2xl font-bold text-white">Pull Request Flow</h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        {prFlowCards.map((item) => (
+          <article class="frost-panel rounded-3xl p-5 md:p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{item.step}</p>
+            <h3 class="mt-3 text-xl font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-base leading-relaxed text-slate-300">{item.description}</p>
+          </article>
+        ))}
+      </div>
+      <p class="text-sm text-slate-300">
+        This page is based on the repository guidance in CONTRIBUTING.md. Refer to that file for complete, authoritative details.
+      </p>
+    </div>
+  </section>
+</SiteLayout>

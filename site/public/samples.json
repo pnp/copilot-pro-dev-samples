@@ -1,0 +1,714 @@
+[
+  {
+    "folder": "cea-techPulse-csharp",
+    "title": "TechPulse - Custom Engine Agent for Real-Time Technology News (C#)",
+    "description": "An intelligent tech news companion powered by Microsoft 365 Agents SDK and Semantic Kernel",
+    "type": "Custom Engine Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techPulse-csharp",
+    "updatedAt": "2025-10-16T00:00:00.000Z"
+  },
+  {
+    "folder": "cea-techpulse-js",
+    "title": "TechPulse - Custom Engine Agent for Real-Time Technology News",
+    "description": "An intelligent tech news companion powered by Microsoft 365 Agents SDK and Model Context Protocol (MCP)",
+    "type": "Custom Engine Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse-js",
+    "updatedAt": "2025-10-16T00:00:00.000Z"
+  },
+  {
+    "folder": "cea-techpulse-python",
+    "title": "TechPulse - Custom Engine Agent for Real-Time Technology News (Python)",
+    "description": "An intelligent tech news companion powered by Microsoft 365 Agents SDK and Model Context Protocol (MCP)",
+    "type": "Custom Engine Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cea-techpulse-python",
+    "updatedAt": "2025-10-16T00:00:00.000Z"
+  },
+  {
+    "folder": "cext-trey-research-csharp",
+    "title": "Trey Research C#",
+    "description": "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects.",
+    "type": "Copilot Extension",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cext-trey-research-csharp",
+    "updatedAt": "2025-04-16T00:00:00.000Z"
+  },
+  {
+    "folder": "cext-trey-research-python",
+    "title": "Trey Research Python",
+    "description": "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects.",
+    "type": "Copilot Extension",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/cext-trey-research-python",
+    "updatedAt": "2025-04-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-adaptive-card-dialog-csharp",
+    "title": "Adaptive Card dialog (C#)",
+    "description": "A declarative agent demonstrating how to open dialog boxes from Adaptive Cards in Microsoft 365 Copilot, built with C# and .NET 10",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-dialog-csharp",
+    "updatedAt": "2026-04-15T00:00:00.000Z"
+  },
+  {
+    "folder": "da-adaptive-card-dialog-js",
+    "title": "Adaptive Card dialog",
+    "description": "A declarative agent demonstrating how to open dialog boxes from Adaptive Cards in Microsoft 365 Copilot",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-dialog-js",
+    "updatedAt": "2026-01-06T00:00:00.000Z"
+  },
+  {
+    "folder": "da-adaptive-card-dialog-python",
+    "title": "Adaptive Card Dialog (Python)",
+    "description": "A declarative agent demonstrating how to open YouTube videos and interactive HTML quizzes in dialog boxes from Adaptive Cards in Microsoft 365 Copilot",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-dialog-python",
+    "updatedAt": "2026-04-20T00:00:00.000Z"
+  },
+  {
+    "folder": "da-adaptive-card-inline-edit-csharp",
+    "title": "Adaptive Card Inline Edit",
+    "description": "A declarative agent demonstrating inline editing of Adaptive Card responses in Microsoft 365 Copilot",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-inline-edit-csharp",
+    "updatedAt": "2026-01-20T00:00:00.000Z"
+  },
+  {
+    "folder": "da-adaptive-card-inline-edit-js",
+    "title": "Adaptive Card Inline Edit",
+    "description": "A declarative agent demonstrating inline editing of Adaptive Card responses in Microsoft 365 Copilot",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-inline-edit-js",
+    "updatedAt": "2026-01-20T00:00:00.000Z"
+  },
+  {
+    "folder": "da-adaptive-card-inline-edit-python",
+    "title": "Adaptive Card Inline Edit",
+    "description": "A declarative agent demonstrating inline editing of Adaptive Card responses in Microsoft 365 Copilot",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-adaptive-card-inline-edit-python",
+    "updatedAt": "2026-04-13T00:00:00.000Z"
+  },
+  {
+    "folder": "da-azureopenai",
+    "title": "Call chat completions from Azure Open AI - No code!",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to call Azure Open AI endpoint without any code.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-azureopenai",
+    "updatedAt": "2025-05-10T00:00:00.000Z"
+  },
+  {
+    "folder": "da-BlogPostHelper",
+    "title": "Blog Post Helper Declarative Agent for Microsoft 365 Copilot Sample",
+    "description": "Blog post helper declarative agent to help in the creation process.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-BlogPostHelper",
+    "updatedAt": "2025-01-06T00:00:00.000Z"
+  },
+  {
+    "folder": "da-CanvasStudent",
+    "title": "Canvas Student",
+    "description": "Canvas Student is a learning assistant to help you interact with your Canvas LMS. This agent sample enables learners to interact with their courses using Microsoft 365 Copilot or Copilot Chat. Canvas Student empowers students to search through course content, generate ideas for learning, and improve the overall learning experience.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CanvasStudent",
+    "updatedAt": "2025-06-23T00:00:00.000Z"
+  },
+  {
+    "folder": "da-CanvasTeacher",
+    "title": "Canvas Teacher",
+    "description": "Canvas Teacher is a teaching assistant to help you interact with your Canvas LMS. This agent sample enables educators to interact with their courses using Microsoft 365 Copilot or Copilot Chat. Canvas Teacher empowers educators to plan their courses more effectively, giving them access to information in their courses, modules, assignments, pages, discussions, and announcements.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CanvasTeacher",
+    "updatedAt": "2025-06-12T00:00:00.000Z"
+  },
+  {
+    "folder": "da-CareerCoach",
+    "title": "Career Coach Declarative Agent for Microsoft 365 Copilot Sample",
+    "description": "First Party Declarative Agent Career Coach shared as a sample",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CareerCoach",
+    "updatedAt": "2024-10-04T00:00:00.000Z"
+  },
+  {
+    "folder": "da-CLIForM365-helper",
+    "title": "CLI for M365 Helper",
+    "description": "This declarative helper helps users discover relevant CLI for Microsoft 365 commands from official documentation",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-CLIForM365-helper",
+    "updatedAt": "2025-08-06T00:00:00.000Z"
+  },
+  {
+    "folder": "da-community-samples-agent",
+    "title": "Microsoft 365 Community Sample Agent",
+    "description": "Agent that connects to the Sample Solution Gallery APIs, using MCP to allow users to find samples within an agent.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-community-samples-agent",
+    "updatedAt": "2025-12-07T00:00:00.000Z"
+  },
+  {
+    "folder": "da-DocFinder",
+    "title": "Document Finder Declarative Agent for Microsoft 365 Copilot Sample",
+    "description": "First Party Declarative Agent Document Finder shared as a sample",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-DocFinder",
+    "updatedAt": "2024-10-04T00:00:00.000Z"
+  },
+  {
+    "folder": "da-dynamics365-advisor",
+    "title": "Dynamics 365 Advisor",
+    "description": "Expert declarative agent for Dynamics 365 CRM, Power Platform, and Copilot solutions guidance",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-dynamics365-advisor",
+    "updatedAt": "2026-04-28T00:00:00.000Z"
+  },
+  {
+    "folder": "da-environmentSustainability",
+    "title": "ESA, The Environment Sustainability Agent using Microsoft 365 Copilot",
+    "description": "This sample showcases how to build a declarative agent for Microsoft 365 Copilot connected to a SharePoint site as knowledge base, named ESA, the Environment Sustainability Agent. ESA is an intelligent assistant developed to assist organizations in monitoring and optimizing their environmental impact.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-environmentSustainability",
+    "updatedAt": "2024-10-22T00:00:00.000Z"
+  },
+  {
+    "folder": "da-executive-helper",
+    "title": "Executive Helper - Meeting preparation with executive bios",
+    "description": "A declarative agent that automates meeting preparation by generating comprehensive executive bios with career insights and rapport-building questions.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-executive-helper",
+    "updatedAt": "2026-03-02T00:00:00.000Z"
+  },
+  {
+    "folder": "da-foodbank-friend",
+    "title": "Foodbank Friend",
+    "description": "A declarative agent that helps users in the UK find local food banks, see what items they need, and schedule volunteer donation visits.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-foodbank-friend",
+    "updatedAt": "2026-03-25T00:00:00.000Z"
+  },
+  {
+    "folder": "da-geolocator-game",
+    "title": "Geo Locator Game",
+    "description": "This sample demonstrates how to create a Geo Locator Game declarative agent using Microsoft 365 Copilot.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-geolocator-game",
+    "updatedAt": "2025-06-10T00:00:00.000Z"
+  },
+  {
+    "folder": "da-HRHelpdesk",
+    "title": "HR Heldpdesk Declarative Agent",
+    "description": "HR Helpdesk is a template Declarative Agent designed to help employees troubleshoot their issues using insights from ServiceNow KB, and if not successful create a case in the right Centre of Excellence/table without much burden on the end user.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-HRHelpdesk",
+    "updatedAt": "2025-10-14T00:00:00.000Z"
+  },
+  {
+    "folder": "da-IdeaCoach",
+    "title": "Idea Coach Declarative Agent for Microsoft 365 Copilot Sample",
+    "description": "First Party Declarative Agent Idea Coach shared as a sample",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-IdeaCoach",
+    "updatedAt": "2024-10-04T00:00:00.000Z"
+  },
+  {
+    "folder": "da-ITHelpdesk",
+    "title": "IT Helpdesk Declarative Agent",
+    "description": "IT Helpdesk Agent is a Declarative Agent designed to assist employees with IT issues through (a) guided, conversational troubleshooting, (b) outage detection, and ticket creation for escalation – powered through ServiceNow offerings (Knowledge, Catalogue and Tickets). ",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ITHelpdesk",
+    "updatedAt": "2025-10-14T00:00:00.000Z"
+  },
+  {
+    "folder": "da-LearningCoach",
+    "title": "Learning Coach Declarative Agent for Microsoft 365 Copilot Sample",
+    "description": "First Party Declarative Agent Learning Coach shared as a sample",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-LearningCoach",
+    "updatedAt": "2024-10-04T00:00:00.000Z"
+  },
+  {
+    "folder": "da-m365-roadmap-tracker",
+    "title": "The M365 Roadmap Features Tracker agent shows how users can easily stay up to date with the latest Microsoft 365 roadmap features.",
+    "description": "The M365 Roadmap Features Tracker agent shows how users can easily stay up to date with the latest Microsoft 365 roadmap features. It integrates a Microsoft Graph Connector to monitor and deliver the latest updates, offering a hands-free solution for staying informed.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-m365-roadmap-tracker",
+    "updatedAt": "2025-04-09T00:00:00.000Z"
+  },
+  {
+    "folder": "da-microsoftdocssearchagent",
+    "title": "Microsoft Learn Search Agent",
+    "description": "An agent that helps users search and retrieve content from Microsoft Learn. ",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-microsoftdocssearchagent",
+    "updatedAt": "2025-12-15T00:00:00.000Z"
+  },
+  {
+    "folder": "da-MyAdvancedCommsBuddy",
+    "title": "My Advanced Communication Buddy -  Declarative Agent with API Plugin for Microsoft 365 Copilot Sample",
+    "description": "First Party Declarative Agent Career Coach shared as a sample",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-MyAdvancedCommsBuddy",
+    "updatedAt": "2025-03-08T00:00:00.000Z"
+  },
+  {
+    "folder": "da-MyCommsBuddy",
+    "title": "My Communication Buddy",
+    "description": "Declarative Agent designed to assist user in creating corporate communications",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-MyCommsBuddy",
+    "updatedAt": "2025-05-19T00:00:00.000Z"
+  },
+  {
+    "folder": "da-PMSpecReviewer",
+    "title": "PM Spec Reviewer",
+    "description": "A Microsoft Teams app that helps Product Managers review product specifications using AI assistance.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PMSpecReviewer",
+    "updatedAt": "2025-04-22T00:00:00.000Z"
+  },
+  {
+    "folder": "da-PMSpecWriter",
+    "title": "PM Spec Writer",
+    "description": "A Microsoft Teams app that helps Product Managers write and manage product specifications using AI assistance.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PMSpecWriter",
+    "updatedAt": "2025-04-22T00:00:00.000Z"
+  },
+  {
+    "folder": "da-pnpassistant",
+    "title": "Declarative Agent - PnP Controls Assistant",
+    "description": "This declarative agent is designed to assist users in finding more information about the PnP reusable React controls.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-pnpassistant",
+    "updatedAt": "2025-05-18T00:00:00.000Z"
+  },
+  {
+    "folder": "da-PnPPowerShell-assistant",
+    "title": "PnP PowerShell Assistant Agent",
+    "description": "This declarative agent, named PnP PowerShell Assistant helps users creating PnP PowerShell cmdlets",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PnPPowerShell-assistant",
+    "updatedAt": "2025-05-30T00:00:00.000Z"
+  },
+  {
+    "folder": "da-PnPScriptSamplesAgent",
+    "title": "PnP Script Samples Agent",
+    "description": "Agent for Copilot for Microsoft 365, is designed to assist users with PowerShell scripts related to PnP Script Samples.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PnPScriptSamplesAgent",
+    "updatedAt": "2025-08-07T00:00:00.000Z"
+  },
+  {
+    "folder": "da-PositivityAgent",
+    "title": "Positivity Agent",
+    "description": "An agent designed to premote positivity, motivation, and confidence-building support to users.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PositivityAgent",
+    "updatedAt": "2025-05-20T00:00:00.000Z"
+  },
+  {
+    "folder": "da-PostPilotAgent",
+    "title": "Agent PostPilot",
+    "description": "Agent helps write LinkedIn post to announce Prompt of the week",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PostPilotAgent",
+    "updatedAt": "2024-11-12T00:00:00.000Z"
+  },
+  {
+    "folder": "da-PresentationAgent",
+    "title": "Presentation Agent for Microsoft 365 Copilot",
+    "description": "Declarative agent helps users prepare for presentations",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PresentationAgent",
+    "updatedAt": "2025-01-28T00:00:00.000Z"
+  },
+  {
+    "folder": "da-product-support",
+    "title": "Product support declararative agent",
+    "description": "This sample demonstrates how to create a product support agent using Microsoft 365 Copilot.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-product-support",
+    "updatedAt": "2025-06-10T00:00:00.000Z"
+  },
+  {
+    "folder": "da-PromptCoach",
+    "title": "Prompt Coach Declarative Agent for Microsoft 365 Copilot Sample",
+    "description": "First Party Declarative Agent Prompt Coach shared as a sample",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-PromptCoach",
+    "updatedAt": "2024-10-04T00:00:00.000Z"
+  },
+  {
+    "folder": "da-qna-graphapi-plugin",
+    "title": "Graph QnA agent for Microsoft 365 Copilot",
+    "description": "Copilot declarative agent makes direct calls to Microsoft Graph",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-qna-graphapi-plugin",
+    "updatedAt": "2025-01-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-repairs-oauth-js",
+    "title": "Declarative for Microsoft 365 Copilot with an API plugin connected to an API secured with OAuth",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses the built-in Azure App Service authentication and authorization capabilities (also referred to as Easy Auth) to secure access to APIs.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-js",
+    "updatedAt": "2024-10-11T00:00:00.000Z"
+  },
+  {
+    "folder": "da-repairs-oauth-python",
+    "title": "Declarative for Microsoft 365 Copilot with an API plugin connected to an API secured with OAuth (Python)",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to a Python Azure Function API secured with OAuth.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-python",
+    "updatedAt": "2024-10-11T00:00:00.000Z"
+  },
+  {
+    "folder": "da-repairs-oauth-validated-js",
+    "title": "Declarative Agent with an API plugin that secured by Entra ID that validates its own tokens",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that validates tokens using an open source library.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-validated-js",
+    "updatedAt": "2024-10-11T00:00:00.000Z"
+  },
+  {
+    "folder": "da-repairs-oauth-validated-python",
+    "title": "Declarative Agent with OAuth-secured API Plugin (Python)",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains a Python Azure Function that validates Entra ID tokens.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-repairs-oauth-validated-python",
+    "updatedAt": "2026-05-07T00:00:00.000Z"
+  },
+  {
+    "folder": "da-resolvemate-api",
+    "title": "Resolve Mate ticketing system agent",
+    "description": "Demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to manage customer support tickets efficiently. .",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-resolvemate-api",
+    "updatedAt": "2025-02-22T00:00:00.000Z"
+  },
+  {
+    "folder": "da-resource-allocation",
+    "title": "Resource Allocation Assistant",
+    "description": "Resource Allocation Assistant is a declarative AI Agent that helps managers optimize team workloads and balance resource allocation effectively.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-resource-allocation",
+    "updatedAt": "2025-03-05T00:00:00.000Z"
+  },
+  {
+    "folder": "da-ristorante-api-csharp",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot (C#)",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an anonymous API built with C# Azure Functions (.NET 10).",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-csharp",
+    "updatedAt": "2026-05-05T00:00:00.000Z"
+  },
+  {
+    "folder": "da-ristorante-api-devproxy",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot and Dev Proxy",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an anonymous API. Dev Proxy is used to simulate the API.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy",
+    "updatedAt": "2026-06-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-ristorante-api-devproxy-apikey",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot, Dev Proxy and API key authentication",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with an API key. Dev Proxy is used to simulate the API.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-apikey",
+    "updatedAt": "2026-06-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-ristorante-api-devproxy-entra-sso",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot, Dev Proxy and Entra ID SSO authentication",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with Microsoft Entra ID SSO. Dev Proxy is used to simulate the API.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-entra-sso",
+    "updatedAt": "2026-06-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-ristorante-api-devproxy-oauth",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot, Dev Proxy and OAuth authentication",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an API secured with OAuth. Dev Proxy is used to simulate the API.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-devproxy-oauth",
+    "updatedAt": "2026-06-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-ristorante-api-js",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an anonymous API. The project contains an Azure Function that serves as the API.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-js",
+    "updatedAt": "2024-10-17T00:00:00.000Z"
+  },
+  {
+    "folder": "da-ristorante-api-python",
+    "title": "Browse the menu and place an order at a local Italian restaurant using Microsoft 365 Copilot (Python)",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to browse a menu of a local Italian restaurant and place an order. The agent uses an API plugin to connect to an anonymous API built with Python Azure Functions.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-ristorante-api-python",
+    "updatedAt": "2026-05-04T00:00:00.000Z"
+  },
+  {
+    "folder": "da-RubberDuck",
+    "title": "Rubber Duck Debugging Assistant",
+    "description": "AI-powered debugging companion for rubber duck debugging methodology",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-RubberDuck",
+    "updatedAt": "2026-04-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-SalesGenie",
+    "title": "Sales Genie Declarative Agent",
+    "description": "Sales Genie is a Declarative Agent designed to help sales executives get instant, actionable insights from their Salesforce CRM, Microsoft 365, and the web — all via natural language. Whether you're preparing for an upcoming customer meeting, reviewing your opportunity pipeline, or logging call notes into Salesforce, Sales Genie acts as a smart assistant that streamlines your daily sales activities. It showcases complex workflows directly using instructions.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SalesGenie",
+    "updatedAt": "2025-07-09T00:00:00.000Z"
+  },
+  {
+    "folder": "da-sharepoint-data-manager",
+    "title": "Data Manager - Declarative Agent for SharePoint",
+    "description": "A declarative agent that helps users manage and organize SharePoint and OneDrive content with document search, organization guidance, and access to official Microsoft documentation via MCP.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sharepoint-data-manager",
+    "updatedAt": "2025-05-20T00:00:00.000Z"
+  },
+  {
+    "folder": "da-SnowWizard",
+    "title": "da-SnowWizard",
+    "description": "Community sample for Microsoft 365 Copilot developers.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-SnowWizard",
+    "updatedAt": null
+  },
+  {
+    "folder": "da-snowwizard-cs",
+    "title": "Copilot Snow Wizard (C#)",
+    "description": "M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents using C# Azure Functions",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-snowwizard-cs",
+    "updatedAt": "2024-10-11T00:00:00.000Z"
+  },
+  {
+    "folder": "da-sp-agents-finder",
+    "title": "SharePoint Agents Finder declarative agent",
+    "description": "SharePoint Agents Finder uses the Microsoft Graph API as a Copilot plugin in a declarative agent, leveraging the Microsoft Graph Search API /search/query endpoint to retrieve information about SharePoint Agents and event any file in Microsoft 365.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-sp-agents-finder",
+    "updatedAt": "2025-06-30T00:00:00.000Z"
+  },
+  {
+    "folder": "da-teacher",
+    "title": "Declarative Agent The Simple Teacher for Microsoft 365 Copilot Sample",
+    "description": "The declarative agent The Simple Teacher acts as a friendly, patient, and humorous mentor for students aged 16 to 20, explaining technical concepts in simple, relatable language.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-teacher",
+    "updatedAt": "2025-05-15T00:00:00.000Z"
+  },
+  {
+    "folder": "da-todo-tasks-graphapi-plugin",
+    "title": "Retrieve and create my ToDo tasks - No code!",
+    "description": "This sample demonstrates how to retrieve and create my ToDo tasks.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-todo-tasks-graphapi-plugin",
+    "updatedAt": "2025-05-18T00:00:00.000Z"
+  },
+  {
+    "folder": "da-trey-research",
+    "title": "Trey Research TypeScript",
+    "description": "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research",
+    "updatedAt": "2025-06-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-trey-research-auth-csharp",
+    "title": "Trey Research C# Auth",
+    "description": "This sample demonstrates how to create an agent that interacts with a protected consulting API built with C# Azure Functions to provide information about consultants and projects.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-auth-csharp",
+    "updatedAt": "2025-06-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-trey-research-auth-js",
+    "title": "Trey Research TS Auth",
+    "description": "This sample demonstrates how to create an agent that interacts with a protected consulting API to provide information about consultants and projects.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-auth-js",
+    "updatedAt": "2025-06-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-trey-research-auth-python",
+    "title": "Trey Research Python Auth",
+    "description": "This sample demonstrates how to create a Python-based agent that interacts with a protected consulting API to provide information about consultants and projects.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-auth-python",
+    "updatedAt": "2026-05-15T00:00:00.000Z"
+  },
+  {
+    "folder": "da-trey-research-cs",
+    "title": "Trey Research C#",
+    "description": "This sample demonstrates how to create an agent that interacts with a consulting API (C# Azure Functions) to provide information about consultants and projects.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-cs",
+    "updatedAt": "2026-06-04T00:00:00.000Z"
+  },
+  {
+    "folder": "da-trey-research-python",
+    "title": "Trey Research Python",
+    "description": "This sample demonstrates how to create an agent that interacts with a consulting API (Python Azure Functions) to provide information about consultants and projects.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-python",
+    "updatedAt": "2026-06-01T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-appinsights",
+    "title": "da-typespec-appinsights",
+    "description": "Community sample for Microsoft 365 Copilot developers.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-appinsights",
+    "updatedAt": null
+  },
+  {
+    "folder": "da-typespec-AzureAISearch_MsGraph-volunteeringapp",
+    "title": "Finding and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search - No code!",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec that allows you to find and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search integration and authentication.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-AzureAISearch_MsGraph-volunteeringapp",
+    "updatedAt": "2025-05-02T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-azureopenai",
+    "title": "Azure Open AI Agent using TypeSpec for Microsoft 365 Copilot",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot that allows to connect to Azure Open AI API as an API plugin to send queries.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-azureopenai",
+    "updatedAt": "2025-09-12T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-github",
+    "title": "GitHub Issues Agent using TypeSpec for Microsoft 365 Copilot",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot that allows you ground responses in WebSearch, use CodeInterpreter and use the GitHub API as an API plugin to retrieve issues.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-github",
+    "updatedAt": "2025-05-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-powerautomate",
+    "title": "da-typespec-powerautomate",
+    "description": "Community sample for Microsoft 365 Copilot developers.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-powerautomate",
+    "updatedAt": null
+  },
+  {
+    "folder": "da-typespec-repairs",
+    "title": "Manage repairs using Microsoft 365 Copilot",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot that allows you to read, create, update and delete items from a Repairs system. The agent uses an API plugin to connect to an anonymous API.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-repairs",
+    "updatedAt": "2025-05-13T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-repairs-apikey",
+    "title": "Manage repairs using Microsoft 365 Copilot",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot that allows you to read, create, update and delete items from a Repairs system. The agent uses an API plugin to connect to an API-key protected API.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-repairs-apikey",
+    "updatedAt": "2025-05-13T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-repairs-oauth",
+    "title": "Manage repairs using Microsoft 365 Copilot using OAuth 2.0 authentication",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot that allows you to read, create, update and delete items from a Repairs system. The agent uses an API plugin to connect to an OAuth protected API. This sample is connecting to an already configured API.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-repairs-oauth",
+    "updatedAt": "2025-05-13T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-tech-support",
+    "title": "Tech Support agent using TypeSpec for Microsoft 365 Copilot",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot that allows you ground responses in WebSearch, SharePoint and Copilot connectors",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-tech-support",
+    "updatedAt": "2025-05-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-todo",
+    "title": "Tasks Agent using TypeSpec for Microsoft 365 Copilot that connects to the Microsoft Graph APIs",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot using TypeSpec for Microsoft 365 Copilot that connects to the Tasks endpoints of the Microsoft Graph API through an API plugin.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-todo",
+    "updatedAt": "2025-05-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-typespec-trey-research",
+    "title": "Trey Research TypeSpec",
+    "description": "This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-trey-research",
+    "updatedAt": "2025-06-16T00:00:00.000Z"
+  },
+  {
+    "folder": "da-visual-mind-agent",
+    "title": "Visual Mind agent Visualizer Assistant",
+    "description": "The Visual Mind agent is a Visualizer Assistant that will help the user with tasks related to creating clear, structured, and engaging visuals using Mermaid.js code.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-visual-mind-agent",
+    "updatedAt": "2025-05-09T00:00:00.000Z"
+  },
+  {
+    "folder": "da-volunteeringapp",
+    "title": "Finding and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search - No code!",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that allows you to find and apply for volunteer opportunities using Microsoft 365 Copilot with SharePoint List and Azure Ai Search integration and authentication.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-volunteeringapp",
+    "updatedAt": "2025-05-02T00:00:00.000Z"
+  },
+  {
+    "folder": "da-WritingCoach",
+    "title": "Writing Coach Declarative Agent for Microsoft 365 Copilot Sample",
+    "description": "First Party Declarative Agent Writing Coach shared as a sample",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-WritingCoach",
+    "updatedAt": "2024-10-04T00:00:00.000Z"
+  },
+  {
+    "folder": "da-XBoxGameMaster",
+    "title": "Declarative Agent with an API plugin that secured by Entra ID that validates its own tokens",
+    "description": "This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that validates tokens using an open source library.",
+    "type": "Declarative Agent",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-XBoxGameMaster",
+    "updatedAt": "2025-01-09T00:00:00.000Z"
+  },
+  {
+    "folder": "mcp-cs-customers-secure-server",
+    "title": "Secure Customers MCP Server with C# and ASP.NET Core",
+    "description": "This sample demonstrates how to build a secure Model Context Protocol (MCP) server in C# using ASP.NET Core, Microsoft Identity Web authentication, scoped authorization, and customer data tools.",
+    "type": "MCP",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcp-cs-customers-secure-server",
+    "updatedAt": "2026-05-25T00:00:00.000Z"
+  },
+  {
+    "folder": "mcs-BlogPostHelper",
+    "title": "Blog Post Helper",
+    "description": "A Copilot Studio agent that assists in creating and managing blog posts.",
+    "type": "Copilot Studio",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-BlogPostHelper",
+    "updatedAt": "2026-02-14T00:00:00.000Z"
+  },
+  {
+    "folder": "mcs-EduCoach",
+    "title": "EduCoach – Academic Advising Agent",
+    "description": "A Microsoft Copilot Studio agent that helps university students with course search, prerequisite checks, enrollment, course recommendations, graduation audits, and waitlist notifications.",
+    "type": "Copilot Studio",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-EduCoach",
+    "updatedAt": "2026-06-15T00:00:00.000Z"
+  },
+  {
+    "folder": "mcs-finance-statement-agent",
+    "title": "mcs-finance-statement-agent",
+    "description": "Community sample for Microsoft 365 Copilot developers.",
+    "type": "Copilot Studio",
+    "href": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-finance-statement-agent",
+    "updatedAt": null
+  }
+]

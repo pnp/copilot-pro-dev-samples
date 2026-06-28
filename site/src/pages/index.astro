@@ -1,0 +1,49 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import LatestSamples from "../components/LatestSamples.astro";
+import { getLatestSamples, getSamples, getSampleStats } from "../lib/samples";
+
+const samples = await getSamples();
+const latestSamplesWindowMonths = 1;
+const latestSamples = getLatestSamples(samples, latestSamplesWindowMonths);
+const { total, byType } = getSampleStats(samples);
+const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
+---
+
+<SiteLayout title="Copilot Pro Dev Samples" description="Explore Microsoft 365 Copilot community samples.">
+  <section class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+    <div class="space-y-5">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-lime-200">Open Source Agent Catalog</p>
+      <h1 class="max-w-xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
+        Explore beyond the
+        <span class="bg-gradient-to-r from-cyan-200 to-sky-300 bg-clip-text text-transparent"> hello world</span>.
+      </h1>
+      <p class="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+        Browse real Microsoft 365 Copilot samples by agent type, scan metadata quickly, and jump directly into source folders.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a class="chip-button border-cyan-300 bg-cyan-300 text-slate-950" href="/samples">Browse Samples</a>
+        <a class="chip-button" href="/about">Looking to contribute</a>
+      </div>
+    </div>
+
+    <div class="frost-panel p-6 md:p-7">
+      <h2 class="text-sm font-semibold uppercase tracking-[0.14em] text-slate-300">Quick Stats</h2>
+      <div class="mt-4">
+        <p class="text-xs uppercase tracking-wide text-slate-300">Total Samples</p>
+        <p class="mt-2 text-3xl font-bold text-white">{total}</p>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-3">
+        {typeBreakdown.map(([name, count]) => (
+          <span class="rounded-full border border-cyan-300/55 bg-cyan-300/12 px-5 py-2 text-xl font-semibold text-cyan-100">
+            {name}: {count}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <LatestSamples samples={latestSamples} months={latestSamplesWindowMonths} />
+  </section>
+</SiteLayout>

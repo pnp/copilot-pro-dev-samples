@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Microsoft 365 Copilot community samples browser." } = Astro.props;
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/samples", label: "Samples" },
+  { href: "/about", label: "Contributing" },
+];
+const currentPath = Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/$/, "");
+const siteTitle = "Copilot Pro Dev Samples";
+const documentTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{documentTitle}</title>
+  </head>
+  <body>
+    <header class="sticky top-0 z-30 border-b border-white/10 bg-ink-950/70 backdrop-blur-lg">
+      <div class="mx-auto flex h-20 w-full max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
+        <a class="text-lg font-bold tracking-wide text-white" href="/">Copilot <span class="text-sky-300">Pro Dev Samples</span></a>
+        <nav class="flex items-center gap-2 md:gap-3">
+          {navItems.map((item) => {
+            const isCurrent = currentPath === item.href;
+            return (
+              <a
+                href={item.href}
+                class:list={[
+                  "chip-button text-xs md:text-sm",
+                  isCurrent && "chip-button-active",
+                ]}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+          <a
+            href="https://github.com/pnp/copilot-pro-dev-samples"
+            target="_blank"
+            rel="noreferrer"
+            class="chip-button hidden border-lime-300/70 text-lime-200 sm:inline-flex"
+          >
+            Repo
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto w-full max-w-6xl px-4 py-10 md:px-6 md:py-14">
+      <slot />
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-sm text-slate-300">
+      <div class="mx-auto w-full max-w-6xl px-4 md:px-6">
+        This site and samples run under MIT License. These samples are provided as is without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement.
+      </div>
+    </footer>
+  </body>
+</html>
