@@ -1,0 +1,48 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { getSamples, getSampleStats } from "../lib/samples";
+
+const samples = await getSamples();
+const { total, byType } = getSampleStats(samples);
+const types = Object.entries(byType).sort((a, b) => b[1] - a[1]);
+---
+
+<SiteLayout title="About The Catalog" description="How the Copilot samples catalog is generated.">
+  <section class="space-y-10">
+    <div class="space-y-3">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-lime-200">About</p>
+      <h1 class="max-w-2xl text-4xl font-extrabold text-white md:text-5xl">How this site is generated</h1>
+      <p class="max-w-3xl text-base leading-relaxed text-slate-300">
+        This catalog reads folders from the repository-level samples directory, then enriches each entry from the corresponding
+        sample.json metadata file.
+      </p>
+    </div>
+
+    <div class="grid gap-4 md:grid-cols-3">
+      <article class="frost-panel p-5">
+        <h2 class="text-sm uppercase tracking-wide text-slate-300">Total Samples</h2>
+        <p class="mt-2 text-3xl font-bold text-white">{total}</p>
+      </article>
+      <article class="frost-panel p-5 md:col-span-2">
+        <h2 class="text-sm uppercase tracking-wide text-slate-300">Type Breakdown</h2>
+        <div class="mt-3 flex flex-wrap gap-2">
+          {types.map(([name, count]) => (
+            <span class="rounded-full border border-cyan-300/45 bg-cyan-300/12 px-3 py-1 text-sm text-cyan-100">
+              {name}: {count}
+            </span>
+          ))}
+        </div>
+      </article>
+    </div>
+
+    <div class="frost-panel space-y-4 p-5 md:p-6">
+      <h2 class="text-2xl font-bold text-white">Implementation Notes</h2>
+      <ul class="space-y-2 text-slate-300">
+        <li>Built with Astro and Tailwind CSS.</li>
+        <li>Page framing comes from a shared layout for consistent navigation and footer.</li>
+        <li>Sample parsing and statistics live in reusable modules under src/lib.</li>
+        <li>Interactive search and filtering logic runs from a standalone script.</li>
+      </ul>
+    </div>
+  </section>
+</SiteLayout>

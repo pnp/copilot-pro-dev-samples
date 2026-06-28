@@ -1,43 +1,74 @@
-# Astro Starter Kit: Minimal
+# Copilot Samples Site
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Astro-based multi-page catalog site for browsing sample projects in the repository-level `../samples` folder.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tech Stack
 
-## 🚀 Project Structure
+- Astro 7
+- Tailwind CSS v4 (via `@tailwindcss/vite`)
+- TypeScript (for data and browser logic modules)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Routes
+
+- `/` Home page with quick summary stats
+- `/samples` Interactive sample browser with search and type filters
+- `/about` Implementation notes and catalog overview
+
+## Project Structure
 
 ```text
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/
+│   │   └── SampleBrowser.astro
+│   ├── layouts/
+│   │   └── SiteLayout.astro
+│   ├── lib/
+│   │   └── samples.ts
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── samples.astro
+│   │   └── about.astro
+│   ├── scripts/
+│   │   └── sample-browser.ts
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Responsibilities by Layer
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- `src/layouts` provides the shared page frame (header, nav, footer, and global styles).
+- `src/pages` is route-level composition only.
+- `src/components` contains reusable UI blocks.
+- `src/lib/samples.ts` reads local sample metadata and computes summary stats.
+- `src/scripts/sample-browser.ts` contains client-side search/filter behavior.
+- `src/styles/global.css` holds Tailwind import, theme tokens, and shared component classes.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Data Source
 
-## 🧞 Commands
+The catalog reads directories from `../samples` and attempts to parse each sample's `assets/sample.json`.
+If metadata is missing or invalid, fallback values are used.
 
-All commands are run from the root of the project, from a terminal:
+## Local Development
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Node.js `>=22.12.0` is required.
 
-## 👀 Want to learn more?
+```sh
+npm install
+npm run dev
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Build
+
+```sh
+npm run build
+npm run preview
+```
+
+## Notes
+
+- This site is generated from the local repository structure.
+- Add or modify sample folders under `../samples`, then refresh/rebuild the site.

@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #040b18;
+  --color-ink-900: #09152a;
+  --color-panel-900: #0d1a37;
+  --color-panel-800: #132649;
+  --color-sky-300: #6ad9ff;
+  --color-lime-300: #8ff0b6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: #eaf2ff;
+    background:
+      radial-gradient(circle at 80% -20%, rgb(63 224 255 / 18%), transparent 40%),
+      radial-gradient(circle at 15% 10%, rgb(129 239 182 / 14%), transparent 42%),
+      linear-gradient(180deg, #040b18 0%, #09152a 45%, #040b18 100%);
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .frost-panel {
+    @apply rounded-2xl border border-white/15 bg-gradient-to-br from-panel-800/95 to-panel-900/95;
+  }
+
+  .chip-button {
+    @apply rounded-full border border-white/20 px-3 py-2 text-sm text-slate-300 transition hover:-translate-y-0.5 hover:border-cyan-300;
+  }
+}
