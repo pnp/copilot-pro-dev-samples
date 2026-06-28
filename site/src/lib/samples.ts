@@ -7,6 +7,7 @@ export type SampleEntry = {
   description: string;
   type: string;
   href: string;
+  updatedAt: Date | null;
 };
 
 export type SampleStats = {
@@ -24,6 +25,15 @@ const typeLabels: Record<string, string> = {
 };
 
 const fallbackDescription = "Community sample for Microsoft 365 Copilot developers.";
+
+function parseDate(value: unknown): Date | null {
+  if (typeof value !== "string" || value.trim().length === 0) {
+    return null;
+  }
+
+  const parsed = new Date(value);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
 
 function getSamplesRoot(): string {
   return path.resolve(process.cwd(), "..", "samples");
@@ -44,6 +54,7 @@ export async function getSamples(): Promise<SampleEntry[]> {
       const sampleJsonPath = path.join(samplesRoot, folder, "assets", "sample.json");
       let title = folder;
       let description = fallbackDescription;
+      let updatedAt: Date | null = null;
 
       try {
         const raw = await readFile(sampleJsonPath, "utf8");
@@ -51,6 +62,7 @@ export async function getSamples(): Promise<SampleEntry[]> {
         if (Array.isArray(parsed) && parsed[0]) {
           title = parsed[0].title || parsed[0].name || title;
           description = parsed[0].shortDescription || description;
+          updatedAt = parseDate(parsed[0].updateDateTime) || parseDate(parsed[0].creationDateTime);
         }
       } catch {
         // Keep fallback metadata for samples missing or failing to parse sample.json.
@@ -65,11 +77,26 @@ export async function getSamples(): Promise<SampleEntry[]> {
         description,
         type,
         href: `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/${folder}`,
+        updatedAt,
       };
     })
   );
 
   return samples;
+}
+
+export function getLatestSamples(samples: SampleEntry[], months: number, now = new Date()): SampleEntry[] {
+  const safeMonths = Number.isFinite(months) && months > 0 ? months : 1;
+  const cutoff = new Date(now);
+  cutoff.setMonth(cutoff.getMonth() - safeMonths);
+
+  return samples
+    .filter((sample) => sample.updatedAt && sample.updatedAt >= cutoff)
+    .sort((a, b) => {
+      const aTime = a.updatedAt?.getTime() ?? 0;
+      const bTime = b.updatedAt?.getTime() ?? 0;
+      return bTime - aTime;
+    });
 }
 
 export function getSampleStats(samples: SampleEntry[]): SampleStats {

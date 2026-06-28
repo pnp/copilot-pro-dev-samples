@@ -1,8 +1,11 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import { getSamples, getSampleStats } from "../lib/samples";
+import LatestSamples from "../components/LatestSamples.astro";
+import { getLatestSamples, getSamples, getSampleStats } from "../lib/samples";
 
 const samples = await getSamples();
+const latestSamplesWindowMonths = 1;
+const latestSamples = getLatestSamples(samples, latestSamplesWindowMonths);
 const { total, topTypes } = getSampleStats(samples);
 ---
 
@@ -44,5 +47,9 @@ const { total, topTypes } = getSampleStats(samples);
         </article>
       </div>
     </div>
+  </section>
+
+  <section class="mt-10">
+    <LatestSamples samples={latestSamples} months={latestSamplesWindowMonths} />
   </section>
 </SiteLayout>

@@ -48,6 +48,9 @@ const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
         <h3 class="text-lg font-semibold text-white">{sample.title}</h3>
         <p class="text-sm leading-relaxed text-slate-300">{sample.description}</p>
         <div class="text-xs text-slate-400">Folder: {sample.folder}</div>
+        <div class="text-xs text-slate-400">
+          Last updated: {sample.updatedAt ? sample.updatedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "Unknown"}
+        </div>
         <a class="text-sm font-semibold text-sky-300 hover:text-cyan-200" href={sample.href} target="_blank" rel="noreferrer">
           Open in GitHub
         </a>
