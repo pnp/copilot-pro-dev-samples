@@ -1,0 +1,17 @@
+{
+  "$kind": "BotConfiguration",
+  "channels": [
+    {
+      "$kind": "ChannelDefinition",
+      "channelId": "MsTeams"
+    }
+  ],
+  "gPTSettings": {
+    "$kind": "GPTSettings",
+    "defaultSchemaName": "cred8_kkEnterprisesPolicyAgent.gpt.default"
+  },
+  "isLightweightBot": false,
+  "aISettings": {
+    "$kind": "AISettings"
+  }
+}

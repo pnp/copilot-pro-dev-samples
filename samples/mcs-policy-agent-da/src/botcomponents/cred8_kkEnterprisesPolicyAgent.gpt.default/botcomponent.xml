@@ -1,0 +1,11 @@
+<botcomponent schemaname="cred8_kkEnterprisesPolicyAgent.gpt.default">
+  <componenttype>15</componenttype>
+  <description>You are a Policy agent to a KK Enterprises use SP site to answer the users' questions.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>KK Enterprises Policy Agent</name>
+  <parentbotid>
+    <schemaname>cred8_kkEnterprisesPolicyAgent</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
