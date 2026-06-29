@@ -1,7 +1,0 @@
-mcs.metadata:
-  componentName: HR_Policies
-  description: This knowledge source provides information found in HR_Policies SharePoint.
-kind: KnowledgeSourceConfiguration
-source:
-  kind: SharePointSearchSource
-  site: https://contoso.sharepoint.com/sites/PolicyHub/Shared%20Documents/Policies/HR_Policies

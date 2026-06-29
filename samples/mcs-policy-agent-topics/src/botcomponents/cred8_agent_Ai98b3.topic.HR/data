@@ -1,0 +1,37 @@
+kind: AdaptiveDialog
+modelDescription: |-
+  Human Resources (HR) Policies
+  These govern employee behavior, rights, and responsibilities.
+  Recruitment & Hiring Policy
+  Code of Conduct / Ethics Policy
+  Attendance & Leave Policy
+  Workplace Harassment Policy
+  Equal Employment Opportunity (EEO) Policy
+  Employee Grievance Policy
+  Performance Management Policy
+  Training & Development Policy
+  Remote Work / Hybrid Work Policy
+  Dress Code Policy
+  Termination & Exit Policy
+  Compensation & Benefits Policy
+  Employee Wellness Policy
+  Diversity & Inclusion Policy
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: 3D1B5Z
+      userInput: =System.Activity.Text
+      fileSearchDataSource:
+        searchFilesMode:
+          kind: DoNotSearchFiles
+
+      knowledgeSources:
+        kind: SearchSpecificKnowledgeSources
+        knowledgeSources:
+          - cred8_agent_Ai98b3.topic.HR_Policies_zwEbU9jckf88nCSmlyMXG
+
+inputType: {}
+outputType: {}

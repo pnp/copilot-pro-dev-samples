@@ -1,0 +1,10 @@
+<botcomponent schemaname="cred8_agent_Ai98b3.gpt.default">
+  <componenttype>15</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>KK Policy Agent(Topic)</name>
+  <parentbotid>
+    <schemaname>cred8_agent_Ai98b3</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

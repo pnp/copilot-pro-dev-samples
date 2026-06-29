@@ -1,0 +1,11 @@
+<botcomponent schemaname="cred8_agent_Ai98b3.topic.Finance_Policies_G5mmFrCLhDJsNuXKYu4Yz">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Finance_Policies SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Finance_Policies</name>
+  <parentbotid>
+    <schemaname>cred8_agent_Ai98b3</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

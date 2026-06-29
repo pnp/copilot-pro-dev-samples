@@ -1,0 +1,11 @@
+<botcomponent schemaname="cred8_agent_Ai98b3.topic.Operations_Administration_Policies_iE1XPGye22r4sdKOmqLhK">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Operations_Administration_Policies SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Operations_Administration_Policies</name>
+  <parentbotid>
+    <schemaname>cred8_agent_Ai98b3</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

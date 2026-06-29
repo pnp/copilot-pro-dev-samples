@@ -1,0 +1,35 @@
+kind: AdaptiveDialog
+modelDescription: |-
+  Finance Policies
+  These ensure financial integrity, compliance, and accountability.
+  Expense Reimbursement Policy
+  Travel & Entertainment Policy
+  Budgeting & Forecasting Policy
+  Procurement Policy
+  Asset Management Policy
+  Payroll Policy
+  Financial Reporting Policy
+  Audit & Compliance Policy
+  Investment Policy
+  Fraud Prevention Policy
+  Credit & Collections Policy
+  Donation & Sponsorship Policy
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: byYNk9
+      userInput: =System.Activity.Text
+      fileSearchDataSource:
+        searchFilesMode:
+          kind: DoNotSearchFiles
+
+      knowledgeSources:
+        kind: SearchSpecificKnowledgeSources
+        knowledgeSources:
+          - cred8_agent_Ai98b3.topic.Finance_Policies_G5mmFrCLhDJsNuXKYu4Yz
+
+inputType: {}
+outputType: {}

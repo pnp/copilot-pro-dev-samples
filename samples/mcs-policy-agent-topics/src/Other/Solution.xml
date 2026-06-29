@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="9.2.26054.154" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.26054.154" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.26054.00154">
+  <SolutionManifest>
+    <UniqueName>PolicyAgentTopics</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Policy Agent (Topic-based)" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>Cr77472</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="CDS Default Publisher" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>cred8</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>52740</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode xsi:nil="true"></AddressTypeCode>
+          <ShippingMethodCode xsi:nil="true"></ShippingMethodCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents />
+    <MissingDependencies />
+  </SolutionManifest>
+</ImportExportXml>

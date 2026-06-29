@@ -1,0 +1,4 @@
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://m365cpi60309901.sharepoint.com/sites/Indo-site/Shared%20Documents/KK-Enterprises/HR_Policies

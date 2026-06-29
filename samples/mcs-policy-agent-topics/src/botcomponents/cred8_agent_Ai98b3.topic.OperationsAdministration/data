@@ -1,0 +1,29 @@
+kind: AdaptiveDialog
+modelDescription: |-
+  Operations & Administration Policies
+  Support day-to-day business operations.
+  Facility Access Policy
+  Health & Safety Policy
+  Travel Policy
+  Document Retention Policy
+  Vendor Management Policy
+  Business Continuity & Disaster Recovery Policy
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent: {}
+  actions:
+    - kind: SearchAndSummarizeContent
+      id: MHlth7
+      userInput: =System.Activity.Text
+      fileSearchDataSource:
+        searchFilesMode:
+          kind: DoNotSearchFiles
+
+      knowledgeSources:
+        kind: SearchSpecificKnowledgeSources
+        knowledgeSources:
+          - cred8_agent_Ai98b3.topic.Operations_Administration_Policies_iE1XPGye22r4sdKOmqLhK
+
+inputType: {}
+outputType: {}
