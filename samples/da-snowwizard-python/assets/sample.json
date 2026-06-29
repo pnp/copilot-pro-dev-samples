@@ -1,0 +1,64 @@
+[
+    {
+      "name": "pnp-copilot-pro-dev-da-snowwizard-python",
+      "source": "pnp",
+      "title": "Copilot Snow Wizard (Python)",
+      "shortDescription": "M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents using Python Azure Functions",
+      "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-snowwizard-python",
+      "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-snowwizard-python",
+      "longDescription": [
+        "This project demonstrates a sample implementation of an M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents, built with Python and Azure Functions."
+      ],
+      "creationDateTime": "2024-10-11",
+      "updateDateTime": "2024-10-11",
+      "products": [
+        "Microsoft 365 Copilot"
+      ],
+      "metadata": [
+        {
+          "key": "PLATFORM",
+          "value": "Python"
+        },
+        {
+          "key": "LANGUAGE",
+          "value": "Python"
+        },
+        {
+          "key": "API-PLUGIN",
+          "value": "Yes"
+        },
+        {
+          "key": "GRAPH-CONNECTOR",
+          "value": "No"
+        }
+      ],
+      "thumbnails": [
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-snowwizard-python/assets/2024-10-11_16-39.png",
+          "alt": "Declarative agent listing ServiceNow incidents"
+        },
+        {
+          "type": "image",
+          "order": 100,
+          "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-snowwizard-python/assets/2024-10-11_16-40.png",
+          "alt": "Declarative agent creating a ServiceNow incident"
+        }
+      ],
+      "authors": [
+        {
+          "gitHubAccount": "AjayJ12-MSFT",
+          "pictureUrl": "https://github.com/AjayJ12-MSFT.png",
+          "name": "Ajay Jadhav"
+        }
+      ],
+      "references": [
+        {
+          "name": "Microsoft 365 Copilot extensibility",
+          "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+          "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        }
+      ]
+    }
+  ]
