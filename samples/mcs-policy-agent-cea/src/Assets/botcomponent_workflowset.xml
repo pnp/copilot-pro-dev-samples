@@ -1,0 +1,5 @@
+<botcomponent_workflowset>
+  <botcomponent_workflow botcomponentid.schemaname="cred8_kkPolicyAgent.action.SalesforceFlow" workflowid.workflowid="76a54c7a-08a5-f011-bbd3-6045bd0114ec">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+</botcomponent_workflowset>

@@ -1,7 +1,0 @@
-mcs.metadata:
-  componentName: KK-Enterprises
-  description: This knowledge source provides information found in KK-Enterprises SharePoint.
-kind: KnowledgeSourceConfiguration
-source:
-  kind: SharePointSearchSource
-  site: https://contoso.sharepoint.com/sites/PolicyHub/Shared%20Documents/Policies
