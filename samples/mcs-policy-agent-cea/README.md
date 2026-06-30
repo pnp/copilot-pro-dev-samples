@@ -4,8 +4,6 @@
 
 A **Custom Engine Agent (CEA)** built in **Microsoft Copilot Studio** that handles both summary-level and detailed clause-level policy queries. Quick / overview questions are answered from a **SharePoint** knowledge source; "give me the full details" requests are escalated to **Salesforce Knowledge** via an Agent Flow.
 
-> This sample is contributed in the same packaging format as [`mcs-BlogPostHelper`](https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-BlogPostHelper) — exported with the Power Platform CLI (`pac`) as an unmanaged Dataverse solution so it can be imported into any environment.
-
 ## Demo
 
 <https://github.com/user-attachments/assets/cc37e754-7ecd-4627-aa7e-3a8cf059467b>
@@ -113,7 +111,7 @@ The **Salesforce Detail Flow** is triggered only when "detail intent" keywords a
 * Microsoft 365 tenant with **Copilot Studio** license
 * A **SharePoint site** containing the organization's policy documents
 * A **Salesforce** instance with Knowledge articles and API access (used by the escalation flow)
-* [Microsoft Power Platform CLI (`pac`)](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction)
+* [Microsoft Power Platform CLI (`pac`)](https://learn.microsoft.com/power-platform/developer/cli/introduction)
 * (Optional) [VS Code Copilot Studio extension](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio) for source-control editing
 
 ## Minimal path to awesome
@@ -181,9 +179,9 @@ mcs-PolicyAgentCEA/
 
 ## Related resources
 
-* [Copilot Studio documentation](https://learn.microsoft.com/en-us/microsoft-copilot-studio/)
-* [Move copilots between environments (Copilot Studio ALM)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-export-import-bots)
-* [Power Platform CLI `pac solution` reference](https://learn.microsoft.com/en-us/power-platform/developer/cli/reference/solution)
+* [Copilot Studio documentation](https://learn.microsoft.com/microsoft-copilot-studio/)
+* [Move copilots between environments (Copilot Studio ALM)](https://learn.microsoft.com/microsoft-copilot-studio/authoring-export-import-bots)
+* [Power Platform CLI `pac solution` reference](https://learn.microsoft.com/power-platform/developer/cli/reference/solution)
 * [VS Code Copilot Studio extension](https://marketplace.visualstudio.com/items?itemName=ms-CopilotStudio.vscode-copilotstudio)
 * [Salesforce API documentation](https://developer.salesforce.com/docs/apis)
 
@@ -191,10 +189,8 @@ mcs-PolicyAgentCEA/
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20mcs-PolicyAgentCEA%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20mcs-policy-agent-cea%22) to see if anybody else is having the same issues.
 
 If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new). Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
-## Disclaimer
-
-**THIS CODE IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+![](https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/mcs-policy-agent-cea)
