@@ -1,0 +1,242 @@
+{
+  "properties": {
+    "connectionReferences": {},
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "type": "Request",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "Please enter your input",
+                  "title": "TitleToSeach",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "b8f61c18-7224-4f8a-9c5f-72fbce5df764"
+          }
+        }
+      },
+      "actions": {
+        "SF_ClientId": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SF_ClientId",
+                "type": "string",
+                "value": "3MVG9rZjd7MXFdLhNiw7Wam0DBiF7vr_ms_BoILLibBfPrD2OzyRiTeL9Qrj8pZhpq1a7nxhi8u.3D2YCgHR6"
+              }
+            ]
+          },
+          "runAfter": {}
+        },
+        "SF_ClientSecret": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SF_ClientSecret",
+                "type": "string",
+                "value": "D298FB8357D42EB5C3236EEE6CB83FC8AE897E5E995FF177A24D7F10C0CABE2B"
+              }
+            ]
+          },
+          "runAfter": {
+            "SF_ClientId": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "SF_Username": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SF_Username",
+                "type": "string",
+                "value": "v-smiagrawal857@agentforce.com"
+              }
+            ]
+          },
+          "runAfter": {
+            "SF_ClientSecret": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "SF_Password": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SF_Password",
+                "type": "string"
+              }
+            ]
+          },
+          "runAfter": {
+            "SF_Username": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "SF_SecurityToken": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "SF_SecurityToken",
+                "type": "string",
+                "value": "Smit@agrawal1TP1Y3hyyqJd4lhALci7qhKnC"
+              }
+            ]
+          },
+          "runAfter": {
+            "SF_Password": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "HTTP": {
+          "type": "Http",
+          "inputs": {
+            "uri": "https://login.salesforce.com/services/oauth2/token",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            "body": "grant_type=password&client_id=@{variables('SF_ClientId')}&client_secret=@{variables('SF_ClientSecret')}&username=@{encodeUriComponent(variables('SF_Username'))}&password=@{encodeUriComponent(variables('SF_Password'))}@{variables('SF_SecurityToken')}\n"
+          },
+          "runAfter": {
+            "SF_SecurityToken": [
+              "SUCCEEDED"
+            ]
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          },
+          "metadata": {
+            "operationMetadataId": "1ad65569-3473-400b-86d4-e636cc6dc1ad"
+          }
+        },
+        "Initialize_variable": {
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "accessToken",
+                "type": "string",
+                "value": "@body('HTTP')?['access_token']"
+              }
+            ]
+          },
+          "runAfter": {
+            "HTTP": [
+              "SUCCEEDED"
+            ]
+          }
+        },
+        "HTTP_1": {
+          "type": "Http",
+          "inputs": {
+            "uri": "https://orgfarm-0e4fa1cf00-dev-ed.develop.my.salesforce.com/services/data/v61.0/query?q=SELECT Title, Summary, UrlName FROM Knowledge__kav WHERE Title LIKE '%@{triggerBody()?['text']}%'",
+            "method": "GET",
+            "headers": {
+              "Authorization": "Bearer @{variables('accessToken')}",
+              "Accept": "application/json"
+            }
+          },
+          "runAfter": {
+            "Initialize_variable": [
+              "SUCCEEDED"
+            ]
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          }
+        },
+        "HTTP_1_1": {
+          "type": "Http",
+          "inputs": {
+            "uri": "https://orgfarm-0e4fa1cf00-dev-ed.develop.my.salesforce.com@{body('HTTP_1')?['records']?[0]?['attributes']?['url']}?fields=Text__c",
+            "method": "GET",
+            "headers": {
+              "Authorization": "Bearer @{variables('accessToken')}",
+              "Accept": "application/json"
+            }
+          },
+          "runAfter": {
+            "HTTP_1": [
+              "SUCCEEDED"
+            ]
+          },
+          "runtimeConfiguration": {
+            "contentTransfer": {
+              "transferMode": "Chunked"
+            }
+          }
+        },
+        "Respond_to_the_agent": {
+          "type": "Response",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "title": "Result",
+                  "description": "",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "result": "@{body('HTTP_1_1')?['Text__c']}"
+            }
+          },
+          "runAfter": {
+            "HTTP_1_1": [
+              "SUCCEEDED"
+            ]
+          }
+        }
+      },
+      "outputs": {},
+      "description": "When an agent calls the flow and send back a response."
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

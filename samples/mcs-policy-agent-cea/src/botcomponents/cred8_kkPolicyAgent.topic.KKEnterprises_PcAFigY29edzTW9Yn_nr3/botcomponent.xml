@@ -1,0 +1,11 @@
+<botcomponent schemaname="cred8_kkPolicyAgent.topic.KKEnterprises_PcAFigY29edzTW9Yn_nr3">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in KK-Enterprises SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>KK-Enterprises</name>
+  <parentbotid>
+    <schemaname>cred8_kkPolicyAgent</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

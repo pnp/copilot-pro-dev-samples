@@ -1,0 +1,61 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-mcs-policy-agent-cea",
+    "source": "pnp",
+    "title": "Policy Agent (Custom Engine Agent with Salesforce escalation) for Copilot Studio",
+    "shortDescription": "A Custom Engine Agent in Copilot Studio that answers policy questions from SharePoint and escalates detailed clause-level requests to Salesforce via an Agent Flow.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-policy-agent-cea",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-policy-agent-cea",
+    "longDescription": [
+      "A Custom Engine Agent built in Microsoft Copilot Studio that handles summary-level policy questions against SharePoint, and seamlessly escalates detailed clause-level requests to Salesforce through an Agent Flow — no channel switch for the user."
+    ],
+    "creationDateTime": "2026-06-25",
+    "updateDateTime": "2026-06-25",
+    "products": [
+      "Microsoft 365 Copilot",
+      "Microsoft Copilot Studio",
+      "SharePoint",
+      "Salesforce"
+    ],
+    "metadata": [
+      { "key": "PLATFORM", "value": "Copilot Studio" },
+      { "key": "LANGUAGE", "value": "None" },
+      { "key": "AGENT-TYPE", "value": "Custom Engine Agent" },
+      { "key": "EXTENSION-TYPE", "value": "Action" },
+      { "key": "API-PLUGIN", "value": "No" },
+      { "key": "GRAPH-CONNECTOR", "value": "No" }
+    ],
+    "thumbnails": [
+      {
+        "type": "video",
+        "order": 101,
+        "url": "https://github.com/user-attachments/assets/cc37e754-7ecd-4627-aa7e-3a8cf059467b",
+        "alt": "Demo - Policy Agent Custom Engine Agent with Salesforce escalation"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "keshavk-msft",
+        "pictureUrl": "https://github.com/keshavk-msft.png",
+        "name": "Keshav"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Microsoft Copilot Studio",
+        "description": "Build AI-driven agents and workflows with Microsoft Copilot Studio.",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
+      },
+      {
+        "name": "Agent Flows in Copilot Studio",
+        "description": "Build workflow automations that your agent can call.",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/flows-overview"
+      }
+    ]
+  }
+]

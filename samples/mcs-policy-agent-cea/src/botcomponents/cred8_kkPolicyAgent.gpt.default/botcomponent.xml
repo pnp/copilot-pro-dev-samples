@@ -1,0 +1,11 @@
+<botcomponent schemaname="cred8_kkPolicyAgent.gpt.default">
+  <componenttype>15</componenttype>
+  <description>A policy agent for KK Enterprises that provides policy details from a knowledge source for initial queries and fetches more information from Salesforce for follow-up requests.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>KK Policy Agent</name>
+  <parentbotid>
+    <schemaname>cred8_kkPolicyAgent</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
