@@ -1,0 +1,73 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-mcs-policy-agent-da",
+    "source": "pnp",
+    "title": "Policy Agent (Declarative Agent) for Copilot Studio",
+    "shortDescription": "A SharePoint-grounded Declarative Agent built in Copilot Studio that gives employees quick, summary-level answers to HR, IT and Finance policy questions.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-policy-agent-da",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-policy-agent-da",
+    "longDescription": [
+      "A SharePoint-grounded Declarative Agent built in Microsoft Copilot Studio that answers internal policy questions with multi-file referenced summaries, using Microsoft 365 grounding for fast time-to-value and minimal configuration."
+    ],
+    "creationDateTime": "2026-06-25",
+    "updateDateTime": "2026-06-25",
+    "products": [
+      "Microsoft 365 Copilot",
+      "Microsoft Copilot Studio",
+      "SharePoint"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot Studio"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "None"
+      },
+      {
+        "key": "AGENT-TYPE",
+        "value": "Declarative Agent"
+      },
+      {
+        "key": "EXTENSION-TYPE",
+        "value": "Knowledge"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "video",
+        "order": 101,
+        "url": "https://github.com/user-attachments/assets/2d68cfe9-1742-472a-ac77-f36d05d009b6",
+        "alt": "Demo - Policy Agent Declarative Agent in Copilot Studio"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "keshavk-msft",
+        "pictureUrl": "https://github.com/keshavk-msft.png",
+        "name": "Keshav"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Microsoft Copilot Studio",
+        "description": "Build AI-driven agents and workflows with Microsoft Copilot Studio.",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
+      }
+    ]
+  }
+]
