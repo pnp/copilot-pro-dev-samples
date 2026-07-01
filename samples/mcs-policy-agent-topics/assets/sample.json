@@ -1,0 +1,73 @@
+[
+    {
+        "name": "pnp-copilot-pro-dev-mcs-policy-agent-topics",
+        "source": "pnp",
+        "title": "Policy Agent (Topic-Based Grounding) for Copilot Studio",
+        "shortDescription": "A Custom Engine Agent in Copilot Studio that maps each policy domain (HR, Finance, IT, Legal, Operations) to its own SharePoint folder and topic for deterministic, precise routing.",
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-policy-agent-topics",
+        "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-policy-agent-topics",
+        "longDescription": [
+            "A Custom Engine Agent built in Microsoft Copilot Studio that uses a topic-based grounding pattern: each policy domain maps to a dedicated SharePoint folder and a dedicated agent topic, giving deterministic routing and per-domain precision."
+        ],
+        "creationDateTime": "2026-06-25",
+        "updateDateTime": "2026-06-25",
+        "products": [
+            "Microsoft 365 Copilot",
+            "Microsoft Copilot Studio",
+            "SharePoint"
+        ],
+        "metadata": [
+            {
+                "key": "PLATFORM",
+                "value": "Copilot Studio"
+            },
+            {
+                "key": "LANGUAGE",
+                "value": "None"
+            },
+            {
+                "key": "AGENT-TYPE",
+                "value": "Custom Engine Agent"
+            },
+            {
+                "key": "EXTENSION-TYPE",
+                "value": "Knowledge"
+            },
+            {
+                "key": "API-PLUGIN",
+                "value": "No"
+            },
+            {
+                "key": "GRAPH-CONNECTOR",
+                "value": "No"
+            }
+        ],
+        "thumbnails": [
+            {
+                "type": "video",
+                "order": 101,
+                "url": "https://github.com/user-attachments/assets/e6c3d7d3-015e-4f67-ac9e-2f5d4a6c8294",
+                "alt": "Demo - Policy Agent with topic-based SharePoint grounding"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "keshavk-msft",
+                "pictureUrl": "https://github.com/keshavk-msft.png",
+                "name": "Keshav"
+            }
+        ],
+        "references": [
+            {
+                "name": "Microsoft 365 Copilot extensibility",
+                "description": "Learn more about Microsoft 365 Copilot and how you can extend it.",
+                "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+            },
+            {
+                "name": "Microsoft Copilot Studio",
+                "description": "Build AI-driven agents and workflows with Microsoft Copilot Studio.",
+                "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
+            }
+        ]
+    }
+]
