@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.24/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.24",
+  "id": "${{TEAMS_APP_ID}}",
+  "version": "1.0.0",
+  "developer": {
+    "name": "Microsoft 365 PnP Community",
+    "websiteUrl": "https://pnp.github.io/",
+    "privacyUrl": "https://privacy.microsoft.com/privacystatement",
+    "termsOfUseUrl": "https://github.com/pnp/copilot-pro-dev-samples/blob/main/LICENSE"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "PnP Samples Guide",
+    "full": "Copilot PnP Samples Guide"
+  },
+  "description": {
+    "short": "Discover declarative agent samples from the pnp/copilot-pro-dev-samples repo.",
+    "full": "A declarative agent that helps developers discover, understand, and adopt declarative agent samples from the pnp/copilot-pro-dev-samples repository. Search by capability or scenario, get cloning and adaptation guidance, and learn how to bootstrap your own sample. Uses unauthenticated GitHub REST API calls and scoped web search."
+  },
+  "accentColor": "#2B579A",
+  "copilotAgents": {
+    "declarativeAgents": [
+      {
+        "id": "declarativeAgent",
+        "file": "declarativeAgent.json"
+      }
+    ]
+  },
+  "validDomains": [
+    "api.github.com",
+    "raw.githubusercontent.com",
+    "github.com"
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ]
+}

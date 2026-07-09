@@ -1,0 +1,361 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "GitHub REST API (stripped for pnp/copilot-pro-dev-samples discovery)",
+    "description": "A minimal subset of the GitHub REST API exposing only the read-only, fully unauthenticated endpoints needed to discover and browse declarative agent samples in the pnp/copilot-pro-dev-samples repository. All endpoints in this spec return 200 anonymously. The auth-only `GET /search/code` endpoint has been intentionally omitted — discovery is driven by the structured `samples.json` registry instead. All endpoints share GitHub's per-IP unauthenticated rate limit (~60 req/hour overall; the Search API additionally caps unauthenticated calls at ~10 req/minute).",
+    "version": "2022-11-28",
+    "contact": {
+      "name": "GitHub REST API documentation",
+      "url": "https://docs.github.com/rest"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/github/rest-api-description/blob/main/LICENSE.md"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.github.com",
+      "description": "GitHub REST API v3"
+    }
+  ],
+  "paths": {
+    "/repos/pnp/copilot-pro-dev-samples/contents/.github/samples.json": {
+      "get": {
+        "operationId": "getSamplesRegistry",
+        "summary": "Get the structured registry of every sample in pnp/copilot-pro-dev-samples.",
+        "description": "Returns the contents API response for `.github/samples.json` — a hand-maintained, ~100 KB JSON array describing every sample in the repo. The response is a standard contents object with a base64-encoded `content` field; decode it and parse as JSON to get the array. Each registry entry includes `name`, `title`, `shortDescription`, `longDescription`, `Folder` (the folder name under `samples/`), `metadata` (an array of `{ key, value }` pairs — keys include `PLATFORM`, `LANGUAGE`, `API-PLUGIN`, `GRAPH-CONNECTOR`, etc.), `thumbnails`, and `authors`. THIS IS THE PRIMARY DISCOVERY TOOL — always call it first for any 'which samples', 'find a sample', 'show me samples that…' question.",
+        "responses": {
+          "200": {
+            "description": "Registry file contents (base64-encoded JSON array).",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/FileContent" }
+              }
+            }
+          },
+          "404": { "description": "Registry not found (very unlikely)." }
+        }
+      }
+    },
+    "/repos/pnp/copilot-pro-dev-samples/git/trees/{tree_sha}": {
+      "get": {
+        "operationId": "getRepoTree",
+        "summary": "Get the full recursive file tree of pnp/copilot-pro-dev-samples in one anonymous call.",
+        "description": "Returns the full recursive Git tree for the `pnp/copilot-pro-dev-samples` repo in a SINGLE anonymous call (~3,000+ entries, ~860 KB, `truncated: false` as of 2026-06-12). Pass `tree_sha` = `main` (the default branch, recommended) or any branch name, tag, or commit SHA. Set `recursive=1` to traverse every subdirectory. The response contains `tree[]` where each entry has `path` (full path from repo root), `type` (`blob` for files, `tree` for directories), `sha`, `size` (blobs only), and `url`. USE THIS for path-pattern questions: 'which samples ship an `ai-plugin.json`?', 'find every Python file under samples/', 'list every `m365agents.yml`', 'which samples have a `M365Agent/appPackage/` folder?'. Filter the `tree` array client-side by `path` glob; then call `getRepoContent` ONLY for the specific files you decide to read. Never iterate every blob with `getRepoContent` (rate limit).",
+        "parameters": [
+          {
+            "name": "tree_sha",
+            "in": "path",
+            "required": true,
+            "description": "Tree reference. Use `main` for the default branch (recommended), or any branch name, tag, or commit SHA.",
+            "schema": { "type": "string", "default": "main" }
+          },
+          {
+            "name": "recursive",
+            "in": "query",
+            "required": false,
+            "description": "Set to `1` to traverse every subdirectory and return the full repo file tree in one call (recommended). Omit for a shallow listing of the root tree only.",
+            "schema": { "type": "string", "enum": ["1"] }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recursive Git tree object.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/GitTree" }
+              }
+            }
+          },
+          "404": { "description": "Tree reference not found." },
+          "422": { "description": "Tree too large to return (would only happen if the repo grew enormously)." }
+        }
+      }
+    },
+    "/repos/pnp/copilot-pro-dev-samples/contents/samples": {
+      "get": {
+        "operationId": "listSamples",
+        "summary": "List every top-level sample folder under `samples/` in pnp/copilot-pro-dev-samples.",
+        "description": "Returns an array of directory entries for the top-level `samples/` folder. Use this as a sanity check or fallback when the structured `samples.json` registry might be stale or missing a brand-new sample. Each entry's `name` is the sample folder name (e.g., `da-ristorante-api-csharp`, `da-pnp-samples-guide`).",
+        "responses": {
+          "200": {
+            "description": "Array of sample folder directory entries.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/DirectoryEntry" }
+                }
+              }
+            }
+          },
+          "404": { "description": "Samples folder not found." }
+        }
+      }
+    },
+    "/search/repositories": {
+      "get": {
+        "operationId": "searchRepositories",
+        "summary": "Search public repositories on GitHub.",
+        "description": "Search public repositories on GitHub. Use ONLY for cross-repo discovery ('what other PnP repos exist for X', 'find Microsoft 365 Copilot repos by topic'). Do NOT use for in-repo sample discovery — call `getSamplesRegistry` for that. Anonymous limit: ~10 requests/minute.",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "description": "Search query. Example: `topic:m365-copilot user:pnp`.",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["stars", "forks", "help-wanted-issues", "updated"]
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["asc", "desc"],
+              "default": "desc"
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "default": 10, "maximum": 30 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Search results.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/RepositorySearchResult" }
+              }
+            }
+          },
+          "403": { "$ref": "#/components/responses/RateLimited" }
+        }
+      }
+    },
+    "/repos/{owner}/{repo}": {
+      "get": {
+        "operationId": "getRepo",
+        "summary": "Get a repository's metadata.",
+        "description": "Returns metadata about a public repository (description, stars, default branch, license, topics, etc.). Typical use: owner=`pnp`, repo=`copilot-pro-dev-samples`.",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "repo",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Repository metadata.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Repository" }
+              }
+            }
+          },
+          "404": { "description": "Repository not found." }
+        }
+      }
+    },
+    "/repos/{owner}/{repo}/contents/{path}": {
+      "get": {
+        "operationId": "getRepoContent",
+        "summary": "Get the contents of a file or directory in a public repo.",
+        "description": "Returns the contents of a file (base64-encoded) or directory listing. Use this AFTER `getSamplesRegistry` has identified a specific sample, to read that sample's `README.md`, `declarativeAgent.json`, or `ai-plugin.json`. For text files, decode the base64 `content` field. For directories, the response is a JSON array of entries. Typical use: owner=`pnp`, repo=`copilot-pro-dev-samples`, path=`samples/<Folder>/README.md`.",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "repo",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "path",
+            "in": "path",
+            "required": true,
+            "description": "Path inside the repo (e.g., `samples/da-ristorante-api-csharp/README.md`).",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File or directory contents.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    { "$ref": "#/components/schemas/FileContent" },
+                    {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/DirectoryEntry" }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": { "description": "Path not found." }
+        }
+      }
+    },
+    "/repos/{owner}/{repo}/readme": {
+      "get": {
+        "operationId": "getRepoReadme",
+        "summary": "Get a repository's top-level README.",
+        "description": "Returns the top-level README of a public repository as a file content object (base64-encoded). Decode `content` to read the markdown. Use for repo-level overview, not for individual sample READMEs (call `getRepoContent` for those).",
+        "parameters": [
+          {
+            "name": "owner",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "repo",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "README contents.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/FileContent" }
+              }
+            }
+          },
+          "404": { "description": "README not found." }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "RateLimited": {
+        "description": "Rate limit exceeded. Anonymous overall limit is ~60 req/hour per IP; the Search API additionally caps unauthenticated calls at ~10 req/minute."
+      }
+    },
+    "schemas": {
+      "Repository": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "name": { "type": "string" },
+          "full_name": { "type": "string" },
+          "html_url": { "type": "string", "format": "uri" },
+          "description": { "type": "string", "nullable": true },
+          "stargazers_count": { "type": "integer" },
+          "forks_count": { "type": "integer" },
+          "default_branch": { "type": "string" },
+          "topics": { "type": "array", "items": { "type": "string" } },
+          "updated_at": { "type": "string", "format": "date-time" }
+        }
+      },
+      "RepositorySearchResult": {
+        "type": "object",
+        "properties": {
+          "total_count": { "type": "integer" },
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Repository" }
+          }
+        }
+      },
+      "FileContent": {
+        "type": "object",
+        "description": "Standard GitHub contents-API response for a single file.",
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "sha": { "type": "string" },
+          "size": { "type": "integer" },
+          "html_url": { "type": "string", "format": "uri" },
+          "download_url": { "type": "string", "format": "uri", "nullable": true },
+          "type": { "type": "string", "enum": ["file"] },
+          "encoding": { "type": "string", "example": "base64" },
+          "content": {
+            "type": "string",
+            "description": "Base64-encoded file content. Decode before parsing or display."
+          }
+        }
+      },
+      "DirectoryEntry": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "type": { "type": "string", "enum": ["file", "dir", "symlink", "submodule"] },
+          "size": { "type": "integer" },
+          "html_url": { "type": "string", "format": "uri" },
+          "download_url": { "type": "string", "format": "uri", "nullable": true }
+        }
+      },
+      "GitTree": {
+        "type": "object",
+        "description": "GitHub Git Tree response. The full recursive tree for pnp/copilot-pro-dev-samples currently fits in one call (`truncated: false`).",
+        "properties": {
+          "sha": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "truncated": {
+            "type": "boolean",
+            "description": "True only when GitHub had to truncate the result. Currently false for pnp/copilot-pro-dev-samples."
+          },
+          "tree": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/GitTreeEntry" }
+          }
+        }
+      },
+      "GitTreeEntry": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Full path from repo root, e.g. `samples/da-pnp-samples-guide/M365Agent/appPackage/ai-plugin.json`."
+          },
+          "mode": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["blob", "tree", "commit"],
+            "description": "`blob` = file, `tree` = directory, `commit` = submodule."
+          },
+          "sha": { "type": "string" },
+          "size": {
+            "type": "integer",
+            "description": "Size in bytes (present on `blob` entries only)."
+          },
+          "url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  }
+}
