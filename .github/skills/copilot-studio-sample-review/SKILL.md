@@ -30,7 +30,7 @@ Use when a request asks to review an `mcs-*` sample PR (e.g., "review PR" or "re
 
 ### 3. README and template alignment
 
-- README is based on `/templates/mcs-copilot-studio/README-template.md`
+- README is based on `/templates/mcs-copilot-studio/README.md`
 - Setup steps include one of the supported contributor flows:
   - Solution export via Power Platform CLI (`pac solution clone`)
   - Copilot Studio Visual Studio Code clone method

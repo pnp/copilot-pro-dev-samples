@@ -33,7 +33,7 @@ Fetch latest versions from Microsoft Learn docs (never use other samples as refe
 
 ### 3. README.md
 
-Compare against `templates/README-template.md`:
+Compare against `templates/da-declarative-agent/README.md`:
 
 - **Contributors section** present with actual author names
 - **Version history** lists real author (not "Microsoft")
