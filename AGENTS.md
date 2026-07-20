@@ -17,7 +17,7 @@ Prefix the folder name based on sample type:
 |--------|------|
 | `da-` | Declarative agent |
 | `cea-` | Custom engine agent (Azure Bot Framework) |
-| `msgext-` | Microsoft 365 message extension |
+| `cext-` | Copilot extension (deprecated) |
 | `mcs-` | Microsoft Copilot Studio agent |
 
 Rules: lowercase, hyphens only, no periods.
