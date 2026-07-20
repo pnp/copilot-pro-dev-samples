@@ -25,9 +25,9 @@ Rules: lowercase, hyphens only, no periods.
 ## Required files
 | File | Notes |
 |------|-------|
-| `assets/sample.json` | Rename and complete `assets/template-sample.json` from the project template when one is available |
-| `assets/<screenshot>` | Replace `assets/pending-image.png` with at least one `.png`, `.jpg`, or `.gif` showing the sample in action |
-| `README.md` | Rename and complete `README-template.md` from the project template when one is available; otherwise follow `CONTRIBUTING.md` |
+| `assets/sample.json` | Complete `assets/sample.json` from the project template when one is available |
+| `assets/<screenshot>` | Replace the contents of `assets/image.png` with a screenshot showing the sample in action, or add another `.png`, `.jpg`, or `.gif` and remove the placeholder image |
+| `README.md` | Complete `README.md` from the project template when one is available; otherwise follow `CONTRIBUTING.md` |
 | `.gitignore` | Appropriate for toolchain |
 | `.env.*.sample` | Redacted copies of all env files |
 
@@ -35,9 +35,9 @@ Rules: lowercase, hyphens only, no periods.
 For sample types with a project template:
 
 1. Copy the entire template directory to `samples/<sample-folder>`.
-2. Rename `README-template.md` to `README.md`.
-3. Rename `assets/template-sample.json` to `assets/sample.json`.
-4. Replace `assets/pending-image.png` with a screenshot of the sample in action.
+2. Complete `README.md`.
+3. Complete `assets/sample.json`.
+4. Replace the contents of `assets/image.png` with a screenshot of the sample in action, or add another screenshot and remove the placeholder image.
 5. Replace every `YOUR_*`, `YOUR-*`, and `YYYY-MM-DD` placeholder in `README.md` and `assets/sample.json`.
 6. Remove the optional video entry from `assets/sample.json` when the sample has no video.
 7. Remove contributor instructions and files that do not apply, but preserve comments marked as reserved for repository maintainers.
@@ -78,7 +78,7 @@ Replace `<sample-folder-name>` with the name of your sample folder under `sample
 - Include `additionalMetadata` with the correct `sampleTag` in `m365agents.yml`
 - DO NOT include `projectId` in `m365agents.yml`
 - DO NOT commit secrets, API keys, tenant IDs, or app IDs
-- DO NOT leave template placeholders or `pending-image.png` in a submitted sample
+- DO NOT leave template placeholders or the placeholder image in a submitted sample
 - DO NOT reference assets from external URLs — all assets in `assets/`
 - DO NOT modify files outside the new sample folder
 - DO NOT submit more than one sample per pull request
@@ -89,7 +89,7 @@ Replace `<sample-folder-name>` with the name of your sample folder under `sample
 - [ ] Sample in `/samples/<prefix>-<folder>/`
 - [ ] Sample added to the table in root `README.md`
 - [ ] Uses the project template when one is available and includes a complete `README.md` and `assets/sample.json`
-- [ ] No unresolved template placeholders or `pending-image.png`
+- [ ] No unresolved template placeholders or placeholder image
 - [ ] All schema versions target latest (see links above)
 - [ ] No `projectId` in `m365agents.yml`
 - [ ] `additionalMetadata.sampleTag` set in `m365agents.yml` (format: `pnp-copilot-pro-dev:<sample-folder-name>`)

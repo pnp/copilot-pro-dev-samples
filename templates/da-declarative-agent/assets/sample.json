@@ -12,25 +12,16 @@
     "creationDateTime": "YYYY-MM-DD",
     "updateDateTime": "YYYY-MM-DD",
     "products": [
-      "Microsoft 365 Copilot",
-      "Microsoft Copilot Studio"
+      "Microsoft 365 Copilot"
     ],
     "metadata": [
       {
         "key": "PLATFORM",
-        "value": "Copilot Studio"
+        "value": "YOUR-PLATFORM"
       },
       {
         "key": "LANGUAGE",
-        "value": "None"
-      },
-      {
-        "key": "API-PLUGIN",
-        "value": "No"
-      },
-      {
-        "key": "GRAPH-CONNECTOR",
-        "value": "No"
+        "value": "YOUR-LANGUAGE"
       }
     ],
     "thumbnails": [
@@ -59,11 +50,6 @@
         "name": "Microsoft 365 Copilot extensibility",
         "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
         "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
-      },
-      {
-        "name": "Microsoft Copilot Studio",
-        "description": "Discover how to build AI-driven agents and workflows easily with Microsoft Copilot Studio with online training courses, docs, and videos. Learn how to quickly and simply integrate chat into your website.",
-        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
       }
     ]
   }

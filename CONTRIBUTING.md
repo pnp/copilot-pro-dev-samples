@@ -102,14 +102,14 @@ For other sample types, use a high-quality existing sample of the same type as a
 When using a project template:
 
 1. Copy the entire template directory to the `samples` directory and rename it using the appropriate sample prefix.
-2. Rename `README-template.md` to `README.md`.
-3. Rename `assets/template-sample.json` to `assets/sample.json`.
-4. Replace `assets/pending-image.png` with at least one screenshot of the sample in action.
+2. Complete `README.md`.
+3. Complete `assets/sample.json`.
+4. Replace the contents of `assets/image.png` with a screenshot of the sample in action, or add another screenshot and remove the placeholder image.
 5. Replace all placeholder values in `README.md` and `assets/sample.json`, including values beginning with `YOUR_` or `YOUR-` and dates shown as `YYYY-MM-DD`.
 6. If the sample does not have a video, remove the optional video entry from `assets/sample.json`; otherwise replace `YOUR-YOUTUBE-VIDEO-ID` and its alternative text.
 7. Delete contributor instructions and files that do not apply, but preserve comments marked as reserved for repository maintainers.
 
-Do not submit unresolved placeholder values or `pending-image.png`. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
+Do not submit unresolved placeholder values or the placeholder image. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 
 Each README.md file must contain detailed build and use instructions.
 
@@ -240,12 +240,10 @@ That's it, proceed to Finalizing the sample
 
 **Updating the Readme.md file**
 
-- Rename the file from ```README-template.md``` to ```README.md```
 - Read and complete the commented out sections within README file.
 
 **Updating the assets/sample.json file**
 
-- Rename the file from ```template-sample.json``` to ```sample.json``` 
 - Complete the sections within the sample.json file. Tip: there are tokens such as ```YOUR_AGENT_FOLDER``` that will help you complete this quicker.
 
 
