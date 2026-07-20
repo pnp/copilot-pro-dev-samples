@@ -4,7 +4,7 @@
 
 This sample project demonstrates an implementation of an M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents using C# and Azure Functions (.NET 8 isolated worker).
 
-| ![CopilotSnowWizard Screenshot 1](../assets/2024-10-11_16-29.png) | ![CopilotSnowWizard Screenshot 1](../assets/2024-10-11_16-39.png) | ![CopilotSnowWizard Screenshot 1](../assets/2024-10-11_16-40.png) |
+| ![CopilotSnowWizard Screenshot 1](./assets/2024-10-11_16-29.png) | ![CopilotSnowWizard Screenshot 1](./assets/2024-10-11_16-39.png) | ![CopilotSnowWizard Screenshot 1](./assets/2024-10-11_16-40.png) |
 |:-------------------------------------------------------------:|:-------------------------------------------------------------:|:-------------------------------------------------------------:|
 
 
