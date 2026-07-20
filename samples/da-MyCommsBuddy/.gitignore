@@ -7,6 +7,15 @@ appPackage/build
 # dependencies
 node_modules/
 
+# .NET build and Visual Studio files
+bin/
+obj/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
 # misc
 .env
 .deployment

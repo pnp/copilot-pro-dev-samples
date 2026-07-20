@@ -1,0 +1,8 @@
+# .NET build and Visual Studio files
+bin/
+obj/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
