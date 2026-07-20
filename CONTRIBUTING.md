@@ -43,10 +43,10 @@ When you submit a new sample, please follow these guidelines:
 
 ### README.md
 
-* You will need to have a `README.md` file for your contribution, which is based on [the provided template](templates/README-template.md) under the `samples` folder. Please copy this template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
+* You will need to have a `README.md` file for your contribution. Use a project-specific template when one is available, or follow the required structure below. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 * You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). The preview image must be located in the `assets` folder in the root of your sample folder.
   * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
-* The README template contains a specific tracking image at the end of the file with an `img` element pointing to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
+* Each README must contain the tracking image used to measure sample visits. Add `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>` at the end of the file and replace the placeholder with the sample folder name.
 * Update the image `src` attribute according with the folder information replacing ```<your-sample-folder>``` placeholder. For example, if your sample is named `da-my-agent` in the `samples` folder, you should update the `src` attribute to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-my-agent` as an example.
 * If you find an existing sample which is similar to yours, please extend the existing one rather than submitting a new similar sample
   * When you update existing samples, please update also `README.md` file accordingly with information on provided changes and with your author details
@@ -89,17 +89,27 @@ Each sample should be in its own folder within the /samples directory. Your fold
 
 ### 2. README.md file
 
-Your sample folder should contain a `README.md` file for your contribution. Please base your `README.md` file on one of the following templates:
+Declarative-agent, custom-engine-agent, and Copilot Studio samples have dedicated project templates:
 
-| If your sample is | use this template |
+| If your sample is | use this template directory |
 | --- | --- |
-| a Declarative agent | [README-template.md](/templates/da-declarative-agent/README-template.md) |
-| a Copilot Studio agent | [README-template.md](/templates/mcs-copilot-studio/README-template.md) |
-| built with Microsoft 365 Agents Toolkit for VS Code | [README.md](/templates/ttk-vs-code-sample/README.md) |
-| built with Microsoft 365 Agents Toolkit for Visual Studio | [README.md](/templates/ttk-vs-sample/README.md) |
-| something else | [README.md](/templates/any-sample/README.md) |
+| a Declarative agent | [templates/da-declarative-agent](/templates/da-declarative-agent) |
+| a Custom engine agent | [templates/cea-custom-engine-agent](/templates/cea-custom-engine-agent) |
+| a Copilot Studio agent | [templates/mcs-copilot-studio](/templates/mcs-copilot-studio) |
 
-Please copy the template to your project and update it accordingly. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
+For other sample types, use a high-quality existing sample of the same type as a guide. Include, at minimum, a summary, screenshot, contributors, version history, prerequisites, complete setup and usage instructions, features, help information, disclaimer, and the repository telemetry image.
+
+When using a project template:
+
+1. Copy the entire template directory to the `samples` directory and rename it using the appropriate sample prefix.
+2. Rename `README-template.md` to `README.md`.
+3. Rename `assets/template-sample.json` to `assets/sample.json`.
+4. Replace `assets/pending-image.png` with at least one screenshot of the sample in action.
+5. Replace all placeholder values in `README.md` and `assets/sample.json`, including values beginning with `YOUR_` or `YOUR-` and dates shown as `YYYY-MM-DD`.
+6. If the sample does not have a video, remove the optional video entry from `assets/sample.json`; otherwise replace `YOUR-YOUTUBE-VIDEO-ID` and its alternative text.
+7. Delete contributor instructions and files that do not apply, but preserve comments marked as reserved for repository maintainers.
+
+Do not submit unresolved placeholder values or `pending-image.png`. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 
 Each README.md file must contain detailed build and use instructions.
 
@@ -107,14 +117,9 @@ Each README.md file must contain detailed build and use instructions.
 
 The [.gitignore](https://git-scm.com/docs/gitignore) file controls which files are ignored, to prevent checking in files that are part of packages and other files generated at build time.
 
-Since the samples are built with a variety of toolchains, it is not possible to have a global .gitignore file that will work with all of them. So please be sure to include a .gitignore file in your sample folder that will ignore anything that will be downloaded or created locally when building  your solution.
+Since the samples are built with a variety of toolchains, it is not possible to have a global `.gitignore` file that will work with all of them. Include an appropriate `.gitignore` file in your sample folder that excludes downloaded dependencies, build output, local settings, and secrets.
 
-| If your sample is | sample gitignore |
-| --- | --- |
-| built with Teams Toolkit | no sample needed - file is generated by Teams Toolkit |
-| a Web service based on .NET | [.gitignore](/templates/dotnet-sample/.gitignore) |
-| a Web service based on nodeJS | [.gitignore](/templates/node-sample/.gitignore) |
-| something else | You may find [these samples](https://github.com/github/gitignore) to be helpful |
+Microsoft 365 Agents Toolkit generates a `.gitignore` file for its projects. For other toolchains, use the generated file when available or start from the maintained [GitHub `.gitignore` templates](https://github.com/github/gitignore).
 
 This is also a good time to check to make sure you have removed any secrets or tenant-specific settings from your sample such as application IDs and secrets.
 
@@ -122,7 +127,7 @@ This is also a good time to check to make sure you have removed any secrets or t
 
 Environment variables are often stored in files such as **.env**, **.env.local**, or **appSettings.json**. If they aren't already, consider adding these files to your .gitignore and providing sample files instead.
 
-> Special note for projects using [Teams Toolkit for Visual Studio Code](https://aka.ms/teams-toolkit): The .gitignore file generated by Teams Toolkit does not exclude the dev environment file (**env\.env.dev**) to facilitate sharing dev settings among a team. For your sample please  make sure you don't check your tenant-specific settings in, and be aware they may have been put there during provisioning by Teams Toolkit. Feel free to add this file to .gitignore.
+> Special note for projects using [Microsoft 365 Agents Toolkit for Visual Studio Code](https://aka.ms/m365atk): The `.gitignore` file generated by Microsoft 365 Agents Toolkit does not exclude the dev environment file (`env/.env.dev`) to facilitate sharing dev settings among a team. For your sample, make sure you don't check in tenant-specific settings, and be aware they may have been added during provisioning. Feel free to add this file to `.gitignore`.
 
 It's a good idea to provide sample files so people know what's required to run your solution. For example you might provide an **.env.local.sample** file like this:
 
@@ -147,7 +152,7 @@ The instructions would tell developers to copy the **.env.local.sample** to a ne
 
 Notice that:
 
- * Values generated by Teams Toolkit, such as BOT_ID, are blank. Teams Toolkit will generate new values and fill them in during provisioning.
+ * Values generated by Microsoft 365 Agents Toolkit, such as BOT_ID, are blank. Microsoft 365 Agents Toolkit will generate new values and fill them in during provisioning.
  * Values that are likely to work for all developers are filled in, and
  * Values to be provided manually by each developer are shown with the details removed to convey the format while not revealing the sample author's personal settings.
 

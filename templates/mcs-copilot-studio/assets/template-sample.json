@@ -7,10 +7,10 @@
     "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR_AGENT_FOLDER",
     "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR_AGENT_FOLDER",
     "longDescription": [
-      "YOUR-SHORT-DESCRIPTION"
+      "YOUR-LONG-DESCRIPTION"
     ],
-    "creationDateTime": "2026-02-14",
-    "updateDateTime": "2026-02-14",
+    "creationDateTime": "YYYY-MM-DD",
+    "updateDateTime": "YYYY-MM-DD",
     "products": [
       "Microsoft 365 Copilot",
       "Microsoft Copilot Studio"
@@ -38,13 +38,13 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/YOUR_AGENT_FOLDER/assets/YOUR-IMAGE-NAME-HERE",
-        "alt": "Copilot Studio agent doing x"
+        "alt": "YOUR-IMAGE-ALT-TEXT"
       },
       {
         "type": "video",
         "order": 101,
-        "url": "https://www.youtube.com/embed/FS-_0KENJkI",
-        "alt": "Copilot Studio agent doing x"
+        "url": "https://www.youtube.com/embed/YOUR-YOUTUBE-VIDEO-ID",
+        "alt": "YOUR-VIDEO-ALT-TEXT"
       }
     ],
     "authors": [

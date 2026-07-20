@@ -22,14 +22,6 @@
       {
         "key": "LANGUAGE",
         "value": "YOUR-LANGUAGE"
-      },
-      {
-        "key": "API-PLUGIN",
-        "value": "YOUR-API-PLUGIN-VALUE"
-      },
-      {
-        "key": "GRAPH-CONNECTOR",
-        "value": "YOUR-GRAPH-CONNECTOR-VALUE"
       }
     ],
     "thumbnails": [
@@ -37,13 +29,13 @@
         "type": "image",
         "order": 100,
         "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/YOUR_AGENT_FOLDER/assets/YOUR-IMAGE-NAME-HERE",
-        "alt": "YOUR-IMAGE-ALT-TEXT"
+        "alt": "Custom engine agent doing x"
       },
       {
         "type": "video",
         "order": 101,
         "url": "https://www.youtube.com/embed/YOUR-YOUTUBE-VIDEO-ID",
-        "alt": "YOUR-VIDEO-ALT-TEXT"
+        "alt": "Copilot Studio agent doing x"
       }
     ],
     "authors": [
@@ -55,9 +47,14 @@
     ],
     "references": [
       {
-        "name": "Microsoft 365 Copilot extensibility",
-        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
-        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+        "name": "Custom engine agents for Microsoft 365 Copilot",
+        "description": "Learn about custom engine agents for Microsoft 365 Copilot.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-custom-engine-agent"
+      },
+      {
+        "name": "Microsoft 365 Agents SDK",
+        "description": "Learn how to build custom engine agents with Microsoft 365 Agents SDK.",
+        "url": "https://learn.microsoft.com/microsoft-365/agents-sdk/"
       }
     ]
   }
