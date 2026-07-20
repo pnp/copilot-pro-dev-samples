@@ -9,8 +9,7 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for full human-oriented guidance.
 | Path | Purpose |
 |------|---------|
 | `samples/` | One subfolder per sample |
-| `samples/_SAMPLE_templates/` | Templates — copy, do not edit |
-| `templates/` | Supporting templates |
+| `templates/` | Sample submission templates — copy, do not edit |
 
 ## Sample folder naming
 Prefix the folder name based on sample type:
@@ -18,6 +17,8 @@ Prefix the folder name based on sample type:
 |--------|------|
 | `da-` | Declarative agent |
 | `cea-` | Custom engine agent (Azure Bot Framework) |
+| `msgext-` | Microsoft 365 message extension |
+| `mcs-` | Microsoft Copilot Studio agent |
 
 Rules: lowercase, hyphens only, no periods.
 
@@ -79,12 +80,26 @@ Rules: lowercase, hyphens only, no periods.
 ]
 ```
 
-## README template selection
+## Project type rules
+Detect the project type from its sample folder prefix before selecting a template or validating its contents.
+
+| Prefix | README template | Additional requirements |
+|--------|-----------------|-------------------------|
+| `da-` | `templates/da-declarative-agent/README-template.md` | Include a Teams/M365 app package containing `manifest.json` and a declarative agent manifest. |
+| `cea-` | Select by toolchain below | Include the agent source and a Teams/M365 app package containing `manifest.json`. |
+| `msgext-` | Select by toolchain below | Include the message extension source and a Teams/M365 app package containing `manifest.json`. |
+| `mcs-` | `templates/mcs-copilot-studio/README-template.md` | Include exported or cloned Copilot Studio source in `src/`. |
+
+All project types must include `assets/sample.json`, at least one screenshot in `assets/`, and a completed `README.md` based on the selected template.
+
+### Toolchain template selection
+Use this table only when the project type table says to select by toolchain.
+
 | Toolchain | Template |
 |-----------|----------|
-| Teams Toolkit for VS Code | `samples/_SAMPLE_templates/ttk-vs-code-sample/README.md` |
-| Teams Toolkit for Visual Studio | `samples/_SAMPLE_templates/ttk-vs-sample/README.md` |
-| Other | `samples/_SAMPLE_templates/any-sample/README.md` |
+| Microsoft 365 Agents Toolkit for VS Code | `templates/ttk-vs-code-sample/README.md` |
+| Microsoft 365 Agents Toolkit for Visual Studio | `templates/ttk-vs-sample/README.md` |
+| Other | `templates/any-sample/README.md` |
 
 ## Schema versions
 Always use the latest published schema version. Use the links below to identify the current latest — the version number is in the URL and can be incremented to find newer versions.

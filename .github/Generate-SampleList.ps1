@@ -114,14 +114,7 @@ process {
         Write-Host "Processing $($_.Directory.Name)"
 
         # Skip these
-        if ($_.Directory.Name -eq "scripts" -or
-            $_.Directory.Name -eq "_SAMPLE_templates" -or
-            $_.Directory.Name -eq "any-sample" -or
-            $_.Directory.Name -eq "dotnet-sample" -or
-            $_.Directory.Name -eq "node-sample" -or
-            $_.Directory.Name -eq "ttk-vs-code-sample" -or
-            $_.Directory.Name -eq "ttk-vs-sample" -or
-            $_.Directory.Name -eq "yoteams-sample") {
+        if ($_.Directory.Name -eq "scripts") {
             return
         }
 
