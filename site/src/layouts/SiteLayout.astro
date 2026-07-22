@@ -42,7 +42,10 @@ const documentTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}
   <body>
     <header class="sticky top-0 z-30 border-b border-white/10 bg-ink-950/70 backdrop-blur-lg">
       <div class="mx-auto flex h-20 w-full max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
-        <a class="text-lg font-bold tracking-wide text-white" href="/">Copilot <span class="text-sky-300">Pro Dev Samples</span></a>
+        <a class="inline-flex items-center gap-3 text-lg font-bold tracking-wide text-white" href="/">
+          <img src="/pnp-copilot-samples-badge.svg" alt="PnP Copilot Samples" class="h-12 w-auto" />
+          <span>Copilot <span class="text-sky-300">Pro Dev Samples</span></span>
+        </a>
         <nav class="flex items-center gap-2 md:gap-3">
           {navItems.map((item) => {
             const isCurrent = currentPath === item.href;
