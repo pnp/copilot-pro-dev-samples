@@ -208,33 +208,40 @@
 
   .sample-type-pill {
     @apply inline-flex h-9 w-52 items-center justify-center overflow-hidden rounded-full px-3 text-center text-xs font-semibold uppercase tracking-wide whitespace-nowrap;
-    background-color: #233f96;
+    --sample-pill-base: #233f96;
+    --sample-pill-corner: #1a2f71;
+    background: radial-gradient(circle at top left, var(--sample-pill-base) 0%, var(--sample-pill-corner) 100%);
     border: 1px solid rgb(255 255 255 / 25%);
     color: #f8fafc;
   }
 
   .sample-type-pill[data-sample-type="Declarative Agent"] {
-    background-color: #63be61;
+    --sample-pill-base: #63be61;
+    --sample-pill-corner: #4a8f49;
     color: #f8fafc;
   }
 
   .sample-type-pill[data-sample-type="Copilot Extension"] {
-    background-color: #f36c58;
+    --sample-pill-base: #f36c58;
+    --sample-pill-corner: #b65142;
     color: #fef2f2;
   }
 
   .sample-type-pill[data-sample-type="Custom Engine Agent"] {
-    background-color: #2a4fcf;
+    --sample-pill-base: #2a4fcf;
+    --sample-pill-corner: #203b9b;
     color: #eff6ff;
   }
 
   .sample-type-pill[data-sample-type="Copilot Studio"] {
-    background-color: #a95bd8;
+    --sample-pill-base: #a95bd8;
+    --sample-pill-corner: #7f44a2;
     color: #f5f3ff;
   }
 
   .sample-type-pill[data-sample-type="MCP"] {
-    background-color: #2da1e3;
+    --sample-pill-base: #2da1e3;
+    --sample-pill-corner: #2279aa;
     color: #f9fafb;
   }
 }
