@@ -42,10 +42,24 @@
 
   body {
     margin: 0;
+    position: relative;
+    isolation: isolate;
     font-family: var(--font-sans);
     color: var(--text-primary);
-    background: var(--page-bg);
+    background: #040b18;
     min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 80% -20%, rgb(63 224 255 / 18%), transparent 40%),
+      radial-gradient(circle at 15% 10%, rgb(129 239 182 / 14%), transparent 42%),
+      linear-gradient(180deg, #040b18 0%, #09152a 45%, #040b18 100%);
   }
 
   h1,
