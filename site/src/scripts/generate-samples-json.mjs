@@ -35,6 +35,8 @@ async function generateSamplesJson() {
   const samples = await Promise.all(
     folders.map(async (folder) => {
       const sampleJsonPath = path.join(samplesRoot, folder, "assets", "sample.json");
+      const readmePath = path.join(samplesRoot, folder, "README.md");
+      const readmeLowerPath = path.join(samplesRoot, folder, "readme.md");
       let title = folder;
       let description = fallbackDescription;
       let updatedAt = null;
@@ -42,6 +44,7 @@ async function generateSamplesJson() {
       let metadata = [];
       let imageUrl = null;
       let imageAlt = "";
+      let readmeContent = "";
 
       try {
         const raw = await readFile(sampleJsonPath, "utf8");
@@ -73,6 +76,16 @@ async function generateSamplesJson() {
         // Keep fallback metadata for samples missing or failing to parse sample.json.
       }
 
+      try {
+        readmeContent = await readFile(readmePath, "utf8");
+      } catch {
+        try {
+          readmeContent = await readFile(readmeLowerPath, "utf8");
+        } catch {
+          // README is optional for rendering details. Keep empty fallback.
+        }
+      }
+
       const typeKey = folder.split("-")[0] || "other";
       const type = typeLabels[typeKey] || "Other";
 
@@ -87,6 +100,7 @@ async function generateSamplesJson() {
         metadata,
         imageUrl,
         imageAlt,
+        readmeContent,
       };
     })
   );

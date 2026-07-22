@@ -106,6 +106,82 @@
     color: var(--accent-text-soft);
   }
 
+  .readme-content :where(h1, h2, h3, h4, h5, h6) {
+    @apply mt-6 mb-3 font-bold text-white;
+  }
+
+  .readme-content h1 {
+    @apply text-2xl;
+  }
+
+  .readme-content h2 {
+    @apply text-xl;
+  }
+
+  .readme-content h3 {
+    @apply text-lg;
+  }
+
+  .readme-content p {
+    @apply my-3 text-slate-200;
+  }
+
+  .readme-content a {
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .readme-content a:hover {
+    color: var(--accent-hover);
+  }
+
+  .readme-content ul,
+  .readme-content ol {
+    @apply my-3 pl-6 text-slate-200;
+  }
+
+  .readme-content ul {
+    list-style-type: disc;
+  }
+
+  .readme-content ol {
+    list-style-type: decimal;
+  }
+
+  .readme-content li {
+    @apply my-1;
+  }
+
+  .readme-content code {
+    @apply rounded bg-white/10 px-1.5 py-0.5 text-slate-100;
+  }
+
+  .readme-content pre {
+    @apply my-4 overflow-x-auto rounded-xl border border-white/10 bg-ink-950/75 p-4 text-slate-100;
+  }
+
+  .readme-content pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .readme-content blockquote {
+    @apply my-4 border-l-4 border-white/20 pl-4 italic text-slate-300;
+  }
+
+  .readme-content table {
+    @apply my-4 w-full border-collapse text-sm;
+  }
+
+  .readme-content th,
+  .readme-content td {
+    @apply border border-white/15 px-3 py-2 text-left;
+  }
+
+  .readme-content th {
+    @apply bg-white/5 font-semibold text-white;
+  }
+
   .sample-type-pill {
     @apply inline-flex h-9 w-52 items-center justify-center overflow-hidden rounded-full px-3 text-center text-xs font-semibold uppercase tracking-wide whitespace-nowrap;
     background: linear-gradient(90deg, var(--badge-from), var(--badge-to));

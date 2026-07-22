@@ -12,6 +12,7 @@ export type SampleEntry = {
   metadata: Array<{ key: string; value: string }>;
   imageUrl: string | null;
   imageAlt: string;
+  readmeContent: string;
 };
 
 export type SampleStats = {
@@ -83,6 +84,7 @@ export async function getSamples(): Promise<SampleEntry[]> {
           : [],
         imageUrl: typeof item.imageUrl === "string" && item.imageUrl.trim().length > 0 ? item.imageUrl : null,
         imageAlt: typeof item.imageAlt === "string" ? item.imageAlt : "",
+        readmeContent: typeof item.readmeContent === "string" ? item.readmeContent : "",
       };
     });
   } catch {
