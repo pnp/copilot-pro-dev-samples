@@ -106,6 +106,18 @@ export function getLatestSamples(samples: SampleEntry[], months: number, now = n
     });
 }
 
+export function getRecentSamples(samples: SampleEntry[], count: number): SampleEntry[] {
+  const safeCount = Number.isFinite(count) && count > 0 ? Math.floor(count) : 1;
+
+  return [...samples]
+    .sort((a, b) => {
+      const aTime = a.updatedAt?.getTime() ?? 0;
+      const bTime = b.updatedAt?.getTime() ?? 0;
+      return bTime - aTime;
+    })
+    .slice(0, safeCount);
+}
+
 export function getSampleStats(samples: SampleEntry[]): SampleStats {
   const byType = samples.reduce<Record<string, number>>((acc, sample) => {
     acc[sample.type] = (acc[sample.type] || 0) + 1;

@@ -1,11 +1,11 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import LatestSamples from "../components/LatestSamples.astro";
-import { getLatestSamples, getSamples, getSampleStats } from "../lib/samples";
+import { getRecentSamples, getSamples, getSampleStats } from "../lib/samples";
 
 const samples = await getSamples();
-const latestSamplesWindowMonths = 1;
-const latestSamples = getLatestSamples(samples, latestSamplesWindowMonths);
+const latestSamplesCount = 3;
+const latestSamples = getRecentSamples(samples, latestSamplesCount);
 const { total, byType } = getSampleStats(samples);
 const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
 ---
@@ -44,6 +44,6 @@ const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
   </section>
 
   <section class="mt-10">
-    <LatestSamples samples={latestSamples} months={latestSamplesWindowMonths} />
+    <LatestSamples samples={latestSamples} count={latestSamplesCount} />
   </section>
 </SiteLayout>
