@@ -38,6 +38,10 @@ async function generateSamplesJson() {
       let title = folder;
       let description = fallbackDescription;
       let updatedAt = null;
+      let longDescription = [];
+      let metadata = [];
+      let imageUrl = null;
+      let imageAlt = "";
 
       try {
         const raw = await readFile(sampleJsonPath, "utf8");
@@ -46,6 +50,24 @@ async function generateSamplesJson() {
           title = parsed[0].title || parsed[0].name || title;
           description = parsed[0].shortDescription || description;
           updatedAt = parseDate(parsed[0].updateDateTime) || parseDate(parsed[0].creationDateTime);
+
+          if (Array.isArray(parsed[0].longDescription)) {
+            longDescription = parsed[0].longDescription.filter((line) => typeof line === "string" && line.trim().length > 0);
+          }
+
+          if (Array.isArray(parsed[0].metadata)) {
+            metadata = parsed[0].metadata
+              .filter((item) => item && typeof item.key === "string" && typeof item.value === "string")
+              .map((item) => ({ key: item.key, value: item.value }));
+          }
+
+          if (Array.isArray(parsed[0].thumbnails)) {
+            const imageThumb = parsed[0].thumbnails.find((item) => item && item.type === "image" && typeof item.url === "string");
+            if (imageThumb) {
+              imageUrl = imageThumb.url;
+              imageAlt = typeof imageThumb.alt === "string" ? imageThumb.alt : "";
+            }
+          }
         }
       } catch {
         // Keep fallback metadata for samples missing or failing to parse sample.json.
@@ -61,6 +83,10 @@ async function generateSamplesJson() {
         type,
         href: `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/${folder}`,
         updatedAt,
+        longDescription,
+        metadata,
+        imageUrl,
+        imageAlt,
       };
     })
   );

@@ -8,6 +8,10 @@ export type SampleEntry = {
   type: string;
   href: string;
   updatedAt: Date | null;
+  longDescription: string[];
+  metadata: Array<{ key: string; value: string }>;
+  imageUrl: string | null;
+  imageAlt: string;
 };
 
 export type SampleStats = {
@@ -68,6 +72,17 @@ export async function getSamples(): Promise<SampleEntry[]> {
             ? item.href
             : `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/${folder}`,
         updatedAt: parseDate(item.updatedAt),
+        longDescription: Array.isArray(item.longDescription)
+          ? item.longDescription.filter((line): line is string => typeof line === "string" && line.trim().length > 0)
+          : [],
+        metadata: Array.isArray(item.metadata)
+          ? item.metadata.filter(
+              (entry): entry is { key: string; value: string } =>
+                !!entry && typeof entry.key === "string" && typeof entry.value === "string"
+            )
+          : [],
+        imageUrl: typeof item.imageUrl === "string" && item.imageUrl.trim().length > 0 ? item.imageUrl : null,
+        imageAlt: typeof item.imageAlt === "string" ? item.imageAlt : "",
       };
     });
   } catch {
