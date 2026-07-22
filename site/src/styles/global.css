@@ -184,7 +184,33 @@
 
   .sample-type-pill {
     @apply inline-flex h-9 w-52 items-center justify-center overflow-hidden rounded-full px-3 text-center text-xs font-semibold uppercase tracking-wide whitespace-nowrap;
-    background: linear-gradient(90deg, var(--badge-from), var(--badge-to));
-    color: var(--badge-text);
+    background-color: #334155;
+    border: 1px solid rgb(255 255 255 / 25%);
+    color: #f8fafc;
+  }
+
+  .sample-type-pill[data-sample-type="Declarative Agent"] {
+    background-color: #0f766e;
+    color: #f8fafc;
+  }
+
+  .sample-type-pill[data-sample-type="Copilot Extension"] {
+    background-color: #7c2d12;
+    color: #fef2f2;
+  }
+
+  .sample-type-pill[data-sample-type="Custom Engine Agent"] {
+    background-color: #1d4ed8;
+    color: #eff6ff;
+  }
+
+  .sample-type-pill[data-sample-type="Copilot Studio"] {
+    background-color: #6d28d9;
+    color: #f5f3ff;
+  }
+
+  .sample-type-pill[data-sample-type="MCP"] {
+    background-color: #374151;
+    color: #f9fafb;
   }
 }

@@ -43,7 +43,7 @@ const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
         data-description={sample.description.toLowerCase()}
         data-type={sample.type}
       >
-        <div class="sample-type-pill">
+        <div class="sample-type-pill" data-sample-type={sample.type}>
           {sample.type}
         </div>
         <h3 class="text-lg font-semibold text-white">{sample.title}</h3>
