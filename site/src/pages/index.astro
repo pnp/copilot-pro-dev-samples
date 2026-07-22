@@ -13,7 +13,7 @@ const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
 <SiteLayout title="Copilot Pro Dev Samples" description="Explore Microsoft 365 Copilot community samples.">
   <section class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
     <div class="space-y-5">
-      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-lime-200">Open Source Agent Catalog</p>
+      <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.22em]">Open Source Agent Catalog</p>
       <h1 class="max-w-xl text-4xl font-extrabold leading-tight text-white md:text-6xl">
         Explore beyond the
         <span class="bg-gradient-to-r from-cyan-200 to-sky-300 bg-clip-text text-transparent"> hello world</span>.
@@ -35,7 +35,7 @@ const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
       </div>
       <div class="mt-5 flex flex-wrap gap-3">
         {typeBreakdown.map(([name, count]) => (
-          <span class="rounded-full border border-cyan-300/55 bg-cyan-300/12 px-5 py-2 text-xl font-semibold text-cyan-100">
+          <span class="theme-accent-pill rounded-full border px-5 py-2 text-xl font-semibold">
             {name}: {count}
           </span>
         ))}

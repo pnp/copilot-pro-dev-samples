@@ -28,7 +28,7 @@ const monthLabel = months === 1 ? "month" : "months";
 <section class="space-y-4">
   <div class="flex flex-wrap items-center justify-between gap-3">
     <div>
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">Recent Activity</p>
+      <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.2em]">Recent Activity</p>
       <h2 class="mt-1 text-2xl font-bold text-white md:text-3xl">Latest samples from the last {monthCountLabel} {monthLabel}</h2>
     </div>
     <a class="chip-button" href="/samples">View Full Catalog</a>
@@ -38,14 +38,14 @@ const monthLabel = months === 1 ? "month" : "months";
     samples.length > 0 ? (
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {samples.map((sample) => (
-          <article class="frost-panel grid gap-3 p-4 transition hover:-translate-y-0.5 hover:border-cyan-300/70">
+          <article class="theme-card-hover frost-panel grid gap-3 p-4 transition hover:-translate-y-0.5">
             <div class="sample-type-pill">{sample.type}</div>
             <h3 class="text-lg font-semibold text-white">{sample.title}</h3>
             <p class="text-sm leading-relaxed text-slate-300">{sample.description}</p>
             <p class="text-xs text-slate-400">
               Updated: {sample.updatedAt ? sample.updatedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "Unknown"}
             </p>
-            <a class="text-sm font-semibold text-sky-300 hover:text-cyan-200" href={sample.href} target="_blank" rel="noreferrer">
+            <a class="theme-link text-sm font-semibold" href={sample.href} target="_blank" rel="noreferrer">
               Open in GitHub
             </a>
           </article>

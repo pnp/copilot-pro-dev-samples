@@ -36,7 +36,7 @@ const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
   <div id="samples-grid" class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
     {samples.map((sample) => (
       <article
-        class="sample-card frost-panel grid gap-3 p-4 transition hover:-translate-y-0.5 hover:border-cyan-300/70"
+        class="sample-card theme-card-hover frost-panel grid gap-3 p-4 transition hover:-translate-y-0.5"
         data-title={sample.title.toLowerCase()}
         data-folder={sample.folder.toLowerCase()}
         data-description={sample.description.toLowerCase()}
@@ -51,7 +51,7 @@ const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
         <div class="text-xs text-slate-400">
           Last updated: {sample.updatedAt ? sample.updatedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "Unknown"}
         </div>
-        <a class="text-sm font-semibold text-sky-300 hover:text-cyan-200" href={sample.href} target="_blank" rel="noreferrer">
+        <a class="theme-link text-sm font-semibold" href={sample.href} target="_blank" rel="noreferrer">
           Open in GitHub
         </a>
       </article>

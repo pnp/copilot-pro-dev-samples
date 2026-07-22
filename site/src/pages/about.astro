@@ -64,7 +64,7 @@ const prFlowCards = [
 <SiteLayout title="Contributing" description="How to contribute Microsoft 365 Copilot samples to this repository.">
   <section class="space-y-10">
     <div class="space-y-3">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-lime-200">Contributing</p>
+      <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.2em]">Contributing</p>
       <h1 class="max-w-3xl text-4xl font-extrabold text-white md:text-5xl">Contribute a sample to this repository</h1>
       <p class="max-w-3xl text-base leading-relaxed text-slate-300">
         This repository accepts community Microsoft 365 Copilot sample submissions. Follow the contribution guidance to submit
@@ -81,7 +81,7 @@ const prFlowCards = [
         <h2 class="text-sm uppercase tracking-wide text-slate-300">Type Breakdown</h2>
         <div class="mt-3 flex flex-wrap gap-2">
           {types.map(([name, count]) => (
-            <span class="rounded-full border border-cyan-300/45 bg-cyan-300/12 px-3 py-1 text-sm text-cyan-100">
+            <span class="theme-accent-pill rounded-full border px-3 py-1 text-sm">
               {name}: {count}
             </span>
           ))}
@@ -111,7 +111,7 @@ const prFlowCards = [
       <div class="grid gap-4 md:grid-cols-2">
         {prFlowCards.map((item) => (
           <article class="frost-panel rounded-3xl p-5 md:p-6">
-            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">{item.step}</p>
+            <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.2em]">{item.step}</p>
             <h3 class="mt-3 text-xl font-semibold text-white">{item.title}</h3>
             <p class="mt-2 text-base leading-relaxed text-slate-300">{item.description}</p>
           </article>

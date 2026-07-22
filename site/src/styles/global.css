@@ -14,6 +14,11 @@
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --text-primary: #eaf2ff;
     --text-muted: #cbd7ee;
+    --accent-strong: #6ad9ff;
+    --accent-hover: #b5ecff;
+    --accent-border: rgb(106 217 255 / 60%);
+    --accent-bg-soft: rgb(106 217 255 / 12%);
+    --accent-text-soft: #cff2ff;
     --page-bg:
       radial-gradient(circle at 80% -20%, rgb(63 224 255 / 18%), transparent 40%),
       radial-gradient(circle at 15% 10%, rgb(129 239 182 / 14%), transparent 42%),
@@ -77,6 +82,28 @@
     border-color: var(--chip-active-bg);
     background-color: var(--chip-active-bg);
     color: var(--chip-active-text);
+  }
+
+  .theme-eyebrow {
+    color: var(--accent-strong);
+  }
+
+  .theme-link {
+    color: var(--accent-strong);
+  }
+
+  .theme-link:hover {
+    color: var(--accent-hover);
+  }
+
+  .theme-card-hover:hover {
+    border-color: var(--accent-border);
+  }
+
+  .theme-accent-pill {
+    border-color: var(--accent-border);
+    background-color: var(--accent-bg-soft);
+    color: var(--accent-text-soft);
   }
 
   .sample-type-pill {
