@@ -20,7 +20,7 @@ const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
     <div class="mt-4 flex flex-wrap gap-3">
       <input
         id="sample-search"
-        class="w-full flex-1 rounded-xl border border-white/20 bg-ink-900/80 px-4 py-3 text-sm text-slate-100 outline-none ring-cyan-300/50 transition placeholder:text-slate-400 focus:ring-2"
+        class="w-full flex-1 rounded-xl border border-white/20 bg-ink-900/80 px-4 py-3 text-sm text-slate-100 outline-none ring-sky-300/50 transition placeholder:text-slate-400 focus:ring-2"
         type="search"
         placeholder="Search by folder, title, or description..."
       />
@@ -55,7 +55,7 @@ const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
         <span class="theme-link text-sm font-semibold">View sample details</span>
       </a>
     ))}
-    <div id="empty-state" class="frost-panel hidden border-rose-400/55 bg-rose-950/30 p-4 text-sm text-rose-200">
+    <div id="empty-state" class="frost-panel hidden border-[#ea5c9c]/55 bg-[#ea5c9c]/20 p-4 text-sm text-[#ffd7e7]">
       No samples match this search/filter combination.
     </div>
   </div>
