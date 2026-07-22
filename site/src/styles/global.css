@@ -1,0 +1,247 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #040b18;
+  --color-ink-900: #09152a;
+  --color-panel-900: #0d1a37;
+  --color-panel-800: #132649;
+  --color-sky-300: #985dca;
+  --color-lime-300: #63be61;
+}
+
+@layer base {
+  :root {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --text-primary: #eaf2ff;
+    --text-muted: #cbd7ee;
+    --accent-strong: #985dca;
+    --accent-hover: #b289da;
+    --accent-border: rgb(152 93 202 / 60%);
+    --accent-bg-soft: rgb(152 93 202 / 12%);
+    --accent-text-soft: #ead8f8;
+    --page-bg:
+      radial-gradient(circle at 80% -20%, rgb(45 161 227 / 22%), transparent 40%),
+      radial-gradient(circle at 15% 10%, rgb(169 91 216 / 16%), transparent 42%),
+      linear-gradient(180deg, #040b18 0%, #09152a 45%, #040b18 100%);
+    --panel-border: rgb(255 255 255 / 15%);
+    --panel-bg-from: rgb(19 38 73 / 95%);
+    --panel-bg-to: rgb(13 26 55 / 95%);
+    --chip-border: rgb(255 255 255 / 20%);
+    --chip-text: #cbd5e1;
+    --chip-hover-border: #985dca;
+    --chip-active-bg: #985dca;
+    --chip-active-text: #f8f2fc;
+    --badge-from: #f2d21d;
+    --badge-to: #f8b454;
+    --badge-text: #0f172a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    position: relative;
+    isolation: isolate;
+    font-family: var(--font-sans);
+    color: var(--text-primary);
+    background: #040b18;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 80% -20%, rgb(45 161 227 / 22%), transparent 40%),
+      radial-gradient(circle at 15% 10%, rgb(169 91 216 / 16%), transparent 42%),
+      linear-gradient(180deg, #040b18 0%, #09152a 45%, #040b18 100%);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  .frost-panel {
+    @apply rounded-2xl border;
+    border-color: var(--panel-border);
+    background: linear-gradient(135deg, var(--panel-bg-from), var(--panel-bg-to));
+  }
+
+  .chip-button {
+    @apply rounded-full border px-3 py-2 text-sm transition hover:-translate-y-0.5;
+    border-color: var(--chip-border);
+    color: var(--chip-text);
+  }
+
+  .chip-button:hover {
+    border-color: var(--chip-hover-border);
+  }
+
+  .chip-button-active {
+    border-color: var(--chip-active-bg);
+    background-color: var(--chip-active-bg);
+    color: var(--chip-active-text);
+  }
+
+  .chip-button-repo {
+    border-color: rgb(99 190 97 / 70%);
+    color: #8fe0b3;
+  }
+
+  .chip-button-repo:hover {
+    border-color: #f2d21d;
+    color: #f2d21d;
+  }
+
+  .theme-eyebrow {
+    color: var(--accent-strong);
+  }
+
+  .theme-link {
+    color: var(--accent-strong);
+  }
+
+  .theme-link:hover {
+    color: var(--accent-hover);
+  }
+
+  .theme-card-hover:hover {
+    border-color: var(--accent-border);
+  }
+
+  .theme-accent-pill {
+    border-color: var(--accent-border);
+    background-color: var(--accent-bg-soft);
+    color: var(--accent-text-soft);
+  }
+
+  .readme-content :where(h1, h2, h3, h4, h5, h6) {
+    @apply mt-6 mb-3 font-bold text-white;
+  }
+
+  .readme-content h1 {
+    @apply text-2xl;
+  }
+
+  .readme-content h2 {
+    @apply text-xl;
+  }
+
+  .readme-content h3 {
+    @apply text-lg;
+  }
+
+  .readme-content p {
+    @apply my-3 text-slate-200;
+  }
+
+  .readme-content a {
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .readme-content a:hover {
+    color: var(--accent-hover);
+  }
+
+  .readme-content ul,
+  .readme-content ol {
+    @apply my-3 pl-6 text-slate-200;
+  }
+
+  .readme-content ul {
+    list-style-type: disc;
+  }
+
+  .readme-content ol {
+    list-style-type: decimal;
+  }
+
+  .readme-content li {
+    @apply my-1;
+  }
+
+  .readme-content code {
+    @apply rounded bg-white/10 px-1.5 py-0.5 text-slate-100;
+  }
+
+  .readme-content pre {
+    @apply my-4 overflow-x-auto rounded-xl border border-white/10 bg-ink-950/75 p-4 text-slate-100;
+  }
+
+  .readme-content pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .readme-content blockquote {
+    @apply my-4 border-l-4 border-white/20 pl-4 italic text-slate-300;
+  }
+
+  .readme-content table {
+    @apply my-4 w-full border-collapse text-sm;
+  }
+
+  .readme-content th,
+  .readme-content td {
+    @apply border border-white/15 px-3 py-2 text-left;
+  }
+
+  .readme-content th {
+    @apply bg-white/5 font-semibold text-white;
+  }
+
+  .sample-type-pill {
+    @apply inline-flex h-9 w-52 items-center justify-center overflow-hidden rounded-full px-3 text-center text-xs font-semibold uppercase tracking-wide whitespace-nowrap;
+    --sample-pill-base: #233f96;
+    --sample-pill-corner: #1a2f71;
+    background: radial-gradient(circle at top left, var(--sample-pill-base) 0%, var(--sample-pill-corner) 100%);
+    border: 1px solid rgb(255 255 255 / 25%);
+    color: #f8fafc;
+  }
+
+  .sample-type-pill[data-sample-type="Declarative Agent"] {
+    --sample-pill-base: #63be61;
+    --sample-pill-corner: #4a8f49;
+    color: #f8fafc;
+  }
+
+  .sample-type-pill[data-sample-type="Copilot Extension"] {
+    --sample-pill-base: #f36c58;
+    --sample-pill-corner: #b65142;
+    color: #fef2f2;
+  }
+
+  .sample-type-pill[data-sample-type="Custom Engine Agent"] {
+    --sample-pill-base: #2a4fcf;
+    --sample-pill-corner: #203b9b;
+    color: #eff6ff;
+  }
+
+  .sample-type-pill[data-sample-type="Copilot Studio"] {
+    --sample-pill-base: #a95bd8;
+    --sample-pill-corner: #7f44a2;
+    color: #f5f3ff;
+  }
+
+  .sample-type-pill[data-sample-type="MCP"] {
+    --sample-pill-base: #2da1e3;
+    --sample-pill-corner: #2279aa;
+    color: #f9fafb;
+  }
+}

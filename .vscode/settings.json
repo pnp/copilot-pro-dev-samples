@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "nvm": true,
+        "/^source ~/\\.nvm/nvm\\.sh && nvm use v22\\.21\\.1 && npm run build$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

@@ -1,0 +1,8 @@
+<svg width="136" height="88" viewBox="0 0 136 88" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">PnP Copilot Samples badge</title>
+  <desc id="desc">A badge with PnP on the top row and Copilot Samples on the bottom row.</desc>
+  <path d="M8 4H128C130.209 4 132 5.791 132 8V42H4V8C4 5.791 5.791 4 8 4Z" fill="#F8FCFD" stroke="#F8FCFD" stroke-width="2"/>
+  <path d="M4 46H132V80C132 82.209 130.209 84 128 84H8C5.791 84 4 82.209 4 80V46Z" fill="none" stroke="#F8FCFD" stroke-width="2"/>
+  <text x="68" y="30" text-anchor="middle" fill="#000000" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="0.8">PnP</text>
+  <text x="68" y="69" text-anchor="middle" fill="#F8FCFD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="0.35">Copilot Samples</text>
+</svg>

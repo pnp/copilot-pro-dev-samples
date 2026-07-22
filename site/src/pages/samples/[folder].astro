@@ -1,0 +1,87 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { marked } from "marked";
+import { getSamples, type SampleEntry } from "../../lib/samples";
+
+interface Props {
+  sample: SampleEntry;
+}
+
+export async function getStaticPaths() {
+  const samples = await getSamples();
+
+  return samples.map((sample) => ({
+    params: { folder: sample.folder },
+    props: { sample },
+  }));
+}
+
+const { sample } = Astro.props as Props;
+const details = sample.longDescription.length > 0 ? sample.longDescription : [sample.description];
+const imageAlt = sample.imageAlt.trim().length > 0 ? sample.imageAlt : `${sample.title} preview`;
+const hasReadme = sample.readmeContent.trim().length > 0;
+const readmeHtml = hasReadme ? await marked.parse(sample.readmeContent) : "";
+---
+
+<SiteLayout title={sample.title} description={sample.description}>
+  <section class="space-y-6">
+    <a href="/samples" class="chip-button inline-flex items-center gap-2 text-xs md:text-sm">
+      <span aria-hidden="true">&larr;</span>
+      Back to samples
+    </a>
+
+    <article class="frost-panel space-y-6 p-5 md:p-8">
+      <div class="space-y-3">
+        <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.2em]">{sample.type}</p>
+        <h1 class="text-3xl font-extrabold text-white md:text-5xl">{sample.title}</h1>
+        <p class="text-base leading-relaxed text-slate-300">{sample.description}</p>
+      </div>
+
+      {
+        sample.imageUrl ? (
+          <div class="overflow-hidden rounded-2xl border border-white/15 bg-ink-900/60 p-2">
+            <img src={sample.imageUrl} alt={imageAlt} class="max-h-[32rem] w-full rounded-xl object-contain" loading="lazy" />
+          </div>
+        ) : (
+          <div class="rounded-2xl border border-dashed border-white/25 bg-ink-900/55 p-5 text-sm text-slate-300">
+            No image available for this sample.
+          </div>
+        )
+      }
+
+      <div class="grid gap-6 lg:grid-cols-[1fr]">
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold text-white">Details</h2>
+          <div class="space-y-3 text-sm leading-relaxed text-slate-300 md:text-base">
+            {details.map((line) => (
+              <p>{line}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-3 border-t border-white/10 pt-4">
+        <a href={sample.href} target="_blank" rel="noreferrer" class="chip-button chip-button-active inline-flex items-center gap-2 text-xs md:text-sm">
+          Open source folder
+        </a>
+        <span class="chip-button inline-flex items-center text-xs md:text-sm">Folder: {sample.folder}</span>
+        <span class="chip-button inline-flex items-center text-xs md:text-sm">
+          Last updated: {sample.updatedAt ? sample.updatedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "Unknown"}
+        </span>
+      </div>
+
+      <div class="space-y-3">
+        <h2 class="text-xl font-bold text-white">README</h2>
+        {
+          hasReadme ? (
+            <article class="overflow-x-auto rounded-2xl border border-white/15 bg-ink-900/55 p-4 md:p-5">
+              <div class="readme-content text-sm leading-relaxed text-slate-200" set:html={readmeHtml}></div>
+            </article>
+          ) : (
+            <p class="text-sm text-slate-300">No README content available for this sample.</p>
+          )
+        }
+      </div>
+    </article>
+  </section>
+</SiteLayout>
