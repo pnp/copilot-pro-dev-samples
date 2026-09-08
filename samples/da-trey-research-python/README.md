@@ -1,102 +1,137 @@
-# Trey Research Copilot Declarative Agent (Python)
+# Trey Research (Python)
 
 ## Summary
 
 Trey Research is a fictitious consulting company that supplies talent in the software and pharmaceuticals industries.
 
-The solution consists of an API plugin that calls a set of Azure Functions (Python), which store the consulting data in Azure Table Storage (it uses the Azurite storage emulator when running locally).
+This sample contains a declarative agent and an API plugin backed by Python Azure Functions. The API stores consulting data in Azure Table Storage and uses the Azurite storage emulator when running locally.
 
-A declarative agent is provided to converse with users and to call the API plugin.
+The declarative agent can converse with users, reference documents in OneDrive or SharePoint, and call the API plugin.
 
-## Features
+The API uses a demo-only default consultant identity, Avery Howard, for unauthenticated testing. It is not a production authentication implementation.
 
-The sample showcases the following features:
-
-1. Declarative agent with branding and instructions, with access to relevant documents and an API
-2. API based plugin works with any platform that supports REST requests
-3. Copilot will construct queries for specific data using GET requests
-4. Copilot updates and adds data using POST requests
-5. Multi-parameter queries to filter results
-6. Show a confirmation card before POSTing data; capture missing parameters
-7. Display rich adaptive cards
+![Trey Research declarative agent](./assets/preview.png)
 
 ## Contributors
 
-* [AjayJ12-MSFT](https://github.com/AjayJ12-MSFT)
+* [Jegadeesh-MSFT](https://github.com/Jegadeesh-MSFT)
 
 ## Version history
 
-| Version | Date | Comments |
-|--|--|--|
-| 1.0 | June 2, 2026 | Initial release |
+Version|Date|Comments
+-------|----|--------
+1.1|July 20, 2026|Retired the legacy duplicate and aligned the declarative-agent sample with current repository conventions
+1.0|April 16, 2025|Initial release
 
 ## Prerequisites
 
-* [Python 3.10+](https://www.python.org/downloads/)
-* [Azure Functions Core Tools v4](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local)
-* A [Microsoft 365 tenant](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/prepare-your-o365-tenant) prepared for development
-* [Microsoft 365 Agents Toolkit](https://aka.ms/teams-toolkit) Visual Studio Code extension
-* A Microsoft 365 Copilot licence
+* A Microsoft 365 tenant with Microsoft 365 Copilot
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Microsoft 365 Agents Toolkit](https://aka.ms/teams-toolkit) for Visual Studio Code
+* [Python](https://www.python.org/downloads/) 3.10 or later
+* [Node.js](https://nodejs.org/) 18 or later
+* [Azure Functions Core Tools](https://learn.microsoft.com/azure/azure-functions/functions-run-local) v4
+* [Azurite](https://learn.microsoft.com/azure/storage/common/storage-use-azurite) for local Azure Table Storage
 
 ## Minimal path to awesome
 
-### 1. Setup document repository
+1. Clone this repository (or [download this sample as a ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-python)) and open `samples/da-trey-research-python` in Visual Studio Code.
+2. Install the Python dependencies:
 
-For this sample, we will use OneDrive to store the documents that the agent will reference.
-
-> ![NOTE]
-> You can also use SharePoint document libraries, the URL will be slightly different, but the process is the same.
-
-1. Go to [OneDrive](https://www.microsoft365.com/onedrive)
-1. Go to **My files**
-1. Create a new folder called **Legal**
-1. Upload documents from the **sampleDocs** folder in this repository to the **Legal** folder
-1. Navigate to the **Legal** folder
-1. Expand the **Details** tab on the right
-1. Expand the **More details** tab
-1. Copy the Path to the Products folder using the **Copy** button
-
-### 2. Test the agent
-
-1. In the .env folder, create a new file called **.env.local**.
-2. Add the following line to the **.env.local** file:
-
-   ```plaintext
-   DOCUMENTS_URL=<paste the path you copied from OneDrive>
+   ```bash
+   python -m pip install -r requirements.txt
    ```
 
-   For example, if you copied the path `https://contoso-my.sharepoint.com/personal/user_contoso_com/Documents/Legal`, it should look like this:
+3. Copy the documents in `sampleDocs` to a **Legal** folder in OneDrive or a SharePoint document library. Copy the folder URL and set it as `DOCUMENTS_URL` in the active Agents Toolkit environment file, such as `env/.env.local`.
+4. Open the Microsoft 365 Agents Toolkit extension and sign in to a Microsoft 365 tenant with Microsoft 365 Copilot.
+5. Select **Debug in Copilot (Edge)** or **Debug in Copilot (Chrome)** from the Visual Studio Code launch configuration dropdown. The toolkit prepares the app package, starts the local API and Azurite, and opens the declarative agent in Microsoft 365 Copilot.
 
-   ```plaintext
-   DOCUMENTS_URL=https://contoso-my.sharepoint.com/personal/user_contoso_com/Documents/Legal
-   ```
+Microsoft 365 Copilot can cache the agent definition. After changing the agent, use a hard refresh (`Ctrl+Shift+R`) in the browser.
 
-3. Press **F5** to start a debug session. If prompted, sign in with your [Microsoft 365 account](https://docs.microsoft.com/microsoftteams/platform/toolkit/accounts). Wait for the provisioning to complete and the browser to open.
-4. In the browser, if prompted, sign in with your Microsoft 365 account. The browser will open the declarative agent in Microsoft 365 Copilot after signing in.
+### Prompts to try
 
-> ![IMPORTANT]
-> Microsoft 365 Copilot can cache the agent definition, so if you make changes to the agent, you may need to clear the browser cache for changes to be persisted. After the agent is loaded, use Hard Refresh (Ctrl+Shift+R) to ensure the latest version is loaded.
+For the demo-only identity, the current consultant is Avery Howard. If a prompt is resolved using the signed-in user's real name instead, the request will not match that local demo identity.
 
-Try the following prompts:
+* What projects am I assigned to?
+* What projects are we doing for Relecloud?
+* Which consultants are working with Woodgrove Bank?
+* How many hours has Avery delivered this month?
+* Find a consultant with Python skills who is available immediately.
+* Are any consultants available who are AWS certified?
+* Does Trey Research have any architects with JavaScript skills?
+* What designers are working at Woodgrove Bank?
+* Charge 10 hours to Woodgrove Bank.
+* Add Sanjay to the Contoso project.
+* Find my hours spreadsheet and get the hours for Woodgrove, then bill the client.
+* Make a list of my projects, then write a summary of each based on the statement of work.
 
-* do we have any consultants with azure certifications?
-* what projects are we doing for relecloud?
-* which consultants are working with woodgrove bank?
-* how many hours has avery delivered this month?
-* please find a consultant with python skills who is available immediately
-* are any consultants available who are AWS certified?
-* does trey research have any architects with javascript skills?
-* what designers are working at woodgrove bank?
-* please charge 10 hours to woodgrove bank
-* please add sanjay to the contoso project
+## Features
 
-## Troubleshooting and feature requests
+This sample illustrates the following concepts:
+
+* Declarative agent with branding, instructions, document access, and an API plugin
+* GET requests that query consultants and projects
+* POST requests that charge time and assign consultants
+* Multi-parameter filtering of consultant and project data
+* Confirmation cards for POST requests and prompts for missing parameters
+* Rich Adaptive Card responses
+
+## API summary
+
+The included [Postman collection](./http/TreyResearch%20API.postman_collection.json) contains the API operations. The API is also described in [`appPackage/apiSpecificationFile/trey-definition.yml`](./appPackage/apiSpecificationFile/trey-definition.yml).
+
+### GET requests
+
+```text
+GET /api/me                                      Get the current consultant profile and projects
+GET /api/consultants/                            Get all consultants
+GET /api/consultants/?consultantName=Avery       Filter consultants by name
+GET /api/consultants/?projectName=Foo            Filter consultants by project
+GET /api/consultants/?skill=Foo                  Filter consultants by skill
+GET /api/consultants/?certification=Foo          Filter consultants by certification
+GET /api/consultants/?role=Foo                   Filter consultants by role
+GET /api/consultants/?hoursAvailable=20          Filter by available hours
+GET /api/projects/                               Get all projects
+GET /api/projects/?projectName=Foo               Filter projects by project or client name
+GET /api/projects/?consultantName=Avery          Filter projects by assigned consultant
+```
+
+### POST requests
+
+```text
+POST /api/me/chargeTime                          Charge hours to a project
+POST /api/projects/assignConsultant              Assign a consultant to a project
+```
+
+Example request bodies:
+
+```json
+{
+  "projectName": "foo",
+  "hours": 5
+}
+```
+
+```json
+{
+  "projectName": "foo",
+  "consultantName": "avery",
+  "role": "architect",
+  "forecast": 100
+}
+```
+
+The POST request bodies contain the project and consultant names plus the hours, role, or forecast required by the operation. See the OpenAPI definition for the complete request and response shapes. When testing `localhost` URLs, use Postman Desktop or replace `http://localhost:7071` with the API tunnel or host URL.
+
+The API is designed around the sample prompts: it accepts partial, human-readable names; returns related data needed for a response; uses resource-oriented GET requests; uses command-style POST requests; and performs filtering server-side.
+
+## Help
 
 We do not support samples, but this community is always willing to help, and we want to improve these samples. We use GitHub to track issues, which makes it easy for community members to volunteer their time and help resolve issues.
 
-You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-trey-resarch-python%22) to see if anybody else is having the same issues.
+You can try looking at [issues related to this sample](https://github.com/pnp/copilot-pro-dev-samples/issues?q=label%3A%22sample%3A%20da-trey-research-python%22) to see if anybody else is having the same issues.
 
-If you encounter any issues using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
+If you encounter an issue using this sample, [create a new issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 
 Finally, if you have an idea for improvement, [make a suggestion](https://github.com/pnp/copilot-pro-dev-samples/issues/new).
 

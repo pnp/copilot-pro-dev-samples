@@ -1,8 +1,11 @@
 # TeamsFx files
-env/.env.*.user
-env/.env.local
+env/*
+!env/*.sample
 .localConfigs
 appPackage/build
+.azurite/
+__pycache__/
+.venv/
 
 # dependencies
 node_modules/
