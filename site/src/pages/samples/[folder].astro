@@ -51,12 +51,15 @@ const readmeHtml = hasReadme ? await marked.parse(sample.readmeContent) : "";
 
       <div class="grid gap-6 lg:grid-cols-[1fr]">
         <div class="space-y-3">
-          <h2 class="text-xl font-bold text-white">Details</h2>
+          <h2 class="text-xl font-bold text-white">Description</h2>
           <div class="space-y-3 text-sm leading-relaxed text-slate-300 md:text-base">
             {details.map((line) => (
               <p>{line}</p>
             ))}
           </div>
+          <span class="inline-flex items-center text-xs text-slate-400 md:text-sm">
+            <i>Last updated: {sample.updatedAt ? sample.updatedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "Unknown"}</i>
+          </span>
         </div>
       </div>
 
@@ -64,14 +67,13 @@ const readmeHtml = hasReadme ? await marked.parse(sample.readmeContent) : "";
         <a href={sample.href} target="_blank" rel="noreferrer" class="chip-button chip-button-active inline-flex items-center gap-2 text-xs md:text-sm">
           Open source folder
         </a>
-        <span class="chip-button inline-flex items-center text-xs md:text-sm">Folder: {sample.folder}</span>
-        <span class="chip-button inline-flex items-center text-xs md:text-sm">
-          Last updated: {sample.updatedAt ? sample.updatedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "Unknown"}
-        </span>
+        <a href={`https://pnp.github.io/download-partial/?url=${encodeURIComponent(sample.href)}`} target="_blank" rel="noreferrer" class="chip-button inline-flex items-center gap-2 text-xs md:text-sm">
+          Download sample
+        </a>
       </div>
 
       <div class="space-y-3">
-        <h2 class="text-xl font-bold text-white">README</h2>
+        <h2 class="text-xl font-bold text-white">Sample README.md</h2>
         {
           hasReadme ? (
             <article class="overflow-x-auto rounded-[10px] border border-white/15 bg-ink-900/55 p-4 md:p-5">
