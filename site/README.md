@@ -77,3 +77,11 @@ npm run preview
 
 - This site is generated from the local repository structure.
 - Add or modify sample folders under `../samples`, then refresh/rebuild the site.
+
+Candidate colours for theme
+
+ - #53A4D1 close to #479AEC and #6EB4A8
+ - #B66CD1 close to #ECBDD5 and #A153D4
+ - #E36F83 close to #EC976E and #E6797D
+
+ #479AEC (Primary) and #6EB4A8 (secondary), #53A4D1

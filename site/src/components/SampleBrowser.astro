@@ -22,13 +22,13 @@ const totalSamples = samples.length;
       <div class="space-y-3">
         <h2 class="text-3xl font-bold text-white md:text-4xl">Find the right sample fast</h2>
         <p class="max-w-3xl text-sm leading-relaxed text-slate-300 md:text-base">
-          Search by title, folder, or description, then narrow by sample type. Use the live result summary to keep track of what remains in view.
+          Search by title, folder, or description. Use the live result summary to keep track of what remains in view.
         </p>
       </div>
     </div>
 
     <div class="browse-controls-grid">
-      <label class="browse-search-field" for="sample-search">
+      <label class="browse-search-field lg:col-span-2" for="sample-search">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <span class="browse-field-label">Search the catalog</span>
           <span class="text-xs browse-muted-copy"><span id="catalog-count">{totalSamples}</span> of {totalSamples} samples</span>
@@ -41,7 +41,7 @@ const totalSamples = samples.length;
           aria-describedby="active-summary"
         />
       </label>
-      <div class="browse-filter-panel">
+      <div class="browse-filter-panel hidden" hidden>
         <div class="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p class="browse-field-label">Filter by sample type</p>
@@ -98,8 +98,8 @@ const totalSamples = samples.length;
       </a>
     ))}
     <div id="empty-state" class="sample-empty-state hidden p-5 text-sm">
-      <p class="text-base font-semibold text-white">No samples match this search and filter combination.</p>
-      <p class="mt-2 text-slate-200">Clear the current filters or broaden your search to bring the catalog back into view.</p>
+      <p class="text-base font-semibold text-white">No samples match this search.</p>
+      <p class="mt-2 text-slate-200">Broaden your search to bring the catalog back into view.</p>
     </div>
   </div>
 </section>
