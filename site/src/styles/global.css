@@ -415,8 +415,6 @@
     @apply grid gap-4 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)];
   }
 
-  .browse-search-field,
-  .browse-filter-panel,
   .contribute-card,
   .sample-card-shell {
     @apply grid gap-4 rounded-[10px] border;
@@ -428,7 +426,7 @@
 
   .browse-search-field,
   .browse-filter-panel {
-    @apply p-5 md:p-6;
+    @apply grid content-start gap-4;
   }
 
   .browse-summary-note {

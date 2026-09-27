@@ -31,11 +31,11 @@ const totalSamples = samples.length;
       <label class="browse-search-field" for="sample-search">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <span class="browse-field-label">Search the catalog</span>
-          <span class="text-xs text-slate-400"><span id="catalog-count">{totalSamples}</span> of {totalSamples} samples</span>
+          <span class="text-xs browse-muted-copy"><span id="catalog-count">{totalSamples}</span> of {totalSamples} samples</span>
         </div>
         <input
           id="sample-search"
-          class="w-full rounded-[10px] border border-white/20 bg-ink-900/80 px-4 py-3 text-sm text-slate-100 outline-none ring-sky-300/50 transition placeholder:text-slate-400 focus:ring-2 md:text-base"
+          class="browse-search-input w-full rounded-[10px] border border-white/20 bg-ink-900/80 px-4 py-3 text-sm text-slate-100 outline-none ring-sky-300/50 transition focus:ring-2 md:text-base"
           type="search"
           placeholder="Search by folder, title, or description..."
           aria-describedby="active-summary"
@@ -45,7 +45,7 @@ const totalSamples = samples.length;
         <div class="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p class="browse-field-label">Filter by sample type</p>
-            <p class="text-sm text-slate-400">Choose a lane or keep the full catalog visible.</p>
+            <p class="text-sm browse-muted-copy">Choose a lane or keep the full catalog visible.</p>
           </div>
           <button type="button" id="clear-filters" class="chip-button text-xs md:text-sm">Clear filters</button>
         </div>
@@ -109,3 +109,14 @@ const totalSamples = samples.length;
 
   initSampleBrowser();
 </script>
+
+<style>
+  .browse-muted-copy {
+    color: var(--summary-muted);
+  }
+
+  .browse-search-input::placeholder {
+    color: var(--summary-muted);
+    opacity: 1;
+  }
+</style>
