@@ -8,6 +8,11 @@ interface Props {
 
 const { samples, byType } = Astro.props;
 const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
+const sortedSamples = [...samples].sort((a, b) => {
+  const aTime = a.updatedAt?.getTime() ?? 0;
+  const bTime = b.updatedAt?.getTime() ?? 0;
+  return bTime - aTime;
+});
 const totalSamples = samples.length;
 ---
 
@@ -55,7 +60,7 @@ const totalSamples = samples.length;
   </div>
 
   <div id="samples-grid" class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-    {samples.map((sample) => (
+    {sortedSamples.map((sample) => (
       <a
         href={`/samples/${sample.folder}`}
         class="sample-card sample-card-shell theme-card-hover flex flex-col gap-4 p-5 transition hover:-translate-y-0.5"
