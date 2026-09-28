@@ -187,3 +187,5 @@ A tenant admin must grant consent for the requested delegated permissions (espec
 - [Create a minimal MCP server using C#](https://learn.microsoft.com/en-us/dotnet/ai/quickstarts/build-mcp-server)
 - [MCP C# SDK](https://modelcontextprotocol.github.io/csharp-sdk)
 - [Microsoft Identity Web for protected web APIs](https://learn.microsoft.com/entra/identity-platform/scenario-protected-web-api-overview)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/mcp-cs-customers-secure-server" />

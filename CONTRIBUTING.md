@@ -4,6 +4,10 @@ This is a community repository for sample Microsoft 365 Copilot agents developed
 
 If you'd like to contribute to this repository, please read the following guidelines. Contributors are more than welcome to share their learnings with others in this centralized location.
 
+## Community calls and demos
+
+Join our [weekly community calls](https://aka.ms/community/calls) for Copilot, Microsoft 365, and Power Platform updates. Everyone is welcome. If you would like to share your learnings or gather community input, [sign up for a demo](https://aka.ms/community/request/demo).
+
 ## Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
@@ -32,8 +36,8 @@ When you submit a new sample, please follow these guidelines:
 * Each sample must be placed in a folder under the `samples` folder
 * Your sample folder must include the following content:
   * Your solution's source code
-  * An `assets` folder, containing screenshots
-  * A `README.md` file
+  * An `assets` folder containing `sample.json` and at least one screenshot
+  * A sample-root `README.md` file
 * You must only submit samples for which you have the rights to share. Make sure that you asked for permission from your employer and/or clients before committing the code to an open-source repository, because once you submit a pull request, the information is public and _cannot be removed_.
 
 ### Sample Folder
@@ -46,8 +50,7 @@ When you submit a new sample, please follow these guidelines:
 * You will need to have a `README.md` file for your contribution. Use a project-specific template when one is available, or follow the required structure below. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
 * You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). The preview image must be located in the `assets` folder in the root of your sample folder.
   * All screen shots must be located in the `assets` folder. Do not point to your own repository or any other external source
-* Each README must contain the tracking image used to measure sample visits. Add `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>` at the end of the file and replace the placeholder with the sample folder name.
-* Update the image `src` attribute according with the folder information replacing ```<your-sample-folder>``` placeholder. For example, if your sample is named `da-my-agent` in the `samples` folder, you should update the `src` attribute to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-my-agent` as an example.
+* The sample-root `README.md` must end with `<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>" />`. The suffix after `copilot-pro-dev-samples/` is the repository-relative path to the sample root. For example, the tracker for `samples/da-my-agent` must end in `/samples/da-my-agent`. Nested implementation READMEs do not need this tracker.
 * If you find an existing sample which is similar to yours, please extend the existing one rather than submitting a new similar sample
   * When you update existing samples, please update also `README.md` file accordingly with information on provided changes and with your author details
 * Make sure to document each function in the `README.md`
@@ -85,7 +88,7 @@ Each sample should be in its own folder within the /samples directory. Your fold
 | cea- | These are Custom engine agents that interact with users in the Bizchat chat surface via the Azure Bot Framework |
 | da- | These are Declarative agents that run using Microsoft 365 Copilot's AI and orchestration and may include API plugins and Graph connectors |
 | msgext- | These are agents implemented as Microsoft 365 Message extensions |
-| mcs- | Indiciate this agent is Microsoft Copilot Studio |
+| mcs- | Indicates this agent is a Microsoft Copilot Studio agent |
 
 ### 2. README.md file
 
@@ -97,7 +100,7 @@ Declarative-agent, custom-engine-agent, and Copilot Studio samples have dedicate
 | a Custom engine agent | [templates/cea-custom-engine-agent](/templates/cea-custom-engine-agent) |
 | a Copilot Studio agent | [templates/mcs-copilot-studio](/templates/mcs-copilot-studio) |
 
-For other sample types, use a high-quality existing sample of the same type as a guide. Include, at minimum, a summary, screenshot, contributors, version history, prerequisites, complete setup and usage instructions, features, help information, disclaimer, and the repository telemetry image.
+For other sample types, use a high-quality existing sample of the same type as a guide. Include, at minimum, a summary, screenshot, contributors, version history, prerequisites, complete setup and usage instructions, features, help information, disclaimer, and the required tracker at the end of the sample-root `README.md`.
 
 When using a project template:
 
@@ -108,8 +111,9 @@ When using a project template:
 5. Replace all placeholder values in `README.md` and `assets/sample.json`, including values beginning with `YOUR_` or `YOUR-` and dates shown as `YYYY-MM-DD`.
 6. If the sample does not have a video, remove the optional video entry from `assets/sample.json`; otherwise replace `YOUR-YOUTUBE-VIDEO-ID` and its alternative text.
 7. Delete contributor instructions and files that do not apply, but preserve comments marked as reserved for repository maintainers.
+8. Verify that the sample-root `README.md` ends with the tracker for its repository-relative sample path.
 
-Do not submit unresolved placeholder values or the placeholder image. Your `README.md` must be named exactly `README.md` -- with capital letters -- as this is the information we use to make your sample public.
+Do not submit unresolved placeholder values or the placeholder image. The metadata file must remain at `assets/sample.json`, and the sample-root `README.md` must be named exactly `README.md` -- with capital letters -- as these files are used to publish your sample.
 
 Each README.md file must contain detailed build and use instructions.
 
@@ -179,17 +183,19 @@ There are two types of Copilot Studio Agents within this repository:
 
 #### Sample Setup applies to both methods
 
-The intended folder structure for a MCS samples would look like this:
+The intended folder structure for an MCS sample looks like this:
 
 - mcs-MyNewAgent
   - assets
+    - sample.json
+    - image.png
   - src 
   - README.md 
 
 Quick way to scaffold the sample:
 
  ```powershell
-  # Navigste to samples folder
+  # Navigate to the samples folder
   cd samples
   cp -R ../templates/mcs-copilot-studio mcs-MyNewAgent
   cd mcs-MyNewAgent
@@ -197,7 +203,7 @@ Quick way to scaffold the sample:
 
 #### Copilot Studio using Solution Export
 
-Submitting a Microsoft Copilot Studio (MCS) Samples using the Clone Method
+Submitting a Microsoft Copilot Studio (MCS) sample using the solution export method
 
 > Note: Package/zip files, for security reasons we will only accept the contents of these packages rather than the package files.
 
@@ -210,7 +216,7 @@ To get the source quickly, please use the following commands using the [Power Pl
  - Export Solution Contents
 
   ```powershell
-  # Navigste to samples folder
+  # Navigate to the samples folder
   cd samples
   cp -R ../templates/mcs-copilot-studio mcs-MyNewAgent
   cd mcs-MyNewAgent
@@ -238,23 +244,13 @@ That's it, proceed to Finalizing the sample
 
 #### Finalizing the sample
 
-**Updating the Readme.md file**
+**Updating README.md**
 
-- Read and complete the commented out sections within README file.
+- Read and complete the commented sections within the sample-root `README.md`, including its final tracker.
 
-**Updating the assets/sample.json file**
+**Updating assets/sample.json**
 
-- Complete the sections within the sample.json file. Tip: there are tokens such as ```YOUR_AGENT_FOLDER``` that will help you complete this quicker.
-
-
-### 8. Telemetry
-
-The README template contains a specific tracking image at the end of the file with an `img` tag, where the `src` attribute points to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>`. This is a transparent image which is used to track how many visits each sample receives in GitHub.
-
-Update the image `src` attribute according with the folder information. For example, if your sample is named `my-agent` in the `samples` folder, you should update the `src` attribute to `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/my-agent` as an example, 
-
-We recommend to add the prefix ```da-``` refers to declarative agent as a short code, to the URL and the folder name if possible please.
-`https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-my-agent` as the URL, in a folder also named ```da-my-agent```.
+- Complete `assets/sample.json`. Replace tokens such as `YOUR_AGENT_FOLDER`, remove optional entries that do not apply, and keep all referenced assets inside the sample folder.
 
 ## Submitting Pull Requests
 
@@ -267,8 +263,8 @@ Here's a high-level process for submitting new samples or updates to existing on
 3. Create a new branch from the `main` branch for your fork for the contribution
 4. Include your changes to your branch
 5. Commit your changes using descriptive commit message. These are used to track changes on the repositories for monthly communications
-6. Create a pull request in your own fork and target the `main` branch
-7. Fill up the provided PR template with the requested details
+6. Create a pull request from your fork's branch to the upstream repository's `main` branch
+7. Complete the provided pull request template with the requested details
 
 Before you submit your pull request consider the following guidelines:
 

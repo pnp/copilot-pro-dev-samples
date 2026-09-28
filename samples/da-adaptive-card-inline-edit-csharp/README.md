@@ -114,3 +114,5 @@ The card refreshes with:
 - [Adaptive Cards Schema Explorer](https://adaptivecards.io/explorer/)
 - [API Plugins for Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-api-plugins)
 - [Declarative agents for Microsoft 365](https://aka.ms/teams-toolkit-declarative-agent)
+
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-adaptive-card-inline-edit-csharp" />
