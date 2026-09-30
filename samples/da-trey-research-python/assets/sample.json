@@ -45,6 +45,16 @@
                 "gitHubAccount": "Jegadeesh-MSFT",
                 "pictureUrl": "https://github.com/Jegadeesh-MSFT.png",
                 "name": "Jegadeesh-MSFT"
+            },
+            {
+                "gitHubAccount": "BobGerman",
+                "pictureUrl": "https://github.com/BobGerman.png",
+                "name": "Bob German"
+            },
+            {
+                "gitHubAccount": "AjayJ12-MSFT",
+                "pictureUrl": "https://github.com/AjayJ12-MSFT.png",
+                "name": "Ajay Jadhav"
             }
         ],
         "references": [

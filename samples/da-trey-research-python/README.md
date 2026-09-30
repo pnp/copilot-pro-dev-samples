@@ -15,6 +15,8 @@ The API uses a demo-only default consultant identity, Avery Howard, for unauthen
 ## Contributors
 
 * [Jegadeesh-MSFT](https://github.com/Jegadeesh-MSFT)
+* [Bob German](https://github.com/BobGerman)
+* [Ajay Jadhav](https://github.com/AjayJ12-MSFT)
 
 ## Version history
 
