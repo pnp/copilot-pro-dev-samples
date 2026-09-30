@@ -1,7 +1,5 @@
-# yaml-language-server: $schema=https://aka.ms/teams-toolkit/v1.8/yaml.schema.json
-# Visit https://aka.ms/teamsfx-v5.0-guide for details on this file
-# Visit https://aka.ms/teamsfx-actions for details on actions
-version: v1.8
+# yaml-language-server: $schema=https://aka.ms/m365-agents-toolkits/v1.11/yaml.schema.json
+version: v1.11
 
 additionalMetadata:
   sampleTag: pnp-copilot-pro-dev:da-trey-research-python
@@ -52,6 +50,11 @@ provision:
       appId: M365_APP_ID
 
 deploy:
+  - uses: script
+    name: Install Python dependencies
+    with:
+      run: python -m pip install -r requirements.txt
+
   # Generate runtime environment variables
   - uses: file/createOrUpdateEnvironmentFile
     with:

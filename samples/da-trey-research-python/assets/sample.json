@@ -3,14 +3,14 @@
         "name": "pnp-copilot-pro-dev-da-trey-research-python",
         "source": "pnp",
         "title": "Trey Research Python",
-        "shortDescription": "This sample demonstrates how to create an agent that interacts with a consulting API (Python Azure Functions) to provide information about consultants and projects.",
+        "shortDescription": "This sample demonstrates a declarative agent with an API plugin backed by Python Azure Functions for information about consultants and projects.",
         "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-python",
         "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-trey-research-python",
         "longDescription": [
-            "This sample demonstrates how to create an agent that interacts with a consulting API built with Python Azure Functions to provide information about consultants and projects. The agent can answer questions about consultants and their projects, charge time, and assign consultants to projects."
+            "This sample demonstrates a declarative agent with an API plugin backed by Python Azure Functions. It can answer questions about consultants and their projects, charge time, assign consultants to projects, and reference documents stored in OneDrive or SharePoint."
         ],
-        "creationDateTime": "2026-06-01",
-        "updateDateTime": "2026-06-01",
+        "creationDateTime": "2025-04-16",
+        "updateDateTime": "2026-07-20",
         "products": [
             "Microsoft 365 Copilot"
         ],
@@ -36,15 +36,15 @@
             {
                 "type": "image",
                 "order": 50,
-                "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-trey-research-python/assets/preview.gif",
+                "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-trey-research-python/assets/preview.png",
                 "alt": "Demonstration of Trey Research sample"
             }
         ],
         "authors": [
             {
-                "gitHubAccount": "AjayJ12-MSFT",
-                "pictureUrl": "https://github.com/AjayJ12-MSFT.png",
-                "name": "Ajay Jadhav"
+                "gitHubAccount": "Jegadeesh-MSFT",
+                "pictureUrl": "https://github.com/Jegadeesh-MSFT.png",
+                "name": "Jegadeesh-MSFT"
             }
         ],
         "references": [
