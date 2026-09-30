@@ -42,14 +42,14 @@
         ],
         "authors": [
             {
+                "gitHubAccount": "bobgerman",
+                "pictureUrl": "https://github.com/bobgerman.png",
+                "name": "Bob German"
+            },
+            {
                 "gitHubAccount": "Jegadeesh-MSFT",
                 "pictureUrl": "https://github.com/Jegadeesh-MSFT.png",
                 "name": "Jegadeesh-MSFT"
-            },
-            {
-                "gitHubAccount": "BobGerman",
-                "pictureUrl": "https://github.com/BobGerman.png",
-                "name": "Bob German"
             },
             {
                 "gitHubAccount": "AjayJ12-MSFT",
