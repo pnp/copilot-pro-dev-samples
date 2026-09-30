@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.2.0",
+  "default_evaluators": {
+    "Relevance": {},
+    "Coherence": {}
+  },
+  "items": [
+    {
+      "prompt": "How do I request SharePoint access?",
+      "evaluators": {
+        "Relevance": {},
+        "Coherence": {}
+      }
+    },
+    {
+      "prompt": "What is the process for booking a meeting room?",
+      "evaluators": {
+        "Relevance": {},
+        "Coherence": {}
+      }
+    },
+    {
+      "prompt": "What is the airspeed velocity of an unladen swallow?",
+      "expected_response": "This checks strict grounding: the answer should state the information was not found in the Azure DevOps Wiki, rather than answering from general knowledge.",
+      "evaluators": {
+        "PartialMatch": { "case_sensitive": false }
+      },
+      "evaluators_mode": "extend"
+    }
+  ]
+}

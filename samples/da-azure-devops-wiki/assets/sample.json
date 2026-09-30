@@ -1,0 +1,55 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-azure-devops-wiki",
+    "source": "pnp",
+    "title": "Azure DevOps Wiki Assistant",
+    "shortDescription": "A read-only declarative agent that answers questions from your Azure DevOps Wiki with citations, and says when an answer isn't in the wiki.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-azure-devops-wiki",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-azure-devops-wiki",
+    "longDescription": [
+      "A read-only Microsoft 365 Copilot declarative agent grounded strictly on the Azure DevOps Wiki Copilot connector. It searches indexed project and code wikis, preserves the guide's numbered steps and reference tables, cites the source page, and clearly states when an answer is not found in the wiki instead of answering from general knowledge. Built with TypeSpec and the Microsoft 365 Agents Toolkit, it binds to the connector as its only knowledge source and retargets tenants through a single environment variable."
+    ],
+    "creationDateTime": "2026-08-22",
+    "updateDateTime": "2026-08-22",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "TypeSpec"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "TypeSpec"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-azure-devops-wiki/assets/demo.png",
+        "alt": "Azure DevOps Wiki Assistant answering a how-to question in Microsoft 365 Copilot with step-by-step guidance and citations to the source wiki page"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "ejazhussain",
+        "pictureUrl": "https://github.com/ejazhussain.png",
+        "name": "Ejaz Hussain"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Deploy the Azure DevOps Wiki connector",
+        "description": "Deploy and configure the Azure DevOps Wiki Copilot connector that this agent is grounded on.",
+        "url": "https://learn.microsoft.com/microsoft-365/copilot/connectors/azure-devops-wiki-deployment"
+      }
+    ]
+  }
+]
