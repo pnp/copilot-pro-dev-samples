@@ -1,0 +1,25 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+    "version": "v1.8",
+    "name": "Proactive Proposal",
+    "description": "Creates tailored pitch decks and proactive RFP responses by reusing existing case studies, proposals, and service descriptions.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint"
+        },
+        {
+            "name": "CodeInterpreter"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Build a pitch deck",
+            "text": "Turn our existing case studies and service descriptions into a proactive pitch deck for a retail client."
+        },
+        {
+            "title": "Reuse existing content",
+            "text": "We have three case studies and a services one-pager. Build a deck that positions them for a healthcare prospect."
+        }
+    ]
+}

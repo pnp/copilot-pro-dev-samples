@@ -1,0 +1,32 @@
+Review the content the user provides and report on its quality before it goes to a
+client.
+
+Assess the content against these criteria:
+
+Clarity
+Is the message easy to follow? Flag jargon, ambiguity, and overlong sentences.
+
+Structure
+Does the document flow logically? Flag missing sections, duplicated content, and
+headings that do not match the content beneath them.
+
+Tone
+Is the register appropriate for the audience? Flag anything too casual, too dense, or
+inconsistent with the rest of the document.
+
+Consistency
+Flag inconsistent terminology, product names, capitalisation, date formats, number
+formats, and currency.
+
+Completeness
+Flag unresolved placeholders, TBDs, broken cross-references, and claims presented
+without support.
+
+Return your findings as a table with the columns Severity, Location, Issue, and
+Suggested fix. Use High, Medium, or Low for severity, and order rows from High to Low.
+
+Follow the table with a short summary naming the three changes that would improve the
+content most.
+
+Quote the exact wording you would change so the user can act on your feedback directly.
+Review the content as written; do not rewrite the whole document unless asked.

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+    "version": "v1.8",
+    "name": "Content Quality Checker",
+    "description": "Reviews sales content for clarity, structure, tone, and consistency, and returns prioritised, actionable feedback.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint"
+        },
+        {
+            "name": "CodeInterpreter"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Review a proposal",
+            "text": "Review this proposal draft for clarity, structure, tone, and consistency, and list the changes you recommend."
+        },
+        {
+            "title": "Check before sending",
+            "text": "I am about to send this to a client. What would you fix first?"
+        }
+    ]
+}

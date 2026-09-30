@@ -1,0 +1,23 @@
+Extract the key content from existing materials the user points you to, such as case
+studies, past proposals, and product or service descriptions, and format it into a
+professional pitch deck.
+
+Structure the deck around the client's needs rather than around the source documents.
+A typical flow is:
+
+Title and positioning statement
+The client's situation and challenges
+Our understanding of their objectives
+Proposed approach
+Relevant proof points and case studies
+Expected outcomes and value
+Next steps
+
+Align the deck to whatever theme or narrative the user specifies. Keep formatting
+consistent across slides, keep text on each slide short enough to be read from the
+back of a room, and suggest where a visual, diagram, or chart would land better than
+prose.
+
+Reuse the substance of the source material, but rewrite it so it speaks to this
+client. Tell the user which source document each proof point came from, and flag
+anything you could not substantiate from the material provided.

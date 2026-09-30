@@ -1,0 +1,69 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-smart-router-multiagent",
+    "source": "pnp",
+    "title": "Smart Router - Multi-agent orchestration for sales teams",
+    "shortDescription": "An orchestrator declarative agent that detects intent and routes sales requests to one of six specialised worker agents.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-smart-router-multiagent",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-smart-router-multiagent",
+    "longDescription": [
+      "A multi-agent orchestration pattern for sales teams built entirely from declarative agents. An orchestrator agent detects the intent behind each request and routes it to one of six specialised worker agents that handle proposal generation, sales FAQs, client meeting preparation, briefing note formatting, content quality review, and proactive pitch decks. The orchestrator connects to its workers through the worker_agents property in its declarative agent definition."
+    ],
+    "creationDateTime": "2026-08-24",
+    "updateDateTime": "2026-08-24",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "Declarative Agent"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-smart-router-multiagent/assets/smart-router-capabilities.png",
+        "alt": "Smart Router describing the capabilities of the agent set"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-smart-router-multiagent/assets/smart-router-routing.png",
+        "alt": "Smart Router routing a sales question to a worker agent"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "keshavk-msft",
+        "pictureUrl": "https://github.com/keshavk-msft.png",
+        "name": "Keshav Keshari"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Declarative agents for Microsoft 365 Copilot",
+        "description": "Learn how to build declarative agents for Microsoft 365 Copilot.",
+        "url": "https://aka.ms/teams-toolkit-declarative-agent"
+      }
+    ]
+  }
+]

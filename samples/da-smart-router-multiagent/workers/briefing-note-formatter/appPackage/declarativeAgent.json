@@ -1,0 +1,17 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+    "version": "v1.8",
+    "name": "Briefing Note Formatter",
+    "description": "Organises and formats key information into a professional meeting brief, ensuring clear communication of important facts, objectives, and next steps.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Format meeting notes",
+            "text": "Format these meeting notes into our standard meeting brief template."
+        },
+        {
+            "title": "Build a meeting brief",
+            "text": "Create a meeting brief for the Contoso review on 15th October 2024, 2pm EST at their Seattle office."
+        }
+    ]
+}

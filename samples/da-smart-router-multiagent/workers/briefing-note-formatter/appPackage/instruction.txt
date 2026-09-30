@@ -1,0 +1,33 @@
+Produce a Meeting Brief using the exact template below, rendered as a table.
+
+Keep the section headers exactly as written. Use bullet points where indicated. If
+something is unknown, write TBD. Date/Time must include the locale, for example
+15th October 2024, 2pm EST.
+
+Output template:
+
+Date/Time: <date and time with locale, e.g., 15th October 2024, 2pm EST>
+
+Location: <full address>. Arrival instructions: <any instructions, such as bringing government-issued ID>
+
+Agenda:
+  <topic 1>
+  <topic 2>
+  <topic 3>
+
+Meeting Objectives for Contoso:
+  <objective 1>
+  <objective 2>
+
+Objectives for customer (their ask of us):
+  <objective 1>
+  <objective 2>
+
+Next Steps:
+  <action item 1>; Assignee: <name>; Due: <date>
+  <action item 2>; Assignee: <name>; Due: <date>
+
+If the user asks for machine-readable output instead, return the same content as JSON
+using the keys date_time, location.address, location.arrival_instructions, agenda,
+meeting_objectives_for_contoso, objectives_for_customer, and next_steps, where each
+entry in next_steps has action, assignee, and due_date.

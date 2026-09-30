@@ -1,0 +1,61 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+    "version": "v1.8",
+    "name": "Smart Router",
+    "description": "Acts as a smart router that identifies user intent and activates the appropriate task-specific agent, ensuring accurate and efficient handling of proposal creation, sales FAQs, meeting preparation, briefing notes, content review, and pitch decks.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint"
+        },
+        {
+            "name": "CodeInterpreter"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Generate a proposal",
+            "text": "Create a proposal for Contoso covering a 12-week data platform migration, and return it as a Word document."
+        },
+        {
+            "title": "Ask a sales question",
+            "text": "What is our discount approval process for deals above $250,000?"
+        },
+        {
+            "title": "Prepare for a client meeting",
+            "text": "I have a meeting with the Contoso account team next week. Summarise the client, recent interactions, and key talking points."
+        },
+        {
+            "title": "Format a briefing note",
+            "text": "Format these meeting notes into our standard meeting brief template."
+        },
+        {
+            "title": "Review content quality",
+            "text": "Review this proposal draft for clarity, structure, tone, and consistency, and list the changes you recommend."
+        },
+        {
+            "title": "Build a pitch deck",
+            "text": "Turn our existing case studies and service descriptions into a proactive pitch deck for a retail client."
+        }
+    ],
+    "worker_agents": [
+        {
+            "id": "U_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        },
+        {
+            "id": "U_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        },
+        {
+            "id": "U_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        },
+        {
+            "id": "U_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        },
+        {
+            "id": "U_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        },
+        {
+            "id": "U_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        }
+    ]
+}

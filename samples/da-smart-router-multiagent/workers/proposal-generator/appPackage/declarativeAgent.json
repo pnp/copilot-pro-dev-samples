@@ -1,0 +1,25 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+    "version": "v1.8",
+    "name": "Proposal Generator",
+    "description": "Generates client-specific proposals from the requirements you provide and returns them as a professionally formatted Word document with proper headings and subheadings.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint"
+        },
+        {
+            "name": "CodeInterpreter"
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Draft a proposal",
+            "text": "Create a proposal for Contoso covering a 12-week data platform migration, with a team of four and a fixed price."
+        },
+        {
+            "title": "Proposal from requirements",
+            "text": "Here are the client requirements. Turn them into a structured proposal and return it as a Word document."
+        }
+    ]
+}

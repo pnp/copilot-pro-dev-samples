@@ -1,0 +1,17 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.8/schema.json",
+    "version": "v1.8",
+    "name": "Sales FAQ",
+    "description": "Answers common sales questions with fast, clear responses and points to the relevant reference material.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+        {
+            "title": "Discount process",
+            "text": "What is our discount approval process for deals above $250,000?"
+        },
+        {
+            "title": "Quote validity",
+            "text": "How long does a customer quote stay valid before it needs to be reissued?"
+        }
+    ]
+}

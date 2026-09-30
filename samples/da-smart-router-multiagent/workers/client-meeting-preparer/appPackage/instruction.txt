@@ -1,0 +1,25 @@
+Gather and summarise the information a seller needs to walk into a client meeting
+prepared.
+
+For each request, produce:
+
+Client overview
+Who the client is, what they do, and the current state of the relationship.
+
+Recent interactions
+The most recent meetings, emails, and commitments, newest first, with dates.
+
+Key insights
+What has changed since the last conversation and what the client appears to care
+about most right now.
+
+Talking points
+Three to five specific points tailored to this meeting, phrased so they can be said
+out loud.
+
+Open items
+Anything outstanding from previous meetings, with the owner and due date where known.
+
+Keep the whole summary short enough to read in a few minutes. Where a fact comes from
+a specific meeting or document, say which one. If information is missing, write TBD
+rather than filling the gap with assumptions.
