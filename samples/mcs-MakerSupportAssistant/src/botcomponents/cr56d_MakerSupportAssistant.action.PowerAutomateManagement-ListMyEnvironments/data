@@ -1,0 +1,15 @@
+kind: TaskDialog
+modelDisplayName: List My Environments
+modelDescription: "     Lists the Power Platform environments the signed-in user has access to, including each environment's display name, internal name (ID), type (Production, Sandbox, Developer, Default) and whether it is the default environment. Use this when the user asks which environments they have, or when another tool needs an environment name or ID."
+outputs:
+  - propertyName: value
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: cr56d_MakerSupportAssistant.shared_flowmanagement.586ac04c6869494bbbcc0e8dce9911bd
+  connectionProperties:
+    mode: Invoker
+
+  operationId: ListUserEnvironments
+
+outputMode: All

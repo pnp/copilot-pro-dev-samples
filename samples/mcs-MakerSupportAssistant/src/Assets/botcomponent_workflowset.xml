@@ -1,0 +1,5 @@
+<botcomponent_workflowset>
+  <botcomponent_workflow botcomponentid.schemaname="cr56d_MakerSupportAssistant.action.Logsupportrequest" workflowid.workflowid="b54ea14a-73bb-f111-aaaf-7c1e52fb2a87">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+</botcomponent_workflowset>
