@@ -2871,5 +2871,57 @@
       }
     ],
     "Folder": "da-XBoxGameMaster"
+  },
+  {
+    "name": "pnp-copilot-pro-dev-da-pnp-samples-guide",
+    "source": "pnp",
+    "title": "Copilot PnP Samples Guide: a declarative agent that helps you discover and adopt PnP declarative agent samples",
+    "shortDescription": "A declarative agent for Microsoft 365 Copilot that helps developers discover declarative agent samples in this repository, walks through cloning and adapting them, and guides them on how to bootstrap their own agent. Uses an API plugin wired to the public unauthenticated GitHub REST API plus WebSearch scoped to this repo.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-pnp-samples-guide",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-pnp-samples-guide",
+    "longDescription": [
+      "A declarative agent (manifest v1.7) for Microsoft 365 Copilot that helps developers discover declarative agent samples in pnp/copilot-pro-dev-samples, understand what each sample does, and bootstrap their own agent inspired by them.",
+      "Includes an API plugin (v2.4) wired to a hand-stripped subset of the public, unauthenticated GitHub REST API (searchRepositories, searchCode, getRepo, getRepoContent, getRepoReadme). No GitHub token required, rate-limited to ~60 req/hour per IP.",
+      "Also uses the WebSearch capability scoped to this repo as a low-cost grounding fallback."
+    ],
+    "creationDateTime": "2026-06-12",
+    "updateDateTime": "2026-06-12",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "None"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JSON"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-pnp-samples-guide/M365Agent/appPackage/color.png",
+        "alt": "Copilot PnP Samples Guide declarative agent icon",
+        "order": 100,
+        "type": "image"
+      }
+    ],
+    "authors": [
+      {
+        "pictureUrl": "https://github.com/sebastienlevert.png",
+        "name": "Sebastien Levert",
+        "gitHubAccount": "sebastienlevert"
+      }
+    ],
+    "Folder": "da-pnp-samples-guide"
   }
 ]
