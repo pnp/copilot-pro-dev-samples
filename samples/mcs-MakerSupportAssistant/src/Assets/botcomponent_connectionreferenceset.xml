@@ -1,0 +1,11 @@
+<botcomponent_connectionreferenceset>
+  <botcomponent_connectionreference botcomponentid.schemaname="cr56d_MakerSupportAssistant.action.MicrosoftLearnDocsMCP-MicrosoftLearnDocsMCPServer" connectionreferenceid.connectionreferencelogicalname="cr56d_MakerSupportAssistant.shared_microsoftlearndocsmcpserver.0d39392a47c844d9922adab3cdbbd5f5">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_connectionreference>
+  <botcomponent_connectionreference botcomponentid.schemaname="cr56d_MakerSupportAssistant.action.PowerAutomateManagement-ListMyEnvironments" connectionreferenceid.connectionreferencelogicalname="cr56d_MakerSupportAssistant.shared_flowmanagement.586ac04c6869494bbbcc0e8dce9911bd">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_connectionreference>
+  <botcomponent_connectionreference botcomponentid.schemaname="cr56d_MakerSupportAssistant.action.PowerAutomateManagement-ListMyFlows" connectionreferenceid.connectionreferencelogicalname="cr56d_MakerSupportAssistant.shared_flowmanagement.586ac04c6869494bbbcc0e8dce9911bd">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_connectionreference>
+</botcomponent_connectionreferenceset>

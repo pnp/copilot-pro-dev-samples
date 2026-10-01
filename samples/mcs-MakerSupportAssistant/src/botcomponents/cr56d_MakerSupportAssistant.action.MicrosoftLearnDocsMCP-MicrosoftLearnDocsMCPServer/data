@@ -1,0 +1,39 @@
+kind: TaskDialog
+modelDisplayName: Microsoft Learn Docs MCP Server
+modelDescription: MCP Server to search Microsoft Learn content
+action:
+  kind: InvokeExternalAgentTaskAction
+  connectionReference: cr56d_MakerSupportAssistant.shared_microsoftlearndocsmcpserver.0d39392a47c844d9922adab3cdbbd5f5
+  connectionProperties:
+    usageDescription: |-
+      Searches Microsoft Learn documentation for official Microsoft product and developer documentation.
+
+      Use this tool whenever the user asks about:
+      - Power Platform
+      - Power Apps
+      - Canvas apps
+      - Model-driven apps
+      - Power Automate
+      - Power BI
+      - Power Pages
+      - Dataverse
+      - Copilot Studio
+      - Power Fx
+      - Connectors
+      - Triggers
+      - Actions
+      - Controls
+      - Control properties
+      - Formulas
+      - Expressions
+      - ALM
+      - Solutions
+      - Environments
+      - Microsoft Learn documentation
+
+      Use this tool for "what is", "how do I", "explain", "compare", "troubleshoot", "give me an example", and "what does this property/function/control do" questions.
+    mode: Invoker
+
+  operationDetails:
+    kind: ModelContextProtocolMetadata
+    operationId: microsoft_docs_search

@@ -1,0 +1,197 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "impersonation": {},
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "bj_sharedcommondataserviceforapps_f7a51"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "metadata": {
+        "defaultToEmbeddedConnections": true
+      },
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        },
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "b8f61c18-7224-4f8a-9c5f-72fbce5df764"
+          },
+          "type": "Request",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "description": "A short one-line summary of the user's problem",
+                  "title": "Title",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_1": {
+                  "description": "A full description of the problem, including what the user has already tried",
+                  "title": "Details",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_2": {
+                  "description": "One of: Power Apps, Power Automate, Dataverse, Copilot Studio, Power Pages, Power BI, Environments and governance, Other",
+                  "title": "Category",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_3": {
+                  "description": "The name of the environment the problem is in, or blank if unknown",
+                  "title": "Environment",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_4": {
+                  "description": "The ID of the agent conversation that raised the request",
+                  "title": "ConversationId",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "text_5": {
+                  "description": "The signed-in user's email",
+                  "title": "RequesterEmail",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "required": [
+                "text",
+                "text_1",
+                "text_2",
+                "text_3",
+                "text_4",
+                "text_5"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Respond_to_the_agent": {
+          "runAfter": {
+            "Add_a_new_row": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "81c94f73-dd52-465c-ad3b-a4686da63cc3"
+          },
+          "type": "Response",
+          "kind": "Skills",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "requesttitle": {
+                  "title": "RequestTitle",
+                  "description": "The short title of the support request",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "requestcategory": {
+                  "title": "RequestCategory",
+                  "description": "The category of the support request",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "requeststatus": {
+                  "title": "RequestStatus",
+                  "description": "The current status of the support request",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                },
+                "requestnumber": {
+                  "title": "RequestNumber",
+                  "description": "   The support request number, for example SR-1000",
+                  "type": "string",
+                  "x-ms-content-hint": "TEXT",
+                  "x-ms-dynamically-added": true
+                }
+              },
+              "additionalProperties": {}
+            },
+            "statusCode": 200,
+            "body": {
+              "requesttitle": "@{outputs('Add_a_new_row')?['body/bj_title']}",
+              "requestcategory": "@{outputs('Add_a_new_row')?['body/bj_category']}",
+              "requeststatus": "@{outputs('Add_a_new_row')?['body/statuscode']}",
+              "requestnumber": "@{outputs('Add_a_new_row')?['body/bj_requestnumber']}"
+            }
+          }
+        },
+        "Category_map": {
+          "runAfter": {},
+          "type": "Compose",
+          "inputs": {
+            "Power Apps": 121200000,
+            "Power Automate": 121200001,
+            "Dataverse": 121200002,
+            "Copilot Studio": 121200003,
+            "Power Pages": 121200004,
+            "Power BI": 121200005,
+            "Environments and governance": 121200006,
+            "Other": 121200007
+          }
+        },
+        "Add_a_new_row": {
+          "runAfter": {
+            "Category_map": [
+              "Succeeded"
+            ]
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "entityName": "bj_supportrequests",
+              "item/bj_title": "@triggerBody()?['text']",
+              "item/bj_category": "@coalesce(outputs('Category_map')?[triggerBody()?['text_2']], 121200007)",
+              "item/bj_conversationid": "@triggerBody()?['text_4']",
+              "item/bj_details": "@triggerBody()?['text_1']",
+              "item/bj_environment": "@triggerBody()?['text_3']",
+              "item/bj_requesteremail": "@triggerBody()?['text_5']"
+            },
+            "host": {
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps",
+              "operationId": "CreateRecord",
+              "connectionName": "shared_commondataserviceforapps"
+            }
+          }
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

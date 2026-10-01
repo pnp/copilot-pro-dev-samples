@@ -1,0 +1,20 @@
+kind: TaskDialog
+inputs:
+  - kind: AutomaticTaskInput
+    propertyName: environmentName
+    description: The environment's internal name (ID), not its display name. For example a GUID or a value starting with "Default-". If the user gives an environment display name like "Personal Dev", first call "List my environments" to find the matching internal name. If the user doesn't say which environment, ask them.
+
+modelDisplayName: List My Flows
+modelDescription: Lists the cloud flows the signed-in user created in a specific Power Platform environment. Returns each flow's display name, ID, state (Started or Stopped), created and last modified dates, the connectors it uses, and any estimated suspension reason and date. Use this when the user asks about their flows, which flows are turned off, which connectors a flow uses, or whether any flows are at risk of being suspended.
+outputs:
+  - propertyName: value
+
+action:
+  kind: InvokeConnectorTaskAction
+  connectionReference: cr56d_MakerSupportAssistant.shared_flowmanagement.586ac04c6869494bbbcc0e8dce9911bd
+  connectionProperties:
+    mode: Invoker
+
+  operationId: ListMyFlows
+
+outputMode: All
