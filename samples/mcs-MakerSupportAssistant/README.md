@@ -55,7 +55,7 @@ pac solution import --path MakerSupportAssistant.zip --environment <environment-
    * **Microsoft Dataverse**
 2. Open **Cloud flows** in the solution and make sure **Log support request** is turned on.
 3. In [Copilot Studio](https://copilotstudio.microsoft.com), open **Maker Support Assistant** and select **Publish**.
-4. Give anyone who should be able to log support requests **Create** and **Read** privileges on the **Support Request** table, for example by adding them to a custom security role. The flow runs under each user's own Dataverse connection, so users without these privileges can't log requests.
+4. The **Log support request** flow uses the **Microsoft Dataverse** connection you set in step 1, so users don't need any extra Dataverse privileges to log support requests.
 5. Share the agent with your users, or add it to a channel such as Microsoft Teams.
 
 ## Features
@@ -86,7 +86,7 @@ This sample illustrates the following concepts:
 ### Security notes
 
 * The connector tools use **end user credentials**, so each person only sees their own environments and flows.
-* The **Log support request** flow's **Microsoft Dataverse** connection is set to **Provided by run-only user**, and the flow can only create rows in the Support Request table.
+* The **Log support request** flow uses the **Microsoft Dataverse** connection set up during installation. It can only create rows in the Support Request table, and the requester's identity comes from their sign-in, not from anything they type.
 * The requester's email and conversation ID are filled from the signed-in user and the conversation, not from anything the user types.
 * Apart from logging support requests, the agent only reads information. It never changes, turns off or deletes anything.
 * Web search is turned off, so answers come from Microsoft Learn documentation and the user's own data only.
