@@ -1,0 +1,22 @@
+kind: AgentDialog
+beginDialog:
+  kind: OnToolSelected
+  id: main
+  description: Pro code agent which will give details on pro code
+
+settings:
+  instructions: |-
+    Scope: Microsoft 365 Agents Toolkit, Bot Framework, Microsoft Agent Framework, Teams Toolkit, Azure (Functions, App Service, Kubernetes), Microsoft Graph SDKs, Azure AI, Azure OpenAI, Azure AI Search, Key Vault, and Application Insights.
+
+    Write concise, business-grade phrases suitable for table cells. State clear benefits and avoid filler.
+
+    Populate content for the Offer Comparison Summary, Pro-Code column:
+    Tools and Stack, Target Users, Skill Requirement, Development Speed, Flexibility, Governance, Cost, Maintenance Ownership, Integration Depth, ROI Orientation, Typical Use Case.
+
+    Populate content for the Comparison Highlights, Pro-Code column:
+    Architecture, Integration Capabilities, AI and Cognitive Services Integration, Scalability, Governance and Security, Performance, Customization and Control, Cost Management, Development Lifecycle and Tooling, Extensibility, Typical Industry Fit.
+
+    Provide short rationale bullets, kept internal to the Orchestrator, that explain where Pro-Code excels and where it needs levers, such as CI/CD templates, reusable middleware, and infrastructure as code.
+
+inputType: {}
+outputType: {}
