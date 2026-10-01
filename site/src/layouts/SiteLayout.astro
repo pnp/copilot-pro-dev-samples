@@ -1,0 +1,121 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Microsoft 365 Copilot community samples browser." } = Astro.props;
+const navItems = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/samples",
+    label: "Samples",
+  },
+  {
+    href: "/contribute",
+    label: "Contributing",
+  },
+];
+const currentPath = Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/$/, "");
+const siteTitle = "Copilot Pro Dev Samples";
+const documentTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <script src="../scripts/clarity.ts"></script>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{documentTitle}</title>
+    <script is:inline>
+      const storedTheme = localStorage.getItem("site-theme");
+      const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.dataset.theme = storedTheme || preferredTheme;
+    </script>
+  </head>
+  <body>
+    <header class="sticky top-0 z-30 border-b-[2px] border-b-sky-300 bg-ink-950/70 backdrop-blur-lg">
+      <div class="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
+        <a class="inline-flex items-center gap-2 self-start text-xl font-bold tracking-[0.01em] text-white lg:self-center" href="/">
+          <img class="h-8 w-8" src="/favicon.svg" alt="" aria-hidden="true" />
+          <span>Microsoft 365 Copilot <span class="text-sky-300">Pro Dev Samples</span></span>
+        </a>
+        <nav aria-label="Primary" class="site-nav flex flex-wrap items-center gap-2 md:gap-3 lg:justify-end">
+          {navItems.map((item) => {
+            const isCurrent = currentPath === item.href;
+            return (
+              <a
+                href={item.href}
+                class:list={[
+                  "chip-button inline-flex min-h-11 items-center gap-2 text-sm",
+                  isCurrent && "chip-button-active",
+                ]}
+                aria-current={isCurrent ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            );
+          })}
+          <a
+            href="https://github.com/pnp/copilot-pro-dev-samples"
+            target="_blank"
+            rel="noreferrer"
+            class="chip-button chip-button-repo hidden min-h-11 shrink-0 items-center justify-center gap-2 leading-none sm:inline-flex"
+          >
+            <img class="github-icon github-icon-light h-5 w-5 shrink-0 object-contain" src="/GitHub_Invertocat_Black.svg" alt="" aria-hidden="true" />
+            <img class="github-icon github-icon-dark h-5 w-5 shrink-0 object-contain" src="/GitHub_Invertocat_White.svg" alt="" aria-hidden="true" />
+            GitHub
+          </a>
+          <button
+            type="button"
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Switch to light theme"
+            title="Switch to light theme"
+          >
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v2m0 14v2M5.64 5.64l1.42 1.42m9.9 9.9l1.4 1.4M3 12h2m14 0h2M5.64 18.36l1.42-1.42m9.9-9.9l1.4-1.4M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 15.3A8.5 8.5 0 018.7 3.5 8.5 8.5 0 1020.5 15.3z"></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main mx-auto w-full max-w-6xl px-4 py-10 md:px-6 md:py-14">
+      <slot />
+    </main>
+
+    <footer class="border-t border-white/10 py-8 text-sm text-slate-300">
+      <div class="mx-auto w-full max-w-6xl px-4 md:px-6">
+        This site and samples run under MIT License. These samples are provided as is without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement.
+      </div>
+    </footer>
+    <script is:inline>
+      const themeToggle = document.querySelector("#theme-toggle");
+      const updateThemeToggle = () => {
+        const isLight = document.documentElement.dataset.theme === "light";
+        themeToggle?.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
+        themeToggle?.setAttribute("title", isLight ? "Switch to dark theme" : "Switch to light theme");
+      };
+
+      updateThemeToggle();
+      themeToggle?.addEventListener("click", () => {
+        const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+        document.documentElement.dataset.theme = nextTheme;
+        localStorage.setItem("site-theme", nextTheme);
+        updateThemeToggle();
+      });
+    </script>
+  </body>
+</html>

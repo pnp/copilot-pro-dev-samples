@@ -1,0 +1,13 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import SampleBrowser from "../components/SampleBrowser.astro";
+import { getSamples, getSampleStats } from "../lib/samples";
+
+const samples = await getSamples();
+const { byType, total } = getSampleStats(samples);
+---
+
+<SiteLayout title="Browse Samples" description="Filter and browse Microsoft 365 Copilot sample projects.">
+
+  <SampleBrowser samples={samples} byType={byType} />
+</SiteLayout>
