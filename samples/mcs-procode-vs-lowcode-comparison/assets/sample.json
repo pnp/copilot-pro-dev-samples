@@ -1,0 +1,61 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-mcs-procode-vs-lowcode-comparison",
+    "source": "pnp",
+    "title": "Pro-Code vs Low-Code Comparison - Multi-agent decision support",
+    "shortDescription": "A Copilot Studio multi-agent orchestrator that triggers a pro-code and a low-code child agent in parallel and merges their analysis into one comparison report.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-procode-vs-lowcode-comparison",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-procode-vs-lowcode-comparison",
+    "longDescription": [
+      "Organizations repeatedly have to choose between a pro-code and a low-code approach when building a solution, and that choice affects development speed, total cost of ownership, scalability, governance, and the skills the team needs. This Copilot Studio sample answers that question with a multi-agent pattern: an orchestrator triggers a pro-code child agent and a low-code child agent in parallel with the same question, then merges their responses into a single structured report containing two comparison tables, a verdict with justification, levers to improve the weaker option, and an executive summary."
+    ],
+    "creationDateTime": "2026-08-24",
+    "updateDateTime": "2026-08-24",
+    "products": [
+      "Microsoft Copilot Studio"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Microsoft Copilot Studio"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "Copilot Studio"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-procode-vs-lowcode-comparison/assets/comparison-agent-child-agents.png",
+        "alt": "The orchestrator agent with its pro-code and low-code child agents connected"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-procode-vs-lowcode-comparison/assets/comparison-agent-verdict.png",
+        "alt": "The merged comparison report showing the verdict and recommendation"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "keshavk-msft",
+        "pictureUrl": "https://github.com/keshavk-msft.png",
+        "name": "Keshav Keshari"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Copilot Studio documentation",
+        "description": "Learn how to build agents with Microsoft Copilot Studio.",
+        "url": "https://learn.microsoft.com/microsoft-copilot-studio/"
+      },
+      {
+        "name": "Add other agents to your agent",
+        "description": "Learn how to connect child agents to an orchestrator agent in Copilot Studio.",
+        "url": "https://learn.microsoft.com/microsoft-copilot-studio/authoring-add-other-agents"
+      }
+    ]
+  }
+]

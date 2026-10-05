@@ -1,0 +1,10 @@
+<botcomponent schemaname="pnpcmp_ProCodevsLowCodeComparison.agent.procode">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>procode</name>
+  <parentbotid>
+    <schemaname>pnpcmp_ProCodevsLowCodeComparison</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
