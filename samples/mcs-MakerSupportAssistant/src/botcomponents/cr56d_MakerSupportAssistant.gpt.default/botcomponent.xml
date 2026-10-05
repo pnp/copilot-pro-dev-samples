@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr56d_MakerSupportAssistant.gpt.default">
+  <componenttype>15</componenttype>
+  <description>Helps makers, developers and admins understand and build with Microsoft Power Platform using Microsoft Learn documentation.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Maker Support Assistant</name>
+  <parentbotid>
+    <schemaname>cr56d_MakerSupportAssistant</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

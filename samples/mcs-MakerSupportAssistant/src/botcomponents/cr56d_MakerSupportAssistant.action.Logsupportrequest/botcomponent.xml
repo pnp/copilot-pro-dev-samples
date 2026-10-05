@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr56d_MakerSupportAssistant.action.Logsupportrequest">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>Log support request</name>
+  <parentbotid>
+    <schemaname>cr56d_MakerSupportAssistant</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

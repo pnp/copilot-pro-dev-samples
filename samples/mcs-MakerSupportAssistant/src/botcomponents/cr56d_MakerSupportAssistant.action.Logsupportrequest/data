@@ -1,0 +1,61 @@
+kind: TaskDialog
+response:
+  activity:
+    attachments:
+      - kind: AdaptiveCardTemplate
+        cardContent: |-
+          =   {
+               type: "AdaptiveCard",
+               '$schema': "http://adaptivecards.io/schemas/adaptive-card.json",
+               version: "1.5",
+               body: [
+                 {
+                   type: "Container",
+                   style: "good",
+                   bleed: true,
+                   items: [
+                     { type: "TextBlock", text: "✅ Support request logged", weight: "Bolder", size: "Medium", wrap: true }
+                   ]
+                 },
+                 {
+                   type: "FactSet",
+                   facts: [
+                     { title: "Request number", value: Topic.Output.requestnumber },
+                     { title: "Title", value: Topic.Output.requesttitle },
+                     { title: "Category", value: Topic.Output.requestcategory },
+                     { title: "Status", value: Topic.Output.requeststatus }
+                   ]
+                 },
+                 {
+                   type: "TextBlock",
+                   text: "The support team will follow up with you by email. Quote your request number if you contact them.",
+                   wrap: true,
+                   isSubtle: true
+                 }
+               ]
+             }
+
+  mode: Strict
+
+inputs:
+  - kind: ManualTaskInput
+    propertyName: text_5
+    value: =System.User.Email
+
+  - kind: ManualTaskInput
+    propertyName: text_4
+    value: =System.Conversation.Id
+
+modelDescription: Creates a support request for the Power Platform support team and returns its request number. Use this only when the user asks for help from a person, or when you can't solve their problem after troubleshooting, and only after the user has confirmed they want a request logged.
+outputs:
+  - propertyName: requestnumber
+
+action:
+  kind: InvokeFlowTaskAction
+  flowId: b54ea14a-73bb-f111-aaaf-7c1e52fb2a87
+  connectionProperties:
+    $kind: ConnectionProperties
+    diagnostics:
+    mode: Invoker
+
+outputMode: All

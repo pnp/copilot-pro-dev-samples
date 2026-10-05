@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr56d_MakerSupportAssistant.action.PowerAutomateManagement-ListMyEnvironments">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>Power Automate Management - List My Environments</name>
+  <parentbotid>
+    <schemaname>cr56d_MakerSupportAssistant</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

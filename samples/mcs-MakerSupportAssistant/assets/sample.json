@@ -1,0 +1,70 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-mcs-MakerSupportAssistant",
+    "source": "pnp",
+    "title": "Maker Support Assistant",
+    "shortDescription": "A Copilot Studio agent that answers Power Platform questions from Microsoft Learn, checks the user's own environments and flows, and logs support requests.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-MakerSupportAssistant",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-MakerSupportAssistant",
+    "longDescription": [
+      "Maker Support Assistant helps Power Platform makers, developers and administrators build, understand and troubleshoot their solutions. It combines the Microsoft Learn Docs MCP Server with Power Automate Management connector tools to answer how-to questions and look up the user's own environments and cloud flows. When it can't solve a problem, it logs a support request in Dataverse through an agent flow and replies with an Adaptive Card confirmation."
+    ],
+    "creationDateTime": "2026-10-01",
+    "updateDateTime": "2026-10-01",
+    "products": [
+      "Microsoft 365 Copilot",
+      "Microsoft Copilot Studio",
+      "Power Automate",
+      "Microsoft Dataverse"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Copilot Studio"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-MakerSupportAssistant/assets/maker-support-assistant.png",
+        "alt": "Maker Support Assistant troubleshooting a flow and logging a support request"
+      },
+      {
+        "type": "video",
+        "order": 101,
+        "url": "https://www.youtube.com/embed/OCf8e4FOZVs",
+        "alt": "Demo of Maker Support Assistant checking flows, troubleshooting and logging a support request"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "brayjosh",
+        "pictureUrl": "https://github.com/brayjosh.png",
+        "name": "Josh Bray"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Microsoft Copilot Studio",
+        "description": "Discover how to build AI-driven agents and workflows easily with Microsoft Copilot Studio with online training courses, docs, and videos. Learn how to quickly and simply integrate chat into your website.",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
+      },
+      {
+        "name": "Use Power Platform connectors as tools in Copilot Studio agents",
+        "description": "Learn how to add connector actions to an agent as tools.",
+        "url": "https://learn.microsoft.com/microsoft-copilot-studio/advanced-connectors"
+      },
+      {
+        "name": "Create an agent flow as a tool",
+        "description": "Learn how to build agent flows that an agent can call as tools.",
+        "url": "https://learn.microsoft.com/microsoft-copilot-studio/advanced-flow-create"
+      }
+    ]
+  }
+]
