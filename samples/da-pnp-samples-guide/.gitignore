@@ -1,0 +1,22 @@
+# M365 Agents Toolkit
+M365Agent/.localConfigs
+M365Agent/env/.env.*.user
+M365Agent/appPackage/build/
+M365Agent/build/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/launch.json
+.vscode/settings.json
+.idea/
+
+# wiqd / local scratch
+.wiqd/
+*.local.json
