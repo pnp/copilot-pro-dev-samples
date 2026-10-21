@@ -1,0 +1,64 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-plugin-retirement-radar",
+    "source": "pnp",
+    "title": "Retirement Radar for Copilot Cowork",
+    "shortDescription": "A Cowork plugin that checks Microsoft technologies for deprecation and retirement using live Microsoft Learn documentation.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/plugin-retirement-radar",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/plugin-retirement-radar",
+    "longDescription": [
+      "Retirement Radar inspects scripts, application code, configuration files, dependency lists, and architecture notes for retired or deprecated Microsoft technologies.",
+      "The plugin uses an agent skill and the public Microsoft Learn MCP server to produce sourced findings, supported replacements, code suggestions, and prioritized migration checklists."
+    ],
+    "creationDateTime": "2026-10-22",
+    "updateDateTime": "2026-10-22",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Microsoft 365 Copilot Cowork"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "JSON, Markdown"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/plugin-retirement-radar/assets/demo.png",
+        "alt": "Retirement Radar in Microsoft 365 Copilot Cowork"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "rabwill",
+        "pictureUrl": "https://github.com/rabwill.png",
+        "name": "Rabia Williams"
+      }
+    ],
+    "references": [
+      {
+        "name": "Build your first Copilot Cowork plugin",
+        "description": "Copilot Camp guidance for building and packaging Copilot Cowork plugins.",
+        "url": "https://microsoft.github.io/copilot-camp/pages/copilot-cowork/02-cowork-plugins/"
+      },
+      {
+        "name": "Microsoft Learn MCP server",
+        "description": "Public Microsoft Learn documentation and code-sample tools used by this plugin.",
+        "url": "https://learn.microsoft.com/api/mcp"
+      }
+    ]
+  }
+]
