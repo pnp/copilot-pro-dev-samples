@@ -29,64 +29,73 @@ You need:
 - Access to **Microsoft 365 Copilot Cowork**
 - Copilot Credits for testing in Cowork
 - Permission to upload custom plugins in your organization
+- [Work IQ Dev Tools (WIQD) CLI](https://microsoft.github.io/wiqd/getting-started/installation/) with the `wiqd plugin` commands available (`wiqd plugin --help`)
+- Permission to register and provision Microsoft 365 apps in your tenant
 
-The plugin uses the public, read-only [Microsoft Learn MCP server](https://learn.microsoft.com/api/mcp). It does not require an API key or a connector sign-in.
+The plugin uses the public, read-only [Microsoft Learn MCP server](https://learn.microsoft.com/api/mcp). It does not require an API key or a connector sign-in. WIQD still requires Microsoft 365 sign-in to provision the app.
 
 ## Minimal path to awesome
 
-### 1. Download the plugin package
+### 1. Prepare the WIQD project
 
-Download the ready-to-upload [appPackage.dev.zip](src/appPackage.dev.zip). On GitHub, select **Download raw file** to save the ZIP. Do not extract or repackage it.
+Clone or download this repository. From this sample's directory, enter `src` and create your local environment file.
 
-### 2. Upload and enable it in Cowork
+macOS/Linux:
+
+```sh
+cd src
+cp env/.env.local.sample env/.env.local
+```
+
+PowerShell:
+
+```powershell
+Set-Location src
+Copy-Item env/.env.local.sample env/.env.local
+```
+
+Run all remaining WIQD commands from `src`, the project root containing `wiqd.plugin.json` and `m365agents.yml`.
+
+### 2. Validate, provision, and package
+
+```sh
+wiqd auth login --interactive
+wiqd plugin provision --env local
+wiqd plugin package --env local
+wiqd plugin validate --mode deep --env local
+```
+
+These commands provision the plugin in your signed-in Microsoft 365 tenant and create `src/appPackage/build/appPackage.local.zip`. The `local` environment still uses your tenant; it is not an offline deployment.
+
+Do not commit generated ZIPs or environment files containing IDs or credentials.
+
+### 3. Enable it in Cowork
 
 1. Open **Microsoft 365 Copilot Cowork**.
 2. Open the plugin inventory.
-3. Select the option to upload a custom plugin.
-4. Upload the downloaded `appPackage.dev.zip`.
-5. Find **Retirement Radar** and enable it for the current Cowork session.
+3. Find **Retirement Radar** and enable it for the current Cowork session.
 
-The plugin should show:
+If a custom upload is required, upload the generated `appPackage.local.zip`. You should see the **Retirement Radar** skill and **Microsoft Learn** connector. The connector needs no additional sign-in.
 
-- The **Retirement Radar** skill
-- The **Microsoft Learn** connector
+### 4. Run the demo
 
-The connector uses anonymous access, so Cowork should not ask you to sign in.
-
-### 3. Run the demo
-
-Open the [legacy administration demo script](src/demo/legacy-admin-script%20copy.txt), copy the complete script, and paste it into Cowork with this prompt. The script intentionally uses retired technologies: inspect it as text, **do not execute it**.
+Paste the [legacy administration demo script](src/demo/legacy-admin-script%20copy.txt) into Cowork with this prompt. **Do not execute the script**; it intentionally uses retired technologies.
 
 > Is this still safe to run tonight? Check it for retired Microsoft APIs.
 
-Retirement Radar should:
+Expect a risk-ranked report with Microsoft Learn sources and supported replacements. Results may change as Microsoft updates its documentation.
 
-1. Inventory the Microsoft technologies in the script.
-2. Check each one against current Microsoft Learn content.
-3. Classify each finding as **Broken now**, **Breaking soon**, **Deprecated**, or **OK**.
-4. Cite an official source for every dated claim.
-5. Recommend supported replacements.
-
-The demo includes intentionally old technology such as:
-
-- MSOnline and AzureAD PowerShell
-- Azure AD Graph (`graph.windows.net`)
-- AzureRM PowerShell
-- Office 365 connectors in Teams
-
-Because Retirement Radar checks Microsoft Learn at runtime, its wording and findings can change as Microsoft updates the documentation.
-
-### 4. Ask for the migration
+### 5. Ask for the migration
 
 Continue in the same Cowork session:
 
 > Rewrite the whole script with the supported replacements.
 
-The plugin uses Microsoft Learn code samples to produce an updated PowerShell script while preserving the intent and variable names where possible.
+Review the generated code and test it in a non-production environment before use.
 
 ## More prompts to try
 
-Retirement Radar can inspect more than PowerShell. Try it with application code, dependency files, infrastructure definitions, or architecture notes:
+Try it with application code, dependency files, or architecture notes:
 
 ```text
 Check this project for deprecated Microsoft SDKs and APIs. Cite an official source for every finding.
@@ -94,14 +103,6 @@ Check this project for deprecated Microsoft SDKs and APIs. Cite an official sour
 
 ```text
 Which dependencies in this package file need migration within the next 12 months?
-```
-
-```text
-This integration started returning 403 errors. Check whether any Microsoft endpoint or authentication library in it has been retired.
-```
-
-```text
-Create a prioritized migration plan, then rewrite only the broken parts.
 ```
 
 Do not paste live secrets, access tokens, connection strings, or production webhook URLs into the chat. Replace them with redacted values first.
@@ -118,56 +119,31 @@ Generated findings and migration code require human review. Test proposed change
 
 ### What is in the plugin
 
-```text
-
-src/appPackage/
-├── manifest.json
-├── mcp-tools.json
-├── color.png
-├── outline.png
-└── skills/
-    └── retirement-radar/
-        ├── SKILL.md
-        └── references/
-            └── report-template.md
-
-```
-
-Retirement Radar is a standard Microsoft 365 app package for Copilot Cowork:
-
-| Component | Purpose |
+| Source | Purpose |
 |---|---|
-| `agentSkills[0]` | Registers the `retirement-radar` workflow from `skills/retirement-radar/SKILL.md` |
-| `agentConnectors[0]` | Connects Cowork to the remote Microsoft Learn MCP server |
-| `mcp-tools.json` | Describes the Microsoft Learn tools exposed to the skill |
+| [WIQD project](src/wiqd.plugin.json) | Identifies the plugin and its capabilities |
+| [Lifecycle configuration](src/m365agents.yml) and [local configuration](src/m365agents.local.yml) | Provision and package the app |
+| [App package source](src/appPackage/) | Manifest, icons, Microsoft Learn tools, and the Retirement Radar skill |
+| [Environment templates](src/env/) | Starting configuration without generated IDs |
 
-There is no declarative agent or hosted backend in this package. The skill contains the workflow, and the connector provides live Microsoft Learn search, page retrieval, and code-sample tools.
+This is a standalone Cowork plugin with no declarative agent or hosted backend.
 
 ## Troubleshooting
 
-### The plugin does not appear in Cowork
-
-- Confirm that `appPackage.dev.zip` uploaded successfully.
-- Reopen the plugin inventory after the upload completes.
-- Check that the plugin is installed and enabled for the current session.
-
-### The package upload fails
-
-- Open the ZIP and confirm `manifest.json` is at the root.
-- Confirm `skills/retirement-radar/SKILL.md` exists with that exact capitalization.
-- Confirm the ZIP contains `mcp-tools.json`, `color.png`, and `outline.png`.
-- Do not place a parent `appPackage/` directory inside the ZIP.
-
-### The skill does not activate
-
-Use an explicit prompt containing phrases such as **retired**, **deprecated**, **still supported**, or **check Microsoft dependencies**. Also confirm that Retirement Radar is enabled in the Cowork session.
-
-### Microsoft Learn results are unavailable
-
-The skill depends on `https://learn.microsoft.com/api/mcp`. Confirm that your organization allows Cowork to reach that HTTPS endpoint.
+| Problem | Try this |
+|---|---|
+| WIQD does not recognize the project | Run commands from `src` and check that WIQD is up to date. |
+| Missing environment or app ID | Copy the environment template, then complete provisioning before packaging. |
+| Plugin is missing in Cowork | Check the signed-in account, reopen the plugin inventory, and enable Retirement Radar. |
+| Package upload fails | Re-run packaging and deep validation, then upload the generated ZIP without repackaging it. |
+| Skill does not activate | Include **retired**, **deprecated**, or **still supported** in your prompt. |
+| Microsoft Learn is unavailable | Check that your organization allows `https://learn.microsoft.com/api/mcp`. |
 
 ## Learn more
 
+- [WIQD cookbooks](https://aka.ms/wiqd/cookbooks)
+- [WIQD: Build a Plugin](https://microsoft.github.io/wiqd/getting-started/build-a-plugin/)
+- [WIQD plugin authoring reference](https://microsoft.github.io/wiqd/getting-started/plugin-reference/)
 - [Copilot Camp: Build your first Copilot Cowork plugin](https://aka.ms/copilotdevcamp/plugin)
 
 <!--

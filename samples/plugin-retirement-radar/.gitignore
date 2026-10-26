@@ -1,7 +1,10 @@
 .DS_Store
 .local/
+src/appPackage/build/
+.localConfigs
+.deployment/
+node_modules/
 *.zip
-!src/appPackage.dev.zip
 .env
 .env.*
 !.env.*.sample
