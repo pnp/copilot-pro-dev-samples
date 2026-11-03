@@ -1,0 +1,56 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-YOUR_PLUGIN_FOLDER",
+    "source": "pnp",
+    "title": "YOUR-SAMPLE-TITLE",
+    "shortDescription": "YOUR-SHORT-DESCRIPTION",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR_PLUGIN_FOLDER",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/YOUR_PLUGIN_FOLDER",
+    "longDescription": [
+      "YOUR-LONG-DESCRIPTION"
+    ],
+    "creationDateTime": "YYYY-MM-DD",
+    "updateDateTime": "YYYY-MM-DD",
+    "products": [
+      "Microsoft 365 Copilot"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "YOUR-PLATFORM"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "YOUR-LANGUAGE"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/YOUR_PLUGIN_FOLDER/assets/YOUR-IMAGE-NAME-HERE",
+        "alt": "YOUR-IMAGE-ALT-TEXT"
+      },
+      {
+        "type": "video",
+        "order": 101,
+        "url": "https://www.youtube.com/embed/YOUR-YOUTUBE-VIDEO-ID",
+        "alt": "YOUR-VIDEO-ALT-TEXT"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "YOUR-GITHUB-ACCOUNT",
+        "pictureUrl": "https://github.com/YOUR-GITHUB-ACCOUNT.png",
+        "name": "YOUR-NAME"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about what Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      }
+    ]
+  }
+]

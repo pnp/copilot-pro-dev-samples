@@ -9,18 +9,25 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) for full human-oriented guidance.
 | Path | Purpose |
 |------|---------|
 | `samples/` | One subfolder per sample |
-| `templates/` | Submission templates for declarative-agent, custom-engine-agent, and Copilot Studio samples |
+| `templates/` | Submission templates for declarative-agent, plugin, custom-engine-agent, and Copilot Studio samples |
 
 ## Sample folder naming
 Prefix the folder name based on sample type:
 | Prefix | Type |
 |--------|------|
 | `da-` | Declarative agent |
+| `plugin-` | Plugin (skills and/or connectors) |
 | `cea-` | Custom engine agent (Azure Bot Framework) |
 | `cext-` | Copilot extension (deprecated) |
 | `mcs-` | Microsoft Copilot Studio agent |
 
 Rules: lowercase, hyphens only, no periods.
+
+### Declarative agent or plugin?
+Decide from the app package `manifest.json`:
+
+- Contains an `agentSkills` or `agentConnectors` property: it is a plugin, use `plugin-`.
+- Contains a `copilotAgents` property and neither `agentSkills` nor `agentConnectors`: it is a declarative agent, use `da-`.
 
 ## Required files
 | File | Notes |
@@ -50,6 +57,7 @@ Detect the project type from its sample folder prefix before selecting a templat
 | Prefix | Project template | Additional requirements |
 |--------|------------------|-------------------------|
 | `da-` | `templates/da-declarative-agent/` | Include a Teams/M365 app package containing `manifest.json` and a declarative agent manifest. |
+| `plugin-` | `templates/plugin-copilot-plugin/` | Include a Teams/M365 app package containing `manifest.json` with `agentSkills` and/or `agentConnectors`, plus the skill and connector files it references. |
 | `cea-` | `templates/cea-custom-engine-agent/` | Include the agent source and a Teams/M365 app package containing `manifest.json`. |
 | `msgext-` | None; follow `CONTRIBUTING.md` | Include the message extension source and a Teams/M365 app package containing `manifest.json`. |
 | `mcs-` | `templates/mcs-copilot-studio/` | Include exported or cloned Copilot Studio source in `src/`. |
