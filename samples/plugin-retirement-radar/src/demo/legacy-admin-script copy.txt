@@ -1,0 +1,27 @@
+# Nightly user and group report - written in 2019, still running on a scheduled task
+# Paste this whole file into Retirement Radar for the demo.
+
+Import-Module MSOnline
+Import-Module AzureAD
+Import-Module AzureRM
+
+Connect-MsolService
+$licensed = Get-MsolUser -All | Where-Object { $_.IsLicensed }
+
+Connect-AzureAD
+$sales = Get-AzureADGroup -SearchString "Sales"
+$members = Get-AzureADGroupMember -ObjectId $sales.ObjectId -All $true
+
+# Look up a manager directly through the Graph endpoint
+$token = "<redacted>"
+$mgr = Invoke-RestMethod -Uri "https://graph.windows.net/contoso.onmicrosoft.com/users/alex@contoso.com/manager?api-version=1.6" `
+    -Headers @{ Authorization = "Bearer $token" }
+
+# Deploy the reporting storage account
+Login-AzureRmAccount
+New-AzureRmStorageAccount -ResourceGroupName "rg-reports" -Name "contosoreports" -Location "australiaeast" -SkuName Standard_LRS
+
+# Post the summary to the IT channel
+$body = @{ text = "Licensed users: $($licensed.Count); Sales members: $($members.Count)" } | ConvertTo-Json
+Invoke-RestMethod -Method Post -ContentType "application/json" `
+    -Uri "https://contoso.webhook.office.com/webhookb2/<redacted>/IncomingWebhook/<redacted>" -Body $body
