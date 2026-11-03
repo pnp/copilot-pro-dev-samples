@@ -11,6 +11,7 @@ TechPulse is an intelligent tech news companion that delivers the latest technol
 Version|Date|Comments
 -------|----|--------
 1.0|September 26, 2025|Initial release
+1.1|October 27, 2026|Pin `mcp` below 2 so the Tech News MCP server starts on a fresh install
 
 ## Prerequisites
 

@@ -2,5 +2,5 @@ python-dotenv
 microsoft-agents-hosting-aiohttp
 microsoft-agents-authentication-msal
 openai
-mcp
+mcp<2
 gunicorn
