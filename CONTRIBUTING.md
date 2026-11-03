@@ -87,7 +87,7 @@ Each sample should be in its own folder within the /samples directory. Your fold
 | --- | --- |
 | cea- | These are Custom engine agents that interact with users in the Bizchat chat surface via the Azure Bot Framework |
 | da- | These are Declarative agents that run using Microsoft 365 Copilot's AI and orchestration and may include API plugins and Graph connectors |
-| plugin- | These are plugins whose app package `manifest.json` contains an `agentSkills` or `agentConnectors` property, for example skills and MCP connectors for Microsoft 365 Copilot Cowork. If the manifest has a `copilotAgents` property and neither of these properties, it is a declarative agent and uses the `da-` prefix |
+| plugin- | These are plugins whose app package `manifest.json` contains an `agentSkills` or `agentConnectors` property, even if it also has `copilotAgents`, for example skills and MCP connectors for Microsoft 365 Copilot Cowork. If the manifest has only a `copilotAgents` property, it is a declarative agent and uses the `da-` prefix |
 | msgext- | These are agents implemented as Microsoft 365 Message extensions |
 | mcs- | Indicates this agent is a Microsoft Copilot Studio agent |
 

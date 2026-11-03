@@ -26,8 +26,8 @@ Rules: lowercase, hyphens only, no periods.
 ### Declarative agent or plugin?
 Decide from the app package `manifest.json`:
 
-- Contains an `agentSkills` or `agentConnectors` property: it is a plugin, use `plugin-`.
-- Contains a `copilotAgents` property and neither `agentSkills` nor `agentConnectors`: it is a declarative agent, use `da-`.
+- Contains an `agentSkills` or `agentConnectors` property: it is a plugin, use `plugin-`, even if `copilotAgents` is also present.
+- Contains a `copilotAgents` property and neither `agentSkills` nor `agentConnectors`: it is a declarative agent, use `da-`. Only `copilotAgents` on its own makes it a declarative agent.
 
 ## Required files
 | File | Notes |
