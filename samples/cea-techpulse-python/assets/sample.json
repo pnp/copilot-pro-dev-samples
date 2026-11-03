@@ -10,7 +10,7 @@
         "The \"TechPulse\" is a custom engine agent that acts as your intelligent tech news companion, delivering the latest technology news, trends, and insights from the most trusted sources in the industry. Built with Microsoft 365 Agents SDK and powered by Model Context Protocol (MCP), this agent provides real-time access to tech news across multiple categories including AI/ML, startups, cybersecurity, mobile technology, and gaming. The agent understands natural language queries and can search for specific topics, provide trending tech news, and deliver company-specific updates."
     ],
       "creationDateTime": "2025-09-26",
-      "updateDateTime": "2025-10-16",
+      "updateDateTime": "2026-10-27",
       "products": [
         "Microsoft 365 Copilot"
       ],
