@@ -1,0 +1,19 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout title="Page Not Found" description="The page you are looking for could not be found.">
+  <section class="hero-shell">
+    <div class="hero-content space-y-5">
+      <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.2em]">404</p>
+      <h1 class="max-w-2xl text-4xl font-extrabold leading-tight text-white md:text-5xl">Page not found</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+        The page you are looking for does not exist or may have moved.
+      </p>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a class="chip-button chip-button-active" href="/">Back to homepage</a>
+        <a class="chip-button" href="/samples">Browse Samples</a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

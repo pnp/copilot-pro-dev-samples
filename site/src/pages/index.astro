@@ -1,0 +1,62 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import LatestSamples from "../components/LatestSamples.astro";
+import { getFeaturedSample, getRecentSamples, getSamples, getSampleStats } from "../lib/samples";
+
+const samples = await getSamples();
+const latestSamplesCount = 3;
+const latestSamples = getRecentSamples(samples, latestSamplesCount);
+const { byType } = getSampleStats(samples);
+const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
+const featured = getFeaturedSample(samples);
+---
+
+<SiteLayout title="Copilot Pro Dev Samples" description="Explore Microsoft 365 Copilot community samples.">
+  <section class="hero-shell">
+    <div class="hero-content">
+      <h1 class="max-w-3xl text-4xl font-extrabold leading-tight text-white md:text-5xl">
+        Explore Microsoft 365 Copilot samples built to inspire.
+      </h1>
+      <p class="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+        Browse the community catalog by agent type, compare what each sample includes, and jump straight to the source that fits your stack or contribution goal.
+      </p>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a class="chip-button chip-button-active" href="/samples">Browse Samples</a>
+        <a class="chip-button" href="/contribute">Submit a sample</a>
+      </div>
+    </div>
+
+    <div class="hero-aside">
+      {
+        featured ? (
+          <a href={`/samples/${featured.sample.folder}`} class="hero-featured">
+            <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.2em]">Featured sample</p>
+            <div class="hero-featured-image">
+              <img
+                src={featured.sample.imageUrl || "/placeholder.webp"}
+                alt={featured.sample.imageAlt.trim().length > 0 ? featured.sample.imageAlt : `${featured.sample.title} preview`}
+                loading="lazy"
+                onerror="this.onerror=null;this.src='/placeholder.webp';"
+              />
+            </div>
+            <p class="hero-featured-title">{featured.sample.title}</p>
+            {featured.showDescriptionAndMetadata && <p class="hero-featured-description">{featured.sample.description}</p>}
+          </a>
+        ) : (
+          <div class="hero-breakdown">
+            {typeBreakdown.map(([name, count]) => (
+              <div class="hero-breakdown-row">
+                <span class="hero-breakdown-name">{name}</span>
+                <span class="hero-breakdown-count">{count}</span>
+              </div>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="mt-14">
+    <LatestSamples samples={latestSamples} count={latestSamplesCount} />
+  </section>
+</SiteLayout>
