@@ -1,0 +1,13 @@
+---
+import { sitePath } from "../lib/site";
+
+interface Props {
+  pictureUrl: string;
+  size: number;
+}
+
+const { pictureUrl, size } = Astro.props;
+const fallback = sitePath("/images/avatar-placeholder.svg");
+---
+
+<img src={pictureUrl || fallback} alt="" width={size} height={size} loading="lazy" onerror={`this.onerror=null;this.src='${fallback}';`} />

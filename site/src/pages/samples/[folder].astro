@@ -1,5 +1,6 @@
 ---
 import { ArrowLeft, Download, ExternalLink } from "@lucide/astro";
+import Avatar from "../../components/Avatar.astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 import { renderReadme } from "../../lib/readme";
 import { getSamples, type SampleEntry } from "../../lib/samples";
@@ -30,7 +31,7 @@ const readmeHtml = sample.readmeContent.trim() ? await renderReadme(sample.folde
       <div class="detail-authors">
         {sample.authors.map((author) => (
           <a href={`https://github.com/${author.gitHubAccount}`}>
-            <img src={author.pictureUrl} alt="" width="36" height="36" loading="lazy" />{author.name}
+            <Avatar pictureUrl={author.pictureUrl} size={36} />{author.name}
           </a>
         ))}
       </div>
