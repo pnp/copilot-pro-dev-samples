@@ -22,7 +22,7 @@ const readmeHtml = sample.readmeContent.trim() ? await renderReadme(sample.folde
 ---
 
 <SiteLayout title={sample.title} description={sample.description} image={sample.imageUrl || undefined}>
-  <div class="breadcrumb container"><a href={sitePath("/samples/")}><ArrowLeft size={17} aria-hidden="true" /> Back to samples</a></div>
+  <div class="breadcrumb container"><a href={sitePath("/")}><ArrowLeft size={17} aria-hidden="true" /> Back to samples</a></div>
   <section class="detail-hero container">
     <div>
       <p class="eyebrow">{sample.type}</p>

@@ -20,14 +20,14 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const imageUrl = new URL(image, Astro.site);
 const currentPath = Astro.url.pathname;
 const navigation = [
-  { label: "Samples", href: "/samples/" },
+  { label: "Samples", href: "/" },
   { label: "Getting started", href: "/getting-started/" },
   { label: "Contributors", href: "/contributors/" },
   { label: "Contributing", href: "/contributing/" },
   { label: "What's new", href: "/whats-new/" },
 ];
-const isCurrent = (href: string) => href === "/samples/"
-  ? currentPath === sitePath("/") || currentPath.startsWith(sitePath(href))
+const isCurrent = (href: string) => href === "/"
+  ? currentPath === sitePath("/") || currentPath.startsWith(sitePath("/samples/"))
   : currentPath.startsWith(sitePath(href));
 ---
 

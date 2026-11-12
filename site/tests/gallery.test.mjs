@@ -12,7 +12,7 @@ assert.ok(canonical, "Build the gallery before running tests.");
 const base = new URL(canonical).pathname;
 const statsBase = "https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/";
 const trackerCount = (html) => (html.match(/<img\b[^>]*src="https:\/\/m365-visitor-stats\.azurewebsites\.net\//g) ?? []).length;
-const pages = ["", "samples", "getting-started", "contributors", "contributing", "whats-new"];
+const pages = ["", "getting-started", "contributors", "contributing", "whats-new"];
 const htmlFor = (route) => readFile(path.join(dist, route, "index.html"), "utf8");
 
 test("all community pages use the shared navigation and exactly one route-specific tracker", async () => {
@@ -23,6 +23,8 @@ test("all community pages use the shared navigation and exactly one route-specif
     const labels = [...nav.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/g)]
       .map((match) => match[1].replace(/<[^>]*>/g, "").replaceAll("&#39;", "'").trim());
     assert.deepEqual(labels, ["Community", "Samples", "Getting started", "Contributors", "Contributing", "What's new", "GitHub"]);
+    assert.ok(nav.includes(`href="${base}"${route ? "" : ' aria-current="page"'}>Samples</a>`), `Samples should link home on ${route}`);
+    assert.equal((nav.match(/aria-current="page"/g) ?? []).length, 1, `Wrong active navigation on ${route}`);
     assert.match(nav, /https:\/\/aka\.ms\/community\/home[^]*?Community[^]*?<svg/);
     assert.equal(trackerCount(html), 1, `Duplicate tracker on ${route}`);
     assert.ok(html.includes(`src="${statsBase}${route}"`), `Wrong tracker key on ${route}`);
@@ -96,7 +98,8 @@ test("every sample has a generated page with its own tracker, source, and downlo
     assert.ok(html.includes(`src="${statsBase}samples/${sample.folder}"`));
     assert.ok(html.includes(sample.href), `${sample.folder}: missing source link`);
     assert.ok(html.includes(encodeURIComponent(sample.href)), `${sample.folder}: missing download link`);
-    assert.ok(html.includes(`href="${base}samples/"`), `${sample.folder}: broken back link`);
+    const breadcrumb = html.match(/<div class="breadcrumb container">([\s\S]*?)<\/div>/)?.[1] ?? "";
+    assert.ok(breadcrumb.includes(`href="${base}"`), `${sample.folder}: back link should go to the homepage catalog`);
     const readme = html.match(/<article class="readme-content"[^>]*>([\s\S]*?)<\/article>/)?.[1] ?? "";
     assert.doesNotMatch(readme, /<script\b|\sonerror=|\sonload=|(?:href|src)="javascript:/i);
     assert.doesNotMatch(readme, /(?:href|src)="\.{1,2}\//, `${sample.folder}: unresolved README URL`);
@@ -104,9 +107,8 @@ test("every sample has a generated page with its own tracker, source, and downlo
 });
 
 test("catalog and contributor counts match sample metadata", async () => {
-  const samples = await htmlFor("samples");
-  assert.equal((samples.match(/<article\b[^>]*data-sample-card/g) ?? []).length, catalog.length);
-  assert.match(samples, /id="active-summary" aria-live="polite"/);
+  assert.equal((home.match(/<article\b[^>]*data-sample-card/g) ?? []).length, catalog.length);
+  assert.match(home, /id="active-summary" aria-live="polite"/);
   const accounts = new Set(catalog.flatMap((sample) =>
     sample.authors.map((author) => author.gitHubAccount.trim().replace(/^@/, "").toLowerCase()).filter(Boolean),
   ));
@@ -174,8 +176,17 @@ test("the legacy contribution URL redirects to the new page", async () => {
   assert.ok(html.includes(`${base}contributing/`));
 });
 
+test("the legacy samples URL redirects home instead of rendering a duplicate catalog", async () => {
+  const html = await htmlFor("samples");
+  assert.ok(html.includes(`http-equiv="refresh" content="0;url=${base}"`));
+  assert.ok(html.includes(`<link rel="canonical" href="${canonical}"`));
+  assert.match(html, /name="robots" content="noindex"/);
+  assert.doesNotMatch(html, /data-sample-card|class="page-heading|class="catalog-backdrop"/);
+  assert.equal(trackerCount(html), 0);
+});
+
 test("the 404 page retains navigation and a distinct tracker", async () => {
   const html = await readFile(path.join(dist, "404.html"), "utf8");
   assert.equal(trackerCount(html), 1);
-  assert.ok(html.includes(`href="${base}samples/"`));
+  assert.ok(html.includes(`href="${base}">Browse samples</a>`));
 });
