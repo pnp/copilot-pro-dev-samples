@@ -124,6 +124,19 @@ test("contributors prominently call out community recognition before the directo
   expect(beforeDirectory).toBe(true);
 });
 
+test("contributors show initials when profile images fail to load", async ({ page }) => {
+  await page.goto("contributors/");
+  const card = page.locator(".contributor-card").filter({
+    has: page.locator('a[href="https://github.com/ayronjohnson"]'),
+  });
+  const image = card.locator(".contributor-avatar img");
+  const fallback = card.locator(".contributor-avatar__fallback");
+  await fallback.scrollIntoViewIfNeeded();
+  await expect(image).toBeHidden();
+  await expect(fallback).toBeVisible();
+  await expect(fallback).toHaveText("AJ");
+});
+
 test("What's new shows compact dated updates linking to sample details", async ({ page }) => {
   await page.goto("whats-new/");
   await expect(page.getByRole("heading", { name: "What's new", level: 1, exact: true })).toBeVisible();

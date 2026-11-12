@@ -30,7 +30,12 @@ const contributors = getContributors(await getSamples());
       <div class="contributor-grid">
         {contributors.map((author) => (
           <article class="contributor-card">
-            <img src={author.pictureUrl} alt="" width="72" height="72" loading="lazy" />
+            <span class="contributor-avatar">
+              <img src={author.pictureUrl} alt="" width="72" height="72" loading="lazy" />
+              <span class="contributor-avatar__fallback" aria-hidden="true" hidden>
+                {author.name.split(/\s+/).filter(Boolean).slice(0, 2).map((part) => part[0]).join("")}
+              </span>
+            </span>
             <div>
               <h2>{author.name}</h2>
               <a href={`https://github.com/${author.gitHubAccount}`}>@{author.gitHubAccount}</a>
@@ -44,3 +49,15 @@ const contributors = getContributors(await getSamples());
     </div>
   </section>
 </SiteLayout>
+
+<script>
+  for (const image of document.querySelectorAll<HTMLImageElement>(".contributor-avatar img")) {
+    const showFallback = () => {
+      image.hidden = true;
+      image.nextElementSibling?.removeAttribute("hidden");
+    };
+
+    image.addEventListener("error", showFallback, { once: true });
+    if (image.complete && image.naturalWidth === 0) showFallback();
+  }
+</script>

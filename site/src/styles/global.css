@@ -370,7 +370,11 @@ html[data-theme='dark'] .theme-toggle__moon { color: #071525; transform: rotate(
 .recognition-band h2 { margin: 0; font-size: 32px; }
 .contributor-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .contributor-card { display: flex; min-height: 135px; align-items: center; padding: 22px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); gap: 16px; }
-.contributor-card img { flex: 0 0 auto; border-radius: 50%; background: var(--avatar-background); }
+.contributor-avatar { display: grid; width: 72px; height: 72px; flex: 0 0 72px; place-items: center; overflow: hidden; border-radius: 50%; background: var(--avatar-background); }
+.contributor-avatar img, .contributor-avatar__fallback { grid-area: 1 / 1; width: 72px; height: 72px; border-radius: 50%; }
+.contributor-avatar img { object-fit: cover; }
+.contributor-avatar__fallback { display: grid; place-items: center; color: var(--blue-dark); font-size: 20px; font-weight: 700; }
+.contributor-avatar__fallback[hidden] { display: none; }
 .contributor-card h2 { margin: 0; font-size: 19px; }
 .contributor-card p { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
 .contribution-requirements { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
