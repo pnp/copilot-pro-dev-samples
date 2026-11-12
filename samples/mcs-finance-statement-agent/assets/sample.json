@@ -1,0 +1,70 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-mcs-finance-statement-agent",
+    "source": "pnp",
+    "title": "Finance Statement Agent",
+    "shortDescription": "A Copilot Studio agent that extracts financial statements from uploaded PDFs and generates an Excel workbook.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-finance-statement-agent",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/mcs-finance-statement-agent",
+    "longDescription": [
+      "Conversational AI for credit financial statement extraction. An analyst uploads a PDF report in Microsoft Teams, and a Copilot Studio agent orchestrates an Azure-hosted pipeline to extract income statements, balance sheets, cash flows, and ratios into a downloadable Excel workbook."
+    ],
+    "creationDateTime": "2026-04-30",
+    "updateDateTime": "2026-04-30",
+    "products": [
+      "Microsoft Copilot Studio",
+      "Microsoft 365 Copilot",
+      "Azure Functions",
+      "Azure OpenAI"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Microsoft Copilot Studio"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "Python, TypeScript"
+      },
+      {
+        "key": "AGENT-TYPE",
+        "value": "Copilot Studio Agent"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "No"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/mcs-finance-statement-agent/assets/architecture.png",
+        "alt": "Finance statement extraction architecture"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "sgshaji",
+        "pictureUrl": "https://github.com/sgshaji.png",
+        "name": "Shaji Sivaraman"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft Copilot Studio",
+        "description": "Build AI-driven agents and workflows with Microsoft Copilot Studio.",
+        "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
+      },
+      {
+        "name": "Azure Functions documentation",
+        "description": "Build and deploy serverless functions on Azure.",
+        "url": "https://learn.microsoft.com/en-us/azure/azure-functions/"
+      }
+    ]
+  }
+]

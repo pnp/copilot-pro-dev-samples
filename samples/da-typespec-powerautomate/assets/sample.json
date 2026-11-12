@@ -1,0 +1,69 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-typespec-powerautomate",
+    "source": "pnp",
+    "title": "Invoking Power Automate Agent using TypeSpec for Microsoft 365 Copilot",
+    "shortDescription": "A declarative agent that invokes a Power Automate flow using OAuth 2 and TypeSpec.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-powerautomate",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-powerautomate",
+    "longDescription": [
+      "Build a Microsoft 365 Copilot declarative agent that triggers a Power Automate flow through an OAuth-protected API."
+    ],
+    "creationDateTime": "2026-05-05",
+    "updateDateTime": "2026-05-05",
+    "products": [
+      "Microsoft 365 Copilot",
+      "Microsoft Power Automate"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "TypeScript"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "TYPESPEC",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-typespec-powerautomate/assets/demo.gif",
+        "alt": "Demo of a declarative agent triggering a Power Automate flow"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-typespec-powerautomate/assets/PowerAutomateFlow.jpg",
+        "alt": "Power Automate flow used by the declarative agent"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "reshmee011",
+        "pictureUrl": "https://github.com/reshmee011.png",
+        "name": "Reshmee Auckloo"
+      }
+    ],
+    "references": [
+      {
+        "name": "Build a Microsoft 365 Copilot Agent with Power Automate HTTP Trigger Using Agents Toolkit",
+        "description": "Instructions for invoking a Power Automate HTTP-triggered flow from an agent.",
+        "url": "https://reshmeeauckloo.com/posts/agentstoolkit-invokingpowerautomate/"
+      }
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "pnp-copilot-pro-dev-da-typespec-appinsights",
+    "source": "pnp",
+    "title": "Monitor your Copilot declarative agents using TypeSpec and Application Insights",
+    "shortDescription": "Integrate Azure Application Insights into Microsoft 365 Copilot declarative agents using TypeSpec, API plugins, and a Logic App.",
+    "url": "https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-appinsights",
+    "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/da-typespec-appinsights",
+    "longDescription": [
+      "This sample demonstrates how to integrate Azure Application Insights into existing Microsoft 365 Copilot declarative agents using TypeSpec and API plugins to capture meaningful metrics."
+    ],
+    "creationDateTime": "2025-08-12",
+    "updateDateTime": "2025-08-12",
+    "products": [
+      "Microsoft 365 Copilot",
+      "Azure Application Insights"
+    ],
+    "metadata": [
+      {
+        "key": "PLATFORM",
+        "value": "Node.js"
+      },
+      {
+        "key": "LANGUAGE",
+        "value": "TypeScript"
+      },
+      {
+        "key": "API-PLUGIN",
+        "value": "Yes"
+      },
+      {
+        "key": "TYPESPEC",
+        "value": "Yes"
+      },
+      {
+        "key": "GRAPH-CONNECTOR",
+        "value": "No"
+      }
+    ],
+    "thumbnails": [
+      {
+        "type": "image",
+        "order": 100,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-typespec-appinsights/assets/copilot_analytics_architecture.png",
+        "alt": "Architecture for collecting declarative agent metrics with Application Insights"
+      },
+      {
+        "type": "image",
+        "order": 101,
+        "url": "https://github.com/pnp/copilot-pro-dev-samples/raw/main/samples/da-typespec-appinsights/assets/app_insights_logs.png",
+        "alt": "Application Insights logs for the declarative agent"
+      }
+    ],
+    "authors": [
+      {
+        "gitHubAccount": "FranckyC",
+        "pictureUrl": "https://github.com/FranckyC.png",
+        "name": "Franck Cornu"
+      }
+    ],
+    "references": [
+      {
+        "name": "Microsoft 365 Copilot extensibility",
+        "description": "Learn more about Microsoft 365 Copilot and how you can extend it.",
+        "url": "https://learn.microsoft.com/microsoft-365-copilot/extensibility/"
+      },
+      {
+        "name": "Sample setup and implementation",
+        "description": "Full solution setup and implementation details.",
+        "url": "https://blog.franckcornu.com/post/add-app-insights-procode-copilot-da/"
+      }
+    ]
+  }
+]
