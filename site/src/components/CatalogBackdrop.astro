@@ -1,0 +1,7 @@
+---
+import { sitePath } from "../lib/site";
+---
+
+<div class="catalog-backdrop" style={`--catalog-side-right: url('${sitePath("/images/side-bg-right.webp")}'); --catalog-side-left: url('${sitePath("/images/side-bg-left.webp")}');`}>
+  <slot />
+</div>

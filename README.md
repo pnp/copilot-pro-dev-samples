@@ -1,11 +1,50 @@
 # Microsoft 365 Copilot pro-developer samples
 
-This repository contains [Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/) samples.
+[![Copilot Pro Dev Samples gallery showing community samples, search, and agent type filters](./assets/sample-gallery.png)](https://pnp.github.io/copilot-pro-dev-samples/)
 
-> We welcome community contributions to the `samples` folder in this repository for demonstrating different use cases with Microsoft 365 Copilot. If you've built an agent that demonstrates specific scenario, please share your work and help others!
+**[Explore the Copilot Pro Dev Samples gallery](https://pnp.github.io/copilot-pro-dev-samples/)**
+
+Community-built agents, plugins, and extensibility patterns for [Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/). Discover real-world scenarios, inspect the source, and adapt a sample to your own project.
+
+- **[Browse samples](https://pnp.github.io/copilot-pro-dev-samples/samples/)** by scenario or agent type.
+- **[Get started](https://pnp.github.io/copilot-pro-dev-samples/getting-started/)** with prerequisites, setup guidance, and learning resources.
+- **[Meet the contributors](https://pnp.github.io/copilot-pro-dev-samples/contributors/)** and see **[what's new](https://pnp.github.io/copilot-pro-dev-samples/whats-new/)**.
+- **[Contribute a sample](https://pnp.github.io/copilot-pro-dev-samples/contributing/)** and share what you have learned.
+
+> [!NOTE]
+> Maintained with the [Microsoft 365 & Power Platform Community](https://aka.ms/community/home). Samples are provided *as is*, not as officially supported products. See [SUPPORT.md](./SUPPORT.md).
+
+> **Sharing is caring!** Join our [community calls](https://aka.ms/community/calls), [demo what you have built](https://aka.ms/community/request/demo), or help someone else take their first step.
+
+## Using the samples
+
+Clone the repository, then work within the sample you want to run:
+
+```sh
+git clone https://github.com/pnp/copilot-pro-dev-samples.git
+cd copilot-pro-dev-samples
+cd samples
+cd <sample-folder>
+```
+
+Follow that sample's README for its exact toolchain, licensing, tenant, permission, configuration, and deployment requirements. There is no single build command for all samples. You can also use **Download sample** in the gallery to download an individual sample folder.
+
+## Repository structure
+
+| Path | Purpose |
+| --- | --- |
+| [`samples/`](./samples) | Self-contained sample source, README, metadata, and screenshots |
+| [`templates/`](./templates) | Submission templates for declarative agents, plugins, custom engine agents, and Copilot Studio |
+| [`assets/`](./assets) | Repository-level gallery screenshot used in this README |
+| [`site/`](./site) | Astro gallery, community pages, shared design assets, and site tests |
+| [`CONTRIBUTING.md`](./CONTRIBUTING.md) | Sample naming, required files, metadata, and pull request guidance |
+
+To work on the gallery, see the [site development guide](./site/README.md). Sample metadata in `samples/*/assets/sample.json` powers the gallery and contributor directory.
+
+## Sample index
 
 <details>
-<summary>List of all the samples</summary></br>
+<summary>List of all the samples</summary>
 
 <!-- begin_sample_list -->
 | Title | Description | Author |
@@ -33,13 +72,13 @@ This repository contains [Microsoft 365 Copilot](https://learn.microsoft.com/mic
 | [Canvas Teacher](./samples/da-CanvasTeacher) | Canvas Teacher is a teaching assistant to help you interact with your Canvas LMS. This agent sample enables educators to interact with their courses using Microsoft 365 Copilot or Copilot Chat. Canvas Teacher empowers educators to plan their courses more effectively, giving them access to information in their courses, modules, assignments, pages, discussions, and announcements. | Juliano Menegazzo, Ayron Johnson |
 | [Career Coach Declarative Agent for Microsoft 365 Copilot Sample](./samples/da-CareerCoach) | First Party Declarative Agent Career Coach shared as a sample | Marcus Castro |
 | [CLI for M365 Helper](./samples/da-CLIForM365-helper) | This declarative helper helps users discover relevant CLI for Microsoft 365 commands from official documentation | Saurabh Tripathi |
-| [Copilot Snow Wizard](./samples/da-SnowWizard) | M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents | Cristiano Goncalves, Luis Demetrio |
+| [Copilot Snow Wizard](./samples/da-snowwizard-js) | M365 Declarative Copilot that interfaces with ServiceNow to list and create incidents | Cristiano Goncalves, Luis Demetrio |
 | [Declarative Agent - PnP Controls Assistant](./samples/da-pnpassistant) | This declarative agent is designed to assist users in finding more information about the PnP reusable React controls. | Guido Zambarda |
 | [Declarative Agent The Simple Teacher for Microsoft 365 Copilot Sample](./samples/da-teacher) | The declarative agent The Simple Teacher acts as a friendly, patient, and humorous mentor for students aged 16 to 20, explaining technical concepts in simple, relatable language. | Peter Paul Kirschner |
-| [Declarative Agent with an API plugin secured by Entra ID that validates its own tokens](./samples/da-repairs-oauth-validated) | This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that validates tokens using an open source library. | Bob German, Waldek Mastykarz |
+| [Declarative Agent with an API plugin secured by Entra ID that validates its own tokens](./samples/da-repairs-oauth-validated-js) | This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that validates tokens using an open source library. | Bob German, Waldek Mastykarz |
 | [Declarative Agent with an API plugin secured by Entra ID that validates its own tokens (Python)](./samples/da-repairs-oauth-validated-python) | A declarative agent that demonstrates OAuth-secured API with token validation in Python using PyJWT instead of relying on Azure App Services Easy Auth. | YugalPradhan31 |
 | [Declarative Agent with an API plugin that secured by Entra ID that validates its own tokens](./samples/da-XBoxGameMaster) | This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that validates tokens using an open source library. | Bob German |
-| [Declarative for Microsoft 365 Copilot with an API plugin connected to an API secured with OAuth](./samples/da-repairs-oauth) | This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses the built-in Azure App Service authentication and authorization capabilities (also referred to as Easy Auth) to secure access to APIs. | Waldek Mastykarz |
+| [Declarative for Microsoft 365 Copilot with an API plugin connected to an API secured with OAuth](./samples/da-repairs-oauth-js) | This sample demonstrates how to build a declarative agent for Microsoft 365 Copilot that answers questions about repairs. The agent uses an API plugin to connect to an API secured with OAuth. The project contains an Azure Function that serves as the API and uses the built-in Azure App Service authentication and authorization capabilities (also referred to as Easy Auth) to secure access to APIs. | Waldek Mastykarz |
 | [Declarative for Microsoft 365 Copilot with an API plugin connected to a Python API secured with OAuth](./samples/da-repairs-oauth-python) | A declarative agent that answers questions about repairs using an API plugin connected to a Python Azure Function API secured with OAuth. | AjayJ12-MSFT |
 | [Document Finder Declarative Agent for Microsoft 365 Copilot Sample](./samples/da-DocFinder) | First Party Declarative Agent Document Finder shared as a sample | Jeremy Thake |
 | [Dynamics 365 Advisor](./samples/da-dynamics365-advisor) | A declarative agent that provides expert guidance on Dynamics 365 CRM, Power Platform, automation workflows, and Copilot Studio solutions. | Muhammad Shahzad Shafique |
@@ -86,7 +125,7 @@ This repository contains [Microsoft 365 Copilot](https://learn.microsoft.com/mic
 | [The M365 Roadmap Features Tracker agent shows how users can easily stay up to date with the latest Microsoft 365 roadmap features.](./samples/da-m365-roadmap-tracker) | The M365 Roadmap Features Tracker agent shows how users can easily stay up to date with the latest Microsoft 365 roadmap features. It integrates a Microsoft Graph Connector to monitor and deliver the latest updates, offering a hands-free solution for staying informed. | Mohammad Amer |
 | [Trey Research C#](./samples/cext-trey-research-csharp) | This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects. | Bob German |
 | [Trey Research Python](./samples/da-trey-research-python) | A declarative agent with an API plugin backed by Python Azure Functions for information about consultants and projects. | Bob German, Jegadeesh-MSFT, Ajay Jadhav |
-| [Trey Research TS Auth](./samples/da-trey-research-auth) | This sample demonstrates how to create an agent that interacts with a protected consulting API to provide information about consultants and projects. | Bob German, Garry Trinder |
+| [Trey Research TS Auth](./samples/da-trey-research-auth-js) | This sample demonstrates how to create an agent that interacts with a protected consulting API to provide information about consultants and projects. | Bob German, Garry Trinder |
 | [Trey Research TypeScript](./samples/da-trey-research) | This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects. | Bob German, Garry Trinder |
 | [Trey Research TypeSpec](./samples/da-typespec-trey-research) | This sample demonstrates how to create an agent that interacts with a consulting API to provide information about consultants and projects. | Bob German, Rabia Williams |
 | [Invoking Power Automate Agent using TypeSpec for Microsoft 365 Copilot](./samples/da-typespec-powerautomate) | A declarative agent that triggers a Power Automate flow using TypeSpec and OAuth 2 authentication. | Reshmee Auckloo |
@@ -103,17 +142,36 @@ If you've got questions or experience an issue with any of the samples in this r
 
 This repository's contributors are all community members who volunteered their time to share code samples.
 
+[Meet the sample contributors](https://pnp.github.io/copilot-pro-dev-samples/contributors/).
+
 ## Contributions
 
-Samples in this repository are submitted by Microsoft's product groups, and the [Microsoft 365 and Power Platform community](http://aka.ms/m365pnp). We welcome your feedback and suggestions for new samples. We also welcome community contributions. If you have any questions, just let us know.
+Samples are shared by Microsoft teams and the [Microsoft 365 & Power Platform Community](https://aka.ms/community/home). You can help by contributing a sample, improving documentation and screenshots, reporting issues, or reviewing someone else's work.
 
-Please have a look on our [Contribution Guidance](./CONTRIBUTING.md) before submitting your pull requests, so that we can get your contribution processed as fast as possible.
+Read the [contribution guidance](./CONTRIBUTING.md) before submitting a pull request.
+
+Start with the matching [project template](./templates), complete the metadata and README, include a real screenshot, and submit one sample per pull request. Read the [gallery contribution guide](https://pnp.github.io/copilot-pro-dev-samples/contributing/) for a quick checklist.
+
+[![Microsoft 365 and Power Platform Community contributor badge](./site/public/images/contributor-badge.webp)](https://aka.ms/community/recognition)
+
+Learn about [community recognition](https://aka.ms/community/recognition) for sharing your work.
+
+## Sample assets and community resources
+
+Each sample includes an `assets` folder with its gallery metadata and screenshots. Keep these assets in the sample folder, reference them from `assets/sample.json`, and provide meaningful alternative text. See the [asset guidance](./CONTRIBUTING.md#assets) for details.
+
+- [Project templates](./templates) help you start with the correct sample structure.
+- [Sharing is Caring](https://pnp.github.io/sharing-is-caring/) offers free guidance on contributing to open source.
+- [Community home](https://aka.ms/community/home) connects you with calls, learning opportunities, and other community projects.
+- [Gallery brand assets](./site/public/images) and their [provenance](./site/public/images/ASSET-PROVENANCE.md) document the design shared with the other community galleries.
 
 ## Join the community calls
 
 Stay up to date with the latest Copilot, Microsoft 365, and Power Platform topics by joining our weekly community calls. Everyone is welcome. Come to learn, ask questions, and connect with the community.
 
 [View the call schedule and download the recurring invites](https://aka.ms/community/calls) so you don't miss an upcoming call.
+
+Built something worth sharing? [Request a community demo slot](https://aka.ms/community/request/demo). First-time presenters are welcome.
 
 ## Code of Conduct
 

@@ -1,13 +1,19 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import SampleBrowser from "../components/SampleBrowser.astro";
+import CatalogBackdrop from "../components/CatalogBackdrop.astro";
 import { getSamples, getSampleStats } from "../lib/samples";
 
 const samples = await getSamples();
-const { byType, total } = getSampleStats(samples);
+const { byType } = getSampleStats(samples);
 ---
 
 <SiteLayout title="Browse Samples" description="Filter and browse Microsoft 365 Copilot sample projects.">
 
-  <SampleBrowser samples={samples} byType={byType} />
+  <header class="page-heading container">
+    <p class="eyebrow">Community catalog</p>
+    <h1>Microsoft 365 Copilot samples</h1>
+    <p>Find an agent or extensibility pattern for your next project. Each sample includes its own source code and setup guidance.</p>
+  </header>
+  <CatalogBackdrop><SampleBrowser samples={samples} byType={byType} /></CatalogBackdrop>
 </SiteLayout>

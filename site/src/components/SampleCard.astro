@@ -1,0 +1,31 @@
+---
+import { ArrowRight } from "@lucide/astro";
+import type { SampleEntry } from "../lib/samples";
+import { sitePath } from "../lib/site";
+
+interface Props {
+  sample: SampleEntry;
+  index?: number;
+}
+
+const { sample, index = 0 } = Astro.props;
+const href = sitePath(`/samples/${sample.folder}/`);
+---
+
+<article class="component-card" data-sample-card data-title={sample.title.toLowerCase()} data-folder={sample.folder.toLowerCase()} data-description={sample.description.toLowerCase()} data-type={sample.type} style={`--card-index: ${Math.min(index, 8)}`}>
+  <a class="component-card__media" href={href} tabindex="-1" aria-hidden="true">
+    <img src={sample.imageUrl || sitePath("/placeholder.webp")} alt="" loading="lazy" width="640" height="360" onerror={`this.onerror=null;this.src='${sitePath("/placeholder.webp")}';`} />
+  </a>
+  <div class="component-card__body">
+    <div class="component-card__meta">
+      <span>{sample.type}</span>
+      {sample.updatedAt && <time datetime={sample.updatedAt.toISOString()}>{sample.updatedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })}</time>}
+    </div>
+    <h3><a href={href}>{sample.title}</a></h3>
+    <p>{sample.description}</p>
+    <div class="component-card__footer">
+      <span>{sample.authors.map((author) => author.name).join(", ") || "Community sample"}</span>
+      <a href={href} aria-label={`View ${sample.title}`}>View sample <ArrowRight size={16} aria-hidden="true" /></a>
+    </div>
+  </div>
+</article>

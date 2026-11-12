@@ -1,123 +1,150 @@
 ---
+import { ArrowUpRight, GitFork, Menu, Moon, Sun } from "@lucide/astro";
+import ContributionCallout from "../components/ContributionCallout.astro";
+import { repositoryUrl, sitePath, visitorStatsUrl } from "../lib/site";
 import "../styles/global.css";
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = "Microsoft 365 Copilot community samples browser." } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const navItems = [
-  {
-    href: baseUrl,
-    label: "Home",
-  },
-  {
-    href: `${baseUrl}samples`,
-    label: "Samples",
-  },
-  {
-    href: `${baseUrl}contribute`,
-    label: "Contributing",
-  },
+const {
+  title = "Copilot Pro Dev Samples",
+  description = "Community-built agents, plugins, and extensibility samples for Microsoft 365 Copilot.",
+  image = sitePath("/images/copilot.png"),
+} = Astro.props;
+const pageTitle = title === "Copilot Pro Dev Samples" ? title : `${title} | Copilot Pro Dev Samples`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const imageUrl = new URL(image, Astro.site);
+const currentPath = Astro.url.pathname;
+const navigation = [
+  { label: "Samples", href: "/samples/" },
+  { label: "Getting started", href: "/getting-started/" },
+  { label: "Contributors", href: "/contributors/" },
+  { label: "Contributing", href: "/contributing/" },
+  { label: "What's new", href: "/whats-new/" },
 ];
-const basePath = baseUrl.replace(/\/$/, "");
-const currentPath = Astro.url.pathname.replace(basePath, "").replace(/\/$/, "") || "/";
-const siteTitle = "Copilot Pro Dev Samples";
-const documentTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
+const isCurrent = (href: string) => href === "/samples/"
+  ? currentPath === sitePath("/") || currentPath.startsWith(sitePath(href))
+  : currentPath.startsWith(sitePath(href));
 ---
+
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
-    <link rel="icon" href={`${baseUrl}favicon.ico`} />
-    <script src="../scripts/clarity.ts"></script>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <title>{documentTitle}</title>
+    <meta name="generator" content={Astro.generator} />
+    <meta id="theme-color" name="theme-color" content="#f1f2f4" />
     <script is:inline>
-      const storedTheme = localStorage.getItem("site-theme");
-      const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-      document.documentElement.dataset.theme = storedTheme || preferredTheme;
+      (() => {
+        let theme = "light";
+        try {
+          if (localStorage.getItem("site-theme") === "dark") theme = "dark";
+        } catch (error) {
+          console.warn("Theme preference is unavailable; using light mode.", error);
+        }
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      })();
     </script>
+    <link rel="icon" type="image/png" href={sitePath("/images/copilot.png")} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Copilot Pro Dev Samples" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script src="../scripts/clarity.ts"></script>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <header class="sticky top-0 z-30 border-b-[2px] border-b-sky-300 bg-ink-950/70 backdrop-blur-lg">
-      <div class="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
-        <a class="inline-flex items-center gap-2 self-start text-xl font-bold tracking-[0.01em] text-white lg:self-center" href={baseUrl}>
-          <img class="h-8 w-8" src={`${baseUrl}favicon.svg`} alt="" aria-hidden="true" />
-          <span>Microsoft 365 Copilot <span class="text-sky-300">Pro Dev Samples</span></span>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="spectrum" aria-hidden="true"></div>
+      <div class="site-header__inner container">
+        <a class="brand" href={sitePath("/")} aria-label="Copilot Pro Dev Samples home">
+          <img src={sitePath("/images/copilot.png")} alt="" width="38" height="38" />
+          <span>Copilot <strong>Pro Dev Samples</strong></span>
         </a>
-        <nav aria-label="Primary" class="site-nav flex flex-wrap items-center gap-2 md:gap-3 lg:justify-end">
-          {navItems.map((item) => {
-            const isCurrent = currentPath === item.href;
-            return (
-              <a
-                href={item.href}
-                class:list={[
-                  "chip-button inline-flex min-h-11 items-center gap-2 text-sm",
-                  isCurrent && "chip-button-active",
-                ]}
-                aria-current={isCurrent ? "page" : undefined}
-              >
-                {item.label}
-              </a>
-            );
-          })}
-          <a
-            href="https://github.com/pnp/copilot-pro-dev-samples"
-            target="_blank"
-            rel="noreferrer"
-            class="chip-button chip-button-repo hidden min-h-11 shrink-0 items-center justify-center gap-2 leading-none sm:inline-flex"
-          >
-            <img class="github-icon github-icon-light h-5 w-5 shrink-0 object-contain" src={`${baseUrl}GitHub_Invertocat_Black.svg`} alt="" aria-hidden="true" />
-            <img class="github-icon github-icon-dark h-5 w-5 shrink-0 object-contain" src={`${baseUrl}GitHub_Invertocat_White.svg`} alt="" aria-hidden="true" />
-            GitHub
-          </a>
-          <button
-            type="button"
-            id="theme-toggle"
-            class="theme-toggle"
-            aria-label="Switch to light theme"
-            title="Switch to light theme"
-          >
-            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3v2m0 14v2M5.64 5.64l1.42 1.42m9.9 9.9l1.4 1.4M3 12h2m14 0h2M5.64 18.36l1.42-1.42m9.9-9.9l1.4-1.4M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-            </svg>
-            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.5 15.3A8.5 8.5 0 018.7 3.5 8.5 8.5 0 1020.5 15.3z"></path>
-            </svg>
+        <div class="site-header__actions">
+          <nav class="desktop-nav" aria-label="Primary navigation">
+            <a href="https://aka.ms/community/home">Community <ArrowUpRight size={12} aria-hidden="true" /></a>
+            {navigation.map((item) => (
+              <a href={sitePath(item.href)} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>
+            ))}
+            <a class="nav-github" href={repositoryUrl}><GitFork size={18} aria-hidden="true" /> GitHub</a>
+          </nav>
+          <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+            <span class="theme-toggle__icons" aria-hidden="true">
+              <Sun class="theme-toggle__sun" size={16} />
+              <Moon class="theme-toggle__moon" size={15} />
+            </span>
           </button>
-        </nav>
+          <details class="mobile-nav">
+            <summary title="Open navigation" aria-label="Open navigation"><Menu size={22} /></summary>
+            <nav aria-label="Mobile navigation">
+              <a href="https://aka.ms/community/home">Community <ArrowUpRight size={12} aria-hidden="true" /></a>
+              {navigation.map((item) => (
+                <a href={sitePath(item.href)} aria-current={isCurrent(item.href) ? "page" : undefined}>{item.label}</a>
+              ))}
+              <a href={repositoryUrl}>GitHub</a>
+            </nav>
+          </details>
+        </div>
       </div>
     </header>
-
-    <main class="site-main mx-auto w-full max-w-6xl px-4 py-10 md:px-6 md:py-14">
-      <slot />
-    </main>
-
-    <footer class="border-t border-white/10 py-8 text-sm text-slate-300">
-      <div class="mx-auto w-full max-w-6xl px-4 md:px-6">
-        This site and samples run under MIT License. These samples are provided as is without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement.
+    <main id="main-content"><slot /></main>
+    <ContributionCallout />
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>
+          <strong>Microsoft 365 &amp; Power Platform Community</strong>
+          <p>Built by the community, for the community.</p>
+          <p class="site-disclaimer">Samples are provided as is, without warranty, under the MIT license.</p>
+        </div>
+        <nav aria-label="Footer navigation">
+          <a href="https://aka.ms/community/home">Community home</a>
+          <a href={sitePath("/samples.json")}>Catalog JSON</a>
+          <a href={`${repositoryUrl}/issues/new`}>Report an issue</a>
+          <a href={`${repositoryUrl}/security/policy`}>Security</a>
+          <a href={`${repositoryUrl}/blob/main/CODE_OF_CONDUCT.md`}>Code of conduct</a>
+          <a href={`${repositoryUrl}/blob/main/LICENSE`}>MIT license</a>
+        </nav>
       </div>
     </footer>
-    <script is:inline>
-      const themeToggle = document.querySelector("#theme-toggle");
-      const updateThemeToggle = () => {
-        const isLight = document.documentElement.dataset.theme === "light";
-        themeToggle?.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
-        themeToggle?.setAttribute("title", isLight ? "Switch to dark theme" : "Switch to light theme");
-      };
+    <script>
+      const root = document.documentElement;
+      const toggle = document.querySelector<HTMLButtonElement>("#theme-toggle");
+      const themeColor = document.querySelector<HTMLMetaElement>("#theme-color");
 
-      updateThemeToggle();
-      themeToggle?.addEventListener("click", () => {
-        const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
-        document.documentElement.dataset.theme = nextTheme;
-        localStorage.setItem("site-theme", nextTheme);
-        updateThemeToggle();
+      function applyTheme(theme: "light" | "dark", persist = false) {
+        root.dataset.theme = theme;
+        root.style.colorScheme = theme;
+        const label = `Switch to ${theme === "dark" ? "light" : "dark"} mode`;
+        toggle?.setAttribute("aria-checked", String(theme === "dark"));
+        toggle?.setAttribute("aria-label", label);
+        if (toggle) toggle.title = label;
+        if (themeColor) themeColor.content = theme === "dark" ? "#0c111a" : "#f1f2f4";
+        if (persist) {
+          try {
+            localStorage.setItem("site-theme", theme);
+          } catch (error) {
+            console.warn("Theme changed, but the preference could not be saved.", error);
+          }
+        }
+      }
+
+      applyTheme(root.dataset.theme === "dark" ? "dark" : "light");
+      toggle?.addEventListener("click", () => {
+        applyTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
       });
     </script>
+    <img class="sr-only" data-visitor-stats src={visitorStatsUrl(currentPath)} alt="" width="1" height="1" aria-hidden="true" />
   </body>
 </html>

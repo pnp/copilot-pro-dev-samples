@@ -1,0 +1,20 @@
+---
+import { ArrowRight } from "@lucide/astro";
+import { sitePath } from "../lib/site";
+---
+
+<aside class="contribution-callout" aria-label="Contribute to the community">
+  <div class="container recognition-band">
+    <img src={sitePath("/images/contributor-badge.webp")} alt="Microsoft 365 and Power Platform Community contributor badge" width="220" height="220" loading="lazy" />
+    <div>
+      <p class="eyebrow">Sharing is caring</p>
+      <h2>Your next sample could help someone build theirs.</h2>
+      <p>Share what you have learned, contribute a Copilot sample, improve the documentation, or help someone on a community call. Every contribution helps others get started faster.</p>
+      <div class="action-row">
+        <a class="button button--primary" href={sitePath("/contributing/")}>Contribute a sample <ArrowRight size={17} aria-hidden="true" /></a>
+        <a class="text-link" href="https://aka.ms/community/recognition">Community recognition <ArrowRight size={17} aria-hidden="true" /></a>
+        <a class="text-link" href="https://aka.ms/community/calls">Join community calls <ArrowRight size={17} aria-hidden="true" /></a>
+      </div>
+    </div>
+  </div>
+</aside>
