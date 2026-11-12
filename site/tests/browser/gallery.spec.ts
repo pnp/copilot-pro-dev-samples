@@ -16,6 +16,7 @@ test("navigation matches the community gallery and reaches all top pages", async
     ["Contributors", "Contributors"],
     ["Contributing", "Share what you build"],
     ["What's new", "What's new"],
+    ["Samples", "Copilot Pro Dev Samples"],
   ];
   for (const [label, heading] of links) {
     if (isMobile && !(await page.locator(".mobile-nav[open]").count())) {
@@ -25,7 +26,22 @@ test("navigation matches the community gallery and reaches all top pages", async
     await expect(page.getByRole("heading", { name: heading, level: 1, exact: true })).toBeVisible();
     if (isMobile) await page.getByLabel("Open navigation", { exact: true }).click();
     await expect(navigation.getByRole("link", { name: label, exact: true })).toHaveAttribute("aria-current", "page");
+    await expect(navigation.locator('[aria-current="page"]')).toHaveCount(1);
   }
+  await expect(page).toHaveURL("http://127.0.0.1:4330/copilot-pro-dev-samples/");
+  await expect(navigation.getByRole("link", { name: "Samples", exact: true })).toHaveAttribute("href", "/copilot-pro-dev-samples/");
+  await expect(page.locator("#samples-grid [data-sample-card]").first()).toBeVisible();
+});
+
+test("old samples URLs redirect to the home catalog and preserve shared filters", async ({ page }) => {
+  await page.goto("samples/");
+  await expect(page).toHaveURL("http://127.0.0.1:4330/copilot-pro-dev-samples/");
+  await page.goto("samples/?q=ristorante&type=Declarative+Agent#browse");
+  await expect(page).toHaveURL("http://127.0.0.1:4330/copilot-pro-dev-samples/?q=ristorante&type=Declarative+Agent#browse");
+  await expect(page.getByRole("heading", { name: "Copilot Pro Dev Samples", level: 1, exact: true })).toBeVisible();
+  await expect(page.getByLabel("Search samples", { exact: true })).toHaveValue("ristorante");
+  await expect(page.getByLabel("Sample type", { exact: true })).toHaveValue("Declarative Agent");
+  await expect(page.locator("#samples-grid [data-sample-card]:visible").first()).toBeVisible();
 });
 
 test("theme is keyboard accessible and persists across navigation and reload", async ({ page }) => {
@@ -57,7 +73,7 @@ test("themes still work when local storage is unavailable", async ({ page }) => 
 });
 
 test("catalog search, type filtering, empty state and shared URLs work", async ({ page }) => {
-  await page.goto("samples/");
+  await page.goto("./");
   const cards = page.locator("#samples-grid [data-sample-card]");
   const count = await cards.count();
   expect(count).toBeGreaterThan(0);
@@ -77,8 +93,8 @@ test("catalog search, type filtering, empty state and shared URLs work", async (
   await expect(page.locator("#samples-grid [data-sample-card]:visible")).toHaveCount(count);
 });
 
-test("sample pages preserve source/download links and avoid duplicate tracker requests", async ({ page }) => {
-  await page.goto("samples/");
+test("sample pages preserve source/download links and avoid duplicate tracker requests", async ({ page, isMobile }) => {
+  await page.goto("./");
   await page.locator("#samples-grid h3 a").first().click();
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   await expect(page.getByRole("link", { name: "Open source folder" })).toHaveAttribute("href", /github\.com\/pnp\/copilot-pro-dev-samples\/tree\/main\/samples\//);
@@ -87,6 +103,12 @@ test("sample pages preserve source/download links and avoid duplicate tracker re
   await expect(trackers).toHaveCount(1);
   const samplePath = new URL(page.url()).pathname.replace("/copilot-pro-dev-samples/", "").replace(/\/$/, "");
   await expect(trackers).toHaveAttribute("src", `https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/${samplePath}`);
+  if (isMobile) await page.getByLabel("Open navigation", { exact: true }).click();
+  const navigation = page.getByRole("navigation", { name: isMobile ? "Mobile navigation" : "Primary navigation", exact: true });
+  await expect(navigation.getByRole("link", { name: "Samples", exact: true })).toHaveAttribute("aria-current", "page");
+  await page.getByRole("link", { name: "Back to samples", exact: true }).click();
+  await expect(page).toHaveURL("http://127.0.0.1:4330/copilot-pro-dev-samples/");
+  await expect(page.locator("#samples-grid [data-sample-card]").first()).toBeVisible();
 });
 
 test("local backgrounds, badge, font, and colour spectrum match the reference design", async ({ page }) => {
@@ -214,7 +236,7 @@ test("contribution resources highlight calls, demos, assets, and Sharing is Cari
 });
 
 test("top pages, sample detail, and both themes fit narrow and wide viewports", async ({ page }) => {
-  const routes = ["./", "samples/", "getting-started/", "contributors/", "contributing/", "whats-new/", "samples/da-BlogPostHelper/"];
+  const routes = ["./", "getting-started/", "contributors/", "contributing/", "whats-new/", "samples/da-BlogPostHelper/"];
   for (const route of routes) {
     await page.goto(route);
     for (const theme of ["light", "dark"]) {

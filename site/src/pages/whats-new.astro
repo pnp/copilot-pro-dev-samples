@@ -32,7 +32,7 @@ const formatDate = new Intl.DateTimeFormat("en-US", {
         </article>
       ))}
     </div>
-    {updates.length === 0 && <p>No dated sample updates are available yet. <a href={sitePath("/samples/")}>Browse the gallery</a> to explore the samples.</p>}
-    {updates.length < samples.length && updates.length > 0 && <p class="muted-copy">Samples without a metadata date are available in the <a href={sitePath("/samples/")}>sample gallery</a>.</p>}
+    {updates.length === 0 && <p>No dated sample updates are available yet. <a href={sitePath("/")}>Browse the gallery</a> to explore the samples.</p>}
+    {updates.length < samples.length && updates.length > 0 && <p class="muted-copy">Samples without a metadata date are available in the <a href={sitePath("/")}>sample gallery</a>.</p>}
   </section>
 </SiteLayout>

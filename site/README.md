@@ -38,7 +38,7 @@ To browse that production-base build manually, run `npm run preview -- --base /c
 | Route | Content |
 | --- | --- |
 | `/` | Gallery introduction, community calls, and searchable catalog ordered by latest update |
-| `/samples/` | Full searchable catalog with sample type filtering |
+| `/samples/` | Legacy redirect to the homepage catalog, preserving search and type filters |
 | `/samples/<folder>/` | Preview, authors, source/download links, metadata, and rendered README |
 | `/getting-started/` | How to choose and run a sample; official learning resources |
 | `/contributors/` | Community recognition, contributor badge, and deduplicated sample authors with links to their samples |
@@ -66,7 +66,7 @@ Sample folders remain the source of truth; do not hand-edit `public/samples.json
 
 The preview uses the first image thumbnail by ascending `order`. Relative image URLs resolve against the sample source folder. The contributor directory groups GitHub accounts case-insensitively and counts each sample once. Profile images in the directory and on sample pages fall back to a local placeholder avatar when an image fails to load, including when a GitHub account no longer exists.
 
-The homepage displays the full searchable catalog, ordered by sample update dates with titles used to break ties. It follows the other community galleries without a manually curated spotlight.
+The homepage displays the full searchable catalog, ordered by sample update dates with titles used to break ties. The Samples navigation and catalog return links go directly to the homepage; `/samples/` only redirects old bookmarks there, preserving query parameters and fragments. It follows the other community galleries without a manually curated spotlight.
 
 What's new follows the reference galleries' text-based activity list rather than repeating gallery cards. It lists dated samples newest first, showing the date, Added/Updated label, title, and short summary. A sample is marked Added when its creation and update dates fall on the same UTC day; otherwise it is Updated. Missing update dates fall back to creation dates. Samples with neither date stay in the gallery but are omitted from the activity list.
 

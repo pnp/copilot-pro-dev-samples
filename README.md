@@ -6,7 +6,7 @@
 
 Community-built agents, plugins, and extensibility patterns for [Microsoft 365 Copilot](https://learn.microsoft.com/microsoft-365-copilot/extensibility/). Discover real-world scenarios, inspect the source, and adapt a sample to your own project.
 
-- **[Browse samples](https://pnp.github.io/copilot-pro-dev-samples/samples/)** by scenario or agent type.
+- **[Browse samples](https://pnp.github.io/copilot-pro-dev-samples/)** by scenario or agent type.
 - **[Get started](https://pnp.github.io/copilot-pro-dev-samples/getting-started/)** with prerequisites, setup guidance, and learning resources.
 - **[Meet the contributors](https://pnp.github.io/copilot-pro-dev-samples/contributors/)** and see **[what's new](https://pnp.github.io/copilot-pro-dev-samples/whats-new/)**.
 - **[Contribute a sample](https://pnp.github.io/copilot-pro-dev-samples/contributing/)** and share what you have learned.
