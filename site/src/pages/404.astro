@@ -1,5 +1,6 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
+const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <SiteLayout title="Page Not Found" description="The page you are looking for could not be found.">
@@ -11,8 +12,8 @@ import SiteLayout from "../layouts/SiteLayout.astro";
         The page you are looking for does not exist or may have moved.
       </p>
       <div class="flex flex-wrap gap-3 pt-2">
-        <a class="chip-button chip-button-active" href="/">Back to homepage</a>
-        <a class="chip-button" href="/samples">Browse Samples</a>
+        <a class="chip-button chip-button-active" href={baseUrl}>Back to homepage</a>
+        <a class="chip-button" href={`${baseUrl}samples`}>Browse Samples</a>
       </div>
     </div>
   </section>

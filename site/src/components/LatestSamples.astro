@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { samples, count } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <section class="space-y-5">
@@ -17,14 +18,14 @@ const { samples, count } = Astro.props;
         Start here if you want a quick read on the newest additions and actively maintained examples in the catalog.
       </p>
     </div>
-    <a class="chip-button" href="/samples">View Full Catalog</a>
+    <a class="chip-button" href={`${baseUrl}samples`}>View Full Catalog</a>
   </div>
 
   {
     samples.length > 0 ? (
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
         {samples.map((sample) => (
-          <a href={`/samples/${sample.folder}`} class="sample-card-shell theme-card-hover flex flex-col gap-4 p-5 transition hover:-translate-y-0.5">
+          <a href={`${baseUrl}samples/${sample.folder}`} class="sample-card-shell theme-card-hover flex flex-col gap-4 p-5 transition hover:-translate-y-0.5">
             <div class="flex h-9 shrink-0 items-center justify-between gap-3">
               <div class="sample-type-pill" data-sample-type={sample.type}>{sample.type}</div>
               <div class="sample-date-pill shrink-0">
@@ -33,10 +34,10 @@ const { samples, count } = Astro.props;
             </div>
             <div class="sample-card-image">
               <img
-                src={sample.imageUrl || "/placeholder.webp"}
+                src={sample.imageUrl || `${baseUrl}placeholder.webp`}
                 alt={sample.imageAlt.trim().length > 0 ? sample.imageAlt : `${sample.title} preview`}
                 loading="lazy"
-                onerror="this.onerror=null;this.src='/placeholder.webp';"
+                onerror={`this.onerror=null;this.src='${baseUrl}placeholder.webp';`}
               />
             </div>
             <div class="space-y-3">

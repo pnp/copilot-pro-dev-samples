@@ -9,6 +9,7 @@ const latestSamples = getRecentSamples(samples, latestSamplesCount);
 const { byType } = getSampleStats(samples);
 const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
 const featured = getFeaturedSample(samples);
+const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <SiteLayout title="Copilot Pro Dev Samples" description="Explore Microsoft 365 Copilot community samples.">
@@ -21,22 +22,22 @@ const featured = getFeaturedSample(samples);
         Browse the community catalog by agent type, compare what each sample includes, and jump straight to the source that fits your stack or contribution goal.
       </p>
       <div class="flex flex-wrap gap-3 pt-2">
-        <a class="chip-button chip-button-active" href="/samples">Browse Samples</a>
-        <a class="chip-button" href="/contribute">Submit a sample</a>
+        <a class="chip-button chip-button-active" href={`${baseUrl}samples`}>Browse Samples</a>
+        <a class="chip-button" href={`${baseUrl}contribute`}>Submit a sample</a>
       </div>
     </div>
 
     <div class="hero-aside">
       {
         featured ? (
-          <a href={`/samples/${featured.sample.folder}`} class="hero-featured">
+          <a href={`${baseUrl}samples/${featured.sample.folder}`} class="hero-featured">
             <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.2em]">Featured sample</p>
             <div class="hero-featured-image">
               <img
-                src={featured.sample.imageUrl || "/placeholder.webp"}
+                src={featured.sample.imageUrl || `${baseUrl}placeholder.webp`}
                 alt={featured.sample.imageAlt.trim().length > 0 ? featured.sample.imageAlt : `${featured.sample.title} preview`}
                 loading="lazy"
-                onerror="this.onerror=null;this.src='/placeholder.webp';"
+                onerror={`this.onerror=null;this.src='${baseUrl}placeholder.webp';`}
               />
             </div>
             <p class="hero-featured-title">{featured.sample.title}</p>
