@@ -1,0 +1,10 @@
+.DS_Store
+.local/
+src/appPackage/build/
+.localConfigs
+.deployment/
+node_modules/
+*.zip
+.env
+.env.*
+!.env.*.sample

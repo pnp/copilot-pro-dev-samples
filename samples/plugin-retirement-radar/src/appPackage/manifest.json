@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.29",
+  "version": "1.1.2",
+  "id": "${{TEAMS_APP_ID}}",
+  "developer": {
+    "name": "Rabia Williams",
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/privacy",
+    "termsOfUseUrl": "https://www.example.com/terms"
+  },
+  "name": {
+    "short": "Retirement Radar",
+    "full": "Retirement Radar - find retired Microsoft APIs before they break you"
+  },
+  "description": {
+    "short": "Paste code or a script. Get every retired Microsoft API, its date and the fix.",
+    "full": "Retirement Radar scans code, scripts, config files and architecture notes for Microsoft APIs, SDKs, modules and services that are deprecated or retired - such as AzureAD and MSOnline PowerShell, Azure AD Graph, ADAL, AzureRM and Office 365 connectors in Teams. Every finding is verified live against official Microsoft Learn documentation through the Microsoft Learn MCP server, so you get the official retirement date, the supported replacement, a rewritten code snippet taken from Learn, and a link to the source. No guesswork, no stale training data.",
+    "features": [
+      {
+        "title": "Deprecation scan with live Learn evidence",
+        "description": "Finds retired or deprecated Microsoft APIs in your code and cites the official Learn page for each."
+      },
+      {
+        "title": "Dated risk table",
+        "description": "Ranks every finding as Broken now, Breaking soon or Deprecated, with the official date."
+      },
+      {
+        "title": "Drop-in fixes",
+        "description": "Rewrites the affected lines using the current supported API and official code samples."
+      }
+    ]
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#0F6CBD",
+  "agentConnectors": [
+    {
+      "id": "microsoft-learn-mcp",
+      "displayName": "Microsoft Learn",
+      "description": "Official Microsoft Learn documentation and code samples, served by the Microsoft Learn MCP server. Tools: microsoft_docs_search, microsoft_docs_fetch, microsoft_code_sample_search.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "https://learn.microsoft.com/api/mcp",
+          "mcpToolDescription": {
+            "file": "mcp-tools.json"
+          },
+          "authorization": {
+            "type": "None"
+          }
+        }
+      }
+    }
+  ],
+  "agentSkills": [
+    {
+      "folder": "skills/retirement-radar"
+    }
+  ]
+}
