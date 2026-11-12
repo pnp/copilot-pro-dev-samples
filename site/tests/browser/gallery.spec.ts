@@ -124,6 +124,60 @@ test("contributors prominently call out community recognition before the directo
   expect(beforeDirectory).toBe(true);
 });
 
+for (const { route, selector, accounts, size } of [
+  { route: "contributors/", selector: ".contributor-card", accounts: ["ayronjohnson", "YugalPradhan31"], size: 72 },
+  { route: "samples/da-CanvasStudent/", selector: ".detail-authors a", accounts: ["ayronjohnson"], size: 36 },
+]) {
+  test(`profile images use a local placeholder after a 404 on ${route}`, async ({ page }) => {
+    await page.route(/^https:\/\/github\.com\/(?:ayronjohnson|YugalPradhan31)\.png$/i, (route) =>
+      route.fulfill({ status: 404, contentType: "text/plain", body: "Not Found" }),
+    );
+    await page.goto(route);
+    for (const account of accounts) {
+      const profile = page.locator(`a[href="https://github.com/${account}"]`);
+      const avatar = selector === ".contributor-card"
+        ? page.locator(selector).filter({ has: profile }).locator("img")
+        : profile.locator("img");
+      await avatar.scrollIntoViewIfNeeded();
+      await expect(avatar).toHaveAttribute("src", "/copilot-pro-dev-samples/images/avatar-placeholder.svg");
+      await expect(avatar).toHaveJSProperty("naturalWidth", 72);
+      await expect(avatar).toHaveAttribute("width", String(size));
+      await expect(avatar).toHaveAttribute("height", String(size));
+      await expect(profile).toBeVisible();
+    }
+  });
+}
+
+test("available profile images are not replaced", async ({ page }) => {
+  const pictureUrl = "https://github.com/ayronjohnson.png";
+  await page.route(pictureUrl, (route) => route.fulfill({
+    contentType: "image/svg+xml",
+    body: '<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72"><circle cx="36" cy="36" r="36" fill="blue"/></svg>',
+  }));
+  await page.goto("contributors/");
+  const avatar = page.locator(".contributor-card").filter({ hasText: "Ayron Johnson" }).locator("img");
+  await avatar.scrollIntoViewIfNeeded();
+  await expect(avatar).toHaveJSProperty("naturalWidth", 72);
+  await expect(avatar).toHaveAttribute("src", pictureUrl);
+});
+
+test("profile images stop retrying if the placeholder also fails", async ({ page }) => {
+  let placeholderRequests = 0;
+  await page.route("**/images/avatar-placeholder.svg", (route) => {
+    placeholderRequests++;
+    return route.fulfill({ status: 404, contentType: "text/plain", body: "Not Found" });
+  });
+  await page.goto("contributors/");
+  const avatar = page.locator(".contributor-card").filter({ hasText: "Ayron Johnson" }).locator("img");
+  await avatar.scrollIntoViewIfNeeded();
+  await expect(avatar).toHaveAttribute("src", "/copilot-pro-dev-samples/images/avatar-placeholder.svg");
+  await expect.poll(() => avatar.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth === 0)).toBe(true);
+  await expect(avatar).toHaveJSProperty("onerror", null);
+  const requestsAfterFailure = placeholderRequests;
+  await avatar.dispatchEvent("error");
+  expect(placeholderRequests).toBe(requestsAfterFailure);
+});
+
 test("What's new shows compact dated updates linking to sample details", async ({ page }) => {
   await page.goto("whats-new/");
   await expect(page.getByRole("heading", { name: "What's new", level: 1, exact: true })).toBeVisible();

@@ -64,7 +64,7 @@ Production routes are prefixed with `/copilot-pro-dev-samples/`. GitHub Pages de
 
 Sample folders remain the source of truth; do not hand-edit `public/samples.json`. Existing samples with missing or malformed metadata remain visible with folder-based fallback information and an explicit build warning. Correct the source metadata to populate the full gallery card and contributor entry.
 
-The preview uses the first image thumbnail by ascending `order`. Relative image URLs resolve against the sample source folder. The contributor directory groups GitHub accounts case-insensitively and counts each sample once.
+The preview uses the first image thumbnail by ascending `order`. Relative image URLs resolve against the sample source folder. The contributor directory groups GitHub accounts case-insensitively and counts each sample once. Profile images in the directory and on sample pages fall back to a local placeholder avatar when an image fails to load, including when a GitHub account no longer exists.
 
 The homepage displays the full searchable catalog, ordered by sample update dates with titles used to break ties. It follows the other community galleries without a manually curated spotlight.
 
