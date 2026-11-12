@@ -1,5 +1,8 @@
 ---
+import { ArrowRight, Search } from "@lucide/astro";
+import SampleCard from "./SampleCard.astro";
 import type { SampleEntry } from "../lib/samples";
+import { sitePath } from "../lib/site";
 
 interface Props {
   samples: SampleEntry[];
@@ -8,116 +11,42 @@ interface Props {
 
 const { samples, byType } = Astro.props;
 const sortedTypes = Object.keys(byType).sort((a, b) => a.localeCompare(b));
-const sortedSamples = [...samples].sort((a, b) => {
-  const aTime = a.updatedAt?.getTime() ?? 0;
-  const bTime = b.updatedAt?.getTime() ?? 0;
-  return bTime - aTime;
-});
-const totalSamples = samples.length;
-const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const sortedSamples = [...samples].sort((a, b) =>
+  (b.updatedAt?.getTime() ?? 0) - (a.updatedAt?.getTime() ?? 0) || a.title.localeCompare(b.title),
+);
 ---
 
-<section id="browse" class="space-y-6">
-  <div class="browse-shell space-y-5">
-    <div class="browse-header">
-      <div class="space-y-3">
-        <h2 class="text-3xl font-bold text-white md:text-4xl">Find the right sample fast</h2>
-        <p class="max-w-3xl text-sm leading-relaxed text-slate-300 md:text-base">
-          Search by title, folder, or description. Use the live result summary to keep track of what remains in view.
-        </p>
-      </div>
-    </div>
-
-    <div class="browse-controls-grid">
-      <label class="browse-search-field lg:col-span-2" for="sample-search">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <span class="browse-field-label">Search the catalog</span>
-          <span class="text-xs browse-muted-copy"><span id="catalog-count">{totalSamples}</span> of {totalSamples} samples</span>
-        </div>
-        <input
-          id="sample-search"
-          class="browse-search-input w-full rounded-[10px] border border-white/20 bg-ink-900/80 px-4 py-3 text-sm text-slate-100 outline-none ring-sky-300/50 transition focus:ring-2 md:text-base"
-          type="search"
-          placeholder="Search by folder, title, or description..."
-          aria-describedby="active-summary"
-        />
-      </label>
-      <div class="browse-filter-panel hidden" hidden>
-        <div class="flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <p class="browse-field-label">Filter by sample type</p>
-            <p class="text-sm browse-muted-copy">Choose a lane or keep the full catalog visible.</p>
-          </div>
-          <button type="button" id="clear-filters" class="chip-button text-xs md:text-sm">Clear filters</button>
-        </div>
-        <div class="flex flex-wrap gap-2" id="type-pills">
-          <button type="button" class="chip-button chip-button-active pill" data-type="all" aria-pressed="true">All samples</button>
-          {sortedTypes.map((type) => (
-            <button type="button" class="chip-button pill" data-type={type} aria-pressed="false">{type}</button>
-          ))}
-        </div>
-      </div>
-    </div>
+<section id="browse" class="catalog-shell container" aria-labelledby="catalog-heading">
+  <div class="section-heading">
+    <div><p class="eyebrow">Sample catalog</p><h2 id="catalog-heading">Explore Copilot samples</h2></div>
+    <a class="text-link" href={sitePath("/getting-started/")}>How to use a sample <ArrowRight size={17} aria-hidden="true" /></a>
   </div>
-
-  <div id="samples-grid" class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-    {sortedSamples.map((sample) => (
-      <a
-        href={`${baseUrl}samples/${sample.folder}`}
-        class="sample-card sample-card-shell theme-card-hover flex flex-col gap-4 p-5 transition hover:-translate-y-0.5"
-        data-title={sample.title.toLowerCase()}
-        data-folder={sample.folder.toLowerCase()}
-        data-description={sample.description.toLowerCase()}
-        data-type={sample.type}
-      >
-        <div class="flex h-9 shrink-0 items-center justify-between gap-3">
-          <div class="sample-type-pill" data-sample-type={sample.type}>
-            {sample.type}
-          </div>
-          <div class="sample-date-pill shrink-0">
-            {sample.updatedAt ? sample.updatedAt.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" }) : "Date unknown"}
-          </div>
-        </div>
-        <div class="sample-card-image">
-          <img
-            src={sample.imageUrl || `${baseUrl}placeholder.webp`}
-            alt={sample.imageAlt.trim().length > 0 ? sample.imageAlt : `${sample.title} preview`}
-            loading="lazy"
-            onerror={`this.onerror=null;this.src='${baseUrl}placeholder.webp';`}
-          />
-        </div>
-        <div class="space-y-3">
-          <h3 class="sample-card-title">{sample.title}</h3>
-          <p class="sample-card-description">{sample.description}</p>
-        </div>
-        {sample.authors[0] && (
-          <div class="sample-card-author">
-            <img src={sample.authors[0].pictureUrl} alt="" aria-hidden="true" />
-            <span>{sample.authors[0].name}</span>
-          </div>
-        )}
-      </a>
-    ))}
-    <div id="empty-state" class="sample-empty-state hidden p-5 text-sm">
-      <p class="text-base font-semibold text-white">No samples match this search.</p>
-      <p class="mt-2 text-slate-200">Broaden your search to bring the catalog back into view.</p>
+  <div class="catalog-toolbar">
+    <div class="search-control">
+      <Search size={19} aria-hidden="true" />
+      <label class="sr-only" for="sample-search">Search samples</label>
+      <input id="sample-search" type="search" placeholder="Search by title, folder, or description" autocomplete="off" aria-describedby="active-summary" />
     </div>
+    <label class="sr-only" for="sample-type">Sample type</label>
+    <select id="sample-type">
+      <option value="all">All sample types</option>
+      {sortedTypes.map((type) => <option value={type}>{type} ({byType[type]})</option>)}
+    </select>
+    <button type="button" id="clear-filters" class="button button--secondary">Clear filters</button>
+  </div>
+  <p class="result-count" id="active-summary" aria-live="polite">Showing {samples.length} samples</p>
+  <div id="samples-grid" class="component-grid">
+    {sortedSamples.map((sample, index) => <SampleCard sample={sample} index={index} />)}
+  </div>
+  <div id="empty-state" class="empty-state" hidden>
+    <Search size={28} aria-hidden="true" />
+    <h3>No samples found</h3>
+    <p>Try a broader search or choose a different sample type.</p>
+    <button class="button button--secondary" type="button" id="empty-clear">Clear filters</button>
   </div>
 </section>
 
 <script>
   import { initSampleBrowser } from "../scripts/sample-browser";
-
   initSampleBrowser();
 </script>
-
-<style>
-  .browse-muted-copy {
-    color: var(--summary-muted);
-  }
-
-  .browse-search-input::placeholder {
-    color: var(--summary-muted);
-    opacity: 1;
-  }
-</style>

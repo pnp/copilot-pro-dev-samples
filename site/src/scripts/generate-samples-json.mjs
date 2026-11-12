@@ -7,6 +7,8 @@ const typeLabels = {
   cext: "Copilot Extension",
   mcp: "MCP",
   mcs: "Copilot Studio",
+  plugin: "Plugin",
+  msgext: "Message Extension",
 };
 
 const fallbackDescription = "Community sample for Microsoft 365 Copilot developers.";
@@ -39,6 +41,7 @@ async function generateSamplesJson() {
       const readmeLowerPath = path.join(samplesRoot, folder, "readme.md");
       let title = folder;
       let description = fallbackDescription;
+      let createdAt = null;
       let updatedAt = null;
       let longDescription = [];
       let metadata = [];
@@ -53,7 +56,8 @@ async function generateSamplesJson() {
         if (Array.isArray(parsed) && parsed[0]) {
           title = parsed[0].title || parsed[0].name || title;
           description = parsed[0].shortDescription || description;
-          updatedAt = parseDate(parsed[0].updateDateTime) || parseDate(parsed[0].creationDateTime);
+          createdAt = parseDate(parsed[0].creationDateTime);
+          updatedAt = parseDate(parsed[0].updateDateTime) || createdAt;
 
           if (Array.isArray(parsed[0].longDescription)) {
             longDescription = parsed[0].longDescription.filter((line) => typeof line === "string" && line.trim().length > 0);
@@ -82,15 +86,17 @@ async function generateSamplesJson() {
           }
 
           if (Array.isArray(parsed[0].thumbnails)) {
-            const imageThumb = parsed[0].thumbnails.find((item) => item && item.type === "image" && typeof item.url === "string");
+            const imageThumb = [...parsed[0].thumbnails]
+              .filter((item) => item && item.type === "image" && typeof item.url === "string")
+              .sort((a, b) => (Number(a.order) || 0) - (Number(b.order) || 0))[0];
             if (imageThumb) {
-              imageUrl = imageThumb.url;
+              imageUrl = new URL(imageThumb.url, `https://raw.githubusercontent.com/pnp/copilot-pro-dev-samples/main/samples/${folder}/`).href;
               imageAlt = typeof imageThumb.alt === "string" ? imageThumb.alt : "";
             }
           }
         }
-      } catch {
-        // Keep fallback metadata for samples missing or failing to parse sample.json.
+      } catch (error) {
+        console.warn(`${folder}: could not read sample metadata; using folder information. ${error.message}`);
       }
 
       try {
@@ -98,8 +104,8 @@ async function generateSamplesJson() {
       } catch {
         try {
           readmeContent = await readFile(readmeLowerPath, "utf8");
-        } catch {
-          // README is optional for rendering details. Keep empty fallback.
+        } catch (error) {
+          console.warn(`${folder}: README unavailable. ${error.message}`);
         }
       }
 
@@ -112,6 +118,7 @@ async function generateSamplesJson() {
         description,
         type,
         href: `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/${folder}`,
+        createdAt,
         updatedAt,
         longDescription,
         metadata,

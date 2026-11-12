@@ -1,12 +1,34 @@
 # Contribution Guidance
 
-This is a community repository for sample Microsoft 365 Copilot agents developed using code-first approaches using tools such as Visual Studio Code and Microsoft 365 Agents Toolkit, and now support for Copilot Studio samples. 
+Share agents, plugins, and extensibility samples for Microsoft 365 Copilot, built with tools such as Visual Studio Code, Microsoft 365 Agents Toolkit, and Microsoft Copilot Studio.
 
 If you'd like to contribute to this repository, please read the following guidelines. Contributors are more than welcome to share their learnings with others in this centralized location.
+
+For a quick walkthrough, see the gallery's [getting started](https://pnp.github.io/copilot-pro-dev-samples/getting-started/) and [contributing](https://pnp.github.io/copilot-pro-dev-samples/contributing/) pages. Sample authors are recognized in the [contributor directory](https://pnp.github.io/copilot-pro-dev-samples/contributors/) using the authors recorded in each sample's `assets/sample.json`.
+
+You do not need a new sample to contribute. Improvements to documentation, accessibility, screenshots, issue reports, and reviews are welcome too. Keep those changes separate from new sample submissions.
+
+## Gallery and documentation changes
+
+The Astro gallery lives in [`site/`](./site). Keep gallery-only improvements separate from new sample submissions. Follow the [site development guide](./site/README.md) to generate the catalog, type-check, build, and run regression tests, including the GitHub Pages base path.
+
+Sample metadata and READMEs are the source of truth; do not edit the generated `site/public/samples.json` by hand. Keep author accounts, thumbnail order, screenshots, and update dates accurate so gallery cards, the contributor directory, and What's new stay current.
+
+The site adds its own route-specific view tracker to every page, including sample details. Keep the required tracker in each sample-root README as well; the site removes that embedded tracker when rendering documentation to avoid duplicate page counts.
 
 ## Community calls and demos
 
 Join our [weekly community calls](https://aka.ms/community/calls) for Copilot, Microsoft 365, and Power Platform updates. Everyone is welcome. If you would like to share your learnings or gather community input, [sign up for a demo](https://aka.ms/community/request/demo).
+
+New to open source? Join a free [Sharing is Caring session](https://pnp.github.io/sharing-is-caring/) for help with GitHub and the contribution process.
+
+## Community recognition
+
+Your work helps other developers learn, prototype, and build. Keep the contributors in your sample README and `assets/sample.json` accurate so the community can acknowledge their work.
+
+[![Microsoft 365 and Power Platform Community contributor badge](./site/public/images/contributor-badge.webp)](https://aka.ms/community/recognition)
+
+[Learn about community recognition](https://aka.ms/community/recognition), including available badges and how to request recognition for your contributions.
 
 ## Code of Conduct
 
@@ -17,7 +39,7 @@ Remember that this repository is maintained by community members who volunteer t
 
 ## Question or Problem?
 
-Please do not open GitHub issues for general support questions as the GitHub list should be used for feature requests and bug reports. This way we can more easily track actual issues or bugs from the code and keep the general discussion separate from the actual code.
+For a question, bug, or enhancement related to a sample or this gallery, [open an issue](https://github.com/pnp/copilot-pro-dev-samples/issues/new). Include the sample folder, reproduction steps, expected and actual behavior, and relevant toolchain versions. For general platform questions, start with the [Microsoft 365 Copilot documentation](https://learn.microsoft.com/microsoft-365-copilot/extensibility/) and [community resources](https://aka.ms/community/home). See the [support guidelines](./SUPPORT.md); samples are provided as is.
 
 ## Typos, Issues, Bugs and contributions
 
@@ -42,8 +64,8 @@ When you submit a new sample, please follow these guidelines:
 
 ### Sample Folder
 
-* When submitting a new sample solution, please name the sample solution folder accordingly
-* Do not use period/dot in the folder name of the provided sample
+* Use the prefix for your sample type, followed by a short, descriptive name
+* Use lowercase letters, digits, and hyphens; do not use spaces, underscores, or periods
 
 ### README.md
 
@@ -53,19 +75,9 @@ When you submit a new sample, please follow these guidelines:
 * The sample-root `README.md` must end with `<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<your-sample-folder>" />`. The suffix after `copilot-pro-dev-samples/` is the repository-relative path to the sample root. For example, the tracker for `samples/da-my-agent` must end in `/samples/da-my-agent`. Nested implementation READMEs do not need this tracker.
 * If you find an existing sample which is similar to yours, please extend the existing one rather than submitting a new similar sample
   * When you update existing samples, please update also `README.md` file accordingly with information on provided changes and with your author details
-* Make sure to document each function in the `README.md`
-* If you include your social media information under **Authors** in the **Solution** section, we'll use this information to promote your contribution on social media, blog posts, and community calls.
-    * Try to use the following syntax:
-    ```md
-    folder name | Author Name ([@yourtwitterhandle](https://twitter.com/yourtwitterhandle))
-    ```
-* If you include your company name after your name, we'll try to include your company name in blog posts and community calls.
-    * Try to use the following syntax:
-    ```md
-    folder name | Author Name ([@yourtwitterhandle](https://twitter.com/yourtwitterhandle)), Company Name
-    ```
-* For multiple authors, please provide one line per author
-* If you prefer to not use social media or disclose your name, we'll still accept your sample, but we'll assume that you don't want us to promote your contribution on social media.
+* Document the important features, permissions, setup steps, example prompts, and expected results
+* List each contributor separately with a GitHub profile link, following the template. Keep the same authors in `assets/sample.json`
+* Use GitHub account names without a leading `@` in metadata. Put optional social or company links on your GitHub profile rather than adding them to the template's contributor list
 
 ### Assets
 
@@ -73,7 +85,21 @@ When you submit a new sample, please follow these guidelines:
 * Please provide a high-quality screenshot
 * If possible, use a resolution of **1920x1080**
 * You can add as many screen shots as you'd like to help users understand your sample without having to download it and install it.
-* You can include animated images (such as `.gif` files), but you must provide at least one static `.png` file
+* Include at least one static `.png` or `.jpg` screenshot; animated `.gif` files can supplement it
+* Replace the template image with your own screenshot; do not submit an unresolved placeholder image
+* In `assets/sample.json`, set each image thumbnail's `url`, `alt`, and numeric `order`. The gallery uses the first image by ascending `order`
+* Thumbnail URLs should point to files committed under your sample's `assets` folder, not an external image host. Describe the scenario in the alternative text
+* Remove the optional video thumbnail when there is no video
+
+### Gallery metadata
+
+Complete `assets/sample.json` from the matching template. It is an array containing your sample entry; use the [metadata schema](./.github/metadata-schema.json) as the format reference.
+
+* Keep `name`, `url`, and `downloadUrl` aligned with your exact sample folder
+* Supply a clear `title`, `shortDescription`, and `longDescription`, plus relevant products and platform/language metadata
+* Set `creationDateTime` and `updateDateTime` to real dates in `YYYY-MM-DD` format. Update the latter when you change the sample; these dates drive What's new
+* Include every contributor's `name`, `gitHubAccount`, and `pictureUrl`. The contributor directory groups GitHub accounts case-insensitively
+* Do not manually edit the generated gallery catalog in `site/public/samples.json`
 
 ## Sample naming and  file structure
 
@@ -97,10 +123,10 @@ Declarative-agent, plugin, custom-engine-agent, and Copilot Studio samples have 
 
 | If your sample is | use this template directory |
 | --- | --- |
-| a Declarative agent | [templates/da-declarative-agent](/templates/da-declarative-agent) |
-| a Plugin | [templates/plugin-copilot-plugin](/templates/plugin-copilot-plugin) |
-| a Custom engine agent | [templates/cea-custom-engine-agent](/templates/cea-custom-engine-agent) |
-| a Copilot Studio agent | [templates/mcs-copilot-studio](/templates/mcs-copilot-studio) |
+| a Declarative agent | [templates/da-declarative-agent](./templates/da-declarative-agent) |
+| a Plugin | [templates/plugin-copilot-plugin](./templates/plugin-copilot-plugin) |
+| a Custom engine agent | [templates/cea-custom-engine-agent](./templates/cea-custom-engine-agent) |
+| a Copilot Studio agent | [templates/mcs-copilot-studio](./templates/mcs-copilot-studio) |
 
 For other sample types, use a high-quality existing sample of the same type as a guide. Include, at minimum, a summary, screenshot, contributors, version history, prerequisites, complete setup and usage instructions, features, help information, disclaimer, and the required tracker at the end of the sample-root `README.md`.
 
@@ -118,6 +144,19 @@ When using a project template:
 Do not submit unresolved placeholder values or the placeholder image. The metadata file must remain at `assets/sample.json`, and the sample-root `README.md` must be named exactly `README.md` -- with capital letters -- as these files are used to publish your sample.
 
 Each README.md file must contain detailed build and use instructions.
+
+### Manifests and Agents Toolkit metadata
+
+Use the latest published [Teams/M365 app manifest](https://learn.microsoft.com/microsoftteams/platform/resources/schema/manifest-schema), [declarative agent manifest](https://learn.microsoft.com/microsoft-365-copilot/extensibility/declarative-agent-manifest), and [API plugin manifest](https://learn.microsoft.com/microsoft-365/copilot/extensibility/plugin-manifest-2.4) schemas that apply to your sample. Check the linked documentation for newer published versions before submitting.
+
+If the sample includes `m365agents.yml`, add this immediately after `version`:
+
+```yaml
+additionalMetadata:
+  sampleTag: pnp-copilot-pro-dev:<sample-folder>
+```
+
+Replace `<sample-folder>` with the exact folder under `samples`. Do not include `projectId`. Update legacy `teamsapp.yml` or `teamsapp.local.yml` projects to current Microsoft 365 Agents Toolkit guidance.
 
 ### 3. .gitignore
 
@@ -145,13 +184,13 @@ BOT_DOMAIN=
 BOT_ENDPOINT=
 
 # Set by the developer
-OPENAI_API_ENDPOINT=https://api.openai.com/v1/chat/completions
-OPENAI_MODEL=text-davinci-03
+OPENAI_API_ENDPOINT=
+OPENAI_MODEL=
 ```
 and **.env.local.user.sample** like this:
 
 ```text
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+OPENAI_API_KEY=
 ```
 
 The instructions would tell developers to copy the **.env.local.sample** to a new file **.env.local**, and to also copy **.env.local.user.sample** to **.env.local.user**, and then to fill in certain values.
@@ -160,11 +199,11 @@ Notice that:
 
  * Values generated by Microsoft 365 Agents Toolkit, such as BOT_ID, are blank. Microsoft 365 Agents Toolkit will generate new values and fill them in during provisioning.
  * Values that are likely to work for all developers are filled in, and
- * Values to be provided manually by each developer are shown with the details removed to convey the format while not revealing the sample author's personal settings.
+ * Values to be provided manually are left blank and documented in the sample README, including the supported service and model requirements.
 
 ### 5. Screen shot
 
-You will need to have a screenshot picture of your sample in action in the `README.md` file ("pics or it didn't happen"). This is manditory since we've found that users tend not to try samples that lack a screen shot. Please use a standard format such as .png, .jpg, or .gif for your screen shot so it will work in various places, such as in the [sample browser](https://adoption.microsoft.com/en-us/sample-solution-gallery/){target=_blank}. Animated .png or .gif files are welcome.
+Include a screenshot of your sample in action in the README and gallery metadata. Use `.png` or `.jpg` for a static preview; animated `.gif` files can supplement it. See the [asset guidance](#assets) for image quality, local storage, and alternative text requirements.
 
 The preview image must be located in the `/assets/` folder in the root your solution. Even if it's a simple bot sending a single chat message, please include a screen shot!
 
@@ -172,9 +211,9 @@ The preview image must be located in the `/assets/` folder in the root your solu
 
 Your sample should include a clearly marked folder containing a Teams/M365 `manifest.json` file and well-formed application icons along with any additional files such as declarative agent and API plugin JSON files.
 
-* If the manifest works as-is, you may optionally include an installable Teams application package (zip archive containing these files).
-
-* If the `manifest.json` requires modification before use, please do not include a zip archive. Instead, include instructions in your `README.md` file explaining how to modify the manifest and create the Teams application package
+* Commit the source manifests and icons, not packaged `.zip` archives.
+* Explain any required substitutions and how to create the Teams/M365 app package locally.
+* For Copilot Studio, commit unpacked or cloned source under `src/`, not an exported solution archive.
 
 ### 7. Microsoft Copilot Studio Samples
 
@@ -187,7 +226,7 @@ There are two types of Copilot Studio Agents within this repository:
 
 The intended folder structure for an MCS sample looks like this:
 
-- mcs-MyNewAgent
+- mcs-my-agent
   - assets
     - sample.json
     - image.png
@@ -199,8 +238,8 @@ Quick way to scaffold the sample:
  ```powershell
   # Navigate to the samples folder
   cd samples
-  cp -R ../templates/mcs-copilot-studio mcs-MyNewAgent
-  cd mcs-MyNewAgent
+  Copy-Item -Recurse ..\templates\mcs-copilot-studio .\mcs-my-agent
+  cd mcs-my-agent
 ```
 
 #### Copilot Studio using Solution Export
@@ -220,15 +259,15 @@ To get the source quickly, please use the following commands using the [Power Pl
   ```powershell
   # Navigate to the samples folder
   cd samples
-  cp -R ../templates/mcs-copilot-studio mcs-MyNewAgent
-  cd mcs-MyNewAgent
+  Copy-Item -Recurse ..\templates\mcs-copilot-studio .\mcs-my-agent
+  cd mcs-my-agent
 
-  pac solution clone --name <your-package-name, e.g. MyAgent> --outputDirectory . --packagetype Unmanaged
+  pac solution clone --name <solution-unique-name> --outputDirectory .\src --packagetype Unmanaged
 
   ```
 
-Ensure that all the solution files are located in the root of the scaffolded sample location e.g. /samples/mcs-MyNewAgent
-See example agent: [mcs-BlogPostHelper](/samples/mcs-BlogPostHelper)
+Ensure that the cloned solution source is under `samples/mcs-my-agent/src`, alongside the sample-root README and assets folder.
+See example agent: [mcs-BlogPostHelper](./samples/mcs-BlogPostHelper).
 
 That's it, proceed to Finalizing the sample
 
@@ -239,8 +278,8 @@ This method assumes you have the Copilot Studio Extension for Visual Studio Code
 Steps
 
 - Ensure you have followed the Sample setup instructions
-- Clone the agent into the sample folder (for example, `samples/mcs-MyNewAgent`).
-- The extension creates a new folder that contains the YAML files; rename that generated folder to `src` so the final structure is `samples/mcs-MyNewAgent/src`.
+- Clone the agent into the sample folder (for example, `samples/mcs-my-agent`).
+- The extension creates a new folder that contains the YAML files; rename that generated folder to `src` so the final structure is `samples/mcs-my-agent/src`.
 
 That's it, proceed to Finalizing the sample
 
@@ -256,7 +295,7 @@ That's it, proceed to Finalizing the sample
 
 ## Submitting Pull Requests
 
-> If you aren't familiar with how to contribute to open-source repositories using GitHub, or if you find the instructions on this page confusing, [sign up](https://forms.office.com/Pages/ResponsePage.aspx?id=KtIy2vgLW0SOgZbwvQuRaXDXyCl9DkBHq4A2OG7uLpdUREZVRDVYUUJLT1VNRDM4SjhGMlpUNzBORy4u) for one of our [Sharing is Caring](https://pnp.github.io/sharing-is-caring/#pnp-sic-events) events. It's completely free, and we'll guide you through the process.
+> If you are new to GitHub contributions, join a free [Sharing is Caring](https://pnp.github.io/sharing-is-caring/) session. Everyone is welcome.
 
 Here's a high-level process for submitting new samples or updates to existing ones.
 
@@ -266,7 +305,22 @@ Here's a high-level process for submitting new samples or updates to existing on
 4. Include your changes to your branch
 5. Commit your changes using descriptive commit message. These are used to track changes on the repositories for monthly communications
 6. Create a pull request from your fork's branch to the upstream repository's `main` branch
-7. Complete the provided pull request template with the requested details
+7. Complete the [pull request template](./.github/pull_request_template.md) with the scenario, affected sample, and validation details
+
+### Final submission checklist
+
+- [ ] One sample per pull request, on a branch based on the latest `main`
+- [ ] Correct lowercase folder prefix and matching project template
+- [ ] Complete source, README, `.gitignore`, redacted environment examples, and required app manifests or Copilot Studio `src`
+- [ ] Complete `assets/sample.json`, with accurate contributors and dates
+- [ ] Real, locally stored screenshot referenced by the README and metadata, with meaningful alt text
+- [ ] No template placeholders, secrets, tenant-specific IDs, `projectId`, or packaged `.zip` archives
+- [ ] Correct `additionalMetadata.sampleTag` when `m365agents.yml` is present
+- [ ] Sample-root README ends with the tracker matching the sample's exact repository-relative path
+- [ ] New sample added to the root README samples table
+- [ ] Sample setup and usage tested from a clean checkout, with results in the pull request
+
+For gallery-only changes, use the validation commands in the [site development guide](./site/README.md) instead of the sample-specific checklist.
 
 Before you submit your pull request consider the following guidelines:
 

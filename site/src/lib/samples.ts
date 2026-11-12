@@ -1,6 +1,5 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import featuredSampleConfig from "../config/featured-sample.json";
 
 export type SampleEntry = {
   folder: string;
@@ -8,6 +7,7 @@ export type SampleEntry = {
   description: string;
   type: string;
   href: string;
+  createdAt: Date | null;
   updatedAt: Date | null;
   longDescription: string[];
   metadata: Array<{ key: string; value: string }>;
@@ -29,6 +29,8 @@ const typeLabels: Record<string, string> = {
   cext: "Copilot Extension",
   mcp: "MCP",
   mcs: "Copilot Studio",
+  plugin: "Plugin",
+  msgext: "Message Extension",
 };
 
 const fallbackDescription = "Community sample for Microsoft 365 Copilot developers.";
@@ -42,7 +44,8 @@ function parseDate(value: unknown): Date | null {
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
 
-type StoredSampleEntry = Omit<SampleEntry, "updatedAt"> & {
+type StoredSampleEntry = Omit<SampleEntry, "createdAt" | "updatedAt"> & {
+  createdAt: string | null;
   updatedAt: string | null;
 };
 
@@ -53,54 +56,73 @@ function getSamplesDataPath(): string {
 export async function getSamples(): Promise<SampleEntry[]> {
   const samplesDataPath = getSamplesDataPath();
 
-  try {
-    const raw = await readFile(samplesDataPath, "utf8");
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) {
-      return [];
-    }
-
-    return parsed.map((item: Partial<StoredSampleEntry>) => {
-      const folder = typeof item.folder === "string" ? item.folder : "unknown";
-      const typeKey = folder.split("-")[0] || "other";
-
-      return {
-        folder,
-        title: typeof item.title === "string" && item.title.trim().length > 0 ? item.title : folder,
-        description:
-          typeof item.description === "string" && item.description.trim().length > 0 ? item.description : fallbackDescription,
-        type: typeof item.type === "string" && item.type.trim().length > 0 ? item.type : typeLabels[typeKey] || "Other",
-        href:
-          typeof item.href === "string" && item.href.trim().length > 0
-            ? item.href
-            : `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/${folder}`,
-        updatedAt: parseDate(item.updatedAt),
-        longDescription: Array.isArray(item.longDescription)
-          ? item.longDescription.filter((line): line is string => typeof line === "string" && line.trim().length > 0)
-          : [],
-        metadata: Array.isArray(item.metadata)
-          ? item.metadata.filter(
-              (entry): entry is { key: string; value: string } =>
-                !!entry && typeof entry.key === "string" && typeof entry.value === "string"
-            )
-          : [],
-        authors: Array.isArray(item.authors)
-          ? item.authors.filter(
-              (author): author is { name: string; gitHubAccount: string; pictureUrl: string } =>
-                !!author &&
-                typeof author.name === "string" &&
-                typeof author.gitHubAccount === "string" &&
-                typeof author.pictureUrl === "string"
-            )
-          : [],
-        imageUrl: typeof item.imageUrl === "string" && item.imageUrl.trim().length > 0 ? item.imageUrl : null,
-        imageAlt: typeof item.imageAlt === "string" ? item.imageAlt : "",
-        readmeContent: typeof item.readmeContent === "string" ? item.readmeContent : "",
-      };
-    });
-  } catch {
-    return [];
+  const raw = await readFile(samplesDataPath, "utf8");
+  const parsed: unknown = JSON.parse(raw);
+  if (!Array.isArray(parsed)) {
+    throw new Error(`Invalid sample catalog at ${samplesDataPath}: expected an array. Run npm run generate.`);
   }
+
+  return parsed.map((item: Partial<StoredSampleEntry>) => {
+    const folder = typeof item.folder === "string" ? item.folder : "unknown";
+    const typeKey = folder.split("-")[0] || "other";
+
+    return {
+      folder,
+      title: typeof item.title === "string" && item.title.trim().length > 0 ? item.title : folder,
+      description:
+        typeof item.description === "string" && item.description.trim().length > 0 ? item.description : fallbackDescription,
+      type: typeof item.type === "string" && item.type.trim().length > 0 ? item.type : typeLabels[typeKey] || "Other",
+      href:
+        typeof item.href === "string" && item.href.trim().length > 0
+          ? item.href
+          : `https://github.com/pnp/copilot-pro-dev-samples/tree/main/samples/${folder}`,
+      createdAt: parseDate(item.createdAt),
+      updatedAt: parseDate(item.updatedAt),
+      longDescription: Array.isArray(item.longDescription)
+        ? item.longDescription.filter((line): line is string => typeof line === "string" && line.trim().length > 0)
+        : [],
+      metadata: Array.isArray(item.metadata)
+        ? item.metadata.filter(
+            (entry): entry is { key: string; value: string } =>
+              !!entry && typeof entry.key === "string" && typeof entry.value === "string"
+          )
+        : [],
+      authors: Array.isArray(item.authors)
+        ? item.authors.filter(
+            (author): author is { name: string; gitHubAccount: string; pictureUrl: string } =>
+              !!author &&
+              typeof author.name === "string" &&
+              typeof author.gitHubAccount === "string" &&
+              typeof author.pictureUrl === "string"
+          )
+        : [],
+      imageUrl: typeof item.imageUrl === "string" && item.imageUrl.trim().length > 0 ? item.imageUrl : null,
+      imageAlt: typeof item.imageAlt === "string" ? item.imageAlt : "",
+      readmeContent: typeof item.readmeContent === "string" ? item.readmeContent : "",
+    };
+  });
+}
+
+export type Contributor = SampleEntry["authors"][number] & {
+  samples: SampleEntry[];
+};
+
+export function getContributors(samples: SampleEntry[]): Contributor[] {
+  const contributors = new Map<string, Contributor>();
+  for (const sample of samples) {
+    for (const author of sample.authors) {
+      const account = author.gitHubAccount.trim().replace(/^@/, "");
+      if (!account) continue;
+      const key = account.toLowerCase();
+      const contributor = contributors.get(key);
+      if (contributor) {
+        if (!contributor.samples.some((entry) => entry.folder === sample.folder)) contributor.samples.push(sample);
+      } else {
+        contributors.set(key, { ...author, gitHubAccount: account, samples: [sample] });
+      }
+    }
+  }
+  return [...contributors.values()].sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export function getLatestSamples(samples: SampleEntry[], months: number, now = new Date()): SampleEntry[] {
@@ -115,18 +137,6 @@ export function getLatestSamples(samples: SampleEntry[], months: number, now = n
       const bTime = b.updatedAt?.getTime() ?? 0;
       return bTime - aTime;
     });
-}
-
-export function getRecentSamples(samples: SampleEntry[], count: number): SampleEntry[] {
-  const safeCount = Number.isFinite(count) && count > 0 ? Math.floor(count) : 1;
-
-  return [...samples]
-    .sort((a, b) => {
-      const aTime = a.updatedAt?.getTime() ?? 0;
-      const bTime = b.updatedAt?.getTime() ?? 0;
-      return bTime - aTime;
-    })
-    .slice(0, safeCount);
 }
 
 export function getSampleStats(samples: SampleEntry[]): SampleStats {
@@ -145,30 +155,3 @@ export function getSampleStats(samples: SampleEntry[]): SampleStats {
     topTypes,
   };
 }
-
-export type FeaturedSample = {
-  sample: SampleEntry;
-  showDescriptionAndMetadata: boolean;
-};
-
-/**
- * Reads src/config/featured-sample.json to pick the highlighted sample for the homepage.
- * showDescriptionAndMetadata toggles between the rich card and an image-only spotlight.
- */
-export function getFeaturedSample(samples: SampleEntry[]): FeaturedSample | null {
-  const folder = typeof featuredSampleConfig.folder === "string" ? featuredSampleConfig.folder.trim() : "";
-  if (!folder) {
-    return null;
-  }
-
-  const sample = samples.find((entry) => entry.folder === folder);
-  if (!sample) {
-    return null;
-  }
-
-  return {
-    sample,
-    showDescriptionAndMetadata: featuredSampleConfig.showDescriptionAndMetadata !== false,
-  };
-}
-

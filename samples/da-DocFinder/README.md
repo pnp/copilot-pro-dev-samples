@@ -29,4 +29,4 @@ Please check out the author's YouTube short where he explains and demos the solu
 
 [![Jeremy's video](./assets/JeremyDocFinderVideo.png)](https://www.youtube.com/shorts/3eL6FlSYE48)
 
-<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-docfinder" />
+<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/da-DocFinder" />

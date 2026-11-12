@@ -1,78 +1,48 @@
 export function initSampleBrowser() {
   const search = document.querySelector<HTMLInputElement>("#sample-search");
-  const pills = Array.from(document.querySelectorAll<HTMLButtonElement>("#type-pills .pill"));
-  const cards = Array.from(document.querySelectorAll<HTMLElement>("#samples-grid .sample-card"));
+  const type = document.querySelector<HTMLSelectElement>("#sample-type");
+  const cards = Array.from(document.querySelectorAll<HTMLElement>("#samples-grid [data-sample-card]"));
   const empty = document.querySelector<HTMLElement>("#empty-state");
-  const clearFilters = document.querySelector<HTMLButtonElement>("#clear-filters");
-  const visibleCount = document.querySelector<HTMLElement>("#visible-count");
-  const activeSummary = document.querySelector<HTMLElement>("#active-summary");
-  const catalogCount = document.querySelector<HTMLElement>("#catalog-count");
+  const summary = document.querySelector<HTMLElement>("#active-summary");
 
-  if (!search || pills.length === 0 || cards.length === 0) {
-    return;
+  if (!search || !type || !empty || !summary) {
+    throw new Error("Sample catalog controls could not be initialized.");
   }
 
-  let activeType = "all";
+  const query = new URLSearchParams(window.location.search);
+  search.value = query.get("q") ?? "";
+  const requestedType = query.get("type");
+  if (requestedType && Array.from(type.options).some((option) => option.value === requestedType)) {
+    type.value = requestedType;
+  }
 
   const applyFilters = () => {
-    const query = search.value.trim().toLowerCase();
+    const text = search.value.trim().toLowerCase();
     let visible = 0;
-
     for (const card of cards) {
-      const byType = activeType === "all" || card.dataset.type === activeType;
-      const haystack = `${card.dataset.title} ${card.dataset.folder} ${card.dataset.description}`;
-      const byQuery = haystack.includes(query);
-      const show = byType && byQuery;
-
-      card.classList.toggle("hidden", !show);
-      if (show) {
-        visible += 1;
-      }
+      const matchesType = type.value === "all" || card.dataset.type === type.value;
+      const matchesText = `${card.dataset.title} ${card.dataset.folder} ${card.dataset.description}`.includes(text);
+      card.hidden = !matchesType || !matchesText;
+      if (!card.hidden) visible += 1;
     }
+    empty.hidden = visible > 0;
+    summary.textContent = `Showing ${visible} of ${cards.length} samples`;
+    const nextQuery = new URLSearchParams();
+    if (text) nextQuery.set("q", search.value.trim());
+    if (type.value !== "all") nextQuery.set("type", type.value);
+    window.history.replaceState({}, "", `${window.location.pathname}${nextQuery.size ? `?${nextQuery}` : ""}${window.location.hash}`);
+  };
 
-    if (empty) {
-      empty.classList.toggle("hidden", visible !== 0);
-    }
-
-    if (visibleCount) {
-      visibleCount.textContent = String(visible);
-    }
-
-    if (catalogCount) {
-      catalogCount.textContent = String(visible);
-    }
-
-    if (activeSummary) {
-      const typeLabel = activeType === "all" ? "all sample types" : activeType;
-      const queryLabel = query.length > 0 ? `matching “${search.value.trim()}”` : "with no search term";
-      activeSummary.textContent = `Showing ${typeLabel} ${queryLabel}.`;
-    }
+  const clear = () => {
+    search.value = "";
+    type.value = "all";
+    applyFilters();
+    search.focus();
   };
 
   search.addEventListener("input", applyFilters);
-
-  for (const pill of pills) {
-    pill.addEventListener("click", () => {
-      activeType = pill.dataset.type || "all";
-      for (const item of pills) {
-        item.classList.toggle("chip-button-active", item === pill);
-        item.setAttribute("aria-pressed", String(item === pill));
-      }
-      applyFilters();
-    });
-  }
-
-  clearFilters?.addEventListener("click", () => {
-    activeType = "all";
-    search.value = "";
-    for (const item of pills) {
-      const isAll = item.dataset.type === "all";
-      item.classList.toggle("chip-button-active", isAll);
-      item.setAttribute("aria-pressed", String(isAll));
-    }
-    applyFilters();
-    search.focus();
-  });
-
+  type.addEventListener("change", applyFilters);
+  document.querySelector("#clear-filters")?.addEventListener("click", clear);
+  document.querySelector("#empty-clear")?.addEventListener("click", clear);
   applyFilters();
 }

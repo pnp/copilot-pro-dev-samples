@@ -1,23 +1,36 @@
 {
-  "name": "docs",
+  "name": "copilot-pro-dev-samples-gallery",
+  "private": true,
   "type": "module",
   "version": "0.0.1",
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
+    "generate": "node ./src/scripts/generate-samples-json.mjs",
+    "predev": "npm run generate",
     "dev": "astro dev",
-    "dev-host": "astro dev --host",
+    "dev-host": "npm run generate && astro dev --host",
     "prebuild": "node ./src/scripts/generate-samples-json.mjs",
     "build": "astro build",
+    "check": "npm run generate && astro check",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@lucide/astro": "^1.33.0",
     "@microsoft/clarity": "^1.0.2",
-    "@tailwindcss/vite": "^4.1.11",
     "astro": "^7.0.3",
     "marked": "^18.0.7",
-    "tailwindcss": "^4.1.11"
+    "sanitize-html": "^2.17.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0",
+    "@types/sanitize-html": "^2.16.1",
+    "typescript": "^6.0.3"
   }
 }

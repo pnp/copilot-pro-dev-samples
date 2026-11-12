@@ -1,0 +1,50 @@
+---
+import { ArrowRight } from "@lucide/astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { repositoryUrl, sitePath } from "../lib/site";
+---
+
+<SiteLayout title="Getting started" description="Choose, configure, and run Microsoft 365 Copilot community samples.">
+  <header class="page-heading container">
+    <p class="eyebrow">Getting started</p>
+    <h1>From sample to working agent</h1>
+    <p>Start with a scenario, choose the right extensibility approach, and follow the sample's own documentation. Each sample is self-contained.</p>
+    <a class="button button--primary" href={sitePath("/samples/")}>Find a sample <ArrowRight size={17} aria-hidden="true" /></a>
+  </header>
+  <section class="steps-band">
+    <ol class="container getting-started-steps">
+      <li><strong>1</strong><div><h2>Choose a scenario</h2><p>Browse declarative agents, plugins, custom engine agents, and Copilot Studio examples.</p></div></li>
+      <li><strong>2</strong><div><h2>Check prerequisites</h2><p>Review the sample's tenant, licensing, toolchain, permissions, and service requirements before deploying.</p></div></li>
+      <li><strong>3</strong><div><h2>Build and try it</h2><p>Download or clone the source, then follow that sample's README for configuration, deployment, and testing.</p></div></li>
+    </ol>
+  </section>
+  <section class="content-section container contribution-requirements">
+    <div>
+      <p class="eyebrow">Get the code</p><h2>Work in one sample folder</h2>
+      <pre><code>{`git clone ${repositoryUrl}.git\ncd copilot-pro-dev-samples\ncd samples\ncd <sample-folder>`}</code></pre>
+      <p>Or use <strong>Download sample</strong> on a sample's page to download just that folder. There is no single build command for all samples.</p>
+    </div>
+    <div>
+      <p class="eyebrow">Choose your approach</p><h2>Match the sample to your goal</h2>
+      <ul class="guidance-list">
+        <li><strong>Declarative agents:</strong> use Microsoft 365 Copilot orchestration with instructions, knowledge, and actions.</li>
+        <li><strong>Plugins:</strong> add agent skills or connectors to supported Copilot experiences.</li>
+        <li><strong>Custom engine agents:</strong> bring your own orchestration and code.</li>
+        <li><strong>Copilot Studio:</strong> build and extend agents using Copilot Studio.</li>
+      </ul>
+      <p>Use a development tenant and sample data. Review permissions and remove secrets before sharing changes.</p>
+    </div>
+  </section>
+  <section class="content-section content-section--tint">
+    <div class="container resource-list">
+      <div><p class="eyebrow">Official guidance</p><h2>Build on the supported platform</h2><p>Use the current Microsoft documentation alongside the sample's README. Licensing and setup requirements vary by agent type and services used.</p></div>
+      <nav aria-label="Getting started resources">
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/">Microsoft 365 Copilot extensibility <ArrowRight size={16} aria-hidden="true" /></a>
+        <a href="https://learn.microsoft.com/microsoft-365-copilot/extensibility/overview-declarative-agent">Declarative agents overview <ArrowRight size={16} aria-hidden="true" /></a>
+        <a href="https://learn.microsoft.com/microsoftteams/platform/toolkit/agents-toolkit-fundamentals">Microsoft 365 Agents Toolkit <ArrowRight size={16} aria-hidden="true" /></a>
+        <a href="https://learn.microsoft.com/microsoft-copilot-studio/">Microsoft Copilot Studio <ArrowRight size={16} aria-hidden="true" /></a>
+        <a href="https://microsoft.github.io/copilot-camp/">Copilot Developer Camp <ArrowRight size={16} aria-hidden="true" /></a>
+      </nav>
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,78 @@
+---
+import { ArrowRight, GitPullRequest } from "@lucide/astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { repositoryUrl } from "../lib/site";
+const templates = [
+  { prefix: "da-", title: "Declarative agent", template: "da-declarative-agent", note: "Include a Teams/M365 app package and a declarative agent manifest." },
+  { prefix: "plugin-", title: "Plugin", template: "plugin-copilot-plugin", note: "Use this prefix when manifest.json contains agentSkills or agentConnectors, even if copilotAgents is also present." },
+  { prefix: "cea-", title: "Custom engine agent", template: "cea-custom-engine-agent", note: "Include the agent source and a Teams/M365 app package." },
+  { prefix: "mcs-", title: "Copilot Studio", template: "mcs-copilot-studio", note: "Include exported or cloned Copilot Studio source in src/." },
+];
+---
+
+<SiteLayout title="Contributing" description="Share a Microsoft 365 Copilot sample with the community. Follow the sample structure, metadata, and pull request guidance.">
+  <header class="page-heading container">
+    <p class="eyebrow">Contributing</p><h1>Share what you build</h1>
+    <p>Help someone else get started with a complete, documented Copilot sample. Share only code and assets you have permission to publish.</p>
+    <a class="button button--primary" href={`${repositoryUrl}/blob/main/CONTRIBUTING.md`}><GitPullRequest size={17} aria-hidden="true" /> Read the contribution guide</a>
+  </header>
+  <section class="steps-band">
+    <ol class="container getting-started-steps">
+      <li><strong>1</strong><div><h2>Fork and branch</h2><p>Start from the latest main branch. Use one branch and one pull request per sample.</p></div></li>
+      <li><strong>2</strong><div><h2>Complete a template</h2><p>Copy the matching project template. Include source, documentation, metadata, and a real screenshot.</p></div></li>
+      <li><strong>3</strong><div><h2>Test and submit</h2><p>Test your setup instructions, complete the PR template, and sign the Contributor License Agreement when prompted.</p></div></li>
+    </ol>
+  </section>
+  <section class="content-section container contribution-requirements">
+    <div>
+      <p class="eyebrow">Required structure</p><h2>One self-contained sample</h2>
+      <pre><code>{`samples/\n└── <prefix>-<sample-name>/\n    ├── assets/\n    │   ├── sample.json\n    │   └── screenshot.png\n    ├── README.md\n    ├── .gitignore\n    └── <source and app package>`}</code></pre>
+      <p>Use lowercase names with hyphens, not periods. Complete the template's README and metadata, replace every placeholder, and store screenshots in the sample's assets folder.</p>
+      <p>Add your sample to the root README samples table. Avoid unrelated changes outside your sample.</p>
+      <p>End the sample-root README with its view tracker, replacing the folder name:</p>
+      <pre><code>{`<img src="https://m365-visitor-stats.azurewebsites.net/copilot-pro-dev-samples/samples/<sample-folder>" />`}</code></pre>
+    </div>
+    <div>
+      <p class="eyebrow">Submission checklist</p><h2>Make it easy to run and review</h2>
+      <ul class="guidance-list">
+        <li>Document the scenario, prerequisites, setup, permissions, and expected results.</li>
+        <li>Complete assets/sample.json, including authors, dates, and a screenshot URL and alt text. The first image by ascending order is the gallery preview.</li>
+        <li>Use the latest published manifest schemas and Microsoft 365 Agents Toolkit guidance.</li>
+        <li>In m365agents.yml, set additionalMetadata.sampleTag to <code>pnp-copilot-pro-dev:&lt;sample-folder&gt;</code> and omit projectId.</li>
+        <li>Never commit secrets or tenant-specific IDs. Provide redacted .env.*.sample files instead.</li>
+        <li>Verify the sample from a clean checkout and include test details in your PR.</li>
+      </ul>
+      <nav class="stacked-links">
+        <a href={`${repositoryUrl}/blob/main/CONTRIBUTING.md`}>Full contribution guidance <ArrowRight size={16} aria-hidden="true" /></a>
+        <a href="https://aka.ms/community/request/demo">Demo your sample on a community call <ArrowRight size={16} aria-hidden="true" /></a>
+      </nav>
+    </div>
+  </section>
+  <section class="content-section content-section--tint">
+    <div class="container">
+      <div class="section-heading"><div><p class="eyebrow">Start with the right structure</p><h2>Templates by sample type</h2></div></div>
+      <div class="template-grid">
+        {templates.map((item) => (
+          <article class="guidance-card">
+            <p class="eyebrow">{item.prefix}</p><h3>{item.title}</h3><p>{item.note}</p>
+            <a class="text-link" href={`${repositoryUrl}/tree/main/templates/${item.template}`}>Use template <ArrowRight size={16} aria-hidden="true" /></a>
+          </article>
+        ))}
+      </div>
+      <p>For <strong>msgext-</strong> message extension samples, follow the full contribution guide and a high-quality sample of the same type; there is no dedicated template.</p>
+    </div>
+  </section>
+  <section class="content-section container resource-list" aria-labelledby="share-and-learn-heading">
+    <div>
+      <p class="eyebrow">Sharing is caring</p>
+      <h2 id="share-and-learn-heading">Share, learn, and build together</h2>
+      <p>You do not need a new sample to help. Improve a README, replace a screenshot, review a contribution, or share your experience on a community call. First-time contributors and presenters are welcome.</p>
+    </div>
+    <nav aria-label="Community contribution resources">
+      <a href="https://aka.ms/community/calls">Join the community calls <ArrowRight size={16} aria-hidden="true" /></a>
+      <a href="https://aka.ms/community/request/demo">Request a demo slot <ArrowRight size={16} aria-hidden="true" /></a>
+      <a href="https://pnp.github.io/sharing-is-caring/">Get started with Sharing is Caring <ArrowRight size={16} aria-hidden="true" /></a>
+      <a href={`${repositoryUrl}/blob/main/CONTRIBUTING.md#assets`}>Screenshot and metadata guidance <ArrowRight size={16} aria-hidden="true" /></a>
+    </nav>
+  </section>
+</SiteLayout>

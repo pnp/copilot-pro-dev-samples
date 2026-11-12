@@ -1,0 +1,38 @@
+---
+import { ArrowRight } from "@lucide/astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { getSamples, type SampleEntry } from "../lib/samples";
+import { sitePath } from "../lib/site";
+
+const samples = await getSamples();
+const updates = samples
+  .filter((sample): sample is SampleEntry & { updatedAt: Date } => sample.updatedAt !== null)
+  .sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime() || a.title.localeCompare(b.title));
+const formatDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
+});
+---
+
+<SiteLayout title="What's new" description="Explore recently added and updated Microsoft 365 Copilot community samples.">
+  <header class="page-heading container">
+    <p class="eyebrow">Catalog activity</p><h1>What's new</h1>
+    <p>Recently added and updated samples, ordered by the dates recorded in sample metadata.</p>
+  </header>
+  <section class="content-section container" aria-label="Sample updates">
+    <div class="updates-list">
+      {updates.map((sample) => (
+        <article>
+          <time datetime={sample.updatedAt.toISOString().slice(0, 10)}>{formatDate.format(sample.updatedAt)}</time>
+          <div>
+            <p class="eyebrow">{sample.createdAt?.toISOString().slice(0, 10) === sample.updatedAt.toISOString().slice(0, 10) ? "Added" : "Updated"}</p>
+            <h2><a href={sitePath(`/samples/${sample.folder}/`)}>{sample.title}</a></h2>
+            <p>{sample.description}</p>
+          </div>
+          <a href={sitePath(`/samples/${sample.folder}/`)} aria-label={`View ${sample.title}`}><ArrowRight size={20} aria-hidden="true" /></a>
+        </article>
+      ))}
+    </div>
+    {updates.length === 0 && <p>No dated sample updates are available yet. <a href={sitePath("/samples/")}>Browse the gallery</a> to explore the samples.</p>}
+    {updates.length < samples.length && updates.length > 0 && <p class="muted-copy">Samples without a metadata date are available in the <a href={sitePath("/samples/")}>sample gallery</a>.</p>}
+  </section>
+</SiteLayout>

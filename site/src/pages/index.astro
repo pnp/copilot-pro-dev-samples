@@ -1,63 +1,32 @@
 ---
+import { ArrowRight, CalendarDays } from "@lucide/astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
-import LatestSamples from "../components/LatestSamples.astro";
-import { getFeaturedSample, getRecentSamples, getSamples, getSampleStats } from "../lib/samples";
+import CatalogBackdrop from "../components/CatalogBackdrop.astro";
+import SampleBrowser from "../components/SampleBrowser.astro";
+import { getSamples, getSampleStats } from "../lib/samples";
 
 const samples = await getSamples();
-const latestSamplesCount = 3;
-const latestSamples = getRecentSamples(samples, latestSamplesCount);
-const { byType } = getSampleStats(samples);
-const typeBreakdown = Object.entries(byType).sort((a, b) => b[1] - a[1]);
-const featured = getFeaturedSample(samples);
-const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const { total, byType } = getSampleStats(samples);
 ---
 
-<SiteLayout title="Copilot Pro Dev Samples" description="Explore Microsoft 365 Copilot community samples.">
-  <section class="hero-shell">
-    <div class="hero-content">
-      <h1 class="max-w-3xl text-4xl font-extrabold leading-tight text-white md:text-5xl">
-        Explore Microsoft 365 Copilot samples built to inspire.
-      </h1>
-      <p class="max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
-        Browse the community catalog by agent type, compare what each sample includes, and jump straight to the source that fits your stack or contribution goal.
-      </p>
-      <div class="flex flex-wrap gap-3 pt-2">
-        <a class="chip-button chip-button-active" href={`${baseUrl}samples`}>Browse Samples</a>
-        <a class="chip-button" href={`${baseUrl}contribute`}>Submit a sample</a>
-      </div>
+<SiteLayout>
+  <section class="catalog-intro container">
+    <div>
+      <p class="eyebrow">Microsoft 365 &amp; Power Platform Community</p>
+      <h1>Copilot Pro Dev Samples</h1>
+      <p class="catalog-intro__descriptor">Build agents. Extend Copilot. Share what works.</p>
+      <p class="catalog-intro__copy">Discover community-built agents, plugins, and extensibility patterns for Microsoft 365 Copilot. Start with a real scenario, explore the code, and make it your own.</p>
     </div>
-
-    <div class="hero-aside">
-      {
-        featured ? (
-          <a href={`${baseUrl}samples/${featured.sample.folder}`} class="hero-featured">
-            <p class="theme-eyebrow text-xs font-semibold uppercase tracking-[0.2em]">Featured sample</p>
-            <div class="hero-featured-image">
-              <img
-                src={featured.sample.imageUrl || `${baseUrl}placeholder.webp`}
-                alt={featured.sample.imageAlt.trim().length > 0 ? featured.sample.imageAlt : `${featured.sample.title} preview`}
-                loading="lazy"
-                onerror={`this.onerror=null;this.src='${baseUrl}placeholder.webp';`}
-              />
-            </div>
-            <p class="hero-featured-title">{featured.sample.title}</p>
-            {featured.showDescriptionAndMetadata && <p class="hero-featured-description">{featured.sample.description}</p>}
-          </a>
-        ) : (
-          <div class="hero-breakdown">
-            {typeBreakdown.map(([name, count]) => (
-              <div class="hero-breakdown-row">
-                <span class="hero-breakdown-name">{name}</span>
-                <span class="hero-breakdown-count">{count}</span>
-              </div>
-            ))}
-          </div>
-        )
-      }
+    <div class="catalog-stat" aria-label={`${total} community samples`}><strong>{total}</strong><span>community samples</span></div>
+  </section>
+  <aside class="community-ribbon" aria-label="Community calls">
+    <div class="community-ribbon__inner container">
+      <CalendarDays size={24} aria-hidden="true" />
+      <p>Join the Copilot, Microsoft 365 &amp; Power Platform community calls.</p>
+      <a href="https://aka.ms/community/calls">View community calls <ArrowRight size={16} aria-hidden="true" /></a>
     </div>
-  </section>
-
-  <section class="mt-14">
-    <LatestSamples samples={latestSamples} count={latestSamplesCount} />
-  </section>
+  </aside>
+  <CatalogBackdrop>
+    <SampleBrowser samples={samples} byType={byType} />
+  </CatalogBackdrop>
 </SiteLayout>

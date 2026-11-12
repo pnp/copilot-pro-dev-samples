@@ -38,7 +38,10 @@ jobs:
 
       - name: Build site
         working-directory: site
-        run: npm run build
+        run: |
+          npm run check
+          npm run build
+          npm test
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
