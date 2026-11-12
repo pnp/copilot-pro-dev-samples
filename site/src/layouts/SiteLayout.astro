@@ -7,29 +7,31 @@ interface Props {
 }
 
 const { title, description = "Microsoft 365 Copilot community samples browser." } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const navItems = [
   {
-    href: "/",
+    href: baseUrl,
     label: "Home",
   },
   {
-    href: "/samples",
+    href: `${baseUrl}samples`,
     label: "Samples",
   },
   {
-    href: "/contribute",
+    href: `${baseUrl}contribute`,
     label: "Contributing",
   },
 ];
-const currentPath = Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/$/, "");
+const basePath = baseUrl.replace(/\/$/, "");
+const currentPath = Astro.url.pathname.replace(basePath, "").replace(/\/$/, "") || "/";
 const siteTitle = "Copilot Pro Dev Samples";
 const documentTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}`;
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
+    <link rel="icon" href={`${baseUrl}favicon.ico`} />
     <script src="../scripts/clarity.ts"></script>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
@@ -44,8 +46,8 @@ const documentTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}
   <body>
     <header class="sticky top-0 z-30 border-b-[2px] border-b-sky-300 bg-ink-950/70 backdrop-blur-lg">
       <div class="mx-auto flex w-full max-w-6xl flex-col gap-3 px-4 py-4 md:px-6 lg:flex-row lg:items-center lg:justify-between">
-        <a class="inline-flex items-center gap-2 self-start text-xl font-bold tracking-[0.01em] text-white lg:self-center" href="/">
-          <img class="h-8 w-8" src="/favicon.svg" alt="" aria-hidden="true" />
+        <a class="inline-flex items-center gap-2 self-start text-xl font-bold tracking-[0.01em] text-white lg:self-center" href={baseUrl}>
+          <img class="h-8 w-8" src={`${baseUrl}favicon.svg`} alt="" aria-hidden="true" />
           <span>Microsoft 365 Copilot <span class="text-sky-300">Pro Dev Samples</span></span>
         </a>
         <nav aria-label="Primary" class="site-nav flex flex-wrap items-center gap-2 md:gap-3 lg:justify-end">
@@ -70,8 +72,8 @@ const documentTitle = title === siteTitle ? siteTitle : `${title} | ${siteTitle}
             rel="noreferrer"
             class="chip-button chip-button-repo hidden min-h-11 shrink-0 items-center justify-center gap-2 leading-none sm:inline-flex"
           >
-            <img class="github-icon github-icon-light h-5 w-5 shrink-0 object-contain" src="/GitHub_Invertocat_Black.svg" alt="" aria-hidden="true" />
-            <img class="github-icon github-icon-dark h-5 w-5 shrink-0 object-contain" src="/GitHub_Invertocat_White.svg" alt="" aria-hidden="true" />
+            <img class="github-icon github-icon-light h-5 w-5 shrink-0 object-contain" src={`${baseUrl}GitHub_Invertocat_Black.svg`} alt="" aria-hidden="true" />
+            <img class="github-icon github-icon-dark h-5 w-5 shrink-0 object-contain" src={`${baseUrl}GitHub_Invertocat_White.svg`} alt="" aria-hidden="true" />
             GitHub
           </a>
           <button

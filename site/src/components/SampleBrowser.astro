@@ -14,6 +14,7 @@ const sortedSamples = [...samples].sort((a, b) => {
   return bTime - aTime;
 });
 const totalSamples = samples.length;
+const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <section id="browse" class="space-y-6">
@@ -62,7 +63,7 @@ const totalSamples = samples.length;
   <div id="samples-grid" class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
     {sortedSamples.map((sample) => (
       <a
-        href={`/samples/${sample.folder}`}
+        href={`${baseUrl}samples/${sample.folder}`}
         class="sample-card sample-card-shell theme-card-hover flex flex-col gap-4 p-5 transition hover:-translate-y-0.5"
         data-title={sample.title.toLowerCase()}
         data-folder={sample.folder.toLowerCase()}
@@ -79,10 +80,10 @@ const totalSamples = samples.length;
         </div>
         <div class="sample-card-image">
           <img
-            src={sample.imageUrl || "/placeholder.webp"}
+            src={sample.imageUrl || `${baseUrl}placeholder.webp`}
             alt={sample.imageAlt.trim().length > 0 ? sample.imageAlt : `${sample.title} preview`}
             loading="lazy"
-            onerror="this.onerror=null;this.src='/placeholder.webp';"
+            onerror={`this.onerror=null;this.src='${baseUrl}placeholder.webp';`}
           />
         </div>
         <div class="space-y-3">

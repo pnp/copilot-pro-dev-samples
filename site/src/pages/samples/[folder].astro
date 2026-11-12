@@ -21,11 +21,12 @@ const details = sample.longDescription.length > 0 ? sample.longDescription : [sa
 const imageAlt = sample.imageAlt.trim().length > 0 ? sample.imageAlt : `${sample.title} preview`;
 const hasReadme = sample.readmeContent.trim().length > 0;
 const readmeHtml = hasReadme ? await marked.parse(sample.readmeContent) : "";
+const baseUrl = import.meta.env.BASE_URL.endsWith("/") ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <SiteLayout title={sample.title} description={sample.description}>
   <section class="space-y-6">
-    <a href="/samples" class="chip-button inline-flex items-center gap-2 text-xs md:text-sm">
+    <a href={`${baseUrl}samples`} class="chip-button inline-flex items-center gap-2 text-xs md:text-sm">
       <span aria-hidden="true">&larr;</span>
       Back to samples
     </a>
